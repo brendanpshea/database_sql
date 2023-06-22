@@ -93,7 +93,7 @@ Here's how to do it in GitHub Codespaces:
 3.  You'll see a list of changes you've made. Enter a commit message in the text field at the top, and press 'Ctrl+Enter' to commit the changes.
 4.  To push your changes, go to the '...' menu at the top, then choose 'Push'.
 
-6.\ Submitting Your Work
+6\. Submitting Your Work
 ----------------------------------
 Once you've made changes to your own version of the repository (i.e., completed your assignments), you can let Brendan know so he can review your work. This is done via a process called a "pull request." Here's how to do it:
 
@@ -114,8 +114,7 @@ Once you've made changes to your own version of the repository (i.e., completed 
 I will then be notified of your pull request and can review your work.
 
 
-7.\ Updating Your Repository With Brendan's Changes
-
+7\. Updating Your Repository With Brendan's Changes
 ----------------------------------
 I might make updates to the original repository from time to time. To incorporate these updates into your own fork, you'll need to 'pull' these changes. To do this, you can follow these steps:
 
