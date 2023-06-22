@@ -2,7 +2,7 @@ Guide for Students: Saving and Submitting Your Work Using Github
 ========================================================================
 Welcome, students! This guide will assist you in leveraging the collaborative power of GitHub for your studies. By following these steps, you will be able to create your own GitHub account, copy ("fork") my (Brendan's) Database-SQL notes repository into your account, and use this personalized copy to save and track your work throughout the course.
 
-Using GitHub in this way gives you a personal space to try out code, experiment with ideas, and make modifications directly in the Jupyter notebooks provided. Importantly, this workspace is linked to the original repository, meaning you can keep your personal repository up to date with the course materials as Brendan makes updates.
+Using GitHub in this way gives you a personal space to try out code, experiment with ideas, and make modifications directly in the Jupyter notebooks provided. Importantly, this workspace is linked to the original repository, meaning you can keep your personal repository up to date with the course materials as I make updates.
 
 In addition to providing a convenient platform for engaging with course materials, this process allows you to familiarize yourself with fundamental concepts and practices in software development. By committing and pushing your changes, you're interacting with Git, a powerful version-control system that's widely used in the tech industry. Pulling updates from the original repository lets you stay in sync with the latest course materials, simulating how developers often work on shared codebases.
 
@@ -31,7 +31,7 @@ Before you can interact with the repository, you'll need a GitHub account. Here'
 1.  Go to [GitHub](https://github.com/).
 2.  Click on the 'Sign up' button on the top-right corner.
 3.  Fill in your desired username, email address, and password.
-4.  Click on the green 'Create account' button.
+4.  Click on the green 'Create account' button. (If asked, make sure you indicate you are a student. This unlocks free features).
 5.  You'll receive an email to verify your account. Click on the verification link in that email.
 
 3\. Forking the Repository
