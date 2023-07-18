@@ -212,7 +212,8 @@ A conceptual/logical model includes entities, relationships, and attributes.
 
 - Attributes are the properties or characteristics of entities (like "StudentName" for the Student entity).
 
-Example: In a hospital database, the entities could include Patient, Doctor, and Appointment. Relationships might be "Patient sees Doctor" and "Patient has Appointment". Attributes of the Patient entity could include PatientID, Name, and Address.\
+Example: In a hospital database, the entities could include Patient, Doctor, and Appointment. Relationships might be "Patient sees Doctor" and "Patient has Appointment". Attributes of the Patient entity could include PatientID, Name, and Address.
+
 8: Defining Instance and Schema in Relational Databases
 ---------------------------------------------------------
 
@@ -640,7 +641,8 @@ The addition of the element of time to an ERD may require the adaptation of uniq
 
 - This would create a composite unique identifier, with the original identifier and the time element together providing uniqueness.
 
-- For example, in a "Sales" table, a sale might originally be identified by a "SaleID". But if we want to track changes over time, we might add a "Date" attribute to the unique identifier, so each sale is identified by both the "SaleID" and the "Date".\
+- For example, in a "Sales" table, a sale might originally be identified by a "SaleID". But if we want to track changes over time, we might add a "Date" attribute to the unique identifier, so each sale is identified by both the "SaleID" and the "Date".
+  
 19: Validating Data Using Normalization
 =========================================
 
