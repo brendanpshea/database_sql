@@ -1,4 +1,4 @@
-Oracle Database Foundations Study Guide
+# Oracle Database Foundations Study Guide
 
 The Oracle Database Foundations Exam (Number: 1Z0-006) is a globally recognized qualification that can validate your skills in the eyes of potential employers and give you an edge in the increasingly competitive field of data management. It tests your understanding of key concepts, practical skills, and best practices in designing, implementing, and managing Oracle (and other RDBMS) databases. You can register for the exam here: <https://education.oracle.com/oracle-database-foundations-novice-level-exam/pexam_1Z0-006>.
 
@@ -20,64 +20,9 @@ So, I encourage you to take full advantage of this study guide and view the upco
 
 Best of luck in your studies!
 
-[What is a Database?. 3](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584349)
-
-[1: Understanding What is a Database?. 3](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584350)
-
-[2: Describe types of database models (relational, object-oriented, flat, network...)  4](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584351)
-
-[3: Relational Database Concepts. 4](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584352)
-
-[4: Defining Levels of Data Abstraction. 5](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584353)
-
-[The Language of Database and Data Modeling. 7](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584354)
-
-[6: Defining a Table in a Database. 7](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584355)
-
-[7: Using Conceptual Data Modeling. 7](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584356)
-
-[8: Defining Instance and Schema in Relational Databases  8](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584357)
-
-[9: Using Unique Identifiers, Primary and Foreign Keys. 8](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584358)
-
-[Data Modeling -- Creating the Physical Model  9](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584359)
-
-[10: Creating Physical Data Models. 10](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584360)
-
-[11: Documenting Business Requirements and Rules. 10](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584361)
-
-[12: Defining Supertype and Subtype Entity Relationships. 11](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584362)
-
-[13: Using Attributes. 12](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584363)
-
-[13.4: Distinguish between volatile and nonvolatile attributes. 12](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584364)
-
-[14: Using Unique Identifiers (UIDs)  12](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584365)
-
-[15: Identifying Relationships. 13](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584366)
-
-[17: Identifying Hierarchical, Recursive, and Arc Relationships. 16](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584367)
-
-[18: Tracking Data Changes Over Time. 17](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584368)
-
-[19: Validating Data Using Normalization. 18](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584369)
-
-[Mapping the Physical Model  19](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584370)
-
-[21: Mapping Primary, Composite Primary, and Foreign Keys. 20](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584371)
-
-[Introduction to SQL. 21](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584372)
-
-[22: Using Structured Query Language (SQL)  21](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584373)
-
-[24: Using Data Manipulation Language (DML) and Transaction Control Language (TCL)  22](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584374)
-
-[25: Defining and Using Basic Select Statements. 23](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584375)
-
-[26: Defining Table Joins. 24](https://d.docs.live.net/a59f6868c3431710/Teaching/2023_Fall/Database/Oracle_Exam_Prep.docx#_Toc140584376)
 
 What is a Database?
-===================\
+===================
 1: Understanding What is a Database?
 --------------------------------------
 
