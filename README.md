@@ -27,7 +27,7 @@ This repository contains twelve Jupyter notebooks, each covering a unique aspect
 
 11.  [Database_11_Data_Storytelling_with_Zombies.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_11_Data_Storytelling_with_Zombies.ipynb) - Learn about ETL, basic stats, visualizations and reports as you try to respond to a Zombie outbreak.
 
-12. [Database_12_OracleDB_Cert_Study.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_11_Data_Storytelling_with_Zombies.ipynb) - Learn about ETL, basic stats, visualizations and reports as you try to respond to a Zombie outbreak.
+12. [Database_12_OracleDB_Cert_Study.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_12_OracleDB_Cert_Study.ipynb) - Learn about ETL, basic stats, visualizations and reports as you try to respond to a Zombie outbreak.
 For usage terms, please refer to the [LICENSE](https://github.com/brendanpshea/database_sql/blob/main/LICENSE) file.
 
 The author of this book, Brendan P. Shea, is open to constructive feedback and suggestions for improvement. Please feel free to open an issue or a pull request if you find something that can be improved or have ideas for additional content. Happy learning!
