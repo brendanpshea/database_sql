@@ -982,6 +982,26 @@ Joins are used in a SELECT statement to retrieve data from multiple related tabl
 | VARCHAR                           | A data type in SQL used for variable-length character strings. Unlike CHAR, it stores only the characters you assign to it and does not pad extra spaces.                                                                                                                                               |
 | Volatile Attribute                | An attribute where the value is expected to change frequently over time.                                                                                                                                                                                                                                |
 
+### Important concepts
+| Concept | Description |
+| --- | --- |
+| Advantages of NoSQL over SQL | Enhanced scalability, ability to handle large volumes of data, flexibility in data modeling allowing for structured, semi-structured and unstructured data. |
+| Advantages of SQL over NoSQL | Mature technology with complex query capabilities, supports ACID properties ensuring reliable transactions, extensive support and documentation. |
+| Advantages of SQL over Hierarchical/Network | Simplified data management, complex query capabilities including joins, high adaptability to changing requirements. |
+| Advantages of Databases over Flat Files | Efficient data retrieval and updates, supports data integrity and security, enables complex queries, better handling of large volumes of data. |
+| Advantages of Flat Files Over Databases | Simple structure, no specialized software required to read the file, faster reads for smaller datasets. |
+| Oracle (company) | An American multinational computer technology corporation known for its database software, cloud engineered systems, and enterprise software products. |
+| Oracle Database | A robust and scalable RDBMS from Oracle Corporation that supports a wide range of database features. |
+| JSON | JavaScript Object Notation, a lightweight data-interchange format that's easy to read, write, parse and generate, both for humans and machines. |
+| RDBMS: Represent One-to-One Relationships | A one-to-one relationship can be represented in an RDBMS by using a foreign key in one table that refers to the primary key in another. |
+| RDBMS: Represent One-to-Many Relationships | A one-to-many relationship can be represented in an RDBMS by using a foreign key in the 'many' table that refers to the primary key in the 'one' table. |
+| RDBMS: Represent Many-to-Many Relationships | A many-to-many relationship can be represented in an RDBMS by using a junction table that includes foreign keys referring to the primary keys of both related tables. |
+| One-to-one relationship (3 examples) | 1\. User and User Profile in a website database. 2. Employee and Employee details in an HR system. 3. Product and Product Details in a shopping database. |
+| One-to-many relationship (3 examples) | 1\. Author and Books in a library system. 2. Teacher and Students in a school database. 3. Manufacturer and Products in an inventory system. |
+| Many-to-many relationship (3 examples) | 1\. Students and Courses in a university database. 2. Doctors and Patients in a hospital system. 3. Authors and Research Papers in a scholarly database. |
+
+
+
 
 ## Basic SQL Review
 | **Goal in English**                                                                   | **SQL Command**                                                                                                       |
