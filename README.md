@@ -4,6 +4,7 @@ Repository Overview: SQL and Database Management Using Pop Culture
 Welcome to the interactive Github repository for the textbook: "SQL and Database Management Using Pop Culture." This unique educational material utilizes Jupyter notebooks to deliver engaging and immersive content, bridging the gap between complex database concepts and real-world application. This book uses pop culture references to simplify and explain concepts, making it fun and easy to learn.
 
 This repository contains twelve Jupyter notebooks, each covering a unique aspect of SQL and Database Management:
+
 0. [Brendan's_Intro_to_Colab.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Chapter_0_Brendan's_Intro_to_Colab.ipynb) - How to use SQL (and Python) code in Colab notebooks.
 
 1.  [Database_01_Intro.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_01_Intro.ipynb) - An introduction to the data and databases used in enterprises.
