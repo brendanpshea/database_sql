@@ -27,7 +27,7 @@ This repository contains twelve Jupyter notebooks, each covering a unique aspect
 
 10. [Database_10_Database_Lifecycle.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_10_Database_Lifecycle.ipynb) - Live the life with an exploration of the database lifecycle.
 
-11.  [Database_11_Data_Warehouses (with Zombies).ipynb]([https://github.com/brendanpshea/database_sql/blob/main/Database_11_Data_Storytelling_with_Zombies.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_11_Data_Warehouses.ipynb)) - Learn about data warehouses, ETL, and Star Schema as yoo respond to a Zombie outbreak.
+11.  [Database_11_Data_Warehouses (with Zombies).ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_11_Data_Warehouses.ipynb) - Learn about data warehouses, ETL, and Star Schema as you respond to a Zombie outbreak.
 
 
 The author of this book, Brendan P. Shea, is open to constructive feedback and suggestions for improvement. Please feel free to open an issue or a pull request if you find something that can be improved or have ideas for additional content. Happy learning!
