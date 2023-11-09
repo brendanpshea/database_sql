@@ -1,4 +1,4 @@
-# Debugging With a Duck: 
+# Debugging With a Duck
 7 Ways Your New Rubber Duck Can Improve Your Code (and Your Life) 🦆👩‍💻🐞
 
 ### 1\. Articulation - Speak, Don't Just Think! 🗣️
@@ -80,7 +80,8 @@ The duck teaches you to see the lighter side of debugging. Smile at the errors, 
 ```python
 # Flawed Python Code with a Duck's Humor:
 if duck_color == "green":
-print("This might be a Mallard.")  # Indentation makes all the difference!`
+print("This might be a Mallard.")  # Indentation makes all the difference!
+```
 
 * * * * *
 
