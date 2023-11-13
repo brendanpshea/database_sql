@@ -1,7 +1,16 @@
 
 # SQL and Database Management Using Pop Culture
 
-**Welcome to the interactive GitHub repository for "SQL and Database Management Using Pop Culture."** This book uses Jupyter notebooks to make learning database concepts engaging and relevant, using pop culture to simplify and explain these ideas.  This repository contains twelve Jupyter notebooks, each covering a different aspect of SQL and Database Management:
+Welcome to "SQL and Database Management Using Pop Culture," a GitHub repository that leads a double life as an interactive Database and SQL textbook. Through this innovative approach, we blend the technical world of SQL and database management with the relatable and often thrilling realm of pop culture. This book is designed to make the complex concepts of databases not just understandable but genuinely enjoyable to learn.
+
+**Why This Book?**  Databases are the backbone of the modern data-driven world, yet their intricacies can often seem labyrinthine to learners. This book demystifies these complexities by drawing parallels with popular culture, weaving a narrative that is both informative and relatable. Whether you are a student stepping into the world of databases or a professional seeking to deepen your understanding, this book provides a fresh perspective that is both comprehensive and accessible. The content is aligned to the content of the **CompTia Data+ ** and **Oracle Database Foundations** exams.
+
+**The Structure of the Book.** Each chapter of this book is crafted like an episode of TV series, where learning SQL and database management becomes an adventure rather than a routine academic endeavor. Here's what awaits you in this journey:
+
+-   Chapter 0: Get started with an interactive introduction to SQL and Python in Colab notebooks.
+-   Chapter 1 to 12: From the deck of the Star Trek Enterprise to the magical corridors of Hogwarts, dive into every aspect of SQL and database management. Each chapter unfolds a new scenario, tying complex database concepts to familiar stories and characters from pop culture.
+
+This repository houses twelve Jupyter notebooks, making the learning experience highly interactive and hands-on. You'll not just read about SQL queries and database theories but also get to experiment and see the results in real time.
 
 # Chapters 
 
@@ -33,4 +42,4 @@
 
 
 # About the Author
-The author of this book, Brendan P. Shea, is open to constructive feedback and suggestions for improvement. Please feel free to open an issue or a pull request if you find something that can be improved or have ideas for additional content. Happy learning!
+Brendan Shea, PhD, is Professor of Philosophy and Computer Science at Rochester Community and Technical College and a Resident Fellow at the Minnesota Center for Philosophy of Science at the University of Minnesota-Twin Cities. He also serves as the Public Member of the Institutional Biosafety Committee at Mayo Clinic-Rochester. Hia main research and teaching interests lie in the philosophy of science, data modeling, applied ethics, and in the areas where these overlap (such as bioethics and the ethics of artificial intelligence). You can find out more about his research here: https://philpeople.org/profiles/brendan-shea.
