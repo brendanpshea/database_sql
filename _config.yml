@@ -7,6 +7,7 @@ url: "https://brendanpshea.github.io/database_sql/" # the base hostname & protoc
 # Build settings
 markdown: kramdown
 remote_theme: pages-themes/architect@v0.2.0
+show_downloads: true
 
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
