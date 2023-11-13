@@ -1,5 +1,5 @@
 
-# Project Overview
+# SQL and Database Management Using Pop Culture
 
 **Welcome to the interactive GitHub repository for "SQL and Database Management Using Pop Culture."** This book uses Jupyter notebooks to make learning database concepts engaging and relevant, using pop culture to simplify and explain these ideas.  This repository contains twelve Jupyter notebooks, each covering a different aspect of SQL and Database Management:
 
