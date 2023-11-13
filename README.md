@@ -25,9 +25,11 @@ This repository contains twelve Jupyter notebooks, each covering a unique aspect
 
 9.  [Database_09_Monsters_of_JSON.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_09_Monsters_of_JSON.ipynb) - Tackle the monsters of JSON data format while learning about Dungeons and Dragons Monster Stats.
 
-10. [Database_10_Database_Lifecycle.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_10_Database_Lifecycle.ipynb) - Live the life with an exploration of the database lifecycle.
+10. [Database_10_DatabaseLifecycle.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_10_DatabaseLifecycle.ipynb) - Live the life with an exploration of the database lifecycle  through an interview with the (fictional) ELoise Query-Hopper, a Junior DBA at Princeton Plainsborough Hospital. This chapter reviews major learning outcomes from the **CompTia Data+** Certification.
 
-11.  [Database_11_Data_Warehouses (with Zombies).ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_11_Data_Warehouses.ipynb) - Learn about data warehouses, ETL, and Star Schema as you respond to a Zombie outbreak.
+11.  [Database_11_Data_Warehouses (with Zombies).ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_11_Data_Warehouses.ipynb) - Learn about data warehouses, ETL, Star Schema, and Pandas as you respond to a Zombie outbreak.
+
+12.  [/Database_12_Review.ipynb)](https://github.com/brendanpshea/database_sql/blob/main/Database_12_Review.ipynb) - A review of the concepts we've covered, which doubles as a study guide for the **Oracle Database Foundations** exam.
 
 
 The author of this book, Brendan P. Shea, is open to constructive feedback and suggestions for improvement. Please feel free to open an issue or a pull request if you find something that can be improved or have ideas for additional content. Happy learning!
