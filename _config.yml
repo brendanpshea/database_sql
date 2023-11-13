@@ -1,0 +1,22 @@
+# Site settings
+title: SQL and Database Management Using Pop Culture
+description: An interactive textbook using pop culture references to simplify complex database concepts.
+baseurl: "" # the subpath of your site, e.g., /blog
+url: "https://brendanpshea.github.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+theme: leap-day
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Optional settings
+author: Brendan P. Shea, PhD
+email: brendanpshea@gmail.com
+github_username:  brendanpshea
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
