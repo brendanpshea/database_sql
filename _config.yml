@@ -6,7 +6,7 @@ url: "https://brendanpshea.github.io/database_sql/" # the base hostname & protoc
 
 # Build settings
 markdown: kramdown
-theme: leap-day
+theme: jekyll-theme-architect
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
