@@ -6,10 +6,10 @@ url: "https://brendanpshea.github.io/database_sql/" # the base hostname & protoc
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-architect
+remote_theme: pages-themes/architect@v0.2.0
+
 plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+- jekyll-remote-theme # add this line to the plugins list if you already have one
 
 # Optional settings
 author: Brendan P. Shea, PhD
