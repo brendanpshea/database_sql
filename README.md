@@ -25,22 +25,22 @@ This repository contains twelve Jupyter notebooks, each covering a different asp
 
 ### 6. **Data Modeling and ER Diagrams with Wednesday Addams**
 - [Database_06_Data_Modeling_and_ER_Diagrams.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_06_Data_Modeling_and_ER_Diagrams.ipynb): Understand data modeling and Entity Relationship Diagrams through an example of Wednesday Addams' "Web Shop."
-#### 7. **Advanced Modeling: Lessons from Hogwarts**
+### 7. **Advanced Modeling: Lessons from Hogwarts**
 - [Database_07_Advanced_Modeling.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_07_Advanced_Modeling.ipynb): Explore advanced data modeling techniques, like data normalization and subtype relationships, with examples from the magical world of Hogwarts.
 
-#### 8. **Database Management: Insights from The Office**
+### 8. **Database Management: Insights from The Office**
 - [Database_08_Database_Managment.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_08_Database_Managment.ipynb): Get practical insights into database management using scenarios from The Office. Topics include test data generation, views and indexes, query analytics, and user account management.
 
-#### 9. **Monsters of JSON: A D&D Adventure**
+### 9. **Monsters of JSON and XML: A D&D Adventure**
 - [Database_09_Monsters_of_JSON.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_09_Monsters_of_JSON.ipynb): Battle the beasts of JSON data format in a Dungeons and Dragons setting. Learn about the uses and pitfalls of SQL and NoSQL databases while dealing with Monster Stats.
 
-#### 10. **Database Lifecycle: A Journey with ELoise Query-Hopper**
+### 10. **Database Lifecycle: A Journey with ELoise Query-Hopper**
 - [Database_10_DatabaseLifecycle.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_10_DatabaseLifecycle.ipynb): Follow the database lifecycle through a narrative with ELoise Query-Hopper, a Junior DBA at Princeton Plainsborough Hospital. Review key learnings in line with the CompTia Data+ Certification.
 
-#### 11. **Data Warehouses and Zombies**
+### 11. **Data Warehouses and Zombies**
 - [Database_11_Data_Warehouses.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_11_Data_Warehouses.ipynb): Delve into data warehouses, ETL processes, Star Schema, and Pandas, all while managing a Zombie outbreak.
 
-#### 12. **Comprehensive Review and Oracle Exam Prep**
+### 12. **Comprehensive Review and Oracle Exam Prep**
 - [Database_12_Review.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_12_Review.ipynb): A thorough review of all concepts covered in this series, serving as a study guide for the Oracle Database Foundations exam.
 
 The author of this book, Brendan P. Shea, is open to constructive feedback and suggestions for improvement. Please feel free to open an issue or a pull request if you find something that can be improved or have ideas for additional content. Happy learning!
