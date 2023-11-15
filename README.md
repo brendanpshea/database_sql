@@ -11,6 +11,9 @@ Welcome to "SQL and Database Management Using Pop Culture," a GitHub repository 
 This repository houses twelve Jupyter notebooks, making the learning experience highly interactive and hands-on. You'll not just read about SQL queries and database theories but also get to experiment and see the results in real-time.
 
 # Chapters 
+Each chapter is delivered as a separate Jupyter notebook that you can open and run (for free) in "Google Colab". If you prefer, you instead use GitHub Codespaces (Microsoft's alternative):
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/brendanpshea/database_sql)
 
 0. **Introduction to Colab with Brendan --** 
    [Brendan's_Intro_to_Colab.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Chapter_0_Brendan's_Intro_to_Colab.ipynb): Embark on your SQL journey by mastering the use of SQL and Python in Google Colab notebooks. This introductory chapter sets the stage for integrating database queries with Python code, offering a seamless learning experience for beginners.
