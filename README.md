@@ -3,6 +3,8 @@
 ### Brendan Shea, PhD | Rochester Community and Technical College
 Welcome to "SQL and Database Management Using Pop Culture," a GitHub repository that leads a double life as an interactive Database and SQL textbook. Through this innovative approach, we blend the technical world of SQL and database management with the relatable and often thrilling realm of pop culture. This book is designed to make the complex concepts of databases not just understandable but genuinely enjoyable to learn.
 
+![image](database_cover.jpg)
+
 **Why This Book?**  Databases are the backbone of the modern data-driven world, yet their intricacies can often seem labyrinthine to learners. This book demystifies these complexities by drawing parallels with popular culture, weaving a narrative that is both informative and relatable. Whether you are a student stepping into the world of databases or a professional seeking to deepen your understanding, this book provides a fresh perspective that is both comprehensive and accessible. The book starts with basic queries in **SQLite**, and move on to introduce both **PostgreSQL** and **MySQL** in later chapters. The content is aligned with the content of the **CompTia Data Sys+** and **Oracle Database Foundations** exams.
 
 **The Structure of the Book.** Each chapter of this book is crafted like an episode of a TV series, where learning SQL and database management becomes an adventure rather than a routine academic endeavor. Here's what awaits you in this journey:
