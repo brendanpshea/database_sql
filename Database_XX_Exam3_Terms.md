@@ -2,6 +2,8 @@
 
 The following is a curated list of important defintions and code techniques covered during this class. A quizlet deck covering this material lives here: https://quizlet.com/857775002/database-final-review-flash-cards/?i=psvlh&x=1jqt
 
+|Terms | Definition |
+|-------|-----------|
 | ACID | An acronym standing for Atomicity, Consistency, Isolation, and Durability. It's a set of properties that guarantee database transactions are processed reliably even in the event of errors or system failures. |
 | Aggregate Function | A type of function in SQL that processes a set of values and returns a single value summarizing the input. Examples include SUM, AVG, MAX, MIN, and COUNT. |
 | Application Programming Interface (API) | A set of rules and protocols that specify how software components should interact. In the context of data collection APIs can be used to retrieve data. |
