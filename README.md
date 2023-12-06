@@ -16,39 +16,40 @@ This repository houses twelve Jupyter notebooks, making the learning experience 
 
 # Chapters 
 
-0. **Introduction to Colab with Brendan --** 
+**Ch 0: Introduction to Colab with Brendan --** 
    [Brendan's_Intro_to_Colab.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Chapter_0_Brendan's_Intro_to_Colab.ipynb): Embark on your SQL journey by mastering the use of SQL and Python in Google Colab notebooks. This introductory chapter sets the stage for integrating database queries with Python code, offering a seamless learning experience for beginners.
 
-1. **Data and Databases: A Star Trek Adventure --** 
+**Ch 1: Data and Databases: A Star Trek Adventure --** 
    [Database_01_Intro.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_01_Intro.ipynb): Navigate the vastness of space and data with the Star Trek Enterprise. Learn the foundational concepts of databases, distinguishing them from flat files, and explore how databases organize and store data for efficient retrieval and analysis.
 
-2. **Relational Databases at Unseen University --** 
+**Ch 2: Relational Databases at Unseen University --** 
    [Database_02_RelationalModel_SQL.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_02_RelationalModel_SQL.ipynb): Dive into the fundamentals of relational databases and SQL at Terry Pratchett's Unseen University. Master key SQL commands like `SELECT`, `FROM`, and `WHERE` to query and manipulate data effectively.
 
-3. **Mastering SQL with Tony Stark --** 
+**Ch 3: Mastering SQL with Tony Stark --** 
    [Database_03_Stark's_SQL_Secrets.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_03_Stark's_SQL_Secrets.ipynb): Join Tony Stark to uncover advanced SQL functions for mathematics, string manipulations, and data operations. Delve into essential aspects of database security and data governance, crucial for protecting sensitive information.
 
-4. **Aggregates and Subqueries in the World of Goodreads --**  
+**Ch 4: Aggregates and Subqueries in the World of Goodreads --**  
    [Database_04_Aggregates_Subqueries_SQL.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_04_Aggregates_Subqueries_SQL.ipynb): Analyze Goodreads data using SQL's aggregate functions and subqueries. Learn to group and summarize data, creating powerful data insights through intricate querying techniques.
 
-5. **JOIN Operations and Set Theory in SQL with IMDB --**  
+**Ch 5: JOIN Operations and Set Theory in SQL with IMDB --**  
    [Database_05_Joins_Sets_SQL.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_05_Joins_Sets_SQL.ipynb): Explore the Internet Movie Database with JOIN operations and set theory concepts in SQL. Understand how to combine data from different tables effectively, enhancing the power and flexibility of your data queries.
 
-6. **Data Modeling and ER Diagrams with Wednesday Addams --**  
+**Ch 6: Data Modeling and ER Diagrams with Wednesday Addams --**  
    [Database_06_Data_Modeling_and_ER_Diagrams.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_06_Data_Modeling_and_ER_Diagrams.ipynb): Join Wednesday Addams in creating data models and Entity Relationship (ER) Diagrams for her "Web Shop." Learn the art of structuring and visualizing database schemas, a crucial skill in database design.
 
-7. **Advanced Modeling: Lessons from Hogwarts --** 
+**Ch 7: Advanced Modeling: Lessons from Hogwarts --** 
    [Database_07_Advanced_Modeling.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_07_Advanced_Modeling.ipynb): Advance your data modeling skills with lessons from Hogwarts. Delve into complex topics such as data normalization and understanding subtype relationships to ensure data integrity and efficiency.
 
-8. **Database Management: Insights from The Office --** 
+**Ch 8: Database Management: Insights from The Office --** 
    [Database_08_Database_Managment.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_08_Database_Managment.ipynb): Gain practical insights into database management with scenarios inspired by The Office. Topics include generating test data, implementing views and indexes, performing query analytics, and managing user accounts.
-9. **Monsters of JSON and XML: A D&D Adventure --** [Database_09_Monsters_of_JSON.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_09_Monsters_of_JSON.ipynb): Battle the beasts of JSON data format in a Dungeons and Dragons setting. Learn about the uses and pitfalls of SQL and NoSQL databases while dealing with Monster Stats.
 
-10. **Database Lifecycle: A Journey with ELoise Query-Hopper --** [Database_10_DatabaseLifecycle.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_10_DatabaseLifecycle.ipynb): Follow the database lifecycle through a narrative with ELoise Query-Hopper, a Junior DBA at Princeton Plainsborough Hospital. Review key learnings in line with the CompTia Data+ Certification.
+**Ch 9: Monsters of JSON and XML: A D&D Adventure --** [Database_09_Monsters_of_JSON.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_09_Monsters_of_JSON.ipynb): Battle the beasts of JSON data format in a Dungeons and Dragons setting. Learn about the uses and pitfalls of SQL and NoSQL databases while dealing with Monster Stats.
 
-11. **Data Warehouses and Zombies --** [Database_11_Data_Warehouses.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_11_Data_Warehouses.ipynb): Delve into data warehouses, ETL processes, Star Schema, and Pandas, all while managing a Zombie outbreak.
+**Ch 10: Database Lifecycle: A Journey with ELoise Query-Hopper --** [Database_10_DatabaseLifecycle.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_10_DatabaseLifecycle.ipynb): Follow the database lifecycle through a narrative with ELoise Query-Hopper, a Junior DBA at Princeton Plainsborough Hospital. Review key learnings in line with the CompTia Data+ Certification.
 
-12. **Comprehensive Review and Oracle Exam Prep --**  [Database_12_Review.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_12_Review.ipynb): A thorough review of all concepts covered in this series, serving as a study guide for the Oracle Database Foundations exam.
+**Ch 11: Data Warehouses and Zombies --** [Database_11_Data_Warehouses.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_11_Data_Warehouses.ipynb): Delve into data warehouses, ETL processes, Star Schema, and Pandas, all while managing a Zombie outbreak.
+
+**Ch 12: Comprehensive Review and Oracle Exam Prep --**  [Database_12_Review.ipynb](https://github.com/brendanpshea/database_sql/blob/main/Database_12_Review.ipynb): A thorough review of all concepts covered in this series, serving as a study guide for the Oracle Database Foundations exam.
 
 
 # About the Author
