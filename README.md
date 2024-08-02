@@ -1,6 +1,5 @@
-# SQL and Database Management Using Pop Culture
-
 # Database and SQL through Pop Culture
+### Brendan Shea, PhD (Brendan.Shea@rctc.edu)
 
 This project, "Database and SQL through Pop Culture," is designed to teach database concepts and SQL through engaging, pop culture-themed examples. The course content aligns with the learning outcomes of CompTIA Data+ certification.
 
@@ -53,23 +52,6 @@ This project, "Database and SQL through Pop Culture," is designed to teach datab
 12. [**Final Project**](Database_12_FinalProject.ipynb)
     
     Put all your newly acquired skills to the test in this comprehensive final project. Design, create, populate, query, and optimize your very own database from scratch. This hands-on experience consolidates your learning and prepares you for real-world database challenges.
-
-## Getting Started
-
-To get started with this course, clone the repository and open the Jupyter notebooks in order. Each notebook contains detailed instructions and examples.
-
-```bash
-git clone https://github.com/brendanpshea/database_sql.git
-cd database_sql
-jupyter notebook
-```
-
-## Prerequisites
-
-- Basic understanding of programming concepts
-- Jupyter Notebook environment
-- SQLite (comes pre-installed with most Python distributions)
-- PostgreSQL (for later chapters)
 
 ## Contributing
 
