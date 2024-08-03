@@ -61,6 +61,9 @@ Contributions to improve the course material are welcome. Please feel free to su
 
 This project is open source and available under the [MIT License](LICENSE).
 
+## Use of AI Tools
+I've had fun experiementing with the use of generative AI tools to help develop this project, starting with GPT 3.0, and moving on to successive versions of these tools (including Claude, Gemini, Mistral, LLama, and others).
+
 
 # About the Author
 Brendan Shea, PhD, is Professor of Philosophy and Computer Science at Rochester Community and Technical College and a Resident Fellow at the Minnesota Center for Philosophy of Science at the University of Minnesota-Twin Cities. He also serves as the Public Member of the Institutional Biosafety Committee at Mayo Clinic-Rochester. His main research and teaching interests lie in the philosophy of science, data modeling, applied ethics, and in the areas where these overlap (such as bioethics and the ethics of artificial intelligence). You can find out more about his research here: https://philpeople.org/profiles/brendan-shea
