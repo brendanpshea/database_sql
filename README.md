@@ -5,53 +5,56 @@ This project, "Database and SQL through Pop Culture," is designed to teach datab
 
 ## Chapter Overview
 
-1. [**Data Modeling and Database Types**](Database_01_StarShipSQL.ipynb)
-   
-   Embark on your database journey with a Star Trek-themed introduction to data modeling. This chapter provides a high-level overview of data modeling concepts, exploring the realms of conceptual, logical, and physical models. You'll discover the differences between SQL and NoSQL databases, setting the stage for your voyage through the data universe.
+## Chapters
 
-2. [**Introduction to SQL SELECT**](Database_02_IntroToSQL.ipynb)
-   
-   Dive into the world of SQL with an exploration of the fundamental SELECT statement. Using SQLite and real-world Goodreads data, you'll learn how to retrieve and manipulate data from databases. This chapter lays the foundation for your SQL skills, enabling you to extract valuable insights from vast data collections.
+### 1. Data Modeling and Database Types
+[Open In Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_01_StarShipSQL.ipynb)  
+Embark on your database journey with a Star Trek-themed introduction to data modeling. This chapter provides a high-level overview of data modeling concepts, exploring the realms of conceptual, logical, and physical models. You'll discover the differences between SQL and NoSQL databases, setting the stage for your voyage through the data universe.
 
-3. [**JOINs and Set Operations**](Database_03_Joins_Sets_SQL.ipynb)
-   
-   Expand your SQL toolkit by mastering JOINs and set operations. Working with IMDB data, you'll learn how to combine information from multiple tables and perform complex queries. These skills are essential for navigating the interconnected nature of relational databases and extracting meaningful information from diverse data sources.
+### 2. Introduction to SQL SELECT
+[Open In Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_02_IntroToSQL.ipynb)  
+Dive into the world of SQL with an exploration of the fundamental SELECT statement. Using SQLite and real-world Goodreads data, you'll learn how to retrieve and manipulate data from databases. This chapter lays the foundation for your SQL skills, enabling you to extract valuable insights from vast data collections.
 
-4. [**Advanced SELECT Operations**](Database_04_AdvancedSelect.ipynb)
-   
-   Level up your SQL skills with advanced SELECT operations. Dive into GROUP BY and HAVING clauses, subqueries, and JSON columns using a whimsical Mario Brothers plumbing database. This chapter also introduces crucial concepts of business continuity and disaster recovery, ensuring you're prepared for real-world database management challenges.
+### 3. JOINs and Set Operations
+[Open In Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_03_Joins_Sets_SQL.ipynb)  
+Expand your SQL toolkit by mastering JOINs and set operations. Working with IMDB data, you'll learn how to combine information from multiple tables and perform complex queries. These skills are essential for navigating the interconnected nature of relational databases and extracting meaningful information from diverse data sources.
 
-5. [**Database Design**](Database_05_Design.ipynb)
-   
-   Uncover the secrets of effective database design in this chapter centered around a "Covert Academy" spy school theme. Learn to create Entity-Relationship Diagrams (ERDs) and master the art of creating and modifying tables. These skills form the backbone of database architecture, enabling you to design efficient and scalable database solutions.
+### 4. Advanced SELECT Operations
+[Open In Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_04_AdvancedSelect.ipynb)  
+Level up your SQL skills with advanced SELECT operations. Dive into GROUP BY and HAVING clauses, subqueries, and JSON columns using a whimsical Mario Brothers plumbing database. This chapter also introduces crucial concepts of business continuity and disaster recovery, ensuring you're prepared for real-world database management challenges.
 
-6. [**Data Manipulation**](Database_06_WritingData.ipynb)
-   
-   Rock your database skills by learning to write, update, and delete data using a subset of Rolling Stone's 500 greatest albums. This chapter also introduces you to scripting languages and Object-Relational Mapping (ORM), bridging the gap between databases and application development.
+### 5. Database Design
+[Open In Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_05_Design.ipynb)  
+Uncover the secrets of effective database design in this chapter centered around a "Covert Academy" spy school theme. Learn to create Entity-Relationship Diagrams (ERDs) and master the art of creating and modifying tables. These skills form the backbone of database architecture, enabling you to design efficient and scalable database solutions.
 
-7. [**Views and Common Table Expressions**](Database_07_Views.ipynb)
-   
-   Enhance your data retrieval techniques with views and Common Table Expressions (CTEs). Using data from Spotify and Rolling Stone's 500 greatest albums, you'll learn to create reusable query structures and simplify complex queries. This chapter also touches on data governance, ensuring you understand the importance of data quality and management.
+### 6. Data Manipulation
+[Open In Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_06_WritingData.ipynb)  
+Rock your database skills by learning to write, update, and delete data using a subset of Rolling Stone's 500 greatest albums. This chapter also introduces you to scripting languages and Object-Relational Mapping (ORM), bridging the gap between databases and application development.
 
-8. [**Database Performance and Transactions**](Database_08_IndexesTransactions.ipynb)
-   
-   Optimize your database operations by exploring indexes, transactions, and query analysis. With a "Gotham National Bank" theme, you'll dive into the world of database performance tuning. Learn essential skills in database monitoring and reporting to keep your databases running smoothly and efficiently.
+### 7. Views and Common Table Expressions
+[Open In Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_07_Views.ipynb)  
+Enhance your data retrieval techniques with views and Common Table Expressions (CTEs). Using data from Spotify and Rolling Stone's 500 greatest albums, you'll learn to create reusable query structures and simplify complex queries. This chapter also touches on data governance, ensuring you understand the importance of data quality and management.
 
-9. [**Introduction to PostgreSQL**](Database_09_PokemonAndPostgres.ipynb)
-   
-   Evolve your database skills by transitioning from SQLite to PostgreSQL. Catch 'em all as you explore new data types, stored procedures, and window functions in this Pokemon-themed chapter. You'll gain hands-on experience with a professional-grade database system, preparing you for real-world database management scenarios.
+### 8. Database Performance and Transactions
+[Open In Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_08_IndexesTransactions.ipynb)  
+Optimize your database operations by exploring indexes, transactions, and query analysis. With a "Gotham National Bank" theme, you'll dive into the world of database performance tuning. Learn essential skills in database monitoring and reporting to keep your databases running smoothly and efficiently.
 
-10. [**Database Security**](Database_10_DatabaseSecurity.ipynb)
-    
-    Defend your data kingdom with crucial database security concepts and practices. Set in the Mushroom Kingdom's Toad City Hospital, this chapter equips you with the knowledge to protect sensitive information and maintain data integrity. Learn to implement security measures that safeguard your databases from various threats.
+### 9. Introduction to PostgreSQL
+[Open In Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_09_PokemonAndPostgres.ipynb)  
+Evolve your database skills by transitioning from SQLite to PostgreSQL. Catch 'em all as you explore new data types, stored procedures, and window functions in this Pokemon-themed chapter. You'll gain hands-on experience with a professional-grade database system, preparing you for real-world database management scenarios.
 
-11. [**Database Deployment**](Database_11_Deployment.ipynb)
-    
-    Master the art of database deployment with the help of the Teenage Mutant Ninja Turtles. This chapter covers the entire database lifecycle, from development to production. Learn different deployment strategies and best practices to ensure smooth transitions and minimal downtime in your database projects.
+### 10. Database Security
+[Open In Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_10_DatabaseSecurity.ipynb)  
+Defend your data kingdom with crucial database security concepts and practices. Set in the Mushroom Kingdom's Toad City Hospital, this chapter equips you with the knowledge to protect sensitive information and maintain data integrity. Learn to implement security measures that safeguard your databases from various threats.
 
-12. [**Final Project**](Database_12_FinalProject.ipynb)
-    
-    Put all your newly acquired skills to the test in this comprehensive final project. Design, create, populate, query, and optimize your very own database from scratch. This hands-on experience consolidates your learning and prepares you for real-world database challenges.
+### 11. Database Deployment
+[Open In Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_11_Deployment.ipynb)  
+Master the art of database deployment with the help of the Teenage Mutant Ninja Turtles. This chapter covers the entire database lifecycle, from development to production. Learn different deployment strategies and best practices to ensure smooth transitions and minimal downtime in your database projects.
+
+### 12. Final Project
+[Open In Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_12_FinalProject.ipynb)  
+Put all your newly acquired skills to the test in this comprehensive final project. Design, create, populate, query, and optimize your very own database from scratch. This hands-on experience consolidates your learning and prepares you for real-world database challenges.
+
 
 ## Contributing
 
