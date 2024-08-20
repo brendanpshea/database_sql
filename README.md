@@ -3,8 +3,6 @@
 
 This project, "Database and SQL through Pop Culture," is designed to teach database concepts and SQL through engaging, pop culture-themed examples. The course content aligns with the learning outcomes of CompTIA Data+ certification.
 
-## Chapter Overview
-
 ## Chapters
 
 ### 1. Data Modeling and Database Types
