@@ -79,7 +79,6 @@
     "question": "Show the total number of books in the table.",
     "answer": "SELECT COUNT(*) AS total_books FROM books;"
   },
-  [
   {
     "question": "List the titles, authors, and ratings of all books published after 2000, with a rating higher than 4.0.",
     "answer": "SELECT title, author, rating FROM books WHERE publishDate > '2000-01-01' AND rating > 4.0;"
