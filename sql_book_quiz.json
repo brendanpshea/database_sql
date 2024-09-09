@@ -1,0 +1,82 @@
+[
+  {
+    "question": "Show all books in the table.",
+    "answer": "SELECT * FROM books;"
+  },
+  {
+    "question": "List the titles and authors of all books.",
+    "answer": "SELECT title, author FROM books;"
+  },
+  {
+    "question": "Find all books published in 2008.",
+    "answer": "SELECT title, publishDate FROM books WHERE publishDate BETWEEN '2008-01-01' AND '2008-12-31';"
+  },
+  {
+    "question": "List all books with a rating higher than 4.5.",
+    "answer": "SELECT title, rating FROM books WHERE rating > 4.5;"
+  },
+  {
+    "question": "Show the titles of all books in English.",
+    "answer": "SELECT title FROM books WHERE language = 'English';"
+  },
+  {
+    "question": "Find the book with the highest rating.",
+    "answer": "SELECT title, rating FROM books ORDER BY rating DESC LIMIT 1;"
+  },
+  {
+    "question": "Show the top 5 longest books (by pages).",
+    "answer": "SELECT title, pages FROM books ORDER BY pages DESC LIMIT 5;"
+  },
+  {
+    "question": "List all books by 'J.K. Rowling'.",
+    "answer": "SELECT title FROM books WHERE author = 'J.K. Rowling';"
+  },
+  {
+    "question": "Find all books that have 'Harry' in their title.",
+    "answer": "SELECT title FROM books WHERE title LIKE '%Harry%';"
+  },
+  {
+    "question": "Show the total number of ratings for the book 'The Hunger Games'.",
+    "answer": "SELECT numRatings FROM books WHERE title = 'The Hunger Games';"
+  },
+  {
+    "question": "List all books published after 2000.",
+    "answer": "SELECT title, publishDate FROM books WHERE publishDate > '2000-01-01';"
+  },
+  {
+    "question": "Find the average rating of all books.",
+    "answer": "SELECT AVG(rating) AS avg_rating FROM books;"
+  },
+  {
+    "question": "Show all books in the 'The Lord of the Rings' series.",
+    "answer": "SELECT title FROM books WHERE series LIKE '%The Lord of the Rings%';"
+  },
+  {
+    "question": "List the first 10 books by rating, from highest to lowest.",
+    "answer": "SELECT title, rating FROM books ORDER BY rating DESC LIMIT 10;"
+  },
+  {
+    "question": "Show all books published by 'Scholastic Press'.",
+    "answer": "SELECT title FROM books WHERE publisher = 'Scholastic Press';"
+  },
+  {
+    "question": "Find all books with more than 1000 ratings.",
+    "answer": "SELECT title, numRatings FROM books WHERE numRatings > 1000;"
+  },
+  {
+    "question": "List all books with no series (i.e., series column is NULL).",
+    "answer": "SELECT title FROM books WHERE series IS NULL;"
+  },
+  {
+    "question": "Show all books published on '1996-04-28'.",
+    "answer": "SELECT title, publishDate FROM books WHERE publishDate = '1996-04-28';"
+  },
+  {
+    "question": "Find the earliest publish date in the table.",
+    "answer": "SELECT MIN(publishDate) AS earliest_date FROM books;"
+  },
+  {
+    "question": "Show the total number of books in the table.",
+    "answer": "SELECT COUNT(*) AS total_books FROM books;"
+  }
+]
