@@ -78,5 +78,80 @@
   {
     "question": "Show the total number of books in the table.",
     "answer": "SELECT COUNT(*) AS total_books FROM books;"
+  },
+  [
+  {
+    "question": "List the titles, authors, and ratings of all books published after 2000, with a rating higher than 4.0.",
+    "answer": "SELECT title, author, rating FROM books WHERE publishDate > '2000-01-01' AND rating > 4.0;"
+  },
+  {
+    "question": "Show the top 5 books in English with the highest rating that were published before 2010.",
+    "answer": "SELECT title, rating FROM books WHERE language = 'English' AND publishDate < '2010-01-01' ORDER BY rating DESC LIMIT 5;"
+  },
+  {
+    "question": "Find the total number of books by 'J.K. Rowling' and 'Suzanne Collins'.",
+    "answer": "SELECT COUNT(*) AS total_books FROM books WHERE author IN ('J.K. Rowling', 'Suzanne Collins');"
+  },
+  {
+    "question": "Show all books with more than 1,000 pages and a rating higher than 4.5.",
+    "answer": "SELECT title, pages, rating FROM books WHERE pages > 1000 AND rating > 4.5;"
+  },
+  {
+    "question": "Find the titles of books that were either published before 1980 or have fewer than 200 pages.",
+    "answer": "SELECT title FROM books WHERE publishDate < '1980-01-01' OR pages < 200;"
+  },
+  {
+    "question": "List the books that have 'The' in their title, were published after 1990, and have a rating higher than 4.2.",
+    "answer": "SELECT title, rating FROM books WHERE title LIKE '%The%' AND publishDate > '1990-01-01' AND rating > 4.2;"
+  },
+  {
+    "question": "Find the total number of books published by 'HarperCollins' with a rating lower than 3.5.",
+    "answer": "SELECT COUNT(*) AS total_books FROM books WHERE publisher = 'HarperCollins' AND rating < 3.5;"
+  },
+  {
+    "question": "Show the first 10 books sorted by the number of pages in descending order, where the book has a rating higher than 4.0.",
+    "answer": "SELECT title, pages FROM books WHERE rating > 4.0 ORDER BY pages DESC LIMIT 10;"
+  },
+  {
+    "question": "Find the average rating of all books published by 'Scholastic Press' after 2005.",
+    "answer": "SELECT AVG(rating) AS avg_rating FROM books WHERE publisher = 'Scholastic Press' AND publishDate > '2005-01-01';"
+  },
+  {
+    "question": "List all books with a title containing 'Game' or 'War' that have more than 200,000 ratings.",
+    "answer": "SELECT title, numRatings FROM books WHERE (title LIKE '%Game%' OR title LIKE '%War%') AND numRatings > 200000;"
+  },
+  {
+    "question": "Find the longest book (by pages) written by 'J.R.R. Tolkien' or 'C.S. Lewis'.",
+    "answer": "SELECT title, pages FROM books WHERE author IN ('J.R.R. Tolkien', 'C.S. Lewis') ORDER BY pages DESC LIMIT 1;"
+  },
+  {
+    "question": "Show all books published between 1990 and 2010 with a rating between 3.5 and 4.5.",
+    "answer": "SELECT title, rating, publishDate FROM books WHERE publishDate BETWEEN '1990-01-01' AND '2010-12-31' AND rating BETWEEN 3.5 AND 4.5;"
+  },
+  {
+    "question": "List the first 5 books by 'Margaret Atwood' or 'George Orwell' with the most ratings, sorted by number of ratings in descending order.",
+    "answer": "SELECT title, numRatings FROM books WHERE author IN ('Margaret Atwood', 'George Orwell') ORDER BY numRatings DESC LIMIT 5;"
+  },
+  {
+    "question": "Find all books published in 2005 or later, with more than 500 pages and a rating of at least 4.0.",
+    "answer": "SELECT title, pages, rating FROM books WHERE publishDate >= '2005-01-01' AND pages > 500 AND rating >= 4.0;"
+  },
+  {
+    "question": "Show the total number of books published by 'Ballantine Books' with at least 4.0 rating and more than 1000 pages.",
+    "answer": "SELECT COUNT(*) AS total_books FROM books WHERE publisher = 'Ballantine Books' AND rating >= 4.0 AND pages > 1000;"
+  },
+  {
+    "question": "List the top 3 shortest books (by pages) that have at least 4.2 rating and were published in the 'The Hunger Games' series.",
+    "answer": "SELECT title, pages, rating FROM books WHERE series LIKE '%The Hunger Games%' AND rating >= 4.2 ORDER BY pages ASC LIMIT 3;"
+  },
+  {
+    "question": "Show the average number of pages for books with a rating higher than 4.0 published by 'HarperCollins'.",
+    "answer": "SELECT AVG(pages) AS avg_pages FROM books WHERE publisher = 'HarperCollins' AND rating > 4.0;"
+  },
+  {
+    "question": "Find all books that have a title starting with 'A' or 'The', with fewer than 300 pages and a rating higher than 4.3.",
+    "answer": "SELECT title, pages, rating FROM books WHERE (title LIKE 'A%' OR title LIKE 'The%') AND pages < 300 AND rating > 4.3;"
   }
+]
+
 ]
