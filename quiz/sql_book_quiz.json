@@ -153,5 +153,3 @@
     "answer": "SELECT title, pages, rating FROM books WHERE (title LIKE 'A%' OR title LIKE 'The%') AND pages < 300 AND rating > 4.3;"
   }
 ]
-
-]
