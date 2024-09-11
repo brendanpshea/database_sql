@@ -16,10 +16,6 @@
     "answer": "SELECT title FROM books WHERE language = 'English';"
   },
   {
-    "question": "Find the title and rating of the book with the highest rating.",
-    "answer": "SELECT title, rating FROM books ORDER BY rating DESC LIMIT 1;"
-  },
-  {
     "question": "Show the title and pages of the top 5 longest books (by pages).",
     "answer": "SELECT title, pages FROM books ORDER BY pages DESC LIMIT 5;"
   },
@@ -66,6 +62,10 @@
   {
     "question": "List the titles of books with no series (i.e., series column is NULL).",
     "answer": "SELECT title FROM books WHERE series IS NULL;"
+  },
+  {
+    "question": "Find the title and rating of the book with the highest rating.",
+    "answer": "SELECT title, rating FROM books ORDER BY rating DESC LIMIT 1;"
   },
   {
     "question": "Show the titles and publish date of books published on '1996-04-28'.",
