@@ -32,7 +32,7 @@
     "answer": "SELECT numRatings FROM books WHERE title = 'The Hunger Games';"
   },
   {
-    "question": "List all information on books published after 2000.",
+    "question": "List all information on books published after Jan 1, 2000.",
     "answer": "SELECT * FROM books WHERE publishDate > '2000-01-01';"
   },
   {
@@ -64,10 +64,6 @@
     "answer": "SELECT title FROM books WHERE series IS NULL;"
   },
   {
-    "question": "Find the title and rating of the book with the highest rating.",
-    "answer": "SELECT title, rating FROM books ORDER BY rating DESC LIMIT 1;"
-  },
-  {
     "question": "Show the titles and publish date of books published on '1996-04-28'.",
     "answer": "SELECT title, publishDate FROM books WHERE publishDate = '1996-04-28';"
   },
@@ -94,6 +90,10 @@
   {
     "question": "Show tht title, page count, and rating of books with more than 1,000 pages and a rating higher than 4.5.",
     "answer": "SELECT title, pages, rating FROM books WHERE pages > 1000 AND rating > 4.5;"
+  },
+    {
+    "question": "Find the title and rating of the book with the highest rating.",
+    "answer": "SELECT title, rating FROM books ORDER BY rating DESC LIMIT 1;"
   },
   {
     "question": "Find the titles of books that were either published before 1980 or have fewer than 200 pages.",
