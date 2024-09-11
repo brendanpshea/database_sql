@@ -8,10 +8,6 @@
     "answer": "SELECT title, author FROM books;"
   },
   {
-    "question": "Find the title and publish date of books published in 2008.",
-    "answer": "SELECT title, publishDate FROM books WHERE publishDate BETWEEN '2008-01-01' AND '2008-12-31';"
-  },
-  {
     "question": "List the title and rating books with a rating higher than 4.5.",
     "answer": "SELECT title, rating FROM books WHERE rating > 4.5;"
   },
@@ -46,6 +42,10 @@
   {
     "question": "Find the average rating of all books.",
     "answer": "SELECT AVG(rating) AS avg_rating FROM books;"
+  },
+  {
+    "question": "Find the title and publish date of books published in 2008.",
+    "answer": "SELECT title, publishDate FROM books WHERE publishDate BETWEEN '2008-01-01' AND '2008-12-31';"
   },
   {
     "question": "Show the titles of all books in the 'The Lord of the Rings' series.",
