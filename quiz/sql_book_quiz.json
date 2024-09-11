@@ -150,5 +150,33 @@
   {
     "question": "Find all books that have a title starting with 'A' or 'The', with fewer than 300 pages and a rating higher than 4.3.",
     "answer": "SELECT title, pages, rating FROM books WHERE (title LIKE 'A%' OR title LIKE 'The%') AND pages < 300 AND rating > 4.3;"
+  },
+  {
+    "question": "Select the title, rating, and the square root of the number of ratings (numRatings). Use 'sqrt_numRatings' as the alias for the square root column.",
+    "answer": "SELECT title, rating, SQRT(numRatings) AS sqrt_numRatings FROM books;"
+  },
+  {
+    "question": "Select the title and rating, and round the rating to 1 decimal place. Use 'rounded_rating' as the alias for the rounded column.",
+    "answer": "SELECT title, ROUND(rating, 1) AS rounded_rating FROM books;"
+  },
+  {
+    "question": "Select the title, the number of pages, and the ceiling value of the number of pages. Use 'ceil_pages' as the alias for the ceiling column.",
+    "answer": "SELECT title, pages, CEIL(pages) AS ceil_pages FROM books;"
+  },
+  {
+    "question": "Select the title, rating, and the rating squared. Use 'rating_squared' as the alias for the squared rating column.",
+    "answer": "SELECT title, rating, POWER(rating, 2) AS rating_squared FROM books;"
+  },
+  {
+    "question": "Select the title and the number of pages, and divide the number of pages by 100. Use 'pages_divided' as the alias for the result.",
+    "answer": "SELECT title, (pages / 100) AS pages_divided FROM books;"
+  },
+  {
+    "question": "Select the title, the rating, and the rounded number of pages divided by 50, rounded to 2 decimal places. Use 'pages_per_50' as the alias for the result.",
+    "answer": "SELECT title, rating, ROUND(pages / 50, 2) AS pages_per_50 FROM books;"
+  },
+  {
+    "question": "Select the title, the rating, and the rating raised to the power of 3. Use 'rating_cubed' as the alias for the result.",
+    "answer": "SELECT title, rating, POWER(rating, 3) AS rating_cubed FROM books;"
   }
 ]
