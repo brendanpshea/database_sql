@@ -8,11 +8,11 @@
     "answer": "SELECT title, author FROM books;"
   },
   {
-    "question": "Find all books published in 2008.",
+    "question": "Find the title and publish date of books published in 2008.",
     "answer": "SELECT title, publishDate FROM books WHERE publishDate BETWEEN '2008-01-01' AND '2008-12-31';"
   },
   {
-    "question": "List all books with a rating higher than 4.5.",
+    "question": "List the title and rating books with a rating higher than 4.5.",
     "answer": "SELECT title, rating FROM books WHERE rating > 4.5;"
   },
   {
@@ -20,19 +20,19 @@
     "answer": "SELECT title FROM books WHERE language = 'English';"
   },
   {
-    "question": "Find the book with the highest rating.",
+    "question": "Find the title and rating of the book with the highest rating.",
     "answer": "SELECT title, rating FROM books ORDER BY rating DESC LIMIT 1;"
   },
   {
-    "question": "Show the top 5 longest books (by pages).",
+    "question": "Show the title and pages of the top 5 longest books (by pages).",
     "answer": "SELECT title, pages FROM books ORDER BY pages DESC LIMIT 5;"
   },
   {
-    "question": "List all books by 'J.K. Rowling'.",
+    "question": "List the titles of all books by 'J.K. Rowling'.",
     "answer": "SELECT title FROM books WHERE author = 'J.K. Rowling';"
   },
   {
-    "question": "Find all books that have 'Harry' in their title.",
+    "question": "Find the titles of all books that have 'Harry' in their title.",
     "answer": "SELECT title FROM books WHERE title LIKE '%Harry%';"
   },
   {
@@ -40,35 +40,35 @@
     "answer": "SELECT numRatings FROM books WHERE title = 'The Hunger Games';"
   },
   {
-    "question": "List all books published after 2000.",
-    "answer": "SELECT title, publishDate FROM books WHERE publishDate > '2000-01-01';"
+    "question": "List all information on books published after 2000.",
+    "answer": "SELECT * FROM books WHERE publishDate > '2000-01-01';"
   },
   {
     "question": "Find the average rating of all books.",
     "answer": "SELECT AVG(rating) AS avg_rating FROM books;"
   },
   {
-    "question": "Show all books in the 'The Lord of the Rings' series.",
+    "question": "Show the titles of all books in the 'The Lord of the Rings' series.",
     "answer": "SELECT title FROM books WHERE series LIKE '%The Lord of the Rings%';"
   },
   {
-    "question": "List the first 10 books by rating, from highest to lowest.",
+    "question": "List the titles and rating of the first 10 books by rating, from highest to lowest.",
     "answer": "SELECT title, rating FROM books ORDER BY rating DESC LIMIT 10;"
   },
   {
-    "question": "Show all books published by 'Scholastic Press'.",
+    "question": "Show the titles of books published by 'Scholastic Press'.",
     "answer": "SELECT title FROM books WHERE publisher = 'Scholastic Press';"
   },
   {
-    "question": "Find all books with more than 1000 ratings.",
+    "question": "Find the titles and numbers of ratings for books with more than 1000 ratings.",
     "answer": "SELECT title, numRatings FROM books WHERE numRatings > 1000;"
   },
   {
-    "question": "List all books with no series (i.e., series column is NULL).",
+    "question": "List the titles of books with no series (i.e., series column is NULL).",
     "answer": "SELECT title FROM books WHERE series IS NULL;"
   },
   {
-    "question": "Show all books published on '1996-04-28'.",
+    "question": "Show the titles and publish date of books published on '1996-04-28'.",
     "answer": "SELECT title, publishDate FROM books WHERE publishDate = '1996-04-28';"
   },
   {
@@ -84,15 +84,15 @@
     "answer": "SELECT title, author, rating FROM books WHERE publishDate > '2000-01-01' AND rating > 4.0;"
   },
   {
-    "question": "Show the top 5 books in English with the highest rating that were published before 2010.",
+    "question": "Show the title and rating of the top 5 books in English with the highest rating that were published before 2010.",
     "answer": "SELECT title, rating FROM books WHERE language = 'English' AND publishDate < '2010-01-01' ORDER BY rating DESC LIMIT 5;"
   },
   {
-    "question": "Find the total number of books by 'J.K. Rowling' and 'Suzanne Collins'.",
+    "question": "Find the total number of books by 'J.K. Rowling' or 'Suzanne Collins'.",
     "answer": "SELECT COUNT(*) AS total_books FROM books WHERE author IN ('J.K. Rowling', 'Suzanne Collins');"
   },
   {
-    "question": "Show all books with more than 1,000 pages and a rating higher than 4.5.",
+    "question": "Show tht title, page count, and rating of books with more than 1,000 pages and a rating higher than 4.5.",
     "answer": "SELECT title, pages, rating FROM books WHERE pages > 1000 AND rating > 4.5;"
   },
   {
@@ -100,7 +100,7 @@
     "answer": "SELECT title FROM books WHERE publishDate < '1980-01-01' OR pages < 200;"
   },
   {
-    "question": "List the books that have 'The' in their title, were published after 1990, and have a rating higher than 4.2.",
+    "question": "List the title and rating of books that have 'The' in their title, were published after 1990, and have a rating higher than 4.2.",
     "answer": "SELECT title, rating FROM books WHERE title LIKE '%The%' AND publishDate > '1990-01-01' AND rating > 4.2;"
   },
   {
@@ -108,7 +108,7 @@
     "answer": "SELECT COUNT(*) AS total_books FROM books WHERE publisher = 'HarperCollins' AND rating < 3.5;"
   },
   {
-    "question": "Show the first 10 books sorted by the number of pages in descending order, where the book has a rating higher than 4.0.",
+    "question": "Show the title and pagecount of the 10 books sorted by the number of pages in descending order, where the book has a rating higher than 4.0.",
     "answer": "SELECT title, pages FROM books WHERE rating > 4.0 ORDER BY pages DESC LIMIT 10;"
   },
   {
@@ -116,23 +116,23 @@
     "answer": "SELECT AVG(rating) AS avg_rating FROM books WHERE publisher = 'Scholastic Press' AND publishDate > '2005-01-01';"
   },
   {
-    "question": "List all books with a title containing 'Game' or 'War' that have more than 200,000 ratings.",
+    "question": "List titles and rating of books with a title containing 'Game' or 'War' that have more than 200,000 ratings.",
     "answer": "SELECT title, numRatings FROM books WHERE (title LIKE '%Game%' OR title LIKE '%War%') AND numRatings > 200000;"
   },
   {
-    "question": "Find the longest book (by pages) written by 'J.R.R. Tolkien' or 'C.S. Lewis'.",
+    "question": "Find the title and page count of the longest book (by pages) written by 'J.R.R. Tolkien' or 'C.S. Lewis'.",
     "answer": "SELECT title, pages FROM books WHERE author IN ('J.R.R. Tolkien', 'C.S. Lewis') ORDER BY pages DESC LIMIT 1;"
   },
   {
-    "question": "Show all books published between 1990 and 2010 with a rating between 3.5 and 4.5.",
+    "question": "Show the title, rating, and publish date of books published between 1990 and 2010 with a rating between 3.5 and 4.5.",
     "answer": "SELECT title, rating, publishDate FROM books WHERE publishDate BETWEEN '1990-01-01' AND '2010-12-31' AND rating BETWEEN 3.5 AND 4.5;"
   },
   {
-    "question": "List the first 5 books by 'Margaret Atwood' or 'George Orwell' with the most ratings, sorted by number of ratings in descending order.",
+    "question": "List the title and number of rating of the first 5 books by 'Margaret Atwood' or 'George Orwell' with the most ratings, sorted by number of ratings in descending order.",
     "answer": "SELECT title, numRatings FROM books WHERE author IN ('Margaret Atwood', 'George Orwell') ORDER BY numRatings DESC LIMIT 5;"
   },
   {
-    "question": "Find all books published in 2005 or later, with more than 500 pages and a rating of at least 4.0.",
+    "question": "Find the title and page count of all books published in 2005 or later, with more than 500 pages and a rating of at least 4.0.",
     "answer": "SELECT title, pages, rating FROM books WHERE publishDate >= '2005-01-01' AND pages > 500 AND rating >= 4.0;"
   },
   {
@@ -140,8 +140,8 @@
     "answer": "SELECT COUNT(*) AS total_books FROM books WHERE publisher = 'Ballantine Books' AND rating >= 4.0 AND pages > 1000;"
   },
   {
-    "question": "List the top 3 shortest books (by pages) that have at least 4.2 rating and were published in the 'The Hunger Games' series.",
-    "answer": "SELECT title, pages, rating FROM books WHERE series LIKE '%The Hunger Games%' AND rating >= 4.2 ORDER BY pages ASC LIMIT 3;"
+    "question": "List all information on the top 3 shortest books (by pages) that have at least 4.2 rating and were published in the 'The Hunger Games' series.",
+    "answer": "SELECT * FROM books WHERE series LIKE '%The Hunger Games%' AND rating >= 4.2 ORDER BY pages ASC LIMIT 3;"
   },
   {
     "question": "Show the average number of pages for books with a rating higher than 4.0 published by 'HarperCollins'.",
