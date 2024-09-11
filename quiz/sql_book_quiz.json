@@ -16,10 +16,6 @@
     "answer": "SELECT title FROM books WHERE language = 'English';"
   },
   {
-    "question": "Show the title and pages of the top 5 longest books (by pages).",
-    "answer": "SELECT title, pages FROM books ORDER BY pages DESC LIMIT 5;"
-  },
-  {
     "question": "List the titles of all books by 'J.K. Rowling'.",
     "answer": "SELECT title FROM books WHERE author = 'J.K. Rowling';"
   },
@@ -50,6 +46,10 @@
   {
     "question": "List the titles and rating of the first 10 books by rating, from highest to lowest.",
     "answer": "SELECT title, rating FROM books ORDER BY rating DESC LIMIT 10;"
+  },
+  {
+    "question": "Show the title and pages of the top 5 longest books (by pages).",
+    "answer": "SELECT title, pages FROM books ORDER BY pages DESC LIMIT 5;"
   },
   {
     "question": "Show the titles of books published by 'Scholastic Press'.",
