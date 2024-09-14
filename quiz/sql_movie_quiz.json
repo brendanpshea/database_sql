@@ -66,5 +66,81 @@
   {
     "question": "Show the movie IDs, person IDs, and types of all Oscar winners from the year 2000.",
     "answer": "SELECT movie_id, person_id, type FROM Oscar WHERE year = 2000;"
+  },
+    {
+    "question": "List the names of all actors who starred in the movie 'Inception'.",
+    "answer": "SELECT DISTINCT Person.name FROM Person INNER JOIN Actor ON Person.id = Actor.actor_id INNER JOIN Movie ON Actor.movie_id = Movie.id WHERE Movie.name = 'Inception';"
+  },
+  {
+    "question": "Show the names of all movies directed by Christopher Nolan, along with their release years.",
+    "answer": "SELECT Movie.name, Movie.year FROM Movie INNER JOIN Director ON Movie.id = Director.movie_id INNER JOIN Person ON Director.director_id = Person.id WHERE Person.name = 'Christopher Nolan';"
+  },
+  {
+    "question": "Find the names and birth dates of all actors who won an Oscar for 'Best Actor'.",
+    "answer": "SELECT DISTINCT Person.name, Person.dob FROM Person INNER JOIN Oscar ON Person.id = Oscar.person_id WHERE Oscar.type = '3BEST-ACTOR';"
+  },
+  {
+    "question": "List the names of all movies that won an Oscar for 'Best Picture', along with their release years.",
+    "answer": "SELECT Movie.name, Movie.year FROM Movie INNER JOIN Oscar ON Movie.id = Oscar.movie_id WHERE Oscar.type = '0BEST-PICTURE';"
+  },
+  {
+    "question": "Show the names of all actors who have starred in movies directed by Steven Spielberg.",
+    "answer": "SELECT DISTINCT Person.name FROM Person INNER JOIN Actor ON Person.id = Actor.actor_id INNER JOIN Movie ON Actor.movie_id = Movie.id INNER JOIN Director ON Movie.id = Director.movie_id INNER JOIN Person AS Director ON Director.director_id = Director.id WHERE Director.name = 'Steven Spielberg';"
+  },
+  {
+    "question": "Find the names and release years of all movies where Meryl Streep acted.",
+    "answer": "SELECT Movie.name, Movie.year FROM Movie INNER JOIN Actor ON Movie.id = Actor.movie_id INNER JOIN Person ON Actor.actor_id = Person.id WHERE Person.name = 'Meryl Streep';"
+  },
+  {
+    "question": "List the names of all directors who have won an Oscar for 'Best Director', along with the movie they won for and the year. Display results as 'director_name', 'movie_name', and 'award_year'.",
+    "answer": "SELECT Person.name AS director_name, Movie.name AS movie_name, Oscar.year AS award_year FROM Person INNER JOIN Oscar ON Person.id = Oscar.person_id INNER JOIN Movie ON Oscar.movie_id = Movie.id WHERE Oscar.type = '5BEST-DIRECTOR';"
+  },
+  {
+    "question": "Show the names and runtimes of all movies that Tom Hanks has acted in, ordered by runtime descending.",
+    "answer": "SELECT Movie.name, Movie.runtime FROM Movie INNER JOIN Actor ON Movie.id = Actor.movie_id INNER JOIN Person ON Actor.actor_id = Person.id WHERE Person.name = 'Tom Hanks' ORDER BY Movie.runtime DESC;"
+  },
+  {
+    "question": "Find the names of all actors who have starred in movies with a runtime longer than 3 hours (180 minutes).",
+    "answer": "SELECT DISTINCT Person.name FROM Person INNER JOIN Actor ON Person.id = Actor.actor_id INNER JOIN Movie ON Actor.movie_id = Movie.id WHERE Movie.runtime > 180;"
+  },
+  {
+    "question": "Calculate the average runtime of movies directed by Quentin Tarantino. Display the result as 'avg_runtime'.",
+    "answer": "SELECT AVG(Movie.runtime) AS avg_runtime FROM Movie INNER JOIN Director ON Movie.id = Director.movie_id INNER JOIN Person ON Director.director_id = Person.id WHERE Person.name = 'Quentin Tarantino';"
+  },
+  {
+    "question": "Count the total number of actors who have starred in movies released in 2020. Display the result as 'actor_count'.",
+    "answer": "SELECT COUNT(DISTINCT Person.id) AS actor_count FROM Person INNER JOIN Actor ON Person.id = Actor.actor_id INNER JOIN Movie ON Actor.movie_id = Movie.id WHERE Movie.year = 2020;"
+  },
+  {
+    "question": "Find the total runtime of all movies directed by Christopher Nolan. Display the result as 'total_runtime'.",
+    "answer": "SELECT SUM(Movie.runtime) AS total_runtime FROM Movie INNER JOIN Director ON Movie.id = Director.movie_id INNER JOIN Person ON Director.director_id = Person.id WHERE Person.name = 'Christopher Nolan';"
+  },
+  {
+    "question": "List the names of all movies that have won an Oscar, along with the type of Oscar and the name of the person who won it. Display results as 'movie_name', 'oscar_type', and 'winner_name'.",
+    "answer": "SELECT Movie.name AS movie_name, Oscar.type AS oscar_type, Person.name AS winner_name FROM Movie INNER JOIN Oscar ON Movie.id = Oscar.movie_id INNER JOIN Person ON Oscar.person_id = Person.id;"
+  },
+   {
+    "question": "Find the highest earnings rank among movies directed by James Cameron. Display the result as 'highest_rank'.",
+    "answer": "SELECT MIN(Movie.earnings_rank) AS highest_rank FROM Movie INNER JOIN Director ON Movie.id = Director.movie_id INNER JOIN Person ON Director.director_id = Person.id WHERE Person.name = 'James Cameron';"
+  },
+  {
+    "question": "Count the number of Oscar wins for 'Best Supporting Actor'. Display the result as 'oscar_count'.",
+    "answer": "SELECT COUNT(*) AS oscar_count FROM Oscar WHERE Oscar.type = '4BEST-SUPPORTING-ACTOR';"
+  },
+  {
+    "question": "Show the names of all movies that have been directed by a person who has also acted in movies.",
+    "answer": "SELECT DISTINCT Movie.name FROM Movie INNER JOIN Director ON Movie.id = Director.movie_id INNER JOIN Actor ON Director.director_id = Actor.actor_id;"
+  },
+  {
+    "question": "Find the names of all persons who have both directed and acted in the same movie.",
+    "answer": "SELECT DISTINCT Person.name FROM Person INNER JOIN Director ON Person.id = Director.director_id INNER JOIN Actor ON Person.id = Actor.actor_id WHERE Director.movie_id = Actor.movie_id;"
+  },
+  {
+    "question": "Calculate the average year of movies that won an Oscar for 'Best Picture' in the 2000s. Display the result as 'avg_year'.",
+    "answer": "SELECT AVG(Movie.year) AS avg_year FROM Movie INNER JOIN Oscar ON Movie.id = Oscar.movie_id WHERE Oscar.type = '0BEST-PICTURE' AND Oscar.year BETWEEN 2000 AND 2009;"
+  },
+  {
+    "question": "Count the number of actors who have starred in movies directed by Martin Scorsese. Display the result as 'actor_count'.",
+    "answer": "SELECT COUNT(DISTINCT Person.id) AS actor_count FROM Person INNER JOIN Actor ON Person.id = Actor.actor_id INNER JOIN Movie ON Actor.movie_id = Movie.id INNER JOIN Director ON Movie.id = Director.movie_id INNER JOIN Person AS Director ON Director.director_id = Director.id WHERE Director.name = 'Martin Scorsese';"
   }
 ]
