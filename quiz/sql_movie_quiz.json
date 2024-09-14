@@ -1,0 +1,70 @@
+[
+  {
+    "question": "List all movies in the database.",
+    "answer": "SELECT * FROM Movie;"
+  },
+  {
+    "question": "Show the names and ratings of all movies released in 2000.",
+    "answer": "SELECT name, rating FROM Movie WHERE year = 2000;"
+  },
+  {
+    "question": "Find the names and earnings ranks of the top 10 highest-earning movies.",
+    "answer": "SELECT name, earnings_rank FROM Movie ORDER BY earnings_rank ASC LIMIT 10;"
+  },
+  {
+    "question": "Calculate the average runtime of all movies in the database. Display the result as 'avg_runtime'.",
+    "answer": "SELECT AVG(runtime) AS avg_runtime FROM Movie;"
+  },
+  {
+    "question": "List the names and genres of all movies with 'Action' in their genre.",
+    "answer": "SELECT name, genre FROM Movie WHERE genre LIKE '%A%';"
+  },
+  {
+    "question": "Find the names and release years of all PG-13 rated movies released after 2010.",
+    "answer": "SELECT name, year FROM Movie WHERE rating = 'PG-13' AND year > 2010;"
+  },
+  {
+    "question": "List the names and places of birth of all persons born in 'New York City'.",
+    "answer": "SELECT name, pob FROM Person WHERE pob LIKE '%New York City%';"
+  },
+  {
+    "question": "Calculate the total number of movies in the database. Display the result as 'total_movies'.",
+    "answer": "SELECT COUNT(*) AS total_movies FROM Movie;"
+  },
+  {
+    "question": "Find the names of all persons whose names start with 'J' and were born after 1970.",
+    "answer": "SELECT name FROM Person WHERE name LIKE 'J%' AND dob > '1971-01-01';"
+  },
+  {
+    "question": "Show the movie IDs and actor IDs for all actors in the movie with id '0000001'.",
+    "answer": "SELECT movie_id, actor_id FROM Actor WHERE movie_id = '0000001';"
+  },
+  {
+    "question": "Count the number of 'Best Actor' Oscar awards given out. Display the result as 'best_actor_awards'.",
+    "answer": "SELECT COUNT(*) AS best_actor_awards FROM Oscar WHERE type = '3BEST-ACTOR';"
+  },
+  {
+    "question": "Show all unique Oscar categories (types) awarded in 2020.",
+    "answer": "SELECT DISTINCT type FROM Oscar WHERE year = 2020;"
+  },
+  {
+    "question": "Find the name and runtime of the longest movie in the database. Display the runtime as 'max_runtime'.",
+    "answer": "SELECT name, MAX(runtime) AS max_runtime FROM Movie;"
+  },
+  {
+    "question": "List the names and release years of all movies released in the 1930s, ordered by year.",
+    "answer": "SELECT name, year FROM Movie WHERE year BETWEEN 1930 AND 1939 ORDER BY year;"
+  },
+    {
+    "question": "Find the names of all movies with a one-word name that are longer than 2 hours. Hint: Use NOT LIKE, and look for a space",
+    "answer": "SELECT name FROM Movie WHERE name NOT LIKE '% %' AND runtime > 120;"
+  },
+  {
+    "question": "Calculate the total runtime of all movies in the database in hours. Display the result as 'total_hours'.",
+    "answer": "SELECT SUM(runtime) / 60.0 AS total_hours FROM Movie;"
+  },
+  {
+    "question": "Show the movie IDs, person IDs, and types of all Oscar winners from the year 2000.",
+    "answer": "SELECT movie_id, person_id, type FROM Oscar WHERE year = 2000;"
+  }
+]
