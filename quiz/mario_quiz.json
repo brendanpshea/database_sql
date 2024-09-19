@@ -1,0 +1,102 @@
+[
+  {
+    "question": "List the first_name and last_name of all customers.",
+    "answer": "SELECT first_name, last_name FROM Customers;"
+  },
+  {
+    "question": "Show the service_name and price of all services.",
+    "answer": "SELECT service_name, price FROM Services;"
+  },
+  {
+    "question": "Display the employee_id and job_title of all employees.",
+    "answer": "SELECT employee_id, job_title FROM Employees;"
+  },
+  {
+    "question": "List the order_id and order_date of all orders.",
+    "answer": "SELECT order_id, order_date FROM Orders;"
+  },
+  {
+    "question": "Show the first_name and last_name of customers whose last name is 'Mario'.",
+    "answer": "SELECT first_name, last_name FROM Customers WHERE last_name = 'Mario';"
+  },
+  {
+    "question": "List the service_name and price of services that cost more than 100. Alias the price as 'service_price'.",
+    "answer": "SELECT service_name, price AS service_price FROM Services WHERE price > 100;"
+  },
+  {
+    "question": "Display the first_name and hire_date of employees hired after '2023-01-01'.",
+    "answer": "SELECT first_name, hire_date FROM Employees WHERE hire_date > '2023-01-01';"
+  },
+  {
+    "question": "Show the order_id and total_amount of orders with a total_amount less than 50.",
+    "answer": "SELECT order_id, total_amount FROM Orders WHERE total_amount < 50;"
+  },
+  {
+    "question": "List the first_name and phone_number of customers whose phone number starts with '555'.",
+    "answer": "SELECT first_name, phone_number FROM Customers WHERE phone_number LIKE '555%';"
+  },
+  {
+    "question": "Display the service_name and price of services with 'Repair' in the name. Alias the price as 'repair_price'.",
+    "answer": "SELECT service_name, price AS repair_price FROM Services WHERE service_name LIKE '%Repair%';"
+  },
+  {
+    "question": "Show the first_name and last_name of employees whose job_title is 'Plumber' or 'Manager'.",
+    "answer": "SELECT first_name, last_name FROM Employees WHERE job_title IN ('Plumber', 'Manager');"
+  },
+  {
+    "question": "List the order_id and order_date of orders placed between '2023-07-01' and '2023-07-31'.",
+    "answer": "SELECT order_id, order_date FROM Orders WHERE order_date BETWEEN '2023-07-01' AND '2023-07-31';"
+  },
+  {
+    "question": "Display the first_name and last_name of customers from 'Mushroom Kingdom'. Assume the city is stored in the address JSON as the 'city' key.",
+    "answer": "SELECT first_name, last_name FROM Customers WHERE json_extract(address, '$.city') = 'Mushroom Kingdom';"
+  },
+  {
+    "question": "Show the service_name and price of services, ordered by price from highest to lowest. Limit the output to the top 5 most expensive services.",
+    "answer": "SELECT service_name, price FROM Services ORDER BY price DESC LIMIT 5;"
+  },
+  {
+    "question": "List the first_name, last_name, and job_title of employees, ordered alphabetically by last name.",
+    "answer": "SELECT first_name, last_name, job_title FROM Employees ORDER BY last_name ASC;"
+  },
+  {
+    "question": "Display the order_id and total_amount of orders, ordered by total_amount from lowest to highest.",
+    "answer": "SELECT order_id, total_amount FROM Orders ORDER BY total_amount ASC;"
+  },
+  {
+    "question": "Show the service_name and a column named 'price_category'. The price_category should be 'Expensive' if the price is over 100, and 'Affordable' otherwise.",
+    "answer": "SELECT service_name, CASE WHEN price > 100 THEN 'Expensive' ELSE 'Affordable' END AS price_category FROM Services;"
+  },
+  {
+    "question": "List the customer_id, first_name, and last_name of customers who live in 'Mushroom Kingdom'. Use the json_extract function on the address field.",
+    "answer": "SELECT customer_id, first_name, last_name FROM Customers WHERE json_extract(address, '$.city') = 'Mushroom Kingdom';"
+  },
+  {
+    "question": "Show the customer_id, first_name, last_name, and zip code (extracted from the address JSON) of customers whose zip code starts with '12'.",
+    "answer": "SELECT customer_id, first_name, last_name, json_extract(address, '$.zip_code') AS zip_code FROM Customers WHERE json_extract(address, '$.zip_code') LIKE '12%';"
+  },
+  {
+    "question": "Display the order_id, customer_id, and street address (extracted from the address JSON) for all orders. Join with the Customers table to get the address.",
+    "answer": "SELECT o.order_id, o.customer_id, json_extract(c.address, '$.street') AS street_address FROM Orders o JOIN Customers c ON o.customer_id = c.customer_id;"
+  },
+  {
+    "question": "List the service_id and service_name of services that are more expensive than the average price of all services.",
+    "answer": "SELECT service_id, service_name FROM Services WHERE price > (SELECT AVG(price) FROM Services);"
+  },
+  {
+    "question": "Show the customer_id, first_name, and last_name of customers who have placed an order. Use a subquery in the WHERE clause.",
+    "answer": "SELECT customer_id, first_name, last_name FROM Customers WHERE customer_id IN (SELECT DISTINCT customer_id FROM Orders);"
+  },
+  {
+    "question": "List the first_name, last_name, and a column named 'experience'. The experience should be 'Senior' if hired before 2022, and 'Junior' otherwise.",
+    "answer": "SELECT first_name, last_name, CASE WHEN hire_date < '2022-01-01' THEN 'Senior' ELSE 'Junior' END AS experience FROM Employees;"
+  },
+  {
+    "question": "Display the customer_id and a column named 'has_orders'. The has_orders should be 'Yes' if the customer has placed any orders, and 'No' otherwise.",
+    "answer": "SELECT c.customer_id, CASE WHEN o.order_id IS NOT NULL THEN 'Yes' ELSE 'No' END AS has_orders FROM Customers c LEFT JOIN Orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id;"
+  },
+  {
+    "question": "Show the service_type_name and the count of services in each type. Name the count column 'service_count'.",
+    "answer": "SELECT st.service_type_name, COUNT(s.service_id) AS service_count FROM ServiceTypes st LEFT JOIN Services s ON st.service_type_id = s.service_type_id GROUP BY st.service_type_id;"
+  }
+]
