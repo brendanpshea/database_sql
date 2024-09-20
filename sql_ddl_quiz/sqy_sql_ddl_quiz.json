@@ -1,111 +1,111 @@
 [
     {
-        "question": "Design a table named \"agents\" that includes an integer identifier as the primary key, a non-empty text field for the agent's name, a unique text field for the agent's codename, and a text field for the agent's status.",
+        "question": "Design a table named \"agents\" that includes an integer column 'agent_id' as the primary key, a non-empty text column 'name' for the agent's name, a unique text column 'codename' for the agent's codename, and a text column 'status' for the agent's current status.",
         "answer": "CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT);",
         "setup": "DROP TABLE IF EXISTS agents;"
     },
     {
-        "question": "Create a table called \"missions\" with an integer primary key, a non-empty text field for the mission title, an integer field to associate the mission with an agent, and a text field for the mission's target name. Ensure that the agent association is a foreign key referencing the appropriate field in the \"agents\" table.",
+        "question": "Create a table called \"missions\" with an integer primary key 'mission_id', a non-empty text column 'title' for the mission title, an integer column 'agent_id' to associate the mission with an agent, and a text column 'target_name' for the mission's target. Ensure that 'agent_id' is a foreign key referencing the 'agent_id' in the \"agents\" table.",
         "answer": "CREATE TABLE missions (mission_id INTEGER PRIMARY KEY, title TEXT NOT NULL, agent_id INTEGER, target_name TEXT, FOREIGN KEY (agent_id) REFERENCES agents(agent_id));",
         "setup": "DROP TABLE IF EXISTS missions; DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT);"
     },
     {
-        "question": "Design a table named \"gadgets\" with an integer primary key, a unique non-empty text field for the gadget's name, a text field for the gadget type, and a text field for its description.",
+        "question": "Design a table named \"gadgets\" with an integer primary key 'gadget_id', a unique non-empty text column 'name' for the gadget's name, a text column 'type' for the gadget type, and a text column 'description' for its description.",
         "answer": "CREATE TABLE gadgets (gadget_id INTEGER PRIMARY KEY, name TEXT NOT NULL UNIQUE, type TEXT, description TEXT);",
         "setup": "DROP TABLE IF EXISTS gadgets;"
     },
     {
-        "question": "Create a table named \"targets\" that includes an integer primary key, a non-empty text field for the target's name, a text field for nationality, and an integer field indicating the threat level.",
+        "question": "Create a table named \"targets\" that includes an integer primary key 'target_id', a non-empty text column 'name' for the target's name, a text column 'nationality' for nationality, and an integer column 'threat_level' indicating the threat level.",
         "answer": "CREATE TABLE targets (target_id INTEGER PRIMARY KEY, name TEXT NOT NULL, nationality TEXT, threat_level INTEGER);",
         "setup": "DROP TABLE IF EXISTS targets;"
     },
     {
-        "question": "Modify the \"agents\" table to add a new text field that records the expiration date of the agent's license.",
+        "question": "Modify the \"agents\" table to add a new text column 'license_expiry' that records the expiration date of the agent's license.",
         "answer": "ALTER TABLE agents ADD COLUMN license_expiry TEXT;",
         "setup": "DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT);"
     },
     {
-        "question": "Design a table named \"intel_reports\" with an integer primary key, an integer field linking the report to a mission, a text field for the date of the report, and a text field for detailed information. Ensure that the mission association is a foreign key referencing the appropriate field in the \"missions\" table.",
+        "question": "Design a table named \"intel_reports\" with an integer primary key 'report_id', an integer column 'mission_id' linking the report to a mission, a text column 'date' for the date of the report, and a text column 'details' for detailed information. Ensure that 'mission_id' is a foreign key referencing the 'mission_id' in the \"missions\" table.",
         "answer": "CREATE TABLE intel_reports (report_id INTEGER PRIMARY KEY, mission_id INTEGER, date TEXT, details TEXT, FOREIGN KEY (mission_id) REFERENCES missions(mission_id));",
         "setup": "DROP TABLE IF EXISTS intel_reports; DROP TABLE IF EXISTS missions; DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT); CREATE TABLE missions (mission_id INTEGER PRIMARY KEY, title TEXT NOT NULL, agent_id INTEGER, target_name TEXT, FOREIGN KEY (agent_id) REFERENCES agents(agent_id));"
     },
     {
-        "question": "Design a table named \"safe_houses\" with an integer primary key, a non-empty text field for the location, and an integer field indicating the house's capacity.",
+        "question": "Design a table named \"safe_houses\" with an integer primary key 'house_id', a non-empty text column 'location' for the location, and an integer column 'capacity' indicating the house's capacity.",
         "answer": "CREATE TABLE safe_houses (house_id INTEGER PRIMARY KEY, location TEXT NOT NULL, capacity INTEGER);",
         "setup": "DROP TABLE IF EXISTS safe_houses;"
     },
     {
-        "question": "Modify the \"missions\" table to rename the column designated for the mission's target from \"target\" to \"target_name\".",
+        "question": "Modify the \"missions\" table to rename the column 'target' to 'target_name'.",
         "answer": "ALTER TABLE missions RENAME COLUMN target TO target_name;",
         "setup": "DROP TABLE IF EXISTS missions; CREATE TABLE missions (mission_id INTEGER PRIMARY KEY, title TEXT NOT NULL, agent_id INTEGER, target TEXT, FOREIGN KEY (agent_id) REFERENCES agents(agent_id));"
     },
     {
-        "question": "Create a table named \"allies\" with an integer primary key, a non-empty text field for the ally's name, and a text field for their country of origin.",
+        "question": "Create a table named \"allies\" with an integer primary key 'ally_id', a non-empty text column 'name' for the ally's name, and a text column 'country' for their country of origin.",
         "answer": "CREATE TABLE allies (ally_id INTEGER PRIMARY KEY, name TEXT NOT NULL, country TEXT);",
         "setup": "DROP TABLE IF EXISTS allies;"
     },
     {
-        "question": "Design a table named \"agent_gadgets\" to represent a many-to-many relationship between agents and gadgets, including integer fields that reference both the \"agents\" and \"gadgets\" tables.",
+        "question": "Design a table named \"agent_gadgets\" to represent a many-to-many relationship between agents and gadgets. Include integer columns 'agent_id' and 'gadget_id' that reference the 'agent_id' in the \"agents\" table and the 'gadget_id' in the \"gadgets\" table respectively.",
         "answer": "CREATE TABLE agent_gadgets (agent_id INTEGER, gadget_id INTEGER, FOREIGN KEY (agent_id) REFERENCES agents(agent_id), FOREIGN KEY (gadget_id) REFERENCES gadgets(gadget_id));",
         "setup": "DROP TABLE IF EXISTS agent_gadgets; DROP TABLE IF EXISTS agents; DROP TABLE IF EXISTS gadgets; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT); CREATE TABLE gadgets (gadget_id INTEGER PRIMARY KEY, name TEXT NOT NULL UNIQUE, type TEXT, description TEXT);"
     },
     {
-        "question": "Create a table named \"contacts\" with an integer primary key, an integer field linking to an agent, a non-empty text field for the contact's name, and a text field describing their relation to the agent. Ensure that the agent association is a foreign key referencing the appropriate field in the \"agents\" table.",
+        "question": "Create a table named \"contacts\" with an integer primary key 'contact_id', an integer column 'agent_id' linking to an agent, a non-empty text column 'name' for the contact's name, and a text column 'relation' describing their relation to the agent. Ensure that 'agent_id' is a foreign key referencing the 'agent_id' in the \"agents\" table.",
         "answer": "CREATE TABLE contacts (contact_id INTEGER PRIMARY KEY, agent_id INTEGER, name TEXT NOT NULL, relation TEXT, FOREIGN KEY (agent_id) REFERENCES agents(agent_id));",
         "setup": "DROP TABLE IF EXISTS contacts; DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT);"
     },
     {
-        "question": "Modify the \"agents\" table to include a new text field for the agent's rank, setting its default value to 'Operative'.",
+        "question": "Modify the \"agents\" table to include a new text column 'rank' with a default value of 'Operative'.",
         "answer": "ALTER TABLE agents ADD COLUMN rank TEXT DEFAULT 'Operative';",
         "setup": "DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT);"
     },
     {
-        "question": "Design a table named \"intel_sources\" with an integer primary key, a non-empty text field for the source's name, and a real number field indicating the source's credibility.",
+        "question": "Design a table named \"intel_sources\" with an integer primary key 'source_id', a non-empty text column 'name' for the source's name, and a real number column 'credibility' indicating the source's credibility.",
         "answer": "CREATE TABLE intel_sources (source_id INTEGER PRIMARY KEY, name TEXT NOT NULL, credibility REAL);",
         "setup": "DROP TABLE IF EXISTS intel_sources;"
     },
     {
-        "question": "Create a table named \"source_reports\" to represent a many-to-many relationship between intel sources and intel reports, including integer fields that reference both the \"intel_sources\" and \"intel_reports\" tables.",
+        "question": "Create a table named \"source_reports\" to represent a many-to-many relationship between intel sources and intel reports. Include integer columns 'source_id' and 'report_id' that reference the 'source_id' in the \"intel_sources\" table and the 'report_id' in the \"intel_reports\" table respectively.",
         "answer": "CREATE TABLE source_reports (source_id INTEGER, report_id INTEGER, FOREIGN KEY (source_id) REFERENCES intel_sources(source_id), FOREIGN KEY (report_id) REFERENCES intel_reports(report_id));",
         "setup": "DROP TABLE IF EXISTS source_reports; DROP TABLE IF EXISTS intel_sources; DROP TABLE IF EXISTS intel_reports; CREATE TABLE intel_sources (source_id INTEGER PRIMARY KEY, name TEXT NOT NULL, credibility REAL); CREATE TABLE intel_reports (report_id INTEGER PRIMARY KEY, mission_id INTEGER, date TEXT, details TEXT, FOREIGN KEY (mission_id) REFERENCES missions(mission_id));"
     },
     {
-        "question": "Design a table named \"disguises\" with an integer primary key, a non-empty text field for the type of disguise, and a text field for its description.",
+        "question": "Design a table named \"disguises\" with an integer primary key 'disguise_id', a non-empty text column 'type' for the type of disguise, and a text column 'description' for its description.",
         "answer": "CREATE TABLE disguises (disguise_id INTEGER PRIMARY KEY, type TEXT NOT NULL, description TEXT);",
         "setup": "DROP TABLE IF EXISTS disguises;"
     },
     {
-        "question": "Modify the \"agents\" table to remove the field that records the agent's status.",
+        "question": "Modify the \"agents\" table to remove the column 'status'.",
         "answer": "ALTER TABLE agents DROP COLUMN status;",
         "setup": "DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT);"
     },
     {
-        "question": "Create a table named \"operations\" with an integer primary key, a non-empty text field for the operation name, a text field for the start date, and a text field for the end date.",
+        "question": "Create a table named \"operations\" with an integer primary key 'operation_id', a non-empty text column 'name' for the operation name, a text column 'start_date' for the start date, and a text column 'end_date' for the end date.",
         "answer": "CREATE TABLE operations (operation_id INTEGER PRIMARY KEY, name TEXT NOT NULL, start_date TEXT, end_date TEXT);",
         "setup": "DROP TABLE IF EXISTS operations;"
     },
     {
-        "question": "Modify the \"missions\" table to add a new integer field that associates each mission with an operation. Ensure that this association is a foreign key referencing the appropriate field in the \"operations\" table.",
+        "question": "Modify the \"missions\" table to add a new integer column 'operation_id' that associates each mission with an operation. Ensure that 'operation_id' is a foreign key referencing the 'operation_id' in the \"operations\" table.",
         "answer": "ALTER TABLE missions ADD COLUMN operation_id INTEGER; ALTER TABLE missions ADD CONSTRAINT fk_operation FOREIGN KEY (operation_id) REFERENCES operations(operation_id);",
         "setup": "DROP TABLE IF EXISTS missions; DROP TABLE IF EXISTS operations; DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT); CREATE TABLE operations (operation_id INTEGER PRIMARY KEY, name TEXT NOT NULL, start_date TEXT, end_date TEXT); CREATE TABLE missions (mission_id INTEGER PRIMARY KEY, title TEXT NOT NULL, agent_id INTEGER, target_name TEXT, FOREIGN KEY (agent_id) REFERENCES agents(agent_id));"
     },
     {
-        "question": "Design a table named \"allied_agents\" to represent a many-to-many relationship between spy networks and agents, including integer fields that reference both the \"spy_networks\" and \"agents\" tables.",
+        "question": "Design a table named \"allied_agents\" to represent a many-to-many relationship between spy networks and agents. Include integer columns 'network_id' and 'agent_id' that reference the 'network_id' in the \"spy_networks\" table and the 'agent_id' in the \"agents\" table respectively.",
         "answer": "CREATE TABLE allied_agents (agent_id INTEGER, ally_id INTEGER, FOREIGN KEY (agent_id) REFERENCES agents(agent_id), FOREIGN KEY (ally_id) REFERENCES allies(ally_id));",
         "setup": "DROP TABLE IF EXISTS allied_agents; DROP TABLE IF EXISTS agents; DROP TABLE IF EXISTS allies; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT); CREATE TABLE allies (ally_id INTEGER PRIMARY KEY, name TEXT NOT NULL, country TEXT);"
     },
     {
-        "question": "Remove the table that represents the association between spy networks and agents, but only if it exists.",
+        "question": "Remove the table \"allied_agents\" from the database, but only if it exists.",
         "answer": "DROP TABLE IF EXISTS allied_agents;",
         "setup": "DROP TABLE IF EXISTS allied_agents; CREATE TABLE allied_agents (agent_id INTEGER, ally_id INTEGER, FOREIGN KEY (agent_id) REFERENCES agents(agent_id), FOREIGN KEY (ally_id) REFERENCES allies(ally_id));"
     },
     {
-        "question": "Design a table named \"missions_completed\" with an integer primary key, a text field for the completion date, and a boolean field indicating the success of the mission. Ensure that each mission association is a foreign key referencing the appropriate field in the \"missions\" table.",
+        "question": "Design a table named \"missions_completed\" with an integer primary key 'mission_id', a text column 'completion_date' for the completion date, and a boolean column 'success' indicating the success of the mission. Ensure that 'mission_id' is a foreign key referencing the 'mission_id' in the \"missions\" table.",
         "answer": "CREATE TABLE missions_completed (mission_id INTEGER PRIMARY KEY, completion_date TEXT, success BOOLEAN, FOREIGN KEY (mission_id) REFERENCES missions(mission_id));",
         "setup": "DROP TABLE IF EXISTS missions_completed; DROP TABLE IF EXISTS missions; DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT); CREATE TABLE missions (mission_id INTEGER PRIMARY KEY, title TEXT NOT NULL, agent_id INTEGER, target_name TEXT, FOREIGN KEY (agent_id) REFERENCES agents(agent_id));"
     },
     {
-        "question": "Design a table named \"encryption_keys\" with an integer primary key, a unique non-empty text field for the key value, and an integer field to assign the key to an agent. Ensure that the agent assignment is a foreign key referencing the appropriate field in the \"agents\" table.",
+        "question": "Design a table named \"encryption_keys\" with an integer primary key 'key_id', a unique non-empty text column 'key_value' for the key value, and an integer column 'assigned_agent' to assign the key to an agent. Ensure that 'assigned_agent' is a foreign key referencing the 'agent_id' in the \"agents\" table.",
         "answer": "CREATE TABLE encryption_keys (key_id INTEGER PRIMARY KEY, key_value TEXT NOT NULL UNIQUE, assigned_agent INTEGER, FOREIGN KEY (assigned_agent) REFERENCES agents(agent_id));",
         "setup": "DROP TABLE IF EXISTS encryption_keys; DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT);"
     },
@@ -115,12 +115,12 @@
         "setup": "DROP TABLE IF EXISTS operations; CREATE TABLE operations (operation_id INTEGER PRIMARY KEY, name TEXT NOT NULL, start_date TEXT, end_date TEXT);"
     },
     {
-        "question": "Remove the intel reports table from the database, but only if it exists.",
+        "question": "Remove the table \"intel_reports\" from the database, but only if it exists.",
         "answer": "DROP TABLE IF EXISTS intel_reports;",
         "setup": "DROP TABLE IF EXISTS intel_reports; CREATE TABLE intel_reports (report_id INTEGER PRIMARY KEY, mission_id INTEGER, date TEXT, details TEXT, FOREIGN KEY (mission_id) REFERENCES missions(mission_id));"
     },
     {
-        "question": "Design a table named \"mission_logs\" with an integer primary key, an integer field linking to a mission, a text field for the timestamp of the event, a text field describing the event, and an integer field linking to an agent. Ensure that both the mission and agent associations are foreign keys referencing the appropriate fields in the \"missions\" and \"agents\" tables respectively.",
+        "question": "Design a table named \"mission_logs\" with an integer primary key 'log_id', an integer column 'mission_id' linking to a mission, a text column 'timestamp' for the event's timestamp, a text column 'event' describing the event, and an integer column 'agent_id' linking to an agent. Ensure that both 'mission_id' and 'agent_id' are foreign keys referencing the appropriate fields in the \"missions\" and \"agents\" tables respectively.",
         "answer": "CREATE TABLE mission_logs (log_id INTEGER PRIMARY KEY, mission_id INTEGER, timestamp TEXT, event TEXT, agent_id INTEGER, FOREIGN KEY (mission_id) REFERENCES missions(mission_id), FOREIGN KEY (agent_id) REFERENCES agents(agent_id));",
         "setup": "DROP TABLE IF EXISTS mission_logs; DROP TABLE IF EXISTS missions; DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT); CREATE TABLE missions (mission_id INTEGER PRIMARY KEY, title TEXT NOT NULL, agent_id INTEGER, target_name TEXT, FOREIGN KEY (agent_id) REFERENCES agents(agent_id));"
     }
