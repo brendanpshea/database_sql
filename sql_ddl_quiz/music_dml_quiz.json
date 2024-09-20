@@ -118,5 +118,50 @@
         "question": "Update the artist name from 'Pink' to 'P!nk' for artist_id 4 in the \"artists\" table.",
         "answer": "UPDATE artists SET name = 'P!nk' WHERE artist_id = 4;",
         "setup": "DROP TABLE IF EXISTS artists; CREATE TABLE artists (artist_id INTEGER PRIMARY KEY, name TEXT); INSERT INTO artists (artist_id, name) VALUES (4, 'Pink');"
+    },
+        {
+        "question": "Mark all artists named 'Pink' or 'Prince' as deleted in the \"artists\" table by setting their 'is_deleted' column to 1.",
+        "answer": "UPDATE artists SET is_deleted = 1 WHERE name IN ('Pink', 'Prince');",
+        "setup": "DROP TABLE IF EXISTS artists; CREATE TABLE artists (artist_id INTEGER PRIMARY KEY, name TEXT, is_deleted INTEGER DEFAULT 0); INSERT INTO artists (artist_id, name) VALUES (1, 'Prince'), (2, 'Pink Floyd'), (3, 'Paramore'), (4, 'Pink');"
+    },
+    {
+        "question": "Mark all songs longer than 5 minutes as deleted in the \"songs\" table by setting 'is_deleted' to 1.",
+        "answer": "UPDATE songs SET is_deleted = 1 WHERE duration > '5:00';",
+        "setup": "DROP TABLE IF EXISTS songs; CREATE TABLE songs (song_id INTEGER PRIMARY KEY, album_id INTEGER, title TEXT, duration TEXT, is_deleted INTEGER DEFAULT 0); INSERT INTO songs (song_id, album_id, title, duration) VALUES (1001, 201, 'Comfortably Numb', '6:22'), (1002, 102, 'Let Go', '3:54'), (1003, 103, 'Just Like a Pill', '3:34'), (1004, 101, 'When Doves Cry', '4:59'), (1005, 101, 'Let's Go Crazy', '5:15');"
+    },
+    {
+        "question": "Mark all albums released before the year 2000 as deleted in the \"albums\" table by setting 'is_deleted' to 1.",
+        "answer": "UPDATE albums SET is_deleted = 1 WHERE release_year < 2000;",
+        "setup": "DROP TABLE IF EXISTS albums; CREATE TABLE albums (album_id INTEGER PRIMARY KEY, artist_id INTEGER, title TEXT, release_year INTEGER, is_deleted INTEGER DEFAULT 0); INSERT INTO albums (album_id, artist_id, title, release_year) VALUES (101, 1, 'Purple Rain', 1984), (102, 3, 'Meteora', 2007), (103, 4, 'Funhouse', 2008), (104, 5, 'A Night at the Opera', 1975), (105, 6, 'A Star Is Born', 2018);"
+    },
+    {
+        "question": "Mark all genres except 'Rock' as deleted in the \"genres\" table by setting 'is_deleted' to 1.",
+        "answer": "UPDATE genres SET is_deleted = 1 WHERE name != 'Rock';",
+        "setup": "DROP TABLE IF EXISTS genres; CREATE TABLE genres (genre_id INTEGER PRIMARY KEY, name TEXT, is_deleted INTEGER DEFAULT 0); INSERT INTO genres (genre_id, name) VALUES (301, 'Rock'), (302, 'Pop Rock'), (303, 'Jazz'), (304, 'Electronic');"
+    },
+    {
+        "question": "Mark all songs from albums by 'Pink Floyd' as deleted in the \"songs\" table by setting 'is_deleted' to 1.",
+        "answer": "UPDATE songs SET is_deleted = 1 WHERE album_id IN (SELECT album_id FROM albums WHERE artist_id = (SELECT artist_id FROM artists WHERE name = 'Pink Floyd'));",
+        "setup": "DROP TABLE IF EXISTS artists; DROP TABLE IF EXISTS albums; DROP TABLE IF EXISTS songs; CREATE TABLE artists (artist_id INTEGER PRIMARY KEY, name TEXT, is_deleted INTEGER DEFAULT 0); CREATE TABLE albums (album_id INTEGER PRIMARY KEY, artist_id INTEGER, title TEXT, is_deleted INTEGER DEFAULT 0); CREATE TABLE songs (song_id INTEGER PRIMARY KEY, album_id INTEGER, title TEXT, duration TEXT, is_deleted INTEGER DEFAULT 0); INSERT INTO artists (artist_id, name) VALUES (1, 'Prince'), (2, 'Pink Floyd'); INSERT INTO albums (album_id, artist_id, title, release_year) VALUES (201, 2, 'The Wall', 1979), (202, 1, 'Purple Rain', 1984); INSERT INTO songs (song_id, album_id, title, duration) VALUES (1001, 201, 'Comfortably Numb', '6:22'), (1002, 202, 'When Doves Cry', '4:59');"
+    },
+    {
+        "question": "Mark all albums by 'Paramore' and 'Pink' as deleted in the \"albums\" table by setting 'is_deleted' to 1.",
+        "answer": "UPDATE albums SET is_deleted = 1 WHERE artist_id IN (SELECT artist_id FROM artists WHERE name IN ('Paramore', 'Pink'));",
+        "setup": "DROP TABLE IF EXISTS artists; DROP TABLE IF EXISTS albums; CREATE TABLE artists (artist_id INTEGER PRIMARY KEY, name TEXT, is_deleted INTEGER DEFAULT 0); CREATE TABLE albums (album_id INTEGER PRIMARY KEY, artist_id INTEGER, title TEXT, release_year INTEGER, is_deleted INTEGER DEFAULT 0); INSERT INTO artists (artist_id, name) VALUES (3, 'Paramore'), (4, 'Pink'); INSERT INTO albums (album_id, artist_id, title, release_year) VALUES (103, 4, 'Funhouse', 2008), (104, 3, 'After Laughter', 2017);"
+    },
+    {
+        "question": "Mark all songs titled 'Bohemian Rhapsody' or 'Shallow' as deleted in the \"songs\" table by setting 'is_deleted' to 1.",
+        "answer": "UPDATE songs SET is_deleted = 1 WHERE title IN ('Bohemian Rhapsody', 'Shallow');",
+        "setup": "DROP TABLE IF EXISTS songs; CREATE TABLE songs (song_id INTEGER PRIMARY KEY, album_id INTEGER, title TEXT, duration TEXT, is_deleted INTEGER DEFAULT 0); INSERT INTO songs (song_id, album_id, title, duration) VALUES (1006, 104, 'Bohemian Rhapsody', '5:55'), (1007, 105, 'Shallow', '3:36');"
+    },
+    {
+        "question": "Mark all artists not named 'Pink Floyd' as deleted in the \"artists\" table by setting 'is_deleted' to 1.",
+        "answer": "UPDATE artists SET is_deleted = 1 WHERE name != 'Pink Floyd';",
+        "setup": "DROP TABLE IF EXISTS artists; CREATE TABLE artists (artist_id INTEGER PRIMARY KEY, name TEXT, is_deleted INTEGER DEFAULT 0); INSERT INTO artists (artist_id, name) VALUES (1, 'Prince'), (2, 'Pink Floyd'), (3, 'Paramore'), (4, 'Pink');"
+    },
+    {
+        "question": "Mark all genres containing the word 'Rock' as deleted in the \"genres\" table by setting 'is_deleted' to 1.",
+        "answer": "UPDATE genres SET is_deleted = 1 WHERE name LIKE '%Rock%';",
+        "setup": "DROP TABLE IF EXISTS genres; CREATE TABLE genres (genre_id INTEGER PRIMARY KEY, name TEXT, is_deleted INTEGER DEFAULT 0); INSERT INTO genres (genre_id, name) VALUES (301, 'Rock'), (302, 'Pop Rock'), (303, 'Jazz'), (304, 'Electronic'), (305, 'Rockabilly');"
     }
 ]
