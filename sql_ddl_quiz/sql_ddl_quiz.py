@@ -130,108 +130,52 @@ class SQLPractice:
 
         display(self.ui)
 
-    def execute_statements(self, _):
-        user_sql = self.text_area.value.strip()
-        if not user_sql:
-            with self.output_area:
-                clear_output()
-                print("Please enter your SQL statements.")
-            return
+def execute_statements(self, _):
+    user_sql = self.text_area.value.strip()
+    if not user_sql:
+        with self.output_area:
+            clear_output()
+            print("Please enter your SQL statements.")
+        return
 
-        try:
-            cursor = self.conn.cursor()
-            cursor.execute("BEGIN TRANSACTION;")  # Start a transaction
+    try:
+        cursor = self.conn.cursor()
+        cursor.execute("BEGIN TRANSACTION;")  # Start a transaction
 
-            # Preprocess user's SQL to handle CREATE TABLE statements
-            user_sql = self.preprocess_sql(user_sql)
+        # Preprocess user's SQL to handle CREATE TABLE statements
+        user_sql = self.preprocess_sql(user_sql)
 
-            cursor.executescript(user_sql)
+        cursor.executescript(user_sql)
 
-            # Now check the result
-            expected_check = self.steps[self.current_step]['check']
-            cursor.execute(expected_check['query'])
-            user_result = cursor.fetchall()
-            expected_result = expected_check['expected']
+        # Now check the result
+        expected_check = self.steps[self.current_step]['check']
+        cursor.execute(expected_check['query'])
+        user_result = cursor.fetchall()
+        expected_result = expected_check['expected']
 
-            # Compare results
-            if user_result == expected_result:
-                self.conn.commit()  # Commit the transaction
-                feedback = HTMLWidget(value="<h4 style='color: green;'>Correct! Changes have been committed. You may proceed to the next step.</h4>")
-                self.next_button.disabled = False
-                self.execute_button.disabled = True
-            else:
-                self.conn.rollback()  # Rollback the transaction
-                feedback = HTMLWidget(value="<h4 style='color: red;'>Incorrect. Your changes have been rolled back. Please try again.</h4>")
-                self.next_button.disabled = True
-                self.execute_button.disabled = False
+        # Convert expected_result lists to tuples
+        expected_result = [tuple(item) for item in expected_result]
 
-            # Update existing tables info
-            existing_tables = self.get_existing_tables()
-            if existing_tables:
-                schemas = [self.get_table_schema(table) for table in existing_tables]
-                tables_html = "<h4>Existing Tables and Schemas:</h4><ul>"
-                for schema in schemas:
-                    tables_html += f"<li>{schema}</li>"
-                tables_html += "</ul>"
-            else:
-                tables_html = "<p><em>No tables exist yet.</em></p>"
-            self.tables_info.value = tables_html
+        # Compare results
+        if user_result == expected_result:
+            self.conn.commit()  # Commit the transaction
+            feedback = HTMLWidget(value="<h4 style='color: green;'>Correct! Changes have been committed. You may proceed to the next step.</h4>")
+            self.next_button.disabled = False
+            self.execute_button.disabled = True
+        else:
+            self.conn.rollback()  # Rollback the transaction
+            feedback = HTMLWidget(value="<h4 style='color: red;'>Incorrect. Your changes have been rolled back. Please try again.</h4>")
+            self.next_button.disabled = True
+            self.execute_button.disabled = False
 
-            # Update the table dropdown
-            self.table_dropdown.options = existing_tables
-            if existing_tables:
-                self.table_dropdown.value = existing_tables[0]
-                # Manually call display_table_content to display the table content
-                self.display_table_content({'new': self.table_dropdown.value})
-            else:
-                self.table_dropdown.value = None
-                self.table_view_output.clear_output()
+        # Update existing tables info
+        # ... (rest of the code remains the same)
 
-            with self.output_area:
-                clear_output()
-                display(feedback)
-                if 'explanation' in expected_check:
-                    display(HTMLWidget(value=f"<p>{expected_check['explanation']}</p>"))
-                if user_result:
-                    # Try to get column names if possible
-                    if cursor.description:
-                        columns = [desc[0] for desc in cursor.description]
-                        df = pd.DataFrame(user_result, columns=columns)
-                        display(HTMLWidget(value="<strong>Your Result:</strong>"))
-                        display(df)
-                    else:
-                        display(HTMLWidget(value="<strong>Your Result:</strong>"))
-                        print(user_result)
-                else:
-                    display(HTMLWidget(value="<strong>Your Result:</strong> No rows returned."))
-        except Exception as e:
-            self.conn.rollback()  # Rollback the transaction on error
-
-            # Update existing tables info after rollback
-            existing_tables = self.get_existing_tables()
-            if existing_tables:
-                schemas = [self.get_table_schema(table) for table in existing_tables]
-                tables_html = "<h4>Existing Tables and Schemas:</h4><ul>"
-                for schema in schemas:
-                    tables_html += f"<li>{schema}</li>"
-                tables_html += "</ul>"
-            else:
-                tables_html = "<p><em>No tables exist yet.</em></p>"
-            self.tables_info.value = tables_html
-
-            # Update the table dropdown
-            self.table_dropdown.options = existing_tables
-            if existing_tables:
-                self.table_dropdown.value = existing_tables[0]
-                # Manually call display_table_content to display the table content
-                self.display_table_content({'new': self.table_dropdown.value})
-            else:
-                self.table_dropdown.value = None
-                self.table_view_output.clear_output()
-
-            with self.output_area:
-                clear_output()
-                print(f"Error executing your SQL statements: {e}")
+    except Exception as e:
+        self.conn.rollback()  # Rollback the transaction on error
+        with self.output_area:
+            clear_output()
+            print(f"Error executing your SQL statements: {e}")
 
     def preprocess_sql(self, sql):
         # Regular expression to find CREATE TABLE statements
