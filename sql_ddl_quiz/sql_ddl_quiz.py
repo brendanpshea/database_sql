@@ -1,4 +1,3 @@
-# sql_ddl_quiz.py
 # Ensure necessary libraries are installed
 # You can uncomment and run these lines if the libraries are not already installed
 # !pip install ipywidgets requests pandas
@@ -9,10 +8,10 @@ import requests
 from IPython.display import clear_output, display
 import pandas as pd
 from ipywidgets import (
-    Textarea, Button, VBox, HBox, Output, HTML, Layout, IntProgress
+    Textarea, Button, VBox, HBox, Output, HTML, Layout, IntProgress, Tab
 )
 
-class SQLDDLQuiz:
+class SQLQuiz:
     def __init__(self, questions_source):
         """
         Initialize the SQL Quiz.
@@ -22,8 +21,15 @@ class SQLDDLQuiz:
                 - If dict/list: Directly provides the quiz questions.
                 - If str: URL to a JSON file containing the quiz questions.
         """
+        # Initialize student connection for persistent state
+        self.student_conn = None
+
+        # Initialize Outputs
         self.output = Output()
         self.comparison_output = Output()
+        self.table_output = Output()
+
+        # Initialize Progress Bar
         self.progress = IntProgress(
             value=0,
             min=0,
@@ -33,10 +39,15 @@ class SQLDDLQuiz:
             style={'description_width': 'initial'},
             layout=Layout(width='100%')
         )
+
+        # Load quiz questions
         self.load_questions(questions_source)
         self.current_question = 0
         self.correct_answers = 0
+
+        # Create UI Widgets
         self.create_widgets()
+
         if self.quiz:
             self.load_question()
         else:
@@ -65,6 +76,9 @@ class SQLDDLQuiz:
 
     def create_widgets(self):
         """Create and layout all UI widgets."""
+
+        # ----------------- Quiz Tab Widgets -----------------
+
         # Display elements
         self.question_label = HTML()
         self.schema_display = HTML()
@@ -106,7 +120,7 @@ class SQLDDLQuiz:
             self.next_button
         ], layout=Layout(justify_content='center', gap='10px'))
 
-        # Main layout
+        # Main Quiz layout
         self.quiz_layout = VBox([
             self.progress,
             self.schema_display,
@@ -117,34 +131,47 @@ class SQLDDLQuiz:
             self.comparison_output  # Add comparison output below main output
         ], layout=Layout(padding='20px', border='solid 1px #ddd', border_radius='10px', width='800px'))
 
+        # ----------------- View Tables Tab Widgets -----------------
+
+        # Create Table View layout
+        self.table_view_layout = VBox([
+            HTML("<h2>Current Tables Content</h2>"),
+            self.table_output
+        ], layout=Layout(padding='20px', border='solid 1px #ddd', border_radius='10px', width='800px'))
+
+        # ----------------- Tab Layout -----------------
+
+        # Create Tab widget with Quiz and View Tables
+        self.tabs = Tab(children=[self.quiz_layout, self.table_view_layout])
+        self.tabs.set_title(0, 'Quiz')
+        self.tabs.set_title(1, 'View Tables')
+
+        # Display the Tab widget
+        display(self.tabs)
+
     def load_question(self):
         """Load and display the current question."""
-        clear_output(wait=True)
-        display(self.quiz_layout)
+        # Reset student connection for the new question
+        if self.student_conn:
+            self.student_conn.close()
+        self.student_conn = sqlite3.connect(':memory:')
 
-        if self.current_question >= len(self.quiz):
-            self.display_completion()
-            return
-
+        # Execute setup SQL on student connection
         question = self.quiz[self.current_question]
+        setup_sql = question.get('setup', '')
+        try:
+            self.student_conn.executescript(setup_sql)
+        except Exception as e:
+            self.schema_display.value = f"<h3 style='color: red;'>Error in setup SQL:</h3><p>{e}</p>"
+            return
 
         # Update progress bar
         progress_percentage = ((self.current_question) / len(self.quiz)) * 100
         self.progress.value = progress_percentage
 
-        # Execute setup SQL to determine table schemas
-        temp_conn = sqlite3.connect(':memory:')
-        try:
-            temp_conn.executescript(question.get('setup', ''))
-        except Exception as e:
-            self.schema_display.value = f"<h3 style='color: red;'>Error in setup SQL:</h3><p>{e}</p>"
-            temp_conn.close()
-            return
-
-        # Get table schemas
-        schema_html = self.get_table_schemas(temp_conn)
+        # Get table schemas from student connection
+        schema_html = self.get_table_schemas(self.student_conn)
         self.schema_display.value = f"<h3>Table Schema:</h3>{schema_html}"
-        temp_conn.close()
 
         # Display the question
         self.question_label.value = f"<h2>Question {self.current_question + 1} of {len(self.quiz)}:</h2><p>{question.get('question', '')}</p>"
@@ -156,6 +183,9 @@ class SQLDDLQuiz:
         self.submit_button.layout.display = 'inline-block'
         self.retry_button.layout.display = 'none'
         self.next_button.layout.display = 'none'
+
+        # Refresh the table view
+        self.refresh_table_view()
 
     def get_table_schemas(self, connection):
         """Retrieve and format table schemas from the SQLite connection."""
@@ -192,6 +222,14 @@ class SQLDDLQuiz:
                 display(HTML("<span style='color: red;'>Please enter a valid SQL query.</span>"))
                 return
 
+            # Execute the student's query on the student connection
+            try:
+                self.student_conn.executescript(student_query)
+            except Exception as e:
+                display(HTML(f"<h3 style='color: red;'>Error in your SQL query:</h3><p>{e}</p>"))
+                return
+
+            # Perform answer checking
             result, feedback = self.check_answer(
                 student_query,
                 question.get('answer', ''),
@@ -209,23 +247,26 @@ class SQLDDLQuiz:
                 # Display schemas and data comparison
                 self.display_comparison()
 
+            # Refresh the table view after submission
+            self.refresh_table_view()
+
     def check_answer(self, student_query, correct_query, setup_query):
         """Compare the student's query against the correct answer."""
-        # Initialize in-memory databases
-        student_conn = sqlite3.connect(':memory:')
+        # Initialize in-memory databases for checking
+        student_check_conn = sqlite3.connect(':memory:')
         correct_conn = sqlite3.connect(':memory:')
 
         try:
             # Apply setup queries
-            student_conn.executescript(setup_query)
+            student_check_conn.executescript(setup_query)
             correct_conn.executescript(setup_query)
 
             # Execute student's query
-            student_conn.executescript(student_query)
+            student_check_conn.executescript(student_query)
         except Exception as e:
             with self.output:
-                display(HTML(f"<h3 style='color: red;'>Error in your SQL query:</h3><p>{e}</p>"))
-            student_conn.close()
+                display(HTML(f"<h3 style='color: red;'>Error in your SQL query during checking:</h3><p>{e}</p>"))
+            student_check_conn.close()
             correct_conn.close()
             return False, None
 
@@ -236,30 +277,30 @@ class SQLDDLQuiz:
             # This should not happen if the correct query is valid
             with self.output:
                 display(HTML(f"<h3 style='color: red;'>Error in the correct SQL query:</h3><p>{e}</p>"))
-            student_conn.close()
+            student_check_conn.close()
             correct_conn.close()
             return False, None
 
         # Get list of tables after setup
-        student_tables = self.get_tables(student_conn)
+        student_tables = self.get_tables(student_check_conn)
         correct_tables = self.get_tables(correct_conn)
 
         # Compare table lists
         if set(student_tables) != set(correct_tables):
             with self.output:
                 display(HTML("<h3 style='color: red;'>Tables mismatch.</h3>"))
-            student_conn.close()
+            student_check_conn.close()
             correct_conn.close()
             return False, None
 
         # Compare each table's data
         all_match = True
         for table in student_tables:
-            match, _, _ = self.compare_table_data(student_conn, correct_conn, table)
+            match, _, _ = self.compare_table_data(student_check_conn, correct_conn, table)
             if not match:
                 all_match = False
 
-        student_conn.close()
+        student_check_conn.close()
         correct_conn.close()
         return all_match, None
 
@@ -293,7 +334,7 @@ class SQLDDLQuiz:
         correct_query = question.get('answer', '')
         student_query = self.sql_input.value.strip()
 
-        # Initialize in-memory databases
+        # Initialize in-memory databases for comparison
         student_conn = sqlite3.connect(':memory:')
         correct_conn = sqlite3.connect(':memory:')
 
@@ -403,8 +444,13 @@ class SQLDDLQuiz:
 
     def display_completion(self):
         """Display a completion message and final score."""
+        # Close student connection
+        if self.student_conn:
+            self.student_conn.close()
+            self.student_conn = None
+
         clear_output(wait=True)
-        display(self.quiz_layout)
+        display(self.tabs)
         # Update progress to 100%
         self.progress.value = 100
         completion_message = f"""
@@ -418,10 +464,68 @@ class SQLDDLQuiz:
         self.buttons_box.layout.display = 'none'
         self.comparison_output.layout.display = 'none'
 
+    def refresh_table_view(self):
+        """Refresh the table view tab with current table contents."""
+        with self.table_output:
+            self.table_output.clear_output()
+            if not self.student_conn:
+                display(HTML("<span style='color: red;'>No active connection to display tables.</span>"))
+                return
+
+            cursor = self.student_conn.cursor()
+            cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+            tables = cursor.fetchall()
+            if not tables:
+                display(HTML("<span>No tables available.</span>"))
+                return
+
+            for table in tables:
+                table_name = table[0]
+                try:
+                    df = pd.read_sql_query(f"SELECT * FROM {table_name};", self.student_conn)
+                    if df.empty:
+                        display(HTML(f"<h3>{table_name} (Empty)</h3>"))
+                    else:
+                        display(HTML(f"<h3>{table_name}</h3>"))
+                        display(df)
+                except Exception as e:
+                    display(HTML(f"<h3 style='color: red;'>Error retrieving table '{table_name}':</h3><p>{e}</p>"))
+
+# Example Usage:
+
+# Option 1: Provide questions as a dictionary/list
+quiz_questions = [
+    {
+        'question': 'Insert a new student with id 1 and name "Alice" into the "students" table.',
+        'answer': 'INSERT INTO students (id, name) VALUES (1, "Alice");',
+        'setup': '''
+            DROP TABLE IF EXISTS students;
+            CREATE TABLE students (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL
+            );
+        '''
+    },
+    {
+        'question': 'Create a new table "courses" with columns "course_id" (integer primary key) and "course_name" (text).',
+        'answer': '''
+            CREATE TABLE courses (
+                course_id INTEGER PRIMARY KEY,
+                course_name TEXT NOT NULL
+            );
+        ''',
+        'setup': '''
+            DROP TABLE IF EXISTS courses;
+            -- Note: Do NOT create the "courses" table here since the task is to create it.
+        '''
+    },
+    # Add more questions as needed
+]
 
 # Provide a URL to a JSON file containing the questions
 # Ensure that the URL points to a JSON file with the correct structure
 # quiz_url = 'https://github.com/brendanpshea/database_sql/raw/main/sql_ddl_quiz/sqy_sql_ddl_quiz.json'
+
 # Instantiate and display the quiz
 # Use either quiz_questions or quiz_url
 # sql_quiz = SQLDDLQuiz(quiz_questions)
