@@ -1,4 +1,29 @@
 [
+    
+    {"question": "Create a table named \"agents\" that includes an integer column 'agent_id' as the primary key and a text column 'name' for the agent's name.",
+        "answer": "CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT);",
+        "setup": "DROP TABLE IF EXISTS agents;"
+    },
+    {
+        "question": "Create a table named \"gadgets\" with an integer primary key 'gadget_id', a text column 'gadget_name' for the gadget's name, and a text column 'type' for the gadget type.",
+        "answer": "CREATE TABLE gadgets (gadget_id INTEGER PRIMARY KEY, gadget_name TEXT, type TEXT);",
+        "setup": "DROP TABLE IF EXISTS gadgets;"
+    },
+    {
+        "question": "Remove the table \"gadgets\" from the database if it exists.",
+        "answer": "DROP TABLE IF EXISTS gadgets;",
+        "setup": "DROP TABLE IF EXISTS gadgets; CREATE TABLE gadgets (gadget_id INTEGER PRIMARY KEY, gadget_name TEXT, type TEXT);"
+    },
+    {
+        "question": "Modify the \"agents\" table to add a new text column 'codename' for the agent's codename.",
+        "answer": "ALTER TABLE agents ADD COLUMN codename TEXT;",
+        "setup": "DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT);"
+    },
+    {
+        "question": "Remove the table \"agents\" from the database.",
+        "answer": "DROP TABLE agents;",
+        "setup": "DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT, codename TEXT);"
+    },
     {
         "question": "Design a table named \"agents\" that includes an integer column 'agent_id' as the primary key, a non-empty text column 'name' for the agent's name, a unique text column 'codename' for the agent's codename, and a text column 'status' for the agent's current status.",
         "answer": "CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT);",
