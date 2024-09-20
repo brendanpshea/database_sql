@@ -7,7 +7,7 @@
     {
         "question": "Add a new album titled 'Purple Rain' with album_id 101 for the artist_id 1 into the \"albums\" table.",
         "answer": "INSERT INTO albums (album_id, artist_id, title) VALUES (101, 1, 'Purple Rain');",
-        "setup": "DROP TABLE IF EXISTS albums; CREATE TABLE albums (album_id INTEGER PRIMARY KEY, artist_id INTEGER, title TEXT); INSERT INTO artists (artist_id, name) VALUES (1, 'Prince');"
+        "setup": "DROP TABLE IF EXISTS albums; CREATE TABLE albums (album_id INTEGER PRIMARY KEY, artist_id INTEGER, title TEXT);"
     },
     {
         "question": "Insert multiple artists: 'Pink Floyd' with artist_id 2 and 'Paramore' with artist_id 3 into the \"artists\" table.",
@@ -17,7 +17,7 @@
     {
         "question": "Add a song titled 'Comfortably Numb' with song_id 1001 and duration '6:22' to album_id 201 in the \"songs\" table.",
         "answer": "INSERT INTO songs (song_id, album_id, title, duration) VALUES (1001, 201, 'Comfortably Numb', '6:22');",
-        "setup": "DROP TABLE IF EXISTS songs; CREATE TABLE songs (song_id INTEGER PRIMARY KEY, album_id INTEGER, title TEXT, duration TEXT); INSERT INTO albums (album_id, artist_id, title) VALUES (201, 2, 'The Wall');"
+        "setup": "DROP TABLE IF EXISTS songs; CREATE TABLE songs (song_id INTEGER PRIMARY KEY, album_id INTEGER, title TEXT, duration TEXT);"
     },
     {
         "question": "Insert a new record into the \"genres\" table with genre_id 301 and name 'Rock'.",
@@ -27,12 +27,12 @@
     {
         "question": "Add a new album 'Meteora' with album_id 102 for artist_id 3 into the \"albums\" table.",
         "answer": "INSERT INTO albums (album_id, artist_id, title) VALUES (102, 3, 'Meteora');",
-        "setup": "DROP TABLE IF EXISTS albums; CREATE TABLE albums (album_id INTEGER PRIMARY KEY, artist_id INTEGER, title TEXT); INSERT INTO artists (artist_id, name) VALUES (3, 'Paramore');"
+        "setup": "DROP TABLE IF EXISTS albums; CREATE TABLE albums (album_id INTEGER PRIMARY KEY, artist_id INTEGER, title TEXT);"
     },
     {
         "question": "Insert a new song 'Let Go' with song_id 1002 and duration '3:54' to album_id 102 in the \"songs\" table.",
         "answer": "INSERT INTO songs (song_id, album_id, title, duration) VALUES (1002, 102, 'Let Go', '3:54');",
-        "setup": "DROP TABLE IF EXISTS songs; CREATE TABLE songs (song_id INTEGER PRIMARY KEY, album_id INTEGER, title TEXT, duration TEXT); INSERT INTO albums (album_id, artist_id, title) VALUES (102, 3, 'Meteora');"
+        "setup": "DROP TABLE IF EXISTS songs; CREATE TABLE songs (song_id INTEGER PRIMARY KEY, album_id INTEGER, title TEXT, duration TEXT);"
     },
     {
         "question": "Insert a new artist 'Pink' with artist_id 4 into the \"artists\" table.",
@@ -42,12 +42,12 @@
     {
         "question": "Add a new album 'Funhouse' with album_id 103 for artist_id 4 into the \"albums\" table.",
         "answer": "INSERT INTO albums (album_id, artist_id, title) VALUES (103, 4, 'Funhouse');",
-        "setup": "DROP TABLE IF EXISTS albums; CREATE TABLE albums (album_id INTEGER PRIMARY KEY, artist_id INTEGER, title TEXT); INSERT INTO artists (artist_id, name) VALUES (4, 'Pink');"
+        "setup": "DROP TABLE IF EXISTS albums; CREATE TABLE albums (album_id INTEGER PRIMARY KEY, artist_id INTEGER, title TEXT);"
     },
     {
         "question": "Insert a new song 'Just Like a Pill' with song_id 1003 and duration '3:34' to album_id 103 in the \"songs\" table.",
         "answer": "INSERT INTO songs (song_id, album_id, title, duration) VALUES (1003, 103, 'Just Like a Pill', '3:34');",
-        "setup": "DROP TABLE IF EXISTS songs; CREATE TABLE songs (song_id INTEGER PRIMARY KEY, album_id INTEGER, title TEXT, duration TEXT); INSERT INTO albums (album_id, artist_id, title) VALUES (103, 4, 'Funhouse');"
+        "setup": "DROP TABLE IF EXISTS songs; CREATE TABLE songs (song_id INTEGER PRIMARY KEY, album_id INTEGER, title TEXT, duration TEXT);"
     },
     {
         "question": "Update the name of the artist with artist_id 2 to 'Pink Floyd Official'.",
@@ -107,7 +107,7 @@
     {
         "question": "Add an album 'A Night at the Opera' with album_id 104 for artist_id 5 into the \"albums\" table.",
         "answer": "INSERT INTO albums (album_id, artist_id, title) VALUES (104, 5, 'A Night at the Opera');",
-        "setup": "DROP TABLE IF EXISTS albums; CREATE TABLE albums (album_id INTEGER PRIMARY KEY, artist_id INTEGER, title TEXT); INSERT INTO artists (artist_id, name) VALUES (5, 'Queen');"
+        "setup": "DROP TABLE IF EXISTS albums; CREATE TABLE albums (album_id INTEGER PRIMARY KEY, artist_id INTEGER, title TEXT);"
     },
     {
         "question": "Insert a song 'Bohemian Rhapsody' with song_id 1006 and duration '5:55' to album_id 104 in the \"songs\" table.",
@@ -118,50 +118,5 @@
         "question": "Update the artist name from 'Pink' to 'P!nk' for artist_id 4 in the \"artists\" table.",
         "answer": "UPDATE artists SET name = 'P!nk' WHERE artist_id = 4;",
         "setup": "DROP TABLE IF EXISTS artists; CREATE TABLE artists (artist_id INTEGER PRIMARY KEY, name TEXT); INSERT INTO artists (artist_id, name) VALUES (4, 'Pink');"
-    },
-    {
-        "question": "Delete the album with album_id 103 from the \"albums\" table.",
-        "answer": "DELETE FROM albums WHERE album_id = 103;",
-        "setup": "DROP TABLE IF EXISTS albums; CREATE TABLE albums (album_id INTEGER PRIMARY KEY, artist_id INTEGER, title TEXT); INSERT INTO albums (album_id, artist_id, title) VALUES (103, 4, 'Funhouse');"
-    },
-    {
-        "question": "Insert a new song 'Shallow' with song_id 1007 and duration '3:36' to album_id 105 in the \"songs\" table.",
-        "answer": "INSERT INTO songs (song_id, album_id, title, duration) VALUES (1007, 105, 'Shallow', '3:36');",
-        "setup": "DROP TABLE IF EXISTS songs; CREATE TABLE songs (song_id INTEGER PRIMARY KEY, album_id INTEGER, title TEXT, duration TEXT); INSERT INTO albums (album_id, artist_id, title) VALUES (105, 6, 'A Star Is Born'); INSERT INTO artists (artist_id, name) VALUES (6, 'Lady Gaga');"
-    },
-    {
-        "question": "Update the title of the song with song_id 1002 to 'Decode' in the \"songs\" table.",
-        "answer": "UPDATE songs SET title = 'Decode' WHERE song_id = 1002;",
-        "setup": "DROP TABLE IF EXISTS songs; CREATE TABLE songs (song_id INTEGER PRIMARY KEY, album_id INTEGER, title TEXT, duration TEXT); INSERT INTO songs (song_id, album_id, title, duration) VALUES (1002, 102, 'Let Go', '3:54');"
-    },
-    {
-        "question": "Delete the song titled 'When Doves Cry' from the \"songs\" table.",
-        "answer": "DELETE FROM songs WHERE title = 'When Doves Cry';",
-        "setup": "DROP TABLE IF EXISTS songs; CREATE TABLE songs (song_id INTEGER PRIMARY KEY, album_id INTEGER, title TEXT, duration TEXT); INSERT INTO songs (song_id, album_id, title, duration) VALUES (1004, 101, 'When Doves Cry', '4:59');"
-    },
-    {
-        "question": "Insert a new artist 'The Beatles' with artist_id 7 into the \"artists\" table.",
-        "answer": "INSERT INTO artists (artist_id, name) VALUES (7, 'The Beatles');",
-        "setup": "DROP TABLE IF EXISTS artists; CREATE TABLE artists (artist_id INTEGER PRIMARY KEY, name TEXT);"
-    },
-    {
-        "question": "Add an album 'Abbey Road' with album_id 106 for artist_id 7 into the \"albums\" table.",
-        "answer": "INSERT INTO albums (album_id, artist_id, title) VALUES (106, 7, 'Abbey Road');",
-        "setup": "DROP TABLE IF EXISTS albums; CREATE TABLE albums (album_id INTEGER PRIMARY KEY, artist_id INTEGER, title TEXT); INSERT INTO artists (artist_id, name) VALUES (7, 'The Beatles');"
-    },
-    {
-        "question": "Insert a song 'Come Together' with song_id 1008 and duration '4:20' to album_id 106 in the \"songs\" table.",
-        "answer": "INSERT INTO songs (song_id, album_id, title, duration) VALUES (1008, 106, 'Come Together', '4:20');",
-        "setup": "DROP TABLE IF EXISTS songs; CREATE TABLE songs (song_id INTEGER PRIMARY KEY, album_id INTEGER, title TEXT, duration TEXT); INSERT INTO albums (album_id, artist_id, title) VALUES (106, 7, 'Abbey Road');"
-    },
-    {
-        "question": "Update the duration of the song 'Bohemian Rhapsody' to '6:00' in the \"songs\" table.",
-        "answer": "UPDATE songs SET duration = '6:00' WHERE title = 'Bohemian Rhapsody';",
-        "setup": "DROP TABLE IF EXISTS songs; CREATE TABLE songs (song_id INTEGER PRIMARY KEY, album_id INTEGER, title TEXT, duration TEXT); INSERT INTO songs (song_id, album_id, title, duration) VALUES (1006, 104, 'Bohemian Rhapsody', '5:55');"
-    },
-    {
-        "question": "Delete the artist 'Lady Gaga' with artist_id 6 from the \"artists\" table.",
-        "answer": "DELETE FROM artists WHERE artist_id = 6;",
-        "setup": "DROP TABLE IF EXISTS artists; CREATE TABLE artists (artist_id INTEGER PRIMARY KEY, name TEXT); INSERT INTO artists (artist_id, name) VALUES (6, 'Lady Gaga');"
     }
 ]
