@@ -251,7 +251,7 @@ class SQLDDLQuiz:
             self.refresh_table_view()
 
     def check_answer(self, student_query, correct_query, setup_query):
-        """Compare the student's query against the correct answer."""
+        """Compare the student's query against the correct answer, including schema and data."""
         # Initialize in-memory databases for checking
         student_check_conn = sqlite3.connect(':memory:')
         correct_conn = sqlite3.connect(':memory:')
@@ -288,21 +288,43 @@ class SQLDDLQuiz:
         # Compare table lists
         if set(student_tables) != set(correct_tables):
             with self.output:
-                display(HTML("<h3 style='color: red;'>Tables mismatch.</h3>"))
+                missing = set(correct_tables) - set(student_tables)
+                extra = set(student_tables) - set(correct_tables)
+                messages = []
+                if missing:
+                    messages.append(f"Missing tables: {', '.join(missing)}.")
+                if extra:
+                    messages.append(f"Unexpected tables: {', '.join(extra)}.")
+                display(HTML(f"<h3 style='color: red;'>Tables mismatch.</h3><p>{' '.join(messages)}</p>"))
             student_check_conn.close()
             correct_conn.close()
             return False, None
 
-        # Compare each table's data
+        # Compare each table's schema and data
         all_match = True
+        schema_feedback = []
         for table in student_tables:
-            match, _, _ = self.compare_table_data(student_check_conn, correct_conn, table)
-            if not match:
+            schema_match, schema_diff = self.compare_table_schema(student_check_conn, correct_conn, table)
+            data_match, _, _ = self.compare_table_data(student_check_conn, correct_conn, table)
+            if not schema_match:
                 all_match = False
+                schema_feedback.append(f"Schema mismatch in table '{table}': {schema_diff}")
+            if not data_match:
+                all_match = False
+
+        if not all_match:
+            with self.output:
+                if schema_feedback:
+                    for msg in schema_feedback:
+                        display(HTML(f"<p style='color: red;'>{msg}</p>"))
+                display(HTML("<p style='color: red;'>Data mismatch in one or more tables.</p>"))
+            student_check_conn.close()
+            correct_conn.close()
+            return False, None
 
         student_check_conn.close()
         correct_conn.close()
-        return all_match, None
+        return True, None
 
     def get_tables(self, connection):
         """Retrieve a list of table names from the SQLite connection."""
@@ -326,6 +348,101 @@ class SQLDDLQuiz:
             with self.output:
                 display(HTML(f"<h3 style='color: red;'>Error comparing table '{table_name}':</h3><p>{e}</p>"))
             return False, pd.DataFrame(), pd.DataFrame()
+
+    def compare_table_schema(self, student_conn, correct_conn, table_name):
+        """
+        Compare the schema of a specific table between student and correct databases.
+        Returns a tuple (match: bool, difference: str).
+        """
+        student_schema = self.get_full_schema(student_conn, table_name)
+        correct_schema = self.get_full_schema(correct_conn, table_name)
+
+        if student_schema != correct_schema:
+            # Identify differences
+            differences = []
+            # Compare columns
+            student_columns = {col['name']: col for col in student_schema['columns']}
+            correct_columns = {col['name']: col for col in correct_schema['columns']}
+
+            # Check for missing columns
+            missing_columns = set(correct_columns.keys()) - set(student_columns.keys())
+            if missing_columns:
+                differences.append(f"Missing columns: {', '.join(missing_columns)}.")
+
+            # Check for extra columns
+            extra_columns = set(student_columns.keys()) - set(correct_columns.keys())
+            if extra_columns:
+                differences.append(f"Unexpected columns: {', '.join(extra_columns)}.")
+
+            # Check for column data types and constraints
+            for col in correct_columns:
+                if col in student_columns:
+                    student_col = student_columns[col]
+                    correct_col = correct_columns[col]
+                    if (student_col['type'].upper() != correct_col['type'].upper() or
+                        student_col['notnull'] != correct_col['notnull'] or
+                        student_col['pk'] != correct_col['pk']):
+                        differences.append(
+                            f"Column '{col}' mismatch. Expected Type: {correct_col['type']}, "
+                            f"NOT NULL: {correct_col['notnull']}, PRIMARY KEY: {correct_col['pk']}. "
+                            f"Got Type: {student_col['type']}, NOT NULL: {student_col['notnull']}, "
+                            f"PRIMARY KEY: {student_col['pk']}."
+                        )
+
+            # Compare foreign keys
+            student_fks = student_schema.get('foreign_keys', [])
+            correct_fks = correct_schema.get('foreign_keys', [])
+
+            if len(student_fks) != len(correct_fks):
+                differences.append("Mismatch in number of foreign keys.")
+            else:
+                for fk in correct_fks:
+                    if fk not in student_fks:
+                        differences.append(f"Missing foreign key: {fk}.")
+
+            difference_str = ' '.join(differences)
+            return False, difference_str
+
+        return True, ""
+
+    def get_full_schema(self, connection, table_name):
+        """
+        Retrieve the full schema of a table, including columns and foreign keys.
+        Returns a dictionary with 'columns' and 'foreign_keys'.
+        """
+        cursor = connection.cursor()
+        cursor.execute(f"PRAGMA table_info({table_name});")
+        columns_info = cursor.fetchall()
+        columns = []
+        for col in columns_info:
+            columns.append({
+                'cid': col[0],
+                'name': col[1],
+                'type': col[2],
+                'notnull': bool(col[3]),
+                'default_value': col[4],
+                'pk': bool(col[5])
+            })
+
+        cursor.execute(f"PRAGMA foreign_key_list({table_name});")
+        fks_info = cursor.fetchall()
+        foreign_keys = []
+        for fk in fks_info:
+            foreign_keys.append({
+                'id': fk[0],
+                'seq': fk[1],
+                'table': fk[2],
+                'from': fk[3],
+                'to': fk[4],
+                'on_update': fk[5],
+                'on_delete': fk[6],
+                'match': fk[7]
+            })
+
+        return {
+            'columns': columns,
+            'foreign_keys': foreign_keys
+        }
 
     def display_comparison(self):
         """Display the user's and expected schema and data after an incorrect answer."""
@@ -356,8 +473,8 @@ class SQLDDLQuiz:
             return
 
         # Get table schemas
-        student_schema = self.get_table_schemas(student_conn)
-        correct_schema = self.get_table_schemas(correct_conn)
+        student_schema = self.get_full_schema(student_conn, self.quiz[self.current_question]['expected_table'])
+        correct_schema = self.get_full_schema(correct_conn, self.quiz[self.current_question]['expected_table'])
 
         # Get tables
         student_tables = self.get_tables(student_conn)
@@ -368,10 +485,10 @@ class SQLDDLQuiz:
             <h3>Schema Comparison:</h3>
             <div class="diff-container">
                 <div class="diff-table">
-                    <b>Your Schema:</b><br>{student_schema}
+                    <b>Your Schema:</b><br>{self.format_schema_html(student_schema)}
                 </div>
                 <div class="diff-table">
-                    <b>Expected Schema:</b><br>{correct_schema}
+                    <b>Expected Schema:</b><br>{self.format_schema_html(correct_schema)}
                 </div>
             </div>
         """
@@ -429,6 +546,30 @@ class SQLDDLQuiz:
 
         student_conn.close()
         correct_conn.close()
+
+    def format_schema_html(self, schema):
+        """Format the schema dictionary into HTML."""
+        columns = schema['columns']
+        foreign_keys = schema.get('foreign_keys', [])
+
+        html = "<ul>"
+        for col in columns:
+            constraints = []
+            if col['notnull']:
+                constraints.append("NOT NULL")
+            if col['pk']:
+                constraints.append("PRIMARY KEY")
+            constraints_str = " ".join(constraints)
+            html += f"<li>{col['name']} ({col['type']}) {constraints_str}</li>"
+        html += "</ul>"
+
+        if foreign_keys:
+            html += "<b>Foreign Keys:</b><br><ul>"
+            for fk in foreign_keys:
+                html += f"<li>FOREIGN KEY({fk['from']}) REFERENCES {fk['table']}({fk['to']})</li>"
+            html += "</ul>"
+
+        return html
 
     def on_retry(self, button):
         """Handle the retry button click."""
@@ -490,6 +631,7 @@ class SQLDDLQuiz:
                         display(df)
                 except Exception as e:
                     display(HTML(f"<h3 style='color: red;'>Error retrieving table '{table_name}':</h3><p>{e}</p>"))
+
 
 # Example Usage:
 
