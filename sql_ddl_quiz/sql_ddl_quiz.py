@@ -11,7 +11,7 @@ from ipywidgets import (
     Textarea, Button, VBox, HBox, Output, HTML, Layout, IntProgress, Tab
 )
 
-class SQLQuiz:
+class SQLDDLQuiz:
     def __init__(self, questions_source):
         """
         Initialize the SQL Quiz.
