@@ -105,24 +105,9 @@
         "setup": "DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT);"
     },
     {
-        "question": "Create a table named \"operations\" with an integer primary key 'operation_id', a non-empty text column 'name' for the operation name, a text column 'start_date' for the start date, and a text column 'end_date' for the end date.",
-        "answer": "CREATE TABLE operations (operation_id INTEGER PRIMARY KEY, name TEXT NOT NULL, start_date TEXT, end_date TEXT);",
-        "setup": "DROP TABLE IF EXISTS operations;"
-    },
-    {
-        "question": "Modify the \"missions\" table to add a new integer column 'operation_id' that associates each mission with an operation. Ensure that 'operation_id' is a foreign key referencing the 'operation_id' in the \"operations\" table.",
-        "answer": "ALTER TABLE missions ADD COLUMN operation_id INTEGER; ALTER TABLE missions ADD CONSTRAINT fk_operation FOREIGN KEY (operation_id) REFERENCES operations(operation_id);",
-        "setup": "DROP TABLE IF EXISTS missions; DROP TABLE IF EXISTS operations; DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT); CREATE TABLE operations (operation_id INTEGER PRIMARY KEY, name TEXT NOT NULL, start_date TEXT, end_date TEXT); CREATE TABLE missions (mission_id INTEGER PRIMARY KEY, title TEXT NOT NULL, agent_id INTEGER, target_name TEXT, FOREIGN KEY (agent_id) REFERENCES agents(agent_id));"
-    },
-    {
         "question": "Design a table named \"allied_agents\" to represent a many-to-many relationship between spy networks and agents. Include integer columns 'network_id' and 'agent_id' that reference the 'network_id' in the \"spy_networks\" table and the 'agent_id' in the \"agents\" table respectively.",
         "answer": "CREATE TABLE allied_agents (agent_id INTEGER, ally_id INTEGER, FOREIGN KEY (agent_id) REFERENCES agents(agent_id), FOREIGN KEY (ally_id) REFERENCES allies(ally_id));",
         "setup": "DROP TABLE IF EXISTS allied_agents; DROP TABLE IF EXISTS agents; DROP TABLE IF EXISTS allies; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT); CREATE TABLE allies (ally_id INTEGER PRIMARY KEY, name TEXT NOT NULL, country TEXT);"
-    },
-    {
-        "question": "Remove the table \"allied_agents\" from the database, but only if it exists.",
-        "answer": "DROP TABLE IF EXISTS allied_agents;",
-        "setup": "DROP TABLE IF EXISTS allied_agents; CREATE TABLE allied_agents (agent_id INTEGER, ally_id INTEGER, FOREIGN KEY (agent_id) REFERENCES agents(agent_id), FOREIGN KEY (ally_id) REFERENCES allies(ally_id));"
     },
     {
         "question": "Design a table named \"missions_completed\" with an integer primary key 'mission_id', a text column 'completion_date' for the completion date, and a boolean column 'success' indicating the success of the mission. Ensure that 'mission_id' is a foreign key referencing the 'mission_id' in the \"missions\" table.",
@@ -134,19 +119,79 @@
         "answer": "CREATE TABLE encryption_keys (key_id INTEGER PRIMARY KEY, key_value TEXT NOT NULL UNIQUE, assigned_agent INTEGER, FOREIGN KEY (assigned_agent) REFERENCES agents(agent_id));",
         "setup": "DROP TABLE IF EXISTS encryption_keys; DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT);"
     },
-    {
-        "question": "Modify the \"operations\" table to ensure that each operation name is unique across all records.",
-        "answer": "ALTER TABLE operations ADD CONSTRAINT uq_operation_name UNIQUE (name);",
-        "setup": "DROP TABLE IF EXISTS operations; CREATE TABLE operations (operation_id INTEGER PRIMARY KEY, name TEXT NOT NULL, start_date TEXT, end_date TEXT);"
-    },
-    {
-        "question": "Remove the table \"intel_reports\" from the database, but only if it exists.",
-        "answer": "DROP TABLE IF EXISTS intel_reports;",
-        "setup": "DROP TABLE IF EXISTS intel_reports; CREATE TABLE intel_reports (report_id INTEGER PRIMARY KEY, mission_id INTEGER, date TEXT, details TEXT, FOREIGN KEY (mission_id) REFERENCES missions(mission_id));"
-    },
-    {
-        "question": "Design a table named \"mission_logs\" with an integer primary key 'log_id', an integer column 'mission_id' linking to a mission, a text column 'timestamp' for the event's timestamp, a text column 'event' describing the event, and an integer column 'agent_id' linking to an agent. Ensure that both 'mission_id' and 'agent_id' are foreign keys referencing the appropriate fields in the \"missions\" and \"agents\" tables respectively.",
-        "answer": "CREATE TABLE mission_logs (log_id INTEGER PRIMARY KEY, mission_id INTEGER, timestamp TEXT, event TEXT, agent_id INTEGER, FOREIGN KEY (mission_id) REFERENCES missions(mission_id), FOREIGN KEY (agent_id) REFERENCES agents(agent_id));",
-        "setup": "DROP TABLE IF EXISTS mission_logs; DROP TABLE IF EXISTS missions; DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT); CREATE TABLE missions (mission_id INTEGER PRIMARY KEY, title TEXT NOT NULL, agent_id INTEGER, target_name TEXT, FOREIGN KEY (agent_id) REFERENCES agents(agent_id));"
-    }
-]
+     {
+            "question": "Create a table named \"secure_files\" with an integer primary key 'file_id', a non-empty text column 'filename' for the name of the file, a BLOB column 'data' for the file content, and a text column 'encryption_method' that must be either 'AES', 'RSA', or '3DES'. Include a CHECK constraint to enforce the 'encryption_method' values.",
+            "answer": "CREATE TABLE secure_files (file_id INTEGER PRIMARY KEY, filename TEXT NOT NULL, data BLOB, encryption_method TEXT CHECK(encryption_method IN ('AES', 'RSA', '3DES')));",
+            "setup": "DROP TABLE IF EXISTS secure_files;"
+        },
+        {
+            "question": "Design a table named \"agent_health_records\" that includes an integer primary key 'record_id', an integer column 'agent_id' linking to an agent, a date column 'checkup_date' for the date of health checkup, and a real number column 'body_temperature' for the agent's body temperature. Ensure that 'body_temperature' is between 35.0 and 42.0 degrees Celsius using a CHECK constraint. 'agent_id' is a foreign key referencing 'agent_id' in the \"agents\" table.",
+            "answer": "CREATE TABLE agent_health_records (record_id INTEGER PRIMARY KEY, agent_id INTEGER, checkup_date DATE, body_temperature REAL CHECK(body_temperature BETWEEN 35.0 AND 42.0), FOREIGN KEY (agent_id) REFERENCES agents(agent_id));",
+            "setup": "DROP TABLE IF EXISTS agent_health_records; DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT);"
+        },
+        {
+            "question": "Create a table named \"equipment\" with an integer primary key 'equipment_id', a non-empty text column 'name' for the equipment's name, a numeric column 'cost' with two decimal places indicating the cost, and an integer column 'quantity' with a default value of 1. Include a CHECK constraint to ensure 'cost' is greater than 0.",
+            "answer": "CREATE TABLE equipment (equipment_id INTEGER PRIMARY KEY, name TEXT NOT NULL, cost NUMERIC(10,2) CHECK(cost > 0), quantity INTEGER DEFAULT 1);",
+            "setup": "DROP TABLE IF EXISTS equipment;"
+        },
+        {
+            "question": "Design a table named \"mission_schedule\" with an integer primary key 'schedule_id', an integer column 'mission_id' linking to a mission, a datetime column 'start_time' for the mission start time, and a datetime column 'end_time' for the mission end time. Ensure that 'end_time' is after 'start_time' using a CHECK constraint. 'mission_id' is a foreign key referencing 'mission_id' in the \"missions\" table.",
+            "answer": "CREATE TABLE mission_schedule (schedule_id INTEGER PRIMARY KEY, mission_id INTEGER, start_time DATETIME, end_time DATETIME, CHECK(end_time > start_time), FOREIGN KEY (mission_id) REFERENCES missions(mission_id));",
+            "setup": "DROP TABLE IF EXISTS mission_schedule; DROP TABLE IF EXISTS missions; DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT); CREATE TABLE missions (mission_id INTEGER PRIMARY KEY, title TEXT NOT NULL, agent_id INTEGER, target_name TEXT, FOREIGN KEY (agent_id) REFERENCES agents(agent_id));"
+        },
+        {
+            "question": "Create a table named \"training_sessions\" with an integer primary key 'session_id', a text column 'session_name' for the name of the session, a text column 'difficulty_level' that must be 'Beginner', 'Intermediate', or 'Expert' enforced by a CHECK constraint, and an integer column 'duration_minutes' indicating the duration in minutes, which must be a positive integer.",
+            "answer": "CREATE TABLE training_sessions (session_id INTEGER PRIMARY KEY, session_name TEXT, difficulty_level TEXT CHECK(difficulty_level IN ('Beginner', 'Intermediate', 'Expert')), duration_minutes INTEGER CHECK(duration_minutes > 0));",
+            "setup": "DROP TABLE IF EXISTS training_sessions;"
+        },
+        {
+            "question": "Design a table named \"agent_performance\" with an integer primary key 'performance_id', an integer column 'agent_id' linking to an agent, a date column 'evaluation_date' for the date of evaluation, a numeric column 'score' between 0 and 100 inclusive, enforced by a CHECK constraint. 'agent_id' is a foreign key referencing 'agent_id' in the \"agents\" table.",
+            "answer": "CREATE TABLE agent_performance (performance_id INTEGER PRIMARY KEY, agent_id INTEGER, evaluation_date DATE, score NUMERIC CHECK(score BETWEEN 0 AND 100), FOREIGN KEY (agent_id) REFERENCES agents(agent_id));",
+            "setup": "DROP TABLE IF EXISTS agent_performance; DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT);"
+        },
+        {
+            "question": "Create a table named \"classified_documents\" with an integer primary key 'document_id', a non-empty text column 'title' for the document's title, a BLOB column 'content' for the document content, and a text column 'classification_level' that must be one of 'Confidential', 'Secret', or 'Top Secret', enforced by a CHECK constraint.",
+            "answer": "CREATE TABLE classified_documents (document_id INTEGER PRIMARY KEY, title TEXT NOT NULL, content BLOB, classification_level TEXT CHECK(classification_level IN ('Confidential', 'Secret', 'Top Secret')));",
+            "setup": "DROP TABLE IF EXISTS classified_documents;"
+        },
+        {
+            "question": "Design a table named \"vehicle_registry\" with an integer primary key 'vehicle_id', a non-empty text column 'license_plate' for the vehicle's license plate, a text column 'vehicle_type' that must be 'Car', 'Motorcycle', or 'Truck' enforced by a CHECK constraint, and a BOOLEAN column 'armored' indicating if the vehicle is armored.",
+            "answer": "CREATE TABLE vehicle_registry (vehicle_id INTEGER PRIMARY KEY, license_plate TEXT NOT NULL, vehicle_type TEXT CHECK(vehicle_type IN ('Car', 'Motorcycle', 'Truck')), armored BOOLEAN);",
+            "setup": "DROP TABLE IF EXISTS vehicle_registry;"
+        },
+        {
+            "question": "Create a table named \"agent_languages\" to represent the languages known by agents. Include integer columns 'agent_id' and 'language_id', where 'language_id' references 'language_id' in the \"languages\" table. Ensure that the combination of 'agent_id' and 'language_id' is unique to prevent duplicates.",
+            "answer": "CREATE TABLE agent_languages (agent_id INTEGER, language_id INTEGER, UNIQUE(agent_id, language_id), FOREIGN KEY (agent_id) REFERENCES agents(agent_id), FOREIGN KEY (language_id) REFERENCES languages(language_id));",
+            "setup": "DROP TABLE IF EXISTS agent_languages; DROP TABLE IF EXISTS agents; DROP TABLE IF EXISTS languages; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT); CREATE TABLE languages (language_id INTEGER PRIMARY KEY, name TEXT NOT NULL UNIQUE);"
+        },
+        {
+            "question": "Design a table named \"safe_house_bookings\" with an integer primary key 'booking_id', an integer column 'house_id' referencing 'house_id' in \"safe_houses\", an integer column 'agent_id' referencing 'agent_id' in \"agents\", a DATE column 'check_in' and a DATE column 'check_out'. Include a CHECK constraint to ensure 'check_out' is after 'check_in'.",
+            "answer": "CREATE TABLE safe_house_bookings (booking_id INTEGER PRIMARY KEY, house_id INTEGER, agent_id INTEGER, check_in DATE, check_out DATE, CHECK(check_out > check_in), FOREIGN KEY (house_id) REFERENCES safe_houses(house_id), FOREIGN KEY (agent_id) REFERENCES agents(agent_id));",
+            "setup": "DROP TABLE IF EXISTS safe_house_bookings; DROP TABLE IF EXISTS safe_houses; DROP TABLE IF EXISTS agents; CREATE TABLE safe_houses (house_id INTEGER PRIMARY KEY, location TEXT NOT NULL, capacity INTEGER); CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT);"
+        },
+        {
+            "question": "Create a table named \"agent_accounts\" with an integer primary key 'account_id', an integer column 'agent_id' referencing 'agent_id' in \"agents\", a text column 'username', a text column 'password_hash' to store the hashed password, and a DATETIME column 'last_login'. Include a CHECK constraint to ensure 'username' is at least 5 characters long.",
+            "answer": "CREATE TABLE agent_accounts (account_id INTEGER PRIMARY KEY, agent_id INTEGER, username TEXT CHECK(length(username) >= 5), password_hash TEXT, last_login DATETIME, FOREIGN KEY (agent_id) REFERENCES agents(agent_id));",
+            "setup": "DROP TABLE IF EXISTS agent_accounts; DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT);"
+        },
+        {
+            "question": "Design a table named \"budget_allocations\" with an integer primary key 'allocation_id', a text column 'department' for the department name, a NUMERIC column 'allocated_funds' indicating allocated funds with two decimal places, and a NUMERIC column 'spent_funds' indicating funds spent. Include a CHECK constraint to ensure 'spent_funds' does not exceed 'allocated_funds'.",
+            "answer": "CREATE TABLE budget_allocations (allocation_id INTEGER PRIMARY KEY, department TEXT, allocated_funds NUMERIC(12,2), spent_funds NUMERIC(12,2), CHECK(spent_funds <= allocated_funds));",
+            "setup": "DROP TABLE IF EXISTS budget_allocations;"
+        },
+        {
+            "question": "Create a table named \"mission_objectives\" with an integer primary key 'objective_id', an integer column 'mission_id' referencing 'mission_id' in \"missions\", a text column 'description' for the objective, and a BOOLEAN column 'completed' with a default value of 'false'.",
+            "answer": "CREATE TABLE mission_objectives (objective_id INTEGER PRIMARY KEY, mission_id INTEGER, description TEXT, completed BOOLEAN DEFAULT false, FOREIGN KEY (mission_id) REFERENCES missions(mission_id));",
+            "setup": "DROP TABLE IF EXISTS mission_objectives; DROP TABLE IF EXISTS missions; DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT); CREATE TABLE missions (mission_id INTEGER PRIMARY KEY, title TEXT NOT NULL, agent_id INTEGER, target_name TEXT, FOREIGN KEY (agent_id) REFERENCES agents(agent_id));"
+        },
+        {
+            "question": "Design a table named \"agent_certifications\" with an integer primary key 'certification_id', an integer column 'agent_id' referencing 'agent_id' in \"agents\", a text column 'certification_name', and a DATE column 'expiry_date'. Include a CHECK constraint to ensure 'expiry_date' is in the future.",
+            "answer": "CREATE TABLE agent_certifications (certification_id INTEGER PRIMARY KEY, agent_id INTEGER, certification_name TEXT, expiry_date DATE CHECK(expiry_date > DATE('now')), FOREIGN KEY (agent_id) REFERENCES agents(agent_id));",
+            "setup": "DROP TABLE IF EXISTS agent_certifications; DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT);"
+        },
+        {
+            "question": "Create a table named \"mission_ratings\" with an integer primary key 'rating_id', an integer column 'mission_id' referencing 'mission_id' in \"missions\", an integer column 'rating' between 1 and 5 inclusive enforced by a CHECK constraint, and a text column 'comments'.",
+            "answer": "CREATE TABLE mission_ratings (rating_id INTEGER PRIMARY KEY, mission_id INTEGER, rating INTEGER CHECK(rating BETWEEN 1 AND 5), comments TEXT, FOREIGN KEY (mission_id) REFERENCES missions(mission_id));",
+            "setup": "DROP TABLE IF EXISTS mission_ratings; DROP TABLE IF EXISTS missions; DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT); CREATE TABLE missions (mission_id INTEGER PRIMARY KEY, title TEXT NOT NULL, agent_id INTEGER, target_name TEXT, FOREIGN KEY (agent_id) REFERENCES agents(agent_id));"
+        }
+    ]
