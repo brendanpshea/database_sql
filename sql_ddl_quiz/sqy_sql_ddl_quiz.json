@@ -104,11 +104,7 @@
         "answer": "ALTER TABLE agents DROP COLUMN status;",
         "setup": "DROP TABLE IF EXISTS agents; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT);"
     },
-    {
-        "question": "Design a table named \"allied_agents\" to represent a many-to-many relationship between spy networks and agents. Include integer columns 'network_id' and 'agent_id' that reference the 'network_id' in the \"spy_networks\" table and the 'agent_id' in the \"agents\" table respectively.",
-        "answer": "CREATE TABLE allied_agents (agent_id INTEGER, ally_id INTEGER, FOREIGN KEY (agent_id) REFERENCES agents(agent_id), FOREIGN KEY (ally_id) REFERENCES allies(ally_id));",
-        "setup": "DROP TABLE IF EXISTS allied_agents; DROP TABLE IF EXISTS agents; DROP TABLE IF EXISTS allies; CREATE TABLE agents (agent_id INTEGER PRIMARY KEY, name TEXT NOT NULL, codename TEXT UNIQUE, status TEXT); CREATE TABLE allies (ally_id INTEGER PRIMARY KEY, name TEXT NOT NULL, country TEXT);"
-    },
+
     {
         "question": "Design a table named \"missions_completed\" with an integer primary key 'mission_id', a text column 'completion_date' for the completion date, and a boolean column 'success' indicating the success of the mission. Ensure that 'mission_id' is a foreign key referencing the 'mission_id' in the \"missions\" table.",
         "answer": "CREATE TABLE missions_completed (mission_id INTEGER PRIMARY KEY, completion_date TEXT, success BOOLEAN, FOREIGN KEY (mission_id) REFERENCES missions(mission_id));",
