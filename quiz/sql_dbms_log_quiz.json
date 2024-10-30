@@ -16,31 +16,27 @@
     "answer": "SELECT id, timestamp FROM Logs ORDER BY timestamp DESC LIMIT 1;"
   },
   {
-    "question": "Count the number of log entries for each day, displaying the date as 'log_date' and count as 'log_count'.",
+    "question": "Count the number of log entries for each day, displaying the date as 'log_date' and count as 'log_count'. You'll need use DATE(timestamp) to extract the date",
     "answer": "SELECT DATE(timestamp) AS log_date, COUNT(*) AS log_count FROM Logs GROUP BY log_date ORDER BY log_date;"
   },
   {
-    "question": "List all unique log types in the database. Display the result as 'log_type'.",
+    "question": "List all unique log types in the database. Display the result as 'log_type'. You'll need to use json_extract(data, '$.type') to get the type." 
     "answer": "SELECT DISTINCT json_extract(data, '$.type') AS log_type FROM Logs;"
   },
   {
-    "question": "Count the number of log entries for each log type. Display the type as 'log_type' and count as 'type_count'.",
+    "question": "Count the number of log entries for each log type. Display the type as 'log_type' and count as 'type_count'. Show your results in descending ordering by the type_count.",
     "answer": "SELECT json_extract(data, '$.type') AS log_type, COUNT(*) AS type_count FROM Logs GROUP BY log_type ORDER BY type_count DESC;"
   },
   {
-    "question": "Retrieve the first 5 query execution logs, showing 'query_id' and 'sql_statement'.",
+    "question": "Retrieve the first 5 query execution logs, showing 'query_id' and 'sql_statement'. You'll be looking at logs where json_extract(data, '$.type') = 'query_execution.",
     "answer": "SELECT json_extract(data, '$.query_id') AS query_id, json_extract(data, '$.sql') AS sql_statement FROM Logs WHERE json_extract(data, '$.type') = 'query_execution' LIMIT 5;"
-  },
-  {
-    "question": "Find the top 5 longest-running queries, displaying 'query_id' and 'execution_time_ms'.",
-    "answer": "SELECT json_extract(data, '$.query_id') AS query_id, json_extract(data, '$.execution_time_ms') AS execution_time_ms FROM Logs WHERE json_extract(data, '$.type') = 'query_execution' ORDER BY CAST(json_extract(data, '$.execution_time_ms') AS FLOAT) DESC LIMIT 5;"
   },
   {
     "question": "List all error logs, showing 'error_code' and 'error_message'.",
     "answer": "SELECT json_extract(data, '$.error_code') AS error_code, json_extract(data, '$.message') AS error_message FROM Logs WHERE json_extract(data, '$.type') = 'error';"
   },
   {
-    "question": "Count the occurrences of each error code. Display the error code as 'error_code' and count as 'error_count'.",
+    "question": "Count the occurrences of each error code. Display the error code as 'error_code' and count as 'error_count'. Display in descending order by error count.",
     "answer": "SELECT json_extract(data, '$.error_code') AS error_code, COUNT(*) AS error_count FROM Logs WHERE json_extract(data, '$.type') = 'error' GROUP BY error_code ORDER BY error_count DESC;"
   },
   {
@@ -48,7 +44,7 @@
     "answer": "SELECT json_extract(data, '$.action') AS action, json_extract(data, '$.user') AS user FROM Logs WHERE json_extract(data, '$.type') = 'connection';"
   },
   {
-    "question": "Find the top 5 users with the most connection logs. Display the user as 'user' and count as 'connection_count'.",
+    "question": "Find the top 5 users with the most connection logs. Display the user as 'user' and count as 'connection_count'. ",
     "answer": "SELECT json_extract(data, '$.user') AS user, COUNT(*) AS connection_count FROM Logs WHERE json_extract(data, '$.type') = 'connection' GROUP BY user ORDER BY connection_count DESC LIMIT 5;"
   },
   {
@@ -56,7 +52,7 @@
     "answer": "SELECT json_extract(data, '$.object_type') AS object_type, json_extract(data, '$.object_name') AS object_name, json_extract(data, '$.action') AS action FROM Logs WHERE json_extract(data, '$.type') = 'schema_change';"
   },
   {
-    "question": "Count the number of schema changes for each object type. Display the object type as 'object_type' and count as 'change_count'.",
+    "question": "Count the number of schema changes for each object type. Display the object type as 'object_type' and count as 'change_count'. Display in descending order by change_count.",
     "answer": "SELECT json_extract(data, '$.object_type') AS object_type, COUNT(*) AS change_count FROM Logs WHERE json_extract(data, '$.type') = 'schema_change' GROUP BY object_type ORDER BY change_count DESC;"
   },
   {
@@ -80,7 +76,7 @@
     "answer": "SELECT timestamp, json_extract(data, '$.error_code') AS error_code, json_extract(data, '$.message') AS error_message FROM Logs WHERE json_extract(data, '$.type') = 'error' ORDER BY timestamp DESC LIMIT 5;"
   },
   {
-    "question": "Count the number of successful (COMMIT) and failed (ROLLBACK) transactions. Show the operation as 'transaction_result' and count as 'count'.",
+    "question": "Count the number of successful (COMMIT) and failed (ROLLBACK) transactions from the transaction logs. Show the operation as 'transaction_result' and count as 'count'.",
     "answer": "SELECT json_extract(data, '$.operation') AS transaction_result, COUNT(*) AS count FROM Logs WHERE json_extract(data, '$.type') = 'transaction' AND json_extract(data, '$.operation') IN ('COMMIT', 'ROLLBACK') GROUP BY transaction_result;"
   },
   {
@@ -88,15 +84,15 @@
     "answer": "SELECT json_extract(data, '$.user') AS user, SUM(CAST(json_extract(data, '$.duration_ms') AS FLOAT)) AS total_connection_time_ms FROM Logs WHERE json_extract(data, '$.type') = 'connection' AND json_extract(data, '$.action') = 'DISCONNECT' GROUP BY user ORDER BY total_connection_time_ms DESC LIMIT 1;"
   },
   {
-    "question": "List the 5 most frequently executed SQL queries. Show the SQL as 'sql_statement' and count as 'execution_count'.",
+    "question": "List the 5 most frequently executed SQL queries from the query execution logs. Show the SQL as 'sql_statement' and count as 'execution_count'.",
     "answer": "SELECT json_extract(data, '$.sql') AS sql_statement, COUNT(*) AS execution_count FROM Logs WHERE json_extract(data, '$.type') = 'query_execution' GROUP BY sql_statement ORDER BY execution_count DESC LIMIT 5;"
   },
   {
-    "question": "Find the hour of the day with the most log entries. Display the hour as 'hour_of_day' (0-23) and count as 'log_count'.",
+    "question": "Find the hour of the day with the most log entries. Display the hour as 'hour_of_day' (0-23) and count as 'log_count'. To get the hour, try  CAST(strftime('%H', timestamp) AS INTEGER).",
     "answer": "SELECT CAST(strftime('%H', timestamp) AS INTEGER) AS hour_of_day, COUNT(*) AS log_count FROM Logs GROUP BY hour_of_day ORDER BY log_count DESC LIMIT 1;"
   },
   {
-    "question": "Retrieve the 5 longest-running transactions. Show 'transaction_id', 'user', and 'duration_ms'.",
+    "question": "Retrieve the 5 longest-running transactions. Show 'transaction_id', 'user', and 'duration_ms'. Order by duration in descending order",
     "answer": "SELECT json_extract(data, '$.transaction_id') AS transaction_id, json_extract(data, '$.user') AS user, json_extract(data, '$.duration_ms') AS duration_ms FROM Logs WHERE json_extract(data, '$.type') = 'transaction' ORDER BY CAST(json_extract(data, '$.duration_ms') AS FLOAT) DESC LIMIT 5;"
   }
 ]
