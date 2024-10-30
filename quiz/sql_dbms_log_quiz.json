@@ -20,7 +20,7 @@
     "answer": "SELECT DATE(timestamp) AS log_date, COUNT(*) AS log_count FROM Logs GROUP BY log_date ORDER BY log_date;"
   },
   {
-    "question": "List all unique log types in the database. Display the result as 'log_type'. You'll need to use json_extract(data, '$.type') to get the type." 
+    "question": "List all unique log types in the database. Display the result as 'log_type'. You'll need to use json_extract(data, '$.type') to get the type.", 
     "answer": "SELECT DISTINCT json_extract(data, '$.type') AS log_type FROM Logs;"
   },
   {
