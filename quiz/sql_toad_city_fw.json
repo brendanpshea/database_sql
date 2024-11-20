@@ -1,0 +1,82 @@
+[
+ {
+   "question": "As a new security analyst, you want to see what the firewall logs look like. List the timestamp, action, and user_id for the first 5 log entries.",
+   "answer": "SELECT timestamp, action, user_id FROM firewall_logs LIMIT 5;"
+ },
+ {
+   "question": "The hospital director wants to know which users are on the system. Show all unique user_ids in the logs.",
+   "answer": "SELECT DISTINCT user_id FROM firewall_logs;"
+ },
+ {
+   "question": "Count how many total log entries we have. Display the result with column alias 'total_logs'.", 
+   "answer": "SELECT COUNT(*) AS total_logs FROM firewall_logs;"
+ },
+ {
+   "question": "Your supervisor wants to know if we're blocking any traffic. Show all destination IPs (dst_ip) where the action is 'BLOCK'.",
+   "answer": "SELECT dst_ip FROM firewall_logs WHERE action = 'BLOCK';"
+ },
+ {
+   "question": "As part of a security audit, list all connections using RDP (protocol = 'RDP').",
+   "answer": "SELECT timestamp, src_ip, dst_ip FROM firewall_logs WHERE protocol = 'RDP';"
+ },
+ {
+   "question": "The compliance team needs to check medical zone access. Show all logs where the destination IP starts with '192.168.10.' (Use LIKE operator)",
+   "answer": "SELECT timestamp, user_id, dst_ip FROM firewall_logs WHERE dst_ip LIKE '192.168.10.%';"
+ },
+ {
+   "question": "Count how many times each user appears in the logs. Show user_id and name the count column 'connection_count'.",
+   "answer": "SELECT user_id, COUNT(*) AS connection_count FROM firewall_logs GROUP BY user_id;"
+ },
+ {
+   "question": "Show all logs from user 'mario.bros' who is our head administrator.",
+   "answer": "SELECT timestamp, src_ip, dst_ip, action FROM firewall_logs WHERE user_id = 'mario.bros';"
+ },
+ {
+   "question": "List all unique protocols in our logs to see what services are being used.",
+   "answer": "SELECT DISTINCT protocol FROM firewall_logs;"
+ },
+ {
+   "question": "Your manager wants to know about large file transfers. Show timestamp and bytes_sent where bytes_sent is greater than 1000000.",
+   "answer": "SELECT timestamp, bytes_sent FROM firewall_logs WHERE bytes_sent > 1000000;"
+ },
+ {
+   "question": "List timestamp and action for all logs between 9 AM and 10 AM. (Use BETWEEN with timestamps '2024-11-18T09:00:00' and '2024-11-18T10:00:00')",
+   "answer": "SELECT timestamp, action FROM firewall_logs WHERE timestamp BETWEEN '2024-11-18T09:00:00' AND '2024-11-18T10:00:00';"
+ },
+ {
+   "question": "Show all activity from the Public zone (source IPs starting with '192.168.30.'). Use LIKE operator.",
+   "answer": "SELECT timestamp, src_ip, dst_ip FROM firewall_logs WHERE src_ip LIKE '192.168.30.%';"
+ },
+ {
+   "question": "Count how many times each protocol appears in the logs. Name the count column 'usage_count'.",
+   "answer": "SELECT protocol, COUNT(*) AS usage_count FROM firewall_logs GROUP BY protocol;"
+ },
+ {
+   "question": "List all blocked SSH attempts (where protocol = 'SSH' and action = 'BLOCK').",
+   "answer": "SELECT timestamp, src_ip, dst_ip FROM firewall_logs WHERE protocol = 'SSH' AND action = 'BLOCK';"
+ },
+ {
+   "question": "Check for unusual port numbers by showing all logs where dst_port is greater than 10000.",
+   "answer": "SELECT timestamp, dst_ip, dst_port FROM firewall_logs WHERE dst_port > 10000;"
+ },
+ {
+   "question": "Count how many ALLOW and BLOCK actions we have. Show action and name the count column 'action_count'.",
+   "answer": "SELECT action, COUNT(*) AS action_count FROM firewall_logs GROUP BY action;"
+ },
+ {
+   "question": "Show the total bytes_sent for each user_id. Name the sum column 'total_bytes'.",
+   "answer": "SELECT user_id, SUM(bytes_sent) AS total_bytes FROM firewall_logs GROUP BY user_id;"
+ },
+ {
+   "question": "List all logs where no bytes were received (bytes_received = 0).",
+   "answer": "SELECT timestamp, src_ip, dst_ip FROM firewall_logs WHERE bytes_received = 0;"
+ },
+ {
+   "question": "For security purposes, show all logs where someone tried to connect to port 3389 (Remote Desktop).",
+   "answer": "SELECT timestamp, src_ip, dst_ip FROM firewall_logs WHERE dst_port = 3389;"
+ },
+ {
+   "question": "List all logs where the source port (src_port) is suspicious by being less than 1024 (typically reserved for system services).",
+   "answer": "SELECT timestamp, src_ip, src_port FROM firewall_logs WHERE src_port < 1024;"
+ }
+]
