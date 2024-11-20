@@ -293,7 +293,7 @@ def sql_select_quiz_from_id(quiz_id="books"):
     elif quiz_id == "music":
         db_url = "https://github.com/brendanpshea/database_sql/raw/main/data/rs_greatest_albums.db"
         json_url = "https://github.com/brendanpshea/database_sql/raw/main/quiz/sql_music_quiz.json"
-    elif quiz_id = "firewall":
+    elif quiz_id == "firewall":
         db_url =  "https://github.com/brendanpshea/database_sql/raw/main/data/firewall_logs.db"
         json_url = "https://github.com/brendanpshea/database_sql/raw/main/quiz/sql_toad_city_fw.json"
     else:
