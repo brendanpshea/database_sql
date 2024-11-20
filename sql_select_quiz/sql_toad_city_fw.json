@@ -1,0 +1,162 @@
+[
+ {
+   "question": "As a new security analyst, you want to see what the firewall logs look like. List the timestamp, action, and user_id for the first 5 log entries.",
+   "answer": "SELECT timestamp, action, user_id FROM firewall_logs LIMIT 5;"
+ },
+ {
+   "question": "The hospital director wants to know which users are on the system. Show all unique user_ids in the logs.",
+   "answer": "SELECT DISTINCT user_id FROM firewall_logs;"
+ },
+ {
+   "question": "Count how many total log entries we have. Display the result with column alias 'total_logs'.", 
+   "answer": "SELECT COUNT(*) AS total_logs FROM firewall_logs;"
+ },
+ {
+   "question": "Your supervisor wants to know if we're blocking any traffic. Show all destination IPs (dst_ip) where the action is 'BLOCK'.",
+   "answer": "SELECT dst_ip FROM firewall_logs WHERE action = 'BLOCK';"
+ },
+ {
+   "question": "As part of a security audit, list all connections using RDP (protocol = 'RDP').",
+   "answer": "SELECT timestamp, src_ip, dst_ip FROM firewall_logs WHERE protocol = 'RDP';"
+ },
+ {
+   "question": "The compliance team needs to check medical zone access. Show all logs where the destination IP starts with '192.168.10.' (Use LIKE operator)",
+   "answer": "SELECT timestamp, user_id, dst_ip FROM firewall_logs WHERE dst_ip LIKE '192.168.10.%';"
+ },
+ {
+   "question": "Count how many times each user appears in the logs. Show user_id and name the count column 'connection_count'.",
+   "answer": "SELECT user_id, COUNT(*) AS connection_count FROM firewall_logs GROUP BY user_id;"
+ },
+ {
+   "question": "Show all logs from user 'mario.bros' who is our head administrator.",
+   "answer": "SELECT timestamp, src_ip, dst_ip, action FROM firewall_logs WHERE user_id = 'mario.bros';"
+ },
+ {
+   "question": "List all unique protocols in our logs to see what services are being used.",
+   "answer": "SELECT DISTINCT protocol FROM firewall_logs;"
+ },
+ {
+   "question": "Your manager wants to know about large file transfers. Show timestamp and bytes_sent where bytes_sent is greater than 1000000.",
+   "answer": "SELECT timestamp, bytes_sent FROM firewall_logs WHERE bytes_sent > 1000000;"
+ },
+ {
+   "question": "List timestamp and action for all logs between 9 AM and 10 AM. (Use BETWEEN with timestamps '2024-11-18T09:00:00' and '2024-11-18T10:00:00')",
+   "answer": "SELECT timestamp, action FROM firewall_logs WHERE timestamp BETWEEN '2024-11-18T09:00:00' AND '2024-11-18T10:00:00';"
+ },
+ {
+   "question": "Show all activity from the Public zone (source IPs starting with '192.168.30.'). Use LIKE operator.",
+   "answer": "SELECT timestamp, src_ip, dst_ip FROM firewall_logs WHERE src_ip LIKE '192.168.30.%';"
+ },
+ {
+   "question": "Count how many times each protocol appears in the logs. Name the count column 'usage_count'.",
+   "answer": "SELECT protocol, COUNT(*) AS usage_count FROM firewall_logs GROUP BY protocol;"
+ },
+ {
+   "question": "List all blocked SSH attempts (where protocol = 'SSH' and action = 'BLOCK').",
+   "answer": "SELECT timestamp, src_ip, dst_ip FROM firewall_logs WHERE protocol = 'SSH' AND action = 'BLOCK';"
+ },
+ {
+   "question": "Check for unusual port numbers by showing all logs where dst_port is greater than 10000.",
+   "answer": "SELECT timestamp, dst_ip, dst_port FROM firewall_logs WHERE dst_port > 10000;"
+ },
+ {
+   "question": "Count how many ALLOW and BLOCK actions we have. Show action and name the count column 'action_count'.",
+   "answer": "SELECT action, COUNT(*) AS action_count FROM firewall_logs GROUP BY action;"
+ },
+ {
+   "question": "Show the total bytes_sent for each user_id. Name the sum column 'total_bytes'.",
+   "answer": "SELECT user_id, SUM(bytes_sent) AS total_bytes FROM firewall_logs GROUP BY user_id;"
+ },
+ {
+   "question": "List all logs where no bytes were received (bytes_received = 0).",
+   "answer": "SELECT timestamp, src_ip, dst_ip FROM firewall_logs WHERE bytes_received = 0;"
+ },
+ {
+   "question": "For security purposes, show all logs where someone tried to connect to port 3389 (Remote Desktop).",
+   "answer": "SELECT timestamp, src_ip, dst_ip FROM firewall_logs WHERE dst_port = 3389;"
+ },
+ {
+   "question": "List all logs where the source port (src_port) is suspicious by being less than 1024 (typically reserved for system services).",
+   "answer": "SELECT timestamp, src_ip, src_port FROM firewall_logs WHERE src_port < 1024;"
+ },
+ {
+   "question": "Show large file transfers from the medical zone. Filter for src_ip LIKE '192.168.10.%' AND bytes_sent > 1000000. Show these columns: timestamp, src_ip, dst_ip, and bytes_sent. Order results by bytes_sent in descending order.", 
+   "answer": "SELECT timestamp, src_ip, dst_ip, bytes_sent FROM firewall_logs WHERE src_ip LIKE '192.168.10.%' AND bytes_sent > 1000000 ORDER BY bytes_sent DESC;"
+ },
+ {
+   "question": "The hospital board wants the top 5 users by total data transferred. For each user_id, sum bytes_sent + bytes_received and name this column 'total_bytes'. Order by total_bytes in descending order and limit to 5 results.",
+   "answer": "SELECT user_id, SUM(bytes_sent + bytes_received) AS total_bytes FROM firewall_logs GROUP BY user_id ORDER BY total_bytes DESC LIMIT 5;"
+ },
+ {
+   "question": "Find suspicious login attempts during off-hours. Show these columns: timestamp, src_ip, dst_ip, and user_id. Filter for blocked admin zone access (dst_ip LIKE '192.168.20.%') during evening/night hours (strftime('%H', timestamp) > '18' OR < '06').",
+   "answer": "SELECT timestamp, src_ip, dst_ip, user_id FROM firewall_logs WHERE dst_ip LIKE '192.168.20.%' AND action = 'BLOCK' AND (strftime('%H', timestamp) > '18' OR strftime('%H', timestamp) < '06');"
+ },
+ {
+   "question": "Show hourly connection counts. Extract the hour using strftime('%H', timestamp) and name this column 'hour'. Count connections and name this column 'connections'. Order by hour.",
+   "answer": "SELECT strftime('%H', timestamp) AS hour, COUNT(*) AS connections FROM firewall_logs GROUP BY hour ORDER BY hour;"
+ },
+ {
+   "question": "Find users with high block rates. For each user_id, show total attempts (name this column 'total') and the percentage of blocked requests (name this column 'block_percentage'). Order by block_percentage in descending order.",
+   "answer": "SELECT user_id, COUNT(*) AS total, (COUNT(CASE WHEN action = 'BLOCK' THEN 1 END) * 100.0 / COUNT(*)) AS block_percentage FROM firewall_logs GROUP BY user_id ORDER BY block_percentage DESC;"
+ },
+ {
+   "question": "List protocols and their average transfer sizes. For each protocol, calculate average of (bytes_sent + bytes_received) and name it 'avg_transfer'. Only show protocols with avg_transfer > 50000. Order by avg_transfer descending.",
+   "answer": "SELECT protocol, AVG(bytes_sent + bytes_received) AS avg_transfer FROM firewall_logs GROUP BY protocol HAVING avg_transfer > 50000 ORDER BY avg_transfer DESC;"
+ },
+ {
+   "question": "Show source IPs with many blocked connections. For each src_ip, count blocked connections and name this column 'block_count'. Only include sources with more than 5 blocks. Order by block_count descending.",
+   "answer": "SELECT src_ip, COUNT(*) AS block_count FROM firewall_logs WHERE action = 'BLOCK' GROUP BY src_ip HAVING block_count > 5 ORDER BY block_count DESC;"
+ },
+ {
+   "question": "Find admin accounts accessing medical systems. Show timestamp, user_id, src_ip, and dst_ip. Filter for admin users (IN list) accessing medical zone IPs. Sort by timestamp.",
+   "answer": "SELECT timestamp, user_id, src_ip, dst_ip FROM firewall_logs WHERE user_id IN ('mario.bros', 'luigi.bros', 'princess.peach') AND dst_ip LIKE '192.168.10.%' ORDER BY timestamp;"
+ },
+ {
+   "question": "Show connection counts by zone. Use CASE WHEN to categorize dst_ip into zones and name this column 'zone'. Count connections and name this column 'connections'. Group by zone.",
+   "answer": "SELECT CASE WHEN dst_ip LIKE '192.168.10.%' THEN 'Medical' WHEN dst_ip LIKE '192.168.20.%' THEN 'Admin' WHEN dst_ip LIKE '192.168.30.%' THEN 'Public' END AS zone, COUNT(*) AS connections FROM firewall_logs GROUP BY zone;"
+ },
+ {
+   "question": "Compare morning vs afternoon traffic. Create column 'time_period' showing 'Morning' (06-12) or 'Afternoon' (12-18). Count connections and name this column 'connections'. Group by time_period.",
+   "answer": "SELECT CASE WHEN strftime('%H', timestamp) BETWEEN '06' AND '12' THEN 'Morning' ELSE 'Afternoon' END AS time_period, COUNT(*) AS connections FROM firewall_logs WHERE strftime('%H', timestamp) BETWEEN '06' AND '18' GROUP BY time_period;"
+ },
+ {
+   "question": "Calculate percentage of web traffic. Divide count of HTTP/HTTPS protocols by total connections, multiply by 100. Name this column 'web_traffic_percentage'.",
+   "answer": "SELECT (SUM(CASE WHEN protocol IN ('HTTP', 'HTTPS') THEN 1 ELSE 0 END) * 100.0 / COUNT(*)) AS web_traffic_percentage FROM firewall_logs;"
+ },
+ {
+   "question": "List users with suspicious activity patterns. Show user_id, first timestamp as 'allow_time', and second timestamp as 'block_time'. Find ALLOW actions followed by BLOCK within 5 minutes.",
+   "answer": "SELECT DISTINCT l1.user_id, l1.timestamp AS allow_time, l2.timestamp AS block_time FROM firewall_logs l1 JOIN firewall_logs l2 ON l1.user_id = l2.user_id WHERE l1.action = 'ALLOW' AND l2.action = 'BLOCK' AND l2.timestamp < datetime(l1.timestamp, '+5 minutes');"
+ },
+ {
+   "question": "Show active hours with heavy traffic. Extract hour into column 'hour' and count connections as 'connection_count'. Only show hours with > 100 connections. Order by hour.",
+   "answer": "SELECT strftime('%H', timestamp) AS hour, COUNT(*) AS connection_count FROM firewall_logs GROUP BY hour HAVING connection_count > 100 ORDER BY hour;"
+ },
+ {
+   "question": "Find potential port scanners. For each src_ip, count distinct destination ports as 'ports_tried'. Show only sources trying more than 10 different ports on blocked connections.",
+   "answer": "SELECT src_ip, COUNT(DISTINCT dst_port) AS ports_tried FROM firewall_logs WHERE action = 'BLOCK' GROUP BY src_ip HAVING ports_tried > 10;"
+ },
+ {
+   "question": "Compare data transfer sizes between zones. Categorize src_ip into zones as column 'zone'. Calculate average transfer size as 'avg_transfer'. Group by zone.",
+   "answer": "SELECT CASE WHEN src_ip LIKE '192.168.10.%' THEN 'Medical' WHEN src_ip LIKE '192.168.20.%' THEN 'Admin' ELSE 'Public' END AS zone, AVG(bytes_sent + bytes_received) AS avg_transfer FROM firewall_logs GROUP BY zone;"
+ },
+ {
+   "question": "Show user activity patterns. For each user_id and hour (name column 'hour'), count actions as 'actions'. Order by user_id and actions descending.",
+   "answer": "SELECT user_id, strftime('%H', timestamp) AS hour, COUNT(*) AS actions FROM firewall_logs GROUP BY user_id, hour ORDER BY user_id, actions DESC;"
+ },
+ {
+   "question": "Find potential data exfiltration. Show timestamp, src_ip, dst_ip, bytes_sent, bytes_received where sent/received ratio > 10. Order by bytes_sent descending.",
+   "answer": "SELECT timestamp, src_ip, dst_ip, bytes_sent, bytes_received FROM firewall_logs WHERE bytes_received > 0 AND CAST(bytes_sent AS FLOAT)/bytes_received > 10 ORDER BY bytes_sent DESC;"
+ },
+ {
+   "question": "Calculate protocol distribution. For each protocol, show its percentage of total connections as 'percentage'. Order by percentage descending.",
+   "answer": "SELECT protocol, (COUNT(*) * 100.0 / (SELECT COUNT(*) FROM firewall_logs)) AS percentage FROM firewall_logs GROUP BY protocol ORDER BY percentage DESC;"
+ },
+ {
+   "question": "Track connection attempt patterns. Group by src_ip and hour (name column 'hour'), count attempts as 'attempts'. Show only groups with > 50 attempts. Order by src_ip, hour.",
+   "answer": "SELECT src_ip, strftime('%H', timestamp) AS hour, COUNT(*) AS attempts FROM firewall_logs GROUP BY src_ip, hour HAVING attempts > 50 ORDER BY src_ip, hour;"
+ },
+ {
+   "question": "Find periods of low activity. Extract hour as 'hour' and count logs as 'log_count'. Show only hours with fewer than 10 connections. Order by hour.",
+   "answer": "SELECT strftime('%H', timestamp) AS hour, COUNT(*) AS log_count FROM firewall_logs GROUP BY hour HAVING log_count < 10 ORDER BY hour;"
+ }
+]

@@ -1,0 +1,111 @@
+[
+  {
+    "question": "List the names of all artists in the database.",
+    "answer": "SELECT Artist FROM artists;"
+  },
+  {
+    "question": "Show the titles and release years of all albums in the database.",
+    "answer": "SELECT Album, Year FROM albums;"
+  },
+  {
+    "question": "Display the names and durations of all tracks in the database.",
+    "answer": "SELECT track_name, duration_ms FROM tracks;"
+  },
+  {
+    "question": "List the top 10 most popular artists with their popularity scores.",
+    "answer": "SELECT Artist, popularity FROM artists ORDER BY popularity DESC LIMIT 10;"
+  },
+  {
+    "question": "Show all albums released in 1971 with their artists.",
+    "answer": "SELECT albums.Album, artists.Artist FROM albums JOIN artists ON albums.artist_id = artists.artist_id WHERE albums.Year = 1971;"
+  },
+   {
+    "question": "Find the total number of albums in the database, labeling the result as 'total_albums'.",
+    "answer": "SELECT COUNT(*) AS total_albums FROM albums;"
+  },
+  {
+    "question": "Show the artist with the most followers, displaying the artist name and follower count.",
+    "answer": "SELECT Artist, followers FROM artists ORDER BY followers DESC LIMIT 1;"
+  },
+ 
+  {
+    "question": "Find the average popularity score of all artists, rounded to two decimal places and labeled as 'avg_popularity'.",
+    "answer": "SELECT ROUND(AVG(popularity), 2) AS avg_popularity FROM artists;"
+  },
+  {
+    "question": "Show the top 5 longest tracks in the database, displaying track name, duration in milliseconds, and album title.",
+    "answer": "SELECT tracks.track_name, tracks.duration_ms, albums.Album FROM tracks JOIN albums ON tracks.album_id = albums.album_id ORDER BY tracks.duration_ms DESC LIMIT 5;"
+  },
+  {
+    "question": "List all albums that appear in the 2023 ranking but not in the 2003 ranking, showing album title and artist name.",
+    "answer": "SELECT albums.Album, artists.Artist FROM albums JOIN artists ON albums.artist_id = artists.artist_id WHERE albums.rank_2023 IS NOT NULL AND albums.rank_2003 IS NULL;"
+  },
+  {
+    "question": "Find the number of tracks for each album, showing only albums with more than 10 tracks. Display album title and track count.",
+    "answer": "SELECT albums.Album, COUNT(*) AS track_count FROM albums JOIN tracks ON albums.album_id = tracks.album_id GROUP BY albums.album_id HAVING track_count > 10;"
+  },
+  {
+    "question": "Show the artist name and album title for the top 10 albums in the 2020 ranking.",
+    "answer": "SELECT artists.Artist, albums.Album, albums.rank_2020 FROM albums JOIN artists ON albums.artist_id = artists.artist_id WHERE rank_2020 IS NOT NULL ORDER BY rank_2020 ASC LIMIT 10;"
+  },
+  {
+    "question": "List all artists who have more than one album in the database, showing artist name and album count.",
+    "answer": "SELECT artists.Artist, COUNT(DISTINCT albums.album_id) AS album_count FROM artists JOIN albums ON artists.artist_id = albums.artist_id GROUP BY artists.artist_id HAVING album_count > 1;"
+  },
+  {
+    "question": "Find the average duration of tracks for each album, showing only the top 5 albums with the highest average duration. Display album title, artist name, and average duration in seconds.",
+    "answer": "SELECT albums.Album, artists.Artist, ROUND(AVG(tracks.duration_ms) / 1000, 2) AS avg_duration_seconds FROM albums JOIN tracks ON albums.album_id = tracks.album_id JOIN artists ON albums.artist_id = artists.artist_id GROUP BY albums.album_id ORDER BY avg_duration_seconds DESC LIMIT 5;"
+  },
+  {
+    "question": "Show the artists who have albums in all four ranking years (2003, 2012, 2020, and 2023), displaying artist name and the number of ranked albums.",
+    "answer": "SELECT artists.Artist, COUNT(DISTINCT albums.album_id) AS ranked_albums FROM artists JOIN albums ON artists.artist_id = albums.artist_id WHERE albums.rank_2003 IS NOT NULL AND albums.rank_2012 IS NOT NULL AND albums.rank_2020 IS NOT NULL AND albums.rank_2023 IS NOT NULL GROUP BY artists.artist_id;"
+  },
+  {
+    "question": "List the top 5 most common genres among artists, showing genre name and count.",
+    "answer": "SELECT trim(value) AS genre, COUNT(*) AS genre_count FROM artists, json_each(json_array(genres)) GROUP BY genre ORDER BY genre_count DESC LIMIT 5;"
+  },
+  {
+    "question": "Find the album with the biggest improvement in ranking from 2003 to 2023, showing album title, artist name, 2003 rank, 2023 rank, and the rank improvement.",
+    "answer": "SELECT albums.Album, artists.Artist, albums.rank_2003, albums.rank_2023, (albums.rank_2003 - albums.rank_2023) AS rank_improvement FROM albums JOIN artists ON albums.artist_id = artists.artist_id WHERE albums.rank_2003 IS NOT NULL AND albums.rank_2023 IS NOT NULL ORDER BY rank_improvement DESC LIMIT 1;"
+  },
+  {
+    "question": "Show the average popularity of artists for each decade of album release, displaying the decade start year and average popularity rounded to two decimal places.",
+    "answer": "SELECT (albums.Year / 10) * 10 AS decade_start, ROUND(AVG(artists.popularity), 2) AS avg_popularity FROM albums JOIN artists ON albums.artist_id = artists.artist_id GROUP BY decade_start ORDER BY decade_start;"
+  },
+  {
+    "question": "List all albums where the number of tracks is greater than the artist's popularity score, showing album title, artist name, track count, and artist popularity.",
+    "answer": "SELECT albums.Album, artists.Artist, COUNT(tracks.track_id) AS track_count, artists.popularity FROM albums JOIN artists ON albums.artist_id = artists.artist_id JOIN tracks ON albums.album_id = tracks.album_id GROUP BY albums.album_id HAVING track_count > artists.popularity;"
+  },
+  {
+    "question": "Find the artist with the highest total duration of all their tracks, showing artist name and total duration in hours.",
+    "answer": "SELECT artists.Artist, ROUND(SUM(tracks.duration_ms) / (1000.0 * 60 * 60), 2) AS total_duration_hours FROM artists JOIN albums ON artists.artist_id = albums.artist_id JOIN tracks ON albums.album_id = tracks.album_id GROUP BY artists.artist_id ORDER BY total_duration_hours DESC LIMIT 1;"
+  },
+  {
+    "question": "Show the top 5 artists with the most consistent album rankings across all years, displaying artist name, average rank, and rank standard deviation.",
+    "answer": "SELECT artists.Artist, ROUND(AVG(COALESCE(rank_2023, rank_2020, rank_2012, rank_2003)), 2) AS avg_rank, ROUND(SQRT(AVG(COALESCE(rank_2023, rank_2020, rank_2012, rank_2003) * COALESCE(rank_2023, rank_2020, rank_2012, rank_2003)) - AVG(COALESCE(rank_2023, rank_2020, rank_2012, rank_2003)) * AVG(COALESCE(rank_2023, rank_2020, rank_2012, rank_2003))), 2) AS rank_stddev FROM artists JOIN albums ON artists.artist_id = albums.artist_id WHERE rank_2023 IS NOT NULL OR rank_2020 IS NOT NULL OR rank_2012 IS NOT NULL OR rank_2003 IS NOT NULL GROUP BY artists.artist_id ORDER BY rank_stddev ASC LIMIT 5;"
+  },
+  {
+    "question": "List all albums that have a higher ranking in 2023 than their artist's average ranking across all years, showing album title, artist name, 2023 rank, and artist's average rank.",
+    "answer": "WITH artist_avg_rank AS (SELECT artist_id, AVG(COALESCE(rank_2023, rank_2020, rank_2012, rank_2003)) AS avg_rank FROM albums GROUP BY artist_id) SELECT albums.Album, artists.Artist, albums.rank_2023, ROUND(artist_avg_rank.avg_rank, 2) AS artist_avg_rank FROM albums JOIN artist_avg_rank ON albums.artist_id = artist_avg_rank.artist_id JOIN artists ON albums.artist_id = artists.artist_id WHERE albums.rank_2023 < artist_avg_rank.avg_rank ORDER BY albums.rank_2023;"
+  },
+  {
+    "question": "Find the genre with the highest average album ranking in 2023, showing the genre name and its average rank.",
+    "answer": "WITH genre_rankings AS (SELECT DISTINCT artists.artist_id, trim(value) AS genre, albums.rank_2023 FROM artists, json_each(json_array(artists.genres)) JOIN albums ON artists.artist_id = albums.artist_id WHERE albums.rank_2023 IS NOT NULL) SELECT genre, ROUND(AVG(rank_2023), 2) AS avg_rank FROM genre_rankings GROUP BY genre ORDER BY avg_rank ASC LIMIT 1;"
+  },
+  {
+    "question": "Show the top 3 artists who have the most albums in the top 100 of any ranking year, displaying artist name and the count of top 100 albums.",
+    "answer": "WITH top_100_albums AS (SELECT artist_id, COUNT(*) AS top_100_count FROM albums WHERE rank_2023 <= 100 OR rank_2020 <= 100 OR rank_2012 <= 100 OR rank_2003 <= 100 GROUP BY artist_id) SELECT artists.Artist, top_100_albums.top_100_count FROM artists JOIN top_100_albums ON artists.artist_id = top_100_albums.artist_id ORDER BY top_100_count DESC LIMIT 3;"
+  },
+  {
+    "question": "List all tracks that are longer than the average track duration of their respective albums, showing track name, track duration, album title, and the album's average track duration.",
+    "answer": "WITH album_avg_duration AS (SELECT album_id, AVG(duration_ms) AS avg_duration FROM tracks GROUP BY album_id) SELECT tracks.track_name, tracks.duration_ms, albums.Album, ROUND(album_avg_duration.avg_duration, 2) AS album_avg_duration FROM tracks JOIN albums ON tracks.album_id = albums.album_id JOIN album_avg_duration ON tracks.album_id = album_avg_duration.album_id WHERE tracks.duration_ms > album_avg_duration.avg_duration ORDER BY (tracks.duration_ms - album_avg_duration.avg_duration) DESC;"
+  },
+  {
+    "question": "Find the artist who has the highest number of tracks in the database, but with no album ranked in the top 100 of any year. Show the artist name and their track count.",
+    "answer": "WITH artist_track_count AS (SELECT artists.artist_id, artists.Artist, COUNT(tracks.track_id) AS track_count FROM artists JOIN albums ON artists.artist_id = albums.artist_id JOIN tracks ON albums.album_id = tracks.album_id GROUP BY artists.artist_id), unranked_artists AS (SELECT artist_id FROM artists WHERE artist_id NOT IN (SELECT DISTINCT artist_id FROM albums WHERE rank_2023 <= 100 OR rank_2020 <= 100 OR rank_2012 <= 100 OR rank_2003 <= 100)) SELECT artist_track_count.Artist, artist_track_count.track_count FROM artist_track_count JOIN unranked_artists ON artist_track_count.artist_id = unranked_artists.artist_id ORDER BY artist_track_count.track_count DESC LIMIT 1;"
+  },
+  {
+    "question": "Show the evolution of an artist's album rankings over the years (2003, 2012, 2020, 2023) for artists who have albums ranked in all four years. Display artist name, album title, release year, and all four rankings.",
+    "answer": "WITH ranked_artists AS (SELECT DISTINCT artist_id FROM albums WHERE rank_2003 IS NOT NULL AND rank_2012 IS NOT NULL AND rank_2020 IS NOT NULL AND rank_2023 IS NOT NULL) SELECT artists.Artist, albums.Album, albums.Year, albums.rank_2003, albums.rank_2012, albums.rank_2020, albums.rank_2023 FROM artists JOIN albums ON artists.artist_id = albums.artist_id WHERE artists.artist_id IN (SELECT * FROM ranked_artists) ORDER BY artists.Artist, albums.Year;"
+  }
+]
