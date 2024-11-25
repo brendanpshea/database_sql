@@ -48,5 +48,60 @@
         "question": "Create a table \"gold_vault\" for Scrooge McDuck with 'id' (integer primary key), 'gold_amount' (decimal positive number), and 'location' (text not null unique).",
         "answer": "CREATE TABLE gold_vault (id INTEGER PRIMARY KEY, gold_amount DECIMAL CHECK (gold_amount > 0), location TEXT NOT NULL UNIQUE);",
         "setup": "DROP TABLE IF EXISTS gold_vault;"
+    },
+    {
+        "question": "Create a table \"gold_vault\" for Scrooge McDuck with 'id' (integer primary key), 'gold_amount' (decimal positive number), and 'location' (text not null unique).",
+        "answer": "CREATE TABLE gold_vault (id INTEGER PRIMARY KEY, gold_amount DECIMAL CHECK (gold_amount > 0), location TEXT NOT NULL UNIQUE);",
+        "setup": "DROP TABLE IF EXISTS gold_vault;"
+    },
+    {
+        "question": "Insert two new employees 'Homer Simpson' and 'Lenny Leonard' into the employees table with IDs 1 and 2.",
+        "answer": "INSERT INTO employees (id, name) VALUES (1, 'Homer Simpson'), (2, 'Lenny Leonard');",
+        "setup": "DROP TABLE IF EXISTS employees; CREATE TABLE employees (id INTEGER PRIMARY KEY, name TEXT, department TEXT DEFAULT 'Safety');"
+    },
+    {
+        "question": "Create a table \"burger_orders\" with 'order_id' (integer primary key), 'burger_name' (text), 'price' (decimal positive), and 'order_time' (timestamp with default current timestamp).",
+        "answer": "CREATE TABLE burger_orders (order_id INTEGER PRIMARY KEY, burger_name TEXT, price DECIMAL CHECK (price > 0), order_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP);",
+        "setup": "DROP TABLE IF EXISTS burger_orders;"
+    },
+    {
+        "question": "Create a table \"dimension_travelers\" with 'id' (integer primary key), 'name' (text), 'home_dimension' (text), and ensure no duplicate combinations of name and home_dimension.",
+        "answer": "CREATE TABLE dimension_travelers (id INTEGER PRIMARY KEY, name TEXT, home_dimension TEXT, UNIQUE (name, home_dimension));",
+        "setup": "DROP TABLE IF EXISTS dimension_travelers;"
+    },
+    {
+        "question": "Create a table \"test_results\" for Dexter with 'id' (integer primary key), 'experiment_id' (foreign key), 'result' (text), and 'success' (boolean with default false).",
+        "answer": "CREATE TABLE test_results (id INTEGER PRIMARY KEY, experiment_id INTEGER, result TEXT, success BOOLEAN DEFAULT false, FOREIGN KEY (experiment_id) REFERENCES experiments(id));",
+        "setup": "DROP TABLE IF EXISTS test_results; DROP TABLE IF EXISTS experiments; CREATE TABLE experiments (experiment_id INTEGER PRIMARY KEY, name TEXT);"
+    },
+    {
+        "question": "Insert three ingredients for Bob's Burgers: 'Beef' (id=1), 'Lettuce' (id=2), and 'Special Sauce' (id=3, not in stock).",
+        "answer": "INSERT INTO ingredients (id, name, in_stock) VALUES (1, 'Beef', true), (2, 'Lettuce', true), (3, 'Special Sauce', false);",
+        "setup": "DROP TABLE IF EXISTS ingredients; CREATE TABLE ingredients (id INTEGER PRIMARY KEY, name TEXT NOT NULL, in_stock BOOLEAN DEFAULT true);"
+    },
+    {
+        "question": "Create a table \"world_domination_plans\" with 'plan_id' (integer primary key), 'name' (text), 'probability' (decimal between 0 and 1), and 'created_at' (timestamp).",
+        "answer": "CREATE TABLE world_domination_plans (plan_id INTEGER PRIMARY KEY, name TEXT, probability DECIMAL CHECK (probability BETWEEN 0 AND 1), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);",
+        "setup": "DROP TABLE IF EXISTS world_domination_plans;"
+    },
+    {
+        "question": "Create a table \"inventory_transactions\" for the Krusty Krab with 'id' (primary key), 'item_id' (foreign key), 'quantity_change' (integer), and 'transaction_time' (timestamp).",
+        "answer": "CREATE TABLE inventory_transactions (id INTEGER PRIMARY KEY, item_id INTEGER, quantity_change INTEGER, transaction_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (item_id) REFERENCES ingredients(id));",
+        "setup": "DROP TABLE IF EXISTS inventory_transactions; DROP TABLE IF EXISTS ingredients; CREATE TABLE ingredients (id INTEGER PRIMARY KEY, name TEXT);"
+    },
+    {
+        "question": "Create a table \"nuclear_incidents\" with 'id' (primary key), 'employee_id' (foreign key), 'severity' (integer 1-5), 'description' (text), and 'reported_at' (timestamp).",
+        "answer": "CREATE TABLE nuclear_incidents (id INTEGER PRIMARY KEY, employee_id INTEGER, severity INTEGER CHECK (severity BETWEEN 1 AND 5), description TEXT, reported_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (employee_id) REFERENCES employees(id));",
+        "setup": "DROP TABLE IF EXISTS nuclear_incidents; DROP TABLE IF EXISTS employees; CREATE TABLE employees (id INTEGER PRIMARY KEY, name TEXT);"
+    },
+    {
+        "question": "Create a table \"interdimensional_trades\" with 'trade_id' (primary key), 'item_name', 'from_dimension', 'to_dimension', 'value' (positive decimal), and ensure unique combinations of all columns except trade_id.",
+        "answer": "CREATE TABLE interdimensional_trades (trade_id INTEGER PRIMARY KEY, item_name TEXT, from_dimension TEXT, to_dimension TEXT, value DECIMAL CHECK (value > 0), UNIQUE (item_name, from_dimension, to_dimension, value));",
+        "setup": "DROP TABLE IF EXISTS interdimensional_trades;"
+    },
+    {
+        "question": "Create a table \"acme_order_items\" with 'order_id' and 'product_id' as composite primary key, 'quantity' (positive integer), and 'status' (text with allowed values: 'pending', 'shipped', 'delivered').",
+        "answer": "CREATE TABLE acme_order_items (order_id INTEGER, product_id INTEGER, quantity INTEGER CHECK (quantity > 0), status TEXT CHECK (status IN ('pending', 'shipped', 'delivered')), PRIMARY KEY (order_id, product_id));",
+        "setup": "DROP TABLE IF EXISTS acme_order_items;"
     }
 ]
