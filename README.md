@@ -45,9 +45,9 @@ Evolve your database skills by transitioning from SQLite to PostgreSQL. Catch 'e
 [Open In Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_10_DatabaseSecurity.ipynb)  
 Defend your data kingdom with crucial database security concepts and practices. Set in the Mushroom Kingdom's Toad City Hospital, this chapter equips you with the knowledge to protect sensitive information and maintain data integrity. Learn to implement security measures that safeguard your databases from various threats.
 
-### 11. Database Deployment
-[Open In Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_11_Deployment.ipynb)  
-Master the art of database deployment with the help of the Teenage Mutant Ninja Turtles. This chapter covers the entire database lifecycle, from development to production. Learn different deployment strategies and best practices to ensure smooth transitions and minimal downtime in your database projects.
+### 11. Database Architecture: Design, Deploy, Test
+[Open In Colab](https://github.com/brendanpshea/database_sql/blob/main/Database_11_DesignDeployTest.ipynb)  
+Master the art of database deployment with the help of well-known cartoon characters. This chapter covers the entire database lifecycle, from development to production. Learn different deployment strategies and best practices to ensure smooth transitions and minimal downtime in your database projects.
 
 ### 12. Final Project
 [Open In Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_12_FinalProject.ipynb)  
