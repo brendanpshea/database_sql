@@ -10,7 +10,7 @@ This project, **"Database and SQL through Pop Culture,"** is an **Open Education
 - **Automatic Updates and Maintenance:** The use of Google Colab ensures that all tools and resources are up-to-date without requiring manual updates from students or instructors.
 - **Interactive Learning:** Integrated interactive quizzes and hands-on exercises provide immediate feedback, enhancing the learning process through practical application.
 
-The course content aligns with the learning outcomes of the **CompTIA Data+ certification** and is meticulously crafted to be competitive with expensive, commercial texts. By combining high-quality educational materials with accessible technology, this project aims to democratize learning SQL and database management, making it attainable for a broader audience.
+The course content aligns with the learning outcomes of the **CompTIA DataSys+ certification** and is meticulously crafted to be competitive with expensive, commercial texts. By combining high-quality educational materials with accessible technology, this project aims to democratize learning SQL and database management, making it attainable for a broader audience.
 
 
 ## Chapters
