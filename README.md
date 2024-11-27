@@ -1,7 +1,8 @@
 # Database and SQL through Pop Culture
+
 ### Brendan Shea, PhD (Brendan.Shea@rctc.edu)
 
-This project, "Database and SQL through Pop Culture," is designed to teach database concepts and SQL through engaging, pop culture-themed examples. The course content aligns with the learning outcomes of CompTIA Data+ certification.
+This project, "Database and SQL through Pop Culture," is designed to teach database concepts and SQL through engaging, pop culture-themed examples. 
 
 ## Chapters
 
@@ -53,18 +54,36 @@ Master the art of database deployment with the help of well-known cartoon charac
 [Open In Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_12_FinalProject.ipynb)  
 Put all your newly acquired skills to the test in this comprehensive final project. Design, create, populate, query, and optimize your very own database from scratch. This hands-on experience consolidates your learning and prepares you for real-world database challenges.
 
+## Tools
+
+Enhance your learning experience with our suite of interactive quiz tools designed to reinforce SQL concepts through practical exercises. These tools are integrated into the course chapters and provide hundreds of automatically graded SQL questions covering a wide range of topics, from basic `SELECT`, `CREATE`, `INSERT` statements to advanced concepts such as subqueries, JSON columns, and various types of JOINs.
+
+### SQL DDL Quiz
+
+**Overview:**  
+An interactive tool focused on SQL Data Definition Language (DDL) statements. Execute DDL queries, receive immediate feedback, and compare your solutions with correct answers within a Google Colab environment. This tool supports the chapters by providing hands-on practice with creating and modifying database schemas.
+
+**Learn More:** [SQL DDL Quiz Directory](https://github.com/brendanpshea/database_sql/tree/main/sql_ddl_quiz)
+
+### SQL SELECT Quiz
+
+**Overview:**  
+An interactive tool centered on SQL `SELECT` statements. Execute `SELECT` queries against predefined SQLite databases, receive instant feedback, and compare your results with expected outcomes within Google Colab. This tool complements the chapters by offering extensive practice with data retrieval, JOINs, set operations, and more.
+
+**Learn More:** [SQL SELECT Quiz Directory](https://github.com/brendanpshea/database_sql/tree/main/sql_select_quiz)
 
 ## Contributing
 
-Contributions to improve the course material are welcome. Please feel free to submit a pull request or open an issue for discussion.
+Contributions to improve the course material and tools are welcome. Please feel free to submit a pull request or open an issue for discussion.
 
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
 
 ## Use of AI Tools
-I've had fun experiementing with the use of generative AI tools to help develop this project, starting with GPT 3.0, and moving on to successive versions of these tools (including Claude, Gemini, Mistral, LLama, and others).
 
+I've had fun experimenting with the use of generative AI tools to help develop this project, starting with GPT-3.0, and moving on to successive versions of these tools (including Claude, Gemini, Mistral, LLama, and others).
 
 # About the Author
-Brendan Shea, PhD, is Professor of Philosophy and Computer Science at Rochester Community and Technical College and a Resident Fellow at the Minnesota Center for Philosophy of Science at the University of Minnesota-Twin Cities. He also serves as the Public Member of the Institutional Biosafety Committee at Mayo Clinic-Rochester. His main research and teaching interests lie in the philosophy of science, data modeling, applied ethics, and in the areas where these overlap (such as bioethics and the ethics of artificial intelligence). You can find out more about his research here: https://philpeople.org/profiles/brendan-shea.
+
+Brendan Shea, PhD, is Professor of Philosophy and Computer Science at Rochester Community and Technical College and a Resident Fellow at the Minnesota Center for Philosophy of Science at the University of Minnesota-Twin Cities. He also serves as the Public Member of the Institutional Biosafety Committee at Mayo Clinic-Rochester. His main research and teaching interests lie in the philosophy of science, data modeling, applied ethics, and in the areas where these overlap (such as bioethics and the ethics of artificial intelligence). You can find out more about his research [here](https://philpeople.org/profiles/brendan-shea).
