@@ -2,7 +2,16 @@
 
 ### Brendan Shea, PhD (Brendan.Shea@rctc.edu)
 
-This project, "Database and SQL through Pop Culture," is designed to teach database concepts and SQL through engaging, pop culture-themed examples. 
+This project, **"Database and SQL through Pop Culture,"** is an **Open Educational Resource (OER)** designed to teach database concepts and SQL through engaging, pop culture-themed examples. Delivered entirely through [Google Colab](https://colab.research.google.com/), this approach offers numerous benefits:
+
+- **Cost-Free Access:** Students can access all course materials and interactive tools at no cost, removing financial barriers to learning.
+- **No Software Installation Required:** By leveraging Google Colab, there's no need for students to install or maintain any software on their personal devices. Everything runs in the cloud, ensuring a seamless and hassle-free experience.
+- **Accessible Anywhere:** As a cloud-based platform, Google Colab allows students to engage with the course content from anywhere with an internet connection, fostering flexible learning environments.
+- **Automatic Updates and Maintenance:** The use of Google Colab ensures that all tools and resources are up-to-date without requiring manual updates from students or instructors.
+- **Interactive Learning:** Integrated interactive quizzes and hands-on exercises provide immediate feedback, enhancing the learning process through practical application.
+
+The course content aligns with the learning outcomes of the **CompTIA Data+ certification** and is meticulously crafted to be competitive with expensive, commercial texts. By combining high-quality educational materials with accessible technology, this project aims to democratize learning SQL and database management, making it attainable for a broader audience.
+
 
 ## Chapters
 
