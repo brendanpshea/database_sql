@@ -87,7 +87,7 @@ Contributions to improve the course material and tools are welcome. Please feel 
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the GNU Public License.
 
 ## Use of AI Tools
 
