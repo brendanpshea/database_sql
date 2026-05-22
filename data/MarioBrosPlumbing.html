@@ -1,0 +1,1240 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Guide to Interpreting a UML Entity-Relationship Diagram &#8212; SQL and Database Management Through Pop Culture</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'data/MarioBrosPlumbing';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">SQL and Database Management Through Pop Culture</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    SQL and Database Management Through Pop Culture
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Database_01_StarShipSQL.html">Starship SQL: An Introduction to Databases</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Database_02_IntroToSQL.html">Introduction to SQL: SELECT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Database_03_Joins_Sets_SQL.html">Getting Tables Together With Joins and Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Database_04_AdvancedSelect.html">Super Select: Advanced Retrieval With Mario Brothers Plumbing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Database_05_Design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Database_06_WritingData.html">Writing Data With Rollingstone’s Greatest Albums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Database_07_Views.html">A Musical “VIEW” For Better Data Presentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Database_08_IndexesTransactions.html">Database Performance: Index, Query Plans, and Transaction Management</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Database_09_PokemonAndPostgres.html">Postgres and Pokemon</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Database_10_DatabaseSecurity.html">Guarding the Virtual Vault: A Deep Dive into Database Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Database_11_DesignDeployTest.html">Database Architecture Patterns: Design, Deployment, and Testing for Modern Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Database_12_FinalProject.html">SQLite Database Final Project: Design, Implementation, and Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/Database_Ex_Normalization.html">Introduction to Normalization</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../labs/Database_Lab_Chapter_3.html">SQL Practice (Chapter 3)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/./data/MarioBrosPlumbing.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/brendanpshea/database_sql" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/brendanpshea/database_sql/edit/main/./data/MarioBrosPlumbing.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/brendanpshea/database_sql/issues/new?title=Issue%20on%20page%20%2Fdata/MarioBrosPlumbing.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/data/MarioBrosPlumbing.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Guide to Interpreting a UML Entity-Relationship Diagram</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entities">Entities:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relationships">Relationships</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance-sub-type-super-type">Inheritance (Sub-Type / Super-Type)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-diagram">Reading the Diagram:</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/data/MarioBrosPlumbing.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Connect sql magic</span>
+<span class="o">%</span><span class="n">load_ext</span> <span class="n">sql</span>
+<span class="o">%</span><span class="n">sql</span> <span class="n">sqlite</span><span class="p">:</span><span class="o">///</span><span class="n">mario_bros_plumbing</span><span class="o">.</span><span class="n">db</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">Customers</span> <span class="p">(</span>
+  <span class="n">customer_id</span> <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span>
+  <span class="n">first_name</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+  <span class="n">last_name</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+  <span class="n">address</span> <span class="n">JSON</span><span class="p">,</span>
+  <span class="n">phone_number</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">Employees</span> <span class="p">(</span>
+  <span class="n">employee_id</span> <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span>
+  <span class="n">first_name</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+  <span class="n">last_name</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+  <span class="n">job_title</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+  <span class="n">hire_date</span> <span class="n">DATE</span>
+<span class="p">);</span>
+
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">ServiceTypes</span> <span class="p">(</span>
+  <span class="n">service_type_id</span> <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span>
+  <span class="n">service_type_name</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+  <span class="n">description</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+<span class="p">);</span>
+
+  <span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">Services</span> <span class="p">(</span>
+  <span class="n">service_id</span> <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span>
+  <span class="n">service_type_id</span> <span class="n">INTEGER</span><span class="p">,</span>
+  <span class="n">service_name</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+  <span class="n">description</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+  <span class="n">price</span> <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+  <span class="n">FOREIGN</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">service_type_id</span><span class="p">)</span> <span class="n">REFERENCES</span> <span class="n">ServiceTypes</span> <span class="p">(</span><span class="n">service_type_id</span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">Orders</span> <span class="p">(</span>
+  <span class="o">--</span> <span class="n">Keeps</span> <span class="n">track</span> <span class="n">of</span> <span class="n">a</span> <span class="n">customer</span><span class="s1">&#39;s orders</span>
+  <span class="n">order_id</span> <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span>
+  <span class="n">customer_id</span> <span class="n">INTEGER</span><span class="p">,</span>
+  <span class="n">employee_id</span> <span class="n">INTEGER</span><span class="p">,</span>
+  <span class="n">order_date</span> <span class="n">DATE</span><span class="p">,</span>
+  <span class="n">total_amount</span> <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+  <span class="n">FOREIGN</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">customer_id</span><span class="p">)</span> <span class="n">REFERENCES</span> <span class="n">Customers</span> <span class="p">(</span><span class="n">customer_id</span><span class="p">),</span>
+  <span class="n">FOREIGN</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">employee_id</span><span class="p">)</span> <span class="n">REFERENCES</span> <span class="n">Employees</span> <span class="p">(</span><span class="n">employee_id</span><span class="p">)</span>
+<span class="p">);</span>
+
+
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">Order_Items</span> <span class="p">(</span>
+  <span class="o">--</span> <span class="n">Keeps</span> <span class="n">track</span> <span class="n">of</span> <span class="n">a</span> <span class="n">customer</span><span class="s1">&#39;s order items</span>
+  <span class="o">--</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">one</span> <span class="n">line</span> <span class="n">on</span> <span class="n">an</span> <span class="n">invoice</span>
+  <span class="n">order_item_id</span> <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span>
+  <span class="n">order_id</span> <span class="n">INTEGER</span><span class="p">,</span>
+  <span class="n">service_id</span> <span class="n">INTEGER</span><span class="p">,</span>
+  <span class="n">quantity</span> <span class="n">INTEGER</span><span class="p">,</span>
+  <span class="n">FOREIGN</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">order_id</span><span class="p">)</span> <span class="n">REFERENCES</span> <span class="n">Orders</span> <span class="p">(</span><span class="n">order_id</span><span class="p">),</span>
+  <span class="n">FOREIGN</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">service_id</span><span class="p">)</span> <span class="n">REFERENCES</span> <span class="n">Services</span> <span class="p">(</span><span class="n">service_id</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///mario_bros_plumbing.db
+Done.
+Done.
+Done.
+Done.
+Done.
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">mm</span><span class="p">(</span><span class="n">graph</span><span class="p">):</span>
+    <span class="n">graphbytes</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+    <span class="n">base64_bytes</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">graphbytes</span><span class="p">)</span>
+    <span class="n">base64_string</span> <span class="o">=</span> <span class="n">base64_bytes</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://mermaid.ink/img/&quot;</span> <span class="o">+</span> <span class="n">base64_string</span><span class="p">))</span>
+
+<span class="n">mm</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">classDiagram</span>
+<span class="s2">    Customers &quot;1&quot; -- &quot;*&quot; Orders</span>
+<span class="s2">    Employees &quot;1&quot; -- &quot;*&quot; Orders</span>
+<span class="s2">    Orders &quot;1&quot; -- &quot;*&quot; Order_Items</span>
+<span class="s2">    Services &quot;1&quot; -- &quot;*&quot; Order_Items</span>
+<span class="s2">    ServiceTypes &lt;|-- Services</span>
+
+<span class="s2">    class Customers {</span>
+<span class="s2">        +customer_id: INTEGER PK</span>
+<span class="s2">        +first_name: VARCHAR</span>
+<span class="s2">        +last_name: VARCHAR</span>
+<span class="s2">        +address: JSON</span>
+<span class="s2">        +phone_number: VARCHAR</span>
+<span class="s2">    }</span>
+
+<span class="s2">    class Employees {</span>
+<span class="s2">        +employee_id: INTEGER PK</span>
+<span class="s2">        +first_name: VARCHAR</span>
+<span class="s2">        +last_name: VARCHAR</span>
+<span class="s2">        +job_title: VARCHAR</span>
+<span class="s2">        +hire_date: DATE</span>
+<span class="s2">    }</span>
+
+<span class="s2">    class ServiceTypes {</span>
+<span class="s2">        +service_type_id: INTEGER PK</span>
+<span class="s2">        +service_type_name: VARCHAR</span>
+<span class="s2">        +description: VARCHAR</span>
+<span class="s2">    }</span>
+
+<span class="s2">    class Services {</span>
+<span class="s2">        +service_id: INTEGER PK</span>
+<span class="s2">        +service_type_id: INTEGER FK</span>
+<span class="s2">        +service_name: VARCHAR</span>
+<span class="s2">        +description: VARCHAR</span>
+<span class="s2">        +price: DECIMAL</span>
+<span class="s2">    }</span>
+
+<span class="s2">    class Orders {</span>
+<span class="s2">        +order_id: INTEGER PK</span>
+<span class="s2">        +customer_id: INTEGER FK</span>
+<span class="s2">        +employee_id: INTEGER FK</span>
+<span class="s2">        +order_date: DATE</span>
+<span class="s2">        +total_amount: DECIMAL</span>
+<span class="s2">    }</span>
+
+<span class="s2">    class Order_Items {</span>
+<span class="s2">        +order_item_id: INTEGER PK</span>
+<span class="s2">        +order_id: INTEGER FK</span>
+<span class="s2">        +service_id: INTEGER FK</span>
+<span class="s2">        +quantity: INTEGER</span>
+<span class="s2">    }</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://mermaid.ink/img/CmNsYXNzRGlhZ3JhbQogICAgQ3VzdG9tZXJzICIxIiAtLSAiKiIgT3JkZXJzCiAgICBFbXBsb3llZXMgIjEiIC0tICIqIiBPcmRlcnMKICAgIE9yZGVycyAiMSIgLS0gIioiIE9yZGVyX0l0ZW1zCiAgICBTZXJ2aWNlcyAiMSIgLS0gIioiIE9yZGVyX0l0ZW1zCiAgICBTZXJ2aWNlVHlwZXMgPHwtLSBTZXJ2aWNlcwoKICAgIGNsYXNzIEN1c3RvbWVycyB7CiAgICAgICAgK2N1c3RvbWVyX2lkOiBJTlRFR0VSIFBLCiAgICAgICAgK2ZpcnN0X25hbWU6IFZBUkNIQVIKICAgICAgICArbGFzdF9uYW1lOiBWQVJDSEFSCiAgICAgICAgK2FkZHJlc3M6IEpTT04KICAgICAgICArcGhvbmVfbnVtYmVyOiBWQVJDSEFSCiAgICB9CgogICAgY2xhc3MgRW1wbG95ZWVzIHsKICAgICAgICArZW1wbG95ZWVfaWQ6IElOVEVHRVIgUEsKICAgICAgICArZmlyc3RfbmFtZTogVkFSQ0hBUgogICAgICAgICtsYXN0X25hbWU6IFZBUkNIQVIKICAgICAgICAram9iX3RpdGxlOiBWQVJDSEFSCiAgICAgICAgK2hpcmVfZGF0ZTogREFURQogICAgfQoKICAgIGNsYXNzIFNlcnZpY2VUeXBlcyB7CiAgICAgICAgK3NlcnZpY2VfdHlwZV9pZDogSU5URUdFUiBQSwogICAgICAgICtzZXJ2aWNlX3R5cGVfbmFtZTogVkFSQ0hBUgogICAgICAgICtkZXNjcmlwdGlvbjogVkFSQ0hBUgogICAgfQoKICAgIGNsYXNzIFNlcnZpY2VzIHsKICAgICAgICArc2VydmljZV9pZDogSU5URUdFUiBQSwogICAgICAgICtzZXJ2aWNlX3R5cGVfaWQ6IElOVEVHRVIgRksKICAgICAgICArc2VydmljZV9uYW1lOiBWQVJDSEFSCiAgICAgICAgK2Rlc2NyaXB0aW9uOiBWQVJDSEFSCiAgICAgICAgK3ByaWNlOiBERUNJTUFMCiAgICB9CgogICAgY2xhc3MgT3JkZXJzIHsKICAgICAgICArb3JkZXJfaWQ6IElOVEVHRVIgUEsKICAgICAgICArY3VzdG9tZXJfaWQ6IElOVEVHRVIgRksKICAgICAgICArZW1wbG95ZWVfaWQ6IElOVEVHRVIgRksKICAgICAgICArb3JkZXJfZGF0ZTogREFURQogICAgICAgICt0b3RhbF9hbW91bnQ6IERFQ0lNQUwKICAgIH0KCiAgICBjbGFzcyBPcmRlcl9JdGVtcyB7CiAgICAgICAgK29yZGVyX2l0ZW1faWQ6IElOVEVHRVIgUEsKICAgICAgICArb3JkZXJfaWQ6IElOVEVHRVIgRksKICAgICAgICArc2VydmljZV9pZDogSU5URUdFUiBGSwogICAgICAgICtxdWFudGl0eTogSU5URUdFUgogICAgfQo="/></div></div>
+</div>
+<section id="guide-to-interpreting-a-uml-entity-relationship-diagram">
+<h1>Guide to Interpreting a UML Entity-Relationship Diagram<a class="headerlink" href="#guide-to-interpreting-a-uml-entity-relationship-diagram" title="Permalink to this heading">#</a></h1>
+<p>THe above diagram is in <strong>Unified Modeling Language.</strong> This is similar to the Crow’s foot style we saw before, but with a few key differences.</p>
+<section id="entities">
+<h2>Entities:<a class="headerlink" href="#entities" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>In UML, entities are represented as classes, which are depicted as rectangles.</p></li>
+<li><p>Each entity (class) is labeled with its name at the top of the rectangle.</p></li>
+<li><p>The attributes of an entity are listed inside the rectangle, below the entity name.</p></li>
+<li><p>In this diagram, the entities are Customers, Employees, ServiceTypes, Services, Orders, and Order_Items.</p></li>
+</ul>
+</section>
+<section id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Attributes represent the properties or characteristics of an entity.</p></li>
+<li><p>Each attribute is listed on a separate line within the entity’s rectangle.</p></li>
+<li><p>The attribute name is followed by a colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>) and its data type.</p></li>
+<li><p>Primary key attributes are marked with <code class="docutils literal notranslate"><span class="pre">PK</span></code>, indicating that they uniquely identify each record in the entity.</p></li>
+<li><p>Foreign key attributes are marked with <code class="docutils literal notranslate"><span class="pre">FK</span></code>, indicating that they establish relationships with other entities.</p></li>
+</ul>
+</section>
+<section id="relationships">
+<h2>Relationships<a class="headerlink" href="#relationships" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Relationships between entities are represented by lines connecting the rectangles.</p></li>
+<li><p>The cardinality of a relationship is indicated at each end of the line.</p></li>
+<li><p>In this diagram, a single number (<code class="docutils literal notranslate"><span class="pre">1</span></code>) represents a one-to-one or one-to-many relationship, while an asterisk (<code class="docutils literal notranslate"><span class="pre">*</span></code>) represents a many-to-one or many-to-many relationship.</p></li>
+<li><p>For example, the line between Customers and Orders with <code class="docutils literal notranslate"><span class="pre">1</span></code> on the Customers end and <code class="docutils literal notranslate"><span class="pre">*</span></code> on the Orders end indicates that one customer can have multiple orders (a one-to-many relationship).</p></li>
+</ul>
+</section>
+<section id="inheritance-sub-type-super-type">
+<h2>Inheritance (Sub-Type / Super-Type)<a class="headerlink" href="#inheritance-sub-type-super-type" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Inheritance is a concept in object-oriented modeling where one entity (<strong>subclass</strong>) inherits the attributes and behaviors of another entity (<strong>superclass</strong>).</p></li>
+<li><p>In UML, inheritance is represented by a line with a hollow arrowhead pointing from the subclass to the superclass.</p></li>
+<li><p>In this diagram, the inheritance relationship is shown between Services and ServiceTypes, with Services inheriting from ServiceTypes.</p></li>
+</ul>
+</section>
+<section id="reading-the-diagram">
+<h2>Reading the Diagram:<a class="headerlink" href="#reading-the-diagram" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Start by identifying the entities (classes) in the diagram, which are represented by rectangles.</p></li>
+<li><p>Look at the attributes within each entity to understand the properties and characteristics of each entity.</p></li>
+<li><p>Identify the primary key attributes marked with <code class="docutils literal notranslate"><span class="pre">&lt;&lt;PK&gt;&gt;</span></code> and foreign key attributes marked with <code class="docutils literal notranslate"><span class="pre">&lt;&lt;FK&gt;&gt;</span></code>.</p></li>
+<li><p>Follow the lines connecting the entities to understand the relationships between them.</p></li>
+<li><p>Look at the cardinality indicators (<code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">*</span></code>) to determine the nature of the relationships (one-to-one, one-to-many, many-to-one, or many-to-many).</p></li>
+<li><p>Observe any inheritance relationships, where one entity inherits from another, indicated by a line with a hollow arrowhead.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">Employees</span> <span class="p">(</span><span class="n">employee_id</span><span class="p">,</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">job_title</span><span class="p">,</span> <span class="n">hire_date</span><span class="p">)</span>
+<span class="n">VALUES</span>
+  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Super&#39;</span><span class="p">,</span> <span class="s1">&#39;Mario&#39;</span><span class="p">,</span> <span class="s1">&#39;Master Plumber&#39;</span><span class="p">,</span> <span class="s1">&#39;2000-09-13&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Super&#39;</span><span class="p">,</span> <span class="s1">&#39;Luigi&#39;</span><span class="p">,</span> <span class="s1">&#39;Journeyman Plumber&#39;</span><span class="p">,</span> <span class="s1">&#39;2003-02-20&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Princess&#39;</span><span class="p">,</span> <span class="s1">&#39;Peach&#39;</span><span class="p">,</span> <span class="s1">&#39;Project Manager&#39;</span><span class="p">,</span> <span class="s1">&#39;2005-06-10&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Cat&#39;</span><span class="p">,</span> <span class="s1">&#39;Peach&#39;</span><span class="p">,</span> <span class="s1">&#39;Apprentice Plumber&#39;</span><span class="p">,</span> <span class="s1">&#39;2014-11-05&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Tanuki&#39;</span><span class="p">,</span> <span class="s1">&#39;Mario&#39;</span><span class="p">,</span> <span class="s1">&#39;Plumbing Technician&#39;</span><span class="p">,</span> <span class="s1">&#39;2011-04-28&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;Fire&#39;</span><span class="p">,</span> <span class="s1">&#39;Luigi&#39;</span><span class="p">,</span> <span class="s1">&#39;HVAC Specialist&#39;</span><span class="p">,</span> <span class="s1">&#39;2008-12-03&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;Toad&#39;</span><span class="p">,</span> <span class="s1">&#39;Toadstool&#39;</span><span class="p">,</span> <span class="s1">&#39;Dispatch Coordinator&#39;</span><span class="p">,</span> <span class="s1">&#39;2018-07-15&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///mario_bros_plumbing.db
+7 rows affected.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">Customers</span> <span class="p">(</span><span class="n">customer_id</span><span class="p">,</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">phone_number</span><span class="p">)</span>
+<span class="n">VALUES</span>
+  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Peach&#39;</span><span class="p">,</span> <span class="s1">&#39;Toadstool&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;Mushroom Castle&quot;, &quot;city&quot;: &quot;Toad Town&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 123-4567&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Yoshi&#39;</span><span class="p">,</span> <span class="s1">&#39;Dino&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;24 Egg Island&quot;, &quot;city&quot;: &quot;Dinosaur Land&quot;, &quot;apartment&quot;: &quot;A&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 987-6543&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Daisy&#39;</span><span class="p">,</span> <span class="s1">&#39;Sarasa&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;10 Sarasaland Way&quot;, &quot;city&quot;: &quot;Chai Kingdom&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 456-7890&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Toadette&#39;</span><span class="p">,</span> <span class="s1">&#39;Toadstool&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;15 Mushroom St&quot;, &quot;city&quot;: &quot;Toad Town&quot;, &quot;apartment&quot;: &quot;2B&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 789-0123&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Bowser&#39;</span><span class="p">,</span> <span class="s1">&#39;Koopa&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;1 Bowser Castle&quot;, &quot;city&quot;: &quot;Dark Land&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 654-3210&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;Wario&#39;</span><span class="p">,</span> <span class="s1">&#39;Wario&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;100 Gold Coin Blvd&quot;, &quot;city&quot;: &quot;Diamond City&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 321-0987&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;Waluigi&#39;</span><span class="p">,</span> <span class="s1">&#39;Wario&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;101 Silver Coin Ave&quot;, &quot;city&quot;: &quot;Diamond City&quot;, &quot;unit&quot;: &quot;5C&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 098-7654&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;Donkey&#39;</span><span class="p">,</span> <span class="s1">&#39;Kong&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;50 Banana Jungle&quot;, &quot;city&quot;: &quot;DK Island&quot;, &quot;house&quot;: &quot;Treehouse&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 111-2222&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;Diddy&#39;</span><span class="p">,</span> <span class="s1">&#39;Kong&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;51 Banana Jungle&quot;, &quot;city&quot;: &quot;DK Island&quot;, &quot;floor&quot;: &quot;Ground&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 333-4444&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Rosalina&#39;</span><span class="p">,</span> <span class="s1">&#39;Cosmic&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;Comet Observatory&quot;, &quot;city&quot;: &quot;Space&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 555-6666&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;Cappy&#39;</span><span class="p">,</span> <span class="s1">&#39;Bonneter&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;1 Hat Kingdom Way&quot;, &quot;city&quot;: &quot;Cap Kingdom&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 777-8888&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;Pauline&#39;</span><span class="p">,</span> <span class="s1">&#39;Toyopolis&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;1 New Donk City Plaza&quot;, &quot;city&quot;: &quot;Metro Kingdom&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 999-0000&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="s1">&#39;Link&#39;</span><span class="p">,</span> <span class="s1">&#39;Hyrule&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;1 Hyrule Castle&quot;, &quot;city&quot;: &quot;Hyrule Kingdom&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 234-5678&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="s1">&#39;Zelda&#39;</span><span class="p">,</span> <span class="s1">&#39;Hyrule&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;2 Hyrule Castle&quot;, &quot;city&quot;: &quot;Hyrule Kingdom&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 345-6789&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="s1">&#39;Samus&#39;</span><span class="p">,</span> <span class="s1">&#39;Aran&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;10 Bounty Hunter Ave&quot;, &quot;city&quot;: &quot;Space Colony K-2L&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 456-7890&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;Fox&#39;</span><span class="p">,</span> <span class="s1">&#39;McCloud&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;20 Corneria St&quot;, &quot;city&quot;: &quot;Lylat System&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 567-8901&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="s1">&#39;Pikachu&#39;</span><span class="p">,</span> <span class="s1">&#39;Pokemon&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;30 Electric Rodent Rd&quot;, &quot;city&quot;: &quot;Kanto Region&quot;, &quot;box&quot;: &quot;P.O. Box 101&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 678-9012&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;Kirby&#39;</span><span class="p">,</span> <span class="s1">&#39;Puffball&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;40 Dream Land Ln&quot;, &quot;city&quot;: &quot;Planet Popstar&quot;, &quot;unit&quot;: &quot;Suite 3&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 789-0123&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">19</span><span class="p">,</span> <span class="s1">&#39;Captain&#39;</span><span class="p">,</span> <span class="s1">&#39;Falcon&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;50 Mute City Blvd&quot;, &quot;city&quot;: &quot;Port Town&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 890-1234&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;Ness&#39;</span><span class="p">,</span> <span class="s1">&#39;Earthbound&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;60 Onett Ave&quot;, &quot;city&quot;: &quot;Eagleland&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 901-2345&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="s1">&#39;Marth&#39;</span><span class="p">,</span> <span class="s1">&#39;Altea&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;70 Fire Emblem St&quot;, &quot;city&quot;: &quot;Kingdom of Altea&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 012-3456&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">22</span><span class="p">,</span> <span class="s1">&#39;Roy&#39;</span><span class="p">,</span> <span class="s1">&#39;Pherae&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;71 Fire Emblem St&quot;, &quot;city&quot;: &quot;Lycia&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 123-4567&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="s1">&#39;Toad&#39;</span><span class="p">,</span> <span class="s1">&#39;Toadstool&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;80 Mushroom Way&quot;, &quot;city&quot;: &quot;Toad Town&quot;, &quot;building&quot;: &quot;Toad Hall&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 234-5678&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="s1">&#39;Koopa&#39;</span><span class="p">,</span> <span class="s1">&#39;Troopa&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;90 Shell Blvd&quot;, &quot;city&quot;: &quot;Dark Land&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 345-6789&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;Dry&#39;</span><span class="p">,</span> <span class="s1">&#39;Bones&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;91 Bone Yard Rd&quot;, &quot;city&quot;: &quot;Dark Land&quot;, &quot;crypt&quot;: &quot;Lower&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 456-7890&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="s1">&#39;Shy&#39;</span><span class="p">,</span> <span class="s1">&#39;Guy&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;100 Mask St&quot;, &quot;city&quot;: &quot;Dark Land&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 567-8901&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">27</span><span class="p">,</span> <span class="s1">&#39;Lakitu&#39;</span><span class="p">,</span> <span class="s1">&#39;Cloud&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;110 Cloud Way&quot;, &quot;city&quot;: &quot;Skyworld&quot;, &quot;apartment&quot;: &quot;Skyview&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 678-9012&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="s1">&#39;Toadsworth&#39;</span><span class="p">,</span> <span class="s1">&#39;Toadstool&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;120 Cane Ln&quot;, &quot;city&quot;: &quot;Toad Town&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 789-0123&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">29</span><span class="p">,</span> <span class="s1">&#39;Birdo&#39;</span><span class="p">,</span> <span class="s1">&#39;Egg&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;130 Egg Shooter Ave&quot;, &quot;city&quot;: &quot;Subcon&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 890-1234&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;Nabbit&#39;</span><span class="p">,</span> <span class="s1">&#39;Thief&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;140 Burglar Blvd&quot;, &quot;city&quot;: &quot;Acorn Plains&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 901-2345&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">31</span><span class="p">,</span> <span class="s1">&#39;Funky&#39;</span><span class="p">,</span> <span class="s1">&#39;Kong&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;150 Surf Shop St&quot;, &quot;city&quot;: &quot;DK Island&quot;, &quot;shack&quot;: &quot;Beachside&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 012-3456&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="s1">&#39;Cranky&#39;</span><span class="p">,</span> <span class="s1">&#39;Kong&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;street&quot;: &quot;160 Rocking Chair Rd&quot;, &quot;city&quot;: &quot;DK Island&quot;}&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 123-4567&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///mario_bros_plumbing.db
+32 rows affected.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">ServiceTypes</span> <span class="p">(</span><span class="n">service_type_id</span><span class="p">,</span> <span class="n">service_type_name</span><span class="p">,</span> <span class="n">description</span><span class="p">)</span>
+<span class="n">VALUES</span>
+  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Repair&#39;</span><span class="p">,</span> <span class="s1">&#39;Services related to fixing and repairing plumbing issues&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Installation&#39;</span><span class="p">,</span> <span class="s1">&#39;Services related to installing new plumbing fixtures and systems&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Inspection&#39;</span><span class="p">,</span> <span class="s1">&#39;Services related to inspecting and assessing plumbing systems&#39;</span><span class="p">);</span>
+
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">Services</span> <span class="p">(</span><span class="n">service_id</span><span class="p">,</span> <span class="n">service_type_id</span><span class="p">,</span> <span class="n">service_name</span><span class="p">,</span> <span class="n">description</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
+<span class="n">VALUES</span>
+  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Pipe Repair&#39;</span><span class="p">,</span> <span class="s1">&#39;Fix leaky or broken pipes&#39;</span><span class="p">,</span> <span class="mf">50.00</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Drain Cleaning&#39;</span><span class="p">,</span> <span class="s1">&#39;Clear clogged drains and pipes&#39;</span><span class="p">,</span> <span class="mf">75.00</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Toilet Installation&#39;</span><span class="p">,</span> <span class="s1">&#39;Install a new toilet&#39;</span><span class="p">,</span> <span class="mf">150.00</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Sink Replacement&#39;</span><span class="p">,</span> <span class="s1">&#39;Replace an old or damaged sink&#39;</span><span class="p">,</span> <span class="mf">200.00</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Water Heater Repair&#39;</span><span class="p">,</span> <span class="s1">&#39;Fix issues with water heaters&#39;</span><span class="p">,</span> <span class="mf">120.00</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Plumbing Inspection&#39;</span><span class="p">,</span> <span class="s1">&#39;Inspect plumbing systems for potential issues&#39;</span><span class="p">,</span> <span class="mf">100.00</span><span class="p">),</span>
+  <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Emergency Service&#39;</span><span class="p">,</span> <span class="s1">&#39;24/7 emergency plumbing service&#39;</span><span class="p">,</span> <span class="mf">250.00</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///mario_bros_plumbing.db
+3 rows affected.
+7 rows affected.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sqlite3</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="c1"># Connect to the SQLite database</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;mario_bros_plumbing.db&#39;</span><span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="c1"># Generate 500 random orders</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">):</span>
+    <span class="c1"># Select a random customer with weighted probabilities</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT customer_id FROM Customers ORDER BY RANDOM() * CASE &quot;</span>
+                   <span class="s2">&quot;WHEN customer_id IN (1, 2, 3) THEN 3 &quot;</span>  <span class="c1"># Customers 1, 2, and 3 are 3 times more likely</span>
+                   <span class="s2">&quot;WHEN customer_id IN (4, 5, 6) THEN 2 &quot;</span>  <span class="c1"># Customers 4, 5, and 6 are 2 times more likely</span>
+                   <span class="s2">&quot;ELSE 1 END LIMIT 1&quot;</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">continue</span>  <span class="c1"># Skip this iteration if no customer is found</span>
+    <span class="n">customer_id</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># Generate a random order date between 1985 and 2024</span>
+    <span class="n">start_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">1985</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">end_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+    <span class="n">time_between_dates</span> <span class="o">=</span> <span class="n">end_date</span> <span class="o">-</span> <span class="n">start_date</span>
+    <span class="n">days_between_dates</span> <span class="o">=</span> <span class="n">time_between_dates</span><span class="o">.</span><span class="n">days</span>
+    <span class="n">random_number_of_days</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">days_between_dates</span><span class="p">)</span>
+    <span class="n">order_date</span> <span class="o">=</span> <span class="n">start_date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">random_number_of_days</span><span class="p">)</span>
+
+    <span class="c1"># Select a random employee hired before the order date</span>
+    <span class="n">employee_id</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Initialize employee_id with a default value</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT employee_id FROM Employees WHERE hire_date &lt;= ? ORDER BY RANDOM() LIMIT 1&quot;</span><span class="p">,</span>
+                   <span class="p">(</span><span class="n">order_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">),))</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">employee_id</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">employee_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">continue</span>  <span class="c1"># Skip this iteration if no suitable employee is found</span>
+
+    <span class="c1"># Insert the order into the Orders table</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO Orders (customer_id, employee_id, order_date) VALUES (?, ?, ?)&quot;</span><span class="p">,</span>
+                   <span class="p">(</span><span class="n">customer_id</span><span class="p">,</span> <span class="n">employee_id</span><span class="p">,</span> <span class="n">order_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)))</span>
+    <span class="n">order_id</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">lastrowid</span>
+
+    <span class="c1"># Generate random order items for the order</span>
+    <span class="n">num_items</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_items</span><span class="p">):</span>
+        <span class="c1"># Select a random service with weighted probabilities</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT service_id, price FROM Services ORDER BY RANDOM() * CASE &quot;</span>
+                       <span class="s2">&quot;WHEN service_id IN (1, 2) THEN 3 &quot;</span>  <span class="c1"># Services 1 and 2 are 3 times more likely</span>
+                       <span class="s2">&quot;WHEN service_id IN (3, 4) THEN 2 &quot;</span>  <span class="c1"># Services 3 and 4 are 2 times more likely</span>
+                       <span class="s2">&quot;ELSE 1 END LIMIT 1&quot;</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No service found for order&quot;</span><span class="p">,</span> <span class="n">order_id</span><span class="p">)</span>
+            <span class="k">continue</span>  <span class="c1"># Skip this iteration if no service is found</span>
+        <span class="n">service_id</span><span class="p">,</span> <span class="n">price</span> <span class="o">=</span> <span class="n">result</span>
+
+        <span class="c1"># Generate a random quantity</span>
+        <span class="n">quantity</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+        <span class="c1"># Insert the order item into the Order_Items table</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO Order_Items (order_id, service_id, quantity) VALUES (?, ?, ?)&quot;</span><span class="p">,</span>
+                       <span class="p">(</span><span class="n">order_id</span><span class="p">,</span> <span class="n">service_id</span><span class="p">,</span> <span class="n">quantity</span><span class="p">))</span>
+
+    <span class="c1"># Update the total amount for the order</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;UPDATE Orders SET total_amount = (SELECT SUM(Services.price * Order_Items.quantity) &quot;</span>
+                   <span class="s2">&quot;FROM Order_Items JOIN Services ON Order_Items.service_id = Services.service_id &quot;</span>
+                   <span class="s2">&quot;WHERE Order_Items.order_id = ?) WHERE order_id = ?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">order_id</span><span class="p">,</span> <span class="n">order_id</span><span class="p">))</span>
+
+<span class="c1"># Commit the changes and close the connection</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span> <span class="n">determine</span> <span class="n">number</span> <span class="n">of</span> <span class="n">order</span> <span class="n">per</span> <span class="n">employee</span>
+<span class="n">SELECT</span> <span class="n">employee_id</span><span class="p">,</span> <span class="n">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="n">AS</span> <span class="n">num_orders</span>
+<span class="n">FROM</span> <span class="n">Orders</span>
+<span class="n">GROUP</span> <span class="n">BY</span> <span class="n">employee_id</span>
+<span class="n">ORDER</span> <span class="n">BY</span> <span class="n">num_orders</span> <span class="n">DESC</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///mario_bros_plumbing.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <thead>
+        <tr>
+            <th>employee_id</th>
+            <th>num_orders</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>101</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>63</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>37</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>29</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>10</td>
+        </tr>
+    </tbody>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">Order_Items</span> <span class="n">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///mario_bros_plumbing.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <thead>
+        <tr>
+            <th>order_item_id</th>
+            <th>order_id</th>
+            <th>service_id</th>
+            <th>quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>1</td>
+            <td>4</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>1</td>
+            <td>1</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>2</td>
+            <td>3</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>2</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>2</td>
+            <td>3</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>3</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+    </tbody>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span> <span class="n">Determine</span> <span class="n">total</span> <span class="n">amount</span> <span class="n">spent</span> <span class="n">by</span> <span class="n">customer</span>
+<span class="n">SELECT</span> <span class="n">Customers</span><span class="o">.</span><span class="n">first_name</span><span class="p">,</span> <span class="n">Customers</span><span class="o">.</span><span class="n">last_name</span><span class="p">,</span> <span class="n">SUM</span><span class="p">(</span><span class="n">total_amount</span><span class="p">)</span> <span class="n">AS</span> <span class="n">total_spent</span>
+<span class="n">FROM</span> <span class="n">Orders</span>
+<span class="n">JOIN</span> <span class="n">Customers</span> <span class="n">ON</span> <span class="n">Orders</span><span class="o">.</span><span class="n">customer_id</span> <span class="o">=</span> <span class="n">Customers</span><span class="o">.</span><span class="n">customer_id</span>
+<span class="n">GROUP</span> <span class="n">BY</span> <span class="n">Customers</span><span class="o">.</span><span class="n">customer_id</span>
+<span class="n">ORDER</span> <span class="n">BY</span> <span class="n">total_spent</span> <span class="n">DESC</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///mario_bros_plumbing.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <thead>
+        <tr>
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>total_spent</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Daisy</td>
+            <td>Sarasa</td>
+            <td>46210</td>
+        </tr>
+        <tr>
+            <td>Peach</td>
+            <td>Toadstool</td>
+            <td>37110</td>
+        </tr>
+        <tr>
+            <td>Yoshi</td>
+            <td>Dino</td>
+            <td>35635</td>
+        </tr>
+        <tr>
+            <td>Wario</td>
+            <td>Wario</td>
+            <td>21465</td>
+        </tr>
+        <tr>
+            <td>Toadette</td>
+            <td>Toadstool</td>
+            <td>20450</td>
+        </tr>
+        <tr>
+            <td>Bowser</td>
+            <td>Koopa</td>
+            <td>18275</td>
+        </tr>
+        <tr>
+            <td>Birdo</td>
+            <td>Egg</td>
+            <td>3935</td>
+        </tr>
+        <tr>
+            <td>Nabbit</td>
+            <td>Thief</td>
+            <td>2400</td>
+        </tr>
+        <tr>
+            <td>Waluigi</td>
+            <td>Wario</td>
+            <td>2295</td>
+        </tr>
+        <tr>
+            <td>Zelda</td>
+            <td>Hyrule</td>
+            <td>2200</td>
+        </tr>
+        <tr>
+            <td>Lakitu</td>
+            <td>Cloud</td>
+            <td>1810</td>
+        </tr>
+        <tr>
+            <td>Koopa</td>
+            <td>Troopa</td>
+            <td>1645</td>
+        </tr>
+        <tr>
+            <td>Pikachu</td>
+            <td>Pokemon</td>
+            <td>1450</td>
+        </tr>
+        <tr>
+            <td>Toadsworth</td>
+            <td>Toadstool</td>
+            <td>1390</td>
+        </tr>
+        <tr>
+            <td>Dry</td>
+            <td>Bones</td>
+            <td>1075</td>
+        </tr>
+        <tr>
+            <td>Diddy</td>
+            <td>Kong</td>
+            <td>1065</td>
+        </tr>
+        <tr>
+            <td>Toad</td>
+            <td>Toadstool</td>
+            <td>995</td>
+        </tr>
+        <tr>
+            <td>Roy</td>
+            <td>Pherae</td>
+            <td>775</td>
+        </tr>
+        <tr>
+            <td>Funky</td>
+            <td>Kong</td>
+            <td>600</td>
+        </tr>
+        <tr>
+            <td>Pauline</td>
+            <td>Toyopolis</td>
+            <td>600</td>
+        </tr>
+        <tr>
+            <td>Cappy</td>
+            <td>Bonneter</td>
+            <td>570</td>
+        </tr>
+        <tr>
+            <td>Cranky</td>
+            <td>Kong</td>
+            <td>475</td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>Hyrule</td>
+            <td>360</td>
+        </tr>
+        <tr>
+            <td>Fox</td>
+            <td>McCloud</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>Donkey</td>
+            <td>Kong</td>
+            <td>75</td>
+        </tr>
+    </tbody>
+</table></div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./data"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entities">Entities:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relationships">Relationships</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance-sub-type-super-type">Inheritance (Sub-Type / Super-Type)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-diagram">Reading the Diagram:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Brendan Shea, PhD
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

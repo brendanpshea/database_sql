@@ -1,0 +1,2476 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Writing Data With Rollingstone’s Greatest Albums &#8212; SQL and Database Management Through Pop Culture</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Database_06_WritingData';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="A Musical “VIEW” For Better Data Presentation" href="Database_07_Views.html" />
+    <link rel="prev" title="Database Design" href="Database_05_Design.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">SQL and Database Management Through Pop Culture</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    SQL and Database Management Through Pop Culture
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Database_01_StarShipSQL.html">Starship SQL: An Introduction to Databases</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Database_02_IntroToSQL.html">Introduction to SQL: SELECT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_03_Joins_Sets_SQL.html">Getting Tables Together With Joins and Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_04_AdvancedSelect.html">Super Select: Advanced Retrieval With Mario Brothers Plumbing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_05_Design.html">Database Design</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Writing Data With Rollingstone’s Greatest Albums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_07_Views.html">A Musical “VIEW” For Better Data Presentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_08_IndexesTransactions.html">Database Performance: Index, Query Plans, and Transaction Management</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Database_09_PokemonAndPostgres.html">Postgres and Pokemon</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Database_10_DatabaseSecurity.html">Guarding the Virtual Vault: A Deep Dive into Database Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_11_DesignDeployTest.html">Database Architecture Patterns: Design, Deployment, and Testing for Modern Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_12_FinalProject.html">SQLite Database Final Project: Design, Implementation, and Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labs/Database_Ex_Normalization.html">Introduction to Normalization</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="labs/Database_Lab_Chapter_3.html">SQL Practice (Chapter 3)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/./Database_06_WritingData.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/brendanpshea/database_sql" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/brendanpshea/database_sql/edit/main/./Database_06_WritingData.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/brendanpshea/database_sql/issues/new?title=Issue%20on%20page%20%2FDatabase_06_WritingData.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Database_06_WritingData.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Writing Data With Rollingstone’s Greatest Albums</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#databases-through-pop-culture-brendan-shea-phd">Databases Through Pop Culture | Brendan Shea, PhD</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brendan-s-lecture">Brendan’s Lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-tables-for-rolling-stone-s-greatest-albums-of-all-time">Creating Tables for Rolling Stone’s Greatest Albums of All Time</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-insert-into-single-row">Using INSERT INTO (Single Row)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-insert-into-multiple-rows">Using INSERT INTO (Multiple Rows)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-when-constraints-are-violated">What Happens When Constraints Are Violated?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-with-primary-keys">Problems with Primary Keys</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#violating-check-constraints">Violating CHECK Constraints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#violating-not-null-constraints">Violating NOT NULL Constraints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auto-incrementing-primary-keys">Auto-incrementing Primary Keys</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-data">Deleting Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-delete-statement">Basic DELETE Statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-related-data">Deleting Related Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manual-deletion">Manual Deletion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-delete-cascade">ON DELETE CASCADE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-delete-set-null">ON DELETE SET NULL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-between-on-delete-cascade-on-delete-set-null-and-no-action">Choosing Between ON DELETE CASCADE, ON DELETE SET NULL, and no action</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-all-data-versus-dropping-a-table">Deleting All Data versus Dropping a Table</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update">UPDATE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-soft-delete">Introduction to Soft Delete</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-soft-delete-column">Adding a Soft Delete Column</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soft-deleting-records">Soft Deleting Records</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-soft-deleted-records">Querying Soft Deleted Records</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restoring-soft-deleted-records">Restoring Soft Deleted Records</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#considerations">Considerations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#triggers">Triggers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-in-databases">Logging in Databases</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-trigger-example">Logging Trigger Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-database-interaction-methods">Case Study: Database Interaction Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-interface-cli">Command Line Interface (CLI)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-the-command-line">Why use the Command Line?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-sqlite-command-line-in-jupyter">Example: SQLite Command Line in Jupyter</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shell-scripting-powershell-or-bash">Shell Scripting (PowerShell or Bash)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-shell-scripting">Why use Shell Scripting?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-example-in-jupyter-linux-mac">Bash Example in Jupyter (Linux/Mac):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powershell-example-windows">PowerShell Example (Windows):</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-relational-mapping-orm">Object-Relational Mapping (ORM)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-an-orm">Why use an ORM?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-example-with-sqlalchemy-in-jupyter">Python Example with SQLAlchemy in Jupyter:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-scripting">Summary: Scripting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points">Key Points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-practice-your-sql">Lab: Practice Your SQL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-with-quizlet">Review With Quizlet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-code">SQL Code</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_06_WritingData.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section id="writing-data-with-rollingstone-s-greatest-albums">
+<h1>Writing Data With Rollingstone’s Greatest Albums<a class="headerlink" href="#writing-data-with-rollingstone-s-greatest-albums" title="Permalink to this heading">#</a></h1>
+<section id="databases-through-pop-culture-brendan-shea-phd">
+<h2>Databases Through Pop Culture | Brendan Shea, PhD<a class="headerlink" href="#databases-through-pop-culture-brendan-shea-phd" title="Permalink to this heading">#</a></h2>
+<p>In this chapter, we dive into the task of writing data to SQL tables, a fundamental operation in database management. We explore the use of the INSERT INTO statement to add new rows of data to tables, both for single-row and multiple-row insertions. By working with a sample database based on Rolling Stone’s Greatest Albums of All Time, we illustrate the process of creating tables, defining constraints, and populating them with data.</p>
+<p>The chapter also covers important topics related to data manipulation, such as handling constraint violations, auto-incrementing primary keys, and using subqueries in INSERT statements. We discuss the differences between deleting data using the DELETE statement and dropping entire tables with DROP TABLE.</p>
+<p>Moreover, we introduce the concepts of “soft delete” and the UPDATE statement for modifying existing data. We explore the use of triggers to automatically execute specific actions in response to database events and demonstrate how to implement logging mechanisms using triggers.</p>
+<p>Finally, we go beyond SQL and explore database scripting using Linux scripts and various programming languages. We discuss the benefits of automating database tasks and leveraging the power of scripting for data insertion, manipulation, and maintenance.</p>
+<p>By the end of this chapter, readers will have a solid understanding of writing data to SQL tables, handling constraints, and utilizing advanced techniques for data manipulation and automation.</p>
+<p>Learning Outcomes:</p>
+<ol class="arabic simple">
+<li><p>Understand the process of creating tables and defining constraints in SQL.</p></li>
+<li><p>Learn how to insert single and multiple rows of data into tables using the INSERT INTO statement.</p></li>
+<li><p>Recognize and handle constraint violations during data insertion.</p></li>
+<li><p>Utilize auto-incrementing primary keys for efficient data insertion.</p></li>
+<li><p>Employ subqueries in INSERT statements for dynamic data insertion.</p></li>
+<li><p>Differentiate between deleting data with DELETE and dropping tables with DROP TABLE.</p></li>
+<li><p>Implement “soft delete” functionality to retain historical data.</p></li>
+<li><p>Modify existing data using the UPDATE statement.</p></li>
+<li><p>Create triggers to automate actions based on database events.</p></li>
+<li><p>Implement logging mechanisms using triggers for auditing and monitoring purposes.</p></li>
+<li><p>Explore database scripting using Linux scripts and various programming languages.</p></li>
+<li><p>Understand the use of Object-Relational Modeling (ORM) tools to interact with databases.</p></li>
+</ol>
+<p>Keywords: SQL, INSERT INTO, constraints, DELETE, DROP TABLE, soft delete, UPDATE, triggers, logging, database scripting</p>
+</section>
+<section id="brendan-s-lecture">
+<h2>Brendan’s Lecture<a class="headerlink" href="#brendan-s-lecture" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">##Click here to launch my lecture</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;nrJwS2Ch9qE&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-tables-for-rolling-stone-s-greatest-albums-of-all-time">
+<h2>Creating Tables for Rolling Stone’s Greatest Albums of All Time<a class="headerlink" href="#creating-tables-for-rolling-stone-s-greatest-albums-of-all-time" title="Permalink to this heading">#</a></h2>
+<p>For this chapter, we’ll be creating and populating a database based on a small subset of the 2023 version of Rollingstone Magazine’s “500 greatest albums of all time”.</p>
+<p>Before we can start inserting data into our database, we need to create the necessary tables. In this case, we’ll create two tables: Artist and Album. Let’s define the structure of these tables and include some constraints to ensure data integrity.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install prettytable==0.7.2 --force-reinstall -q
+%reload_ext sql
+%sql sqlite:///greatest.db
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">Artist</span><span class="p">;</span>
+<span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">Album</span><span class="p">;</span>
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">Artist</span> <span class="p">(</span>
+    <span class="n">ArtistID</span> <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="n">AUTOINCREMENT</span><span class="p">,</span>
+    <span class="n">Name</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">Country</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+    <span class="n">Founded</span> <span class="n">INT</span>
+    <span class="n">CHECK</span> <span class="p">(</span><span class="n">Founded</span> <span class="o">&gt;=</span> <span class="mi">1900</span> <span class="n">AND</span> <span class="n">Founded</span> <span class="o">&lt;=</span> <span class="mi">2023</span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">Album</span> <span class="p">(</span>
+    <span class="n">AlbumID</span> <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="n">AUTOINCREMENT</span><span class="p">,</span>
+    <span class="n">Title</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">ArtistID</span> <span class="n">INT</span><span class="p">,</span>
+    <span class="n">ReleaseYear</span> <span class="n">INT</span><span class="p">,</span>
+    <span class="n">Genre</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+    <span class="n">Ranking</span><span class="p">,</span>
+    <span class="n">FOREIGN</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">ArtistID</span><span class="p">)</span> <span class="n">REFERENCES</span> <span class="n">Artist</span><span class="p">(</span><span class="n">ArtistID</span><span class="p">),</span>
+    <span class="n">CHECK</span> <span class="p">(</span><span class="n">ReleaseYear</span> <span class="o">&gt;=</span> <span class="mi">1900</span> <span class="n">AND</span> <span class="n">ReleaseYear</span> <span class="o">&lt;=</span> <span class="mi">2023</span><span class="p">),</span>
+    <span class="n">CHECK</span> <span class="p">(</span><span class="n">Ranking</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="n">AND</span> <span class="n">Ranking</span> <span class="o">&lt;=</span> <span class="mi">500</span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="o">--</span><span class="n">enable</span> <span class="n">foreign</span> <span class="n">key</span> <span class="n">contraints</span>
+<span class="n">PRAGMA</span> <span class="n">foreign_keys</span> <span class="o">=</span> <span class="n">ON</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+Done.
+Done.
+Done.
+Done.
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s break down the key aspects of these table definitions:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Artist</span></code> table has an <code class="docutils literal notranslate"><span class="pre">ArtistID</span></code> column as the <strong>primary key</strong>, which uniquely identifies each artist. The <code class="docutils literal notranslate"><span class="pre">Name</span></code> column is marked as <code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">NULL</span></code>, ensuring that every artist has a name. We also have <code class="docutils literal notranslate"><span class="pre">Country</span></code> and <code class="docutils literal notranslate"><span class="pre">Founded</span></code> columns to store additional information about the artists.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Album</span></code> table has an <code class="docutils literal notranslate"><span class="pre">AlbumID</span></code> column as the primary key. The <code class="docutils literal notranslate"><span class="pre">Title</span></code> column is marked as <code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">NULL</span></code> to ensure that every album has a title. We have a foreign key <code class="docutils literal notranslate"><span class="pre">ArtistID</span></code> that references the <code class="docutils literal notranslate"><span class="pre">ArtistID</span></code> column in the <code class="docutils literal notranslate"><span class="pre">Artist</span></code> table, establishing a relationship between albums and artists. The <code class="docutils literal notranslate"><span class="pre">ReleaseYear</span></code> and <code class="docutils literal notranslate"><span class="pre">Genre</span></code> columns provide additional details about each album.</p></li>
+<li><p>We have specified that the primary keys (<code class="docutils literal notranslate"><span class="pre">ArtistID</span></code> and <code class="docutils literal notranslate"><span class="pre">AlbumID</span></code>) are both <code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">NULL</span></code> and <code class="docutils literal notranslate"><span class="pre">AUTOINCREMENT</span></code>. This means they cannot be left blank and that, if they are left blank, SQL will assign the next available integer to them.</p></li>
+<li><p>We include <strong>check constraints</strong> in both tables to enforce certain conditions. In the <code class="docutils literal notranslate"><span class="pre">Artist</span></code> table, we ensure that the <code class="docutils literal notranslate"><span class="pre">Founded</span></code> year is between 1900 and 2023. Similarly, in the <code class="docutils literal notranslate"><span class="pre">Album</span></code> table, we check that the <code class="docutils literal notranslate"><span class="pre">ReleaseYear</span></code> is within the same range.</p></li>
+<li><p>Finally, we enable <strong>foreign key constraints</strong>, which means that SQLite will ensure that attempts to update, delete, or insert data that causes problems for this will fail.</p></li>
+</ul>
+<p>By creating these tables with appropriate constraints, we set up a solid foundation for our database. The constraints help maintain data integrity by preventing invalid or inconsistent data from being inserted into the tables.</p>
+<p>Now that we have our tables ready, we can start inserting data into them using the <code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span></code> statement, which we’ll explore in the next section.</p>
+</section>
+<section id="using-insert-into-single-row">
+<h2>Using INSERT INTO (Single Row)<a class="headerlink" href="#using-insert-into-single-row" title="Permalink to this heading">#</a></h2>
+<p>Now that we have our <code class="docutils literal notranslate"><span class="pre">Artist</span></code> and <code class="docutils literal notranslate"><span class="pre">Album</span></code> tables created, let’s explore how to insert a single row of data into each table using the <code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span></code> statement.</p>
+<p>The basic syntax for inserting a single row is as follows:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="p">(</span><span class="n">column1</span><span class="p">,</span><span class="w"> </span><span class="n">column2</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">value1</span><span class="p">,</span><span class="w"> </span><span class="n">value2</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
+</pre></div>
+</div>
+<p>Let’s insert a single artist into the <code class="docutils literal notranslate"><span class="pre">Artist</span></code> table:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span><span class="n">Insert</span> <span class="n">Marvin</span> <span class="n">Gaye</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">Artist</span> <span class="p">(</span><span class="n">ArtistID</span><span class="p">,</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Country</span><span class="p">,</span> <span class="n">Founded</span><span class="p">)</span>
+<span class="n">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Marvin Gaye&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="mi">1939</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+1 rows affected.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, we specify the table name <code class="docutils literal notranslate"><span class="pre">Artist</span></code> and list the columns we want to insert data into (<code class="docutils literal notranslate"><span class="pre">ArtistID</span></code>, <code class="docutils literal notranslate"><span class="pre">Name</span></code>, <code class="docutils literal notranslate"><span class="pre">Country</span></code>, <code class="docutils literal notranslate"><span class="pre">Founded</span></code>). We then provide the corresponding values for each column using the <code class="docutils literal notranslate"><span class="pre">VALUES</span></code> clause. The values are listed in the same order as the columns specified.</p>
+<p>Now, let’s insert a single album into the <code class="docutils literal notranslate"><span class="pre">Album</span></code> table:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span> <span class="n">Insert</span> <span class="n">What</span><span class="s1">&#39;s Going On</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">Album</span> <span class="p">(</span><span class="n">AlbumID</span><span class="p">,</span> <span class="n">Title</span><span class="p">,</span> <span class="n">ArtistID</span><span class="p">,</span> <span class="n">ReleaseYear</span><span class="p">,</span><span class="n">Genre</span><span class="p">,</span> <span class="n">Ranking</span><span class="p">)</span>
+<span class="n">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;What&#39;&#39;s Going On&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1971</span><span class="p">,</span> <span class="s1">&#39;Soul&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+1 rows affected.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">sql</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">Album</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <thead>
+        <tr>
+            <th>AlbumID</th>
+            <th>Title</th>
+            <th>ArtistID</th>
+            <th>ReleaseYear</th>
+            <th>Genre</th>
+            <th>Ranking</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>What&#x27;s Going On</td>
+            <td>1</td>
+            <td>1971</td>
+            <td>Soul</td>
+            <td>1</td>
+        </tr>
+    </tbody>
+</table></div></div>
+</div>
+<p>Similarly, we specify the <code class="docutils literal notranslate"><span class="pre">Album</span></code> table and list the columns we want to insert data into. We provide the corresponding values in the <code class="docutils literal notranslate"><span class="pre">VALUES</span></code> clause, ensuring that the <code class="docutils literal notranslate"><span class="pre">ArtistID</span></code> matches the <code class="docutils literal notranslate"><span class="pre">ArtistID</span></code> of the artist we inserted earlier.</p>
+<p>It’s important to note that when inserting data, we need to provide values for all columns that are marked as <code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">NULL</span></code> or do not have a default value defined. If we omit a column that allows <code class="docutils literal notranslate"><span class="pre">NULL</span></code> values or has a default value, the database will automatically assign the appropriate value.</p>
+<p>By using the <code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span></code> statement, we can easily add single rows of data to our tables. This is particularly useful when we have specific values for each column and want to insert them one at a time.</p>
+<p>In the next section, we’ll explore how to insert multiple rows of data in a single statement, which is more efficient when dealing with larger datasets.</p>
+</section>
+<section id="using-insert-into-multiple-rows">
+<h2>Using INSERT INTO (Multiple Rows)<a class="headerlink" href="#using-insert-into-multiple-rows" title="Permalink to this heading">#</a></h2>
+<p>Inserting data one row at a time can be inefficient when you have a large number of records to insert. Fortunately, SQL allows you to insert multiple rows of data in a single <code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span></code> statement. This is achieved by specifying multiple sets of values in the <code class="docutils literal notranslate"><span class="pre">VALUES</span></code> clause.</p>
+<p>Let’s insert the top 10 albums from Rolling Stone’s Greatest Albums of All Time list into our database. First, we’ll insert the artists:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">Artist</span> <span class="p">(</span><span class="n">ArtistID</span><span class="p">,</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Country</span><span class="p">,</span> <span class="n">Founded</span><span class="p">)</span>
+<span class="n">VALUES</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;The Beach Boys&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="mi">1961</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Joni Mitchell&#39;</span><span class="p">,</span> <span class="s1">&#39;Canada&#39;</span><span class="p">,</span> <span class="mi">1964</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Stevie Wonder&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="mi">1961</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Nirvana&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="mi">1987</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;Fleetwood Mac&#39;</span><span class="p">,</span> <span class="s1">&#39;United Kingdom&#39;</span><span class="p">,</span> <span class="mi">1967</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;Prince&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="mi">1975</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;Bob Dylan&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="mi">1961</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;Lauryn Hill&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="mi">1988</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;The Beatles&#39;</span><span class="p">,</span> <span class="s1">&#39;United Kingdom&#39;</span><span class="p">,</span> <span class="mi">1960</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;Radiohead&#39;</span><span class="p">,</span> <span class="s1">&#39;United Kingdom&#39;</span><span class="p">,</span> <span class="mi">1985</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;Kendrick Lamar&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="mi">2003</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="s1">&#39;Public Enemy&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="mi">1985</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="s1">&#39;The Rolling Stones&#39;</span><span class="p">,</span> <span class="s1">&#39;United Kingdom&#39;</span><span class="p">,</span> <span class="mi">1962</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="s1">&#39;Aretha Franklin&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="mi">1956</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;Michael Jackson&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="mi">1964</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="s1">&#39;Kanye West&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="mi">1996</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">19</span><span class="p">,</span> <span class="s1">&#39;The Clash&#39;</span><span class="p">,</span> <span class="s1">&#39;United Kingdom&#39;</span><span class="p">,</span> <span class="mi">1976</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+17 rows affected.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s insert the corresponding albums:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">Album</span> <span class="p">(</span><span class="n">AlbumID</span><span class="p">,</span> <span class="n">Title</span><span class="p">,</span> <span class="n">ArtistID</span><span class="p">,</span> <span class="n">ReleaseYear</span><span class="p">,</span> <span class="n">Genre</span><span class="p">,</span> <span class="n">Ranking</span><span class="p">)</span>
+<span class="n">VALUES</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Pet Sounds&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1966</span><span class="p">,</span> <span class="s1">&#39;Rock&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Blue&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1971</span><span class="p">,</span> <span class="s1">&#39;Folk&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Songs in the Key of Life&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1976</span><span class="p">,</span> <span class="s1">&#39;Soul&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Nevermind&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1991</span><span class="p">,</span> <span class="s1">&#39;Grunge&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;Rumours&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1977</span><span class="p">,</span> <span class="s1">&#39;Soft Rock&#39;</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;Purple Rain&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1984</span><span class="p">,</span> <span class="s1">&#39;Pop&#39;</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;Blood on the Tracks&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1975</span><span class="p">,</span> <span class="s1">&#39;Folk Rock&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;The Miseducation of Lauryn Hill&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1998</span><span class="p">,</span> <span class="s1">&#39;Hip Hop&#39;</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Abbey Road&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1969</span><span class="p">,</span> <span class="s1">&#39;Rock&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;Revolver&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1966</span><span class="p">,</span> <span class="s1">&#39;Rock&#39;</span><span class="p">,</span><span class="mi">11</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;Thriller&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">1982</span><span class="p">,</span> <span class="s1">&#39;Pop&#39;</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="s1">&#39;I Never Loved a Man the Way I Love You&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">1967</span><span class="p">,</span> <span class="s1">&#39;Soul&#39;</span><span class="p">,</span><span class="mi">13</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="s1">&#39;Exile on Main Street&#39;</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">1972</span><span class="p">,</span> <span class="s1">&#39;Rock&#39;</span><span class="p">,</span><span class="mi">14</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="s1">&#39;It Takes a Nation of Millions to Hold Us Back&#39;</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">1988</span><span class="p">,</span> <span class="s1">&#39;Hip Hop&#39;</span><span class="p">,</span><span class="mi">15</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;London Calling&#39;</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">1979</span><span class="p">,</span> <span class="s1">&#39;Punk&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="s1">&#39;My Beautiful Dark Twisted Fantasy&#39;</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">2010</span><span class="p">,</span> <span class="s1">&#39;Hip Hop&#39;</span><span class="p">,</span><span class="mi">17</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;Highway 61 Revisited&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1965</span><span class="p">,</span> <span class="s1">&#39;Folk Rock&#39;</span><span class="p">,</span><span class="mi">18</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">19</span><span class="p">,</span> <span class="s1">&#39;To Pimp a Butterfly&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2015</span><span class="p">,</span> <span class="s1">&#39;Hip Hop&#39;</span><span class="p">,</span><span class="mi">19</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;Kid A&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="s1">&#39;Electronic&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+19 rows affected.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In these examples, we use a single <code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span></code> statement for each table, but we provide multiple sets of values separated by commas. Each set of values represents a new row to be inserted into the table.</p>
+<p>By inserting multiple rows at once, we can significantly reduce the number of statements required and improve the efficiency of our data insertion process.</p>
+<p>It’s important to ensure that the number of values matches the number of columns specified and that the values adhere to any constraints defined on the table. If there are any violations, such as trying to insert a duplicate primary key value or violating a check constraint, the entire <code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span></code> statement will fail, and no rows will be inserted.</p>
+<p>In the next section, we’ll explore what happens when constraints are violated and how to handle such situations.</p>
+</section>
+<section id="what-happens-when-constraints-are-violated">
+<h2>What Happens When Constraints Are Violated?<a class="headerlink" href="#what-happens-when-constraints-are-violated" title="Permalink to this heading">#</a></h2>
+<p>Constraints are essential for maintaining data integrity in a database. They enforce rules and restrictions on the data that can be inserted into tables. When attempting to insert data that violates these constraints, SQL will raise an error and prevent the insertion from occurring. Let’s explore some common constraint violations and their consequences.</p>
+<section id="problems-with-primary-keys">
+<h3>Problems with Primary Keys<a class="headerlink" href="#problems-with-primary-keys" title="Permalink to this heading">#</a></h3>
+<p>A primary key uniquely identifies each row in a table. It ensures that no two rows have the same primary key value. If we attempt to insert a row with a primary key value that already exists in the table, SQL will raise a primary key constraint violation error.</p>
+<p>For example, let’s try to insert an artist with an existing <code class="docutils literal notranslate"><span class="pre">ArtistID</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">Artist</span> <span class="p">(</span><span class="n">ArtistID</span><span class="p">,</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Country</span><span class="p">,</span> <span class="n">Founded</span><span class="p">)</span>
+<span class="n">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Pink Floyd&#39;</span><span class="p">,</span> <span class="s1">&#39;United Kingdom&#39;</span><span class="p">,</span> <span class="mi">1962</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+(sqlite3.IntegrityError) UNIQUE constraint failed: Artist.ArtistID
+[SQL: INSERT INTO Artist (ArtistID, Name, Country, Founded)
+VALUES (1, &#39;Pink Floyd&#39;, &#39;United Kingdom&#39;, 1962);]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since we already have an artist with an <code class="docutils literal notranslate"><span class="pre">artist_id</span></code> of 1 this fails with an error message. This is because primary keys must be UNIQUE.</p>
+</section>
+<section id="violating-check-constraints">
+<h3>Violating CHECK Constraints<a class="headerlink" href="#violating-check-constraints" title="Permalink to this heading">#</a></h3>
+<p>CHECK constraints allow us to specify conditions that the data must satisfy before it can be inserted into a table. If we attempt to insert data that violates a CHECK constraint, SQL will raise a constraint violation error.</p>
+<p>For example, let’s try to insert an album with an invalid <code class="docutils literal notranslate"><span class="pre">ReleaseYear</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">Album</span> <span class="p">(</span><span class="n">AlbumID</span><span class="p">,</span> <span class="n">Title</span><span class="p">,</span> <span class="n">ArtistID</span><span class="p">,</span> <span class="n">ReleaseYear</span><span class="p">,</span> <span class="n">Genre</span><span class="p">)</span>
+<span class="n">VALUES</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;Future Album&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2028</span><span class="p">,</span> <span class="s1">&#39;Rock&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+(sqlite3.IntegrityError) CHECK constraint failed: ReleaseYear &gt;= 1900 AND ReleaseYear &lt;= 2023
+[SQL: INSERT INTO Album (AlbumID, Title, ArtistID, ReleaseYear, Genre)
+VALUES (11, &#39;Future Album&#39;, 1, 2028, &#39;Rock&#39;);]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+</pre></div>
+</div>
+</div>
+</div>
+<p>In our Album table, we have a CHECK constraint that ensures the ReleaseYear is between 1900 and 2023. Since 2028 violates this constraint, the insertion will fail with an error message indicating a CHECK constraint violation.</p>
+</section>
+<section id="violating-not-null-constraints">
+<h3>Violating NOT NULL Constraints<a class="headerlink" href="#violating-not-null-constraints" title="Permalink to this heading">#</a></h3>
+<p>NOT NULL constraints ensure that a column cannot contain a NULL value. If we attempt to insert a row with a NULL value for a column that has a NOT NULL constraint, SQL will raise a constraint violation error.</p>
+<p>For example, let’s try to insert an artist without specifying a <code class="docutils literal notranslate"><span class="pre">Name</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">Artist</span> <span class="p">(</span><span class="n">ArtistID</span><span class="p">,</span> <span class="n">Country</span><span class="p">,</span> <span class="n">Founded</span><span class="p">)</span>
+<span class="n">VALUES</span> <span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="mi">1980</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+(sqlite3.IntegrityError) NOT NULL constraint failed: Artist.Name
+[SQL: INSERT INTO Artist (ArtistID, Country, Founded)
+VALUES (21, &#39;United States&#39;, 1980);]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since the <code class="docutils literal notranslate"><span class="pre">Name</span></code> column in the <code class="docutils literal notranslate"><span class="pre">Artist</span></code> table has a NOT NULL constraint, this insertion will fail with an error message indicating a NOT NULL constraint violation.</p>
+<p>When constraint violations occur, the entire <code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span></code> statement is rolled back, and no data is inserted into the table. This ensures that the database remains in a consistent state and maintains data integrity.</p>
+<p>To handle constraint violations, you can:</p>
+<ul class="simple">
+<li><p>Modify the data being inserted to satisfy the constraints.</p></li>
+<li><p>Update the table structure or constraints to accommodate the data.</p></li>
+<li><p>Catch and handle the specific error messages in your application code.</p></li>
+</ul>
+<p>By understanding and properly handling constraint violations, you can ensure that only valid and consistent data is inserted into your database tables.</p>
+</section>
+<section id="auto-incrementing-primary-keys">
+<h3>Auto-incrementing Primary Keys<a class="headerlink" href="#auto-incrementing-primary-keys" title="Permalink to this heading">#</a></h3>
+<p>As we just saw, SQL will generally produce an error if you fail to provide values for a <code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">NULL</span></code> column. One exception to this is for integer primary keys with an <code class="docutils literal notranslate"><span class="pre">AUTOINCREMENT</span></code> option (such as <code class="docutils literal notranslate"><span class="pre">ArtistId</span></code> and <code class="docutils literal notranslate"><span class="pre">AlbumId</span></code>). If you leave this out of an insert statement, SQL will assign the *next available integer as a primary key.</p>
+<p>Here’s an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span><span class="n">Inserting</span> <span class="n">without</span> <span class="n">specifying</span> <span class="n">primary</span> <span class="n">key</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">Artist</span> <span class="p">(</span><span class="n">Name</span><span class="p">,</span> <span class="n">Country</span><span class="p">,</span> <span class="n">Founded</span><span class="p">)</span>
+<span class="n">VALUES</span> <span class="p">(</span><span class="s1">&#39;Pink Floyd&#39;</span><span class="p">,</span> <span class="s1">&#39;United Kingdom&#39;</span><span class="p">,</span> <span class="mi">1962</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+1 rows affected.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">SELECT</span> <span class="o">*</span>
+<span class="n">FROM</span> <span class="n">Artist</span>
+<span class="n">WHERE</span> <span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;Pink Floyd&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <thead>
+        <tr>
+            <th>ArtistID</th>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Founded</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>20</td>
+            <td>Pink Floyd</td>
+            <td>United Kingdom</td>
+            <td>1962</td>
+        </tr>
+    </tbody>
+</table></div></div>
+</div>
+</section>
+</section>
+<section id="deleting-data">
+<h2>Deleting Data<a class="headerlink" href="#deleting-data" title="Permalink to this heading">#</a></h2>
+<p>When working with databases, there may be situations where you need to remove data from tables. In SQL, the <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> statement is used to delete rows from a table based on specified conditions. It’s important to understand how to use the <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> statement effectively and handle the deletion of related data to maintain data integrity.</p>
+<p>Let’s start by inserting some sample data into our <code class="docutils literal notranslate"><span class="pre">Artist</span></code> and <code class="docutils literal notranslate"><span class="pre">Album</span></code> tables. We’ll insert a fake artist named “The Terrible Trio” and a few terrible albums associated with this artist.</p>
+<p>First, let’s insert the fake artist into the <code class="docutils literal notranslate"><span class="pre">Artist</span></code> table:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">Artist</span> <span class="p">(</span><span class="n">Name</span><span class="p">,</span> <span class="n">Country</span><span class="p">,</span> <span class="n">Founded</span><span class="p">)</span>
+<span class="n">VALUES</span> <span class="p">(</span><span class="s1">&#39;The Terrible Trio&#39;</span><span class="p">,</span> <span class="s1">&#39;Nowhere&#39;</span><span class="p">,</span> <span class="mi">2020</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+1 rows affected.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s insert some terrible albums. We’ll use a subquery to find the ArtistID for the “Terrible Trio.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span> <span class="n">Inserting</span> <span class="n">albums</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">Album</span> <span class="p">(</span><span class="n">Title</span><span class="p">,</span> <span class="n">ArtistID</span><span class="p">,</span> <span class="n">ReleaseYear</span><span class="p">,</span> <span class="n">Genre</span><span class="p">)</span>
+<span class="n">VALUES</span>
+    <span class="p">(</span><span class="s1">&#39;Awful Anthems&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">SELECT</span> <span class="n">ArtistID</span> <span class="n">FROM</span> <span class="n">Artist</span> <span class="n">WHERE</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;The Terrible Trio&#39;</span><span class="p">),</span> <span class="mi">2005</span><span class="p">,</span> <span class="s1">&#39;Noise&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Cringeworthy Chronicles&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">SELECT</span> <span class="n">ArtistID</span> <span class="n">FROM</span> <span class="n">Artist</span> <span class="n">WHERE</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;The Terrible Trio&#39;</span><span class="p">),</span> <span class="mi">2010</span><span class="p">,</span> <span class="s1">&#39;Cacophony&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Disastrous Ditties&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">SELECT</span> <span class="n">ArtistID</span> <span class="n">FROM</span> <span class="n">Artist</span> <span class="n">WHERE</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;The Terrible Trio&#39;</span><span class="p">),</span> <span class="mi">2015</span><span class="p">,</span> <span class="s1">&#39;Racket&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+3 rows affected.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s assure ourselves that these albums have been added.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">SELECT</span>
+  <span class="n">al</span><span class="o">.</span><span class="n">Title</span><span class="p">,</span>
+  <span class="n">al</span><span class="o">.</span><span class="n">AlbumID</span><span class="p">,</span>
+  <span class="n">ar</span><span class="o">.</span><span class="n">Name</span> <span class="n">AS</span> <span class="n">Artist</span><span class="p">,</span>
+  <span class="n">ar</span><span class="o">.</span><span class="n">ArtistID</span>
+<span class="n">FROM</span>
+  <span class="n">Album</span> <span class="n">al</span>
+  <span class="n">JOIN</span> <span class="n">Artist</span> <span class="n">ar</span> <span class="n">ON</span> <span class="n">al</span><span class="o">.</span><span class="n">ArtistID</span> <span class="o">=</span> <span class="n">ar</span><span class="o">.</span><span class="n">ArtistID</span>
+<span class="n">WHERE</span> <span class="n">ar</span><span class="o">.</span><span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;The Terrible Trio&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>AlbumID</th>
+            <th>Artist</th>
+            <th>ArtistID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Awful Anthems</td>
+            <td>21</td>
+            <td>The Terrible Trio</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>Cringeworthy Chronicles</td>
+            <td>22</td>
+            <td>The Terrible Trio</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>Disastrous Ditties</td>
+            <td>23</td>
+            <td>The Terrible Trio</td>
+            <td>21</td>
+        </tr>
+    </tbody>
+</table></div></div>
+</div>
+<section id="basic-delete-statement">
+<h3>Basic DELETE Statement<a class="headerlink" href="#basic-delete-statement" title="Permalink to this heading">#</a></h3>
+<p>The basic syntax of the <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> statement is as follows:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">condition</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">table_name</span></code>: The name of the table from which you want to delete rows.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">condition</span></code>: Specifies the condition that determines which rows will be deleted. If omitted, all rows in the table will be deleted.</p></li>
+</ul>
+<p>For example, to delete the album “Awful Anthems” from the <code class="docutils literal notranslate"><span class="pre">Album</span></code> table, you can use the following statement:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">DELETE</span> <span class="n">FROM</span> <span class="n">Album</span>
+<span class="n">WHERE</span> <span class="n">Title</span> <span class="o">=</span> <span class="s1">&#39;Awful Anthems&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+1 rows affected.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span><span class="n">Check</span> <span class="n">that</span> <span class="n">album</span> <span class="ow">is</span> <span class="n">deleted</span>
+<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">Album</span> <span class="n">WHERE</span> <span class="n">Title</span> <span class="o">=</span> <span class="s1">&#39;Awful Anthems&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <thead>
+        <tr>
+            <th>AlbumID</th>
+            <th>Title</th>
+            <th>ArtistID</th>
+            <th>ReleaseYear</th>
+            <th>Genre</th>
+            <th>Ranking</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table></div></div>
+</div>
+</section>
+<section id="deleting-related-data">
+<h3>Deleting Related Data<a class="headerlink" href="#deleting-related-data" title="Permalink to this heading">#</a></h3>
+<p>When deleting data from a table that has related data in other tables, you need to consider the foreign key constraints and how to handle the deletion of related records.</p>
+<p>In our example, the <code class="docutils literal notranslate"><span class="pre">Album</span></code> table has a foreign key constraint on the <code class="docutils literal notranslate"><span class="pre">ArtistID</span></code> column that references the <code class="docutils literal notranslate"><span class="pre">ArtistID</span></code> column in the <code class="docutils literal notranslate"><span class="pre">Artist</span></code> table. This means that each album is associated with an artist.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span> <span class="n">This</span> <span class="n">will</span> <span class="n">fail</span>
+<span class="n">DELETE</span> <span class="n">FROM</span> <span class="n">Artist</span>
+<span class="n">WHERE</span> <span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;The Terrible Trio&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+(sqlite3.IntegrityError) FOREIGN KEY constraint failed
+[SQL: -- This will fail
+DELETE FROM Artist
+WHERE Name = &quot;The Terrible Trio&quot;;]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+</pre></div>
+</div>
+</div>
+</div>
+<p>In order to deal with with this problem, you have a few different options.</p>
+</section>
+<section id="manual-deletion">
+<h3>Manual Deletion<a class="headerlink" href="#manual-deletion" title="Permalink to this heading">#</a></h3>
+<p>The most straightforward to way to do this deletion is to:</p>
+<ol class="arabic simple">
+<li><p>Delete the related albums from the Album table first.</p></li>
+<li><p>Second, delete the artist from the Artist table.</p></li>
+</ol>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">--Delete albums</span>
+<span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Album</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ArtistID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">ArtistID</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Artist</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;The Terrible Trio&#39;</span><span class="p">);</span>
+
+<span class="c1">--Delete artist</span>
+<span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Artist</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;The Terrible Trio&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="on-delete-cascade">
+<h3>ON DELETE CASCADE<a class="headerlink" href="#on-delete-cascade" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span> <span class="pre">CASCADE</span></code> option is used to automatically delete related records from a child table when a record in the parent table is deleted. It ensures data consistency and maintains referential integrity by cascading the delete operation to the associated records.</p>
+<p>When you define a foreign key constraint with <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span> <span class="pre">CASCADE</span></code>, deleting a record from the parent table will automatically delete all the related records in the child table that reference the deleted parent record.</p>
+<p>To set up <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span> <span class="pre">CASCADE</span></code>, you include it in the foreign key constraint definition when creating the child table:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Artist</span><span class="p">(</span>
+<span class="w">  </span><span class="c1">-- define all your columms</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">ArtistID</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">Artist</span><span class="p">(</span><span class="n">ArtistID</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>By adding this line to the foreign key constraint, you instruct the database to cascade the delete operation from the parent table (<code class="docutils literal notranslate"><span class="pre">Artist</span></code>) to the child table (<code class="docutils literal notranslate"><span class="pre">Album</span></code>) when an artist is deleted.</p>
+<p>With this option set, you can delete an artist and its related albums using a single DELETE statement:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Artist</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;The Terrible Trio&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="on-delete-set-null">
+<h3>ON DELETE SET NULL<a class="headerlink" href="#on-delete-set-null" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span> <span class="pre">SET</span> <span class="pre">NULL</span></code> option is used to automatically set the foreign key values in the child table to <code class="docutils literal notranslate"><span class="pre">NULL</span></code> when a record in the parent table is deleted. It allows you to maintain the child records even if the associated parent record is removed.</p>
+<p>When you define a foreign key constraint with <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span> <span class="pre">SET</span> <span class="pre">NULL</span></code>, deleting a record from the parent table will set the foreign key values in the child table to <code class="docutils literal notranslate"><span class="pre">NULL</span></code> for the related records.</p>
+<p>To set up <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span> <span class="pre">SET</span> <span class="pre">NULL</span></code>, you include it in the foreign key constraint definition when creating the child table:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Artist</span><span class="p">(</span>
+<span class="w">  </span><span class="c1">-- define all your columms</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">ArtistID</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">Artist</span><span class="p">(</span><span class="n">ArtistID</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="k">NULL</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>By adding this line to the foreign key constraint, you instruct the database to set the <code class="docutils literal notranslate"><span class="pre">ArtistID</span></code> values in the <code class="docutils literal notranslate"><span class="pre">Album</span></code> table to <code class="docutils literal notranslate"><span class="pre">NULL</span></code> when an artist is deleted from the <code class="docutils literal notranslate"><span class="pre">Artist</span></code> table.</p>
+</section>
+<section id="choosing-between-on-delete-cascade-on-delete-set-null-and-no-action">
+<h3>Choosing Between ON DELETE CASCADE, ON DELETE SET NULL, and no action<a class="headerlink" href="#choosing-between-on-delete-cascade-on-delete-set-null-and-no-action" title="Permalink to this heading">#</a></h3>
+<p>The choice between <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span> <span class="pre">CASCADE</span></code> and <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span> <span class="pre">SET</span> <span class="pre">NULL</span></code> depends on your application’s requirements and data integrity rules.</p>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span> <span class="pre">CASCADE</span></code> when you want to ensure that related records in the child table are automatically deleted when a parent record is deleted. This option maintains strict referential integrity and removes all associated data.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span> <span class="pre">SET</span> <span class="pre">NULL</span></code> when you want to keep the related records in the child table even if the parent record is deleted. This option allows you to maintain the child records but sets the foreign key values to <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, indicating that they are no longer associated with a valid parent record.</p></li>
+</ul>
+<p>It’s important to consider the implications of each option. <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span> <span class="pre">CASCADE</span></code> permanently deletes related data, which may not be desirable in all scenarios. <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span> <span class="pre">SET</span> <span class="pre">NULL</span></code> keeps the related records but with a <code class="docutils literal notranslate"><span class="pre">NULL</span></code> foreign key value, which may require additional handling in your application.</p>
+<p>If you don’t specify either <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span> <span class="pre">CASCADE</span></code> or <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span> <span class="pre">SET</span> <span class="pre">NULL</span></code>, the default behavior is to restrict the deletion of a parent record if there are related records in the child table. In this case, you would need to manually delete the related records from the child table before deleting the parent record.</p>
+</section>
+<section id="deleting-all-data-versus-dropping-a-table">
+<h3>Deleting All Data versus Dropping a Table<a class="headerlink" href="#deleting-all-data-versus-dropping-a-table" title="Permalink to this heading">#</a></h3>
+<p>As we’ve seen, the <strong><code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">FROM</span></code></strong> command is used to remove rows from a table. This operation can be selective or comprehensive. For example, if you only want to delete rows that meet certain criteria, you use a <strong><code class="docutils literal notranslate"><span class="pre">WHERE</span></code></strong> clause with your <strong><code class="docutils literal notranslate"><span class="pre">DELETE</span></code></strong> statement. Without a <strong><code class="docutils literal notranslate"><span class="pre">WHERE</span></code></strong> clause, <strong><code class="docutils literal notranslate"><span class="pre">DELETE</span></code></strong> will remove all rows in the table, but importantly, the table’s structure remains untouched.  So, If you decide to remove all albums from the <strong><code class="docutils literal notranslate"><span class="pre">albums</span></code></strong> table, you simply omit the <strong><code class="docutils literal notranslate"><span class="pre">WHERE</span></code></strong> clause:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Albums</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This action clears all data from the <strong><code class="docutils literal notranslate"><span class="pre">albums</span></code></strong> table but keeps its structure intact for future use. You can still add new albums to it or modify its structure later.</p>
+<p>One significant aspect of <strong><code class="docutils literal notranslate"><span class="pre">DELETE</span></code></strong> operations is that they are logged row by row in the database’s transaction log. This means each row deletion is recorded, allowing for the possibility to undo the deletions if the operation is part of a transaction. However, this logging can make <strong><code class="docutils literal notranslate"><span class="pre">DELETE</span></code></strong> operations slower when dealing with a large number of rows.</p>
+<p>The <strong><code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span></code></strong> command, in contrast, is much more drastic. When you execute a <strong><code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span></code></strong> statement, you remove the entire table from the database. This includes not just the data but the table’s structure, its columns, indexes, and any constraints defined on it.</p>
+<p>For instance, if you decide that the <strong><code class="docutils literal notranslate"><span class="pre">artists</span></code></strong> table is no longer needed and you want to erase it entirely from the database, you would use:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Artists</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Executing this command means the <strong><code class="docutils literal notranslate"><span class="pre">artists</span></code></strong> table is deleted. The table, along with all its data and structure, is permanently removed from the database. Unlike <strong><code class="docutils literal notranslate"><span class="pre">DELETE</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span></code></strong> does not log individual row deletions because it doesn’t process each row; it removes the table as a whole. This makes <strong><code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span></code></strong> a fast operation but with the significant caveat that it is typically irreversible through standard SQL commands. Once a table is dropped, you cannot simply undo the action unless you have backups or specific database recovery tools in place.</p>
+</section>
+</section>
+<section id="update">
+<h2>UPDATE<a class="headerlink" href="#update" title="Permalink to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> statement in SQL is used to modify existing data in a table. It allows you to change the values of one or more columns in one or more rows based on specified conditions. The basic syntax of the <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> statement is as follows:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="k">table_name</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">column1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value1</span><span class="p">,</span><span class="w"> </span><span class="n">column2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">condition</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">table_name</span></code>: The name of the table you want to update.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">column1,</span> <span class="pre">column2,</span> <span class="pre">...</span></code>: The columns you want to modify and their new values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">condition</span></code>: Optional. Specifies the condition that determines which rows will be updated. If omitted, all rows in the table will be updated.</p></li>
+</ul>
+<p>Let’s look at a concrete example using our <code class="docutils literal notranslate"><span class="pre">Artist</span></code> and <code class="docutils literal notranslate"><span class="pre">Album</span></code> tables.</p>
+<p>Suppose we want to update the name of the artist “Bob Dylan” to “Robert Zimmerman”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">UPDATE</span> <span class="n">Artist</span>
+<span class="n">SET</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;Robert Zimmerman&#39;</span>
+<span class="n">WHERE</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;Bob Dylan&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+1 rows affected.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span> <span class="n">Confirm</span> <span class="n">our</span> <span class="n">change</span>
+<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">Artist</span> <span class="n">WHERE</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;Robert Zimmerman&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <thead>
+        <tr>
+            <th>ArtistID</th>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Founded</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>8</td>
+            <td>Robert Zimmerman</td>
+            <td>United States</td>
+            <td>1961</td>
+        </tr>
+    </tbody>
+</table></div></div>
+</div>
+<p>You can also update multiple columns in a single UPDATE statement by separating the column-value pairs with commas. For example, let’s update the Prince’s name to “?” and his County to “Minnesota, United States.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">UPDATE</span> <span class="n">Artist</span>
+<span class="n">SET</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">Country</span> <span class="o">=</span> <span class="s1">&#39;Minnesota, United States&#39;</span>
+<span class="n">WHERE</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;Prince&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+1 rows affected.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span> <span class="n">Confirm</span> <span class="n">our</span> <span class="n">change</span>
+<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">Artist</span> <span class="n">WHERE</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;?&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <thead>
+        <tr>
+            <th>ArtistID</th>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Founded</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>7</td>
+            <td>?</td>
+            <td>Minnesota, United States</td>
+            <td>1975</td>
+        </tr>
+    </tbody>
+</table></div></div>
+</div>
+<p>It’s important to be cautious when using the <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> statement, especially if you omit the <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause. Without a <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause, the update will be applied to all rows in the table, which may lead to unintended changes.</p>
+<p>To update multiple rows based on a condition, you can use a more complex <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">UPDATE</span> <span class="n">Album</span>
+<span class="n">SET</span> <span class="n">ReleaseYear</span> <span class="o">=</span> <span class="n">ReleaseYear</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">WHERE</span> <span class="n">ArtistID</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+2 rows affected.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span> <span class="n">Confirm</span> <span class="n">our</span> <span class="n">change</span>
+<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">Album</span> <span class="n">WHERE</span> <span class="n">ArtistID</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <thead>
+        <tr>
+            <th>AlbumID</th>
+            <th>Title</th>
+            <th>ArtistID</th>
+            <th>ReleaseYear</th>
+            <th>Genre</th>
+            <th>Ranking</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>22</td>
+            <td>Cringeworthy Chronicles</td>
+            <td>21</td>
+            <td>2011</td>
+            <td>Cacophony</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td>Disastrous Ditties</td>
+            <td>21</td>
+            <td>2016</td>
+            <td>Racket</td>
+            <td>None</td>
+        </tr>
+    </tbody>
+</table></div></div>
+</div>
+<p>This statement increments the <code class="docutils literal notranslate"><span class="pre">ReleaseYear</span></code> by 1 for all albums associated with the artist having <code class="docutils literal notranslate"><span class="pre">ArtistID</span></code> 21.</p>
+<p>Remember to always double-check your <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> statements and include appropriate <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> conditions to ensure that you are modifying only the intended rows.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> statement is a powerful tool for modifying existing data in your database tables. It allows you to keep your data up to date and make necessary changes based on specific conditions.</p>
+</section>
+<section id="introduction-to-soft-delete">
+<h2>Introduction to Soft Delete<a class="headerlink" href="#introduction-to-soft-delete" title="Permalink to this heading">#</a></h2>
+<p>In database management, there are situations where you may want to keep records even after they are marked as deleted. Instead of permanently removing data from the database, you can implement a “soft delete” approach. Soft delete involves adding a column to the table that indicates whether a record is active or deleted, allowing you to retain historical data while still being able to filter out deleted records when querying the table.</p>
+<p>Let’s explore the concept of soft delete using our example of the terrible trio artist and their albums.</p>
+<section id="adding-a-soft-delete-column">
+<h3>Adding a Soft Delete Column<a class="headerlink" href="#adding-a-soft-delete-column" title="Permalink to this heading">#</a></h3>
+<p>To implement soft delete, we need to add a column to the <code class="docutils literal notranslate"><span class="pre">Artist</span></code> and <code class="docutils literal notranslate"><span class="pre">Album</span></code> tables that represents the deleted status of each record. We’ll call this column <code class="docutils literal notranslate"><span class="pre">IsDeleted</span></code> and set its default value to <code class="docutils literal notranslate"><span class="pre">0</span></code> (indicating an active record)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">Artist</span> <span class="n">ADD</span> <span class="n">COLUMN</span> <span class="n">IsDeleted</span> <span class="n">INTEGER</span> <span class="n">DEFAULT</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">Album</span> <span class="n">ADD</span> <span class="n">COLUMN</span> <span class="n">IsDeleted</span> <span class="n">INTEGER</span> <span class="n">DEFAULT</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+Done.
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>These statements add the <code class="docutils literal notranslate"><span class="pre">IsDeleted</span></code> column to the <code class="docutils literal notranslate"><span class="pre">Artist</span></code> and <code class="docutils literal notranslate"><span class="pre">Album</span></code> tables, respectively.</p>
+</section>
+<section id="soft-deleting-records">
+<h3>Soft Deleting Records<a class="headerlink" href="#soft-deleting-records" title="Permalink to this heading">#</a></h3>
+<p>Now, let’s say we want to soft delete the artist “The Terrible Trio” and their albums. Instead of using the <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> statement, we’ll update the <code class="docutils literal notranslate"><span class="pre">IsDeleted</span></code> column to mark the records as deleted.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">UPDATE</span> <span class="n">Artist</span> <span class="n">SET</span> <span class="n">IsDeleted</span> <span class="o">=</span> <span class="mi">1</span> <span class="n">WHERE</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;The Terrible Trio&#39;</span><span class="p">;</span>
+<span class="n">UPDATE</span> <span class="n">Album</span> <span class="n">SET</span> <span class="n">IsDeleted</span> <span class="o">=</span> <span class="mi">1</span> <span class="n">WHERE</span> <span class="n">ArtistID</span> <span class="o">=</span> <span class="p">(</span><span class="n">SELECT</span> <span class="n">ArtistID</span> <span class="n">FROM</span> <span class="n">Artist</span> <span class="n">WHERE</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;The Terrible Trio&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+1 rows affected.
+2 rows affected.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first statement marks the artist “The Terrible Trio” as deleted by setting the <code class="docutils literal notranslate"><span class="pre">IsDeleted</span></code> column to <code class="docutils literal notranslate"><span class="pre">1</span></code>. The second statement marks all the albums associated with “The Terrible Trio” as deleted by setting their <code class="docutils literal notranslate"><span class="pre">IsDeleted</span></code> column to <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+</section>
+<section id="querying-soft-deleted-records">
+<h3>Querying Soft Deleted Records<a class="headerlink" href="#querying-soft-deleted-records" title="Permalink to this heading">#</a></h3>
+<p>When querying the <code class="docutils literal notranslate"><span class="pre">Artist</span></code> and <code class="docutils literal notranslate"><span class="pre">Album</span></code> tables, you can filter out the soft deleted records by adding a condition to check the <code class="docutils literal notranslate"><span class="pre">IsDeleted</span></code> column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">Artist</span> <span class="n">WHERE</span> <span class="n">IsDeleted</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <thead>
+        <tr>
+            <th>ArtistID</th>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Founded</th>
+            <th>IsDeleted</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Marvin Gaye</td>
+            <td>United States</td>
+            <td>1939</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>The Beach Boys</td>
+            <td>United States</td>
+            <td>1961</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Joni Mitchell</td>
+            <td>Canada</td>
+            <td>1964</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Stevie Wonder</td>
+            <td>United States</td>
+            <td>1961</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Nirvana</td>
+            <td>United States</td>
+            <td>1987</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Fleetwood Mac</td>
+            <td>United Kingdom</td>
+            <td>1967</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>?</td>
+            <td>Minnesota, United States</td>
+            <td>1975</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Robert Zimmerman</td>
+            <td>United States</td>
+            <td>1961</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Lauryn Hill</td>
+            <td>United States</td>
+            <td>1988</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>The Beatles</td>
+            <td>United Kingdom</td>
+            <td>1960</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Radiohead</td>
+            <td>United Kingdom</td>
+            <td>1985</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Kendrick Lamar</td>
+            <td>United States</td>
+            <td>2003</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>Public Enemy</td>
+            <td>United States</td>
+            <td>1985</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>The Rolling Stones</td>
+            <td>United Kingdom</td>
+            <td>1962</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>Aretha Franklin</td>
+            <td>United States</td>
+            <td>1956</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>Michael Jackson</td>
+            <td>United States</td>
+            <td>1964</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>Kanye West</td>
+            <td>United States</td>
+            <td>1996</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>The Clash</td>
+            <td>United Kingdom</td>
+            <td>1976</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>Pink Floyd</td>
+            <td>United Kingdom</td>
+            <td>1962</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+</table></div></div>
+</div>
+</section>
+<section id="restoring-soft-deleted-records">
+<h3>Restoring Soft Deleted Records<a class="headerlink" href="#restoring-soft-deleted-records" title="Permalink to this heading">#</a></h3>
+<p>One of the advantages of soft delete is the ability to restore deleted records if needed. To restore a soft deleted record, you can update the IsDeleted column back to 0.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">UPDATE</span> <span class="n">Artist</span> <span class="n">SET</span> <span class="n">IsDeleted</span> <span class="o">=</span> <span class="mi">0</span> <span class="n">WHERE</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;The Terrible Trio&#39;</span><span class="p">;</span>
+<span class="n">UPDATE</span> <span class="n">Album</span> <span class="n">SET</span> <span class="n">IsDeleted</span> <span class="o">=</span> <span class="mi">0</span> <span class="n">WHERE</span> <span class="n">ArtistID</span> <span class="o">=</span> <span class="p">(</span><span class="n">SELECT</span> <span class="n">ArtistID</span> <span class="n">FROM</span> <span class="n">Artist</span> <span class="n">WHERE</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;The Terrible Trio&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+1 rows affected.
+2 rows affected.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>These statements restore the artist “The Terrible Trio” and their associated albums by setting the <code class="docutils literal notranslate"><span class="pre">IsDeleted</span></code> column back to <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+</section>
+<section id="considerations">
+<h3>Considerations<a class="headerlink" href="#considerations" title="Permalink to this heading">#</a></h3>
+<p>When implementing soft delete, keep in mind the following considerations:</p>
+<ul class="simple">
+<li><p>Soft delete adds an overhead to your queries, as you need to include the <code class="docutils literal notranslate"><span class="pre">IsDeleted</span></code> condition in your <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clauses to filter out deleted records.</p></li>
+<li><p>Soft deleted records still occupy space in the database, so you need to have a strategy for eventually purging them if necessary.</p></li>
+<li><p>If you have foreign key constraints, you may need to handle soft deletion carefully to maintain data integrity. You can consider using <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span> <span class="pre">SET</span> <span class="pre">NULL</span></code> or <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">UPDATE</span> <span class="pre">CASCADE</span></code> to manage the relationships between soft deleted records.</p></li>
+</ul>
+<p>Soft delete provides a flexible approach to data deletion, allowing you to retain historical data while still being able to manage deleted records effectivel</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span> <span class="n">Let</span><span class="s1">&#39;s get rid of our soft delete column</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">Artist</span> <span class="n">DROP</span> <span class="n">COLUMN</span> <span class="n">IsDeleted</span><span class="p">;</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">Album</span> <span class="n">DROP</span> <span class="n">COLUMN</span> <span class="n">IsDeleted</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+Done.
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="triggers">
+<h2>Triggers<a class="headerlink" href="#triggers" title="Permalink to this heading">#</a></h2>
+<p>Triggers are special types of stored procedures in SQL that are automatically executed in response to specific events or actions on a table, such as <code class="docutils literal notranslate"><span class="pre">INSERT</span></code>, <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>, or <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> operations. Triggers allow you to enforce business rules, maintain data integrity, and perform additional actions before or after the triggering event occurs.</p>
+<p>In SQLite, you can create triggers using the <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TRIGGER</span></code> statement. The basic syntax for creating a trigger is as follows:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TRIGGER</span><span class="w"> </span><span class="p">(</span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="p">)</span><span class="w"> </span><span class="k">trigger_name</span>
+<span class="k">BEFORE</span><span class="o">|</span><span class="k">AFTER</span><span class="w"> </span><span class="k">INSERT</span><span class="o">|</span><span class="k">UPDATE</span><span class="o">|</span><span class="k">DELETE</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">table_name</span>
+<span class="k">BEGIN</span>
+<span class="w">  </span><span class="c1">-- Trigger actions</span>
+<span class="k">END</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">trigger_name</span></code>: The name you assign to the trigger.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BEFORE|AFTER</span></code>: Specifies whether the trigger should be executed before or after the triggering event.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INSERT|UPDATE|DELETE</span></code>: Specifies the event that activates the trigger.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">table_name</span></code>: The name of the table on which the trigger is defined.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BEGIN</span> <span class="pre">...</span> <span class="pre">END</span></code>: The block of SQL statements that define the trigger actions.</p></li>
+</ul>
+<p>Let’s create a concrete example using our <code class="docutils literal notranslate"><span class="pre">Artist</span></code> and <code class="docutils literal notranslate"><span class="pre">Album</span></code> tables.</p>
+<p>Suppose, for example, we’d like to keep track of the date each albums was updated to our database.</p>
+<p>First, let’s add a column to accomodate this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">Album</span> <span class="n">ADD</span> <span class="n">COLUMN</span> <span class="n">LastUpdated</span> <span class="n">DATETIME</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s create trigger.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">CREATE</span> <span class="n">TRIGGER</span> <span class="n">IF</span> <span class="n">NOT</span> <span class="n">EXISTS</span> <span class="n">update_album_date</span>
+<span class="n">AFTER</span> <span class="n">UPDATE</span> <span class="n">ON</span> <span class="n">Album</span>
+<span class="n">BEGIN</span>
+  <span class="n">UPDATE</span> <span class="n">Album</span>
+  <span class="n">SET</span> <span class="n">LastUpdated</span> <span class="o">=</span> <span class="n">DATETIME</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">)</span>
+  <span class="n">WHERE</span> <span class="n">AlbumID</span> <span class="o">=</span> <span class="n">NEW</span><span class="o">.</span><span class="n">AlbumID</span><span class="p">;</span>
+<span class="n">END</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, let’s try it out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">UPDATE</span> <span class="n">Album</span>
+<span class="n">SET</span> <span class="n">ReleaseYear</span> <span class="o">=</span> <span class="n">ReleaseYear</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">WHERE</span> <span class="n">AlbumID</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+2 rows affected.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>And finally, we can see the results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">Album</span> <span class="n">WHERE</span> <span class="n">AlbumID</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <thead>
+        <tr>
+            <th>AlbumID</th>
+            <th>Title</th>
+            <th>ArtistID</th>
+            <th>ReleaseYear</th>
+            <th>Genre</th>
+            <th>Ranking</th>
+            <th>LastUpdated</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>22</td>
+            <td>Cringeworthy Chronicles</td>
+            <td>21</td>
+            <td>2010</td>
+            <td>Cacophony</td>
+            <td>None</td>
+            <td>2024-06-26 21:27:28</td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td>Disastrous Ditties</td>
+            <td>21</td>
+            <td>2015</td>
+            <td>Racket</td>
+            <td>None</td>
+            <td>2024-06-26 21:27:28</td>
+        </tr>
+    </tbody>
+</table></div></div>
+</div>
+</section>
+<section id="logging-in-databases">
+<h2>Logging in Databases<a class="headerlink" href="#logging-in-databases" title="Permalink to this heading">#</a></h2>
+<p>Logging is the process of recording specific events, changes, or actions that occur within a database. Logs serve as an audit trail, allowing database administrators and developers to track and monitor the activities happening in the database. They provide valuable information for debugging, troubleshooting, performance analysis, and security auditing.</p>
+<p>Logs can capture various types of information, such as:</p>
+<ul class="simple">
+<li><p>Data modifications (inserts, updates, deletes)</p></li>
+<li><p>User authentication and access attempts</p></li>
+<li><p>System errors and exceptions</p></li>
+<li><p>Timestamps of when events occurred</p></li>
+<li><p>User or application responsible for the actions</p></li>
+</ul>
+<p>By maintaining logs, you can gain insights into the historical changes in your database, detect suspicious activities, and facilitate data recovery in case of failures or accidental modifications.</p>
+<p>Now, let’s see how we can use a trigger to implement logging in our database.</p>
+<section id="logging-trigger-example">
+<h3>Logging Trigger Example<a class="headerlink" href="#logging-trigger-example" title="Permalink to this heading">#</a></h3>
+<p>Suppose we want to create a log table that captures the changes made to the <code class="docutils literal notranslate"><span class="pre">Artist</span></code> table. Whenever an artist’s information is updated, we want to record the old and new values, along with the timestamp and the user who made the change.</p>
+<p>First, let’s create the log table:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">ArtistLog</span><span class="p">;</span>
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">ArtistLog</span> <span class="p">(</span>
+  <span class="n">LogID</span> <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="n">AUTOINCREMENT</span><span class="p">,</span>
+  <span class="n">ArtistID</span> <span class="n">INTEGER</span><span class="p">,</span>
+  <span class="n">OldName</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+  <span class="n">NewName</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+  <span class="n">UpdatedAt</span> <span class="n">TIMESTAMP</span> <span class="n">DEFAULT</span> <span class="n">CURRENT_TIMESTAMP</span><span class="p">,</span>
+  <span class="n">UpdatedBy</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+Done.
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">ArtistLog</span></code> table has columns to store the <code class="docutils literal notranslate"><span class="pre">ArtistID</span></code>, the old and new values of the <code class="docutils literal notranslate"><span class="pre">Name</span></code> column, the timestamp of the update, and the user who made the change.</p>
+<p>Next, let’s create the trigger that will populate the log table whenever an update occurs on the <code class="docutils literal notranslate"><span class="pre">Artist</span></code> table:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">CREATE</span> <span class="n">TRIGGER</span> <span class="n">IF</span> <span class="n">NOT</span> <span class="n">EXISTS</span> <span class="n">ArtistUpdateTrigger</span>
+<span class="n">AFTER</span> <span class="n">UPDATE</span> <span class="n">ON</span> <span class="n">Artist</span>
+<span class="n">FOR</span> <span class="n">EACH</span> <span class="n">ROW</span>
+<span class="n">BEGIN</span>
+  <span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">ArtistLog</span> <span class="p">(</span><span class="n">ArtistID</span><span class="p">,</span> <span class="n">OldName</span><span class="p">,</span> <span class="n">NewName</span><span class="p">,</span> <span class="n">UpdatedBy</span><span class="p">)</span>
+  <span class="n">VALUES</span> <span class="p">(</span><span class="n">OLD</span><span class="o">.</span><span class="n">ArtistID</span><span class="p">,</span> <span class="n">OLD</span><span class="o">.</span><span class="n">Name</span><span class="p">,</span> <span class="n">NEW</span><span class="o">.</span><span class="n">Name</span><span class="p">,</span> <span class="s1">&#39;Brendan Shea&#39;</span><span class="p">);</span>
+<span class="n">END</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s break down the trigger:</p>
+<ul class="simple">
+<li><p>The trigger is named <code class="docutils literal notranslate"><span class="pre">ArtistUpdateTrigger</span></code>.</p></li>
+<li><p>It is defined as an <code class="docutils literal notranslate"><span class="pre">AFTER</span> <span class="pre">UPDATE</span></code> trigger on the <code class="docutils literal notranslate"><span class="pre">Artist</span></code> table, meaning it will be executed after an update operation on the <code class="docutils literal notranslate"><span class="pre">Artist</span></code> table.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">FOR</span> <span class="pre">EACH</span> <span class="pre">ROW</span></code> clause specifies that the trigger will be executed for each row affected by the update.</p></li>
+<li><p>Inside the trigger, we have an <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> statement that inserts a new row into the <code class="docutils literal notranslate"><span class="pre">ArtistLog</span></code> table.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">VALUES</span></code> clause captures the <code class="docutils literal notranslate"><span class="pre">ArtistID</span></code>, the old and new values of the <code class="docutils literal notranslate"><span class="pre">Name</span></code> column using the special <code class="docutils literal notranslate"><span class="pre">OLD</span></code> and <code class="docutils literal notranslate"><span class="pre">NEW</span></code> keywords, and the user who made the changes. Here, I’ve hardcoded this as ‘Brendan Shea’, but in more complext applications, we could capture the details for each user.</p></li>
+</ul>
+<p>Now, let’s test the trigger by updating some artists’ names (undoing our previous updates):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">UPDATE</span> <span class="n">Artist</span>
+<span class="n">SET</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;Bob Dylan&#39;</span>
+<span class="n">WHERE</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;Robert Zimmerman&#39;</span><span class="p">;</span>
+
+<span class="n">UPDATE</span> <span class="n">Artist</span>
+<span class="n">SET</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;Prince&#39;</span>
+<span class="n">WHERE</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;?&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+1 rows affected.
+1 rows affected.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s see what our log table looks like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">ArtistLog</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///greatest.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <thead>
+        <tr>
+            <th>LogID</th>
+            <th>ArtistID</th>
+            <th>OldName</th>
+            <th>NewName</th>
+            <th>UpdatedAt</th>
+            <th>UpdatedBy</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>8</td>
+            <td>Robert Zimmerman</td>
+            <td>Bob Dylan</td>
+            <td>2024-06-26 21:27:28</td>
+            <td>Brendan Shea</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>7</td>
+            <td>?</td>
+            <td>Prince</td>
+            <td>2024-06-26 21:27:28</td>
+            <td>Brendan Shea</td>
+        </tr>
+    </tbody>
+</table></div></div>
+</div>
+<p>The result will show the logged entry with the <code class="docutils literal notranslate"><span class="pre">ArtistID</span></code>, the old and new values of the <code class="docutils literal notranslate"><span class="pre">Name</span></code> column, the timestamp of the update, and the user who made the change.</p>
+<p>By using triggers for logging, you can automatically capture and store the changes made to your database tables, providing a valuable audit trail for monitoring, debugging, and historical analysis.</p>
+</section>
+</section>
+<section id="case-study-database-interaction-methods">
+<h2>Case Study: Database Interaction Methods<a class="headerlink" href="#case-study-database-interaction-methods" title="Permalink to this heading">#</a></h2>
+<p>As you learn more about databases, you’ll discover there are several different ways to interact with them beyond just writing SQL in a database management tool. Let’s explore three common methods using a music database example, with a focus on SQLite which we’re using in our Jupyter environment.</p>
+</section>
+<section id="command-line-interface-cli">
+<h2>Command Line Interface (CLI)<a class="headerlink" href="#command-line-interface-cli" title="Permalink to this heading">#</a></h2>
+<p>The command line is a text-based interface where you type commands directly to interact with the database.</p>
+<section id="why-use-the-command-line">
+<h3>Why use the Command Line?<a class="headerlink" href="#why-use-the-command-line" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Fast and direct access to your database</p></li>
+<li><p>Helpful for quick queries and database management</p></li>
+<li><p>Essential skill for database administrators</p></li>
+<li><p>Works well when you need to run simple commands without setting up GUI tools</p></li>
+</ul>
+</section>
+<section id="example-sqlite-command-line-in-jupyter">
+<h3>Example: SQLite Command Line in Jupyter<a class="headerlink" href="#example-sqlite-command-line-in-jupyter" title="Permalink to this heading">#</a></h3>
+<p>In Jupyter, we can use the <code class="docutils literal notranslate"><span class="pre">!</span></code> prefix to run command line operations:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># Connect to our SQLite music database using command line
+!sqlite3 music.db
+
+# In a different cell, we can execute SQLite commands directly
+!sqlite3 music.db &quot;SELECT * FROM artists WHERE genre = &#39;Rock&#39;&quot;
+
+# We can also create new records
+!sqlite3 music.db &quot;INSERT INTO albums (title, artist_id, release_year) VALUES (&#39;Abbey Road&#39;, 1, 1969)&quot;
+</pre></div>
+</div>
+<p><strong>What’s happening here?</strong></p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">!sqlite3</span></code> is telling Jupyter to run the SQLite command line tool</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">music.db</span></code> is our database file</p></li>
+<li><p>The quoted text contains the actual SQL commands we want to run</p></li>
+<li><p>The first line opens an interactive SQLite session</p></li>
+<li><p>The second line queries all rock artists</p></li>
+<li><p>The third line inserts a new album into our database</p></li>
+</ul>
+</section>
+</section>
+<section id="shell-scripting-powershell-or-bash">
+<h2>Shell Scripting (PowerShell or Bash)<a class="headerlink" href="#shell-scripting-powershell-or-bash" title="Permalink to this heading">#</a></h2>
+<p>Shell scripts allow you to automate database tasks using operating system command-line interfaces.</p>
+<section id="why-use-shell-scripting">
+<h3>Why use Shell Scripting?<a class="headerlink" href="#why-use-shell-scripting" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Automate repeated database tasks</p></li>
+<li><p>Create data pipelines (export, transform, import)</p></li>
+<li><p>Schedule regular database maintenance</p></li>
+<li><p>Combine database operations with file system operations</p></li>
+<li><p>Perfect for batch processing tasks</p></li>
+</ul>
+</section>
+<section id="bash-example-in-jupyter-linux-mac">
+<h3>Bash Example in Jupyter (Linux/Mac):<a class="headerlink" href="#bash-example-in-jupyter-linux-mac" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="c1"># Create a backup of our music database</span>
+<span class="n">sqlite3</span> <span class="n">music</span><span class="o">.</span><span class="n">db</span> <span class="o">.</span><span class="n">dump</span> <span class="o">&gt;</span> <span class="n">music_backup</span><span class="o">.</span><span class="n">sql</span>
+
+<span class="c1"># Export all Beatles albums to a CSV file</span>
+<span class="n">sqlite3</span> <span class="o">-</span><span class="n">csv</span> <span class="o">-</span><span class="n">header</span> <span class="n">music</span><span class="o">.</span><span class="n">db</span> <span class="s2">&quot;SELECT albums.title, albums.release_year</span>
+                               <span class="n">FROM</span> <span class="n">albums</span> <span class="n">JOIN</span> <span class="n">artists</span> <span class="n">ON</span> <span class="n">albums</span><span class="o">.</span><span class="n">artist_id</span> <span class="o">=</span> <span class="n">artists</span><span class="o">.</span><span class="n">id</span>
+                               <span class="n">WHERE</span> <span class="n">artists</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;The Beatles&#39;</span><span class="s2">&quot; &gt; beatles_albums.csv</span>
+
+<span class="c1"># Show the first few lines of our CSV</span>
+<span class="n">head</span> <span class="n">beatles_albums</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+</div>
+<p><strong>What’s happening here?</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">%%bash</span></code> is a Jupyter “magic command” that runs the cell content as a bash script</p></li>
+<li><p>First command creates a full backup of our database structure and data</p></li>
+<li><p>Second command runs a query and exports the results as CSV</p></li>
+<li><p>Third command displays the first few lines of our exported CSV file</p></li>
+<li><p>The SQL query joins the albums and artists tables to find Beatles albums</p></li>
+</ul>
+</section>
+<section id="powershell-example-windows">
+<h3>PowerShell Example (Windows):<a class="headerlink" href="#powershell-example-windows" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>%%powershell
+# Create a new artist and album in our database
+$insertArtist = &quot;INSERT INTO artists (name, genre) VALUES (&#39;Nirvana&#39;, &#39;Grunge&#39;);&quot;
+$getArtistId = &quot;SELECT id FROM artists WHERE name = &#39;Nirvana&#39;;&quot;
+$insertAlbum = &quot;INSERT INTO albums (title, artist_id, release_year) VALUES (&#39;Nevermind&#39;, (${getArtistId}), 1991);&quot;
+
+sqlite3 music.db &quot;$insertArtist&quot;
+$artistId = sqlite3 music.db &quot;$getArtistId&quot;
+sqlite3 music.db &quot;$insertAlbum&quot;
+
+# Display all albums from our new artist
+sqlite3 -header -column music.db &quot;SELECT albums.title, albums.release_year FROM albums
+                                  JOIN artists ON albums.artist_id = artists.id
+                                  WHERE artists.name = &#39;Nirvana&#39;&quot;
+</pre></div>
+</div>
+<p><strong>What’s happening here?</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">%%powershell</span></code> runs the cell content as a PowerShell script</p></li>
+<li><p>We create SQL commands as PowerShell variables</p></li>
+<li><p>We execute them in sequence: add artist, get the new ID, add album using that ID</p></li>
+<li><p>We use the ID from one query in another query to maintain relational integrity</p></li>
+<li><p>Finally, we display the albums with nice formatting (columns and headers)</p></li>
+</ul>
+</section>
+</section>
+<section id="object-relational-mapping-orm">
+<h2>Object-Relational Mapping (ORM)<a class="headerlink" href="#object-relational-mapping-orm" title="Permalink to this heading">#</a></h2>
+<p>ORMs let you interact with your database using Python (or Java, C++, or C#) objects rather than writing SQL directly.</p>
+<section id="why-use-an-orm">
+<h3>Why use an ORM?<a class="headerlink" href="#why-use-an-orm" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Work with database tables as Python objects</p></li>
+<li><p>Avoid writing repetitive SQL</p></li>
+<li><p>Let the ORM handle database-specific syntax</p></li>
+<li><p>Better integration with your Python application code</p></li>
+<li><p>Safer queries with less risk of SQL injection</p></li>
+<li><p>Cleaner, more maintainable code for complex applications</p></li>
+</ul>
+</section>
+<section id="python-example-with-sqlalchemy-in-jupyter">
+<h3>Python Example with SQLAlchemy in Jupyter:<a class="headerlink" href="#python-example-with-sqlalchemy-in-jupyter" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary libraries</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_engine</span><span class="p">,</span> <span class="n">Column</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">String</span><span class="p">,</span> <span class="n">ForeignKey</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy.ext.declarative</span><span class="w"> </span><span class="kn">import</span> <span class="n">declarative_base</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy.orm</span><span class="w"> </span><span class="kn">import</span> <span class="n">relationship</span><span class="p">,</span> <span class="n">Session</span>
+
+<span class="c1"># Connect to our SQLite database</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="s1">&#39;sqlite:///music.db&#39;</span><span class="p">)</span>
+<span class="n">Base</span> <span class="o">=</span> <span class="n">declarative_base</span><span class="p">()</span>
+
+<span class="c1"># Define our models (Python classes that represent database tables)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Artist</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">&#39;artists&#39;</span>
+    
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+    <span class="n">genre</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span>
+    <span class="n">albums</span> <span class="o">=</span> <span class="n">relationship</span><span class="p">(</span><span class="s2">&quot;Album&quot;</span><span class="p">,</span> <span class="n">back_populates</span><span class="o">=</span><span class="s2">&quot;artist&quot;</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;Artist(name=&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;, genre=&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">genre</span><span class="si">}</span><span class="s2">&#39;)&gt;&quot;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Album</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">&#39;albums&#39;</span>
+    
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+    <span class="n">release_year</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">artist_id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;artists.id&#39;</span><span class="p">))</span>
+    <span class="n">artist</span> <span class="o">=</span> <span class="n">relationship</span><span class="p">(</span><span class="s2">&quot;Artist&quot;</span><span class="p">,</span> <span class="n">back_populates</span><span class="o">=</span><span class="s2">&quot;albums&quot;</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;Album(title=&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">&#39;, year=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">release_year</span><span class="si">}</span><span class="s2">)&gt;&quot;</span>
+
+<span class="c1"># Use the models to interact with the database</span>
+<span class="k">with</span> <span class="n">Session</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+    <span class="c1"># Find all rock artists</span>
+    <span class="n">rock_artists</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Artist</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">Artist</span><span class="o">.</span><span class="n">genre</span> <span class="o">==</span> <span class="s1">&#39;Rock&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    
+    <span class="c1"># Display results</span>
+    <span class="k">for</span> <span class="n">artist</span> <span class="ow">in</span> <span class="n">rock_artists</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">artist</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> has </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">artist</span><span class="o">.</span><span class="n">albums</span><span class="p">)</span><span class="si">}</span><span class="s2"> albums:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">album</span> <span class="ow">in</span> <span class="n">artist</span><span class="o">.</span><span class="n">albums</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - </span><span class="si">{</span><span class="n">album</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">album</span><span class="o">.</span><span class="n">release_year</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Add a new album for an existing artist</span>
+    <span class="n">beatles</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Artist</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">Artist</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;The Beatles&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">beatles</span><span class="p">:</span>
+        <span class="n">new_album</span> <span class="o">=</span> <span class="n">Album</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Let It Be&quot;</span><span class="p">,</span> <span class="n">release_year</span><span class="o">=</span><span class="mi">1970</span><span class="p">,</span> <span class="n">artist</span><span class="o">=</span><span class="n">beatles</span><span class="p">)</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">new_album</span><span class="p">)</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Added &#39;</span><span class="si">{</span><span class="n">new_album</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">&#39; to </span><span class="si">{</span><span class="n">beatles</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;s albums&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>What’s happening here?</strong></p>
+<ul class="simple">
+<li><p>We’re setting up SQLAlchemy to connect to our SQLite database</p></li>
+<li><p>We define Python classes that represent our database tables</p></li>
+<li><p>These classes have attributes that match the columns in our tables</p></li>
+<li><p>We establish the relationship between artists and albums</p></li>
+<li><p>We then use these classes to:</p>
+<ol class="arabic simple">
+<li><p>Query rock artists and their albums without writing SQL</p></li>
+<li><p>Add a new Beatles album by creating a Python object</p></li>
+<li><p>Save the changes to the database with <code class="docutils literal notranslate"><span class="pre">commit()</span></code></p></li>
+</ol>
+</li>
+<li><p>The ORM translates all our Python code into the appropriate SQL commands</p></li>
+</ul>
+</section>
+</section>
+<section id="summary-scripting">
+<h2>Summary: Scripting<a class="headerlink" href="#summary-scripting" title="Permalink to this heading">#</a></h2>
+<p>These three methods represent different approaches to database interaction:</p>
+<ol class="arabic simple">
+<li><p><strong>Command Line</strong>: Direct, text-based interaction for quick database tasks</p></li>
+<li><p><strong>Shell Scripting</strong>: Automating database tasks with batch operations</p></li>
+<li><p><strong>ORM</strong>: Working with database tables as Python objects in your code</p></li>
+</ol>
+<p>Each method has its own strengths:</p>
+<ul class="simple">
+<li><p>Command line is great for quick, direct interactions</p></li>
+<li><p>Shell scripts excel at automation and scheduled tasks</p></li>
+<li><p>ORMs shine in larger applications where you want to treat database data as code objects</p></li>
+</ul>
+<p>As you develop your database skills, you’ll likely use different methods depending on the specific task you’re trying to accomplish.</p>
+</section>
+<section id="key-points">
+<h2>Key Points<a class="headerlink" href="#key-points" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The INSERT INTO statement is used to add new rows of data to SQL tables, supporting both single-row and multiple-row insertions.</p></li>
+<li><p>Constraints, such as primary keys, foreign keys, and CHECK constraints, ensure data integrity and consistency.</p></li>
+<li><p>Constraint violations during data insertion can be handled by modifying the data or updating the table structure.</p></li>
+<li><p>Auto-incrementing primary keys simplify data insertion by automatically assigning unique identifiers to new rows.</p></li>
+<li><p>Subqueries can be used in INSERT statements to dynamically insert data based on existing records.-   The DELETE statement removes rows from a table based on specified conditions, while DROP TABLE removes the entire table structure.</p></li>
+<li><p>“Soft delete” involves marking records as deleted instead of permanently removing them, allowing for data retention and historical tracking.</p></li>
+<li><p>The UPDATE statement modifies existing data in a table based on specified conditions.</p></li>
+<li><p>Triggers automatically execute specific actions before or after database events, such as INSERT, UPDATE, or DELETE operations.</p></li>
+<li><p>Logging mechanisms can be implemented using triggers to capture and store changes made to database tables for auditing and monitoring purposes.</p></li>
+<li><p>Database scripting using Linux scripts and programming languages like Bash, Python, and PowerShell enables automation and flexibility in database tasks.</p></li>
+<li><p>Automating database tasks through scripting improves efficiency, reduces manual errors, and enhances productivity in database management.</p></li>
+</ul>
+</section>
+<section id="lab-practice-your-sql">
+<h2>Lab: Practice Your SQL<a class="headerlink" href="#lab-practice-your-sql" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!wget https://github.com/brendanpshea/database_sql/raw/main/sql_ddl_quiz/sql_ddl_quiz.py -q -nc
+from sql_ddl_quiz import *
+
+quiz_url = &#39;https://github.com/brendanpshea/database_sql/raw/main/sql_ddl_quiz/music_dml_quiz.json&#39;
+sql_quiz = SQLDDLQuiz(quiz_url)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "392bc10953804062bfd221c928beadd8"}</script></div>
+</div>
+</section>
+<section id="review-with-quizlet">
+<h2>Review With Quizlet<a class="headerlink" href="#review-with-quizlet" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">html</span>
+<span class="o">&lt;</span><span class="n">iframe</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://quizlet.com/930225475/learn/embed?i=psvlh&amp;x=1jj1&quot;</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;500&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;100%&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;border:0&quot;</span><span class="o">&gt;&lt;/</span><span class="n">iframe</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Term</p></th>
+<th class="head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AFTER</p></td>
+<td><p>SQL keyword specifying that a trigger should execute after the triggering event occurs.</p></td>
+</tr>
+<tr class="row-odd"><td><p>AUTOINCREMENT</p></td>
+<td><p>Property for columns that automatically generates a unique integer for each new row inserted.</p></td>
+</tr>
+<tr class="row-even"><td><p>Bash</p></td>
+<td><p>Unix shell and command language interpreter, providing a command-line interface for Unix-like operating systems.</p></td>
+</tr>
+<tr class="row-odd"><td><p>BEFORE</p></td>
+<td><p>SQL keyword indicating that a trigger should execute before the triggering event occurs.</p></td>
+</tr>
+<tr class="row-even"><td><p>Client-side script</p></td>
+<td><p>Program that runs on the user’s web browser, typically written in JavaScript, to enhance interactivity and user experience.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Database log</p></td>
+<td><p>Record of all transactions and changes made to a database, useful for recovery and auditing purposes.</p></td>
+</tr>
+<tr class="row-even"><td><p>DELETE</p></td>
+<td><p>SQL command used to remove one or more records from a table in a database.</p></td>
+</tr>
+<tr class="row-odd"><td><p>END</p></td>
+<td><p>Keyword marking the conclusion of a code block or SQL statement in various programming languages and database systems.</p></td>
+</tr>
+<tr class="row-even"><td><p>Entity Framework</p></td>
+<td><p>Microsoft’s open-source ORM framework for .NET applications, simplifying database operations and data access.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hibernate</p></td>
+<td><p>Popular Java-based ORM tool that simplifies database operations by mapping Java classes to database tables.</p></td>
+</tr>
+<tr class="row-even"><td><p>INSERT INTO</p></td>
+<td><p>SQL command used to add new records into a table in a database.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Linux Terminal</p></td>
+<td><p>Command-line interface in Linux operating systems for executing text-based commands and managing the system.</p></td>
+</tr>
+<tr class="row-even"><td><p>Object</p></td>
+<td><p>Instance of a class in object-oriented programming, representing a specific entity with properties and methods.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Object-relational Mapping (ORM)</p></td>
+<td><p>Programming technique for converting data between incompatible type systems in object-oriented programming languages and relational databases.</p></td>
+</tr>
+<tr class="row-even"><td><p>ON DELETE CASCADE</p></td>
+<td><p>Referential action specifying that when a referenced row is deleted, all related rows in the child table should also be automatically deleted.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ON DELETE SET NULL</p></td>
+<td><p>Referential action indicating that when a referenced row is deleted, the foreign key column(s) in the related rows of the child table should be set to NULL.</p></td>
+</tr>
+<tr class="row-even"><td><p>PowerShell</p></td>
+<td><p>Task automation and configuration management framework from Microsoft, consisting of a command-line shell and associated scripting language.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Python</p></td>
+<td><p>High-level, interpreted programming language known for its readability and versatility, often used in web development, data analysis, and artificial intelligence.</p></td>
+</tr>
+<tr class="row-even"><td><p>Sequelize</p></td>
+<td><p>Promise-based ORM for Node.js, supporting multiple databases and providing easy data modeling and querying.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Server-side script</p></td>
+<td><p>Program that runs on the web server, processing requests, interacting with databases, and generating dynamic content before sending it to the client.</p></td>
+</tr>
+<tr class="row-even"><td><p>SET</p></td>
+<td><p>SQL command used in UPDATE statements to specify which columns should be modified and their new values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Soft delete</p></td>
+<td><p>Technique where records are marked as deleted in the database without actually removing them, typically by setting a flag or timestamp.</p></td>
+</tr>
+<tr class="row-even"><td><p>SQLAlchemy</p></td>
+<td><p>Open-source SQL toolkit and ORM for Python, providing a full suite of well-known enterprise-level persistence patterns.</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRIGGER</p></td>
+<td><p>Database object that automatically executes in response to certain events on a particular table or view.</p></td>
+</tr>
+<tr class="row-even"><td><p>UPDATE</p></td>
+<td><p>SQL command used to modify existing records in a table.</p></td>
+</tr>
+<tr class="row-odd"><td><p>VALUES</p></td>
+<td><p>Keyword used in INSERT statements to specify the data being added to the table.</p></td>
+</tr>
+<tr class="row-even"><td><p>Windows command prompt</p></td>
+<td><p>Text-based command-line interpreter in Windows operating systems for executing commands and batch files.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sql-code">
+<h2>SQL Code<a class="headerlink" href="#sql-code" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>SQL Template</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span> <span class="pre">t</span> <span class="pre">(c1,</span> <span class="pre">c2,</span> <span class="pre">c3)</span> <span class="pre">VALUES</span> <span class="pre">(v1,</span> <span class="pre">v2,</span> <span class="pre">v3)</span></code></p></td>
+<td><p>SQL code to insert a new row into table t with specified column values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span> <span class="pre">t</span> <span class="pre">SELECT</span> <span class="pre">c1,</span> <span class="pre">c2,</span> <span class="pre">c3</span> <span class="pre">FROM</span> <span class="pre">t2</span> <span class="pre">WHERE</span> <span class="pre">c</span></code></p></td>
+<td><p>SQL code to insert rows into table t by selecting data from another table t2.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">FROM</span> <span class="pre">t</span> <span class="pre">WHERE</span> <span class="pre">c</span></code></p></td>
+<td><p>SQL code to delete rows from table t that satisfy condition c.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">FROM</span> <span class="pre">t1</span> <span class="pre">WHERE</span> <span class="pre">c1</span> <span class="pre">IN</span> <span class="pre">(SELECT</span> <span class="pre">c2</span> <span class="pre">FROM</span> <span class="pre">t2)</span></code></p></td>
+<td><p>SQL code to delete rows from table t1 based on a subquery result from table t2.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">UPDATE</span> <span class="pre">t</span> <span class="pre">SET</span> <span class="pre">c1</span> <span class="pre">=</span> <span class="pre">v1,</span> <span class="pre">c2</span> <span class="pre">=</span> <span class="pre">v2</span> <span class="pre">WHERE</span> <span class="pre">c</span></code></p></td>
+<td><p>SQL code to update specific columns in table t for rows that satisfy condition c.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">UPDATE</span> <span class="pre">t1</span> <span class="pre">SET</span> <span class="pre">c1</span> <span class="pre">=</span> <span class="pre">(SELECT</span> <span class="pre">c2</span> <span class="pre">FROM</span> <span class="pre">t2</span> <span class="pre">WHERE</span> <span class="pre">t1.id</span> <span class="pre">=</span> <span class="pre">t2.id)</span></code></p></td>
+<td><p>SQL code to update table t1 using values from table t2 based on a correlated subquery.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TRIGGER</span> <span class="pre">tr_name</span> <span class="pre">BEFORE</span> <span class="pre">INSERT</span> <span class="pre">ON</span> <span class="pre">t</span> <span class="pre">FOR</span> <span class="pre">EACH</span> <span class="pre">ROW</span></code></p></td>
+<td><p>SQL code to create a trigger that executes before each row is inserted into table t.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TRIGGER</span> <span class="pre">tr_name</span> <span class="pre">AFTER</span> <span class="pre">UPDATE</span> <span class="pre">ON</span> <span class="pre">t</span> <span class="pre">FOR</span> <span class="pre">EACH</span> <span class="pre">ROW</span></code></p></td>
+<td><p>SQL code to create a trigger that executes after each row is updated in table t.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TRIGGER</span> <span class="pre">tr_name</span> <span class="pre">INSTEAD</span> <span class="pre">OF</span> <span class="pre">DELETE</span> <span class="pre">ON</span> <span class="pre">v</span> <span class="pre">FOR</span> <span class="pre">EACH</span> <span class="pre">ROW</span></code></p></td>
+<td><p>SQL code to create an instead-of trigger on view v, executed when a delete operation is attempted.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Database_05_Design.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Database Design</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Database_07_Views.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">A Musical “VIEW” For Better Data Presentation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#databases-through-pop-culture-brendan-shea-phd">Databases Through Pop Culture | Brendan Shea, PhD</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brendan-s-lecture">Brendan’s Lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-tables-for-rolling-stone-s-greatest-albums-of-all-time">Creating Tables for Rolling Stone’s Greatest Albums of All Time</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-insert-into-single-row">Using INSERT INTO (Single Row)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-insert-into-multiple-rows">Using INSERT INTO (Multiple Rows)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-when-constraints-are-violated">What Happens When Constraints Are Violated?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-with-primary-keys">Problems with Primary Keys</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#violating-check-constraints">Violating CHECK Constraints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#violating-not-null-constraints">Violating NOT NULL Constraints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auto-incrementing-primary-keys">Auto-incrementing Primary Keys</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-data">Deleting Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-delete-statement">Basic DELETE Statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-related-data">Deleting Related Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manual-deletion">Manual Deletion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-delete-cascade">ON DELETE CASCADE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-delete-set-null">ON DELETE SET NULL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-between-on-delete-cascade-on-delete-set-null-and-no-action">Choosing Between ON DELETE CASCADE, ON DELETE SET NULL, and no action</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-all-data-versus-dropping-a-table">Deleting All Data versus Dropping a Table</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update">UPDATE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-soft-delete">Introduction to Soft Delete</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-soft-delete-column">Adding a Soft Delete Column</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soft-deleting-records">Soft Deleting Records</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-soft-deleted-records">Querying Soft Deleted Records</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restoring-soft-deleted-records">Restoring Soft Deleted Records</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#considerations">Considerations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#triggers">Triggers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-in-databases">Logging in Databases</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-trigger-example">Logging Trigger Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-database-interaction-methods">Case Study: Database Interaction Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-interface-cli">Command Line Interface (CLI)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-the-command-line">Why use the Command Line?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-sqlite-command-line-in-jupyter">Example: SQLite Command Line in Jupyter</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shell-scripting-powershell-or-bash">Shell Scripting (PowerShell or Bash)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-shell-scripting">Why use Shell Scripting?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-example-in-jupyter-linux-mac">Bash Example in Jupyter (Linux/Mac):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powershell-example-windows">PowerShell Example (Windows):</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-relational-mapping-orm">Object-Relational Mapping (ORM)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-an-orm">Why use an ORM?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-example-with-sqlalchemy-in-jupyter">Python Example with SQLAlchemy in Jupyter:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-scripting">Summary: Scripting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points">Key Points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-practice-your-sql">Lab: Practice Your SQL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-with-quizlet">Review With Quizlet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-code">SQL Code</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Brendan Shea, PhD
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

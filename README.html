@@ -1,0 +1,682 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Database and SQL through Pop Culture &#8212; SQL and Database Management Through Pop Culture</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">SQL and Database Management Through Pop Culture</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    SQL and Database Management Through Pop Culture
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Database_01_StarShipSQL.html">Starship SQL: An Introduction to Databases</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Database_02_IntroToSQL.html">Introduction to SQL: SELECT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_03_Joins_Sets_SQL.html">Getting Tables Together With Joins and Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_04_AdvancedSelect.html">Super Select: Advanced Retrieval With Mario Brothers Plumbing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_05_Design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_06_WritingData.html">Writing Data With Rollingstone’s Greatest Albums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_07_Views.html">A Musical “VIEW” For Better Data Presentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_08_IndexesTransactions.html">Database Performance: Index, Query Plans, and Transaction Management</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Database_09_PokemonAndPostgres.html">Postgres and Pokemon</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Database_10_DatabaseSecurity.html">Guarding the Virtual Vault: A Deep Dive into Database Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_11_DesignDeployTest.html">Database Architecture Patterns: Design, Deployment, and Testing for Modern Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_12_FinalProject.html">SQLite Database Final Project: Design, Implementation, and Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labs/Database_Ex_Normalization.html">Introduction to Normalization</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="labs/Database_Lab_Chapter_3.html">SQL Practice (Chapter 3)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/brendanpshea/database_sql" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/brendanpshea/database_sql/edit/main/./README.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/brendanpshea/database_sql/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/README.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Database and SQL through Pop Culture</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Database and SQL through Pop Culture</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brendan-shea-phd-brendan-shea-rctc-edu">Brendan Shea, PhD (Brendan.Shea@rctc.edu)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapters">Chapters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-modeling-and-database-types">1. Data Modeling and Database Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-sql-select">2. Introduction to SQL SELECT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joins-and-set-operations">3. JOINs and Set Operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-select-operations">4. Advanced SELECT Operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database-design">5. Database Design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-manipulation">6. Data Manipulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#views-and-common-table-expressions">7. Views and Common Table Expressions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database-performance-and-transactions">8. Database Performance and Transactions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-postgresql">9. Introduction to PostgreSQL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database-security">10. Database Security</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database-architecture-design-deploy-test">11. Database Architecture: Design, Deploy, Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-project">12. Final Project</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools">Tools</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-ddl-quiz">SQL DDL Quiz</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-select-quiz">SQL SELECT Quiz</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing">Contributing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-ai-tools">Use of AI Tools</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-author">About the Author</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="database-and-sql-through-pop-culture">
+<h1>Database and SQL through Pop Culture<a class="headerlink" href="#database-and-sql-through-pop-culture" title="Permalink to this heading">#</a></h1>
+<section id="brendan-shea-phd-brendan-shea-rctc-edu">
+<h2>Brendan Shea, PhD (Brendan.Shea&#64;rctc.edu)<a class="headerlink" href="#brendan-shea-phd-brendan-shea-rctc-edu" title="Permalink to this heading">#</a></h2>
+<p>This project, <strong>“Database and SQL through Pop Culture,”</strong> is an <strong>Open Educational Resource (OER)</strong> designed to teach database concepts and SQL through engaging, pop culture-themed examples. Delivered entirely through <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>, this approach offers numerous benefits:</p>
+<ul class="simple">
+<li><p><strong>Cost-Free Access:</strong> Students can access all course materials and interactive tools at no cost, removing financial barriers to learning.</p></li>
+<li><p><strong>No Software Installation Required:</strong> By leveraging Google Colab, there’s no need for students to install or maintain any software on their personal devices. Everything runs in the cloud, ensuring a seamless and hassle-free experience.</p></li>
+<li><p><strong>Accessible Anywhere:</strong> As a cloud-based platform, Google Colab allows students to engage with the course content from anywhere with an internet connection, fostering flexible learning environments.</p></li>
+<li><p><strong>Automatic Updates and Maintenance:</strong> The use of Google Colab ensures that all tools and resources are up-to-date without requiring manual updates from students or instructors.</p></li>
+<li><p><strong>Interactive Learning:</strong> Integrated interactive quizzes and hands-on exercises provide immediate feedback, enhancing the learning process through practical application.</p></li>
+</ul>
+<p>The course content aligns with the learning outcomes of the <strong>CompTIA DataSys+ certification</strong> and is meticulously crafted to be competitive with expensive, commercial texts. By combining high-quality educational materials with accessible technology, this project aims to democratize learning SQL and database management, making it attainable for a broader audience.</p>
+</section>
+<section id="chapters">
+<h2>Chapters<a class="headerlink" href="#chapters" title="Permalink to this heading">#</a></h2>
+<section id="data-modeling-and-database-types">
+<h3>1. Data Modeling and Database Types<a class="headerlink" href="#data-modeling-and-database-types" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_01_StarShipSQL.ipynb">Open In Colab</a><br />
+Embark on your database journey with a Star Trek-themed introduction to data modeling. This chapter provides a high-level overview of data modeling concepts, exploring the realms of conceptual, logical, and physical models. You’ll discover the differences between SQL and NoSQL databases, setting the stage for your voyage through the data universe.</p>
+</section>
+<section id="introduction-to-sql-select">
+<h3>2. Introduction to SQL SELECT<a class="headerlink" href="#introduction-to-sql-select" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_02_IntroToSQL.ipynb">Open In Colab</a><br />
+Dive into the world of SQL with an exploration of the fundamental SELECT statement. Using SQLite and real-world Goodreads data, you’ll learn how to retrieve and manipulate data from databases. This chapter lays the foundation for your SQL skills, enabling you to extract valuable insights from vast data collections.</p>
+</section>
+<section id="joins-and-set-operations">
+<h3>3. JOINs and Set Operations<a class="headerlink" href="#joins-and-set-operations" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_03_Joins_Sets_SQL.ipynb">Open In Colab</a><br />
+Expand your SQL toolkit by mastering JOINs and set operations. Working with IMDB data, you’ll learn how to combine information from multiple tables and perform complex queries. These skills are essential for navigating the interconnected nature of relational databases and extracting meaningful information from diverse data sources.</p>
+</section>
+<section id="advanced-select-operations">
+<h3>4. Advanced SELECT Operations<a class="headerlink" href="#advanced-select-operations" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_04_AdvancedSelect.ipynb">Open In Colab</a><br />
+Level up your SQL skills with advanced SELECT operations. Dive into GROUP BY and HAVING clauses, subqueries, and JSON columns using a whimsical Mario Brothers plumbing database. This chapter also introduces crucial concepts of business continuity and disaster recovery, ensuring you’re prepared for real-world database management challenges.</p>
+</section>
+<section id="database-design">
+<h3>5. Database Design<a class="headerlink" href="#database-design" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_05_Design.ipynb">Open In Colab</a><br />
+Uncover the secrets of effective database design in this chapter centered around a “Covert Academy” spy school theme. Learn to create Entity-Relationship Diagrams (ERDs) and master the art of creating and modifying tables. These skills form the backbone of database architecture, enabling you to design efficient and scalable database solutions.</p>
+</section>
+<section id="data-manipulation">
+<h3>6. Data Manipulation<a class="headerlink" href="#data-manipulation" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_06_WritingData.ipynb">Open In Colab</a><br />
+Rock your database skills by learning to write, update, and delete data using a subset of Rolling Stone’s 500 greatest albums. This chapter also introduces you to scripting languages and Object-Relational Mapping (ORM), bridging the gap between databases and application development.</p>
+</section>
+<section id="views-and-common-table-expressions">
+<h3>7. Views and Common Table Expressions<a class="headerlink" href="#views-and-common-table-expressions" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_07_Views.ipynb">Open In Colab</a><br />
+Enhance your data retrieval techniques with views and Common Table Expressions (CTEs). Using data from Spotify and Rolling Stone’s 500 greatest albums, you’ll learn to create reusable query structures and simplify complex queries. This chapter also touches on data governance, ensuring you understand the importance of data quality and management.</p>
+</section>
+<section id="database-performance-and-transactions">
+<h3>8. Database Performance and Transactions<a class="headerlink" href="#database-performance-and-transactions" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_08_IndexesTransactions.ipynb">Open In Colab</a><br />
+Optimize your database operations by exploring indexes, transactions, and query analysis. With a “Gotham National Bank” theme, you’ll dive into the world of database performance tuning. Learn essential skills in database monitoring and reporting to keep your databases running smoothly and efficiently.</p>
+</section>
+<section id="introduction-to-postgresql">
+<h3>9. Introduction to PostgreSQL<a class="headerlink" href="#introduction-to-postgresql" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_09_PokemonAndPostgres.ipynb">Open In Colab</a><br />
+Evolve your database skills by transitioning from SQLite to PostgreSQL. Catch ‘em all as you explore new data types, stored procedures, and window functions in this Pokemon-themed chapter. You’ll gain hands-on experience with a professional-grade database system, preparing you for real-world database management scenarios.</p>
+</section>
+<section id="database-security">
+<h3>10. Database Security<a class="headerlink" href="#database-security" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_10_DatabaseSecurity.ipynb">Open In Colab</a><br />
+Defend your data kingdom with crucial database security concepts and practices. Set in the Mushroom Kingdom’s Toad City Hospital, this chapter equips you with the knowledge to protect sensitive information and maintain data integrity. Learn to implement security measures that safeguard your databases from various threats.</p>
+</section>
+<section id="database-architecture-design-deploy-test">
+<h3>11. Database Architecture: Design, Deploy, Test<a class="headerlink" href="#database-architecture-design-deploy-test" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://github.com/brendanpshea/database_sql/blob/main/Database_11_DesignDeployTest.ipynb">Open In Colab</a><br />
+Master the art of database deployment with the help of well-known cartoon characters. This chapter covers the entire database lifecycle, from development to production. Learn different deployment strategies and best practices to ensure smooth transitions and minimal downtime in your database projects.</p>
+</section>
+<section id="final-project">
+<h3>12. Final Project<a class="headerlink" href="#final-project" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_12_FinalProject.ipynb">Open In Colab</a><br />
+Put all your newly acquired skills to the test in this comprehensive final project. Design, create, populate, query, and optimize your very own database from scratch. This hands-on experience consolidates your learning and prepares you for real-world database challenges.</p>
+</section>
+</section>
+<section id="tools">
+<h2>Tools<a class="headerlink" href="#tools" title="Permalink to this heading">#</a></h2>
+<p>Enhance your learning experience with our suite of interactive quiz tools designed to reinforce SQL concepts through practical exercises. These tools are integrated into the course chapters and provide hundreds of automatically graded SQL questions covering a wide range of topics, from basic <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>, <code class="docutils literal notranslate"><span class="pre">CREATE</span></code>, <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> statements to advanced concepts such as subqueries, JSON columns, and various types of JOINs.</p>
+<section id="sql-ddl-quiz">
+<h3>SQL DDL Quiz<a class="headerlink" href="#sql-ddl-quiz" title="Permalink to this heading">#</a></h3>
+<p><strong>Overview:</strong><br />
+An interactive tool focused on SQL Data Definition Language (DDL) statements. Execute DDL queries, receive immediate feedback, and compare your solutions with correct answers within a Google Colab environment. This tool supports the chapters by providing hands-on practice with creating and modifying database schemas.</p>
+<p><strong>Learn More:</strong> <a class="reference external" href="https://github.com/brendanpshea/database_sql/tree/main/sql_ddl_quiz">SQL DDL Quiz Directory</a></p>
+</section>
+<section id="sql-select-quiz">
+<h3>SQL SELECT Quiz<a class="headerlink" href="#sql-select-quiz" title="Permalink to this heading">#</a></h3>
+<p><strong>Overview:</strong><br />
+An interactive tool centered on SQL <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> statements. Execute <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> queries against predefined SQLite databases, receive instant feedback, and compare your results with expected outcomes within Google Colab. This tool complements the chapters by offering extensive practice with data retrieval, JOINs, set operations, and more.</p>
+<p><strong>Learn More:</strong> <a class="reference external" href="https://github.com/brendanpshea/database_sql/tree/main/sql_select_quiz">SQL SELECT Quiz Directory</a></p>
+</section>
+</section>
+<section id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading">#</a></h2>
+<p>Contributions to improve the course material and tools are welcome. Please feel free to submit a pull request or open an issue for discussion.</p>
+</section>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this heading">#</a></h2>
+<p>This project is open source and available under the GNU Public License.</p>
+</section>
+<section id="use-of-ai-tools">
+<h2>Use of AI Tools<a class="headerlink" href="#use-of-ai-tools" title="Permalink to this heading">#</a></h2>
+<p>I’ve had fun experimenting with the use of generative AI tools to help develop this project, starting with GPT-3.0, and moving on to successive versions of these tools (including Claude, Gemini, Mistral, LLama, and others).</p>
+</section>
+</section>
+<section id="about-the-author">
+<h1>About the Author<a class="headerlink" href="#about-the-author" title="Permalink to this heading">#</a></h1>
+<p>Brendan Shea, PhD, is Professor of Philosophy and Computer Science at Rochester Community and Technical College and a Resident Fellow at the Minnesota Center for Philosophy of Science at the University of Minnesota-Twin Cities. He also serves as the Public Member of the Institutional Biosafety Committee at Mayo Clinic-Rochester. His main research and teaching interests lie in the philosophy of science, data modeling, applied ethics, and in the areas where these overlap (such as bioethics and the ethics of artificial intelligence). You can find out more about his research <a class="reference external" href="https://philpeople.org/profiles/brendan-shea">here</a>.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Database and SQL through Pop Culture</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brendan-shea-phd-brendan-shea-rctc-edu">Brendan Shea, PhD (Brendan.Shea@rctc.edu)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapters">Chapters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-modeling-and-database-types">1. Data Modeling and Database Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-sql-select">2. Introduction to SQL SELECT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joins-and-set-operations">3. JOINs and Set Operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-select-operations">4. Advanced SELECT Operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database-design">5. Database Design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-manipulation">6. Data Manipulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#views-and-common-table-expressions">7. Views and Common Table Expressions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database-performance-and-transactions">8. Database Performance and Transactions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-postgresql">9. Introduction to PostgreSQL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database-security">10. Database Security</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database-architecture-design-deploy-test">11. Database Architecture: Design, Deploy, Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-project">12. Final Project</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools">Tools</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-ddl-quiz">SQL DDL Quiz</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-select-quiz">SQL SELECT Quiz</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing">Contributing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-ai-tools">Use of AI Tools</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-author">About the Author</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Brendan Shea, PhD
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

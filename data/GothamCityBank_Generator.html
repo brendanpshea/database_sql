@@ -1,0 +1,1506 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; SQL and Database Management Through Pop Culture</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'data/GothamCityBank_Generator';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">SQL and Database Management Through Pop Culture</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    SQL and Database Management Through Pop Culture
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Database_01_StarShipSQL.html">Starship SQL: An Introduction to Databases</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Database_02_IntroToSQL.html">Introduction to SQL: SELECT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Database_03_Joins_Sets_SQL.html">Getting Tables Together With Joins and Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Database_04_AdvancedSelect.html">Super Select: Advanced Retrieval With Mario Brothers Plumbing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Database_05_Design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Database_06_WritingData.html">Writing Data With Rollingstone’s Greatest Albums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Database_07_Views.html">A Musical “VIEW” For Better Data Presentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Database_08_IndexesTransactions.html">Database Performance: Index, Query Plans, and Transaction Management</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Database_09_PokemonAndPostgres.html">Postgres and Pokemon</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Database_10_DatabaseSecurity.html">Guarding the Virtual Vault: A Deep Dive into Database Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Database_11_DesignDeployTest.html">Database Architecture Patterns: Design, Deployment, and Testing for Modern Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Database_12_FinalProject.html">SQLite Database Final Project: Design, Implementation, and Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/Database_Ex_Normalization.html">Introduction to Normalization</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../labs/Database_Lab_Chapter_3.html">SQL Practice (Chapter 3)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/./data/GothamCityBank_Generator.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/brendanpshea/database_sql" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/brendanpshea/database_sql/edit/main/./data/GothamCityBank_Generator.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/brendanpshea/database_sql/issues/new?title=Issue%20on%20page%20%2Fdata/GothamCityBank_Generator.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/data/GothamCityBank_Generator.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/data/GothamCityBank_Generator.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># use sql magic to connect to sqlite db</span>
+<span class="o">%</span><span class="n">load_ext</span> <span class="n">sql</span>
+<span class="o">%</span><span class="n">sql</span> <span class="n">sqlite</span><span class="p">:</span><span class="o">///</span><span class="n">gotham</span><span class="o">.</span><span class="n">db</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">Customers</span><span class="p">;</span>
+<span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">Accounts</span><span class="p">;</span>
+
+<span class="o">--</span> <span class="n">Create</span> <span class="n">Customers</span> <span class="n">table</span>
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">Customers</span> <span class="p">(</span>
+    <span class="n">CustomerID</span> <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="n">AUTOINCREMENT</span><span class="p">,</span>
+    <span class="n">FirstName</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">LastName</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">MiddleInitial</span> <span class="n">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">Address</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+    <span class="n">City</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+    <span class="n">State</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+    <span class="n">ZipCode</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+    <span class="n">PhoneNumber</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span>
+    <span class="n">Email</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="o">--</span> <span class="n">Create</span> <span class="n">Accounts</span> <span class="n">table</span>
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">Accounts</span> <span class="p">(</span>
+    <span class="n">AccountID</span> <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="n">AUTOINCREMENT</span><span class="p">,</span>
+    <span class="n">CustomerID</span> <span class="n">INT</span><span class="p">,</span>
+    <span class="n">AccountType</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+    <span class="n">Balance</span> <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="n">DEFAULT</span> <span class="mf">0.00</span><span class="p">,</span>
+    <span class="n">CreatedDate</span> <span class="n">DATE</span><span class="p">,</span>
+    <span class="n">FOREIGN</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">CustomerID</span><span class="p">)</span> <span class="n">REFERENCES</span> <span class="n">Customers</span><span class="p">(</span><span class="n">CustomerID</span><span class="p">)</span>
+<span class="p">);</span>
+
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///gotham.db
+Done.
+Done.
+Done.
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">DELETE</span> <span class="n">FROM</span> <span class="n">Customers</span><span class="p">;</span>
+<span class="n">DELETE</span> <span class="n">FROM</span> <span class="n">Accounts</span><span class="p">;</span>
+
+<span class="o">--</span> <span class="n">Insert</span> <span class="n">data</span> <span class="n">into</span> <span class="n">Customers</span> <span class="n">table</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">Customers</span> <span class="p">(</span><span class="n">CustomerID</span><span class="p">,</span> <span class="n">FirstName</span><span class="p">,</span> <span class="n">LastName</span><span class="p">,</span> <span class="n">Address</span><span class="p">,</span> <span class="n">City</span><span class="p">,</span> <span class="n">State</span><span class="p">,</span> <span class="n">ZipCode</span><span class="p">,</span> <span class="n">PhoneNumber</span><span class="p">,</span> <span class="n">Email</span><span class="p">)</span> <span class="n">VALUES</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Bruce&#39;</span><span class="p">,</span> <span class="s1">&#39;Wayne&#39;</span><span class="p">,</span> <span class="s1">&#39;1007 Mountain Drive&#39;</span><span class="p">,</span> <span class="s1">&#39;Gotham&#39;</span><span class="p">,</span> <span class="s1">&#39;NY&#39;</span><span class="p">,</span> <span class="s1">&#39;10001&#39;</span><span class="p">,</span> <span class="s1">&#39;123-456-7890&#39;</span><span class="p">,</span> <span class="s1">&#39;bruce.wayne@gothambank.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Selina&#39;</span><span class="p">,</span> <span class="s1">&#39;Kyle&#39;</span><span class="p">,</span> <span class="s1">&#39;123 Cat St&#39;</span><span class="p">,</span> <span class="s1">&#39;Blüdhaven&#39;</span><span class="p">,</span> <span class="s1">&#39;NY&#39;</span><span class="p">,</span> <span class="s1">&#39;20002&#39;</span><span class="p">,</span> <span class="s1">&#39;234-567-8901&#39;</span><span class="p">,</span> <span class="s1">&#39;selina.kyle@gothambank.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;James&#39;</span><span class="p">,</span> <span class="s1">&#39;Gordon&#39;</span><span class="p">,</span> <span class="s1">&#39;789 Police Plaza&#39;</span><span class="p">,</span> <span class="s1">&#39;Gotham&#39;</span><span class="p">,</span> <span class="s1">&#39;NY&#39;</span><span class="p">,</span> <span class="s1">&#39;10003&#39;</span><span class="p">,</span> <span class="s1">&#39;345-678-9012&#39;</span><span class="p">,</span> <span class="s1">&#39;james.gordon@gothambank.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Harvey&#39;</span><span class="p">,</span> <span class="s1">&#39;Dent&#39;</span><span class="p">,</span> <span class="s1">&#39;456 Lawyer Ave&#39;</span><span class="p">,</span> <span class="s1">&#39;Metropolis&#39;</span><span class="p">,</span> <span class="s1">&#39;NY&#39;</span><span class="p">,</span> <span class="s1">&#39;30004&#39;</span><span class="p">,</span> <span class="s1">&#39;456-789-0123&#39;</span><span class="p">,</span> <span class="s1">&#39;harvey.dent@gothambank.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Pamela&#39;</span><span class="p">,</span> <span class="s1">&#39;Isley&#39;</span><span class="p">,</span> <span class="s1">&#39;369 Botanic St&#39;</span><span class="p">,</span> <span class="s1">&#39;Gotham&#39;</span><span class="p">,</span> <span class="s1">&#39;NY&#39;</span><span class="p">,</span> <span class="s1">&#39;10005&#39;</span><span class="p">,</span> <span class="s1">&#39;567-890-1234&#39;</span><span class="p">,</span> <span class="s1">&#39;pamela.isley@gothambank.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;Edward&#39;</span><span class="p">,</span> <span class="s1">&#39;Nygma&#39;</span><span class="p">,</span> <span class="s1">&#39;101 Puzzle Ln&#39;</span><span class="p">,</span> <span class="s1">&#39;Gotham&#39;</span><span class="p">,</span> <span class="s1">&#39;NY&#39;</span><span class="p">,</span> <span class="s1">&#39;10006&#39;</span><span class="p">,</span> <span class="s1">&#39;678-901-2345&#39;</span><span class="p">,</span> <span class="s1">&#39;edward.nygma@gothambank.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;Oswald&#39;</span><span class="p">,</span> <span class="s1">&#39;Cobblepot&#39;</span><span class="p">,</span> <span class="s1">&#39;666 Iceberg Dr&#39;</span><span class="p">,</span> <span class="s1">&#39;Gotham&#39;</span><span class="p">,</span> <span class="s1">&#39;NY&#39;</span><span class="p">,</span> <span class="s1">&#39;10007&#39;</span><span class="p">,</span> <span class="s1">&#39;789-012-3456&#39;</span><span class="p">,</span> <span class="s1">&#39;oswald.cobblepot@gothambank.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;Jonathan&#39;</span><span class="p">,</span> <span class="s1">&#39;Crane&#39;</span><span class="p">,</span> <span class="s1">&#39;742 Fear Blvd&#39;</span><span class="p">,</span> <span class="s1">&#39;Star City&#39;</span><span class="p">,</span> <span class="s1">&#39;NY&#39;</span><span class="p">,</span> <span class="s1">&#39;40008&#39;</span><span class="p">,</span> <span class="s1">&#39;890-123-4567&#39;</span><span class="p">,</span> <span class="s1">&#39;jonathan.crane@gothambank.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;Barbara&#39;</span><span class="p">,</span> <span class="s1">&#39;Gordon&#39;</span><span class="p">,</span> <span class="s1">&#39;789 Police Plaza&#39;</span><span class="p">,</span> <span class="s1">&#39;Gotham&#39;</span><span class="p">,</span> <span class="s1">&#39;NY&#39;</span><span class="p">,</span> <span class="s1">&#39;10009&#39;</span><span class="p">,</span> <span class="s1">&#39;901-234-5678&#39;</span><span class="p">,</span> <span class="s1">&#39;barbara.gordon@gothambank.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;Lucius&#39;</span><span class="p">,</span> <span class="s1">&#39;Fox&#39;</span><span class="p">,</span> <span class="s1">&#39;333 Wayne Tower&#39;</span><span class="p">,</span> <span class="s1">&#39;Gotham&#39;</span><span class="p">,</span> <span class="s1">&#39;NY&#39;</span><span class="p">,</span> <span class="s1">&#39;10010&#39;</span><span class="p">,</span> <span class="s1">&#39;012-345-6789&#39;</span><span class="p">,</span> <span class="s1">&#39;lucius.fox@gothambank.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;Alfred&#39;</span><span class="p">,</span> <span class="s1">&#39;Pennyworth&#39;</span><span class="p">,</span> <span class="s1">&#39;1007 Mountain Drive&#39;</span><span class="p">,</span> <span class="s1">&#39;Gotham&#39;</span><span class="p">,</span> <span class="s1">&#39;NY&#39;</span><span class="p">,</span> <span class="s1">&#39;10011&#39;</span><span class="p">,</span> <span class="s1">&#39;123-456-7891&#39;</span><span class="p">,</span> <span class="s1">&#39;alfred.pennyworth@gothambank.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="s1">&#39;Vicki&#39;</span><span class="p">,</span> <span class="s1">&#39;Vale&#39;</span><span class="p">,</span> <span class="s1">&#39;888 Reporter Rd&#39;</span><span class="p">,</span> <span class="s1">&#39;Gotham&#39;</span><span class="p">,</span> <span class="s1">&#39;NY&#39;</span><span class="p">,</span> <span class="s1">&#39;10012&#39;</span><span class="p">,</span> <span class="s1">&#39;234-567-8902&#39;</span><span class="p">,</span> <span class="s1">&#39;vicki.vale@gothambank.com&#39;</span><span class="p">);</span>
+
+<span class="o">--</span> <span class="n">Insert</span> <span class="n">data</span> <span class="n">into</span> <span class="n">Accounts</span> <span class="n">table</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">Accounts</span> <span class="p">(</span><span class="n">CustomerID</span><span class="p">,</span> <span class="n">AccountType</span><span class="p">,</span> <span class="n">Balance</span><span class="p">,</span> <span class="n">CreatedDate</span><span class="p">)</span> <span class="n">VALUES</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Checking&#39;</span><span class="p">,</span> <span class="mf">15000.00</span><span class="p">,</span> <span class="s1">&#39;2021-01-10&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Savings&#39;</span><span class="p">,</span> <span class="mf">75000.00</span><span class="p">,</span> <span class="s1">&#39;2021-02-11&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Checking&#39;</span><span class="p">,</span> <span class="mf">32000.00</span><span class="p">,</span> <span class="s1">&#39;2022-03-05&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Checking&#39;</span><span class="p">,</span> <span class="mf">86000.00</span><span class="p">,</span> <span class="s1">&#39;2023-04-15&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Checking&#39;</span><span class="p">,</span> <span class="mf">22000.00</span><span class="p">,</span> <span class="s1">&#39;2024-05-20&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Savings&#39;</span><span class="p">,</span> <span class="mf">45000.00</span><span class="p">,</span> <span class="s1">&#39;2024-06-21&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Checking&#39;</span><span class="p">,</span> <span class="mf">65000.00</span><span class="p">,</span> <span class="s1">&#39;2024-07-30&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;Checking&#39;</span><span class="p">,</span> <span class="mf">450.00</span><span class="p">,</span> <span class="s1">&#39;2024-08-01&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;Checking&#39;</span><span class="p">,</span> <span class="mf">35000.00</span><span class="p">,</span> <span class="s1">&#39;2024-09-05&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;Checking&#39;</span><span class="p">,</span> <span class="mf">91000.00</span><span class="p">,</span> <span class="s1">&#39;2024-10-10&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;Checking&#39;</span><span class="p">,</span> <span class="mf">3000.00</span><span class="p">,</span> <span class="s1">&#39;2024-11-15&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Checking&#39;</span><span class="p">,</span> <span class="mf">4500.00</span><span class="p">,</span> <span class="s1">&#39;2024-12-20&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Savings&#39;</span><span class="p">,</span> <span class="mf">8500.00</span><span class="p">,</span> <span class="s1">&#39;2025-01-21&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;Checking&#39;</span><span class="p">,</span> <span class="mf">15000.00</span><span class="p">,</span> <span class="s1">&#39;2025-02-25&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;Savings&#39;</span><span class="p">,</span> <span class="mf">67000.00</span><span class="p">,</span> <span class="s1">&#39;2025-03-26&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;Checking&#39;</span><span class="p">,</span> <span class="mf">45000.00</span><span class="p">,</span> <span class="s1">&#39;2025-04-30&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;Savings&#39;</span><span class="p">,</span> <span class="mf">7100.00</span><span class="p">,</span> <span class="s1">&#39;2025-05-01&#39;</span><span class="p">);</span>
+
+
+<span class="o">--</span> <span class="n">Check</span> <span class="n">the</span> <span class="n">data</span>
+<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">Customers</span> <span class="n">JOIN</span> <span class="n">Accounts</span> <span class="n">ON</span> <span class="n">Customers</span><span class="o">.</span><span class="n">CustomerID</span> <span class="o">=</span> <span class="n">Accounts</span><span class="o">.</span><span class="n">CustomerID</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///gotham.db
+0 rows affected.
+0 rows affected.
+12 rows affected.
+17 rows affected.
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <thead>
+        <tr>
+            <th>CustomerID</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>MiddleInitial</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>ZipCode</th>
+            <th>PhoneNumber</th>
+            <th>Email</th>
+            <th>AccountID</th>
+            <th>CustomerID_1</th>
+            <th>AccountType</th>
+            <th>Balance</th>
+            <th>CreatedDate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Bruce</td>
+            <td>Wayne</td>
+            <td>None</td>
+            <td>1007 Mountain Drive</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10001</td>
+            <td>123-456-7890</td>
+            <td>bruce.wayne@gothambank.com</td>
+            <td>1</td>
+            <td>1</td>
+            <td>Checking</td>
+            <td>15000</td>
+            <td>2021-01-10</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Bruce</td>
+            <td>Wayne</td>
+            <td>None</td>
+            <td>1007 Mountain Drive</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10001</td>
+            <td>123-456-7890</td>
+            <td>bruce.wayne@gothambank.com</td>
+            <td>2</td>
+            <td>1</td>
+            <td>Savings</td>
+            <td>75000</td>
+            <td>2021-02-11</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Selina</td>
+            <td>Kyle</td>
+            <td>None</td>
+            <td>123 Cat St</td>
+            <td>Blüdhaven</td>
+            <td>NY</td>
+            <td>20002</td>
+            <td>234-567-8901</td>
+            <td>selina.kyle@gothambank.com</td>
+            <td>3</td>
+            <td>2</td>
+            <td>Checking</td>
+            <td>32000</td>
+            <td>2022-03-05</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>James</td>
+            <td>Gordon</td>
+            <td>None</td>
+            <td>789 Police Plaza</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10003</td>
+            <td>345-678-9012</td>
+            <td>james.gordon@gothambank.com</td>
+            <td>4</td>
+            <td>3</td>
+            <td>Checking</td>
+            <td>86000</td>
+            <td>2023-04-15</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Harvey</td>
+            <td>Dent</td>
+            <td>None</td>
+            <td>456 Lawyer Ave</td>
+            <td>Metropolis</td>
+            <td>NY</td>
+            <td>30004</td>
+            <td>456-789-0123</td>
+            <td>harvey.dent@gothambank.com</td>
+            <td>5</td>
+            <td>4</td>
+            <td>Checking</td>
+            <td>22000</td>
+            <td>2024-05-20</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Harvey</td>
+            <td>Dent</td>
+            <td>None</td>
+            <td>456 Lawyer Ave</td>
+            <td>Metropolis</td>
+            <td>NY</td>
+            <td>30004</td>
+            <td>456-789-0123</td>
+            <td>harvey.dent@gothambank.com</td>
+            <td>6</td>
+            <td>4</td>
+            <td>Savings</td>
+            <td>45000</td>
+            <td>2024-06-21</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Pamela</td>
+            <td>Isley</td>
+            <td>None</td>
+            <td>369 Botanic St</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10005</td>
+            <td>567-890-1234</td>
+            <td>pamela.isley@gothambank.com</td>
+            <td>7</td>
+            <td>5</td>
+            <td>Checking</td>
+            <td>65000</td>
+            <td>2024-07-30</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Edward</td>
+            <td>Nygma</td>
+            <td>None</td>
+            <td>101 Puzzle Ln</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10006</td>
+            <td>678-901-2345</td>
+            <td>edward.nygma@gothambank.com</td>
+            <td>8</td>
+            <td>6</td>
+            <td>Checking</td>
+            <td>450</td>
+            <td>2024-08-01</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Oswald</td>
+            <td>Cobblepot</td>
+            <td>None</td>
+            <td>666 Iceberg Dr</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10007</td>
+            <td>789-012-3456</td>
+            <td>oswald.cobblepot@gothambank.com</td>
+            <td>9</td>
+            <td>7</td>
+            <td>Checking</td>
+            <td>35000</td>
+            <td>2024-09-05</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Jonathan</td>
+            <td>Crane</td>
+            <td>None</td>
+            <td>742 Fear Blvd</td>
+            <td>Star City</td>
+            <td>NY</td>
+            <td>40008</td>
+            <td>890-123-4567</td>
+            <td>jonathan.crane@gothambank.com</td>
+            <td>10</td>
+            <td>8</td>
+            <td>Checking</td>
+            <td>91000</td>
+            <td>2024-10-10</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Barbara</td>
+            <td>Gordon</td>
+            <td>None</td>
+            <td>789 Police Plaza</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10009</td>
+            <td>901-234-5678</td>
+            <td>barbara.gordon@gothambank.com</td>
+            <td>11</td>
+            <td>9</td>
+            <td>Checking</td>
+            <td>3000</td>
+            <td>2024-11-15</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Lucius</td>
+            <td>Fox</td>
+            <td>None</td>
+            <td>333 Wayne Tower</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10010</td>
+            <td>012-345-6789</td>
+            <td>lucius.fox@gothambank.com</td>
+            <td>14</td>
+            <td>11</td>
+            <td>Checking</td>
+            <td>15000</td>
+            <td>2025-02-25</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Lucius</td>
+            <td>Fox</td>
+            <td>None</td>
+            <td>333 Wayne Tower</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10010</td>
+            <td>012-345-6789</td>
+            <td>lucius.fox@gothambank.com</td>
+            <td>15</td>
+            <td>11</td>
+            <td>Savings</td>
+            <td>67000</td>
+            <td>2025-03-26</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Alfred</td>
+            <td>Pennyworth</td>
+            <td>None</td>
+            <td>1007 Mountain Drive</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10011</td>
+            <td>123-456-7891</td>
+            <td>alfred.pennyworth@gothambank.com</td>
+            <td>16</td>
+            <td>12</td>
+            <td>Checking</td>
+            <td>45000</td>
+            <td>2025-04-30</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Alfred</td>
+            <td>Pennyworth</td>
+            <td>None</td>
+            <td>1007 Mountain Drive</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10011</td>
+            <td>123-456-7891</td>
+            <td>alfred.pennyworth@gothambank.com</td>
+            <td>17</td>
+            <td>12</td>
+            <td>Savings</td>
+            <td>7100</td>
+            <td>2025-05-01</td>
+        </tr>
+    </tbody>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sqlite3</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">string</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="c1"># Connect to the database (or create it if it doesn&#39;t exist)</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;gotham.db&#39;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="c1"># Create tables if they don&#39;t exist</span>
+<span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;CREATE TABLE IF NOT EXISTS Customers (</span>
+<span class="s1">    CustomerID INTEGER PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s1">    FirstName TEXT NOT NULL,</span>
+<span class="s1">    LastName TEXT NOT NULL,</span>
+<span class="s1">    MiddleInitial TEXT,</span>
+<span class="s1">    Address TEXT,</span>
+<span class="s1">    City TEXT,</span>
+<span class="s1">    State TEXT,</span>
+<span class="s1">    ZipCode TEXT,</span>
+<span class="s1">    PhoneNumber TEXT,</span>
+<span class="s1">    Email TEXT</span>
+<span class="s1">)&#39;&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;CREATE TABLE IF NOT EXISTS Accounts (</span>
+<span class="s1">    AccountID INTEGER PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s1">    CustomerID INTEGER,</span>
+<span class="s1">    AccountType TEXT,</span>
+<span class="s1">    Balance REAL DEFAULT 0.00,</span>
+<span class="s1">    CreatedDate TEXT,</span>
+<span class="s1">    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)</span>
+<span class="s1">)&#39;&#39;&#39;</span><span class="p">)</span>
+
+<span class="c1"># Lists of names and addresses</span>
+<span class="n">first_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Bruce&quot;</span><span class="p">,</span> <span class="s2">&quot;Clark&quot;</span><span class="p">,</span> <span class="s2">&quot;Diana&quot;</span><span class="p">,</span> <span class="s2">&quot;Barry&quot;</span><span class="p">,</span> <span class="s2">&quot;Hal&quot;</span><span class="p">,</span> <span class="s2">&quot;Oliver&quot;</span><span class="p">,</span> <span class="s2">&quot;Dinah&quot;</span><span class="p">,</span> <span class="s2">&quot;Arthur&quot;</span><span class="p">,</span> <span class="s2">&quot;Victor&quot;</span><span class="p">,</span> <span class="s2">&quot;Billy&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;Peter&quot;</span><span class="p">,</span> <span class="s2">&quot;Tony&quot;</span><span class="p">,</span> <span class="s2">&quot;Steve&quot;</span><span class="p">,</span> <span class="s2">&quot;Natasha&quot;</span><span class="p">,</span> <span class="s2">&quot;Thor&quot;</span><span class="p">,</span> <span class="s2">&quot;Loki&quot;</span><span class="p">,</span> <span class="s2">&quot;Wanda&quot;</span><span class="p">,</span> <span class="s2">&quot;Vision&quot;</span><span class="p">,</span> <span class="s2">&quot;T&#39;Challa&quot;</span><span class="p">,</span> <span class="s2">&quot;Stephen&quot;</span><span class="p">,</span> <span class="s2">&quot;Matt&quot;</span><span class="p">,</span> <span class="s2">&quot;Frank&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;Jessica&quot;</span><span class="p">,</span> <span class="s2">&quot;Luke&quot;</span><span class="p">,</span> <span class="s2">&quot;Danny&quot;</span><span class="p">,</span> <span class="s2">&quot;Elektra&quot;</span><span class="p">,</span> <span class="s2">&quot;Wade&quot;</span><span class="p">,</span> <span class="s2">&quot;Logan&quot;</span><span class="p">,</span> <span class="s2">&quot;Scott&quot;</span><span class="p">,</span> <span class="s2">&quot;Jean&quot;</span><span class="p">,</span> <span class="s2">&quot;Ororo&quot;</span><span class="p">,</span> <span class="s2">&quot;Rogue&quot;</span><span class="p">,</span> <span class="s2">&quot;Charles&quot;</span><span class="p">,</span> <span class="s2">&quot;Erik&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;Raven&quot;</span><span class="p">,</span> <span class="s2">&quot;Hank&quot;</span><span class="p">,</span> <span class="s2">&quot;Warren&quot;</span><span class="p">,</span> <span class="s2">&quot;Bobby&quot;</span><span class="p">,</span> <span class="s2">&quot;Kitty&quot;</span><span class="p">,</span> <span class="s2">&quot;Kurt&quot;</span><span class="p">,</span> <span class="s2">&quot;Reed&quot;</span><span class="p">,</span> <span class="s2">&quot;Susan&quot;</span><span class="p">,</span> <span class="s2">&quot;Johnny&quot;</span><span class="p">,</span> <span class="s2">&quot;Ben&quot;</span><span class="p">,</span> <span class="s2">&quot;Hellboy&quot;</span><span class="p">,</span> <span class="s2">&quot;Liz&quot;</span><span class="p">,</span> <span class="s2">&quot;Abe&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;Johann&quot;</span><span class="p">,</span> <span class="s2">&quot;Roger&quot;</span><span class="p">]</span>
+<span class="n">last_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Wayne&quot;</span><span class="p">,</span> <span class="s2">&quot;Kent&quot;</span><span class="p">,</span> <span class="s2">&quot;Prince&quot;</span><span class="p">,</span> <span class="s2">&quot;Allen&quot;</span><span class="p">,</span> <span class="s2">&quot;Jordan&quot;</span><span class="p">,</span> <span class="s2">&quot;Queen&quot;</span><span class="p">,</span> <span class="s2">&quot;Lance&quot;</span><span class="p">,</span> <span class="s2">&quot;Curry&quot;</span><span class="p">,</span> <span class="s2">&quot;Stone&quot;</span><span class="p">,</span> <span class="s2">&quot;Batson&quot;</span><span class="p">,</span> <span class="s2">&quot;Parker&quot;</span><span class="p">,</span> <span class="s2">&quot;Stark&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;Rogers&quot;</span><span class="p">,</span> <span class="s2">&quot;Romanoff&quot;</span><span class="p">,</span> <span class="s2">&quot;Odinson&quot;</span><span class="p">,</span> <span class="s2">&quot;Laufeyson&quot;</span><span class="p">,</span> <span class="s2">&quot;Maximoff&quot;</span><span class="p">,</span> <span class="s2">&quot;Shade&quot;</span><span class="p">,</span> <span class="s2">&quot;Udaku&quot;</span><span class="p">,</span> <span class="s2">&quot;Strange&quot;</span><span class="p">,</span> <span class="s2">&quot;Murdock&quot;</span><span class="p">,</span> <span class="s2">&quot;Castle&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;Jones&quot;</span><span class="p">,</span> <span class="s2">&quot;Cage&quot;</span><span class="p">,</span> <span class="s2">&quot;Rand&quot;</span><span class="p">,</span> <span class="s2">&quot;Natchios&quot;</span><span class="p">,</span> <span class="s2">&quot;Wilson&quot;</span><span class="p">,</span> <span class="s2">&quot;Howlett&quot;</span><span class="p">,</span> <span class="s2">&quot;Summers&quot;</span><span class="p">,</span> <span class="s2">&quot;Grey&quot;</span><span class="p">,</span> <span class="s2">&quot;Munroe&quot;</span><span class="p">,</span> <span class="s2">&quot;LeBeau&quot;</span><span class="p">,</span> <span class="s2">&quot;Xavier&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;Lehnsherr&quot;</span><span class="p">,</span> <span class="s2">&quot;Darkholme&quot;</span><span class="p">,</span> <span class="s2">&quot;McCoy&quot;</span><span class="p">,</span> <span class="s2">&quot;Worthington&quot;</span><span class="p">,</span> <span class="s2">&quot;Drake&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;Pryde&quot;</span><span class="p">,</span> <span class="s2">&quot;Wagner&quot;</span><span class="p">,</span> <span class="s2">&quot;Richards&quot;</span><span class="p">,</span> <span class="s2">&quot;Storm&quot;</span><span class="p">,</span> <span class="s2">&quot;Storm&quot;</span><span class="p">,</span> <span class="s2">&quot;Grimm&quot;</span><span class="p">,</span> <span class="s2">&quot;Bruttenholm&quot;</span><span class="p">,</span> <span class="s2">&quot;Sherman&quot;</span><span class="p">,</span> <span class="s2">&quot;Sapien&quot;</span><span class="p">,</span> <span class="s2">&quot;Krauss&quot;</span><span class="p">,</span> <span class="s2">&quot;Homunculus&quot;</span><span class="p">]</span>
+
+<span class="n">middle_initials</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span><span class="p">)</span>
+<span class="n">streets</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Mountain Drive&quot;</span><span class="p">,</span> <span class="s2">&quot;Kent Lane&quot;</span><span class="p">,</span> <span class="s2">&quot;Prince Street&quot;</span><span class="p">,</span> <span class="s2">&quot;Allen Avenue&quot;</span><span class="p">,</span> <span class="s2">&quot;Jordan Boulevard&quot;</span><span class="p">,</span> <span class="s2">&quot;Curry Road&quot;</span><span class="p">,</span> <span class="s2">&quot;Stone Street&quot;</span><span class="p">,</span> <span class="s2">&quot;Queen Avenue&quot;</span><span class="p">,</span> <span class="s2">&quot;Zor-El Lane&quot;</span><span class="p">,</span> <span class="s2">&quot;Kyle Street&quot;</span><span class="p">,</span> <span class="s2">&quot;Lane Road&quot;</span><span class="p">,</span> <span class="s2">&quot;Quinn Drive&quot;</span><span class="p">,</span> <span class="s2">&quot;Isley Avenue&quot;</span><span class="p">,</span> <span class="s2">&quot;Crane Road&quot;</span><span class="p">,</span> <span class="s2">&quot;Luthor Boulevard&quot;</span><span class="p">,</span> <span class="s2">&quot;Drake Street&quot;</span><span class="p">]</span>
+
+<span class="c1"># Dictionary of cities with corresponding states and zip codes</span>
+<span class="n">locations</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Gotham&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;NY&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;10001&quot;</span><span class="p">,</span> <span class="s2">&quot;10002&quot;</span><span class="p">,</span> <span class="s2">&quot;10003&quot;</span><span class="p">,</span> <span class="s2">&quot;10004&quot;</span><span class="p">]),</span>
+    <span class="s2">&quot;Blüdhaven&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;NJ&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;07001&quot;</span><span class="p">,</span> <span class="s2">&quot;07002&quot;</span><span class="p">,</span> <span class="s2">&quot;07003&quot;</span><span class="p">,</span> <span class="s2">&quot;07004&quot;</span><span class="p">]),</span>
+    <span class="s2">&quot;Metropolis&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;NY&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;10101&quot;</span><span class="p">,</span> <span class="s2">&quot;10102&quot;</span><span class="p">,</span> <span class="s2">&quot;10103&quot;</span><span class="p">,</span> <span class="s2">&quot;10104&quot;</span><span class="p">]),</span>
+    <span class="s2">&quot;Star City&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;CA&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;90001&quot;</span><span class="p">,</span> <span class="s2">&quot;90002&quot;</span><span class="p">,</span> <span class="s2">&quot;90003&quot;</span><span class="p">,</span> <span class="s2">&quot;90004&quot;</span><span class="p">])</span>
+<span class="p">}</span>
+<span class="n">phone_prefixes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;123&quot;</span><span class="p">,</span> <span class="s2">&quot;234&quot;</span><span class="p">,</span> <span class="s2">&quot;345&quot;</span><span class="p">,</span> <span class="s2">&quot;456&quot;</span><span class="p">,</span> <span class="s2">&quot;567&quot;</span><span class="p">,</span> <span class="s2">&quot;678&quot;</span><span class="p">,</span> <span class="s2">&quot;789&quot;</span><span class="p">,</span> <span class="s2">&quot;890&quot;</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">random_date</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">start</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">((</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">days</span><span class="p">)))</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_balance</span><span class="p">():</span>
+    <span class="c1"># Generate balance using triangular distribution skewed towards lower values</span>
+    <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">triangular</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="mi">7500</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_customers_and_accounts</span><span class="p">(</span><span class="n">num_customers</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">num_accounts</span><span class="o">=</span><span class="mi">15000</span><span class="p">):</span>
+    <span class="c1"># Insert customers</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_customers</span><span class="p">):</span>
+        <span class="n">first_name</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">first_names</span><span class="p">)</span>
+        <span class="n">last_name</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">last_names</span><span class="p">)</span>
+        <span class="n">middle_initial</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">middle_initials</span><span class="p">)</span>
+        <span class="n">address</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">9999</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">streets</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="c1"># Make Gotham more common</span>
+        <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">:</span>
+            <span class="n">city</span> <span class="o">=</span> <span class="s2">&quot;Gotham&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">city</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">locations</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+
+        <span class="n">state</span><span class="p">,</span> <span class="n">zip_codes</span> <span class="o">=</span> <span class="n">locations</span><span class="p">[</span><span class="n">city</span><span class="p">]</span>
+        <span class="n">zip_code</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">zip_codes</span><span class="p">)</span>
+        <span class="n">phone_number</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">phone_prefixes</span><span class="p">)</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">999</span><span class="p">)</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">9999</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="c1"># choose email suffix from list</span>
+        <span class="n">email_suffixes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;gotham.edu&quot;</span><span class="p">,</span> <span class="s2">&quot;wayne.com&quot;</span><span class="p">,</span> <span class="s2">&quot;gmail.com&quot;</span><span class="p">,</span> <span class="s2">&quot;yahoo.com&quot;</span><span class="p">,</span> <span class="s2">&quot;outlook.com&quot;</span><span class="p">,</span> <span class="s2">&quot;hotmail.com&quot;</span><span class="p">]</span>
+        <span class="n">email_suffix</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">email_suffixes</span><span class="p">)</span>
+        <span class="n">email</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">first_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">last_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">@</span><span class="si">{</span><span class="n">email_suffix</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;INSERT INTO Customers (FirstName, LastName, MiddleInitial, Address, City, State, ZipCode, PhoneNumber, Email)</span>
+<span class="s1">                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)&#39;&#39;&#39;</span><span class="p">,</span>
+                  <span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">middle_initial</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">city</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">zip_code</span><span class="p">,</span> <span class="n">phone_number</span><span class="p">,</span> <span class="n">email</span><span class="p">))</span>
+
+    <span class="c1"># Commit the changes to get CustomerIDs</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+    <span class="c1"># Get all customer IDs</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT CustomerID FROM Customers&quot;</span><span class="p">)</span>
+    <span class="n">customer_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()]</span>
+
+    <span class="c1"># Insert accounts</span>
+    <span class="n">account_types</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Checking&quot;</span><span class="p">,</span> <span class="s2">&quot;Savings&quot;</span><span class="p">]</span>
+    <span class="n">start_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s1">&#39;2003-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">end_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s1">&#39;2023-12-31&#39;</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_accounts</span><span class="p">):</span>
+        <span class="n">customer_id</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">customer_ids</span><span class="p">)</span>
+        <span class="n">account_type</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">account_types</span><span class="p">)</span>
+        <span class="n">balance</span> <span class="o">=</span> <span class="n">generate_balance</span><span class="p">()</span>
+
+        <span class="c1"># if account is savings, multiply</span>
+        <span class="k">if</span> <span class="n">account_type</span> <span class="o">==</span> <span class="s2">&quot;Savings&quot;</span><span class="p">:</span>
+            <span class="n">balance</span> <span class="o">*=</span> <span class="mf">1.87</span>
+
+        <span class="n">created_date</span> <span class="o">=</span> <span class="n">random_date</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;INSERT INTO Accounts (CustomerID, AccountType, Balance, CreatedDate)</span>
+<span class="s1">                     VALUES (?, ?, ?, ?)&#39;&#39;&#39;</span><span class="p">,</span>
+                  <span class="p">(</span><span class="n">customer_id</span><span class="p">,</span> <span class="n">account_type</span><span class="p">,</span> <span class="n">balance</span><span class="p">,</span> <span class="n">created_date</span><span class="p">))</span>
+
+    <span class="c1"># Commit the changes</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+<span class="c1"># Create customers and accounts</span>
+<span class="n">create_customers_and_accounts</span><span class="p">()</span>
+
+<span class="c1"># Close the connection</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">Accounts</span> <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">AccountID</span> <span class="n">LIMIT</span> <span class="mi">20</span> <span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///gotham.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <thead>
+        <tr>
+            <th>AccountID</th>
+            <th>CustomerID</th>
+            <th>AccountType</th>
+            <th>Balance</th>
+            <th>CreatedDate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>Checking</td>
+            <td>15000</td>
+            <td>2021-01-10</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>1</td>
+            <td>Savings</td>
+            <td>75000</td>
+            <td>2021-02-11</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>2</td>
+            <td>Checking</td>
+            <td>32000</td>
+            <td>2022-03-05</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>3</td>
+            <td>Checking</td>
+            <td>86000</td>
+            <td>2023-04-15</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>4</td>
+            <td>Checking</td>
+            <td>22000</td>
+            <td>2024-05-20</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>4</td>
+            <td>Savings</td>
+            <td>45000</td>
+            <td>2024-06-21</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>5</td>
+            <td>Checking</td>
+            <td>65000</td>
+            <td>2024-07-30</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>6</td>
+            <td>Checking</td>
+            <td>450</td>
+            <td>2024-08-01</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>7</td>
+            <td>Checking</td>
+            <td>35000</td>
+            <td>2024-09-05</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>8</td>
+            <td>Checking</td>
+            <td>91000</td>
+            <td>2024-10-10</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>9</td>
+            <td>Checking</td>
+            <td>3000</td>
+            <td>2024-11-15</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>10</td>
+            <td>Checking</td>
+            <td>4500</td>
+            <td>2024-12-20</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>10</td>
+            <td>Savings</td>
+            <td>8500</td>
+            <td>2025-01-21</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>11</td>
+            <td>Checking</td>
+            <td>15000</td>
+            <td>2025-02-25</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>11</td>
+            <td>Savings</td>
+            <td>67000</td>
+            <td>2025-03-26</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>12</td>
+            <td>Checking</td>
+            <td>45000</td>
+            <td>2025-04-30</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>12</td>
+            <td>Savings</td>
+            <td>7100</td>
+            <td>2025-05-01</td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td>1871</td>
+            <td>Checking</td>
+            <td>21215.93</td>
+            <td>2014-01-02</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>4250</td>
+            <td>Checking</td>
+            <td>37907.53</td>
+            <td>2007-11-03</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>2387</td>
+            <td>Checking</td>
+            <td>28934.79</td>
+            <td>2012-04-01</td>
+        </tr>
+    </tbody>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">Customers</span> <span class="n">LIMIT</span> <span class="mi">20</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///gotham.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <thead>
+        <tr>
+            <th>CustomerID</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>MiddleInitial</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>ZipCode</th>
+            <th>PhoneNumber</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Bruce</td>
+            <td>Wayne</td>
+            <td>None</td>
+            <td>1007 Mountain Drive</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10001</td>
+            <td>123-456-7890</td>
+            <td>bruce.wayne@gothambank.com</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Selina</td>
+            <td>Kyle</td>
+            <td>None</td>
+            <td>123 Cat St</td>
+            <td>Blüdhaven</td>
+            <td>NY</td>
+            <td>20002</td>
+            <td>234-567-8901</td>
+            <td>selina.kyle@gothambank.com</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>James</td>
+            <td>Gordon</td>
+            <td>None</td>
+            <td>789 Police Plaza</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10003</td>
+            <td>345-678-9012</td>
+            <td>james.gordon@gothambank.com</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Harvey</td>
+            <td>Dent</td>
+            <td>None</td>
+            <td>456 Lawyer Ave</td>
+            <td>Metropolis</td>
+            <td>NY</td>
+            <td>30004</td>
+            <td>456-789-0123</td>
+            <td>harvey.dent@gothambank.com</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Pamela</td>
+            <td>Isley</td>
+            <td>None</td>
+            <td>369 Botanic St</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10005</td>
+            <td>567-890-1234</td>
+            <td>pamela.isley@gothambank.com</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Edward</td>
+            <td>Nygma</td>
+            <td>None</td>
+            <td>101 Puzzle Ln</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10006</td>
+            <td>678-901-2345</td>
+            <td>edward.nygma@gothambank.com</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Oswald</td>
+            <td>Cobblepot</td>
+            <td>None</td>
+            <td>666 Iceberg Dr</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10007</td>
+            <td>789-012-3456</td>
+            <td>oswald.cobblepot@gothambank.com</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Jonathan</td>
+            <td>Crane</td>
+            <td>None</td>
+            <td>742 Fear Blvd</td>
+            <td>Star City</td>
+            <td>NY</td>
+            <td>40008</td>
+            <td>890-123-4567</td>
+            <td>jonathan.crane@gothambank.com</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Barbara</td>
+            <td>Gordon</td>
+            <td>None</td>
+            <td>789 Police Plaza</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10009</td>
+            <td>901-234-5678</td>
+            <td>barbara.gordon@gothambank.com</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Lucius</td>
+            <td>Fox</td>
+            <td>None</td>
+            <td>333 Wayne Tower</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10010</td>
+            <td>012-345-6789</td>
+            <td>lucius.fox@gothambank.com</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Alfred</td>
+            <td>Pennyworth</td>
+            <td>None</td>
+            <td>1007 Mountain Drive</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10011</td>
+            <td>123-456-7891</td>
+            <td>alfred.pennyworth@gothambank.com</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>Vicki</td>
+            <td>Vale</td>
+            <td>None</td>
+            <td>888 Reporter Rd</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10012</td>
+            <td>234-567-8902</td>
+            <td>vicki.vale@gothambank.com</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>Arthur</td>
+            <td>Natchios</td>
+            <td>V</td>
+            <td>7184 Zor-El Lane</td>
+            <td>Metropolis</td>
+            <td>NY</td>
+            <td>10102</td>
+            <td>345-641-9831</td>
+            <td>arthur.natchios@gotham.edu</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>Matt</td>
+            <td>Summers</td>
+            <td>K</td>
+            <td>6042 Queen Avenue</td>
+            <td>Star City</td>
+            <td>CA</td>
+            <td>90003</td>
+            <td>789-591-8003</td>
+            <td>matt.summers@gotham.edu</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>Arthur</td>
+            <td>Xavier</td>
+            <td>B</td>
+            <td>5254 Kyle Street</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10004</td>
+            <td>890-308-2947</td>
+            <td>arthur.xavier@outlook.com</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>Loki</td>
+            <td>Storm</td>
+            <td>A</td>
+            <td>7350 Kent Lane</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10002</td>
+            <td>234-215-6094</td>
+            <td>loki.storm@gotham.edu</td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td>Kitty</td>
+            <td>Wilson</td>
+            <td>M</td>
+            <td>2517 Jordan Boulevard</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10002</td>
+            <td>123-509-7440</td>
+            <td>kitty.wilson@gmail.com</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>Steve</td>
+            <td>Prince</td>
+            <td>C</td>
+            <td>6478 Mountain Drive</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10002</td>
+            <td>456-300-5111</td>
+            <td>steve.prince@outlook.com</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>Arthur</td>
+            <td>Summers</td>
+            <td>V</td>
+            <td>414 Lane Road</td>
+            <td>Blüdhaven</td>
+            <td>NJ</td>
+            <td>07003</td>
+            <td>234-303-5480</td>
+            <td>arthur.summers@gmail.com</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>Stephen</td>
+            <td>Lance</td>
+            <td>N</td>
+            <td>2941 Stone Street</td>
+            <td>Gotham</td>
+            <td>NY</td>
+            <td>10004</td>
+            <td>678-695-5213</td>
+            <td>stephen.lance@wayne.com</td>
+        </tr>
+    </tbody>
+</table></div></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./data"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Brendan Shea, PhD
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
