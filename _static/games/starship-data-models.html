@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .tab-container {
+            max-width: 800px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .tab {
+            padding: 10px 20px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .tab:hover {
+            background: #e0e0e0;
+        }
+        .tab.active {
+            background: #007bff;
+            color: white;
+        }
+        .content {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .model {
+            display: none;
+        }
+        .model.active {
+            display: block;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .model-title {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .model-description {
+            margin: 15px 0;
+            color: #666;
+        }
+        .table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .table th {
+            background-color: #f8f9fa;
+        }
+        .column-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+        }
+        .column {
+            min-width: 120px;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .column-header {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .column-data {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab-container">
+        <h1>Data Models - Starship Enterprise Example</h1>
+        <div class="tabs">
+            <button class="tab active" onclick="showModel('flat')">Flat Model</button>
+            <button class="tab" onclick="showModel('relational')">Relational Model</button>
+            <button class="tab" onclick="showModel('document')">Document Model</button>
+            <button class="tab" onclick="showModel('column')">Column Model</button>
+            <button class="tab" onclick="showModel('graph')">Graph Model (RDF)</button>
+        </div>
+        <div class="content">
+            <div id="flat" class="model active">
+                <h2 class="model-title">Flat Model</h2>
+                <div class="model-description">
+                    In a flat model, all data is stored in a single table or structure.
+                    This can lead to data redundancy but provides simple querying.
+                </div>
+                <table class="table">
+                    <tr>
+                        <th>Ship Name</th>
+                        <th>Registry</th>
+                        <th>Class</th>
+                        <th>Crew Member</th>
+                        <th>Position</th>
+                        <th>Species</th>
+                        <th>Department</th>
+                        <th>Ship Status</th>
+                        <th>Mission Count</th>
+                        <th>Last Starbase</th>
+                    </tr>
+                    <tr>
+                        <td>USS Enterprise</td>
+                        <td>NCC-1701</td>
+                        <td>Constitution</td>
+                        <td>James T. Kirk</td>
+                        <td>Captain</td>
+                        <td>Human</td>
+                        <td>Command</td>
+                        <td>Active, Patrol</td>
+                        <td>167</td>
+                        <td>Starbase 1, Earth Orbit</td>
+                    </tr>
+                    <tr>
+                        <td>USS Enterprise</td>
+                        <td>NCC-1701</td>
+                        <td>Constitution</td>
+                        <td>Spock</td>
+                        <td>First Officer</td>
+                        <td>Vulcan</td>
+                        <td>Science</td>
+                        <td>Active, Patrol</td>
+                        <td>167</td>
+                        <td>Starbase 1, Earth Orbit</td>
+                    </tr>
+                    <tr>
+                        <td>USS Enterprise</td>
+                        <td>NCC-1701</td>
+                        <td>Constitution</td>
+                        <td>Leonard McCoy</td>
+                        <td>Chief Medical Officer</td>
+                        <td>Human</td>
+                        <td>Medical</td>
+                        <td>Active, Patrol</td>
+                        <td>167</td>
+                        <td>Starbase 1, Earth Orbit</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="relational" class="model">
+                <h2 class="model-title">Relational Model</h2>
+                <div class="model-description">
+                    The relational model organizes data in related tables, reducing redundancy
+                    through normalization and establishing relationships via foreign keys.
+                </div>
+                <h3>Ships Table</h3>
+                <table class="table">
+                    <tr>
+                        <th>Ship ID</th>
+                        <th>Name</th>
+                        <th>Registry</th>
+                        <th>Class</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>USS Enterprise</td>
+                        <td>NCC-1701</td>
+                        <td>Constitution</td>
+                    </tr>
+                </table>
+
+                <h3>Officers Table</h3>
+                <table class="table">
+                    <tr>
+                        <th>Officer ID</th>
+                        <th>Ship ID</th>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Species</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>James T. Kirk</td>
+                        <td>Captain</td>
+                        <td>Human</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>Spock</td>
+                        <td>First Officer</td>
+                        <td>Vulcan</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="document" class="model">
+                <h2 class="model-title">Document Model</h2>
+                <div class="model-description">
+                    The document model nests related data in a hierarchical structure,
+                    making it intuitive to read and efficient for retrieving complete objects.
+                </div>
+                <pre>
+{
+    "name": "USS Enterprise",
+    "registry": "NCC-1701",
+    "class": "Constitution",
+    "crew": {
+        "captain": {
+            "name": "James T. Kirk",
+            "position": "Captain",
+            "species": "Human"
+        },
+        "first_officer": {
+            "name": "Spock",
+            "position": "First Officer",
+            "species": "Vulcan"
+        }
+    }
+}</pre>
+            </div>
+
+            <div id="column" class="model">
+                <h2 class="model-title">Column Model (Tidy Data Frame)</h2>
+                <div class="model-description">
+                    The column model organizes data with each variable as a column and each observation as a row,
+                    following tidy data principles. This structure optimizes for analytical queries and allows
+                    efficient column-wise operations and compression.
+                </div>
+                <h3>Starfleet Personnel Data Frame</h3>
+                <table class="table">
+                    <tr>
+                        <th>date</th>
+                        <th>crew_member</th>
+                        <th>ship_name</th>
+                        <th>position</th>
+                        <th>species</th>
+                        <th>years_service</th>
+                        <th>missions_completed</th>
+                        <th>efficiency_rating</th>
+                        <th>response_time_ms</th>
+                        <th>department_budget_credits</th>
+                    </tr>
+                    <tr>
+                        <td>2265-03-15</td>
+                        <td>James T. Kirk</td>
+                        <td>USS Enterprise</td>
+                        <td>Captain</td>
+                        <td>Human</td>
+                        <td>15.3</td>
+                        <td>167</td>
+                        <td>98.4</td>
+                        <td>342</td>
+                        <td>1250000</td>
+                    </tr>
+                    <tr>
+                        <td>2265-03-15</td>
+                        <td>Spock</td>
+                        <td>USS Enterprise</td>
+                        <td>First Officer</td>
+                        <td>Vulcan</td>
+                        <td>18.7</td>
+                        <td>182</td>
+                        <td>99.8</td>
+                        <td>218</td>
+                        <td>980000</td>
+                    </tr>
+                    <tr>
+                        <td>2265-03-15</td>
+                        <td>Leonard McCoy</td>
+                        <td>USS Enterprise</td>
+                        <td>Chief Medical Officer</td>
+                        <td>Human</td>
+                        <td>12.4</td>
+                        <td>143</td>
+                        <td>97.2</td>
+                        <td>386</td>
+                        <td>1100000</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="graph" class="model">
+                <h2 class="model-title">Graph Model (RDF)</h2>
+                <div class="model-description">
+                    The RDF (Resource Description Framework) model represents data as a graph of triples:
+                    subject, predicate, and object. This allows for flexible relationship modeling and
+                    semantic queries.
+                </div>
+                <style>
+                    .graph-container {
+                        padding: 20px;
+                        background: #f8f9fa;
+                        border-radius: 5px;
+                        margin: 20px 0;
+                    }
+                    .graph-node {
+                        padding: 8px 16px;
+                        background: white;
+                        border: 2px solid #007bff;
+                        border-radius: 20px;
+                        display: inline-block;
+                        margin: 10px;
+                    }
+                    .graph-relation {
+                        color: #666;
+                        font-style: italic;
+                        padding: 0 10px;
+                    }
+                    .graph-row {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                        margin: 10px 0;
+                    }
+                    .graph-arrow {
+                        color: #007bff;
+                        padding: 0 5px;
+                    }
+                </style>
+                <div class="graph-container">
+                    <div class="graph-row">
+                        <span class="graph-node">USS Enterprise</span>
+                        <span class="graph-relation">hasRegistry</span>
+                        <span class="graph-arrow">→</span>
+                        <span class="graph-node">NCC-1701</span>
+                    </div>
+                    <div class="graph-row">
+                        <span class="graph-node">USS Enterprise</span>
+                        <span class="graph-relation">hasCaptain</span>
+                        <span class="graph-arrow">→</span>
+                        <span class="graph-node">James T. Kirk</span>
+                    </div>
+                    <div class="graph-row">
+                        <span class="graph-node">James T. Kirk</span>
+                        <span class="graph-relation">hasSpecies</span>
+                        <span class="graph-arrow">→</span>
+                        <span class="graph-node">Human</span>
+                    </div>
+                    <div class="graph-row">
+                        <span class="graph-node">James T. Kirk</span>
+                        <span class="graph-relation">leadsUnit</span>
+                        <span class="graph-arrow">→</span>
+                        <span class="graph-node">Command Dept</span>
+                    </div>
+                    <div class="graph-row">
+                        <span class="graph-node">USS Enterprise</span>
+                        <span class="graph-relation">hasFirstOfficer</span>
+                        <span class="graph-arrow">→</span>
+                        <span class="graph-node">Spock</span>
+                    </div>
+                    <div class="graph-row">
+                        <span class="graph-node">Spock</span>
+                        <span class="graph-relation">hasSpecies</span>
+                        <span class="graph-arrow">→</span>
+                        <span class="graph-node">Vulcan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showModel(modelId) {
+            // Hide all models
+            document.querySelectorAll('.model').forEach(model => {
+                model.classList.remove('active');
+            });
+
+            // Show selected model
+            document.getElementById(modelId).classList.add('active');
+
+            // Update tab styling
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

@@ -19,6 +19,17 @@ html:
 
 sphinx:
   config:
+    exclude_patterns:
+      - README.md
+      - Chapter_0_Brendan's_Intro_to_Colab.ipynb
+      - data/GenerateToadCityFirewall.ipynb
+      - data/GothamCityBank_Generator.ipynb
+      - data/MarioBrosPlumbing.ipynb
+      - data/Spotify_Music.ipynb
+      - sql_ddl_quiz/README.md
+      - sql_select_quiz/README.md
+    suppress_warnings:
+      - misc.highlighting_failure
     html_static_path:
       - _static
     html_css_files:
