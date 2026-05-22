@@ -1,7 +1,7 @@
 title: SQL and Database Management Through Pop Culture
 author: Brendan Shea, PhD
 copyright: "2026"
-logo: ""
+logo: database_cover.jpg
 
 execute:
   execute_notebooks: off
@@ -11,11 +11,20 @@ parse:
     - colon_fence
 
 html:
-  use_issues_button: true
+  use_issues_button: false
   use_repository_button: true
-  use_edit_page_button: true
+  use_edit_page_button: false
   extra_navbar: >-
     Supported with grant funding from Minnesota State and Rochester Community and Technical College.
+
+sphinx:
+  config:
+    html_static_path:
+      - _static
+    html_css_files:
+      - custom.css
+    html_js_files:
+      - sandbox-html-output.js
 
 repository:
   url: https://github.com/brendanpshea/database_sql
