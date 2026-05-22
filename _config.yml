@@ -1,12 +1,27 @@
-# Site settings
-title: SQL and Database Management Using Pop Culture
-description: An interactive textbook using pop culture references to simplify complex database concepts.
+title: SQL and Database Management Through Pop Culture
+author: Brendan Shea, PhD
+copyright: "2026"
+logo: ""
 
-# Build settings
-remote_theme: pages-themes/leap-day@v0.2.0
-show_downloads: true
+execute:
+  execute_notebooks: off
 
-# Optional settings
-author: Brendan P. Shea, PhD
-email: brendanpshea@gmail.com
-github_username:  brendanpshea
+parse:
+  myst_enable_extensions:
+    - colon_fence
+
+html:
+  use_issues_button: true
+  use_repository_button: true
+  use_edit_page_button: true
+  extra_navbar: >-
+    Supported with grant funding from Minnesota State and Rochester Community and Technical College.
+
+repository:
+  url: https://github.com/brendanpshea/database_sql
+  branch: main
+  path_to_book: .
+
+launch_buttons:
+  colab_url: https://colab.research.google.com
+  notebook_interface: classic
