@@ -50,9 +50,10 @@ The book moves from foundations to applied database work:
 
 This repository uses the classic Jupyter Book layout.
 
-Build the site locally from the repository root with:
+Install the book dependencies and build from the repository root with:
 
 ```bash
+pip install -r requirements-book.txt
 jupyter-book build .
 ```
 

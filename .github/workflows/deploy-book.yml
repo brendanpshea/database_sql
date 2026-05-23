@@ -31,10 +31,27 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Install Jupyter Book
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql postgresql-contrib
+
+      - name: Restore Jupyter cache
+        uses: actions/cache@v4
+        with:
+          path: .jupyter_cache
+          key: ${{ runner.os }}-jupyter-cache-${{ hashFiles('_config.yml', '_toc.yml', 'Database_*.ipynb', 'labs/*.ipynb', 'requirements-book.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-jupyter-cache-
+
+      - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install jupyter-book==0.15.1
+          pip install -r requirements-book.txt
+
+      - name: Start PostgreSQL
+        run: |
+          sudo service postgresql start
 
       - name: Build the book
         run: |

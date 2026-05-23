@@ -4,7 +4,8 @@ copyright: "2026"
 logo: database_cover.jpg
 
 execute:
-  execute_notebooks: off
+  execute_notebooks: cache
+  timeout: 900
 
 parse:
   myst_enable_extensions:
