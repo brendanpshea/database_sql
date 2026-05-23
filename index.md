@@ -121,6 +121,61 @@
 	</section>
 </div>
 
+## Practice with the Loop of the Recursive Dragon
+
+Each chapter has a matching review set in the **Loop of the Recursive Dragon**, an adaptive review game with multiple question types and RPG-style mechanics. Pick a chapter and play:
+
+<div class="home-resource-grid">
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_01_foundations.json">Ch 1 — Foundations</a></h3>
+		<p>Data, information, knowledge, and the major data models.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_02_select.json">Ch 2 — SELECT basics</a></h3>
+		<p>Filtering, sorting, aliases, and aggregate functions.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_03_joins_sets.json">Ch 3 — JOINs and sets</a></h3>
+		<p>Inner, outer, and set operations across multiple tables.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_04_advanced_retrieval.json">Ch 4 — Advanced retrieval</a></h3>
+		<p>GROUP BY, HAVING, subqueries, and JSON inside SQL.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_05_design.json">Ch 5 — Database design</a></h3>
+		<p>ER modeling, normalization, keys, and constraints.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_06_writing_data.json">Ch 6 — Writing data</a></h3>
+		<p>INSERT, UPDATE, DELETE, soft deletes, and triggers.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_07_views_ctes_governance.json">Ch 7 — Views, CTEs, and governance</a></h3>
+		<p>Reusable queries plus data governance and GDPR.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_08_performance_transactions.json">Ch 8 — Performance and transactions</a></h3>
+		<p>Indexes, query plans, and ACID transactions.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_09_postgres.json">Ch 9 — PostgreSQL</a></h3>
+		<p>Postgres-specific types, procedures, and roles.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_10_security.json">Ch 10 — Database security</a></h3>
+		<p>CIA Triad, encryption, access control, and network protection.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_11_architecture_testing.json">Ch 11 — Architecture and testing</a></h3>
+		<p>Design patterns, deployment models, and testing strategies.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_12_final_project.json">Ch 12 — Final project</a></h3>
+		<p>Quick review of the concepts the capstone pulls together.</p>
+	</section>
+</div>
+
 ## Coming soon
 
 <section class="home-coming-soon">
