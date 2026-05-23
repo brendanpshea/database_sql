@@ -1,0 +1,2358 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Database Performance: Index, Query Plans, and Transaction Management &#8212; SQL and Database Management Through Pop Culture</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Database_08_IndexesTransactions';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Postgres and Pokemon" href="Database_09_PokemonAndPostgres.html" />
+    <link rel="prev" title="A Musical “VIEW” For Better Data Presentation" href="Database_07_Views.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/database_cover.jpg" class="logo__image only-light" alt="SQL and Database Management Through Pop Culture - Home"/>
+    <script>document.write(`<img src="_static/database_cover.jpg" class="logo__image only-dark" alt="SQL and Database Management Through Pop Culture - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    SQL and Database Management Through Pop Culture
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Database_01_StarShipSQL.html">Starship SQL: An Introduction to Databases</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Database_02_IntroToSQL.html">Introduction to SQL: SELECT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_03_Joins_Sets_SQL.html">Getting Tables Together With Joins and Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_04_AdvancedSelect.html">Super Select: Advanced Retrieval With Mario Brothers Plumbing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_05_Design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_06_WritingData.html">Writing Data With Rollingstone’s Greatest Albums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_07_Views.html">A Musical “VIEW” For Better Data Presentation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Database Performance: Index, Query Plans, and Transaction Management</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Database_09_PokemonAndPostgres.html">Postgres and Pokemon</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Database_10_DatabaseSecurity.html">Guarding the Virtual Vault: A Deep Dive into Database Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_11_DesignDeployTest.html">Database Architecture Patterns: Design, Deployment, and Testing for Modern Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_12_FinalProject.html">SQLite Database Final Project: Design, Implementation, and Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labs/Database_Ex_Normalization.html">Introduction to Normalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labs/Database_Lab_Chapter_3.html">SQL Practice (Chapter 3)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/./Database_08_IndexesTransactions.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/brendanpshea/database_sql" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Database_08_IndexesTransactions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Database Performance: Index, Query Plans, and Transaction Management</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Database Performance: Index, Query Plans, and Transaction Management</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#database-and-sql-through-pop-culture-brendan-shea-phd">Database and SQL Through Pop Culture | Brendan Shea, PhD</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brendan-s-lecture">Brendan’s Lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gotham-national-bank-database">Gotham National Bank Database</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#database-schema-for-gotham-city-bank">Database Schema for Gotham City Bank</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-closer-look-at-customers-and-accounts">A Closer Look at Customers and Accounts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-indexes-and-how-do-i-create-them">What are Indexes and How Do I Create Them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-indexes-impact-speed">How Indexes Impact Speed</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-of-indexes">Impact of Indexes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timing-our-queries">Timing Our Queries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-indexes-impact-storage">How Indexes Impact Storage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-trees-the-backbone-of-database-storage">B-trees: The Backbone of Database Storage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-sqlite-uses-b-trees">How SQLite Uses B-trees</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#table-b-tree-example">Table B-tree example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#index-b-tree-example">Index B-tree example</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphic-b-trees">Graphic: B-Trees</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-file-size">Checking File Size</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-indexing-guidelines-when-to-create-and-avoid-indexes">SQL Indexing Guidelines: When to Create and Avoid Indexes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-transactions">Introduction to Transactions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acid-properties-overview">ACID Properties Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atomicity">Atomicity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency">Consistency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isolation">Isolation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#durability">Durability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deadlocks">Deadlocks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transaction-performance-and-error-handling">Transaction Performance and Error Handling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nosql-case-study-harley-s-havoc">NoSQL Case Study: Harley’s Havoc</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-out-why-harley-chose-mongodb">Scaling Out: Why Harley Chose MongoDB</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-move-from-acid-to-base">The Move from ACID to BASE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-would-be-disastrous-for-gotham-city-bank">Why This Would Be Disastrous for Gotham City Bank</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-of-both-worlds-hybrid-approaches">Best of Both Worlds: Hybrid Approaches</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-day-in-the-life-of-a-database-administrator">A Day in the Life of a Database Administrator</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#morning-health-checks">Morning: health checks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mid-morning-performance-tuning">Mid-morning: performance tuning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#afternoon-security-and-change-management">Afternoon: security and change management</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-database-performance-metrics">Common Database Performance Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-querying-database-logs">Lab: Querying Database Logs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-structure">Table structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-look-for-in-this-lab">What to look for in this lab</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-entry-types-to-know">Log Entry Types to Know</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-the-database">Querying the Database</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-queries">Sample Queries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-practice-your-sql">Lab: Practice Your SQL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-of-the-recursive-dragon-databse-theory">Loop of the Recursive Dragon: Databse Theory</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points-summary">Key Points Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_08_IndexesTransactions.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section id="database-performance-index-query-plans-and-transaction-management">
+<h1>Database Performance: Index, Query Plans, and Transaction Management<a class="headerlink" href="#database-performance-index-query-plans-and-transaction-management" title="Permalink to this heading">#</a></h1>
+<section id="database-and-sql-through-pop-culture-brendan-shea-phd">
+<h2>Database and SQL Through Pop Culture | Brendan Shea, PhD<a class="headerlink" href="#database-and-sql-through-pop-culture-brendan-shea-phd" title="Permalink to this heading">#</a></h2>
+<p>In this chapter, we will explore the inner workings of SQLite using a dataset from the fictional Gotham National Bank. Our focus will be on understanding how indexes, transactions, and database monitoring can optimize SQLite database performance and ensure smooth operations. We will cover the fundamentals of indexes, demonstrate their impact on query speed and database size, and discuss best practices for implementing them effectively.</p>
+<p>Additionally, we will delve into the concept of transactions and the crucial role they play in ensuring data integrity and reliability. We will examine the ACID properties that transactions must adhere to and showcase how to work with transactions in SQLite using commands like BEGIN, COMMIT, and ROLLBACK.</p>
+<p>Furthermore, we will emphasize the importance of database monitoring, reporting, and logging in maintaining the health and performance of SQLite databases. We will explore various monitoring techniques, discuss the types of logs generated, and highlight the tools and practices used by database administrators like ORACLE to keep databases running optimally.</p>
+<p>Throughout the chapter, we will use practical examples and step-by-step explanations to illustrate how indexes, transactions, and monitoring can be leveraged to build robust and efficient databases. By the end, you should have a solid foundation in these key concepts and be well-equipped to apply them in your own SQLite projects.</p>
+<p>Learning Outcomes:</p>
+<ol class="arabic simple">
+<li><p>Understand the purpose and benefits of indexes in SQLite databases</p></li>
+<li><p>Learn how to create indexes and analyze their impact on query performance and database size</p></li>
+<li><p>Recognize situations where creating an index is advantageous and when it may not be necessary</p></li>
+<li><p>Grasp the concept of transactions and their importance in maintaining data integrity and reliability</p></li>
+<li><p>Become familiar with the ACID properties of transactions and their implications for database consistency</p></li>
+<li><p>Learn how to work with transactions in SQLite using BEGIN, COMMIT, ROLLBACK, and SAVEPOINT commands</p></li>
+<li><p>Understand the challenges of concurrent transactions and the role of locking mechanisms in managing simultaneous access to data</p></li>
+<li><p>Appreciate the significance of database monitoring, reporting, and logging in ensuring optimal performance and health of SQLite databases</p></li>
+<li><p>Gain insights into the tools and techniques used by database administrators to monitor and manage databases effectively</p></li>
+</ol>
+<p>Keywords: SQLite, indexes, transactions, database monitoring, reporting, logging, query performance, database size, ACID properties, data integrity, reliability, concurrency, locking</p>
+</section>
+<section id="brendan-s-lecture">
+<h2>Brendan’s Lecture<a class="headerlink" href="#brendan-s-lecture" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># play youtube video</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;DtqP72S_keA&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">450</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+        <iframe
+            width="800"
+            height="450"
+            src="https://www.youtube.com/embed/DtqP72S_keA"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
+</div>
+</section>
+<section id="gotham-national-bank-database">
+<h2>Gotham National Bank Database<a class="headerlink" href="#gotham-national-bank-database" title="Permalink to this heading">#</a></h2>
+<p>In this chapter, we’ll be exploring the inner workings of <strong>SQLite</strong> using a dataset from the fictional <strong>Gotham National Bank</strong>. Our database, <em>gotham.db</em>, contains two tables:</p>
+<ol class="arabic simple">
+<li><p><strong>Customers</strong>: Stores customer information like name, address, and contact details.</p></li>
+<li><p><strong>Accounts</strong>: Holds account-related data such as account type, balance, and creation date, with a foreign key linking to the Customers table.</p></li>
+</ol>
+<p>Throughout this chapter, we’ll use these tables to understand how <strong>indexes</strong> and <strong>transactions</strong> can optimize our SQLite database performance. We’ll cover the fundamentals of indexes, demonstrate their impact on query speed and database size, and discuss best practices for implementing them effectively.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!wget https://github.com/brendanpshea/database_sql/raw/main/data/gotham.db -q -nc
+
+# Load SQL magic and connect
+%load_ext sql
+%sql sqlite:///gotham.db
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l?25hdone
+  Building wheel for prettytable (setup.py) ... ?25l?25hdone
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="database-schema-for-gotham-city-bank">
+<h2>Database Schema for Gotham City Bank<a class="headerlink" href="#database-schema-for-gotham-city-bank" title="Permalink to this heading">#</a></h2>
+<p>Here is the database schema.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span> <span class="n">we</span> <span class="n">are</span> <span class="n">going</span> <span class="n">to</span> <span class="n">turn</span> <span class="n">on</span> <span class="s2">&quot;profiling&quot;</span> <span class="n">this</span> <span class="n">lesson</span>
+<span class="n">PRAGMA</span> <span class="n">profile</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="o">--</span> <span class="n">get</span> <span class="n">table</span> <span class="n">schema</span> <span class="n">using</span> <span class="n">sqlite</span> <span class="n">master</span>
+<span class="n">SELECT</span> <span class="n">sql</span> <span class="n">FROM</span> <span class="n">sqlite_master</span> <span class="n">WHERE</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;table&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///gotham.db
+Done.
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <tr>
+        <th>sql</th>
+    </tr>
+    <tr>
+        <td>CREATE TABLE Customers (<br>    CustomerID INTEGER PRIMARY KEY AUTOINCREMENT,<br>    FirstName VARCHAR(50) NOT NULL,<br>    LastName VARCHAR(50) NOT NULL,<br>    MiddleInitial CHAR(1),<br>    Address VARCHAR(255),<br>    City VARCHAR(50),<br>    State VARCHAR(50),<br>    ZipCode VARCHAR(10),<br>    PhoneNumber VARCHAR(15),<br>    Email VARCHAR(100)<br>)</td>
+    </tr>
+    <tr>
+        <td>CREATE TABLE sqlite_sequence(name,seq)</td>
+    </tr>
+    <tr>
+        <td>CREATE TABLE Accounts (<br>    AccountID INTEGER PRIMARY KEY AUTOINCREMENT,<br>    CustomerID INT,<br>    AccountType VARCHAR(20),<br>    Balance DECIMAL(15, 2) DEFAULT 0.00,<br>    CreatedDate DATE,<br>    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)<br>)</td>
+    </tr>
+</table></div></div>
+</div>
+</section>
+<section id="a-closer-look-at-customers-and-accounts">
+<h2>A Closer Look at Customers and Accounts<a class="headerlink" href="#a-closer-look-at-customers-and-accounts" title="Permalink to this heading">#</a></h2>
+<p>Now, let’s take a quick look at the head of our table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">Customers</span> <span class="n">LIMIT</span> <span class="mi">5</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///gotham.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <tr>
+        <th>CustomerID</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>MiddleInitial</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>ZipCode</th>
+        <th>PhoneNumber</th>
+        <th>Email</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Bruce</td>
+        <td>Wayne</td>
+        <td>None</td>
+        <td>1007 Mountain Drive</td>
+        <td>Gotham</td>
+        <td>NY</td>
+        <td>10001</td>
+        <td>123-456-7890</td>
+        <td>bruce.wayne@gothambank.com</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Selina</td>
+        <td>Kyle</td>
+        <td>None</td>
+        <td>123 Cat St</td>
+        <td>Blüdhaven</td>
+        <td>NY</td>
+        <td>20002</td>
+        <td>234-567-8901</td>
+        <td>selina.kyle@gothambank.com</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>James</td>
+        <td>Gordon</td>
+        <td>None</td>
+        <td>789 Police Plaza</td>
+        <td>Gotham</td>
+        <td>NY</td>
+        <td>10003</td>
+        <td>345-678-9012</td>
+        <td>james.gordon@gothambank.com</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Harvey</td>
+        <td>Dent</td>
+        <td>None</td>
+        <td>456 Lawyer Ave</td>
+        <td>Metropolis</td>
+        <td>NY</td>
+        <td>30004</td>
+        <td>456-789-0123</td>
+        <td>harvey.dent@gothambank.com</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Pamela</td>
+        <td>Isley</td>
+        <td>None</td>
+        <td>369 Botanic St</td>
+        <td>Gotham</td>
+        <td>NY</td>
+        <td>10005</td>
+        <td>567-890-1234</td>
+        <td>pamela.isley@gothambank.com</td>
+    </tr>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">Accounts</span> <span class="n">LIMIT</span> <span class="mi">5</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///gotham.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <tr>
+        <th>AccountID</th>
+        <th>CustomerID</th>
+        <th>AccountType</th>
+        <th>Balance</th>
+        <th>CreatedDate</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>Checking</td>
+        <td>15000</td>
+        <td>2021-01-10</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>1</td>
+        <td>Savings</td>
+        <td>75000</td>
+        <td>2021-02-11</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>2</td>
+        <td>Checking</td>
+        <td>32000</td>
+        <td>2022-03-05</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>3</td>
+        <td>Checking</td>
+        <td>86000</td>
+        <td>2023-04-15</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>4</td>
+        <td>Checking</td>
+        <td>22000</td>
+        <td>2024-05-20</td>
+    </tr>
+</table></div></div>
+</div>
+</section>
+<section id="what-are-indexes-and-how-do-i-create-them">
+<h2>What are Indexes and How Do I Create Them?<a class="headerlink" href="#what-are-indexes-and-how-do-i-create-them" title="Permalink to this heading">#</a></h2>
+<p>If you’ve ever used a book index to quickly locate a specific topic, you already understand the basic concept of a database <strong>index</strong>. In the context of databases, an index is a separate data structure that allows the database engine to find and retrieve data more efficiently without having to scan the entire table.</p>
+<p>When you create a table, SQLite (like all versions of SQL) automatically creates a unique index on the <strong>primary key</strong> column(s). However, you can also create additional indexes on other columns to speed up frequently used queries.</p>
+<p>To create an index in SQL, you use the <strong>CREATE INDEX</strong> statement with the following syntax:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="p">[</span><span class="k">UNIQUE</span><span class="p">]</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">index_name</span>
+<span class="k">ON</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="p">(</span><span class="n">column1</span><span class="w"> </span><span class="p">[,</span><span class="w"> </span><span class="n">column2</span><span class="p">,</span><span class="w"> </span><span class="p">...]);</span>
+</pre></div>
+</div>
+<p>Here’s a breakdown of the components:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">UNIQUE</span></code>: Optional keyword that creates a unique index, ensuring no duplicate values in the indexed column(s).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">index_name</span></code>: The name you want to give your index.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">table_name</span></code>: The name of the table on which you’re creating the index.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">column1,</span> <span class="pre">column2,</span> <span class="pre">...</span></code>: The column(s) to be indexed. You can index multiple columns by separating them with commas.</p></li>
+</ul>
+<p>For example, let’s say we want to create an index on the <em>LastName</em> column of our <em>Customers</em> table:!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">DROP</span> <span class="n">INDEX</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">idx_customers_lastname</span><span class="p">;</span>
+<span class="n">CREATE</span> <span class="n">INDEX</span> <span class="n">idx_customers_lastname</span>
+<span class="n">ON</span> <span class="n">Customers</span> <span class="p">(</span><span class="n">LastName</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///gotham.db
+Done.
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This statement creates an index named idx_customer_lastname on the LastName column, allowing for faster searches based on customer last names. This will allow us to search customers by their last name more quickly.</p>
+<p>SQLite supports several types of indexes, including <strong>unique indexes</strong>, which ensure that the indexed column(s) contain no duplicate values, and partial indexes, which only index a subset of rows based on a specified condition.</p>
+<p>By default, SQLite (like other RDBMSs) creates a <strong>clustered index</strong> for the primary key of every table, without you needing to do anything. This means that items are physically “clustered together” on disk (so, a record with id=1 is next to the record with id=2). THe <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">INDEX</span></code> command creates what is a called a <strong>non-clustered</strong> index, meaning that the indexes records that are NOT physically next to each other. (We’ll see more on how this works later). There can be only one clustered index per table, but any number of non-clustered indexes.</p>
+<p>Creating appropriate indexes is crucial for optimizing database performance, but how do they actually impact query speed? In the next section, we’ll explore the power of indexes in action using the EXPLAIN QUERY PLAN command and some practical examples from our Gotham City dataset.</p>
+</section>
+<section id="how-indexes-impact-speed">
+<h2>How Indexes Impact Speed<a class="headerlink" href="#how-indexes-impact-speed" title="Permalink to this heading">#</a></h2>
+<p>To understand the impact of indexes on query speed, we’ll use the <strong>EXPLAIN QUERY PLAN</strong> command. This command provides insight into how SQLite executes a query, including which indexes (if any) are being used.</p>
+<p>Let’s start with an example query on our <em>Accounts</em> table that gets customers with higher than average balances</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">Accounts</span>
+<span class="n">WHERE</span> <span class="n">Balance</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">SELECT</span> <span class="n">AVG</span><span class="p">(</span><span class="n">Balance</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">Accounts</span><span class="p">)</span>
+<span class="n">ORDER</span> <span class="n">BY</span> <span class="n">Balance</span> <span class="n">DESC</span>
+<span class="n">LIMIT</span> <span class="mi">5</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///gotham.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <tr>
+        <th>AccountID</th>
+        <th>CustomerID</th>
+        <th>AccountType</th>
+        <th>Balance</th>
+        <th>CreatedDate</th>
+    </tr>
+    <tr>
+        <td>8136</td>
+        <td>7952</td>
+        <td>Savings</td>
+        <td>92802.15340000001</td>
+        <td>2003-01-18</td>
+    </tr>
+    <tr>
+        <td>3401</td>
+        <td>4699</td>
+        <td>Savings</td>
+        <td>91534.3495</td>
+        <td>2015-03-25</td>
+    </tr>
+    <tr>
+        <td>304</td>
+        <td>277</td>
+        <td>Savings</td>
+        <td>91283.00280000002</td>
+        <td>2021-05-08</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>8</td>
+        <td>Checking</td>
+        <td>91000</td>
+        <td>2024-10-10</td>
+    </tr>
+    <tr>
+        <td>5953</td>
+        <td>5751</td>
+        <td>Savings</td>
+        <td>90689.35260000001</td>
+        <td>2013-12-29</td>
+    </tr>
+</table></div></div>
+</div>
+<p>Now, let’s see what the “query plan” is for this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">EXPLAIN</span> <span class="n">QUERY</span> <span class="n">PLAN</span>
+<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">Accounts</span>
+<span class="n">WHERE</span> <span class="n">Balance</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">SELECT</span> <span class="n">AVG</span><span class="p">(</span><span class="n">Balance</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">Accounts</span><span class="p">)</span>
+<span class="n">ORDER</span> <span class="n">BY</span> <span class="n">Balance</span> <span class="n">DESC</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///gotham.db
+Done.
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <tr>
+        <th>id</th>
+        <th>parent</th>
+        <th>notused</th>
+        <th>detail</th>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>0</td>
+        <td>0</td>
+        <td>SCAN Accounts</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>SCALAR SUBQUERY 1</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>8</td>
+        <td>0</td>
+        <td>SCAN Accounts</td>
+    </tr>
+    <tr>
+        <td>31</td>
+        <td>0</td>
+        <td>0</td>
+        <td>USE TEMP B-TREE FOR ORDER BY</td>
+    </tr>
+</table></div></div>
+</div>
+<p>If you look at the query plan here, you’ll notice a few key terms that pop out:</p>
+<ul class="simple">
+<li><p><strong>Full Table Scan</strong>: A full table scan occurs when SQLite reads every row in a table to find the data that matches the query conditions. In this case, <code class="docutils literal notranslate"><span class="pre">SCAN</span> <span class="pre">Accounts</span></code> indicates that SQLite is performing a full table scan on the <em>Accounts</em> table. Full table scans can be inefficient, especially for large tables, as they require reading and checking every single row. This will change when we create an index.</p></li>
+<li><p><strong>Scalar Subquery</strong>: A scalar subquery is a subquery that returns a single value. In this example, <code class="docutils literal notranslate"><span class="pre">SCALAR</span> <span class="pre">SUBQUERY</span> <span class="pre">1</span></code> refers to the subquery <code class="docutils literal notranslate"><span class="pre">(SELECT</span> <span class="pre">AVG(Balance)</span> <span class="pre">FROM</span> <span class="pre">Accounts)</span></code>, which calculates the average balance of all accounts. The result of this subquery is used in the main query’s WHERE clause.</p></li>
+<li><p><strong>Temporary B-Tree</strong>: In this case, <code class="docutils literal notranslate"><span class="pre">USE</span> <span class="pre">TEMP</span> <span class="pre">B-TREE</span> <span class="pre">FOR</span> <span class="pre">ORDER</span> <span class="pre">BY</span></code> indicates that SQLite is using a temporary B-tree data structure to sort the result set in descending order by the <em>Balance</em> column. We’ll dive deeper into B-trees in a future section.</p></li>
+</ul>
+<section id="impact-of-indexes">
+<h3>Impact of Indexes<a class="headerlink" href="#impact-of-indexes" title="Permalink to this heading">#</a></h3>
+<p>If an index were created on the <code class="docutils literal notranslate"><span class="pre">Balance</span></code> column, the query execution plan would likely be different. For example, with an index on <code class="docutils literal notranslate"><span class="pre">Balance</span></code>, the execution plan might show an <strong>index search</strong> instead of a full table scan, resulting in faster query execution times.</p>
+<p>To create an index on the <code class="docutils literal notranslate"><span class="pre">Balance</span></code> column, you could use the following command:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">CREATE</span> <span class="n">INDEX</span> <span class="n">IF</span> <span class="n">NOT</span> <span class="n">EXISTS</span> <span class="n">idx_accounts_balance</span>
+<span class="n">ON</span> <span class="n">Accounts</span> <span class="p">(</span><span class="n">Balance</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///gotham.db
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s see what happens to our query plan:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">EXPLAIN</span> <span class="n">QUERY</span> <span class="n">PLAN</span>
+<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">Accounts</span>
+<span class="n">WHERE</span> <span class="n">Balance</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">SELECT</span> <span class="n">AVG</span><span class="p">(</span><span class="n">Balance</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">Accounts</span><span class="p">)</span>
+<span class="n">ORDER</span> <span class="n">BY</span> <span class="n">Balance</span> <span class="n">DESC</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///gotham.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <tr>
+        <th>id</th>
+        <th>parent</th>
+        <th>notused</th>
+        <th>detail</th>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>0</td>
+        <td>0</td>
+        <td>SEARCH Accounts USING INDEX idx_accounts_balance (Balance&gt;?)</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>SCALAR SUBQUERY 1</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>8</td>
+        <td>0</td>
+        <td>SCAN Accounts USING COVERING INDEX idx_accounts_balance</td>
+    </tr>
+</table></div></div>
+</div>
+<p>SQLite now uses the idx_account_balance index to search for matching rows, resulting in a more efficient query execution. Instead of scanning the entire table, it can quickly locate the relevant rows using the index.</p>
+<p>Some new terms you’ll notice:</p>
+<ol class="arabic simple">
+<li><p><strong>Index Scan</strong>: An index scan is a type of table access that uses an index to locate the required data. In this example, <code class="docutils literal notranslate"><span class="pre">SEARCH</span> <span class="pre">Accounts</span> <span class="pre">USING</span> <span class="pre">INDEX</span> <span class="pre">idx_accounts_balance</span> <span class="pre">(Balance&gt;?)</span></code> means that SQLite is using the <em>idx_accounts_balance</em> index to find rows where the <em>Balance</em> is greater than the result of the scalar subquery.</p></li>
+<li><p><strong>Covering Index</strong>: A covering index is an index that contains all the columns required to satisfy a query, eliminating the need for additional table lookups. In the updated plan, <code class="docutils literal notranslate"><span class="pre">SCAN</span> <span class="pre">Accounts</span> <span class="pre">USING</span> <span class="pre">COVERING</span> <span class="pre">INDEX</span> <span class="pre">idx_accounts_balance</span></code> indicates that the <em>idx_accounts_balance</em> index is a covering index for the subquery. This means that all the data needed to calculate the average balance is available within the index itself, making the query more efficient.</p></li>
+</ol>
+</section>
+</section>
+<section id="timing-our-queries">
+<h2>Timing Our Queries<a class="headerlink" href="#timing-our-queries" title="Permalink to this heading">#</a></h2>
+<p>To further demonstrate the performance impact, let’s measure the execution time of our query with and without the index. We’ll be using Colab’s builtin <strong>timeit</strong> function, which will run this query many times, and give us the average runninng time. This helps miminize the role of chance in evaluating query performance based on a single case.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span> <span class="n">to</span> <span class="n">start</span><span class="p">,</span> <span class="n">drop</span> <span class="n">the</span> <span class="n">index</span>
+<span class="n">DROP</span> <span class="n">INDEX</span> <span class="n">idx_accounts_balance</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///gotham.db
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">timeit</span> <span class="o">-</span><span class="n">n</span> <span class="mi">1</span>
+<span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span> <span class="n">This</span> <span class="n">will</span> <span class="n">run</span> <span class="n">this</span> <span class="n">query</span> <span class="n">many</span> <span class="n">times</span>
+<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">Accounts</span>
+<span class="n">WHERE</span> <span class="n">Balance</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">SELECT</span> <span class="n">AVG</span><span class="p">(</span><span class="n">Balance</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">Accounts</span><span class="p">)</span>
+<span class="n">ORDER</span> <span class="n">BY</span> <span class="n">Balance</span> <span class="n">DESC</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///gotham.db
+Done.
+ * sqlite:///gotham.db
+Done.
+ * sqlite:///gotham.db
+Done.
+ * sqlite:///gotham.db
+Done.
+ * sqlite:///gotham.db
+Done.
+ * sqlite:///gotham.db
+Done.
+ * sqlite:///gotham.db
+Done.
+34.2 ms ± 6.2 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span> <span class="n">Recreate</span> <span class="n">our</span> <span class="n">index</span>
+<span class="n">CREATE</span> <span class="n">INDEX</span> <span class="n">idx_accounts_balance</span>
+<span class="n">ON</span> <span class="n">Accounts</span> <span class="p">(</span><span class="n">Balance</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///gotham.db
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">timeit</span> <span class="o">-</span><span class="n">n</span> <span class="mi">1</span>
+<span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span> <span class="n">Now</span> <span class="n">run</span> <span class="n">the</span> <span class="n">query</span> <span class="k">with</span> <span class="n">the</span> <span class="n">index</span>
+<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">Accounts</span>
+<span class="n">WHERE</span> <span class="n">Balance</span> <span class="o">&gt;</span> <span class="mi">25000</span> <span class="n">AND</span>  <span class="n">Balance</span> <span class="o">&lt;</span> <span class="mi">50000</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///gotham.db
+Done.
+ * sqlite:///gotham.db
+Done.
+ * sqlite:///gotham.db
+Done.
+ * sqlite:///gotham.db
+Done.
+ * sqlite:///gotham.db
+Done.
+ * sqlite:///gotham.db
+Done.
+ * sqlite:///gotham.db
+Done.
+29.6 ms ± 4.87 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>While the specific results you get will vary each time you run the test, you should find that (on average) the index scan runs a bit faster than the full table scan. (The differences in speed will be much more pronounced with large data sets).</p>
+</section>
+<section id="how-indexes-impact-storage">
+<h2>How Indexes Impact Storage<a class="headerlink" href="#how-indexes-impact-storage" title="Permalink to this heading">#</a></h2>
+<p>Indexes can speed up queries, but they are not free. Each index takes additional disk space because SQLite stores it in its own B-tree structure.</p>
+<section id="b-trees-the-backbone-of-database-storage">
+<h3>B-trees: The Backbone of Database Storage<a class="headerlink" href="#b-trees-the-backbone-of-database-storage" title="Permalink to this heading">#</a></h3>
+<p>A B-tree is a self-balancing tree structure that keeps keys sorted. Databases use B-trees because they reduce disk I/O: instead of scanning every row, the engine can move through a small number of nodes to find the right part of the data.</p>
+<p>Each node in a B-tree stores:</p>
+<ol class="arabic simple">
+<li><p>Sorted keys</p></li>
+<li><p>Pointers to child nodes</p></li>
+</ol>
+<p>At each step, SQLite compares the value you want with the keys in the current node and follows the matching pointer. That is what makes searches, inserts, and range queries efficient.</p>
+</section>
+<section id="how-sqlite-uses-b-trees">
+<h3>How SQLite Uses B-trees<a class="headerlink" href="#how-sqlite-uses-b-trees" title="Permalink to this heading">#</a></h3>
+<p>SQLite uses B-trees for both tables and indexes, but the two trees hold different information:</p>
+<ul class="simple">
+<li><p>The <strong>table B-tree</strong> stores table rows, usually ordered by the primary key.</p></li>
+<li><p>The <strong>index B-tree</strong> stores indexed values plus pointers back to the matching table rows.</p></li>
+</ul>
+<section id="table-b-tree-example">
+<h4>Table B-tree example<a class="headerlink" href="#table-b-tree-example" title="Permalink to this heading">#</a></h4>
+<p>For example, let’s consider a simplified representation of the <em>Accounts</em> table:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AccountID</span> <span class="o">|</span> <span class="n">CustomerID</span> <span class="o">|</span> <span class="n">Balance</span>
+<span class="mi">1</span>         <span class="o">|</span> <span class="mi">1</span>          <span class="o">|</span> <span class="mi">10000</span>
+<span class="mi">2</span>         <span class="o">|</span> <span class="mi">1</span>          <span class="o">|</span> <span class="mi">5000</span>
+<span class="mi">3</span>         <span class="o">|</span> <span class="mi">2</span>          <span class="o">|</span> <span class="mi">7500</span>
+<span class="mi">4</span>         <span class="o">|</span> <span class="mi">3</span>          <span class="o">|</span> <span class="mi">12000</span>
+</pre></div>
+</div>
+<p>In the table’s B-tree, the rows would be stored in nodes, sorted by the primary key (AccountID):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Node</span> <span class="mi">1</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5000</span><span class="p">)</span>
+<span class="n">Node</span> <span class="mi">2</span><span class="p">:</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7500</span><span class="p">)</span>  <span class="o">|</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">12000</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="index-b-tree-example">
+<h4>Index B-tree example<a class="headerlink" href="#index-b-tree-example" title="Permalink to this heading">#</a></h4>
+<p>When you create an index on a column, SQLite generates a separate B-tree for that index. The index B-tree stores the indexed column’s values along with pointers to the corresponding rows in the table’s B-tree.</p>
+<p>Let’s say we create an index on the <em>Balance</em> column. Then the <em>idx_accounts_balance</em> index B-tree would store the <em>Balance</em> values in sorted order, along with pointers to the corresponding rows in the <em>Accounts</em> table’s B-tree:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">Node</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">7500</span><span class="p">,</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+<span class="n">Node</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">12000</span><span class="p">,</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When you query the table using the indexed column, SQLite can quickly traverse the index B-tree to find the matching values and then follow the pointers to retrieve the full row data from the table’s B-tree.</p>
+<p>By using B-trees for both tables and indexes, SQLite ensures efficient data storage and retrieval, even for large datasets. The tradeoff is storage: every index needs its own B-tree, so every index increases the size of the database file.</p>
+</section>
+</section>
+<section id="graphic-b-trees">
+<h3>Graphic: B-Trees<a class="headerlink" href="#graphic-b-trees" title="Permalink to this heading">#</a></h3>
+<p>Here’s what our B-tree for our original table might look like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">mm</span><span class="p">(</span><span class="n">graph</span><span class="p">):</span>
+    <span class="n">graphbytes</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+    <span class="n">base64_bytes</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">graphbytes</span><span class="p">)</span>
+    <span class="n">base64_string</span> <span class="o">=</span> <span class="n">base64_bytes</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://mermaid.ink/img/&quot;</span> <span class="o">+</span> <span class="n">base64_string</span><span class="p">))</span>
+
+
+<span class="n">mm</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">graph TB</span>
+<span class="s2">  subgraph Accounts Table B-tree - sorting by id</span>
+<span class="s2">    N1((Node 1)) &lt;--&gt; |pointer to next/previous node| N2((Node 2))</span>
+<span class="s2">    N1 --- |contains| A1[AccountID - key: 1&lt;br&gt;CustomerID: 1&lt;br&gt;Balance: 10000]</span>
+<span class="s2">    N1 --- |contains| A2[AccountID - key: 2&lt;br&gt;CustomerID: 1&lt;br&gt;Balance: 5000]</span>
+<span class="s2">    N2 --- |contains| A3[AccountID - key: 3&lt;br&gt;CustomerID: 2&lt;br&gt;Balance: 7500]</span>
+<span class="s2">    N2 --- |contains| A4[AccountID - key: 4&lt;br&gt;CustomerID: 3&lt;br&gt;Balance: 12000]</span>
+<span class="s2">  end</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://mermaid.ink/img/CmdyYXBoIFRCCiAgc3ViZ3JhcGggQWNjb3VudHMgVGFibGUgQi10cmVlIC0gc29ydGluZyBieSBpZAogICAgTjEoKE5vZGUgMSkpIDwtLT4gfHBvaW50ZXIgdG8gbmV4dC9wcmV2aW91cyBub2RlfCBOMigoTm9kZSAyKSkKICAgIE4xIC0tLSB8Y29udGFpbnN8IEExW0FjY291bnRJRCAtIGtleTogMTxicj5DdXN0b21lcklEOiAxPGJyPkJhbGFuY2U6IDEwMDAwXQogICAgTjEgLS0tIHxjb250YWluc3wgQTJbQWNjb3VudElEIC0ga2V5OiAyPGJyPkN1c3RvbWVySUQ6IDE8YnI+QmFsYW5jZTogNTAwMF0KICAgIE4yIC0tLSB8Y29udGFpbnN8IEEzW0FjY291bnRJRCAtIGtleTogMzxicj5DdXN0b21lcklEOiAyPGJyPkJhbGFuY2U6IDc1MDBdCiAgICBOMiAtLS0gfGNvbnRhaW5zfCBBNFtBY2NvdW50SUQgLSBrZXk6IDQ8YnI+Q3VzdG9tZXJJRDogMzxicj5CYWxhbmNlOiAxMjAwMF0KICBlbmQK"/></div></div>
+</div>
+<p>And here’s what the B-tree for the index might look like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title</span>
+<span class="n">mm</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">graph TB</span>
+<span class="s2">  subgraph Balance Index B-tree - sorting by balance</span>
+<span class="s2">    IN1((Node 1)) &lt;--&gt; | points to next/previous node | IN2((Node 2))</span>
+<span class="s2">    IN1 --- |contains| IA2[Balance - key: 5000&lt;br&gt;Pointer to Account 2]</span>
+<span class="s2">    IN1 --- |contains| IA3[Balance - key: 7500&lt;br&gt;Pointer to Account 3]</span>
+<span class="s2">    IN2 --- |contains| IA1[Balance - key: 10000&lt;br&gt;Pointer to Account 1]</span>
+<span class="s2">    IN2 --- |contains| IA4[Balance - key: 12000&lt;br&gt;Pointer to Account 4]</span>
+<span class="s2">  end</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://mermaid.ink/img/CmdyYXBoIFRCCiAgc3ViZ3JhcGggQmFsYW5jZSBJbmRleCBCLXRyZWUgLSBzb3J0aW5nIGJ5IGJhbGFuY2UKICAgIElOMSgoTm9kZSAxKSkgPC0tPiB8IHBvaW50cyB0byBuZXh0L3ByZXZpb3VzIG5vZGUgfCBJTjIoKE5vZGUgMikpCiAgICBJTjEgLS0tIHxjb250YWluc3wgSUEyW0JhbGFuY2UgLSBrZXk6IDUwMDA8YnI+UG9pbnRlciB0byBBY2NvdW50IDJdCiAgICBJTjEgLS0tIHxjb250YWluc3wgSUEzW0JhbGFuY2UgLSBrZXk6IDc1MDA8YnI+UG9pbnRlciB0byBBY2NvdW50IDNdCiAgICBJTjIgLS0tIHxjb250YWluc3wgSUExW0JhbGFuY2UgLSBrZXk6IDEwMDAwPGJyPlBvaW50ZXIgdG8gQWNjb3VudCAxXQogICAgSU4yIC0tLSB8Y29udGFpbnN8IElBNFtCYWxhbmNlIC0ga2V5OiAxMjAwMDxicj5Qb2ludGVyIHRvIEFjY291bnQgNF0KICBlbmQK"/></div></div>
+</div>
+</section>
+<section id="checking-file-size">
+<h3>Checking File Size<a class="headerlink" href="#checking-file-size" title="Permalink to this heading">#</a></h3>
+<p>Because indexes require the construction of new B-trees, they require additional disk space. We can  check the file size (using Windows, Linux, etc.). Let’s first first check the size our database:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># In ubuntu du gives file size
+!du -h gotham.db
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.9M	gotham.db
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s see what happens when we an index.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">DROP</span> <span class="n">INDEX</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">idx_customers_first_last_phone</span><span class="p">;</span>
+<span class="n">CREATE</span> <span class="n">INDEX</span> <span class="n">idx_customers_first_last_phone</span>
+<span class="n">ON</span> <span class="n">Customers</span> <span class="p">(</span><span class="n">FirstName</span><span class="p">,</span> <span class="n">LastName</span><span class="p">,</span> <span class="n">PhoneNumber</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///gotham.db
+Done.
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># Now, we can check the size again
+!du -h gotham.db
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0M	gotham.db
+</pre></div>
+</div>
+</div>
+</div>
+<p>While your results migth vary somewhat, here’s what I got from running these commands:</p>
+<ul class="simple">
+<li><p>The database size before building the index was 1.9 mb</p></li>
+<li><p>The database size after building the index was 2.2 mb.</p></li>
+</ul>
+<p>This is a large difference–over 10%–and reinforces the principle that indexes (especially ones that combine multiple columns) need to be used with care.</p>
+</section>
+</section>
+</section>
+<section id="sql-indexing-guidelines-when-to-create-and-avoid-indexes">
+<h1>SQL Indexing Guidelines: When to Create and Avoid Indexes<a class="headerlink" href="#sql-indexing-guidelines-when-to-create-and-avoid-indexes" title="Permalink to this heading">#</a></h1>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Create an Index When…</p></th>
+<th class="head"><p>Avoid Creating an Index When…</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Columns are frequently used in WHERE clauses<br><em>E.g., <code class="docutils literal notranslate"><span class="pre">VillainID</span></code> in <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">Crimes</span> <span class="pre">WHERE</span> <span class="pre">VillainID</span> <span class="pre">=</span> <span class="pre">123</span></code></em></p></td>
+<td><p>Tables are small<br><em>For tables with few rows, a full table scan might be faster than using an index</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>Joining tables on specific columns<br><em>E.g., <code class="docutils literal notranslate"><span class="pre">CrimeID</span></code> in <code class="docutils literal notranslate"><span class="pre">Crimes</span></code> table when joining with <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> table</em></p></td>
+<td><p>Columns have low cardinality (few unique values)<br><em>E.g., a <code class="docutils literal notranslate"><span class="pre">Gender</span></code> column with only ‘M’ and ‘F’ values</em></p></td>
+</tr>
+<tr class="row-even"><td><p>Columns are often used in ORDER BY clauses<br><em>E.g., <code class="docutils literal notranslate"><span class="pre">Date</span></code> in <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">Crimes</span> <span class="pre">ORDER</span> <span class="pre">BY</span> <span class="pre">Date</span> <span class="pre">DESC</span></code></em></p></td>
+<td><p>Columns are frequently updated<br><em>Indexes need to be updated when the column values change, which can slow down write operations</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>Enforcing uniqueness is required<br><em>E.g., <code class="docutils literal notranslate"><span class="pre">VillainAlias</span></code> in the <code class="docutils literal notranslate"><span class="pre">Villains</span></code> table to ensure no duplicate aliases</em></p></td>
+<td><p>Tables experience frequent large batch updates or inserts<br><em>Indexes can significantly slow down these operations</em></p></td>
+</tr>
+<tr class="row-even"><td><p>Querying for a range of values is common<br><em>E.g., <code class="docutils literal notranslate"><span class="pre">Date</span></code> in <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">Crimes</span> <span class="pre">WHERE</span> <span class="pre">Date</span> <span class="pre">BETWEEN</span> <span class="pre">'2023-01-01'</span> <span class="pre">AND</span> <span class="pre">'2023-12-31'</span></code></em></p></td>
+<td><p>Columns contain large amounts of text<br><em>Indexing <code class="docutils literal notranslate"><span class="pre">TEXT</span></code> or <code class="docutils literal notranslate"><span class="pre">BLOB</span></code> columns can be inefficient and consume a lot of space</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>Columns are used in aggregate functions with GROUP BY<br><em>E.g., <code class="docutils literal notranslate"><span class="pre">District</span></code> in <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">District,</span> <span class="pre">COUNT(*)</span> <span class="pre">FROM</span> <span class="pre">Crimes</span> <span class="pre">GROUP</span> <span class="pre">BY</span> <span class="pre">District</span></code></em></p></td>
+<td><p>The column is rarely used in queries<br><em>If a column is only occasionally used in WHERE or JOIN clauses, an index might not be worth the overhead</em></p></td>
+</tr>
+<tr class="row-even"><td><p>Foreign key columns<br><em>E.g., <code class="docutils literal notranslate"><span class="pre">VillainID</span></code> in the <code class="docutils literal notranslate"><span class="pre">Crimes</span></code> table referencing <code class="docutils literal notranslate"><span class="pre">Villains</span></code> table</em></p></td>
+<td><p>Tables are very frequently updated but rarely queried<br><em>In write-heavy scenarios, the cost of maintaining indexes might outweigh their benefits</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>Columns used in DISTINCT queries<br><em>E.g., <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">DISTINCT</span> <span class="pre">CrimeType</span> <span class="pre">FROM</span> <span class="pre">Crimes</span></code></em></p></td>
+<td><p>Composite indexes with too many columns<br><em>Indexes with many columns can become inefficient and hard to maintain</em></p></td>
+</tr>
+<tr class="row-even"><td><p>Covering index opportunities exist<br><em>When all columns in a query can be satisfied by an index without accessing the table</em></p></td>
+<td><p>The database is already over-indexed<br><em>Too many indexes can lead to performance degradation and increased storage use</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>Improving performance of full-text searches<br><em>E.g., creating a full-text index on <code class="docutils literal notranslate"><span class="pre">Description</span></code> in a <code class="docutils literal notranslate"><span class="pre">CrimeReports</span></code> table</em></p></td>
+<td><p>Columns contain primarily NULL values<br><em>Indexing columns with many NULL values might not provide significant performance benefits</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Note</strong>: Always test the performance impact of indexes in your specific database environment. The effectiveness of an index can vary based on factors such as data distribution, query patterns, and the specific database management system being used.</p>
+<section id="introduction-to-transactions">
+<h2>Introduction to Transactions<a class="headerlink" href="#introduction-to-transactions" title="Permalink to this heading">#</a></h2>
+<p>In the world of databases, much like in the bustling financial district of Gotham City, many operations happen simultaneously. Imagine the chaos if every bank transaction in Gotham wasn’t carefully managed - it would be a playground for villains! This is where database transactions come into play. A <strong>transaction</strong> is a sequence of one or more database operations that are treated as a single unit of work. These operations could be inserting, updating, or deleting data. The key characteristic of a transaction is that it’s all-or-nothing: either all the operations within the transaction are completed successfully, or none of them are.</p>
+<p>Let’s consider a scenario at Gotham City Bank. Bruce Wayne wants to transfer money from his personal account to Wayne Enterprises’ account. This seemingly simple transfer actually involves multiple steps: first, the money is deducted from Bruce’s account, and then it’s added to the company’s account. If something goes wrong halfway through - perhaps due to a system crash or The Riddler’s latest cyber attack - we wouldn’t want Bruce’s money to vanish into thin air. This is why we use transactions.</p>
+<p>Transactions are crucial in maintaining the integrity and consistency of our database. They ensure that our data remains accurate even when multiple operations are happening concurrently or when unexpected errors occur. In our Gotham City Bank example, a transaction would guarantee that either both steps of the money transfer are completed, or neither is - the money can’t be deducted from Bruce’s account without being added to Wayne Enterprises’, or vice versa.</p>
+<section id="acid-properties-overview">
+<h3>ACID Properties Overview<a class="headerlink" href="#acid-properties-overview" title="Permalink to this heading">#</a></h3>
+<p>When discussing database transactions, you’ll often hear the term <strong>ACID</strong>. This isn’t a reference to Joker’s favorite chemical weapons, but rather an acronym that stands for four critical properties of transactions: <strong>Atomicity</strong>, <strong>Consistency</strong>, <strong>Isolation</strong>, and <strong>Durability</strong>. These properties ensure that database transactions are processed reliably and maintain data integrity, even in the face of errors, system failures, or concurrent access.</p>
+<p>Let’s break down what each of these properties means:</p>
+<ol class="arabic simple">
+<li><p><strong>Atomicity</strong> ensures that a transaction is treated as a single, indivisible unit. Either all operations in the transaction are completed successfully, or none are.</p></li>
+<li><p><strong>Consistency</strong> guarantees that a transaction brings the database from one valid state to another, maintaining all predefined rules and constraints.</p></li>
+<li><p><strong>Isolation</strong> ensures that concurrent execution of transactions leaves the database in the same state as if the transactions were executed sequentially.</p></li>
+<li><p><strong>Durability</strong>  means that once a transaction is committed, it remains so, even in the event of power loss, crashes, or errors.</p></li>
+</ol>
+<p>Understanding ACID properties is crucial for anyone working with databases, as they form the foundation of reliable data management. They’re like the principles Batman follows to keep Gotham safe - non-negotiable rules that maintain order in the face of chaos.</p>
+<p>In the following sections, we’ll dive deeper into each of these properties, exploring how they work and why they’re important. We’ll see how they apply in various scenarios in Gotham City, from managing the Batcave’s high-tech systems to keeping track of Arkham Asylum’s ever-rotating cast of inmates. By the end, you’ll have a solid grasp of how transactions and ACID properties help maintain order in the complex world of databases.</p>
+</section>
+<section id="atomicity">
+<h3>Atomicity<a class="headerlink" href="#atomicity" title="Permalink to this heading">#</a></h3>
+<p><strong>Atomicity</strong> is the first pillar of ACID properties, and it’s a concept as uncompromising as Batman’s commitment to justice. In database terms, atomicity guarantees that a transaction is treated as a single, indivisible unit of work. This means that all operations within a transaction must be completed successfully, or none of them will be. There’s no middle ground - it’s all or nothing.</p>
+<p>Let’s illustrate this with a scenario from Gotham City. Imagine Bruce Wayne is updating the Batcave’s inventory system. He’s adding a new Batmobile while simultaneously removing an older model. This process involves two operations:</p>
+<ol class="arabic simple">
+<li><p>Insert a record for the new Batmobile</p></li>
+<li><p>Delete the record of the old Batmobile</p></li>
+</ol>
+<p>Atomicity ensures that either both of these operations succeed, or neither does. If something goes wrong halfway through - perhaps a power outage caused by one of Mr. Freeze’s attacks - the database will revert to its original state. We won’t end up in a situation where we’ve added the new Batmobile but failed to remove the old one, or vice versa.</p>
+<p>This “all-or-nothing” approach is crucial for maintaining data integrity. Without atomicity, we could end up with inconsistent data that doesn’t reflect reality. In our Batcave example, an inventory that shows two Batmobiles when there’s really only one could lead to confusion and inefficiency in Batman’s operations.</p>
+<p>Implementing atomicity involves using <strong>commits</strong> and <strong>rollbacks</strong>. When a transaction completes successfully, we <strong>commit</strong> it, making all of its changes permanent. If any part of the transaction fails, we perform a <strong>rollback</strong>, undoing any changes made by the transaction and returning the database to its previous consistent state.</p>
+<p>In standard SQL, you can implement atomic transactions using the following basic syntax:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">BEGIN</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span>
+<span class="c1">-- Your SQL operations here</span>
+<span class="k">COMMIT</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>If an error occurs, you can use <code class="docutils literal notranslate"><span class="pre">ROLLBACK</span></code> instead of <code class="docutils literal notranslate"><span class="pre">COMMIT</span></code> to undo the changes:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">BEGIN</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span>
+<span class="c1">-- Your SQL operations here</span>
+<span class="c1">-- If an error occurs:</span>
+<span class="k">ROLLBACK</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Understanding and properly implementing atomicity is crucial for maintaining the integrity of your database, ensuring that complex operations either complete fully or don’t happen at all.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title</span>
+<span class="n">mm</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">flowchart TD</span>
+<span class="s2">    subgraph Transaction_Process</span>
+<span class="s2">        A[Starting State A&lt;br&gt;Consistent State of Database] --&gt; B[BEGIN TRANSACTION]</span>
+<span class="s2">        B --&gt; C[Perform Operations]</span>
+<span class="s2">        C --&gt; D{Error Occurred?}</span>
+<span class="s2">        D -- No --&gt; E[COMMIT TRANSACTION&lt;br&gt;Write operations to disk]</span>
+<span class="s2">        D -- Yes --&gt; F[ROLLBACK&lt;br&gt;Undo all operations]</span>
+<span class="s2">        F --&gt; A</span>
+<span class="s2">        E --&gt;G[Ending State B&lt;br&gt;Consistent State of Database]</span>
+<span class="s2">    end</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://mermaid.ink/img/CmZsb3djaGFydCBURAogICAgc3ViZ3JhcGggVHJhbnNhY3Rpb25fUHJvY2VzcwogICAgICAgIEFbU3RhcnRpbmcgU3RhdGUgQTxicj5Db25zaXN0ZW50IFN0YXRlIG9mIERhdGFiYXNlXSAtLT4gQltCRUdJTiBUUkFOU0FDVElPTl0KICAgICAgICBCIC0tPiBDW1BlcmZvcm0gT3BlcmF0aW9uc10KICAgICAgICBDIC0tPiBEe0Vycm9yIE9jY3VycmVkP30KICAgICAgICBEIC0tIE5vIC0tPiBFW0NPTU1JVCBUUkFOU0FDVElPTjxicj5Xcml0ZSBvcGVyYXRpb25zIHRvIGRpc2tdCiAgICAgICAgRCAtLSBZZXMgLS0+IEZbUk9MTEJBQ0s8YnI+VW5kbyBhbGwgb3BlcmF0aW9uc10KICAgICAgICBGIC0tPiBBCiAgICAgICAgRSAtLT5HW0VuZGluZyBTdGF0ZSBCPGJyPkNvbnNpc3RlbnQgU3RhdGUgb2YgRGF0YWJhc2VdCiAgICBlbmQK"/></div></div>
+</div>
+</section>
+<section id="consistency">
+<h3>Consistency<a class="headerlink" href="#consistency" title="Permalink to this heading">#</a></h3>
+<p><strong>Consistency</strong>, the second ACID property, is all about maintaining the database in a valid state. It ensures that a transaction can only bring the database from one valid state to another, adhering to all predefined rules and constraints. This property is like the laws and regulations that keep Gotham City functioning - they ensure that no matter what changes occur, the city (or in our case, the database) remains in a valid, predictable state.</p>
+<p>In database terms, consistency means that all data written to the database must adhere to all defined rules, including constraints, cascades, and triggers. These rules might include:</p>
+<ul class="simple">
+<li><p>Data types (e.g., you can’t store text in a numeric field)</p></li>
+<li><p>Unique constraints</p></li>
+<li><p>Foreign key constraints</p></li>
+<li><p>Check constraints that enforce specific business rules</p></li>
+</ul>
+<p>Let’s consider an example from the Gotham City Police Department (GCPD). They maintain a database of known super-villains, including which cell they’re assigned to in Arkham Asylum. The database has a rule that each cell can only hold one villain at a time. Consistency ensures that no transaction can violate this rule.</p>
+<p>Imagine Commissioner Gordon is updating the database after capturing both The Joker and The Penguin in a single night. Here’s what the transaction might look like:</p>
+<ol class="arabic simple">
+<li><p>Assign The Joker to Cell A1</p></li>
+<li><p>Assign The Penguin to Cell B2</p></li>
+<li><p>Update the status of both villains to “Incarcerated”</p></li>
+</ol>
+<p>Consistency guarantees that if any part of this transaction would violate the “one villain per cell” rule (for example, if Cell A1 was already occupied), the entire transaction would fail. The database would remain in its previous consistent state, rather than ending up in an invalid state with two villains assigned to the same cell.</p>
+<p>SQL provides various mechanisms to enforce consistency, some of which we have discussed earlier:</p>
+<ol class="arabic simple">
+<li><p><strong>Constraints</strong>: These are rules defined on columns or tables. For example:</p></li>
+</ol>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Villains</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">ID</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Name</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Cell</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">UNIQUE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Status</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">Status</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;At Large&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Incarcerated&#39;</span><span class="p">))</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Triggers</strong>: These are automated actions that occur in response to certain database events. For example:</p></li>
+</ol>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TRIGGER</span><span class="w"> </span><span class="n">check_cell_occupancy</span>
+<span class="k">BEFORE</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Villains</span>
+<span class="k">FOR</span><span class="w"> </span><span class="k">EACH</span><span class="w"> </span><span class="k">ROW</span>
+<span class="k">BEGIN</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="k">CASE</span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Villains</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">NEW</span><span class="p">.</span><span class="n">Cell</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="k">THEN</span><span class="w"> </span><span class="n">RAISE</span><span class="p">(</span><span class="k">ABORT</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Cell already occupied&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">END</span><span class="p">;</span>
+<span class="k">END</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Transactions</strong>: By grouping operations together in a transaction, you ensure that either all consistency rules are met, or none of the operations are performed.</p></li>
+</ol>
+<p>Maintaining consistency is crucial for ensuring that your database always reflects a valid real-world scenario. It prevents contradictions and impossibilities in your data, much like how the laws of Gotham prevent (or at least try to prevent) chaos from taking over the city.</p>
+</section>
+<section id="isolation">
+<h3>Isolation<a class="headerlink" href="#isolation" title="Permalink to this heading">#</a></h3>
+<p><strong>Isolation</strong>, the third ACID property, ensures that concurrent execution of transactions leaves the database in the same state as if the transactions were executed sequentially. In other words, each transaction should feel like it’s the only one interacting with the database, even when multiple transactions are running simultaneously. This property is crucial in multi-user database systems, much like how Batman needs to isolate and handle multiple crimes occurring simultaneously in Gotham without letting them interfere with each other.</p>
+<p>Imagine a scenario where both Bruce Wayne and Alfred are accessing the Batcomputer’s database at the same time. Bruce is updating the Batmobile’s fuel levels after a night of patrol, while Alfred is logging new equipment arrivals. Isolation ensures that these two operations don’t interfere with each other, preventing scenarios like lost updates or dirty reads.</p>
+<p><strong>Concurrency</strong> in databases refers to the ability of the database management system (DBMS) to handle multiple transactions simultaneously. While concurrency can greatly improve performance and responsiveness, it also introduces challenges. For instance, if two villains, let’s say The Riddler and The Penguin, try to access Wayne Enterprises’ financial records simultaneously, we need to ensure they don’t interfere with each other’s operations or see partially updated data.</p>
+<p>To manage concurrency and maintain isolation, databases use <strong>locks</strong>. A <strong>lock</strong> is a mechanism that restricts access to a piece of data. There are typically two types of locks:</p>
+<ol class="arabic simple">
+<li><p><strong>Shared locks (“read locks”)</strong>: Allow multiple transactions to read data simultaneously.</p></li>
+<li><p><strong>Exclusive locks (“write locks”)</strong>: Restrict access to a single transaction for write operations.</p></li>
+</ol>
+<p>For example, when Bruce is updating the Batmobile’s fuel levels, the database might place an exclusive lock on that record, preventing Alfred from making changes to the same data until Bruce’s transaction is complete.</p>
+<p>However, excessive locking can lead to performance issues and, in some cases, <strong>deadlocks</strong>. A <strong>deadlock</strong> occurs when two or more transactions are waiting for each other to release locks, resulting in a standoff. Imagine Batman and Catwoman each holding a piece of evidence the other needs - neither can proceed without the other’s item, but neither is willing to give up their own first. Databases have mechanisms to detect and resolve deadlocks, often by choosing one transaction to roll back.</p>
+<p>Full-featured client-server databases (such as PostgreSQL, MySQL, ORacle, etc.) offer various <strong>isolation levels</strong> that provide different trade-offs between consistency and performance:</p>
+<ul class="simple">
+<li><p><strong>Read Uncommitted.</strong> Transactions can see changes made by other transactions before they are finalized, which can lead to inconsistent data.</p></li>
+<li><p><strong>Read Committed.</strong>  Transactions can only see changes made by other transactions after they are finalized, reducing the risk of inconsistent data.</p></li>
+<li><p><strong>Repeatable Read.</strong>  Once a transaction reads data, it will see the same data if it reads it again, even if other transactions make changes in the meantime.</p></li>
+<li><p><strong>Serializable.</strong> Transactions are completely isolated from each other, as if they are happening one after the other, ensuring the highest level of data consistency.</p></li>
+</ul>
+<p>Each level provides stronger guarantees but potentially at the cost of reduced concurrency. SQLite, by default, operates at the Serializable isolation level.</p>
+<p>Understanding and properly implementing isolation is crucial for maintaining data integrity in multi-user environments, ensuring that concurrent operations don’t lead to data inconsistencies or conflicts.</p>
+</section>
+<section id="durability">
+<h3>Durability<a class="headerlink" href="#durability" title="Permalink to this heading">#</a></h3>
+<p><strong>Durability</strong>, the final ACID property, guarantees that once a transaction has been committed, it will remain so, even in the event of a system failure, power outage, or crash. This property ensures that your data persists, much like how the legacy of Batman endures through all of Gotham’s trials and tribulations.</p>
+<p>In database terms, durability means that all completed transactions are recorded in non-volatile memory. Once the database confirms that a transaction has been committed, that data should be safe, even if the server crashes immediately afterward.</p>
+<p>Let’s consider a scenario at Arkham Asylum. Dr. Harleen Quinzel (before her transformation into Harley Quinn) is updating patient records. She’s just finished noting that The Joker has been administered his daily medication - a crucial piece of information for maintaining order in the asylum. Durability ensures that even if there’s a sudden power outage (perhaps caused by Electrocutioner), this update will not be lost.</p>
+<p>Both SQLite and PostgreSQL implement durability, but they do so in slightly different ways:</p>
+<ol class="arabic simple">
+<li><p><strong>SQLite</strong> uses a write-ahead log (WAL) by default. Before changes are made to the main database file, they are written to this log. If a crash occurs during a transaction, SQLite can recover the changes from the WAL.</p></li>
+<li><p><strong>PostgreSQL</strong> uses a write-ahead log as well, but it also provides more advanced features for ensuring durability, such as:</p>
+<ul class="simple">
+<li><p>Asynchronous Commit: Allows for faster performance at the risk of losing the latest transactions in case of a crash.</p></li>
+<li><p>Synchronous Replication: Ensures that data is written to multiple servers before considering a transaction complete.</p></li>
+</ul>
+</li>
+</ol>
+<p>To ensure durability, databases use <strong>transaction logs</strong>. These logs record all database modifications. In the event of a system failure, the database can use these logs to recover to a consistent state. It’s like Batman’s case files - even if the Batcave is compromised, he can reconstruct his investigations from these detailed records.</p>
+<p>Here’s a simple example of a durable transaction in SQL:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">BEGIN</span><span class="p">;</span>
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">Inmates</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">MedicationAdministered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">TRUE</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Joker&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="nb">Date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">CURRENT_DATE</span><span class="p">;</span>
+<span class="k">COMMIT</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Once this COMMIT statement successfully completes, the database guarantees that this update will persist, even in the face of subsequent system failures.</p>
+<p>While durability provides strong guarantees, it’s important to note that it can impact performance. Writing every change to disk immediately can slow down transaction processing. Database administrators often need to balance durability requirements with performance needs, much like how Batman must balance his desire for justice with the practical limitations of his resources.</p>
+<p>Proper backup strategies are also crucial for maintaining durability over the long term. Regular backups ensure that even in catastrophic scenarios, your data can be recovered. It’s the database equivalent of Batman’s contingency plans - always prepared for the worst-case scenario.</p>
+<p>Understanding durability helps ensure that critical data is never lost, maintaining the integrity and reliability of your database system even in the face of unexpected events or system failures.</p>
+</section>
+<section id="deadlocks">
+<h3>Deadlocks<a class="headerlink" href="#deadlocks" title="Permalink to this heading">#</a></h3>
+<p>A deadlock happens when two transactions each hold a resource the other needs, so neither can finish.</p>
+<p>Simple example:</p>
+<ol class="arabic simple">
+<li><p>Transaction A locks resource X and asks for Y.</p></li>
+<li><p>Transaction B locks resource Y and asks for X.</p></li>
+</ol>
+<p>Both transactions wait forever unless the database intervenes.</p>
+<p>Common prevention strategies:</p>
+<ul class="simple">
+<li><p>acquire resources in a consistent order</p></li>
+<li><p>keep transactions short</p></li>
+<li><p>use timeouts or deadlock detection</p></li>
+<li><p>retry failed work after rollback</p></li>
+</ul>
+</section>
+<section id="transaction-performance-and-error-handling">
+<h3>Transaction Performance and Error Handling<a class="headerlink" href="#transaction-performance-and-error-handling" title="Permalink to this heading">#</a></h3>
+<p>Transactions protect data, but they also add overhead through locks, logging, and isolation rules.</p>
+<p>Keep in mind:</p>
+<ul class="simple">
+<li><p>smaller transactions usually scale better</p></li>
+<li><p>indexes help reduce lock time</p></li>
+<li><p>stronger isolation reduces concurrency</p></li>
+</ul>
+<p>Example recovery pattern:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">BEGIN</span><span class="p">;</span>
+<span class="n">SAVEPOINT</span><span class="w"> </span><span class="n">before_update</span><span class="p">;</span>
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">BatcaveInventory</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">Quantity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Quantity</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Batarang&#39;</span><span class="p">;</span>
+<span class="k">ROLLBACK</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">before_update</span><span class="p">;</span>
+<span class="k">COMMIT</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Use savepoints when you want part of a transaction to be reversible without losing all of the work.</p>
+</section>
+</section>
+<section id="nosql-case-study-harley-s-havoc">
+<h2>NoSQL Case Study: Harley’s Havoc<a class="headerlink" href="#nosql-case-study-harley-s-havoc" title="Permalink to this heading">#</a></h2>
+<p>After her latest split with the Joker, Harley Quinn decides to launch “Harley’s Havoc” - a marketplace for circus equipment, practical joke supplies, and questionably-obtained collectibles. Given the chaotic nature of her business and the need to handle thousands of simultaneous users during her infamous flash sales, she needs a database that can scale horizontally and handle rapid writes. She decides to use <strong>MongoDB</strong>, a widely used <strong>NoSQL</strong> database.</p>
+<p>MongoDB stores data in BSON (Binary JSON) format. Here’s how a typical product listing in Harley’s store might look:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;_id&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">ObjectId</span><span class="p">(</span><span class="s2">&quot;5f7d3a2e9d3b2c1234567890&quot;</span><span class="p">),</span>
+<span class="w">  </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Authentic Trick Mallet&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;description&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Guaranteed to make that *BONK* sound!&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;price&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">49.99</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;stock&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">42</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;categories&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;weapons&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;classics&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;crowd-favorites&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="s2">&quot;reviews&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;user&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PoisonIvy&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;rating&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;comment&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Perfect for bopping Batman!&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;user&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;CatWoman&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;rating&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;comment&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Shipping was slow but worth the wait&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="s2">&quot;variants&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;colors&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;purple&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="s2">&quot;sizes&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;standard&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;oversized&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Notice how flexible this structure is - we can nest arrays and objects, and each product document can have different fields. This flexibility is one of MongoDB’s key advantages over rigid SQL schemas.</p>
+<section id="scaling-out-why-harley-chose-mongodb">
+<h3>Scaling Out: Why Harley Chose MongoDB<a class="headerlink" href="#scaling-out-why-harley-chose-mongodb" title="Permalink to this heading">#</a></h3>
+<p>Unlike Gotham City Bank’s traditional SQL database, MongoDB can easily distribute data across multiple machines using <strong>sharding</strong>. When Harley’s flash sales cause traffic spikes, the system can handle it by:</p>
+<ol class="arabic simple">
+<li><p>Automatically distributing data across multiple shards</p></li>
+<li><p>Routing queries to appropriate shards</p></li>
+<li><p>Balancing data as new shards are added</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Example of how MongoDB might shard Harley&#39;s collection</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span><span class="s2">&quot;products&quot;</span><span class="p">)</span>
+<span class="nx">sh</span><span class="p">.</span><span class="nx">shardCollection</span><span class="p">(</span><span class="s2">&quot;harleysHavoc.products&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;categories&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;hashed&quot;</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="c1">// Shard by category for even distribution</span>
+</pre></div>
+</div>
+<section id="the-move-from-acid-to-base">
+<h4>The Move from ACID to BASE<a class="headerlink" href="#the-move-from-acid-to-base" title="Permalink to this heading">#</a></h4>
+<p>To achieve this scalability, MongoDB adopts <strong>BASE (Basically Available, Soft state, Eventually consistent)</strong> instead of ACID properties. Here’s what this means for Harley’s business:</p>
+<p><strong>Advantages:</strong></p>
+<ul class="simple">
+<li><p>Can handle thousands of simultaneous writes during flash sales</p></li>
+<li><p>New product categories can be added without schema changes</p></li>
+<li><p>Queries can be distributed across multiple servers</p></li>
+<li><p>Quick recovery if a server goes down (high availability)</p></li>
+</ul>
+<p><strong>Trade-offs:</strong></p>
+<ul class="simple">
+<li><p>No true multi-document transactions (until recent versions, which impose a speed cost)</p></li>
+<li><p>Eventual consistency means inventory counts might be temporarily incorrect</p></li>
+<li><p>Complex queries across multiple collections are more challenging</p></li>
+<li><p>No built-in referential integrity</p></li>
+</ul>
+</section>
+</section>
+<section id="why-this-would-be-disastrous-for-gotham-city-bank">
+<h3>Why This Would Be Disastrous for Gotham City Bank<a class="headerlink" href="#why-this-would-be-disastrous-for-gotham-city-bank" title="Permalink to this heading">#</a></h3>
+<p>Let’s contrast this with banking requirements:</p>
+<ol class="arabic simple">
+<li><p><strong>Atomicity</strong>: When the Joker transfers money between accounts, it must either completely succeed or completely fail. There’s no room for “eventual consistency” when dealing with money.</p></li>
+<li><p><strong>Consistency</strong>: Account balances must be accurate at all times. The bank can’t tell Batman his account balance is $10,000,000 on one server and $9,000,000 on another.</p></li>
+<li><p><strong>Isolation</strong>: If Penguin and Riddler are both trying to withdraw from the same account, their transactions must be properly serialized to prevent double-spending.</p></li>
+<li><p><strong>Durability</strong>: Once a transaction is confirmed, it must survive any system crashes. The bank can’t tell Two-Face “sorry, that deposit might have gotten lost during a server failover.”</p></li>
+</ol>
+</section>
+<section id="best-of-both-worlds-hybrid-approaches">
+<h3>Best of Both Worlds: Hybrid Approaches<a class="headerlink" href="#best-of-both-worlds-hybrid-approaches" title="Permalink to this heading">#</a></h3>
+<p>Modern applications often use both SQL and NoSQL databases. For Harley’s business, she could:</p>
+<ul class="simple">
+<li><p>Use MongoDB for product catalog and user sessions</p></li>
+<li><p>Use PostgreSQL for payment processing and critical inventory tracking</p></li>
+<li><p>Implement application-level consistency checks for critical operations</p></li>
+</ul>
+<p>Finally, it is important to note that MongoDB has gotten more “relational” over the years (for example, providing better support for transactions) even while popular RDBMSs (Postgres, Oracle, SQL Server) have provided native support for JSON and sharding.</p>
+</section>
+</section>
+</section>
+<section id="a-day-in-the-life-of-a-database-administrator">
+<h1>A Day in the Life of a Database Administrator<a class="headerlink" href="#a-day-in-the-life-of-a-database-administrator" title="Permalink to this heading">#</a></h1>
+<p>Barbara Gordon (“Oracle”) is the DBA for Gotham City PD. Her day illustrates what DBAs monitor and why logs matter.</p>
+<section id="morning-health-checks">
+<h2>Morning: health checks<a class="headerlink" href="#morning-health-checks" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>review overnight backups</p></li>
+<li><p>check CPU, memory, and disk I/O</p></li>
+<li><p>scan error logs for failures</p></li>
+</ul>
+<section id="mid-morning-performance-tuning">
+<h3>Mid-morning: performance tuning<a class="headerlink" href="#mid-morning-performance-tuning" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>inspect slow queries</p></li>
+<li><p>add or adjust indexes</p></li>
+<li><p>compare reports over time to spot trends</p></li>
+</ul>
+</section>
+<section id="afternoon-security-and-change-management">
+<h3>Afternoon: security and change management<a class="headerlink" href="#afternoon-security-and-change-management" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>investigate suspicious logins</p></li>
+<li><p>review access patterns</p></li>
+<li><p>apply schema changes carefully and document them</p></li>
+</ul>
+<p>By the end of the day, Barbara turns raw metrics into actionable reports for technical and non-technical stakeholders.</p>
+</section>
+</section>
+<section id="common-database-performance-metrics">
+<h2>Common Database Performance Metrics<a class="headerlink" href="#common-database-performance-metrics" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Metric</p></th>
+<th class="head"><p>What it tells you</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CPU usage</p></td>
+<td><p>How busy the database server is</p></td>
+</tr>
+<tr class="row-odd"><td><p>Memory consumption</p></td>
+<td><p>Whether caching and working sets fit in RAM</p></td>
+</tr>
+<tr class="row-even"><td><p>Disk I/O</p></td>
+<td><p>How much reading and writing hits storage</p></td>
+</tr>
+<tr class="row-odd"><td><p>Query execution time</p></td>
+<td><p>How long individual statements take</p></td>
+</tr>
+<tr class="row-even"><td><p>Transactions per second</p></td>
+<td><p>Overall workload throughput</p></td>
+</tr>
+<tr class="row-odd"><td><p>Connections</p></td>
+<td><p>How many sessions are active</p></td>
+</tr>
+<tr class="row-even"><td><p>Cache hit ratio</p></td>
+<td><p>How often reads come from memory instead of disk</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lock wait time</p></td>
+<td><p>How much time sessions spend blocked</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Watching these metrics helps a DBA decide whether a problem is caused by query design, concurrency, hardware pressure, or workload spikes.</p>
+</section>
+<section id="lab-querying-database-logs">
+<h2>Lab: Querying Database Logs<a class="headerlink" href="#lab-querying-database-logs" title="Permalink to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">dbms_logs.db</span></code> database contains one table, <code class="docutils literal notranslate"><span class="pre">Logs</span></code>, with structured events stored as JSON in the <code class="docutils literal notranslate"><span class="pre">data</span></code> column.</p>
+<section id="table-structure">
+<h3>Table structure<a class="headerlink" href="#table-structure" title="Permalink to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td><p>INTEGER</p></td>
+<td><p>Unique log entry ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">timestamp</span></code></p></td>
+<td><p>DATETIME</p></td>
+<td><p>When the log was recorded</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Event details</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="what-to-look-for-in-this-lab">
+<h3>What to look for in this lab<a class="headerlink" href="#what-to-look-for-in-this-lab" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>query performance</p></li>
+<li><p>transaction activity</p></li>
+<li><p>errors</p></li>
+<li><p>connection events</p></li>
+<li><p>schema changes</p></li>
+</ul>
+<p>As you query the table, pay attention to how the <code class="docutils literal notranslate"><span class="pre">type</span></code> inside <code class="docutils literal notranslate"><span class="pre">data</span></code> changes which fields are available.</p>
+</section>
+</section>
+<section id="log-entry-types-to-know">
+<h2>Log Entry Types to Know<a class="headerlink" href="#log-entry-types-to-know" title="Permalink to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">data</span></code> JSON object varies by event type.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Useful fields</p></th>
+<th class="head"><p>Typical question</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">query_execution</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">query_id</span></code>, <code class="docutils literal notranslate"><span class="pre">sql</span></code>, <code class="docutils literal notranslate"><span class="pre">execution_time_ms</span></code>, <code class="docutils literal notranslate"><span class="pre">rows_affected</span></code>, <code class="docutils literal notranslate"><span class="pre">user</span></code></p></td>
+<td><p>Which queries are slow?</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">transaction</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">transaction_id</span></code>, <code class="docutils literal notranslate"><span class="pre">operation</span></code>, <code class="docutils literal notranslate"><span class="pre">duration_ms</span></code>, <code class="docutils literal notranslate"><span class="pre">user</span></code></p></td>
+<td><p>Which transactions were long or failed?</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">error</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">error_code</span></code>, <code class="docutils literal notranslate"><span class="pre">message</span></code>, <code class="docutils literal notranslate"><span class="pre">query_id</span></code>, <code class="docutils literal notranslate"><span class="pre">sql</span></code></p></td>
+<td><p>What failed and why?</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">connection</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">action</span></code>, <code class="docutils literal notranslate"><span class="pre">user</span></code>, <code class="docutils literal notranslate"><span class="pre">ip_address</span></code>, <code class="docutils literal notranslate"><span class="pre">duration_ms</span></code></p></td>
+<td><p>Who connected, from where, and for how long?</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">schema_change</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">object_type</span></code>, <code class="docutils literal notranslate"><span class="pre">object_name</span></code>, <code class="docutils literal notranslate"><span class="pre">action</span></code>, <code class="docutils literal notranslate"><span class="pre">ddl_statement</span></code></p></td>
+<td><p>What structural changes were made?</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A good first step is to filter by <code class="docutils literal notranslate"><span class="pre">json_extract(data,</span> <span class="pre">'$.type')</span></code> and then pull only the fields relevant to that event class.</p>
+<section id="querying-the-database">
+<h3>Querying the Database<a class="headerlink" href="#querying-the-database" title="Permalink to this heading">#</a></h3>
+<p>To extract information from the <code class="docutils literal notranslate"><span class="pre">Logs</span></code> table, you can use SQLite’s JSON functions. Below are some sample queries to help you get started.</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">json_extract(json,</span> <span class="pre">path)</span></code></strong>: Extracts a value from a JSON string.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">json_type(json,</span> <span class="pre">path)</span></code></strong>: Returns the type of the value at the specified path.</p></li>
+</ul>
+<p>Some sample queries:</p>
+</section>
+<section id="sample-queries">
+<h3>Sample Queries<a class="headerlink" href="#sample-queries" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!wget https://github.com/brendanpshea/database_sql/raw/main/data/dbms_logs.db -q -nc
+%load_ext sql
+%sql sqlite:///dbms_logs.db
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span><span class="n">Retrieve</span> <span class="nb">all</span> <span class="n">query</span> <span class="n">execution</span> <span class="n">logs</span>
+<span class="n">SELECT</span>
+  <span class="nb">id</span><span class="p">,</span>
+  <span class="n">timestamp</span><span class="p">,</span>
+  <span class="n">json_extract</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;$.query_id&#39;</span><span class="p">)</span> <span class="n">AS</span> <span class="n">query_id</span><span class="p">,</span>
+  <span class="n">json_extract</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;$.sql&#39;</span><span class="p">)</span> <span class="n">AS</span> <span class="n">sql_statement</span><span class="p">,</span>
+  <span class="n">json_extract</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;$.execution_time_ms&#39;</span><span class="p">)</span> <span class="n">AS</span> <span class="n">execution_time_ms</span><span class="p">,</span>
+  <span class="n">json_extract</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;$.rows_affected&#39;</span><span class="p">)</span> <span class="n">AS</span> <span class="n">rows_affected</span><span class="p">,</span>
+  <span class="n">json_extract</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;$.user&#39;</span><span class="p">)</span> <span class="n">AS</span> <span class="n">user</span>
+<span class="n">FROM</span> <span class="n">Logs</span>
+<span class="n">WHERE</span> <span class="n">json_extract</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;$.type&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;query_execution&#39;</span>
+<span class="n">LIMIT</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///dbms_logs.db
+   sqlite:///gotham.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <tr>
+        <th>id</th>
+        <th>timestamp</th>
+        <th>query_id</th>
+        <th>sql_statement</th>
+        <th>execution_time_ms</th>
+        <th>rows_affected</th>
+        <th>user</th>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>2024-09-04T09:17:09.045414</td>
+        <td>Q-8305</td>
+        <td>SELECT * FROM users WHERE last_login &gt; &#x27;2023-10-30 19:52:34&#x27;</td>
+        <td>199.2</td>
+        <td>685</td>
+        <td>user_64</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>2024-09-19T16:28:24.045934</td>
+        <td>Q-8385</td>
+        <td>DELETE FROM expired_sessions WHERE expiry_date &lt; &#x27;2023-12-29 21:37:18&#x27;</td>
+        <td>466.24</td>
+        <td>689</td>
+        <td>user_19</td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>2024-08-31T02:47:26.046207</td>
+        <td>Q-6789</td>
+        <td>DELETE FROM expired_sessions WHERE expiry_date &lt; &#x27;2024-08-16 16:24:21&#x27;</td>
+        <td>32.7</td>
+        <td>152</td>
+        <td>user_66</td>
+    </tr>
+    <tr>
+        <td>37</td>
+        <td>2024-09-13T00:39:58.048539</td>
+        <td>Q-4412</td>
+        <td>SELECT product_id, SUM(quantity) FROM sales WHERE sale_date = &#x27;2024-03-20 16:45:59&#x27; GROUP BY product_id</td>
+        <td>4083.9</td>
+        <td>957</td>
+        <td>user_93</td>
+    </tr>
+    <tr>
+        <td>38</td>
+        <td>2024-09-04T06:55:44.048599</td>
+        <td>Q-2576</td>
+        <td>UPDATE accounts SET balance = balance + -10.58 WHERE account_id = 2758</td>
+        <td>2556.38</td>
+        <td>850</td>
+        <td>user_6</td>
+    </tr>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span><span class="n">Find</span> <span class="n">errors</span> <span class="n">witha</span> <span class="n">specific</span> <span class="n">code</span>
+<span class="n">SELECT</span>
+  <span class="nb">id</span><span class="p">,</span>
+  <span class="n">timestamp</span><span class="p">,</span>
+  <span class="n">json_extract</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;$.error_code&#39;</span><span class="p">)</span> <span class="n">AS</span> <span class="n">error_code</span><span class="p">,</span>
+  <span class="n">json_extract</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;$.message&#39;</span><span class="p">)</span> <span class="n">AS</span> <span class="n">message</span><span class="p">,</span>
+  <span class="n">json_extract</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;$.query_id&#39;</span><span class="p">)</span> <span class="n">AS</span> <span class="n">query_id</span><span class="p">,</span>
+  <span class="n">json_extract</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;$.sql&#39;</span><span class="p">)</span> <span class="n">AS</span> <span class="n">sql_statement</span>
+<span class="n">FROM</span> <span class="n">Logs</span>
+<span class="n">WHERE</span> <span class="n">json_extract</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;$.type&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;error&#39;</span>
+  <span class="n">AND</span> <span class="n">json_extract</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;$.error_code&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;ORA-00001&#39;</span>
+<span class="n">LIMIT</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///dbms_logs.db
+   sqlite:///gotham.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <tr>
+        <th>id</th>
+        <th>timestamp</th>
+        <th>error_code</th>
+        <th>message</th>
+        <th>query_id</th>
+        <th>sql_statement</th>
+    </tr>
+    <tr>
+        <td>61</td>
+        <td>2024-09-03T22:28:21.050081</td>
+        <td>ORA-00001</td>
+        <td>Unique constraint violated</td>
+        <td>Q-5291</td>
+        <td>DELETE FROM expired_sessions WHERE expiry_date &lt; &#x27;2024-03-11 12:26:58&#x27;</td>
+    </tr>
+    <tr>
+        <td>351</td>
+        <td>2024-08-26T02:53:10.069339</td>
+        <td>ORA-00001</td>
+        <td>Unique constraint violated</td>
+        <td>Q-4517</td>
+        <td>DELETE FROM expired_sessions WHERE expiry_date &lt; &#x27;2024-08-01 03:17:31&#x27;</td>
+    </tr>
+    <tr>
+        <td>439</td>
+        <td>2024-08-30T12:53:03.073980</td>
+        <td>ORA-00001</td>
+        <td>Unique constraint violated</td>
+        <td>Q-5594</td>
+        <td>UPDATE products SET stock = stock - 1 WHERE id = 558</td>
+    </tr>
+    <tr>
+        <td>461</td>
+        <td>2024-09-09T19:29:09.074835</td>
+        <td>ORA-00001</td>
+        <td>Unique constraint violated</td>
+        <td>Q-5940</td>
+        <td>DELETE FROM expired_sessions WHERE expiry_date &lt; &#x27;2024-04-08 11:24:18&#x27;</td>
+    </tr>
+    <tr>
+        <td>466</td>
+        <td>2024-09-02T13:26:31.075155</td>
+        <td>ORA-00001</td>
+        <td>Unique constraint violated</td>
+        <td>Q-6007</td>
+        <td>SELECT * FROM users WHERE last_login &gt; &#x27;2024-01-02 10:50:11&#x27;</td>
+    </tr>
+    <tr>
+        <td>481</td>
+        <td>2024-09-02T23:14:14.075941</td>
+        <td>ORA-00001</td>
+        <td>Unique constraint violated</td>
+        <td>Q-4459</td>
+        <td>UPDATE products SET stock = stock - 1 WHERE id = 480</td>
+    </tr>
+    <tr>
+        <td>505</td>
+        <td>2024-09-12T07:40:03.656038</td>
+        <td>ORA-00001</td>
+        <td>Unique constraint violated</td>
+        <td>Q-8420</td>
+        <td>INSERT INTO orders (user_id, product_id, quantity) VALUES (817, 296, 9)</td>
+    </tr>
+    <tr>
+        <td>530</td>
+        <td>2024-09-05T19:54:18.657065</td>
+        <td>ORA-00001</td>
+        <td>Unique constraint violated</td>
+        <td>Q-8690</td>
+        <td>SELECT * FROM users WHERE last_login &gt; &#x27;2023-11-30 05:32:33&#x27;</td>
+    </tr>
+    <tr>
+        <td>562</td>
+        <td>2024-09-20T13:33:16.658097</td>
+        <td>ORA-00001</td>
+        <td>Unique constraint violated</td>
+        <td>Q-1629</td>
+        <td>SELECT COUNT(*) FROM orders WHERE order_date BETWEEN &#x27;2023-12-24 12:34:35&#x27; AND &#x27;2024-07-18 18:15:29&#x27;</td>
+    </tr>
+    <tr>
+        <td>688</td>
+        <td>2024-08-28T01:58:39.662287</td>
+        <td>ORA-00001</td>
+        <td>Unique constraint violated</td>
+        <td>Q-1873</td>
+        <td>SELECT COUNT(*) FROM orders WHERE order_date BETWEEN &#x27;2024-06-30 13:23:59&#x27; AND &#x27;2024-09-20 01:36:19&#x27;</td>
+    </tr>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span><span class="n">Get</span> <span class="n">number</span> <span class="n">of</span> <span class="n">connections</span> <span class="n">per</span> <span class="n">user</span>
+<span class="n">SELECT</span>
+  <span class="n">json_extract</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;$.user&#39;</span><span class="p">)</span> <span class="n">AS</span> <span class="n">user</span><span class="p">,</span>
+  <span class="n">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="n">AS</span> <span class="n">connection_count</span>
+<span class="n">FROM</span> <span class="n">Logs</span>
+<span class="n">WHERE</span> <span class="n">json_extract</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;$.type&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;connection&#39;</span>
+  <span class="n">AND</span> <span class="n">json_extract</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;$.action&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;CONNECT&#39;</span>
+<span class="n">GROUP</span> <span class="n">BY</span> <span class="n">user</span>
+<span class="n">ORDER</span> <span class="n">BY</span> <span class="n">connection_count</span> <span class="n">DESC</span>
+<span class="n">LIMIT</span> <span class="mi">5</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///dbms_logs.db
+   sqlite:///gotham.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <tr>
+        <th>user</th>
+        <th>connection_count</th>
+    </tr>
+    <tr>
+        <td>user_50</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>user_58</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>user_35</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>user_29</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>user_13</td>
+        <td>4</td>
+    </tr>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="o">--</span><span class="n">Get</span> <span class="n">average</span> <span class="n">query</span> <span class="n">execution</span> <span class="n">time</span>
+<span class="n">SELECT</span>
+  <span class="n">ROUND</span><span class="p">(</span><span class="n">AVG</span><span class="p">(</span><span class="n">json_extract</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;$.execution_time_ms&#39;</span><span class="p">)),</span><span class="mi">2</span><span class="p">)</span> <span class="n">AS</span> <span class="n">avg_execution_time_ms</span>
+<span class="n">FROM</span> <span class="n">Logs</span>
+<span class="n">WHERE</span> <span class="n">json_extract</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;$.type&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;query_execution&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///dbms_logs.db
+   sqlite:///gotham.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <tr>
+        <th>avg_execution_time_ms</th>
+    </tr>
+    <tr>
+        <td>2370.28</td>
+    </tr>
+</table></div></div>
+</div>
+</section>
+</section>
+<section id="lab-practice-your-sql">
+<h2>Lab: Practice Your SQL<a class="headerlink" href="#lab-practice-your-sql" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!wget https://github.com/brendanpshea/database_sql/raw/main/sql_select_quiz/sql_select_quiz.py -q -nc
+from sql_select_quiz import *
+json_url = &quot;https://github.com/brendanpshea/database_sql/raw/main/quiz/sql_dbms_log_quiz.json&quot;
+db_url = &quot;https://github.com/brendanpshea/database_sql/raw/main/data/dbms_logs.db&quot;
+
+sql_select_quiz_url(db_url, json_url)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "5e5058c85ea64fe8a1500354d93a62ec", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<section id="loop-of-the-recursive-dragon-databse-theory">
+<h3>Loop of the Recursive Dragon: Databse Theory<a class="headerlink" href="#loop-of-the-recursive-dragon-databse-theory" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The external LOTR mini-game is skipped during automated execution. Run this cell interactively if you want the activity.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<style>
+.bbs-container {
+    background-color: #1e1e1e;
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+}
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.section {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.bold { font-weight: bold; }
+.underline { text-decoration: underline; }
+.yellow { color: #ffff00; }
+.red { color: #ff0000; }
+.cyan { color: #00ffff; }
+</style>
+</div><script type="application/vnd.jupyter.widget-view+json">{"model_id": "706ef7fc0c6b4bb7b7ef7a6d7058a0e4", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+</section>
+<section id="key-points-summary">
+<h2>Key Points Summary<a class="headerlink" href="#key-points-summary" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Indexes are separate data structures that allow the database engine to find and retrieve data more efficiently without scanning the entire table.</p></li>
+<li><p>Creating appropriate indexes is crucial for optimizing database performance, but indexes also require additional storage space.</p></li>
+<li><p>Transactions ensure data integrity and reliability by treating a sequence of database operations as a single unit of work, adhering to the ACID properties: Atomicity, Consistency, Isolation, and Durability.</p></li>
+<li><p>SQLite provides commands like BEGIN, COMMIT, ROLLBACK, and SAVEPOINT to work with transactions and manage changes to the database.</p></li>
+<li><p>Concurrent transactions can lead to issues like lost updates and inconsistent data, so databases employ locking mechanisms to control simultaneous access to data.</p></li>
+<li><p>Database monitoring involves continuously observing and tracking various aspects of a database system to ensure it’s running smoothly and efficiently.</p></li>
+<li><p>Reporting generates detailed analyses and summaries based on the data collected through monitoring, helping database administrators make informed decisions.</p></li>
+<li><p>Logging systematically records events, activities, and metrics related to the database system, providing valuable information for troubleshooting, performance optimization, and security auditing.</p></li>
+<li><p>Database administrators like ORACLE rely on a combination of tools, techniques, and best practices to effectively monitor, manage, and optimize databases, ensuring their reliability, performance, and security.</p></li>
+</ul>
+</section>
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Term</p></th>
+<th class="head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ACID</p></td>
+<td><p>An acronym representing the four key properties of database transactions: Atomicity, Consistency, Isolation, and Durability.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Atomicity</p></td>
+<td><p>The property ensuring that a transaction is treated as a single, indivisible unit of work, which either completes entirely or fails completely.</p></td>
+</tr>
+<tr class="row-even"><td><p>BEGIN</p></td>
+<td><p>A SQL command used to explicitly start a new transaction in a database management system.</p></td>
+</tr>
+<tr class="row-odd"><td><p>B-tree</p></td>
+<td><p>A self-balancing tree data structure commonly used in databases and file systems for efficient data retrieval, insertion, and deletion operations.</p></td>
+</tr>
+<tr class="row-even"><td><p>Clustered index</p></td>
+<td><p>A type of index that determines the physical order of data in a table, allowing for faster data retrieval based on the indexed columns.</p></td>
+</tr>
+<tr class="row-odd"><td><p>COMMIT</p></td>
+<td><p>A SQL command used to permanently save the changes made during a transaction to the database.</p></td>
+</tr>
+<tr class="row-even"><td><p>Concurrency</p></td>
+<td><p>The ability of a database management system to handle multiple transactions or operations simultaneously without conflicts.</p></td>
+</tr>
+<tr class="row-odd"><td><p>connection logs</p></td>
+<td><p>Records of database connections, including details such as user, time, duration, and connection status.</p></td>
+</tr>
+<tr class="row-even"><td><p>Consistency</p></td>
+<td><p>The property ensuring that a transaction brings the database from one valid state to another, maintaining all predefined rules and constraints.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Covering index</p></td>
+<td><p>An index that includes all the columns required to satisfy a query, eliminating the need to access the actual table data.</p></td>
+</tr>
+<tr class="row-even"><td><p>CREATE INDEX index_name on tb1 (c1,c2,…)</p></td>
+<td><p>A SQL command used to create an index on one or more columns of a specified table to improve query performance.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Database monitoring</p></td>
+<td><p>The process of continuously tracking and analyzing database performance, resource usage, and potential issues to ensure optimal operation.</p></td>
+</tr>
+<tr class="row-even"><td><p>Database reporting</p></td>
+<td><p>The generation of structured information about database activities, performance metrics, and usage patterns for analysis and decision-making.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Durability</p></td>
+<td><p>The property ensuring that once a transaction is committed, its changes are permanent and will survive system failures or crashes.</p></td>
+</tr>
+<tr class="row-even"><td><p>Exclusive (Write) Lock</p></td>
+<td><p>A lock that prevents other transactions from reading or modifying the locked data, typically used for write operations.</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPLAIN QUERY PLAN</p></td>
+<td><p>A SQL command used to display the execution plan of a query, helping developers optimize query performance.</p></td>
+</tr>
+<tr class="row-even"><td><p>Full table scan</p></td>
+<td><p>A database operation that reads every row in a table, typically used when no suitable index is available for a query.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Index</p></td>
+<td><p>A data structure that improves the speed of data retrieval operations on a database table by providing quick access to rows.</p></td>
+</tr>
+<tr class="row-even"><td><p>Index scan</p></td>
+<td><p>A database operation that uses an index to locate and retrieve specific rows from a table, generally faster than a full table scan for selective queries.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Isolation</p></td>
+<td><p>The property that ensures concurrent transactions do not interfere with each other, maintaining data integrity and consistency.</p></td>
+</tr>
+<tr class="row-even"><td><p>Non-clustered index</p></td>
+<td><p>An index structure separate from the data rows, containing the indexed columns and a pointer to the corresponding table rows.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ROLLBACK</p></td>
+<td><p>A SQL command used to undo all changes made in the current transaction and end the transaction.</p></td>
+</tr>
+<tr class="row-even"><td><p>SAVEPOINT</p></td>
+<td><p>A point within a transaction to which you can later roll back, allowing for more granular control over transaction management.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Scalar subquery</p></td>
+<td><p>A subquery that returns a single value, which can be used in a main query as part of a condition or expression.</p></td>
+</tr>
+<tr class="row-even"><td><p>Shared (Read) Lock</p></td>
+<td><p>A lock that allows multiple transactions to read the same data simultaneously but prevents any writes to that data.</p></td>
+</tr>
+<tr class="row-odd"><td><p>system logs</p></td>
+<td><p>Records of database system events, errors, and activities, crucial for troubleshooting, auditing, and performance analysis.</p></td>
+</tr>
+<tr class="row-even"><td><p>Transaction</p></td>
+<td><p>A sequence of one or more SQL statements that are executed as a single unit of work, maintaining data integrity and consistency.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Database_07_Views.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">A Musical “VIEW” For Better Data Presentation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Database_09_PokemonAndPostgres.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Postgres and Pokemon</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Database Performance: Index, Query Plans, and Transaction Management</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#database-and-sql-through-pop-culture-brendan-shea-phd">Database and SQL Through Pop Culture | Brendan Shea, PhD</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brendan-s-lecture">Brendan’s Lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gotham-national-bank-database">Gotham National Bank Database</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#database-schema-for-gotham-city-bank">Database Schema for Gotham City Bank</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-closer-look-at-customers-and-accounts">A Closer Look at Customers and Accounts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-indexes-and-how-do-i-create-them">What are Indexes and How Do I Create Them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-indexes-impact-speed">How Indexes Impact Speed</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-of-indexes">Impact of Indexes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timing-our-queries">Timing Our Queries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-indexes-impact-storage">How Indexes Impact Storage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-trees-the-backbone-of-database-storage">B-trees: The Backbone of Database Storage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-sqlite-uses-b-trees">How SQLite Uses B-trees</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#table-b-tree-example">Table B-tree example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#index-b-tree-example">Index B-tree example</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphic-b-trees">Graphic: B-Trees</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-file-size">Checking File Size</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-indexing-guidelines-when-to-create-and-avoid-indexes">SQL Indexing Guidelines: When to Create and Avoid Indexes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-transactions">Introduction to Transactions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acid-properties-overview">ACID Properties Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atomicity">Atomicity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency">Consistency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isolation">Isolation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#durability">Durability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deadlocks">Deadlocks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transaction-performance-and-error-handling">Transaction Performance and Error Handling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nosql-case-study-harley-s-havoc">NoSQL Case Study: Harley’s Havoc</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-out-why-harley-chose-mongodb">Scaling Out: Why Harley Chose MongoDB</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-move-from-acid-to-base">The Move from ACID to BASE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-would-be-disastrous-for-gotham-city-bank">Why This Would Be Disastrous for Gotham City Bank</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-of-both-worlds-hybrid-approaches">Best of Both Worlds: Hybrid Approaches</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-day-in-the-life-of-a-database-administrator">A Day in the Life of a Database Administrator</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#morning-health-checks">Morning: health checks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mid-morning-performance-tuning">Mid-morning: performance tuning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#afternoon-security-and-change-management">Afternoon: security and change management</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-database-performance-metrics">Common Database Performance Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-querying-database-logs">Lab: Querying Database Logs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-structure">Table structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-look-for-in-this-lab">What to look for in this lab</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-entry-types-to-know">Log Entry Types to Know</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-the-database">Querying the Database</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-queries">Sample Queries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-practice-your-sql">Lab: Practice Your SQL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-of-the-recursive-dragon-databse-theory">Loop of the Recursive Dragon: Databse Theory</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points-summary">Key Points Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Brendan Shea, PhD
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

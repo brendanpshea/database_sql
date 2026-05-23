@@ -1,0 +1,2165 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Database Design &#8212; SQL and Database Management Through Pop Culture</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Database_05_Design';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Writing Data With Rollingstone’s Greatest Albums" href="Database_06_WritingData.html" />
+    <link rel="prev" title="Super Select: Advanced Retrieval With Mario Brothers Plumbing" href="Database_04_AdvancedSelect.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/database_cover.jpg" class="logo__image only-light" alt="SQL and Database Management Through Pop Culture - Home"/>
+    <script>document.write(`<img src="_static/database_cover.jpg" class="logo__image only-dark" alt="SQL and Database Management Through Pop Culture - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    SQL and Database Management Through Pop Culture
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Database_01_StarShipSQL.html">Starship SQL: An Introduction to Databases</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Database_02_IntroToSQL.html">Introduction to SQL: SELECT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_03_Joins_Sets_SQL.html">Getting Tables Together With Joins and Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_04_AdvancedSelect.html">Super Select: Advanced Retrieval With Mario Brothers Plumbing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_06_WritingData.html">Writing Data With Rollingstone’s Greatest Albums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_07_Views.html">A Musical “VIEW” For Better Data Presentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_08_IndexesTransactions.html">Database Performance: Index, Query Plans, and Transaction Management</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Database_09_PokemonAndPostgres.html">Postgres and Pokemon</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Database_10_DatabaseSecurity.html">Guarding the Virtual Vault: A Deep Dive into Database Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_11_DesignDeployTest.html">Database Architecture Patterns: Design, Deployment, and Testing for Modern Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_12_FinalProject.html">SQLite Database Final Project: Design, Implementation, and Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labs/Database_Ex_Normalization.html">Introduction to Normalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labs/Database_Lab_Chapter_3.html">SQL Practice (Chapter 3)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/./Database_05_Design.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/brendanpshea/database_sql" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Database_05_Design.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Database Design</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brendan-s-lecture">Brendan’s Lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-design-at-the-covert-academy">Conceptual Design at the Covert Academy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-conceptual-design">What is Conceptual Design?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulating-business-rules">Formulating Business Rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-list-of-entities-and-attributes">Preliminary List of Entities and Attributes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-erd">Preliminary ERD</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-logical-modeling">What is Logical Modeling?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-many-to-many-relationships">Resolving Many-to-Many Relationships</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-primary-keys">Choosing Primary Keys</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updated-erd">Updated ERD</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-modeling-normalization">Logical Modeling: Normalization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-normalize">Why normalize?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-normal-form-1nf">First Normal Form (1NF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nf-checklist-and-tradeoffs">1NF Checklist and Tradeoffs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-normal-form-2nf">Second Normal Form (2NF)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recognizing-partial-dependencies">Recognizing Partial Dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-to-2nf">Converting to 2NF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#another-2nf-example">Another 2NF Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-second-normal-form">Benefits of Second Normal Form</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-2nf-mistakes-to-avoid">Common 2NF Mistakes to Avoid</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#third-normal-form-and-beyond">Third Normal Form and Beyond</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-normalization-strategy">Practical Normalization Strategy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quiz-normalize-this">Quiz: Normalize This</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-modeling-bringing-the-database-to-life">Physical Modeling - Bringing the Database to Life</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansi-sql-data-types-big-picture">ANSI SQL Data Types: Big Picture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-type-families">Common type families</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-the-standard-matters">Why the standard matters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sqlite-type-affinity-in-practice">SQLite Type Affinity in Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-database-design-for-beginners">Practical Database Design for Beginners</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-right-data-type">Choosing the Right Data Type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-basic-data-type-decisions">Examples of Basic Data Type Decisions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sqlite-s-simple-approach-for-beginners">SQLite’s Simple Approach for Beginners</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-beginner-mistakes-to-avoid">Common Beginner Mistakes to Avoid</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-performance-tips">Simple Performance Tips</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-keep-it-simple-vs-when-to-be-specific">When to Keep It Simple vs. When to Be Specific</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-data-types">Conclusion: Data Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-create-table-statement">The CREATE TABLE Statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#column-constraints">Column Constraints</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-drop-table-statement">The DROP TABLE Statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recreating-the-student-table">Recreating the STUDENT Table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recreating-the-class-table">Recreating the CLASS Table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recreating-the-enrollment-table">Recreating the ENROLLMENT Table</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erd-physical-model">ERD: Physical Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-drop-table-if-exists-syntax">The DROP TABLE IF EXISTS Syntax</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alter-table-modifying-your-database-structure">ALTER TABLE: Modifying Your Database Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-new-column">Adding a New Column</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dropping-a-column">Dropping a Column</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-tables-and-columns">Renaming Tables and Columns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-a-column-s-definition">Modifying a Column’s Definition</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary-database-design">Chapter Summary: Database Design</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-modeling">Conceptual Modeling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-modeling">Logical Modeling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-modeling">Physical Modeling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-sql-data-definition-langauge-practice">Lab: SQL Data Definition Langauge Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_05_Design.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section id="database-design">
+<h1>Database Design<a class="headerlink" href="#database-design" title="Permalink to this heading">#</a></h1>
+<p><em>Database and SQL Through Pop Culture | Brendan Shea, PhD</em></p>
+<p>Welcome to the exciting world of database design. In this chapter, we move through the full process of creating a database from scratch. We begin with conceptual modeling, where we identify the key entities, attributes, and relationships in our spy academy database. From there, we move to logical modeling, where keys, normalization, and join tables help us avoid redundancy and protect data integrity. Finally, we move into physical modeling, where we use SQL to create, modify, and delete tables in SQLite.</p>
+<section id="learning-outcomes">
+<h2>Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this heading">#</a></h2>
+<p>By the end of this chapter, you will be able to:</p>
+<ol class="arabic simple">
+<li><p>Understand the three main phases of database design: conceptual, logical, and physical modeling.</p></li>
+<li><p>Identify entities, attributes, and relationships during conceptual modeling.</p></li>
+<li><p>Explain the importance of primary keys and foreign keys.</p></li>
+<li><p>Use normalization to reduce redundancy and improve integrity.</p></li>
+<li><p>Resolve many-to-many relationships with join tables.</p></li>
+<li><p>Create and modify tables with SQL DDL statements.</p></li>
+<li><p>Use constraints and data types to enforce consistent structure.</p></li>
+<li><p>Model supertypes and subtypes when a domain includes inheritance.</p></li>
+</ol>
+<p>Keywords: database design, conceptual modeling, logical modeling, physical modeling, entities, attributes, relationships, keys, primary key, foreign key, normalization, normal forms, join tables, many-to-many relationships, SQL, CREATE TABLE, DROP TABLE, ALTER TABLE, constraints, data types, CASCADE, supertypes, subtypes, inheritance.</p>
+</section>
+<section id="brendan-s-lecture">
+<h2>Brendan’s Lecture<a class="headerlink" href="#brendan-s-lecture" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;6C2KECb9ZwE&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+        <iframe
+            width="800"
+            height="500"
+            src="https://www.youtube.com/embed/WltnGUNpf2A"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
+</div>
+</section>
+<section id="conceptual-design-at-the-covert-academy">
+<h2>Conceptual Design at the Covert Academy<a class="headerlink" href="#conceptual-design-at-the-covert-academy" title="Permalink to this heading">#</a></h2>
+<p>Welcome to the Covert Academy, the world’s premier educational institution for aspiring secret agents! Our state-of-the-art facility is hidden beneath the streets of London and equipped with the latest in espionage technology. We offer a wide range of classes to train our students in the arts of surveillance, infiltration, disguise, and more.</p>
+<p>To keep track of our students and classes, we need a well-designed database. Let’s walk through the process of conceptual design for this database.</p>
+<section id="what-is-conceptual-design">
+<h3>What is Conceptual Design?<a class="headerlink" href="#what-is-conceptual-design" title="Permalink to this heading">#</a></h3>
+<p>Conceptual design is the first step in creating a database. It involves <strong>formulating business rules</strong>, which define how the database should work and what constraints it should have. It also involves creating a <strong>preliminary list of entities and attributes</strong>, which represent the key concepts and data elements in the system. Finally, it involves creating a <strong>preliminary Entity-Relationship Diagram (ERD)</strong> to visually represent the entities and their relationships.</p>
+</section>
+<section id="formulating-business-rules">
+<h3>Formulating Business Rules<a class="headerlink" href="#formulating-business-rules" title="Permalink to this heading">#</a></h3>
+<p><strong>Business rules</strong> are concise, unambiguous statements that define or constrain some aspect of the database. They are derived through a combination of <strong>descriptive processes</strong>, such as interviewing stakeholders to understand their needs and requirements, and <strong>normative processes</strong>, which involve making decisions about how the system should work.</p>
+<p>For the Covert Academy, we have the following business rules:</p>
+<ol class="arabic simple">
+<li><p>Each <strong>student</strong> must be enrolled in at least one <strong>class</strong>, but may be enrolled in multiple classes.</p></li>
+<li><p>Each <strong>class</strong> must have at least one <strong>student</strong> enrolled, but may have many students.</p></li>
+</ol>
+<p>To write effective business rules:</p>
+<ul class="simple">
+<li><p>Keep them concise and unambiguous</p></li>
+<li><p>Ensure they are testable (you can determine if the system is complying with the rule)</p></li>
+<li><p>Involve all relevant stakeholders in formulating and reviewing them</p></li>
+<li><p>Prioritize them (some may be must-haves, others may be nice-to-haves)</p></li>
+</ul>
+</section>
+<section id="preliminary-list-of-entities-and-attributes">
+<h3>Preliminary List of Entities and Attributes<a class="headerlink" href="#preliminary-list-of-entities-and-attributes" title="Permalink to this heading">#</a></h3>
+<p>Based on our business rules, we can identify our preliminary <strong>entities</strong>, which are the key concepts or objects in our system, and their <strong>attributes</strong>, which are the data elements that describe each entity.</p>
+<p>For the Covert Academy, our entities and attributes are:</p>
+<p><strong>Student</strong></p>
+<ul class="simple">
+<li><p>Name</p></li>
+<li><p>Codename</p></li>
+<li><p>Nationality</p></li>
+<li><p>Specialization</p></li>
+</ul>
+<p><strong>Class</strong></p>
+<ul class="simple">
+<li><p>Name</p></li>
+<li><p>Description</p></li>
+<li><p>Instructor</p></li>
+<li><p>Location</p></li>
+</ul>
+<p>Note that at this stage, we don’t include data types, identifier columns, or join tables. We’re just focusing on the core entities and their key attributes.</p>
+</section>
+<section id="preliminary-erd">
+<h3>Preliminary ERD<a class="headerlink" href="#preliminary-erd" title="Permalink to this heading">#</a></h3>
+<p>Finally, we can create a preliminary ERD to visualize our entities and their relationship. Here’s what it looks like for the Covert Academy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">mm</span><span class="p">(</span><span class="n">graph</span><span class="p">):</span>
+    <span class="n">graphbytes</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+    <span class="n">base64_bytes</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">graphbytes</span><span class="p">)</span>
+    <span class="n">base64_string</span> <span class="o">=</span> <span class="n">base64_bytes</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://mermaid.ink/img/&quot;</span> <span class="o">+</span> <span class="n">base64_string</span><span class="p">))</span>
+
+<span class="n">mm</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    erDiagram</span>
+<span class="s2">    STUDENT |{--|{ CLASS : enrolls</span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://mermaid.ink/img/CiAgICBlckRpYWdyYW0KICAgIFNUVURFTlQgfHstLXx7IENMQVNTIDogZW5yb2xscwogICAg"/></div></div>
+</div>
+<p>This diagram shows that there is a many-to-many relationship between <strong>STUDENT</strong> and <strong>CLASS</strong> (a student can enroll in many classes, a class can have many students).</p>
+<p>We’ll refine this ERD in the next step, logical modeling, where we’ll resolve the many-to-many relationship with a join table. But this preliminary ERD gives us a good starting point to visualize our system.</p>
+</section>
+</section>
+<section id="what-is-logical-modeling">
+<h2>What is Logical Modeling?<a class="headerlink" href="#what-is-logical-modeling" title="Permalink to this heading">#</a></h2>
+<p>In the previous section, we laid the conceptual foundation for the Covert Academy’s database. Now it’s time to take that conceptual model and transform it into a <strong>logical model</strong> using the <strong>relational model</strong>.</p>
+<p>Logical modeling is the process of taking a conceptual model and adapting it to fit a specific logical data model. In our case, we’ll be using the <strong>relational model</strong>, which organizes data into <strong>tables</strong> (also known as relations) with <strong>rows</strong> (also known as tuples) and <strong>columns</strong> (also known as attributes).</p>
+<p>In the relational model:</p>
+<ul class="simple">
+<li><p>Each table should represent a single entity or concept</p></li>
+<li><p>Each row in a table represents a specific instance of that entity</p></li>
+<li><p>Each column in a table represents an attribute of that entity</p></li>
+<li><p>Each table should have a <strong>primary key</strong>, a unique identifier for each row</p></li>
+</ul>
+<section id="resolving-many-to-many-relationships">
+<h3>Resolving Many-to-Many Relationships<a class="headerlink" href="#resolving-many-to-many-relationships" title="Permalink to this heading">#</a></h3>
+<p>In our conceptual model, we had a many-to-many relationship between <strong>STUDENT</strong> and <strong>CLASS</strong>. However, in the relational model, we can’t directly represent many-to-many relationships. Instead, we need to introduce a <strong>join table</strong>.</p>
+<p>A join table is a table that breaks down a many-to-many relationship into two one-to-many relationships. It does this by having foreign keys to both of the original tables.</p>
+<p>For the Covert Academy, our join table will be called <strong>ENROLLMENT</strong>. It will have the following structure:</p>
+<p><strong>ENROLLMENT</strong></p>
+<ul class="simple">
+<li><p>StudentID (Foreign Key to STUDENT)</p></li>
+<li><p>ClassID (Foreign Key to CLASS)</p></li>
+<li><p>EnrollmentDate</p></li>
+</ul>
+<p>Now, instead of a direct many-to-many relationship, we have:</p>
+<ul class="simple">
+<li><p>A one-to-many relationship between <strong>STUDENT</strong> and <strong>ENROLLMENT</strong></p></li>
+<li><p>A one-to-many relationship between <strong>CLASS</strong> and <strong>ENROLLMENT</strong></p></li>
+</ul>
+</section>
+<section id="choosing-primary-keys">
+<h3>Choosing Primary Keys<a class="headerlink" href="#choosing-primary-keys" title="Permalink to this heading">#</a></h3>
+<p>Each table in our database needs a primary key. A primary key is a unique identifier for each row in a table. There are two main options for primary keys:</p>
+<ol class="arabic simple">
+<li><p><strong>Natural Key</strong>: A natural key is a key that uses one of the existing attributes of the entity. For example, we could use a student’s email as the primary key for the STUDENT table. Natural keys can be convenient because they don’t require an additional column. However, they can also be problematic if the natural key ever needs to change.</p></li>
+<li><p><strong>Surrogate Key</strong>: A surrogate key is an artificial key that is created specifically to be the primary key. It’s usually a simple integer or a universally unique identifier (UUID). Surrogate keys are often preferable because they are guaranteed to be unique and they never need to change.</p></li>
+</ol>
+<p>For the Covert Academy, we’ll use surrogate keys for all of our tables. We’ll call these <code class="docutils literal notranslate"><span class="pre">ID</span></code> columns.</p>
+</section>
+<section id="updated-erd">
+<h3>Updated ERD<a class="headerlink" href="#updated-erd" title="Permalink to this heading">#</a></h3>
+<p>With these changes in mind, here’s our updated ERD:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title</span>
+<span class="n">mm</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">erDiagram</span>
+<span class="s2">    STUDENT ||--o{ ENROLLMENT : has</span>
+<span class="s2">    ENROLLMENT }o--|| CLASS : is_for</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://mermaid.ink/img/CmVyRGlhZ3JhbQogICAgU1RVREVOVCB8fC0tb3sgRU5ST0xMTUVOVCA6IGhhcwogICAgRU5ST0xMTUVOVCB9by0tfHwgQ0xBU1MgOiBpc19mb3IK"/></div></div>
+</div>
+<p>The tables are as follows:</p>
+<p><strong>STUDENT</strong> (ID (Primary Key), Name, Codename, Nationality, Specialization)</p>
+<p><strong>CLASS</strong> (ID (Primary Key), Name, Description, Instructor, Location)</p>
+<p><strong>ENROLLMENT</strong> (StudentID (Foreign Key to STUDENT), ClassID (Foreign Key to CLASS), EnrollmentDate)</p>
+</section>
+</section>
+<section id="logical-modeling-normalization">
+<h2>Logical Modeling: Normalization<a class="headerlink" href="#logical-modeling-normalization" title="Permalink to this heading">#</a></h2>
+<p>Normalization helps you organize tables so each fact is stored once and relationships stay clear.</p>
+<section id="why-normalize">
+<h3>Why normalize?<a class="headerlink" href="#why-normalize" title="Permalink to this heading">#</a></h3>
+<p>A single table that mixes agents, missions, and handler contacts looks convenient, but it creates:</p>
+<ol class="arabic simple">
+<li><p>Redundant data</p></li>
+<li><p>Update anomalies</p></li>
+<li><p>Insertion anomalies</p></li>
+<li><p>Deletion anomalies</p></li>
+</ol>
+<p>Using the SPECTRE Academy example, repeating handler phone numbers or storing many skills in one field makes the design hard to maintain.</p>
+</section>
+<section id="first-normal-form-1nf">
+<h3>First Normal Form (1NF)<a class="headerlink" href="#first-normal-form-1nf" title="Permalink to this heading">#</a></h3>
+<p>A table is in 1NF when:</p>
+<ol class="arabic simple">
+<li><p>Each column holds one value per row.</p></li>
+<li><p>Repeating groups are removed.</p></li>
+<li><p>Each row can be identified with a key.</p></li>
+</ol>
+<p><strong>Before:</strong> an <code class="docutils literal notranslate"><span class="pre">Agents</span></code> table stores <code class="docutils literal notranslate"><span class="pre">Skills</span></code> as <code class="docutils literal notranslate"><span class="pre">&quot;Espionage,</span> <span class="pre">Combat,</span> <span class="pre">Driving&quot;</span></code>.</p>
+<p><strong>After:</strong> split the design into:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AGENT(AgentID,</span> <span class="pre">Name,</span> <span class="pre">Codename)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AGENT_SKILLS(AgentID,</span> <span class="pre">Skill)</span></code></p></li>
+</ul>
+<p>That change makes each skill searchable, sortable, and easy to validate.</p>
+</section>
+<section id="nf-checklist-and-tradeoffs">
+<h3>1NF Checklist and Tradeoffs<a class="headerlink" href="#nf-checklist-and-tradeoffs" title="Permalink to this heading">#</a></h3>
+<p>Common warning signs:</p>
+<ul class="simple">
+<li><p>comma-separated lists in one column</p></li>
+<li><p>contact fields that mix phone numbers and emails</p></li>
+<li><p>location or address fields that hide multiple facts in one string</p></li>
+</ul>
+<p>Benefits of 1NF:</p>
+<ul class="simple">
+<li><p>simpler queries</p></li>
+<li><p>cleaner updates</p></li>
+<li><p>better indexing</p></li>
+<li><p>stronger data integrity</p></li>
+</ul>
+<p>Sometimes teams denormalize for reporting or performance, but that should be a deliberate choice with a clear reason.</p>
+</section>
+</section>
+<section id="second-normal-form-2nf">
+<h2>Second Normal Form (2NF)<a class="headerlink" href="#second-normal-form-2nf" title="Permalink to this heading">#</a></h2>
+<p>Once a database achieves First Normal Form, the next step is to evaluate it for Second Normal Form compliance. Second Normal Form builds upon 1NF by addressing a specific type of data dependency.</p>
+<p>A table is in Second Normal Form when:</p>
+<ol class="arabic simple">
+<li><p>The table is already in First Normal Form.</p></li>
+<li><p>Every non-key attribute in the table is fully functionally dependent on the entire primary key.</p></li>
+</ol>
+<p>The concept of <strong>functional dependency</strong> means that one attribute’s value determines another attribute’s value. A <strong>full functional dependency</strong> exists when an attribute depends on the entire primary key, not just part of it.</p>
+<section id="recognizing-partial-dependencies">
+<h3>Recognizing Partial Dependencies<a class="headerlink" href="#recognizing-partial-dependencies" title="Permalink to this heading">#</a></h3>
+<p>Let’s examine a table from our spy training academy that tracks agent certifications:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>AgentID</p></th>
+<th class="head"><p>SkillID</p></th>
+<th class="head"><p>CertificationDate</p></th>
+<th class="head"><p>SkillName</p></th>
+<th class="head"><p>SkillDifficulty</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>007</p></td>
+<td><p>S1</p></td>
+<td><p>2023-01-15</p></td>
+<td><p>Lockpicking</p></td>
+<td><p>Advanced</p></td>
+</tr>
+<tr class="row-odd"><td><p>007</p></td>
+<td><p>S2</p></td>
+<td><p>2023-02-01</p></td>
+<td><p>Surveillance</p></td>
+<td><p>Expert</p></td>
+</tr>
+<tr class="row-even"><td><p>008</p></td>
+<td><p>S1</p></td>
+<td><p>2023-03-10</p></td>
+<td><p>Lockpicking</p></td>
+<td><p>Advanced</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In this table, the primary key consists of both AgentID and SkillID together. Let’s analyze the dependencies:</p>
+<ol class="arabic simple">
+<li><p>CertificationDate depends on both AgentID and SkillID.</p></li>
+<li><p>SkillName depends only on SkillID.</p></li>
+<li><p>SkillDifficulty depends only on SkillID.</p></li>
+</ol>
+<p>The partial dependencies in this table violate Second Normal Form because SkillName and SkillDifficulty depend only on SkillID, which is just part of the primary key.</p>
+</section>
+<section id="converting-to-2nf">
+<h3>Converting to 2NF<a class="headerlink" href="#converting-to-2nf" title="Permalink to this heading">#</a></h3>
+<p>To achieve Second Normal Form, we separate the attributes that depend on only part of the primary key into their own table:</p>
+<p><strong>AGENT_CERTIFICATIONS table:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>AgentID</p></th>
+<th class="head"><p>SkillID</p></th>
+<th class="head"><p>CertificationDate</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>007</p></td>
+<td><p>S1</p></td>
+<td><p>2023-01-15</p></td>
+</tr>
+<tr class="row-odd"><td><p>007</p></td>
+<td><p>S2</p></td>
+<td><p>2023-02-01</p></td>
+</tr>
+<tr class="row-even"><td><p>008</p></td>
+<td><p>S1</p></td>
+<td><p>2023-03-10</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>SKILLS table:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>SkillID</p></th>
+<th class="head"><p>SkillName</p></th>
+<th class="head"><p>SkillDifficulty</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>S1</p></td>
+<td><p>Lockpicking</p></td>
+<td><p>Advanced</p></td>
+</tr>
+<tr class="row-odd"><td><p>S2</p></td>
+<td><p>Surveillance</p></td>
+<td><p>Expert</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="another-2nf-example">
+<h3>Another 2NF Example<a class="headerlink" href="#another-2nf-example" title="Permalink to this heading">#</a></h3>
+<p>Consider a table tracking mission equipment assignments:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>MissionID</p></th>
+<th class="head"><p>AgentID</p></th>
+<th class="head"><p>EquipmentID</p></th>
+<th class="head"><p>MissionLocation</p></th>
+<th class="head"><p>EquipmentName</p></th>
+<th class="head"><p>EquipmentType</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>M1</p></td>
+<td><p>007</p></td>
+<td><p>E1</p></td>
+<td><p>Venice</p></td>
+<td><p>Laser Watch</p></td>
+<td><p>Gadget</p></td>
+</tr>
+<tr class="row-odd"><td><p>M1</p></td>
+<td><p>007</p></td>
+<td><p>E2</p></td>
+<td><p>Venice</p></td>
+<td><p>Grappling Hook</p></td>
+<td><p>Tool</p></td>
+</tr>
+<tr class="row-even"><td><p>M2</p></td>
+<td><p>008</p></td>
+<td><p>E1</p></td>
+<td><p>Paris</p></td>
+<td><p>Laser Watch</p></td>
+<td><p>Gadget</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This table has several problems:</p>
+<ol class="arabic simple">
+<li><p>MissionLocation depends only on MissionID.</p></li>
+<li><p>EquipmentName and EquipmentType depend only on EquipmentID.</p></li>
+</ol>
+<p>To achieve 2NF, we create three separate tables:</p>
+<p><strong>MISSION_EQUIPMENT table:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>MissionID</p></th>
+<th class="head"><p>AgentID</p></th>
+<th class="head"><p>EquipmentID</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>M1</p></td>
+<td><p>007</p></td>
+<td><p>E1</p></td>
+</tr>
+<tr class="row-odd"><td><p>M1</p></td>
+<td><p>007</p></td>
+<td><p>E2</p></td>
+</tr>
+<tr class="row-even"><td><p>M2</p></td>
+<td><p>008</p></td>
+<td><p>E1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>MISSIONS table:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>MissionID</p></th>
+<th class="head"><p>MissionLocation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>M1</p></td>
+<td><p>Venice</p></td>
+</tr>
+<tr class="row-odd"><td><p>M2</p></td>
+<td><p>Paris</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>EQUIPMENT table:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>EquipmentID</p></th>
+<th class="head"><p>EquipmentName</p></th>
+<th class="head"><p>EquipmentType</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>E1</p></td>
+<td><p>Laser Watch</p></td>
+<td><p>Gadget</p></td>
+</tr>
+<tr class="row-odd"><td><p>E2</p></td>
+<td><p>Grappling Hook</p></td>
+<td><p>Tool</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="benefits-of-second-normal-form">
+<h3>Benefits of Second Normal Form<a class="headerlink" href="#benefits-of-second-normal-form" title="Permalink to this heading">#</a></h3>
+<p>Moving to Second Normal Form provides several important benefits:</p>
+<ol class="arabic simple">
+<li><p>Data consistency improves because information about each entity is stored in only one place.</p></li>
+<li><p>Update operations become more reliable because related data is properly grouped together.</p></li>
+<li><p>Storage efficiency increases because the database eliminates redundant data storage.</p></li>
+<li><p>Data modifications become safer because changes to one aspect of the data won’t affect unrelated aspects.</p></li>
+</ol>
+</section>
+<section id="common-2nf-mistakes-to-avoid">
+<h3>Common 2NF Mistakes to Avoid<a class="headerlink" href="#common-2nf-mistakes-to-avoid" title="Permalink to this heading">#</a></h3>
+<p>Database designers should watch for these common issues when working with Second Normal Form:</p>
+<ol class="arabic simple">
+<li><p>Composite keys are sometimes overlooked when analyzing dependencies, leading to incomplete normalization.</p></li>
+<li><p>Transitive dependencies might be missed when focusing only on partial dependencies.</p></li>
+<li><p>Over-normalization can occur when splitting tables unnecessarily, making the database harder to understand.</p></li>
+</ol>
+<p>In the next section, we’ll explore Third Normal Form and examine how it addresses transitive dependencies to further improve database design.</p>
+</section>
+</section>
+<section id="third-normal-form-and-beyond">
+<h2>Third Normal Form and Beyond<a class="headerlink" href="#third-normal-form-and-beyond" title="Permalink to this heading">#</a></h2>
+<p>Third Normal Form (3NF) removes transitive dependencies. A transitive dependency happens when a non-key field depends on another non-key field instead of directly on the key.</p>
+<p>Example:</p>
+<p><code class="docutils literal notranslate"><span class="pre">AGENT(AgentID,</span> <span class="pre">Name,</span> <span class="pre">HandlerID,</span> <span class="pre">HandlerName,</span> <span class="pre">HandlerRank)</span></code></p>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">HandlerName</span></code> and <code class="docutils literal notranslate"><span class="pre">HandlerRank</span></code> really depend on <code class="docutils literal notranslate"><span class="pre">HandlerID</span></code>, not <code class="docutils literal notranslate"><span class="pre">AgentID</span></code>.</p>
+<p>To fix it, split the design into:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AGENTS(AgentID,</span> <span class="pre">Name,</span> <span class="pre">HandlerID)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HANDLERS(HandlerID,</span> <span class="pre">HandlerName,</span> <span class="pre">HandlerRank)</span></code></p></li>
+</ul>
+<p>This reduces duplication and keeps handler updates in one place.</p>
+<section id="practical-normalization-strategy">
+<h3>Practical Normalization Strategy<a class="headerlink" href="#practical-normalization-strategy" title="Permalink to this heading">#</a></h3>
+<p>Use this workflow when reviewing a design:</p>
+<ol class="arabic simple">
+<li><p>Get each table into 1NF.</p></li>
+<li><p>Remove partial dependencies to reach 2NF.</p></li>
+<li><p>Remove transitive dependencies to reach 3NF.</p></li>
+<li><p>Stop and evaluate before adding more complexity.</p></li>
+</ol>
+<p>Beyond 3NF:</p>
+<ul class="simple">
+<li><p>BCNF strengthens the key rules.</p></li>
+<li><p>4NF handles multivalued dependencies.</p></li>
+<li><p>5NF handles rare join-dependency problems.</p></li>
+</ul>
+<p>In practice, most production schemas stop at 3NF and only denormalize later for a measured performance or reporting need.</p>
+</section>
+</section>
+<section id="quiz-normalize-this">
+<h2>Quiz: Normalize This<a class="headerlink" href="#quiz-normalize-this" title="Permalink to this heading">#</a></h2>
+<p><strong>Interactive activity:</strong> Open this standalone page to use the activity in the Jupyter Book or from Colab.</p>
+<p><a class="reference external" href="https://brendanpshea.github.io/database_sql/_static/games/database-normalization-quiz.html">Open the database normalization quiz</a></p>
+</section>
+<section id="physical-modeling-bringing-the-database-to-life">
+<h2>Physical Modeling - Bringing the Database to Life<a class="headerlink" href="#physical-modeling-bringing-the-database-to-life" title="Permalink to this heading">#</a></h2>
+<p>We’ve conceptually designed our database and transformed it into a logical model using the relational model and normalization techniques. Now it’s time for the exciting part - actually creating our database!</p>
+<p><strong>Physical modeling</strong> is the process of taking the logical model and implementing it in a specific database management system (DBMS). This involves defining the actual tables, columns, data types, and constraints in the database using the Data Definition Language (DDL) of the chosen DBMS.</p>
+<p>For the Covert Academy’s database, we’ll be using <strong>SQLite</strong> (which is what we’ve used in the class so far).</p>
+<p>SQLite is a lightweight, file-based DBMS. It’s a popular choice for many applications because:</p>
+<ol class="arabic simple">
+<li><p>It’s serverless (the database is just a file)</p></li>
+<li><p>It’s self-contained (no external dependencies)</p></li>
+<li><p>It’s cross-platform (works on all major operating systems)</p></li>
+<li><p>It’s open-source and free to use</p></li>
+</ol>
+<p>SQLite, like most modern DBMSs, uses <strong>SQL (Structured Query Language)</strong> for defining and manipulating databases.</p>
+</section>
+<section id="ansi-sql-data-types-big-picture">
+<h2>ANSI SQL Data Types: Big Picture<a class="headerlink" href="#ansi-sql-data-types-big-picture" title="Permalink to this heading">#</a></h2>
+<p>The ANSI/ISO SQL standard gives database systems a shared vocabulary for types, but each DBMS implements that standard a little differently.</p>
+<section id="common-type-families">
+<h3>Common type families<a class="headerlink" href="#common-type-families" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Numeric: <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code>, <code class="docutils literal notranslate"><span class="pre">SMALLINT</span></code>, <code class="docutils literal notranslate"><span class="pre">BIGINT</span></code>, <code class="docutils literal notranslate"><span class="pre">DECIMAL</span></code>, <code class="docutils literal notranslate"><span class="pre">REAL</span></code></p></li>
+<li><p>Character: <code class="docutils literal notranslate"><span class="pre">CHAR</span></code>, <code class="docutils literal notranslate"><span class="pre">VARCHAR</span></code>, <code class="docutils literal notranslate"><span class="pre">TEXT</span></code></p></li>
+<li><p>Temporal: <code class="docutils literal notranslate"><span class="pre">DATE</span></code>, <code class="docutils literal notranslate"><span class="pre">TIME</span></code>, <code class="docutils literal notranslate"><span class="pre">TIMESTAMP</span></code></p></li>
+<li><p>Binary: <code class="docutils literal notranslate"><span class="pre">BINARY</span></code>, <code class="docutils literal notranslate"><span class="pre">VARBINARY</span></code>, <code class="docutils literal notranslate"><span class="pre">BLOB</span></code></p></li>
+<li><p>Other common types: <code class="docutils literal notranslate"><span class="pre">BOOLEAN</span></code>, <code class="docutils literal notranslate"><span class="pre">JSON</span></code>, <code class="docutils literal notranslate"><span class="pre">UUID</span></code></p></li>
+</ul>
+</section>
+<section id="why-the-standard-matters">
+<h3>Why the standard matters<a class="headerlink" href="#why-the-standard-matters" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>improves portability between database systems</p></li>
+<li><p>helps teams talk about schema choices precisely</p></li>
+<li><p>makes column intent clearer during design</p></li>
+</ul>
+<p>A good rule is to choose the smallest type that accurately represents the data and matches how you plan to query it.</p>
+</section>
+</section>
+<section id="sqlite-type-affinity-in-practice">
+<h2>SQLite Type Affinity in Practice<a class="headerlink" href="#sqlite-type-affinity-in-practice" title="Permalink to this heading">#</a></h2>
+<p>SQLite is more flexible than many other databases. Instead of enforcing types rigidly, it uses five storage classes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NULL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INTEGER</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REAL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TEXT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BLOB</span></code></p></li>
+</ul>
+<p>Declared column types map to type affinity:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">INTEGER</span></code> affinity</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TEXT</span></code> affinity</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REAL</span></code> affinity</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BLOB</span></code> affinity</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NUMERIC</span></code> affinity</p></li>
+</ul>
+<p>That means SQLite will often convert values when it can. For example, <code class="docutils literal notranslate"><span class="pre">'8'</span></code> may be stored as an integer in a numeric column, while <code class="docutils literal notranslate"><span class="pre">7</span></code> inserted into a text column may be stored as <code class="docutils literal notranslate"><span class="pre">'7'</span></code>.</p>
+<p>The design takeaway is simple: declare types clearly even in SQLite, because the schema communicates your intent to both the database and future readers.</p>
+</section>
+<section id="practical-database-design-for-beginners">
+<h2>Practical Database Design for Beginners<a class="headerlink" href="#practical-database-design-for-beginners" title="Permalink to this heading">#</a></h2>
+<p>When you’re creating your first database for an intelligence operation (or any application), choosing the right data types is one of the most important decisions you’ll make. Here are some straightforward guidelines:</p>
+<section id="choosing-the-right-data-type">
+<h3>Choosing the Right Data Type<a class="headerlink" href="#choosing-the-right-data-type" title="Permalink to this heading">#</a></h3>
+<p><em>Keep it simple when starting out.</em> Begin with these basic types for most of your needs:</p>
+<ul class="simple">
+<li><p><strong>INTEGER</strong> for IDs, counts, and whole numbers</p></li>
+<li><p><strong>TEXT</strong> for names, descriptions, and any text content</p></li>
+<li><p><strong>REAL</strong> for measurements and calculations</p></li>
+<li><p><strong>DATE/TIME</strong> for timestamps and calendar dates</p></li>
+<li><p><strong>BOOLEAN</strong> for yes/no or true/false situations</p></li>
+</ul>
+<p><em>Match the data type to what you’re actually storing.</em> Think about:</p>
+<ul class="simple">
+<li><p>What kind of information is this? (number, text, date, etc.)</p></li>
+<li><p>How large could this value get? (small integers vs. large integers)</p></li>
+<li><p>Do I need decimal precision? (whole numbers vs. decimals)</p></li>
+<li><p>Will I need to sort or calculate with this field?</p></li>
+</ul>
+</section>
+<section id="examples-of-basic-data-type-decisions">
+<h3>Examples of Basic Data Type Decisions<a class="headerlink" href="#examples-of-basic-data-type-decisions" title="Permalink to this heading">#</a></h3>
+<p>For an agent management system, you might choose:</p>
+<ul class="simple">
+<li><p>agent_id: <strong>INTEGER</strong> - Simple, efficient for primary keys</p></li>
+<li><p>code_name: <strong>TEXT</strong> - Variable length names like “Bond” or “Black Widow”</p></li>
+<li><p>clearance_level: <strong>INTEGER</strong> - Simple numbers from 1-10</p></li>
+<li><p>active_status: <strong>BOOLEAN</strong> - Either active (1) or inactive (0)</p></li>
+<li><p>recruitment_date: <strong>DATE</strong> - When they joined</p></li>
+</ul>
+<p>For mission tracking:</p>
+<ul class="simple">
+<li><p>mission_id: <strong>INTEGER</strong> - Sequential identifier</p></li>
+<li><p>mission_name: <strong>TEXT</strong> - Operation names like “Skyfall”</p></li>
+<li><p>location: <strong>TEXT</strong> - “London, UK” or “Abandoned Warehouse”</p></li>
+<li><p>start_date: <strong>DATE</strong> - When the mission begins</p></li>
+<li><p>budget: <strong>DECIMAL(10,2)</strong> - Precise financial tracking (e.g., $250,000.75)</p></li>
+</ul>
+</section>
+<section id="sqlite-s-simple-approach-for-beginners">
+<h3>SQLite’s Simple Approach for Beginners<a class="headerlink" href="#sqlite-s-simple-approach-for-beginners" title="Permalink to this heading">#</a></h3>
+<p><em>SQLite makes data types easier for beginners.</em> Unlike other databases, SQLite is flexible about data types. This means:</p>
+<ul class="simple">
+<li><p>You can store a number in a TEXT column (it will convert automatically)</p></li>
+<li><p>You can store text in an INTEGER column (it will try to convert if possible)</p></li>
+<li><p>You don’t need to worry as much about exact type matching</p></li>
+</ul>
+<p>This table shows what actually happens when you insert different values into SQLite columns:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Declared Column Type</p></th>
+<th class="head"><p>Value Inserted</p></th>
+<th class="head"><p>What Actually Gets Stored</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>INTEGER</p></td>
+<td><p>42</p></td>
+<td><p>INTEGER (42)</p></td>
+</tr>
+<tr class="row-odd"><td><p>INTEGER</p></td>
+<td><p>“42”</p></td>
+<td><p>INTEGER (42)</p></td>
+</tr>
+<tr class="row-even"><td><p>INTEGER</p></td>
+<td><p>“Agent 42”</p></td>
+<td><p>TEXT (“Agent 42”)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TEXT</p></td>
+<td><p>42</p></td>
+<td><p>TEXT (“42”)</p></td>
+</tr>
+<tr class="row-even"><td><p>TEXT</p></td>
+<td><p>“007”</p></td>
+<td><p>TEXT (“007”)</p></td>
+</tr>
+<tr class="row-odd"><td><p>REAL</p></td>
+<td><p>99</p></td>
+<td><p>REAL (99.0)</p></td>
+</tr>
+<tr class="row-even"><td><p>REAL</p></td>
+<td><p>“99.7”</p></td>
+<td><p>REAL (99.7)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="common-beginner-mistakes-to-avoid">
+<h3>Common Beginner Mistakes to Avoid<a class="headerlink" href="#common-beginner-mistakes-to-avoid" title="Permalink to this heading">#</a></h3>
+<p><em>Using TEXT for everything.</em> While SQLite allows this, it’s not a good practice because:</p>
+<ul class="simple">
+<li><p>You lose the ability to do proper numeric sorting (TEXT “10” comes before “2”)</p></li>
+<li><p>Mathematical operations won’t work properly</p></li>
+<li><p>It uses more storage space than necessary</p></li>
+</ul>
+<p><em>Choosing types that are too small.</em> For example:</p>
+<ul class="simple">
+<li><p>Using SMALLINT for agent IDs when you might eventually have more than 32,767 agents</p></li>
+<li><p>Using VARCHAR(20) for names when some might be longer</p></li>
+</ul>
+<p><em>Ignoring date formatting.</em> When storing dates as TEXT, they should be in YYYY-MM-DD format for proper sorting and comparison.</p>
+<p><em>Forgetting about NULL values.</em> Decide whether each column should allow NULL values (unknown/missing information) or require data.</p>
+</section>
+<section id="simple-performance-tips">
+<h3>Simple Performance Tips<a class="headerlink" href="#simple-performance-tips" title="Permalink to this heading">#</a></h3>
+<p><em>Make smart choices for smoother operations:</em></p>
+<ul class="simple">
+<li><p>Use INTEGER for primary keys and foreign keys when possible</p></li>
+<li><p>Use appropriate field sizes (don’t use TEXT for single-character fields)</p></li>
+<li><p>Put your most frequently searched fields first in your table design</p></li>
+<li><p>Consider adding indexes to columns you search often</p></li>
+</ul>
+</section>
+<section id="when-to-keep-it-simple-vs-when-to-be-specific">
+<h3>When to Keep It Simple vs. When to Be Specific<a class="headerlink" href="#when-to-keep-it-simple-vs-when-to-be-specific" title="Permalink to this heading">#</a></h3>
+<p><em>For most beginner projects, stick to these guidelines:</em></p>
+<ul class="simple">
+<li><p><strong>Keep it simple when:</strong></p>
+<ul>
+<li><p>Building your first database</p></li>
+<li><p>Creating a prototype</p></li>
+<li><p>Working on small projects</p></li>
+<li><p>The data structure is unlikely to change much</p></li>
+</ul>
+</li>
+<li><p><strong>Be more specific when:</strong></p>
+<ul>
+<li><p>Dealing with financial or scientific data</p></li>
+<li><p>Building systems that will grow very large</p></li>
+<li><p>Working with multiple connected systems</p></li>
+<li><p>Performance is critical to your application</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="conclusion-data-types">
+<h2>Conclusion: Data Types<a class="headerlink" href="#conclusion-data-types" title="Permalink to this heading">#</a></h2>
+<p>Understanding data types is an important first step in database design. For beginners, start with the basic types (INTEGER, TEXT, REAL) and gradually introduce more specific types as your needs and skills grow.</p>
+<p>Remember that SQLite’s flexible approach makes it forgiving for beginners, but developing good habits around data type selection will serve you well as you advance to more complex database systems and larger projects. The right data types ensure your intelligence operations (or any application) run efficiently, maintain data integrity, and scale effectively as your needs grow.</p>
+</section>
+<section id="the-create-table-statement">
+<h2>The CREATE TABLE Statement<a class="headerlink" href="#the-create-table-statement" title="Permalink to this heading">#</a></h2>
+<p>Now that we know about data types, we can start creating our tables! In SQL, we use the <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span></code> statement for this.</p>
+<p>The general syntax is:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">column1</span><span class="w"> </span><span class="n">datatype</span><span class="w"> </span><span class="k">constraint</span><span class="p">,</span>
+<span class="w">    </span><span class="n">column2</span><span class="w"> </span><span class="n">datatype</span><span class="w"> </span><span class="k">constraint</span><span class="p">,</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">one</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">more</span><span class="w"> </span><span class="n">columns</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>For example, let’s create the STUDENT table:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load SQL magic and connect to the chapter database</span>
+<span class="o">%</span><span class="n">load_ext</span> <span class="n">sql</span>
+<span class="o">%</span><span class="n">sql</span> <span class="n">sqlite</span><span class="p">:</span><span class="o">///</span><span class="n">covert_academy</span><span class="o">.</span><span class="n">db</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l?25hdone
+  Building wheel for prettytable (setup.py) ... ?25l?25hdone
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">STUDENT</span><span class="p">;</span>
+
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">STUDENT</span> <span class="p">(</span>
+    <span class="n">ID</span> <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span>  <span class="o">--</span> <span class="n">The</span> <span class="n">primary</span> <span class="n">key</span><span class="p">,</span> <span class="n">an</span> <span class="n">auto</span><span class="o">-</span><span class="n">incrementing</span> <span class="n">integer</span>
+    <span class="n">Name</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>  <span class="o">--</span> <span class="n">The</span> <span class="n">student</span><span class="s1">&#39;s name, cannot be NULL</span>
+    <span class="n">Codename</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>  <span class="o">--</span> <span class="n">The</span> <span class="n">student</span><span class="s1">&#39;s codename, can be NULL</span>
+    <span class="n">Nationality</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>  <span class="o">--</span> <span class="n">The</span> <span class="n">student</span><span class="s1">&#39;s nationality</span>
+    <span class="n">Specialization</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>  <span class="o">--</span> <span class="n">The</span> <span class="n">student</span><span class="s1">&#39;s specialization</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///covert_academy.db
+Done.
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This creates a table named STUDENT with five columns. Note the use of ANSI standard data types and the comments explaining each column.</p>
+<p>We can create the CLASS and ENROLLMENT tables similarly:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">CLASS</span><span class="p">;</span>
+<span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">ENROLLMENT</span><span class="p">;</span>
+
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">CLASS</span> <span class="p">(</span>
+    <span class="n">ID</span> <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span>  <span class="o">--</span> <span class="n">The</span> <span class="n">primary</span> <span class="n">key</span>
+    <span class="n">Name</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>  <span class="o">--</span> <span class="n">The</span> <span class="k">class</span><span class="w"> </span><span class="nc">name</span><span class="p">,</span> <span class="n">cannot</span> <span class="n">be</span> <span class="n">NULL</span>
+    <span class="n">Description</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">),</span>  <span class="o">--</span> <span class="n">The</span> <span class="k">class</span><span class="w"> </span><span class="nc">description</span>
+    <span class="n">Instructor</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>  <span class="o">--</span> <span class="n">The</span> <span class="k">class</span><span class="w"> </span><span class="nc">instructor</span>
+    <span class="n">Location</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>  <span class="o">--</span> <span class="n">The</span> <span class="k">class</span><span class="w"> </span><span class="nc">location</span>
+<span class="p">);</span>
+
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">ENROLLMENT</span> <span class="p">(</span>
+    <span class="n">StudentID</span> <span class="n">INTEGER</span><span class="p">,</span>  <span class="o">--</span> <span class="n">Foreign</span> <span class="n">key</span> <span class="n">to</span> <span class="n">STUDENT</span> <span class="n">table</span>
+    <span class="n">ClassID</span> <span class="n">INTEGER</span><span class="p">,</span>  <span class="o">--</span> <span class="n">Foreign</span> <span class="n">key</span> <span class="n">to</span> <span class="n">CLASS</span> <span class="n">table</span>
+    <span class="n">EnrollmentDate</span> <span class="n">DATE</span><span class="p">,</span>  <span class="o">--</span> <span class="n">The</span> <span class="n">date</span> <span class="n">of</span> <span class="n">enrollment</span>
+    <span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">StudentID</span><span class="p">,</span> <span class="n">ClassID</span><span class="p">),</span>  <span class="o">--</span> <span class="n">Composite</span> <span class="n">primary</span> <span class="n">key</span>
+    <span class="n">FOREIGN</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">StudentID</span><span class="p">)</span> <span class="n">REFERENCES</span> <span class="n">STUDENT</span><span class="p">(</span><span class="n">ID</span><span class="p">),</span>  <span class="o">--</span> <span class="n">Foreign</span> <span class="n">key</span> <span class="n">constraint</span>
+    <span class="n">FOREIGN</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">ClassID</span><span class="p">)</span> <span class="n">REFERENCES</span> <span class="n">CLASS</span><span class="p">(</span><span class="n">ID</span><span class="p">)</span>  <span class="o">--</span> <span class="n">Foreign</span> <span class="n">key</span> <span class="n">constraint</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///covert_academy.db
+Done.
+Done.
+Done.
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note how in the ENROLLMENT table, we define a composite primary key (StudentID, ClassID) and also specify the foreign key constraints. Let’s now use PRAGMA to see how our tables appear:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">PRAGMA</span> <span class="n">table_info</span><span class="p">(</span><span class="n">STUDENT</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///covert_academy.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <tr>
+        <th>cid</th>
+        <th>name</th>
+        <th>type</th>
+        <th>notnull</th>
+        <th>dflt_value</th>
+        <th>pk</th>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>ID</td>
+        <td>INTEGER</td>
+        <td>0</td>
+        <td>None</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Name</td>
+        <td>VARCHAR(100)</td>
+        <td>1</td>
+        <td>None</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Codename</td>
+        <td>VARCHAR(50)</td>
+        <td>0</td>
+        <td>None</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Nationality</td>
+        <td>VARCHAR(50)</td>
+        <td>0</td>
+        <td>None</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Specialization</td>
+        <td>VARCHAR(100)</td>
+        <td>0</td>
+        <td>None</td>
+        <td>0</td>
+    </tr>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">PRAGMA</span> <span class="n">table_info</span><span class="p">(</span><span class="n">CLASS</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///covert_academy.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <tr>
+        <th>cid</th>
+        <th>name</th>
+        <th>type</th>
+        <th>notnull</th>
+        <th>dflt_value</th>
+        <th>pk</th>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>ID</td>
+        <td>INTEGER</td>
+        <td>0</td>
+        <td>None</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Name</td>
+        <td>VARCHAR(100)</td>
+        <td>1</td>
+        <td>None</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Description</td>
+        <td>VARCHAR(200)</td>
+        <td>0</td>
+        <td>None</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Instructor</td>
+        <td>VARCHAR(100)</td>
+        <td>0</td>
+        <td>None</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Location</td>
+        <td>VARCHAR(100)</td>
+        <td>0</td>
+        <td>None</td>
+        <td>0</td>
+    </tr>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">PRAGMA</span> <span class="n">table_info</span><span class="p">(</span><span class="n">ENROLLMENT</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///covert_academy.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <tr>
+        <th>cid</th>
+        <th>name</th>
+        <th>type</th>
+        <th>notnull</th>
+        <th>dflt_value</th>
+        <th>pk</th>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>StudentID</td>
+        <td>INTEGER</td>
+        <td>0</td>
+        <td>None</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>ClassID</td>
+        <td>INTEGER</td>
+        <td>0</td>
+        <td>None</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>EnrollmentDate</td>
+        <td>DATE</td>
+        <td>0</td>
+        <td>None</td>
+        <td>0</td>
+    </tr>
+</table></div></div>
+</div>
+</section>
+<section id="column-constraints">
+<h2>Column Constraints<a class="headerlink" href="#column-constraints" title="Permalink to this heading">#</a></h2>
+<p>Before we start inserting data into our database, let’s discuss some important concepts that help maintain the integrity and consistency of our data: <strong>constraints</strong>.</p>
+<p>Column constraints are rules applied to individual columns in a table. They restrict the type of data that can be stored in a column. The most common constraints are:</p>
+<ol class="arabic simple">
+<li><p><strong>CHECK</strong>: Ensures that a column’s value satisfies a boolean expression.</p></li>
+<li><p><strong>DEFAULT</strong>: Specifies a default value for a column when no value is provided.</p></li>
+<li><p><strong>NOT NULL</strong>: Ensures that a column cannot have a NULL value.</p></li>
+<li><p><strong>UNIQUE</strong>: Ensures that each value in a column is unique across the whole table.</p></li>
+</ol>
+<p>Let’s see how we can apply these constraints to our tables.</p>
+<section id="the-drop-table-statement">
+<h3>The DROP TABLE Statement<a class="headerlink" href="#the-drop-table-statement" title="Permalink to this heading">#</a></h3>
+<p>But first, let’s discuss how to drop a table. The <code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span></code> statement is used to remove a table definition and all its data. The syntax is simple:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This statement is irreversible, so use it with caution!</p>
+<p>Now, let’s recreate our tables with some constraints.</p>
+</section>
+<section id="recreating-the-student-table">
+<h3>Recreating the STUDENT Table<a class="headerlink" href="#recreating-the-student-table" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">STUDENT</span><span class="p">;</span>  <span class="o">--</span> <span class="n">Drop</span> <span class="n">the</span> <span class="n">table</span> <span class="k">if</span> <span class="n">it</span> <span class="n">already</span> <span class="n">exists</span>
+
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">STUDENT</span> <span class="p">(</span>
+    <span class="n">ID</span> <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span>
+    <span class="n">Name</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">Codename</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="n">UNIQUE</span><span class="p">,</span>  <span class="o">--</span> <span class="n">Codenames</span> <span class="n">must</span> <span class="n">be</span> <span class="n">unique</span>
+    <span class="n">Nationality</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="n">DEFAULT</span> <span class="s1">&#39;Unknown&#39;</span><span class="p">,</span>  <span class="o">--</span> <span class="n">Default</span> <span class="n">nationality</span> <span class="ow">is</span> <span class="s1">&#39;Unknown&#39;</span>
+    <span class="n">Specialization</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+    <span class="n">Age</span> <span class="n">INTEGER</span> <span class="n">CHECK</span> <span class="p">(</span><span class="n">Age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span>  <span class="o">--</span> <span class="n">Students</span> <span class="n">must</span> <span class="n">be</span> <span class="n">at</span> <span class="n">least</span> <span class="mi">18</span> <span class="n">years</span> <span class="n">old</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///covert_academy.db
+Done.
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we’ve added a UNIQUE constraint to the Codename column, a DEFAULT constraint to the Nationality column, and a CHECK constraint to ensure that all students are at least 18 years old.</p>
+</section>
+<section id="recreating-the-class-table">
+<h3>Recreating the CLASS Table<a class="headerlink" href="#recreating-the-class-table" title="Permalink to this heading">#</a></h3>
+<p>For the CLASS table, we’ve added a NOT NULL constraint to the Instructor column and a CHECK constraint to ensure that the StartDate is always before the EndDate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">CLASS</span><span class="p">;</span>
+
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">CLASS</span> <span class="p">(</span>
+    <span class="n">ID</span> <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span>
+    <span class="n">Name</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">Description</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">),</span>
+    <span class="n">Instructor</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>  <span class="o">--</span> <span class="n">Every</span> <span class="k">class</span><span class="w"> </span><span class="nc">must</span> <span class="n">have</span> <span class="n">an</span> <span class="n">instructor</span>
+    <span class="n">Location</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+    <span class="n">StartDate</span> <span class="n">DATE</span><span class="p">,</span>
+    <span class="n">EndDate</span> <span class="n">DATE</span><span class="p">,</span>
+    <span class="n">CHECK</span> <span class="p">(</span><span class="n">StartDate</span> <span class="o">&lt;</span> <span class="n">EndDate</span><span class="p">)</span>  <span class="o">--</span> <span class="n">The</span> <span class="n">start</span> <span class="n">date</span> <span class="n">must</span> <span class="n">be</span> <span class="n">before</span> <span class="n">the</span> <span class="n">end</span> <span class="n">date</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///covert_academy.db
+Done.
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="recreating-the-enrollment-table">
+<h3>Recreating the ENROLLMENT Table<a class="headerlink" href="#recreating-the-enrollment-table" title="Permalink to this heading">#</a></h3>
+<p>For the ENROLLMENT table, we’ve added a DEFAULT constraint to set the EnrollmentDate to the current date if no value is provided.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">ENROLLMENT</span><span class="p">;</span>
+
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">ENROLLMENT</span> <span class="p">(</span>
+    <span class="n">StudentID</span> <span class="n">INTEGER</span><span class="p">,</span>
+    <span class="n">ClassID</span> <span class="n">INTEGER</span><span class="p">,</span>
+    <span class="n">EnrollmentDate</span> <span class="n">DATE</span> <span class="n">DEFAULT</span> <span class="n">CURRENT_DATE</span><span class="p">,</span>  <span class="o">--</span> <span class="n">Default</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">current</span> <span class="n">date</span>
+    <span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">StudentID</span><span class="p">,</span> <span class="n">ClassID</span><span class="p">),</span>
+    <span class="n">FOREIGN</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">StudentID</span><span class="p">)</span> <span class="n">REFERENCES</span> <span class="n">STUDENT</span><span class="p">(</span><span class="n">ID</span><span class="p">),</span>
+    <span class="n">FOREIGN</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">ClassID</span><span class="p">)</span> <span class="n">REFERENCES</span> <span class="n">CLASS</span><span class="p">(</span><span class="n">ID</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///covert_academy.db
+Done.
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>And there we have it! Our Covert Academy database is now set up with constraints to ensure data integrity.</p>
+</section>
+</section>
+<section id="erd-physical-model">
+<h2>ERD: Physical Model<a class="headerlink" href="#erd-physical-model" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title</span>
+<span class="n">mm</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">erDiagram</span>
+<span class="s2">    STUDENT ||--o{ ENROLLMENT : enrolls</span>
+<span class="s2">    CLASS ||--o{ ENROLLMENT : has</span>
+
+<span class="s2">    STUDENT {</span>
+<span class="s2">        int ID PK</span>
+<span class="s2">        varchar Name &quot;NOT NULL&quot;</span>
+<span class="s2">        varchar Codename &quot;UNIQUE&quot;</span>
+<span class="s2">        varchar Nationality &quot;DEFAULT &#39;Unknown&#39;&quot;</span>
+<span class="s2">        varchar Specialization</span>
+<span class="s2">        int Age &quot;CHECK (Age &gt;= 18)&quot;</span>
+<span class="s2">    }</span>
+
+<span class="s2">    CLASS {</span>
+<span class="s2">        int ID PK</span>
+<span class="s2">        varchar Name &quot;NOT NULL&quot;</span>
+<span class="s2">        varchar Description</span>
+<span class="s2">        varchar Instructor &quot;NOT NULL&quot;</span>
+<span class="s2">        varchar Location</span>
+<span class="s2">        date StartDate</span>
+<span class="s2">        date EndDate &quot;CHECK (StartDate &lt; EndDate)&quot;</span>
+<span class="s2">    }</span>
+
+<span class="s2">    ENROLLMENT {</span>
+<span class="s2">        int StudentID PK,FK</span>
+<span class="s2">        int ClassID PK,FK</span>
+<span class="s2">        date EnrollmentDate &quot;DEFAULT CURRENT_DATE&quot;</span>
+<span class="s2">    }&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://mermaid.ink/img/CmVyRGlhZ3JhbQogICAgU1RVREVOVCB8fC0tb3sgRU5ST0xMTUVOVCA6IGVucm9sbHMKICAgIENMQVNTIHx8LS1veyBFTlJPTExNRU5UIDogaGFzCgogICAgU1RVREVOVCB7CiAgICAgICAgaW50IElEIFBLCiAgICAgICAgdmFyY2hhciBOYW1lICJOT1QgTlVMTCIKICAgICAgICB2YXJjaGFyIENvZGVuYW1lICJVTklRVUUiCiAgICAgICAgdmFyY2hhciBOYXRpb25hbGl0eSAiREVGQVVMVCAnVW5rbm93biciCiAgICAgICAgdmFyY2hhciBTcGVjaWFsaXphdGlvbgogICAgICAgIGludCBBZ2UgIkNIRUNLIChBZ2UgPj0gMTgpIgogICAgfQoKICAgIENMQVNTIHsKICAgICAgICBpbnQgSUQgUEsKICAgICAgICB2YXJjaGFyIE5hbWUgIk5PVCBOVUxMIgogICAgICAgIHZhcmNoYXIgRGVzY3JpcHRpb24KICAgICAgICB2YXJjaGFyIEluc3RydWN0b3IgIk5PVCBOVUxMIgogICAgICAgIHZhcmNoYXIgTG9jYXRpb24KICAgICAgICBkYXRlIFN0YXJ0RGF0ZQogICAgICAgIGRhdGUgRW5kRGF0ZSAiQ0hFQ0sgKFN0YXJ0RGF0ZSA8IEVuZERhdGUpIgogICAgfQoKICAgIEVOUk9MTE1FTlQgewogICAgICAgIGludCBTdHVkZW50SUQgUEssRksKICAgICAgICBpbnQgQ2xhc3NJRCBQSyxGSwogICAgICAgIGRhdGUgRW5yb2xsbWVudERhdGUgIkRFRkFVTFQgQ1VSUkVOVF9EQVRFIgogICAgfQ=="/></div></div>
+</div>
+<section id="the-drop-table-if-exists-syntax">
+<h3>The DROP TABLE IF EXISTS Syntax<a class="headerlink" href="#the-drop-table-if-exists-syntax" title="Permalink to this heading">#</a></h3>
+<p>One more thing to note: in our previous examples, we used the syntax <code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span> <span class="pre">IF</span> <span class="pre">EXISTS</span></code> instead of just <code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span></code>. What does this do?</p>
+<p><code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span> <span class="pre">IF</span> <span class="pre">EXISTS</span></code> is a safer way to drop tables. If the specified table doesn’t exist, <code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span></code> would normally throw an error. However, with <code class="docutils literal notranslate"><span class="pre">IF</span> <span class="pre">EXISTS</span></code>, the statement doesn’t throw an error if the table doesn’t exist; it simply does nothing.</p>
+<p>This is useful in scripts where you want to ensure that a table doesn’t exist before creating it, but you don’t want the script to fail if the table doesn’t exist to begin with.</p>
+</section>
+</section>
+<section id="alter-table-modifying-your-database-structure">
+<h2>ALTER TABLE: Modifying Your Database Structure<a class="headerlink" href="#alter-table-modifying-your-database-structure" title="Permalink to this heading">#</a></h2>
+<p>As your database evolves, you may find yourself needing to modify the structure of existing tables. Maybe you need to add a new column, change a column’s data type, or add a new constraint. This is where the <code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span></code> statement comes in.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span></code> statement allows you to change the structure of an existing table without deleting and recreating it. This is useful because it preserves the existing data in the table.</p>
+<section id="adding-a-new-column">
+<h3>Adding a New Column<a class="headerlink" href="#adding-a-new-column" title="Permalink to this heading">#</a></h3>
+<p>To add a new column to an existing table, you use the <code class="docutils literal notranslate"><span class="pre">ADD</span> <span class="pre">COLUMN</span></code> clause:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">new_column_name</span><span class="w"> </span><span class="n">datatype</span><span class="w"> </span><span class="k">constraint</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>For example, let’s say we want to add a ‘DateOfBirth’ column to our STUDENT table:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">STUDENT</span>
+<span class="n">ADD</span> <span class="n">COLUMN</span> <span class="n">DateOfBirth</span> <span class="n">DATE</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///covert_academy.db
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can know view the table schema to ensure it has been added.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">PRAGMA</span> <span class="n">table_info</span><span class="p">(</span><span class="n">STUDENT</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///covert_academy.db
+Done.
+</pre></div>
+</div>
+<div class="output text_html"><table>
+    <tr>
+        <th>cid</th>
+        <th>name</th>
+        <th>type</th>
+        <th>notnull</th>
+        <th>dflt_value</th>
+        <th>pk</th>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>ID</td>
+        <td>INTEGER</td>
+        <td>0</td>
+        <td>None</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Name</td>
+        <td>VARCHAR(100)</td>
+        <td>1</td>
+        <td>None</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Codename</td>
+        <td>VARCHAR(50)</td>
+        <td>0</td>
+        <td>None</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Nationality</td>
+        <td>VARCHAR(50)</td>
+        <td>0</td>
+        <td>&#x27;Unknown&#x27;</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Specialization</td>
+        <td>VARCHAR(100)</td>
+        <td>0</td>
+        <td>None</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Age</td>
+        <td>INTEGER</td>
+        <td>0</td>
+        <td>None</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>DateOfBirth</td>
+        <td>DATE</td>
+        <td>0</td>
+        <td>None</td>
+        <td>0</td>
+    </tr>
+</table></div></div>
+</div>
+</section>
+<section id="dropping-a-column">
+<h3>Dropping a Column<a class="headerlink" href="#dropping-a-column" title="Permalink to this heading">#</a></h3>
+<p>We can drop (remove) a column using the drop table keyword:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span>
+<span class="k">DROP</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="k">column_name</span>
+</pre></div>
+</div>
+<p>Let’s now drop the DateOfBirth column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">STUDENT</span>
+<span class="n">DROP</span> <span class="n">COLUMN</span> <span class="n">DateOfBirth</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///covert_academy.db
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="renaming-tables-and-columns">
+<h3>Renaming Tables and Columns<a class="headerlink" href="#renaming-tables-and-columns" title="Permalink to this heading">#</a></h3>
+<p>We can also rename tables and columns. For examples, let’s suppose we prefer table names like <code class="docutils literal notranslate"><span class="pre">Students</span></code>, <code class="docutils literal notranslate"><span class="pre">Classes</span></code>, and <code class="docutils literal notranslate"><span class="pre">Enrollments</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">STUDENT</span>
+<span class="n">RENAME</span> <span class="n">TO</span> <span class="n">Students</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///covert_academy.db
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">CLASS</span>
+<span class="n">RENAME</span> <span class="n">TO</span> <span class="n">Classes</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///covert_academy.db
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">ENROLLMENT</span>
+<span class="n">RENAME</span> <span class="n">TO</span> <span class="n">Enrollments</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///covert_academy.db
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="modifying-a-column-s-definition">
+<h3>Modifying a Column’s Definition<a class="headerlink" href="#modifying-a-column-s-definition" title="Permalink to this heading">#</a></h3>
+<p>To change a column’s data type in databases like Oracle, MySQL, or Postgres, you use the <code class="docutils literal notranslate"><span class="pre">MODIFY</span> <span class="pre">COLUMN</span></code> clause (or <code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">COLUMN</span></code> in other databases):</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span>
+<span class="k">MODIFY</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="k">column_name</span><span class="w"> </span><span class="n">new_datatype</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>For example, if you wanted to change the ‘Specialization’ column in the <code class="docutils literal notranslate"><span class="pre">STUDENT</span></code> table to have a maximum length of 200 characters:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">STUDENT</span>
+<span class="k">MODIFY</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">Specialization</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>You can also do something similar in these database to add constraints:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">STUDENT</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">CHK_Age</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">Age</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>However, SQLite has limited support for <code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span></code>. While you can rename, add, or drop columns, you can’t directly modify a column’s datatype or constraints. To achieve this in SQLite, you need to use a workaround:</p>
+<ol class="arabic simple">
+<li><p>Create a new column with the desired constraints (or new data type).</p></li>
+<li><p>Copy the data from the old column to the new column.</p></li>
+<li><p>Drop the old column.</p></li>
+<li><p>Rename the new column to the original name</p></li>
+</ol>
+<p>For example, here’s how we can add a constraint to make sure age is between 0 and 100.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>%%sql
+-- Step 1: Add a new column with the desired constraints
+ALTER TABLE Students ADD COLUMN Age_NEW INTEGER CHECK (Age_NEW &lt; 100);
+
+-- Step 2: Copy the data from the old column to the new column
+-- Not needed here, since our table is empty!
+UPDATE Students SET Age_NEW = Age;
+
+-- Step 3: Drop the old column
+ALTER TABLE Students DROP COLUMN Age;
+
+-- Step 4: Rename the new column to the original name
+ALTER TABLE Students RENAME COLUMN Age_NEW TO Age;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> * sqlite:///covert_academy.db
+Done.
+0 rows affected.
+Done.
+Done.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="chapter-summary-database-design">
+<h2>Chapter Summary: Database Design<a class="headerlink" href="#chapter-summary-database-design" title="Permalink to this heading">#</a></h2>
+<p>Database design is a structured process that unfolds in three main phases:</p>
+<section id="conceptual-modeling">
+<h3>Conceptual Modeling<a class="headerlink" href="#conceptual-modeling" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Business Rules</strong>: Establish clear, testable statements that define database constraints and behavior</p></li>
+<li><p><strong>Entity Identification</strong>: Identify key entities (like students and classes) and their attributes</p></li>
+<li><p><strong>Preliminary ERD</strong>: Create a visual representation of entities and their relationships</p></li>
+</ul>
+</section>
+<section id="logical-modeling">
+<h3>Logical Modeling<a class="headerlink" href="#logical-modeling" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Relational Model</strong>: Organize data into tables with rows and columns</p></li>
+<li><p><strong>Keys</strong>: Implement primary keys (unique identifiers) and foreign keys (relationship links)</p></li>
+<li><p><strong>Many-to-Many Relationships</strong>: Resolve using join tables (e.g., ENROLLMENT connecting STUDENT and CLASS)</p></li>
+<li><p><strong>Normalization</strong>:</p>
+<ul>
+<li><p><strong>First Normal Form (1NF)</strong>: Eliminate repeating groups and ensure atomic values</p></li>
+<li><p><strong>Second Normal Form (2NF)</strong>: Remove partial dependencies on the primary key</p></li>
+<li><p><strong>Third Normal Form (3NF)</strong>: Eliminate transitive dependencies between non-key attributes</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="physical-modeling">
+<h3>Physical Modeling<a class="headerlink" href="#physical-modeling" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>SQL Implementation</strong>: Translate logical models into actual database structures</p></li>
+<li><p><strong>Data Types</strong>: Select appropriate types (INTEGER, VARCHAR, DATE, etc.) for each column</p></li>
+<li><p><strong>DDL Commands</strong>:</p>
+<ul>
+<li><p>CREATE TABLE: Define new tables with columns and constraints</p></li>
+<li><p>DROP TABLE: Remove existing tables</p></li>
+<li><p>ALTER TABLE: Modify table structure (add/drop columns, rename tables)</p></li>
+</ul>
+</li>
+<li><p><strong>Constraints</strong>: Implement rules to maintain data integrity</p>
+<ul>
+<li><p>NOT NULL: Require values in specified columns</p></li>
+<li><p>UNIQUE: Ensure distinct values across rows</p></li>
+<li><p>CHECK: Validate data against specific conditions</p></li>
+<li><p>DEFAULT: Provide fallback values</p></li>
+<li><p>PRIMARY KEY/FOREIGN KEY: Establish uniqueness and relationships</p></li>
+</ul>
+</li>
+</ul>
+<p>Database design is an iterative process requiring careful planning and a deep understanding of the data relationships. Proper design ensures data integrity, reduces redundancy, and provides an efficient structure for data storage and retrieval that meets business requirements.</p>
+</section>
+</section>
+<section id="lab-sql-data-definition-langauge-practice">
+<h2>Lab: SQL Data Definition Langauge Practice<a class="headerlink" href="#lab-sql-data-definition-langauge-practice" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!wget https://github.com/brendanpshea/database_sql/raw/main/sql_ddl_quiz/sql_ddl_quiz.py -q -nc
+from sql_ddl_quiz import *
+
+quiz_url = &#39;https://github.com/brendanpshea/database_sql/raw/main/sql_ddl_quiz/sqy_sql_ddl_quiz.json&#39;
+sql_quiz = SQLDDLQuiz(quiz_url)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "5e2fd2403f2e4900ac3f58a287c01171", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<p>Use this list as a quick review sheet for the chapter.</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span> <span class="pre">...</span> <span class="pre">ADD</span> <span class="pre">COLUMN</span> <span class="pre">...</span></code>:</strong> Adds a new column to an existing table.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span> <span class="pre">...</span> <span class="pre">DROP</span> <span class="pre">COLUMN</span> <span class="pre">...</span></code>:</strong> Removes a column from an existing table.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span> <span class="pre">...</span> <span class="pre">RENAME</span> <span class="pre">TO</span> <span class="pre">...</span></code>:</strong> Renames an existing table.</p></li>
+<li><p><strong>ANSI:</strong> The American National Standards Institute, which helps define SQL standards.</p></li>
+<li><p><strong>Attributes (Crow’s foot ERD):</strong> The properties listed inside an entity box.</p></li>
+<li><p><strong>BLOB:</strong> A large binary value, such as an image or file.</p></li>
+<li><p><strong>Business rule:</strong> A statement that defines or constrains how the business works.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">CHAR(n)</span></code>:</strong> A fixed-length text data type.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">CHECK</span></code>:</strong> A constraint that requires each row to satisfy a condition.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">col_name</span> <span class="pre">datatype</span> <span class="pre">PRIMARY</span> <span class="pre">KEY</span></code>:</strong> A column definition that declares the primary key during table creation.</p></li>
+<li><p><strong>Conceptual model:</strong> A high-level picture of data and relationships.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span></code>:</strong> Creates a new table.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">DATE</span></code>:</strong> Stores a calendar date.</p></li>
+<li><p><strong>Descriptive process:</strong> A design approach that starts from existing data structures and refines them.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span></code>:</strong> Removes a table and its data.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span> <span class="pre">IF</span> <span class="pre">EXISTS</span></code>:</strong> Removes a table only if it already exists.</p></li>
+<li><p><strong>Entities (Crow’s foot ERD):</strong> The main objects or concepts shown as boxes.</p></li>
+<li><p><strong>First normal form (1NF):</strong> A normalization level that removes repeating groups and keeps values atomic.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">FOREIGN</span> <span class="pre">KEY</span> <span class="pre">(...)</span> <span class="pre">REFERENCES</span> <span class="pre">...</span></code>:</strong> A constraint that points to a key in another table.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">INTEGER</span></code>:</strong> Stores whole numbers.</p></li>
+<li><p><strong>ISO:</strong> The International Organization for Standardization, which also publishes SQL standards.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">JSONB</span></code>:</strong> PostgreSQL’s binary JSON data type.</p></li>
+<li><p><strong>Logical model:</strong> A detailed design that is still independent of a specific DBMS.</p></li>
+<li><p><strong>Natural key:</strong> A real-world attribute, or combination of attributes, that uniquely identifies a row.</p></li>
+<li><p><strong>Normalization:</strong> Organizing data to reduce redundancy and improve integrity.</p></li>
+<li><p><strong>Normative process:</strong> A design approach that starts from requirements and builds the structure from scratch.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">NULL</span></code>:</strong> A constraint that prevents empty values in a column.</p></li>
+<li><p><strong>Physical model:</strong> The design as implemented in a specific database system.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">PRIMARY</span> <span class="pre">KEY</span></code>:</strong> A constraint that uniquely identifies each row in a table.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">REAL</span></code>:</strong> Stores floating-point numbers.</p></li>
+<li><p><strong>Relationships (Crow’s foot ERD):</strong> The lines that connect entities in an ER diagram.</p></li>
+<li><p><strong>Second normal form (2NF):</strong> A normalization level that removes partial dependency on a composite key.</p></li>
+<li><p><strong>Surrogate key:</strong> An artificial key used instead of a natural key.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">TEXT</span></code>:</strong> A variable-length text data type.</p></li>
+<li><p><strong>Third normal form (3NF):</strong> A normalization level that removes transitive dependency.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">TIME</span></code>:</strong> Stores a time of day.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">UNIQUE</span></code>:</strong> A constraint that requires values to stay distinct.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">VARCHAR(n)</span></code>:</strong> A variable-length text data type with a maximum length.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Database_04_AdvancedSelect.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Super Select: Advanced Retrieval With Mario Brothers Plumbing</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Database_06_WritingData.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Writing Data With Rollingstone’s Greatest Albums</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brendan-s-lecture">Brendan’s Lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-design-at-the-covert-academy">Conceptual Design at the Covert Academy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-conceptual-design">What is Conceptual Design?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulating-business-rules">Formulating Business Rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-list-of-entities-and-attributes">Preliminary List of Entities and Attributes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-erd">Preliminary ERD</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-logical-modeling">What is Logical Modeling?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-many-to-many-relationships">Resolving Many-to-Many Relationships</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-primary-keys">Choosing Primary Keys</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updated-erd">Updated ERD</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-modeling-normalization">Logical Modeling: Normalization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-normalize">Why normalize?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-normal-form-1nf">First Normal Form (1NF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nf-checklist-and-tradeoffs">1NF Checklist and Tradeoffs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-normal-form-2nf">Second Normal Form (2NF)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recognizing-partial-dependencies">Recognizing Partial Dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-to-2nf">Converting to 2NF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#another-2nf-example">Another 2NF Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-second-normal-form">Benefits of Second Normal Form</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-2nf-mistakes-to-avoid">Common 2NF Mistakes to Avoid</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#third-normal-form-and-beyond">Third Normal Form and Beyond</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-normalization-strategy">Practical Normalization Strategy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quiz-normalize-this">Quiz: Normalize This</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-modeling-bringing-the-database-to-life">Physical Modeling - Bringing the Database to Life</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansi-sql-data-types-big-picture">ANSI SQL Data Types: Big Picture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-type-families">Common type families</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-the-standard-matters">Why the standard matters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sqlite-type-affinity-in-practice">SQLite Type Affinity in Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-database-design-for-beginners">Practical Database Design for Beginners</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-right-data-type">Choosing the Right Data Type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-basic-data-type-decisions">Examples of Basic Data Type Decisions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sqlite-s-simple-approach-for-beginners">SQLite’s Simple Approach for Beginners</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-beginner-mistakes-to-avoid">Common Beginner Mistakes to Avoid</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-performance-tips">Simple Performance Tips</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-keep-it-simple-vs-when-to-be-specific">When to Keep It Simple vs. When to Be Specific</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-data-types">Conclusion: Data Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-create-table-statement">The CREATE TABLE Statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#column-constraints">Column Constraints</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-drop-table-statement">The DROP TABLE Statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recreating-the-student-table">Recreating the STUDENT Table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recreating-the-class-table">Recreating the CLASS Table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recreating-the-enrollment-table">Recreating the ENROLLMENT Table</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erd-physical-model">ERD: Physical Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-drop-table-if-exists-syntax">The DROP TABLE IF EXISTS Syntax</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alter-table-modifying-your-database-structure">ALTER TABLE: Modifying Your Database Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-new-column">Adding a New Column</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dropping-a-column">Dropping a Column</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-tables-and-columns">Renaming Tables and Columns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-a-column-s-definition">Modifying a Column’s Definition</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary-database-design">Chapter Summary: Database Design</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-modeling">Conceptual Modeling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-modeling">Logical Modeling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-modeling">Physical Modeling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-sql-data-definition-langauge-practice">Lab: SQL Data Definition Langauge Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Brendan Shea, PhD
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

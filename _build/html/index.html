@@ -1,0 +1,702 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>SQL and Database Management Through Pop Culture &#8212; SQL and Database Management Through Pop Culture</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Starship SQL: An Introduction to Databases" href="Database_01_StarShipSQL.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/database_cover.jpg" class="logo__image only-light" alt="SQL and Database Management Through Pop Culture - Home"/>
+    <script>document.write(`<img src="_static/database_cover.jpg" class="logo__image only-dark" alt="SQL and Database Management Through Pop Culture - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    SQL and Database Management Through Pop Culture
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Database_01_StarShipSQL.html">Starship SQL: An Introduction to Databases</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Database_02_IntroToSQL.html">Introduction to SQL: SELECT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_03_Joins_Sets_SQL.html">Getting Tables Together With Joins and Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_04_AdvancedSelect.html">Super Select: Advanced Retrieval With Mario Brothers Plumbing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_05_Design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_06_WritingData.html">Writing Data With Rollingstone’s Greatest Albums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_07_Views.html">A Musical “VIEW” For Better Data Presentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_08_IndexesTransactions.html">Database Performance: Index, Query Plans, and Transaction Management</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Database_09_PokemonAndPostgres.html">Postgres and Pokemon</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Database_10_DatabaseSecurity.html">Guarding the Virtual Vault: A Deep Dive into Database Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_11_DesignDeployTest.html">Database Architecture Patterns: Design, Deployment, and Testing for Modern Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_12_FinalProject.html">SQLite Database Final Project: Design, Implementation, and Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labs/Database_Ex_Normalization.html">Introduction to Normalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labs/Database_Lab_Chapter_3.html">SQL Practice (Chapter 3)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/brendanpshea/database_sql" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/index.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>SQL and Database Management Through Pop Culture</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-book-works">Why this book works</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-chapters">Explore the chapters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labs-and-learning-tools">Labs and learning tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-directly-in-colab">Launch directly in Colab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coming-soon">Coming soon</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="sql-and-database-management-through-pop-culture">
+<h1>SQL and Database Management Through Pop Culture<a class="headerlink" href="#sql-and-database-management-through-pop-culture" title="Permalink to this heading">#</a></h1>
+<div class="home-hero">
+	<div class="home-hero__copy">
+		<p class="home-hero__eyebrow">Open educational resource | Jupyter Book | Google Colab ready</p>
+		<p class="home-hero__lede">An interactive, public-facing textbook for database design, SQL, data security, performance tuning, and PostgreSQL. The book is built around story-driven notebook chapters that students can read on the web or run immediately in Colab.</p>
+		<div class="home-hero__actions">
+			<a class="home-button home-button--primary" href="Database_01_StarShipSQL.html">Start with Chapter 1</a>
+			<a class="home-button home-button--secondary" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_01_StarShipSQL.ipynb">Launch Chapter 1 in Colab</a>
+		</div>
+		<p class="home-hero__support">Supported with grant funding from Minnesota State and Rochester Community and Technical College.</p>
+	</div>
+	<aside class="home-hero__panel">
+	<h3>At a glance</h3>
+	<div class="home-stats">
+		<div class="home-stat"><strong>12</strong> core chapters</div>
+		<div class="home-stat"><strong>2</strong> guided labs</div>
+		<div class="home-stat"><strong>100%</strong> web and Colab access</div>
+		<div class="home-stat"><strong>OER</strong> public course materials</div>
+	</div>
+	<p class="home-panel-note">Built for classroom adoption, independent study, and direct GitHub Pages publishing without requiring local software setup.</p>
+</aside>
+</div>
+<section id="why-this-book-works">
+<h2>Why this book works<a class="headerlink" href="#why-this-book-works" title="Permalink to this heading">#</a></h2>
+<div class="home-feature-grid">
+	<section class="home-feature">
+		<h3>Notebook-first instruction</h3>
+		<p>Each chapter combines explanation, code, and exercises in one place so students can read and practice without context switching.</p>
+	</section>
+	<section class="home-feature">
+		<h3>Pop culture scenarios</h3>
+		<p>Starships, Gotham banks, Mario plumbing, and Pokemon datasets make abstract database ideas easier to remember.</p>
+	</section>
+	<section class="home-feature">
+		<h3>Immediate hands-on practice</h3>
+		<p>Learners can stay in the book for reading or jump directly into Colab for live experimentation with no local install burden.</p>
+	</section>
+	<section class="home-feature">
+		<h3>Career-aligned topics</h3>
+		<p>The sequence covers modeling, querying, security, performance, design, deployment, and professional database workflows.</p>
+	</section>
+</div>
+</section>
+<section id="explore-the-chapters">
+<h2>Explore the chapters<a class="headerlink" href="#explore-the-chapters" title="Permalink to this heading">#</a></h2>
+<div class="home-chapter-grid">
+	<a class="home-chapter-card" href="Database_01_StarShipSQL.html">
+		<span class="home-chapter-card__number">01</span>
+		<h3>Starship SQL</h3>
+		<p>Start with data models, database types, and the conceptual foundations of relational thinking.</p>
+		<div class="home-chapter-card__actions">
+			<span class="home-chip">Read in book</span>
+			<span class="home-link-inline">Concepts and modeling</span>
+		</div>
+	</a>
+	<a class="home-chapter-card" href="Database_02_IntroToSQL.html">
+		<span class="home-chapter-card__number">02</span>
+		<h3>Intro to SQL SELECT</h3>
+		<p>Learn the core SELECT workflow with filtering, sorting, and result shaping against approachable sample data.</p>
+		<div class="home-chapter-card__actions">
+			<span class="home-chip">Read in book</span>
+			<span class="home-link-inline">Query basics</span>
+		</div>
+	</a>
+	<a class="home-chapter-card" href="Database_03_Joins_Sets_SQL.html">
+		<span class="home-chapter-card__number">03</span>
+		<h3>JOINs and Sets</h3>
+		<p>Combine tables, use unions and intersections, and build confidence with multi-table relational queries.</p>
+		<div class="home-chapter-card__actions">
+			<span class="home-chip">Read in book</span>
+			<span class="home-link-inline">Relationships and joins</span>
+		</div>
+	</a>
+	<a class="home-chapter-card" href="Database_04_AdvancedSelect.html">
+		<span class="home-chapter-card__number">04</span>
+		<h3>Advanced SELECT</h3>
+		<p>Move into grouping, subqueries, HAVING, and more sophisticated retrieval patterns for real analysis tasks.</p>
+		<div class="home-chapter-card__actions">
+			<span class="home-chip">Read in book</span>
+			<span class="home-link-inline">Aggregation and analysis</span>
+		</div>
+	</a>
+	<a class="home-chapter-card" href="Database_05_Design.html">
+		<span class="home-chapter-card__number">05</span>
+		<h3>Database Design</h3>
+		<p>Build entity-relationship models and turn them into durable table structures for real systems.</p>
+		<div class="home-chapter-card__actions">
+			<span class="home-chip">Read in book</span>
+			<span class="home-link-inline">ERDs and schema design</span>
+		</div>
+	</a>
+	<a class="home-chapter-card" href="Database_06_WritingData.html">
+		<span class="home-chapter-card__number">06</span>
+		<h3>Writing Data</h3>
+		<p>Practice INSERT, UPDATE, and DELETE while connecting SQL work to scripts and application logic.</p>
+		<div class="home-chapter-card__actions">
+			<span class="home-chip">Read in book</span>
+			<span class="home-link-inline">CRUD operations</span>
+		</div>
+	</a>
+	<a class="home-chapter-card" href="Database_07_Views.html">
+		<span class="home-chapter-card__number">07</span>
+		<h3>Views and CTEs</h3>
+		<p>Use reusable query structures to simplify reporting, analysis, and maintainable SQL workflows.</p>
+		<div class="home-chapter-card__actions">
+			<span class="home-chip">Read in book</span>
+			<span class="home-link-inline">Reusable queries</span>
+		</div>
+	</a>
+	<a class="home-chapter-card" href="Database_08_IndexesTransactions.html">
+		<span class="home-chapter-card__number">08</span>
+		<h3>Indexes and Transactions</h3>
+		<p>Study performance, concurrency, and transactional integrity for production-style database systems.</p>
+		<div class="home-chapter-card__actions">
+			<span class="home-chip">Read in book</span>
+			<span class="home-link-inline">Performance and reliability</span>
+		</div>
+	</a>
+	<a class="home-chapter-card" href="Database_09_PokemonAndPostgres.html">
+		<span class="home-chapter-card__number">09</span>
+		<h3>Pokemon and PostgreSQL</h3>
+		<p>Transition from SQLite to PostgreSQL and work with richer database features in a professional system.</p>
+		<div class="home-chapter-card__actions">
+			<span class="home-chip">Read in book</span>
+			<span class="home-link-inline">PostgreSQL foundations</span>
+		</div>
+	</a>
+	<a class="home-chapter-card" href="Database_10_DatabaseSecurity.html">
+		<span class="home-chapter-card__number">10</span>
+		<h3>Database Security</h3>
+		<p>Cover access control, threats, and protection strategies for sensitive operational and institutional data.</p>
+		<div class="home-chapter-card__actions">
+			<span class="home-chip">Read in book</span>
+			<span class="home-link-inline">Security and controls</span>
+		</div>
+	</a>
+	<a class="home-chapter-card" href="Database_11_DesignDeployTest.html">
+		<span class="home-chapter-card__number">11</span>
+		<h3>Design, Deploy, Test</h3>
+		<p>Work through database lifecycle decisions from development design through deployment and verification.</p>
+		<div class="home-chapter-card__actions">
+			<span class="home-chip">Read in book</span>
+			<span class="home-link-inline">Lifecycle and deployment</span>
+		</div>
+	</a>
+	<a class="home-chapter-card" href="Database_12_FinalProject.html">
+		<span class="home-chapter-card__number">12</span>
+		<h3>Final Project</h3>
+		<p>Pull everything together by designing, building, populating, and optimizing a full database project.</p>
+		<div class="home-chapter-card__actions">
+			<span class="home-chip">Read in book</span>
+			<span class="home-link-inline">Capstone build</span>
+		</div>
+	</a>
+</div>
+</section>
+<section id="labs-and-learning-tools">
+<h2>Labs and learning tools<a class="headerlink" href="#labs-and-learning-tools" title="Permalink to this heading">#</a></h2>
+<div class="home-resource-grid">
+	<section class="home-resource">
+		<h3><a href="labs/Database_Ex_Normalization.html">Normalization Lab</a></h3>
+		<p>Guided practice on functional dependencies, normal forms, and table decomposition.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="labs/Database_Lab_Chapter_3.html">Chapter 3 Lab</a></h3>
+		<p>Extra JOIN and set-operations work to reinforce relational querying before moving ahead.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://github.com/brendanpshea/database_sql/tree/main/sql_select_quiz">SQL SELECT Quiz Tool</a></h3>
+		<p>Automatically graded practice for retrieval, filtering, JOINs, and advanced SQL selection patterns.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://github.com/brendanpshea/database_sql/tree/main/sql_ddl_quiz">SQL DDL Quiz Tool</a></h3>
+		<p>Focused schema-definition practice covering CREATE, ALTER, and related design operations.</p>
+	</section>
+</div>
+</section>
+<section id="launch-directly-in-colab">
+<h2>Launch directly in Colab<a class="headerlink" href="#launch-directly-in-colab" title="Permalink to this heading">#</a></h2>
+<p>Choose the notebook workflow when you want to run code immediately in the browser:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_01_StarShipSQL.ipynb">Chapter 1 in Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_02_IntroToSQL.ipynb">Chapter 2 in Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_03_Joins_Sets_SQL.ipynb">Chapter 3 in Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_04_AdvancedSelect.ipynb">Chapter 4 in Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_05_Design.ipynb">Chapter 5 in Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_06_WritingData.ipynb">Chapter 6 in Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_07_Views.ipynb">Chapter 7 in Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_08_IndexesTransactions.ipynb">Chapter 8 in Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_09_PokemonAndPostgres.ipynb">Chapter 9 in Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_10_DatabaseSecurity.ipynb">Chapter 10 in Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_11_DesignDeployTest.ipynb">Chapter 11 in Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_12_FinalProject.ipynb">Chapter 12 in Colab</a></p></li>
+</ul>
+</section>
+<section id="coming-soon">
+<h2>Coming soon<a class="headerlink" href="#coming-soon" title="Permalink to this heading">#</a></h2>
+<section class="home-coming-soon">
+	<h3>Data governance case studies</h3>
+	<p>A forthcoming section will add scenario-based case studies on stewardship, policy, compliance, quality controls, governance risk, and data lifecycle management.</p>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="Database_01_StarShipSQL.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Starship SQL: An Introduction to Databases</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-book-works">Why this book works</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-chapters">Explore the chapters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labs-and-learning-tools">Labs and learning tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-directly-in-colab">Launch directly in Colab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coming-soon">Coming soon</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Brendan Shea, PhD
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

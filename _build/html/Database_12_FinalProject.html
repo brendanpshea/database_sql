@@ -1,0 +1,1179 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>SQLite Database Final Project: Design, Implementation, and Optimization &#8212; SQL and Database Management Through Pop Culture</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Database_12_FinalProject';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction to Normalization" href="labs/Database_Ex_Normalization.html" />
+    <link rel="prev" title="Database Architecture Patterns: Design, Deployment, and Testing for Modern Applications" href="Database_11_DesignDeployTest.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/database_cover.jpg" class="logo__image only-light" alt="SQL and Database Management Through Pop Culture - Home"/>
+    <script>document.write(`<img src="_static/database_cover.jpg" class="logo__image only-dark" alt="SQL and Database Management Through Pop Culture - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    SQL and Database Management Through Pop Culture
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Database_01_StarShipSQL.html">Starship SQL: An Introduction to Databases</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Database_02_IntroToSQL.html">Introduction to SQL: SELECT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_03_Joins_Sets_SQL.html">Getting Tables Together With Joins and Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_04_AdvancedSelect.html">Super Select: Advanced Retrieval With Mario Brothers Plumbing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_05_Design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_06_WritingData.html">Writing Data With Rollingstone’s Greatest Albums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_07_Views.html">A Musical “VIEW” For Better Data Presentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_08_IndexesTransactions.html">Database Performance: Index, Query Plans, and Transaction Management</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Database_09_PokemonAndPostgres.html">Postgres and Pokemon</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Database_10_DatabaseSecurity.html">Guarding the Virtual Vault: A Deep Dive into Database Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database_11_DesignDeployTest.html">Database Architecture Patterns: Design, Deployment, and Testing for Modern Applications</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">SQLite Database Final Project: Design, Implementation, and Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labs/Database_Ex_Normalization.html">Introduction to Normalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labs/Database_Lab_Chapter_3.html">SQL Practice (Chapter 3)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/./Database_12_FinalProject.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/brendanpshea/database_sql" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Database_12_FinalProject.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>SQLite Database Final Project: Design, Implementation, and Optimization</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-project-ideas">Sample Project Ideas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brendan-s-lecture">Brendan’s Lecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#policy-on-ai-tools">Policy on AI Tools</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-conceptual-modeling-business-rules">Part 2: Conceptual Modeling - Business Rules</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-business-rules">My Answer: Business Rules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-conceptual-modeling-entities-and-attributes">Part 3: Conceptual Modeling - Entities and Attributes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-entities-and-attributes">My Answer: Entities and Attributes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-conceptual-modeling-entity-relationship-diagram-erd">Part 4: Conceptual Modeling - Entity Relationship Diagram (ERD)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-erd-diagram">My Answer: ERD Diagram</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-logical-modeling-relational-model">Part 5: Logical Modeling - Relational Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-logical-model">My Answer: Logical Model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-logical-modeling-key-selection-rationale">Part 6: Logical Modeling - Key Selection Rationale</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-my-answer">Part 6: My Answer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-7-physical-model-create-simple-tables">Part 7: Physical Model - Create Simple Tables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-create-tables">My Answer: Create Tables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-create-the-database">First, Create the Database</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-8-physical-model-drop-tables">Part 8: Physical Model - Drop Tables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-drop-table">My ANswer: Drop Table</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-9-physical-model-create-full-tables">Part 9: Physical Model - Create Full Tables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-create-full-tables">My Answer: Create Full Tables</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-10-data-population-insert-sample-data">Part 10: Data Population - Insert Sample Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-data-population">My Answer: Data Population</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-11-basic-select-queries">Part 11: Basic SELECT Queries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-basic-select-queries">My Answer: Basic SELECT Queries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-12-advanced-select-queries">Part 12: Advanced SELECT Queries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-advanced-queries">My Answer: Advanced Queries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-14-index-creation-and-analysis">Part 14: Index Creation and Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-create-indexes">My Answer: Create Indexes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-15-view-creation">Part 15: View Creation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-16-transaction-management">Part 16: Transaction Management</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-transactions">My Answer: Transactions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parts-17-to-20-reflection-and-future-improvements">Parts 17 to 20: Reflection and Future Improvements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-guidelines">Submission Guidelines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_12_FinalProject.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section id="sqlite-database-final-project-design-implementation-and-optimization">
+<h1>SQLite Database Final Project: Design, Implementation, and Optimization<a class="headerlink" href="#sqlite-database-final-project-design-implementation-and-optimization" title="Permalink to this heading">#</a></h1>
+<p><strong>Note: To start working on this project, you should choose File: “Save Copy in Drive” and then name the file whatever you want. Then, you can type your answers directly into the document.</strong></p>
+<p>Welcome to your final project for the Database and SQL course. In this assignment, you will apply what you have learned about database design, SQL, and optimization to a topic of your choice.</p>
+<p>You will design, populate, query, and optimize a SQLite database in Google Colab using the SQL magic extension.</p>
+<section id="learning-outcomes">
+<h2>Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this heading">#</a></h2>
+<p>By the end of this project, you will be able to:</p>
+<ol class="arabic simple">
+<li><p>Translate a real-world topic into business rules, entities, attributes, and relationships</p></li>
+<li><p>Build a normalized SQLite schema with appropriate keys and data types</p></li>
+<li><p>Populate tables with realistic sample data</p></li>
+<li><p>Write SQL queries that demonstrate filtering, joins, aggregation, and analysis</p></li>
+<li><p>Explain your design decisions, testing approach, and optimization choices clearly</p></li>
+</ol>
+<p><strong>Aim for a project that takes roughly 6 to 9 hours to complete: challenging enough to be meaningful, but still manageable.</strong></p>
+</section>
+<section id="sample-project-ideas">
+<h2>Sample Project Ideas<a class="headerlink" href="#sample-project-ideas" title="Permalink to this heading">#</a></h2>
+<p>Use one of these ideas or invent your own:</p>
+<ol class="arabic simple">
+<li><p>A music library management system</p></li>
+<li><p>A personal finance tracker</p></li>
+<li><p>A recipe and meal planning database</p></li>
+<li><p>A fitness and workout log</p></li>
+<li><p>A book collection catalog</p></li>
+<li><p>A plant care and gardening tracker</p></li>
+<li><p>A movie and TV show watchlist</p></li>
+<li><p>A travel planning and itinerary system</p></li>
+<li><p>A collectibles inventory such as trading cards, stamps, or coins</p></li>
+<li><p>A personal learning management system</p></li>
+</ol>
+<p>These are just starting points. Feel free to come up with your own topic.</p>
+</section>
+<section id="brendan-s-lecture">
+<h2>Brendan’s Lecture<a class="headerlink" href="#brendan-s-lecture" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;https://youtu.be/8ieX7CkuKmc&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+        <iframe
+            width="800"
+            height="500"
+            src="https://www.youtube.com/embed/https://youtu.be/8ieX7CkuKmc"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
+</div>
+<section id="policy-on-ai-tools">
+<h3>Policy on AI Tools<a class="headerlink" href="#policy-on-ai-tools" title="Permalink to this heading">#</a></h3>
+<p>You are allowed to use AI tools (chatGPT, Gemini, Claude, etc.), as these are increasingly important in many areas of database and computer science.</p>
+<p>If relevent, please indicate which AI tools did you use in this project. How did they work for you?</p>
+<p>[You answer goes here).</p>
+</section>
+</section>
+<section id="part-2-conceptual-modeling-business-rules">
+<h2>Part 2: Conceptual Modeling - Business Rules<a class="headerlink" href="#part-2-conceptual-modeling-business-rules" title="Permalink to this heading">#</a></h2>
+<p>Start by defining the business rules for your chosen database topic. These rules should clearly state the purpose of your database and the relationships between different entities. Write at least 5-7 business rules that govern your database’s structure and operations.</p>
+<p>Example (for a music library):</p>
+<ol class="arabic simple">
+<li><p>Each artist can have multiple albums.</p></li>
+<li><p>An album belongs to one primary artist but can feature multiple collaborating artists.</p></li>
+<li><p>Each album contains multiple songs.</p></li>
+<li><p>A song can appear on multiple albums (e.g., original album and compilation).</p></li>
+<li><p>Users can create multiple playlists.</p></li>
+<li><p>A playlist can contain multiple songs, and a song can be in multiple playlists.</p></li>
+<li><p>Each song has one primary genre, but can be associated with multiple subgenres.</p></li>
+</ol>
+<section id="my-answer-business-rules">
+<h3>My Answer: Business Rules<a class="headerlink" href="#my-answer-business-rules" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
+<section id="part-3-conceptual-modeling-entities-and-attributes">
+<h2>Part 3: Conceptual Modeling - Entities and Attributes<a class="headerlink" href="#part-3-conceptual-modeling-entities-and-attributes" title="Permalink to this heading">#</a></h2>
+<p>Based on your business rules, identify the main entities in your database and list their attributes. You should have at THREE entities and the attributes should span various data types (INTEGER, TEXT, REAL, BLOB, etc.).</p>
+<p>Example (continuing with the music library):</p>
+<ol class="arabic simple">
+<li><p>Artist</p>
+<ul class="simple">
+<li><p>ArtistID (INTEGER)</p></li>
+<li><p>Name (TEXT)</p></li>
+<li><p>Country (TEXT)</p></li>
+<li><p>FormedDate (DATE)</p></li>
+</ul>
+</li>
+<li><p>Album</p>
+<ul class="simple">
+<li><p>AlbumID (INTEGER)</p></li>
+<li><p>Title (TEXT)</p></li>
+<li><p>ReleaseDate (DATE)</p></li>
+<li><p>ArtistID (INTEGER)</p></li>
+<li><p>CoverArt (BLOB)</p></li>
+</ul>
+</li>
+<li><p>Song</p>
+<ul class="simple">
+<li><p>SongID (INTEGER)</p></li>
+<li><p>Title (TEXT)</p></li>
+<li><p>Duration (INTEGER) # in seconds</p></li>
+<li><p>AlbumID (INTEGER)</p></li>
+<li><p>GenreID (INTEGER)</p></li>
+</ul>
+</li>
+<li><p>Genre</p>
+<ul class="simple">
+<li><p>GenreID (INTEGER)</p></li>
+<li><p>Name (TEXT)</p></li>
+</ul>
+</li>
+<li><p>Playlist</p>
+<ul class="simple">
+<li><p>PlaylistID (INTEGER)</p></li>
+<li><p>Name (TEXT)</p></li>
+<li><p>CreationDate (DATE)</p></li>
+</ul>
+</li>
+</ol>
+<p>Ensure your entities and attributes adequately represent your chosen topic and align with your business rules.</p>
+<section id="my-answer-entities-and-attributes">
+<h3>My Answer: Entities and Attributes<a class="headerlink" href="#my-answer-entities-and-attributes" title="Permalink to this heading">#</a></h3>
+<p>Write your answer below.</p>
+</section>
+</section>
+<section id="part-4-conceptual-modeling-entity-relationship-diagram-erd">
+<h2>Part 4: Conceptual Modeling - Entity Relationship Diagram (ERD)<a class="headerlink" href="#part-4-conceptual-modeling-entity-relationship-diagram-erd" title="Permalink to this heading">#</a></h2>
+<p>Create an Entity Relationship Diagram (ERD) using Mermaid syntax. This diagram should visually represent the entities you’ve identified and show the relationships between them. Include cardinality in your diagram (one-to-one, one-to-many, many-to-many).</p>
+<p>Here’s an example of how to start your Mermaid ERD:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>erDiagram
+    ARTIST ||--o{ ALBUM : creates
+    ALBUM ||--o{ SONG : contains
+    SONG }o--|| GENRE : belongs_to
+    PLAYLIST }o--o{ SONG : includes
+</pre></div>
+</div>
+<p>Complete the diagram for all entities in your database. Make sure the relationships accurately reflect your business rules.</p>
+<section id="my-answer-erd-diagram">
+<h3>My Answer: ERD Diagram<a class="headerlink" href="#my-answer-erd-diagram" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">SVG</span><span class="p">,</span> <span class="n">display</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">mm</span><span class="p">(</span><span class="n">graph</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fetch and display a Mermaid diagram as SVG.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">      graph (str): Mermaid graph definition.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># 1. Encode the graph to Base64</span>
+    <span class="n">b64</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">urlsafe_b64encode</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+    <span class="c1"># 2. Construct the SVG URL</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://mermaid.ink/svg/</span><span class="si">{</span><span class="n">b64</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="c1"># 3. Fetch SVG content</span>
+    <span class="n">svg_data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+    <span class="c1"># 4. Render inline in Jupyter</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">SVG</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">svg_data</span><span class="p">))</span>
+
+<span class="c1"># Change the code in the &quot;&quot;&quot;</span>
+<span class="n">mm</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">erDiagram</span>
+<span class="s2">    ARTIST ||--o{ ALBUM : creates</span>
+<span class="s2">    ALBUM ||--o{ SONG : contains</span>
+<span class="s2">    SONG }o--|| GENRE : belongs_to</span>
+<span class="s2">    PLAYLIST }o--o{ SONG : includes</span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/fae4374f77ad8c3d98300944516ebf17a30c099fc12898c89a1d1d2d348afa94.svg" src="_images/fae4374f77ad8c3d98300944516ebf17a30c099fc12898c89a1d1d2d348afa94.svg" /></div>
+</div>
+</section>
+</section>
+<section id="part-5-logical-modeling-relational-model">
+<h2>Part 5: Logical Modeling - Relational Model<a class="headerlink" href="#part-5-logical-modeling-relational-model" title="Permalink to this heading">#</a></h2>
+<p>Transform your conceptual model into a logical model using the relational model. List all the tables in your database, including columns, primary keys, and foreign keys. You may use JSON columns for certain complex attributes if appropriate for your design.</p>
+<p>Example:</p>
+<ol class="arabic simple">
+<li><p><strong>Artist</strong> (ArtistID PK, Name, Country, FormedDate)</p></li>
+<li><p><strong>Album</strong> (AlbumID PK, Title, ReleaseDate, ArtistID FK→Artist(ArtistID), CoverArt)</p></li>
+<li><p><strong>Song</strong> (SongID PK, Title, Duration, AlbumID FK→Album(AlbumID), GenreID FK→Genre(GenreID))</p></li>
+<li><p><strong>Genre</strong> (GenreID PK, Name)</p></li>
+<li><p><strong>Playlist</strong> (PlaylistID PK, Name, CreationDate)</p></li>
+<li><p><strong>PlaylistSong</strong> (PlaylistID PK FK→Playlist(PlaylistID), SongID PK FK→Song(SongID))</p></li>
+</ol>
+<section id="my-answer-logical-model">
+<h3>My Answer: Logical Model<a class="headerlink" href="#my-answer-logical-model" title="Permalink to this heading">#</a></h3>
+<p>Type your answer here.</p>
+</section>
+</section>
+<section id="part-6-logical-modeling-key-selection-rationale">
+<h2>Part 6: Logical Modeling - Key Selection Rationale<a class="headerlink" href="#part-6-logical-modeling-key-selection-rationale" title="Permalink to this heading">#</a></h2>
+<p>Explain your choices for primary and foreign keys. Discuss why you selected certain attributes as keys and how these choices support data integrity and efficient querying.</p>
+<p>Consider addressing the following points:</p>
+<ul class="simple">
+<li><p>Why did you choose certain attributes as primary keys?</p></li>
+<li><p>Are your primary keys natural or surrogate keys? Why?</p></li>
+<li><p>How do your foreign key relationships enforce referential integrity?</p></li>
+<li><p>Did you implement any composite keys? If so, why?</p></li>
+</ul>
+<section id="part-6-my-answer">
+<h3>Part 6: My Answer<a class="headerlink" href="#part-6-my-answer" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
+<section id="part-7-physical-model-create-simple-tables">
+<h2>Part 7: Physical Model - Create Simple Tables<a class="headerlink" href="#part-7-physical-model-create-simple-tables" title="Permalink to this heading">#</a></h2>
+<p>Write SQL statements to create a simple version of your tables. At this stage, include only the column names and their data types, without keys or constraints.</p>
+<p>Example:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Artist</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">ArtistID</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Name</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Country</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">FormedDate</span><span class="w"> </span><span class="nb">DATE</span>
+<span class="p">);</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Album</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">AlbumID</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Title</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ReleaseDate</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ArtistID</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+<span class="w">    </span><span class="n">CoverArt</span><span class="w"> </span><span class="nb">BLOB</span>
+<span class="p">);</span>
+
+<span class="c1">-- Continue with the rest of your tables...</span>
+</pre></div>
+</div>
+<p>Create all the tables in your database using this simple structure.</p>
+<section id="my-answer-create-tables">
+<h3>My Answer: Create Tables<a class="headerlink" href="#my-answer-create-tables" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="first-create-the-database">
+<h3>First, Create the Database<a class="headerlink" href="#first-create-the-database" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">load_ext</span> <span class="n">sql</span>
+<span class="o">%</span><span class="n">sql</span> <span class="n">sqlite</span><span class="p">:</span><span class="o">///</span><span class="n">my_data</span><span class="o">.</span><span class="n">db</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">SELECT</span> <span class="s1">&#39;Student workspace: add your CREATE TABLE statements here.&#39;</span> <span class="n">AS</span> <span class="n">note</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-8-physical-model-drop-tables">
+<h2>Part 8: Physical Model - Drop Tables<a class="headerlink" href="#part-8-physical-model-drop-tables" title="Permalink to this heading">#</a></h2>
+<p>Write SQL statements to drop all the tables you’ve created. This will allow you to easily reset your database if needed.</p>
+<p>Example:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">Artist</span><span class="p">;</span>
+<span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">Album</span><span class="p">;</span>
+<span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">Song</span><span class="p">;</span>
+<span class="c1">-- Continue with the rest of your tables...</span>
+</pre></div>
+</div>
+<p>Ensure you include DROP statements for all tables in your database.</p>
+<section id="my-answer-drop-table">
+<h3>My ANswer: Drop Table<a class="headerlink" href="#my-answer-drop-table" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">SELECT</span> <span class="s1">&#39;Student workspace: add your DROP TABLE statements here.&#39;</span> <span class="n">AS</span> <span class="n">note</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-9-physical-model-create-full-tables">
+<h2>Part 9: Physical Model - Create Full Tables<a class="headerlink" href="#part-9-physical-model-create-full-tables" title="Permalink to this heading">#</a></h2>
+<p>Now, create the full version of your tables, including primary keys, foreign keys, and any other constraints (e.g., NOT NULL, UNIQUE, CHECK).</p>
+<p>Example:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Artist</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">ArtistID</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Name</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Country</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">FormedDate</span><span class="w"> </span><span class="nb">DATE</span>
+<span class="p">);</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Album</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">AlbumID</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Title</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ReleaseDate</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ArtistID</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+<span class="w">    </span><span class="n">CoverArt</span><span class="w"> </span><span class="nb">BLOB</span><span class="p">,</span>
+<span class="w">    </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">ArtistID</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">Artist</span><span class="p">(</span><span class="n">ArtistID</span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="c1">-- Continue with the rest of your tables...</span>
+</pre></div>
+</div>
+<p>Implement all your tables with full constraints.</p>
+<section id="my-answer-create-full-tables">
+<h3>My Answer: Create Full Tables<a class="headerlink" href="#my-answer-create-full-tables" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">SELECT</span> <span class="s1">&#39;Student workspace: add your full CREATE TABLE statements here.&#39;</span> <span class="n">AS</span> <span class="n">note</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-10-data-population-insert-sample-data">
+<h2>Part 10: Data Population - Insert Sample Data<a class="headerlink" href="#part-10-data-population-insert-sample-data" title="Permalink to this heading">#</a></h2>
+<p>Insert sample data into your tables. Use a mix of direct INSERT statements and, where appropriate, generate data using AI tools.</p>
+<p>Example:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Artist</span><span class="w"> </span><span class="p">(</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Country</span><span class="p">,</span><span class="w"> </span><span class="n">FormedDate</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span>
+<span class="p">(</span><span class="s1">&#39;The Beatles&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;United Kingdom&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1960-08-01&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;Queen&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;United Kingdom&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1970-06-27&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;Beyoncé&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;United States&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1997-01-01&#39;</span><span class="p">);</span>
+
+<span class="c1">-- Continue with more INSERT statements for all your tables...</span>
+</pre></div>
+</div>
+<p>Provide at least 5-10 rows of sample data for each table in your database.</p>
+<section id="my-answer-data-population">
+<h3>My Answer: Data Population<a class="headerlink" href="#my-answer-data-population" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">SELECT</span> <span class="s1">&#39;Student workspace: add your sample INSERT statements here.&#39;</span> <span class="n">AS</span> <span class="n">note</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-11-basic-select-queries">
+<h2>Part 11: Basic SELECT Queries<a class="headerlink" href="#part-11-basic-select-queries" title="Permalink to this heading">#</a></h2>
+<p>Write and execute at least five SELECT queries that demonstrate your understanding of basic SQL operations. These should include:</p>
+<ol class="arabic simple">
+<li><p>A simple SELECT with a WHERE clause</p></li>
+<li><p>A query using ORDER BY</p></li>
+<li><p>A query using GROUP BY with an aggregate function</p></li>
+<li><p>A query joining two tables</p></li>
+<li><p>A query using a subquery</p></li>
+</ol>
+<p>Example:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="c1">-- 1. Simple SELECT with WHERE</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">Title</span><span class="p">,</span><span class="w"> </span><span class="n">ReleaseDate</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Album</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">ReleaseDate</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="s1">&#39;2000-01-01&#39;</span><span class="p">;</span>
+
+<span class="c1">-- 2. Query using ORDER BY</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Country</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Artist</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Country</span><span class="p">,</span><span class="w"> </span><span class="n">Name</span><span class="p">;</span>
+
+<span class="c1">-- Continue with the rest of the queries...</span>
+</pre></div>
+</div>
+<p>Explain the purpose and expected output of each query.</p>
+<section id="my-answer-basic-select-queries">
+<h3>My Answer: Basic SELECT Queries<a class="headerlink" href="#my-answer-basic-select-queries" title="Permalink to this heading">#</a></h3>
+<p>Create code and text cells below to run and explain your queries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">SELECT</span> <span class="s1">&#39;Student workspace: add your SELECT queries here.&#39;</span> <span class="n">AS</span> <span class="n">note</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-12-advanced-select-queries">
+<h2>Part 12: Advanced SELECT Queries<a class="headerlink" href="#part-12-advanced-select-queries" title="Permalink to this heading">#</a></h2>
+<p>Write and execute at least THREE more complex SELECT queries that demonstrate advanced SQL concepts. Possible examples include:</p>
+<ol class="arabic simple">
+<li><p>A query using a self-join</p></li>
+<li><p>A query using UNION, INTERSECT, or EXCEPT</p></li>
+<li><p>A query using window functions</p></li>
+<li><p>A query using a Common Table Expression (CTE)</p></li>
+<li><p>A query using a subquery</p></li>
+<li><p>A query using a <code class="docutils literal notranslate"><span class="pre">CASE</span></code> statement</p></li>
+<li><p>A query using SQLite functions for math, date, or strings</p></li>
+<li><p>A query for JSON data (if your database has this).</p></li>
+</ol>
+<p>Example:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="c1">-- 1. Self-join (assuming we have a &#39;Collaboration&#39; table)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">a1</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Artist1</span><span class="p">,</span><span class="w"> </span><span class="n">a2</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Artist2</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Collaboration</span><span class="w"> </span><span class="k">c</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">Artist</span><span class="w"> </span><span class="n">a1</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">Artist1ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a1</span><span class="p">.</span><span class="n">ArtistID</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">Artist</span><span class="w"> </span><span class="n">a2</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">Artist2ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a2</span><span class="p">.</span><span class="n">ArtistID</span><span class="p">;</span>
+
+<span class="c1">-- Continue with the rest of the advanced queries...</span>
+</pre></div>
+</div>
+<p>Explain the purpose and impact of each modification query.</p>
+<section id="my-answer-advanced-queries">
+<h3>My Answer: Advanced Queries<a class="headerlink" href="#my-answer-advanced-queries" title="Permalink to this heading">#</a></h3>
+<p>Create code/text cells below to run and explain your queries.</p>
+</section>
+</section>
+<section id="part-14-index-creation-and-analysis">
+<h2>Part 14: Index Creation and Analysis<a class="headerlink" href="#part-14-index-creation-and-analysis" title="Permalink to this heading">#</a></h2>
+<p>Create at least two indexes on your tables. Then, use the EXPLAIN QUERY PLAN statement to analyze the performance impact of your indexes on relevant queries.</p>
+<p>Example:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="c1">-- Create an index</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_album_title</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Album</span><span class="p">(</span><span class="n">Title</span><span class="p">);</span>
+
+<span class="c1">-- Analyze a query with EXPLAIN QUERY PLAN</span>
+<span class="k">EXPLAIN</span><span class="w"> </span><span class="n">QUERY</span><span class="w"> </span><span class="n">PLAN</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Album</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Abbey Road&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Discuss the results of your EXPLAIN QUERY PLAN analysis. How do the indexes affect query performance?</p>
+<section id="my-answer-create-indexes">
+<h3>My Answer: Create Indexes<a class="headerlink" href="#my-answer-create-indexes" title="Permalink to this heading">#</a></h3>
+<p>Create code and text cells below.</p>
+</section>
+</section>
+<section id="part-15-view-creation">
+<h2>Part 15: View Creation<a class="headerlink" href="#part-15-view-creation" title="Permalink to this heading">#</a></h2>
+<p>Create at least two views that could be useful for your database users. Explain the purpose of each view and how it simplifies complex queries.</p>
+<p>Example:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">ArtistAlbumCount</span><span class="w"> </span><span class="k">AS</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">Artist</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">Album</span><span class="p">.</span><span class="n">AlbumID</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">AlbumCount</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Artist</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Album</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Artist</span><span class="p">.</span><span class="n">ArtistID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Album</span><span class="p">.</span><span class="n">ArtistID</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Artist</span><span class="p">.</span><span class="n">ArtistID</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Provide a brief explanation of how each view could be used in practice.</p>
+</section>
+<section id="part-16-transaction-management">
+<h2>Part 16: Transaction Management<a class="headerlink" href="#part-16-transaction-management" title="Permalink to this heading">#</a></h2>
+<p>Write a multi-statement transaction that demonstrates the use of BEGIN, COMMIT, and ROLLBACK. This transaction should perform a series of related operations that need to be executed atomically.</p>
+<p><strong>Note: This won’t actually “work” in this environment. However, just write the query as best you can.</strong></p>
+<p>Example:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">BEGIN</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span>
+
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Album</span><span class="w"> </span><span class="p">(</span><span class="n">Title</span><span class="p">,</span><span class="w"> </span><span class="n">ArtistID</span><span class="p">,</span><span class="w"> </span><span class="n">ReleaseDate</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;New Album&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2023-08-01&#39;</span><span class="p">);</span>
+
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">Artist</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">AlbumCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AlbumCount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ArtistID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">-- Simulate a condition that would cause a ROLLBACK</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Album</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ArtistID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">            </span><span class="k">THEN</span><span class="w"> </span><span class="n">RAISE</span><span class="p">(</span><span class="k">ABORT</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Too many albums for this artist&#39;</span><span class="p">)</span>
+<span class="w">            </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">;</span>
+
+<span class="k">COMMIT</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Explain the importance of transactions in maintaining data consistency and how your example demonstrates this concept.</p>
+<section id="my-answer-transactions">
+<h3>My Answer: Transactions<a class="headerlink" href="#my-answer-transactions" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
+<span class="n">SELECT</span> <span class="s1">&#39;Student workspace: add your transaction example here.&#39;</span> <span class="n">AS</span> <span class="n">note</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="parts-17-to-20-reflection-and-future-improvements">
+<h2>Parts 17 to 20: Reflection and Future Improvements<a class="headerlink" href="#parts-17-to-20-reflection-and-future-improvements" title="Permalink to this heading">#</a></h2>
+<p>Write a brief reflection (300-500 words) on your database project. Address the following points:</p>
+<ol class="arabic simple">
+<li><p>What were the main challenges you faced during this project?</p></li>
+<li><p>How did you overcome these challenges?</p></li>
+<li><p>What are the strengths of your database design?</p></li>
+<li><p>If you were to continue developing this database, what improvements or additional features would you implement?</p></li>
+<li><p>How has this project enhanced your understanding of database design and SQL?</p></li>
+</ol>
+<p>Your reflection should demonstrate critical thinking about your design choices and the database development process.</p>
+</section>
+<section id="submission-guidelines">
+<h2>Submission Guidelines<a class="headerlink" href="#submission-guidelines" title="Permalink to this heading">#</a></h2>
+<p>When you are done, download the notebook as an <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file and submit that file.</p>
+<p>Your submission should include your SQL statements, query results, and explanations.</p>
+<p>You will receive full credit as long as you make a legitimate attempt to answer each part of the project.</p>
+</section>
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<p>Use this reference while you complete the final project.</p>
+<ul class="simple">
+<li><p><strong>Business rule:</strong> A concise statement describing how the system should work.</p></li>
+<li><p><strong>Entity:</strong> A real-world object or concept you need to store data about.</p></li>
+<li><p><strong>Attribute:</strong> A property of an entity, such as a name, date, or price.</p></li>
+<li><p><strong>Relationship:</strong> A connection between entities.</p></li>
+<li><p><strong>ERD:</strong> An Entity Relationship Diagram that shows entities, attributes, and relationships.</p></li>
+<li><p><strong>Primary key:</strong> A column that uniquely identifies each row in a table.</p></li>
+<li><p><strong>Foreign key:</strong> A column that points to a related row in another table.</p></li>
+<li><p><strong>Normalization:</strong> Organizing tables to reduce redundancy and improve data integrity.</p></li>
+<li><p><strong>Schema:</strong> The overall structure of the database, including tables, columns, and constraints.</p></li>
+<li><p><strong>DDL:</strong> Data Definition Language commands such as <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span></code> and <code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span></code>.</p></li>
+<li><p><strong>INSERT:</strong> A SQL statement used to add new rows to a table.</p></li>
+<li><p><strong>SELECT:</strong> A SQL statement used to retrieve data.</p></li>
+<li><p><strong>JOIN:</strong> A way to combine related rows from multiple tables.</p></li>
+<li><p><strong>Aggregate function:</strong> A function such as <code class="docutils literal notranslate"><span class="pre">COUNT()</span></code>, <code class="docutils literal notranslate"><span class="pre">SUM()</span></code>, or <code class="docutils literal notranslate"><span class="pre">AVG()</span></code> that summarizes many rows.</p></li>
+<li><p><strong>Index:</strong> A structure that speeds up data retrieval for common queries.</p></li>
+<li><p><strong>EXPLAIN QUERY PLAN:</strong> A SQLite command that shows how the database plans to run a query.</p></li>
+<li><p><strong>View:</strong> A saved SQL query that behaves like a virtual table.</p></li>
+<li><p><strong>Transaction:</strong> A sequence of operations treated as one unit of work.</p></li>
+<li><p><strong>COMMIT:</strong> Makes the work in a transaction permanent.</p></li>
+<li><p><strong>ROLLBACK:</strong> Undoes the work in a transaction if something goes wrong.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Database_11_DesignDeployTest.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Database Architecture Patterns: Design, Deployment, and Testing for Modern Applications</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="labs/Database_Ex_Normalization.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction to Normalization</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-project-ideas">Sample Project Ideas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brendan-s-lecture">Brendan’s Lecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#policy-on-ai-tools">Policy on AI Tools</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-conceptual-modeling-business-rules">Part 2: Conceptual Modeling - Business Rules</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-business-rules">My Answer: Business Rules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-conceptual-modeling-entities-and-attributes">Part 3: Conceptual Modeling - Entities and Attributes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-entities-and-attributes">My Answer: Entities and Attributes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-conceptual-modeling-entity-relationship-diagram-erd">Part 4: Conceptual Modeling - Entity Relationship Diagram (ERD)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-erd-diagram">My Answer: ERD Diagram</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-logical-modeling-relational-model">Part 5: Logical Modeling - Relational Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-logical-model">My Answer: Logical Model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-logical-modeling-key-selection-rationale">Part 6: Logical Modeling - Key Selection Rationale</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-my-answer">Part 6: My Answer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-7-physical-model-create-simple-tables">Part 7: Physical Model - Create Simple Tables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-create-tables">My Answer: Create Tables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-create-the-database">First, Create the Database</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-8-physical-model-drop-tables">Part 8: Physical Model - Drop Tables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-drop-table">My ANswer: Drop Table</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-9-physical-model-create-full-tables">Part 9: Physical Model - Create Full Tables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-create-full-tables">My Answer: Create Full Tables</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-10-data-population-insert-sample-data">Part 10: Data Population - Insert Sample Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-data-population">My Answer: Data Population</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-11-basic-select-queries">Part 11: Basic SELECT Queries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-basic-select-queries">My Answer: Basic SELECT Queries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-12-advanced-select-queries">Part 12: Advanced SELECT Queries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-advanced-queries">My Answer: Advanced Queries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-14-index-creation-and-analysis">Part 14: Index Creation and Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-create-indexes">My Answer: Create Indexes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-15-view-creation">Part 15: View Creation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-16-transaction-management">Part 16: Transaction Management</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-transactions">My Answer: Transactions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parts-17-to-20-reflection-and-future-improvements">Parts 17 to 20: Reflection and Future Improvements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-guidelines">Submission Guidelines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Brendan Shea, PhD
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
