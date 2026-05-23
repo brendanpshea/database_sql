@@ -1,6 +1,6 @@
-jupyter-book==0.15.1
+jupyter-book>=1.0,<2.0
 ipython-sql==0.5.0
-sqlalchemy<2.0
+sqlalchemy>=2.0,<3.0
 psycopg2-binary
 pandas
 requests

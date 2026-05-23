@@ -4,8 +4,11 @@ copyright: "2026"
 logo: database_cover.jpg
 
 execute:
-  execute_notebooks: cache
+  execute_notebooks: auto
   timeout: 900
+  exclude_patterns:
+    - Database_09_PokemonAndPostgres.ipynb
+    - Database_10_DatabaseSecurity.ipynb
 
 parse:
   myst_enable_extensions:
@@ -21,6 +24,10 @@ html:
 sphinx:
   config:
     exclude_patterns:
+      - _build
+      - _build/**
+      - .venv
+      - .venv/**
       - README.md
       - Chapter_0_Brendan's_Intro_to_Colab.ipynb
       - data/GenerateToadCityFirewall.ipynb
