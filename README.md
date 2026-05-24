@@ -72,7 +72,7 @@ Contributions that improve the book, notebooks, quizzes, or supporting assets ar
 
 ## License
 
-This project is distributed under the GNU Public License.
+This project is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/). You are free to share and adapt the material with attribution, but not for commercial purposes.
 
 ## Use of AI Tools
 

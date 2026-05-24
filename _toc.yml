@@ -1,6 +1,7 @@
 format: jb-book
 root: index
 chapters:
+  - file: Database_00_Introduction
   - file: Database_01_StarShipSQL
   - file: Database_02_IntroToSQL
   - file: Database_03_Joins_Sets_SQL

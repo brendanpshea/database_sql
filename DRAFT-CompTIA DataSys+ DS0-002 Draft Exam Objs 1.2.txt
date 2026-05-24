@@ -1,0 +1,1416 @@
+ 
+
+A red circle with black text
+AI-generated content may be incorrect. 
+
+
+ 
+
+ 
+
+
+
+About the Exam 
+
+The CompTIA DataSys+ DS0-002 V2 certification exam will certify that the successful candidate has the 
+knowledge and skills required to: 
+
+ 
+
+• Design, deploy, manage, and maintain databases. 
+• Demonstrate skills in data acquisition and integration. 
+• Apply and explain scripting and programming concepts in a database environment. 
+• Adhere to security and business continuity best practices. 
+
+
+ 
+
+This is equivalent to 2-3 years of hands-on experience as a database administrator. 
+
+ 
+
+These content examples are meant to clarify the exam objectives and should not be construed as a 
+comprehensive listing of all the content of this examination. 
+
+ 
+
+EXAM ACCREDITATION 
+
+The CompTIA DataSys+ exam is accredited by the ANSI National Accreditation Board (ANAB) to show 
+compliance with the International Organization for Standardization (ISO) 17024 standard and, as such, 
+undergoes regular reviews and updates to the exam objectives. 
+
+ 
+
+EXAM DEVELOPMENT 
+
+CompTIA exams result from subject matter expert workshops and industry-wide survey results regarding the 
+skills and knowledge required of an IT professional. 
+
+ 
+
+CompTIA AUTHORIZED MATERIALS USE POLICY 
+
+CompTIA Certifications, LLC is not affiliated with and does not authorize, endorse, or condone utilizing any 
+content provided by unauthorized third-party training sites (aka “brain dumps”). Individuals who utilize such 
+materials in preparation for any CompTIA examination will have their certifications revoked and be suspended 
+from future testing in accordance with the CompTIA Candidate Agreement. In an effort to more clearly 
+communicate CompTIA’s exam policies on use of unauthorized study materials, CompTIA directs all 
+certification candidates to the CompTIA Certification Exam Policies. Please review all CompTIA policies before 
+beginning the study process for any CompTIA exam. Candidates will be required to abide by the CompTIA 
+Candidate Agreement. If a candidate has a question as to whether study materials are considered 
+unauthorized (aka “brain dumps”), they should contact CompTIA at examsecurity@comptia.org to confirm. 
+
+ 
+
+PLEASE NOTE 
+
+The lists of examples provided in bulleted format are not exhaustive lists. Other examples of technologies, 
+processes, or tasks pertaining to each objective may also be included on the exam, although not listed or 
+covered in this objectives document. CompTIA is constantly reviewing the content of our exams and updating 
+test questions to be sure our exams are current, and the security of the questions is protected. When 
+necessary, we will publish updated exams based on existing exam objectives. Please know that all related 
+exam preparation materials will still be valid. 
+
+ 
+
+
+TEST DETAILS 
+
+Required exam 
+
+DataSys+ DS0-002 V2 
+
+Number of questions 
+
+TBD 
+
+Types of questions 
+
+Multiple-choice and performance-based 
+
+Length of test 
+
+TBD 
+
+Recommended experience 
+
+Database administrator with 2-3 years of hands-on 
+experience 
+
+Passing score 
+
+TBD 
+
+
+
+ 
+
+EXAM OBJECTIVES (DOMAINS) 
+
+The table below lists the domains measured by this examination and the extent to which they are 
+represented. 
+
+ 
+
+DOMAIN 
+
+PERCENTAGE OF EXAMINATION 
+
+ 
+
+ 
+
+1.0 Database Fundamentals 
+
+
+19% 
+
+2.0 Database Deployment 
+
+
+17% 
+
+3.0 Database Management and Maintenance 
+
+
+18% 
+
+4.0 Data and Database Security 
+
+
+19% 
+
+5.0 Business Continuity 
+
+
+14% 
+
+6.0 Data Integration 
+
+
+13% 
+
+ 
+
+Total 
+
+100% 
+
+
+
+ 
+
+ 
+
+
+1.0 Database Fundamentals 
+
+
+1.1 Compare and contrast database types and data types. 
+
+ Relational vs. non-relational databases 
+ Not only Structured Query Language (NoSQL) types 
+• Document 
+• Key-value stores 
+• Column-oriented 
+• Graph 
+• Vector 
+• Time series 
+• Object-oriented 
+
+
+
+ Data types 
+• Structured 
+• Unstructured 
+• Semistructured 
+
+
+
+
+
+
+
+
+
+1.2 Given a scenario, develop, modify, and run Structured Query Language (SQL) 
+code. 
+
+ SQL subtypes 
+• Data Definition Language (DDL) 
+• Data Manipulation Language (DML) 
+• Transaction Control Language (TCL) 
+• Data Query Language (DQL) 
+♦ Windowing 
+♦ Joins 
+♦ Nested queries 
+
+
+
+
+
+
+ Create, read, update, and delete (CRUD) 
+principle 
+ Set-based logic 
+ SQL programming 
+• Triggers 
+• Stored procedures 
+• Functions 
+
+
+
+
+
+
+
+
+
+ 
+
+1.3 Compare and contrast scripting methods and environments. 
+
+ Script purpose and runtime location 
+• Server side 
+• Client side 
+
+
+
+ Languages 
+• PowerShell 
+• Python 
+• Unix shell 
+• Perl script 
+
+
+
+ Command-line scripting 
+• Integrated development environment (IDE) scripting 
+
+
+
+
+
+
+
+
+
+1.4 Explain the impact of programming on database performance. 
+
+ Object-relational mapping (ORM) 
+• Hibernate 
+• Entity Framework 
+• SQLAlchemy 
+• Data build tool (dbt) 
+• Ebean 
+
+
+
+
+
+
+
+
+
+ 
+
+ Measuring impact 
+• Review SQL code generated by 
+ORMs 
+• Confirm the validity of the code 
+• Determine the impact on the 
+database server 
+• Remediate
+
+
+
+
+
+
+
+
+
+ 
+
+
+2.0 Database Deployment 
+
+2.1 Compare and contrast aspects of database planning and operations. 
+
+ Requirements gathering 
+• Gap analysis 
+• Resource projection 
+• System specifications 
+♦ Storage considerations 
+ Size 
+ Speed 
+ Type 
+ Cloud-based vs. on-
+premises vs. hybrid 
+
+
+
+♦ Number of users 
+♦ Type of users 
+
+
+
+• Service-level agreement (SLA) 
+♦ Key performance indicators 
+(KPIs) 
+♦ Escalation procedures 
+♦ Reporting 
+
+
+
+
+
+
+ Phases of deployment 
+• Installation and configuration 
+♦ Database prerequisites 
+♦ Provisioning 
+♦ Upgrading 
+♦ Modifying 
+♦ Importing 
+
+
+
+
+
+
+ Database objectives 
+• Types of cloud-hosted environments 
+♦ Platform as a service (PaaS) 
+♦ Software as a service (SaaS) 
+♦ Infrastructure as a service (IaaS) 
+♦ Database as a service (DBaaS) 
+
+
+
+• Computational persistence 
+
+
+
+ Testing 
+• Database quality check (columns 
+and tables) 
+• Schema compatibility 
+• Stress testing 
+♦ Database 
+♦ Application 
+
+
+
+• Regression testing 
+
+
+
+ Database validation 
+• Index analysis 
+• Data mapping 
+• Data values 
+• Referential integrity 
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+2.2 Given a scenario, implement techniques related to database design and 
+documentation. 
+
+ Database schema 
+• Logical 
+• Physical 
+
+
+
+ Design documentation 
+• Data dictionary 
+• Entity relationship diagram 
+
+
+
+ Online transaction processing (OLTP) vs. 
+online analytical processing (OLAP) 
+
+
+
+
+
+
+ 
+
+ 
+
+ Standard operating procedure (SOP) 
+documentation 
+• Organizational compliance 
+• Maintenance 
+• Third-party compliance 
+
+
+
+ Data consistency 
+• Atomicity, consistency, isolation, 
+and durability (ACID) 
+• Basically available, soft state, and 
+eventually consistent (BASE)
+
+
+
+
+
+
+
+
+
+2.3 Explain connectivity concepts related to databases. 
+
+ Networking concepts 
+• Load balancing 
+• Domain Name System (DNS) 
+• Client/server architecture 
+♦ Firewall and perimeter network considerations 
+♦ Static and dynamic Internet Protocol (IP) addressing 
+♦ Multizone region 
+♦ Ports/protocols 
+
+
+
+
+
+
+
+
+
+
+
+
+
+3.0 Database Management and Maintenance 
+
+3.1 Explain the purpose of monitoring and reporting for database management 
+and performance. 
+
+ System alerts and notifications 
+• Growth in size/storage limits 
+• Job completion/failure 
+• Database backup alerts 
+
+
+
+ System health 
+• Daily usage 
+• Baseline configuration 
+• Throughput 
+• Log files 
+
+
+
+ Resource utilization 
+• Operating system (OS) performance 
+• Central processing unit (CPU) usage 
+• Memory 
+• Disk input/output operations per second (IOPS) 
+• Disk space 
+• Data metering 
+
+
+
+ Deadlock monitoring 
+ Connections and sessions 
+• Concurrent connections 
+• Failed/attempted connections 
+
+
+
+
+
+
+
+
+
+3.2 Explain common database maintenance processes. 
+
+ Patch management 
+ Integrity checks 
+• Data corruption checks 
+
+
+
+ Periodic review of logs 
+ Performance tuning 
+• Index optimization 
+• Query optimization 
+• Transaction volumes 
+
+
+
+ Partitioning 
+ Change management 
+• Release schedules 
+• Continuous integration and 
+continuous deployment (CI/CD) 
+• Change approval 
+• Database refresh 
+• Version control 
+
+
+
+
+
+
+
+
+
+3.3 Given a scenario, implement data management tasks. 
+
+ Data management 
+• Modify data 
+• Define data 
+• Append columns 
+• Create views 
+• Create indexes 
+• Create statistics 
+• Create data tables 
+♦ Table isolation levels 
+
+
+
+• Create data relationships 
+
+
+
+ Database normalization and denormalization 
+ Computed columns 
+
+
+
+
+
+
+ 
+
+
+4.0 Data and Database Security 
+
+4.1 Explain data security concepts. 
+
+ Encryption 
+• Data in motion 
+♦ Client-side encryption 
+♦ In-transit encryption 
+
+
+
+• Data at rest 
+♦ Keep your own key (KYOK) 
+♦ Bring your own key (BYOK) 
+
+
+
+
+
+
+ Confidential computing 
+ Data protection 
+• Masking 
+• Anonymization 
+• Suppression 
+• Destruction techniques 
+• Security audit 
+♦ Expired accounts 
+♦ Connection requests 
+♦ Forensics 
+
+
+
+
+
+
+ Code auditing 
+• SQL code 
+• Credential storage checks 
+
+
+
+
+
+
+
+
+
+4.2 Explain the purpose of governance and regulatory compliance. 
+
+ Data loss prevention 
+ Data retention policies 
+ Data sovereignty 
+ Personally identifiable information (PII) and personal health information (PHI) 
+ Payment Card Industry Data Security Standard (PCI DSS) 
+ Global regulations 
+• General Data Protection Regulation (GDPR) 
+
+
+
+ Regional regulations 
+• Data residency compliance 
+
+
+
+
+
+
+
+
+
+4.3 Given a scenario, implement policies and best practices related to 
+authentication and authorization. 
+
+ Role-based access control 
+ Attribute-based access control (ABAC) 
+ Authentication 
+• Multifactor 
+• Single sign-on (SSO) 
+• Kerberos 
+♦ Service Principal Names (SPNs) 
+
+
+
+
+
+
+ Identity and access management (IAM) 
+• Federated identity 
+• Open Authorization (OAuth) 
+• OpenID Connect 
+
+
+
+ Secure Sockets Layer (SSL) certificates 
+
+
+
+
+
+
+ 
+
+
+4.4 Explain the purpose of database security. 
+
+ Physical 
+ Logical 
+• Firewall 
+• Perimeter network 
+• Port security 
+
+
+
+ Zero Trust architecture 
+ Attack surface management 
+• Vulnerability scans 
+• Patching 
+• Remediation 
+
+
+
+ Preventing attacks 
+• SQL injection 
+• Data poisoning 
+• Malware 
+• Social engineering 
+
+
+
+
+
+
+
+
+
+
+5.0 Business Continuity 
+
+5.1 Given a scenario, implement backup and restoration processes. 
+
+ Scheduling and automating backups 
+ Backup types 
+• Full 
+• Incremental 
+• Differential 
+
+
+
+ Test and restore backups 
+• Validate backup hash 
+• Restore points 
+
+
+
+ Database dumping 
+ Reports and alerts 
+ Storage location 
+• On-site vs. off-site 
+
+
+
+ Archiving 
+ Snapshots 
+
+
+
+
+
+
+5.2 Explain the importance of disaster recovery (DR) and best practices. 
+
+ DR planning 
+• DR documentation 
+♦ System security plan (SSP) 
+♦ Continuity of operations (COOP) plan 
+♦ System design document (SDD) 
+
+
+
+
+
+
+ Log shipping 
+ DR plan testing 
+ DR metrics 
+• Recovery point objective (RPO) 
+• Recovery time objective (RTO) 
+
+
+
+ Failover 
+ Failback 
+
+
+
+
+
+
+5.3 Compare and contrast fault tolerance operations. 
+
+ High availability 
+ Risk analysis 
+• Single point of failure 
+
+
+
+ Multizone region (MZR) 
+ Redundancy 
+• Replication 
+♦ Geo-replication 
+
+
+
+• Mirroring 
+
+
+
+ Transaction logging 
+
+
+
+
+
+
+
+6.0 Data Integration 
+
+6.1 Given a scenario, use data acquisition techniques and methods. 
+
+ Data classification 
+ Extract, load, transform (ELT) and extract, transform, load (ETL) 
+ Connectivity 
+• Open Database Connectivity (ODBC) 
+• Java Database Connectivity (JDBC) 
+• Open Data Protocol (OData) 
+• File Transfer Protocol (FTP) 
+• Network File System (NFS) 
+• Secure Shell (SSH) 
+• Common Internet File System (CIFS) 
+• Remote Procedure Call (RPC) 
+• Simple Object Access Protocol (SOAP) 
+• Application programming interface (API) 
+
+
+
+ Data sources 
+• Streaming vs. non-streaming 
+• Scraping 
+
+
+
+ Data formats 
+• JavaScript Object Notation (JSON) 
+• Extensible Markup Language (XML) 
+• Flat file 
+
+
+
+
+
+
+
+
+
+6.2 Given a scenario, troubleshoot common data acquisition issues. 
+
+ Data corruption 
+ Data unavailability 
+ Data format issues 
+• Encoding 
+
+
+
+ Schema mismatch 
+ Connection-related issues 
+• Permissions 
+• Timeouts 
+
+
+
+ Encryption issues 
+• Data encryption keys 
+• Key encryption keys 
+
+
+
+ Infrastructure limitations 
+• Platform 
+• Software versioning 
+• Drivers 
+
+
+
+ Programming errors 
+• Syntax 
+• Runtime 
+
+
+
+
+
+
+
+
+
+6.3 Explain emerging technologies and AI concepts related to data integration. 
+
+ Machine learning 
+• Data manipulation libraries 
+♦ NumPy 
+♦ pandas 
+♦ scikit-learn 
+♦ Tidyverse 
+♦ MATLAB 
+
+
+
+
+
+
+ Generative AI 
+• Hallucinations 
+• Prompt engineering 
+• Retrieval-augmented generation 
+(RAG) 
+
+
+
+ Human-in-the-loop 
+ Virtual data warehouses 
+ Robotic process automation (RPA)
+
+
+
+
+
+
+
+CompTIA DataSys+ Acronym List 
+
+The following is a list of acronyms that appear on the CompTIA DataSys+ DS0-002 V2 
+certification exam. Candidates are encouraged to review the complete list and attain a 
+working knowledge of all listed acronyms as part of a comprehensive exam preparation 
+program. 
+
+ 
+
+ACRONYM 
+
+DEFINITION 
+
+2FA 
+
+Two-factor Authentication 
+
+ABAC 
+
+Attribute-based Access Control 
+
+ACID 
+
+Atomicity, Consistency, Isolation, and Durability 
+
+ACL 
+
+Access Control List 
+
+AES 
+
+Advanced Encryption Standard 
+
+ANSI 
+
+American National Standards Institute 
+
+API 
+
+Application Programming Interface 
+
+BASE 
+
+Basically Available, Soft State, and Eventually Consistent 
+
+BYOK 
+
+Bring Your Own Key 
+
+CI/CD 
+
+Continuous Integration and Continuous Delivery 
+
+CIFS 
+
+Common Internet File System 
+
+COOP 
+
+Continuity of Operations 
+
+CPU 
+
+Central Processing Unit 
+
+CRUD 
+
+Create, Read, Update, and Delete 
+
+CSV 
+
+Comma-separated Values 
+
+CTE 
+
+Common Table Expression 
+
+DAC 
+
+Discretionary Access Control 
+
+DAS 
+
+Direct-attached Storage 
+
+DB 
+
+Database 
+
+DBaaS 
+
+Database as a Service 
+
+DBMS 
+
+Database Management Service 
+
+dbt 
+
+Data Build Tool 
+
+DCL 
+
+Data Control Language 
+
+DDL 
+
+Data Definition Language 
+
+DHCP 
+
+Dynamic Host Configuration Protocol 
+
+DLP 
+
+Data Loss Prevention 
+
+DML 
+
+Data Manipulation Language 
+
+DNS 
+
+Domain Name System 
+
+DoS 
+
+Denial of Service 
+
+DQL 
+
+Data Query Language 
+
+DR 
+
+Disaster Recovery 
+
+ELT 
+
+Extract, Load, Transform 
+
+ETL 
+
+Extract, Transform, Load 
+
+FTP 
+
+File Transfer Protocol 
+
+
+
+
+ACRONYM 
+
+DEFINITION 
+
+GDPR 
+
+General Data Protection Regulation 
+
+HA 
+
+High Availability 
+
+HSM 
+
+Hardware Security Module 
+
+HTTP 
+
+Hypertext Transfer Protocol 
+
+IaaS 
+
+Infrastructure as a Service 
+
+IAM 
+
+Identity and Access Management 
+
+IDE 
+
+Integrated Development Environment 
+
+I/O 
+
+Input/Output 
+
+IOPS 
+
+Input/Output Per Second 
+
+IP 
+
+Internet Protocol 
+
+JDBC 
+
+Java Database Connectivity 
+
+JSON 
+
+JavaScript Object Notation 
+
+KPI 
+
+Key Performance Indicator 
+
+KYOK 
+
+Keep Your Own Key 
+
+LAN 
+
+Local Area Network 
+
+LDAP 
+
+Lightweight Directory Access Protocol 
+
+LLM 
+
+Large Language Model 
+
+MAC 
+
+Mandatory Access Control 
+
+MFA 
+
+Multifactor Authentication 
+
+MySQL 
+
+My Structured Query Language 
+
+MZR 
+
+Multizone Region 
+
+NAS 
+
+Network-attached Storage 
+
+NFS 
+
+Network File System 
+
+NoSQL 
+
+Not Only Structured Query Language 
+
+ODBC 
+
+Open Database Connectivity 
+
+OLAP 
+
+Online Analytical Processing 
+
+OLTP 
+
+Online Transaction Processing 
+
+ORM 
+
+Object-relational Mapping 
+
+OS 
+
+Operating System 
+
+PaaS 
+
+Platform as a Service 
+
+PCI DSS 
+
+Payment Card Industry Data Security Standard 
+
+PHI 
+
+Personal Health Information 
+
+PHP 
+
+Hypertext Preprocessor 
+
+PII 
+
+Personally Identifiable Information 
+
+RAG 
+
+Retrieval-augmented Generation 
+
+RAM 
+
+Random-access Memory 
+
+RDBMS 
+
+Relational Database Management System 
+
+REST 
+
+Representational State Transfer 
+
+RPA 
+
+Robotic Process Automation 
+
+RPC 
+
+Remote Procedure Call 
+
+RPO 
+
+Recovery Point Objective 
+
+RTO 
+
+Recovery Time Objective 
+
+SaaS 
+
+Software as a Service 
+
+
+
+
+ACRONYM 
+
+DEFINITION 
+
+SAN 
+
+Storage Area Network
+
+SDD 
+
+System Design Document
+
+SLA 
+
+Service-level Agreement
+
+SOAP 
+
+Simple Object Access Protocol
+
+SOP 
+
+Standard Operating Procedure
+
+SPN 
+
+ServicePrincipalName
+
+SQL 
+
+Structured Query Language
+
+SSD 
+
+Solid-state Drive
+
+SSH 
+
+SecureShell
+
+SSL 
+
+SecureSocketsLayer
+
+SSMS 
+
+SQL Server Management Studio
+
+SSO 
+
+Single Sign-on
+
+SSP 
+
+SystemSecurity Plan
+
+TCL 
+
+Transaction Control Language
+
+TCP/IP 
+
+Transmission Control Protocol/Internet Protocol
+
+TDE 
+
+Transparent Data Encryption
+
+TLS 
+
+Transport Layer Security
+
+UML 
+
+Unified Modeling Language
+
+VLAN 
+
+Virtual LAN
+
+VPC 
+
+Virtual PrivateCloud
+
+VPN 
+
+VirtualPrivateNetwork
+
+VXLAN 
+
+Virtual Extensible LAN
+
+XML 
+
+Extensible Markup Language
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CompTIA DataSys+ 
+
+Hardware and Software List 
+
+ 
+
+CompTIA has included this sample list of hardware and software to assist candidates as 
+they prepare for the DataSys+ DS0-002 V2 certification exam. This list may also be 
+helpful for training companies that wish to create a lab component for their training 
+offering. The bulleted lists below each topic are sample lists and are not exhaustive. 
+
+ 
+
+EQUIPMENT 
+
+• Desktop/laptop 
+
+
+ 
+
+SOFTWARE 
+
+• Free software/SQL environment to run scripts (e.g., MariaDB, DBeaver, SQL Server Management 
+Studio [SSMS]) 
+• Programming languages to practice connecting to a database (e.g., SQL, Python, PowerShell) 
+• Text editing software (e.g., Notepad++, Visual Studio code) 
+• Unified Modeling Language (UML) tools 
+
+
+ 
+
+OTHER 
+
+• Sample database (e.g., .csv files, Northwind) to practice imports 
+• Samples of technical (procedural or descriptive) documentation (e.g., data dictionary, entity 
+relationship diagram)
+
+
+ 
+
+

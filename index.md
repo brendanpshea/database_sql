@@ -6,8 +6,8 @@
 		<p class="home-hero__lede">An interactive, openly licensed textbook for database design, SQL, security, performance, and PostgreSQL. Twelve story-driven chapters read cleanly on the web and run live in Colab — no local install required.</p>
 		<p class="home-hero__support">Development of this textbook was supported by grant funding from <strong>Minnesota State</strong> and <strong>Rochester Community and Technical College</strong> as part of their commitment to high-quality open educational resources.</p>
 		<div class="home-hero__actions">
-			<a class="home-button home-button--primary" href="Database_01_StarShipSQL.html">Start with Chapter 1</a>
-			<a class="home-button home-button--secondary" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_01_StarShipSQL.ipynb">Launch Chapter 1 in Colab</a>
+			<a class="home-button home-button--primary" href="Database_00_Introduction.html">Read the introduction</a>
+			<a class="home-button home-button--secondary" href="Database_01_StarShipSQL.html">Start with Chapter 1</a>
 		</div>
 	</div>
 	<aside class="home-hero__panel">
@@ -15,8 +15,8 @@
 		<div class="home-stats">
 			<div class="home-stat"><strong>12</strong> chapters</div>
 			<div class="home-stat"><strong>Web + Colab</strong> dual format</div>
-			<div class="home-stat"><strong>OER</strong> openly licensed</div>
-			<div class="home-stat"><strong>Grant-funded</strong> public release</div>
+			<div class="home-stat"><strong>CC BY-NC 4.0</strong> openly licensed</div>
+			<div class="home-stat"><strong>DataSys+</strong> exam aligned</div>
 		</div>
 		<p class="home-panel-note">Designed for classroom adoption, independent study, and direct GitHub Pages publishing.</p>
 	</aside>
@@ -46,6 +46,11 @@
 ## Explore the chapters
 
 <div class="home-chapter-grid">
+	<a class="home-chapter-card" href="Database_00_Introduction.html">
+		<span class="home-chapter-card__number">00</span>
+		<h3>Introduction</h3>
+		<p>About the book, the author, DataSys+ alignment, and how to use the materials.</p>
+	</a>
 	<a class="home-chapter-card" href="Database_01_StarShipSQL.html">
 		<span class="home-chapter-card__number">01</span>
 		<h3>Starship SQL</h3>
