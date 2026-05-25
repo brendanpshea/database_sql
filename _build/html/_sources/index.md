@@ -3,23 +3,23 @@
 <div class="home-hero">
 	<div class="home-hero__copy">
 		<p class="home-hero__eyebrow">Open educational resource | Jupyter Book | Google Colab ready</p>
-		<p class="home-hero__lede">An interactive, public-facing textbook for database design, SQL, data security, performance tuning, and PostgreSQL. The book is built around story-driven notebook chapters that students can read on the web or run immediately in Colab.</p>
+		<p class="home-hero__lede">An interactive, openly licensed textbook for database design, SQL, security, performance, and PostgreSQL. Twelve story-driven chapters read cleanly on the web and run live in Colab — no local install required.</p>
+		<p class="home-hero__support">Development of this textbook was supported by grant funding from <strong>Minnesota State</strong> and <strong>Rochester Community and Technical College</strong> as part of their commitment to high-quality open educational resources.</p>
 		<div class="home-hero__actions">
-			<a class="home-button home-button--primary" href="Database_01_StarShipSQL.html">Start with Chapter 1</a>
-			<a class="home-button home-button--secondary" href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_01_StarShipSQL.ipynb">Launch Chapter 1 in Colab</a>
+			<a class="home-button home-button--primary" href="Database_00_Introduction.html">Read the introduction</a>
+			<a class="home-button home-button--secondary" href="Database_01_StarShipSQL.html">Start with Chapter 1</a>
 		</div>
-		<p class="home-hero__support">Supported with grant funding from Minnesota State and Rochester Community and Technical College.</p>
 	</div>
 	<aside class="home-hero__panel">
-	<h3>At a glance</h3>
-	<div class="home-stats">
-		<div class="home-stat"><strong>12</strong> core chapters</div>
-		<div class="home-stat"><strong>2</strong> guided labs</div>
-		<div class="home-stat"><strong>100%</strong> web and Colab access</div>
-		<div class="home-stat"><strong>OER</strong> public course materials</div>
-	</div>
-	<p class="home-panel-note">Built for classroom adoption, independent study, and direct GitHub Pages publishing without requiring local software setup.</p>
-</aside>
+		<h3>At a glance</h3>
+		<div class="home-stats">
+			<div class="home-stat"><strong>12</strong> chapters</div>
+			<div class="home-stat"><strong>Web + Colab</strong> dual format</div>
+			<div class="home-stat"><strong>CC BY-NC 4.0</strong> openly licensed</div>
+			<div class="home-stat"><strong>DataSys+</strong> exam aligned</div>
+		</div>
+		<p class="home-panel-note">Designed for classroom adoption, independent study, and direct GitHub Pages publishing.</p>
+	</aside>
 </div>
 
 ## Why this book works
@@ -27,176 +27,172 @@
 <div class="home-feature-grid">
 	<section class="home-feature">
 		<h3>Notebook-first instruction</h3>
-		<p>Each chapter combines explanation, code, and exercises in one place so students can read and practice without context switching.</p>
+		<p>Each chapter combines explanation, runnable code, and exercises in one place so students read and practice without context switching.</p>
 	</section>
 	<section class="home-feature">
-		<h3>Pop culture scenarios</h3>
-		<p>Starships, Gotham banks, Mario plumbing, and Pokemon datasets make abstract database ideas easier to remember.</p>
+		<h3>Pop-culture case studies</h3>
+		<p>Starships, Gotham banks, Mario plumbing, and Pokémon datasets make abstract database ideas easier to remember — and a little more fun to teach.</p>
 	</section>
 	<section class="home-feature">
-		<h3>Immediate hands-on practice</h3>
-		<p>Learners can stay in the book for reading or jump directly into Colab for live experimentation with no local install burden.</p>
+		<h3>Career-aligned coverage</h3>
+		<p>From modeling and querying through indexes, transactions, security, and PostgreSQL deployment — the topics students actually encounter on the job.</p>
 	</section>
 	<section class="home-feature">
-		<h3>Career-aligned topics</h3>
-		<p>The sequence covers modeling, querying, security, performance, design, deployment, and professional database workflows.</p>
+		<h3>Zero-setup access</h3>
+		<p>Read in the browser or launch any chapter in Colab with one click. No local install, no version mismatches, no lost class time.</p>
 	</section>
 </div>
 
 ## Explore the chapters
 
 <div class="home-chapter-grid">
+	<a class="home-chapter-card" href="Database_00_Introduction.html">
+		<span class="home-chapter-card__number">00</span>
+		<h3>Introduction</h3>
+		<p>About the book, the author, DataSys+ alignment, and how to use the materials.</p>
+	</a>
 	<a class="home-chapter-card" href="Database_01_StarShipSQL.html">
 		<span class="home-chapter-card__number">01</span>
 		<h3>Starship SQL</h3>
-		<p>Start with data models, database types, and the conceptual foundations of relational thinking.</p>
-		<div class="home-chapter-card__actions">
-			<span class="home-chip">Read in book</span>
-			<span class="home-link-inline">Concepts and modeling</span>
-		</div>
+		<p>Data models, database types, and the foundations of relational thinking.</p>
 	</a>
 	<a class="home-chapter-card" href="Database_02_IntroToSQL.html">
 		<span class="home-chapter-card__number">02</span>
 		<h3>Intro to SQL SELECT</h3>
-		<p>Learn the core SELECT workflow with filtering, sorting, and result shaping against approachable sample data.</p>
-		<div class="home-chapter-card__actions">
-			<span class="home-chip">Read in book</span>
-			<span class="home-link-inline">Query basics</span>
-		</div>
+		<p>Filtering, sorting, and result shaping against approachable sample data.</p>
 	</a>
 	<a class="home-chapter-card" href="Database_03_Joins_Sets_SQL.html">
 		<span class="home-chapter-card__number">03</span>
 		<h3>JOINs and Sets</h3>
-		<p>Combine tables, use unions and intersections, and build confidence with multi-table relational queries.</p>
-		<div class="home-chapter-card__actions">
-			<span class="home-chip">Read in book</span>
-			<span class="home-link-inline">Relationships and joins</span>
-		</div>
+		<p>Combine tables across joins, unions, and intersections with real schemas.</p>
 	</a>
 	<a class="home-chapter-card" href="Database_04_AdvancedSelect.html">
 		<span class="home-chapter-card__number">04</span>
 		<h3>Advanced SELECT</h3>
-		<p>Move into grouping, subqueries, HAVING, and more sophisticated retrieval patterns for real analysis tasks.</p>
-		<div class="home-chapter-card__actions">
-			<span class="home-chip">Read in book</span>
-			<span class="home-link-inline">Aggregation and analysis</span>
-		</div>
+		<p>Grouping, subqueries, HAVING, and analysis-ready retrieval patterns.</p>
 	</a>
 	<a class="home-chapter-card" href="Database_05_Design.html">
 		<span class="home-chapter-card__number">05</span>
 		<h3>Database Design</h3>
-		<p>Build entity-relationship models and turn them into durable table structures for real systems.</p>
-		<div class="home-chapter-card__actions">
-			<span class="home-chip">Read in book</span>
-			<span class="home-link-inline">ERDs and schema design</span>
-		</div>
+		<p>Entity-relationship modeling, normalization, and durable schema design.</p>
 	</a>
 	<a class="home-chapter-card" href="Database_06_WritingData.html">
 		<span class="home-chapter-card__number">06</span>
 		<h3>Writing Data</h3>
-		<p>Practice INSERT, UPDATE, and DELETE while connecting SQL work to scripts and application logic.</p>
-		<div class="home-chapter-card__actions">
-			<span class="home-chip">Read in book</span>
-			<span class="home-link-inline">CRUD operations</span>
-		</div>
+		<p>INSERT, UPDATE, DELETE, triggers, and connecting SQL to application code.</p>
 	</a>
 	<a class="home-chapter-card" href="Database_07_Views.html">
 		<span class="home-chapter-card__number">07</span>
 		<h3>Views and CTEs</h3>
-		<p>Use reusable query structures to simplify reporting, analysis, and maintainable SQL workflows.</p>
-		<div class="home-chapter-card__actions">
-			<span class="home-chip">Read in book</span>
-			<span class="home-link-inline">Reusable queries</span>
-		</div>
+		<p>Reusable query structures for reporting, analysis, and access control.</p>
 	</a>
 	<a class="home-chapter-card" href="Database_08_IndexesTransactions.html">
 		<span class="home-chapter-card__number">08</span>
 		<h3>Indexes and Transactions</h3>
-		<p>Study performance, concurrency, and transactional integrity for production-style database systems.</p>
-		<div class="home-chapter-card__actions">
-			<span class="home-chip">Read in book</span>
-			<span class="home-link-inline">Performance and reliability</span>
-		</div>
+		<p>Performance, concurrency, and ACID integrity in production systems.</p>
 	</a>
 	<a class="home-chapter-card" href="Database_09_PokemonAndPostgres.html">
 		<span class="home-chapter-card__number">09</span>
-		<h3>Pokemon and PostgreSQL</h3>
-		<p>Transition from SQLite to PostgreSQL and work with richer database features in a professional system.</p>
-		<div class="home-chapter-card__actions">
-			<span class="home-chip">Read in book</span>
-			<span class="home-link-inline">PostgreSQL foundations</span>
-		</div>
+		<h3>Pokémon and PostgreSQL</h3>
+		<p>Move from SQLite to PostgreSQL and explore richer features in a professional DBMS.</p>
 	</a>
 	<a class="home-chapter-card" href="Database_10_DatabaseSecurity.html">
 		<span class="home-chapter-card__number">10</span>
 		<h3>Database Security</h3>
-		<p>Cover access control, threats, and protection strategies for sensitive operational and institutional data.</p>
-		<div class="home-chapter-card__actions">
-			<span class="home-chip">Read in book</span>
-			<span class="home-link-inline">Security and controls</span>
-		</div>
+		<p>Access control, encryption, and protecting sensitive institutional data.</p>
 	</a>
 	<a class="home-chapter-card" href="Database_11_DesignDeployTest.html">
 		<span class="home-chapter-card__number">11</span>
 		<h3>Design, Deploy, Test</h3>
-		<p>Work through database lifecycle decisions from development design through deployment and verification.</p>
-		<div class="home-chapter-card__actions">
-			<span class="home-chip">Read in book</span>
-			<span class="home-link-inline">Lifecycle and deployment</span>
-		</div>
+		<p>Lifecycle decisions from development design through deployment and verification.</p>
 	</a>
-	<a class="home-chapter-card" href="Database_12_FinalProject.html">
+	<a class="home-chapter-card" href="Database_12_DataIntegration.html">
 		<span class="home-chapter-card__number">12</span>
+		<h3>Data Integration at Emerald City Clinic</h3>
+		<p>Acquire, transform, and load data from CSV, JSON, XML, APIs, and streams; troubleshoot real-world failures; use AI tools wisely.</p>
+	</a>
+	<a class="home-chapter-card" href="Database_13_FinalProject.html">
+		<span class="home-chapter-card__number">13</span>
 		<h3>Final Project</h3>
-		<p>Pull everything together by designing, building, populating, and optimizing a full database project.</p>
-		<div class="home-chapter-card__actions">
-			<span class="home-chip">Read in book</span>
-			<span class="home-link-inline">Capstone build</span>
-		</div>
+		<p>Capstone build: design, populate, query, optimize, and document a full database project.</p>
 	</a>
 </div>
 
-## Labs and learning tools
+## Practice tools
 
 <div class="home-resource-grid">
 	<section class="home-resource">
-		<h3><a href="labs/Database_Ex_Normalization.html">Normalization Lab</a></h3>
-		<p>Guided practice on functional dependencies, normal forms, and table decomposition.</p>
+		<h3><a href="https://github.com/brendanpshea/database_sql/tree/main/sql_select_quiz">SQL SELECT Quiz</a></h3>
+		<p>Auto-graded practice for retrieval, filtering, joins, and advanced selection patterns.</p>
 	</section>
 	<section class="home-resource">
-		<h3><a href="labs/Database_Lab_Chapter_3.html">Chapter 3 Lab</a></h3>
-		<p>Extra JOIN and set-operations work to reinforce relational querying before moving ahead.</p>
-	</section>
-	<section class="home-resource">
-		<h3><a href="https://github.com/brendanpshea/database_sql/tree/main/sql_select_quiz">SQL SELECT Quiz Tool</a></h3>
-		<p>Automatically graded practice for retrieval, filtering, JOINs, and advanced SQL selection patterns.</p>
-	</section>
-	<section class="home-resource">
-		<h3><a href="https://github.com/brendanpshea/database_sql/tree/main/sql_ddl_quiz">SQL DDL Quiz Tool</a></h3>
+		<h3><a href="https://github.com/brendanpshea/database_sql/tree/main/sql_ddl_quiz">SQL DDL Quiz</a></h3>
 		<p>Focused schema-definition practice covering CREATE, ALTER, and related design operations.</p>
 	</section>
 </div>
 
-## Launch directly in Colab
+## Practice with the Loop of the Recursive Dragon
 
-Choose the notebook workflow when you want to run code immediately in the browser:
+Each chapter has a matching review set in the **Loop of the Recursive Dragon**, an adaptive review game with multiple question types and RPG-style mechanics. Pick a chapter and play:
 
-- [Chapter 1 in Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_01_StarShipSQL.ipynb)
-- [Chapter 2 in Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_02_IntroToSQL.ipynb)
-- [Chapter 3 in Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_03_Joins_Sets_SQL.ipynb)
-- [Chapter 4 in Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_04_AdvancedSelect.ipynb)
-- [Chapter 5 in Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_05_Design.ipynb)
-- [Chapter 6 in Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_06_WritingData.ipynb)
-- [Chapter 7 in Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_07_Views.ipynb)
-- [Chapter 8 in Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_08_IndexesTransactions.ipynb)
-- [Chapter 9 in Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_09_PokemonAndPostgres.ipynb)
-- [Chapter 10 in Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_10_DatabaseSecurity.ipynb)
-- [Chapter 11 in Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_11_DesignDeployTest.ipynb)
-- [Chapter 12 in Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_12_FinalProject.ipynb)
+<div class="home-resource-grid">
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_01_foundations.json">Ch 1 — Foundations</a></h3>
+		<p>Data, information, knowledge, and the major data models.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_02_select.json">Ch 2 — SELECT basics</a></h3>
+		<p>Filtering, sorting, aliases, and aggregate functions.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_03_joins_sets.json">Ch 3 — JOINs and sets</a></h3>
+		<p>Inner, outer, and set operations across multiple tables.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_04_advanced_retrieval.json">Ch 4 — Advanced retrieval</a></h3>
+		<p>GROUP BY, HAVING, subqueries, and JSON inside SQL.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_05_design.json">Ch 5 — Database design</a></h3>
+		<p>ER modeling, normalization, keys, and constraints.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_06_writing_data.json">Ch 6 — Writing data</a></h3>
+		<p>INSERT, UPDATE, DELETE, soft deletes, and triggers.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_07_views_ctes_governance.json">Ch 7 — Views, CTEs, and governance</a></h3>
+		<p>Reusable queries plus data governance and GDPR.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_08_performance_transactions.json">Ch 8 — Performance and transactions</a></h3>
+		<p>Indexes, query plans, and ACID transactions.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_09_postgres.json">Ch 9 — PostgreSQL</a></h3>
+		<p>Postgres-specific types, procedures, and roles.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_10_security.json">Ch 10 — Database security</a></h3>
+		<p>CIA Triad, encryption, access control, and network protection.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_11_architecture_testing.json">Ch 11 — Architecture and testing</a></h3>
+		<p>Design patterns, deployment models, and testing strategies.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_12_data_integration.json">Ch 12 — Data integration</a></h3>
+		<p>Acquisition formats, troubleshooting, and AI tooling for integration work.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_13_final_project.json">Ch 13 — Final project</a></h3>
+		<p>Quick review of the concepts the capstone pulls together.</p>
+	</section>
+</div>
 
 ## Coming soon
 
 <section class="home-coming-soon">
 	<h3>Data governance case studies</h3>
-	<p>A forthcoming section will add scenario-based case studies on stewardship, policy, compliance, quality controls, governance risk, and data lifecycle management.</p>
+	<p>Scenario-based case studies on stewardship, policy, compliance, quality controls, governance risk, and data lifecycle management.</p>
 </section>
