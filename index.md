@@ -106,10 +106,15 @@
 		<h3>Design, Deploy, Test</h3>
 		<p>Lifecycle decisions from development design through deployment and verification.</p>
 	</a>
-	<a class="home-chapter-card" href="Database_12_FinalProject.html">
+	<a class="home-chapter-card" href="Database_12_DataIntegration.html">
 		<span class="home-chapter-card__number">12</span>
+		<h3>Data Integration at Emerald City Clinic</h3>
+		<p>Acquire, transform, and load data from CSV, JSON, XML, APIs, and streams; troubleshoot real-world failures; use AI tools wisely.</p>
+	</a>
+	<a class="home-chapter-card" href="Database_13_FinalProject.html">
+		<span class="home-chapter-card__number">13</span>
 		<h3>Final Project</h3>
-		<p>Capstone build: design, populate, query, and optimize a full database project.</p>
+		<p>Capstone build: design, populate, query, optimize, and document a full database project.</p>
 	</a>
 </div>
 
@@ -176,7 +181,11 @@ Each chapter has a matching review set in the **Loop of the Recursive Dragon**, 
 		<p>Design patterns, deployment models, and testing strategies.</p>
 	</section>
 	<section class="home-resource">
-		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_12_final_project.json">Ch 12 — Final project</a></h3>
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_12_data_integration.json">Ch 12 — Data integration</a></h3>
+		<p>Acquisition formats, troubleshooting, and AI tooling for integration work.</p>
+	</section>
+	<section class="home-resource">
+		<h3><a href="https://brendanpshea.github.io/LotRD/?set=database_13_final_project.json">Ch 13 — Final project</a></h3>
 		<p>Quick review of the concepts the capstone pulls together.</p>
 	</section>
 </div>

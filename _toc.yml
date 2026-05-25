@@ -13,6 +13,7 @@ chapters:
   - file: Database_09_PokemonAndPostgres
   - file: Database_10_DatabaseSecurity
   - file: Database_11_DesignDeployTest
-  - file: Database_12_FinalProject
+  - file: Database_12_DataIntegration
+  - file: Database_13_FinalProject
   - file: labs/Database_Ex_Normalization
   - file: labs/Database_Lab_Chapter_3
