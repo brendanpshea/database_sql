@@ -21,56 +21,73 @@ format:
 
 ::: {.callout-note}
 ### Core Concepts Covered
-*   **Key Concept 1**: Brief technical or ethical descriptor.
-*   **Key Concept 2**: Brief technical or ethical descriptor.
-*   **Key Concept 3**: Brief technical or ethical descriptor.
+*   *Key Concept 1 in a full sentence.*
+*   *Key Concept 2 in a full sentence.*
+*   *Key Concept 3 in a full sentence.*
 :::
 
 ---
 
 ## The Scenario
 
-*An engaging, narrative-driven case story that establishes the setting, the characters (pop-culture or realistic enterprise settings), and the specific actions that led to the conflict.*
+*An engaging, narrative-driven case story that establishes the setting, the characters (pop-culture or realistic enterprise settings), and the specific actions that led to the conflict. Written in natural, flowing academic textbook prose.*
 
 ---
 
 ## The Ethical Dilemma
 
-*A deep-dive analysis of the ethical conflict under standard frameworks (e.g. CIA Triad, data privacy regulations like GDPR, user consent, ownership, or intellectual property rights).*
+*A deep-dive analysis of the ethical conflict under standard frameworks (e.g. data privacy, user consent, ownership, or intellectual property rights). Written in a cohesive narrative structure, avoiding structured lists.*
 
 ---
 
 ## Database & SQL Considerations
 
-*This section bridges the gap between raw ethics and database management. It presents the technical architectures, schema designs, and SQL query paradigms relevant to the case.*
+*This section bridges the gap between raw ethics and database management. It prioritizes visual graphics (Mermaid diagrams) to show how data is structured, accompanied by short, well-explained code snippets.*
 
-### Proposed Schema Design
+### Graphic Depiction of the Schema
 
-*Describe the tables, relationships, or access levels required to mitigate the ethical risks.*
+*A visual Mermaid Entity-Relationship diagram showing the clean, ethically designed database schema.*
+
+```mermaid
+erDiagram
+    USER ||--o{ LOG : "tracks"
+    USER {
+        int user_id PK
+        boolean opt_in
+    }
+    LOG {
+        int log_id PK
+        int user_id FK
+        string action
+    }
+```
+
+### Key DDL & Query Concepts
+
+*A brief, 3-to-5 line code snippet illustrating a crucial database constraint or filtering mechanism, followed by a detailed paragraph explaining its real-world function.*
 
 ```sql
--- SQL DDL example demonstrating security controls or data structures
-CREATE TABLE example_consent_log (
-    consent_id INTEGER PRIMARY KEY,
-    user_id INTEGER NOT NULL,
-    data_type TEXT CHECK(data_type IN ('email', 'tracking', 'pii')),
-    is_opt_in BOOLEAN DEFAULT 0,
-    recorded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+-- Minimal illustrative SQL showing the key concept
+SELECT user_id, action FROM logs
+WHERE opt_in = 1;
 ```
+
+*Explanation of how this specific database design enforces ethical standards.*
 
 ---
 
 ## Discussion Questions
 
-1.  **Question 1**: Conceptual ethical question.
-2.  **Question 2**: Practical database design trade-off question.
-3.  **Question 3**: Compliance or regulatory implications question.
+1.  **Dilemma Debate**: An open-ended question prompt urging students to debate two competing ethical viewpoints or business priorities.
+2.  **Student Analogy**: A question asking students to construct their own real-world analogy or personal example to illustrate a concept from this case.
+3.  **Database Design Trade-off**: A problem-solving question asking students to weigh the technical or usability trade-offs of the database solutions proposed in this case.
+4.  **Regulatory & Social Impact**: An open-ended prompt exploring the long-term societal, legal, or institutional consequences of these data practices.
+5.  **Policy Drafting**: A scenario-based question asking students to roleplay as a lead DBA or compliance officer and draft a basic operational policy for their organization.
 
 ---
 
 ## Key Takeaways
 
-*   **Takeaway Title**: A full-sentence explanation of a best-practice guideline or design standard.
-*   **Takeaway Title**: A full-sentence explanation of a best-practice guideline or design standard.
-*   **Takeaway Title**: A full-sentence explanation of a best-practice guideline or design standard.
+*   *First major standard or best practice explained in a complete, natural sentence.*
+*   *Second major standard or best practice explained in a complete, natural sentence.*
+*   *Third major standard or best practice explained in a complete, natural sentence.*
