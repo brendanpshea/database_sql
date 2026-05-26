@@ -20,3 +20,10 @@ starfleet_graph_db.wal
 starfleet_graph_test_db
 starfleet_graph_test_db/
 starfleet_test.db
+
+old_case_studies/
+
+# Quarto compiled HTML artifacts
+case_studies/*.html
+
+old_case_studies/
