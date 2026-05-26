@@ -17,13 +17,13 @@ format:
 
 ## Executive Summary
 
-Generative AI tools are growing very fast. These tools learn from massive amounts of data. Scrapers harvest text, images, and code from the web. They do this automatically. But many creators are very angry. They say their work is taken without consent. They get no pay and no credit. 
+**Generative AI** tools are growing very fast. These tools learn from massive amounts of data. Scrapers harvest text, images, and code from the web. They do this automatically. But many creators are very angry. They say their work is taken without **consent**. They get no pay and no credit. 
 
-This case study looks at web scraping and copyright laws. We explore the ethical borders of AI training datasets. We show how databases can track data history. This history helps companies respect choices and avoid legal risks.
+This case study looks at web scraping and copyright laws. We explore the ethical borders of AI training datasets. We show how databases can track **data history** (also called **data provenance**). This history helps companies respect choices and avoid legal risks.
 
 ::: {.callout-note}
 ### Core Concepts Covered
-*   We study how to track data history and data origin.
+*   We study how to track **data history** and data origin.
 *   We explore how databases respect creator choice and opt-out requests.
 *   We learn how simple data filters protect copyright before training.
 :::
@@ -36,11 +36,11 @@ This case study looks at web scraping and copyright laws. We explore the ethical
 
 In the classic story *The Wizard of Oz*, visitors see a great Wizard. He appears as a giant green head. He projects a magical illusion of power and knowledge. The citizens bow to him. They believe he is a magical force. But then, Dorothy pulls back a velvet curtain. She finds an ordinary man. He pulls mechanical levers. He speaks into a microphone. The magical Wizard is just a man using machines.
 
-Modern generative AI works under a similar illusion. We type a prompt into tools like ChatGPT or Midjourney. We get an essay or a drawing in seconds. The AI feels like a magical, living brain. 
+Modern **generative AI** works under a similar illusion. We type a prompt into tools like ChatGPT or Midjourney. We get an essay or a drawing in seconds. The AI feels like a magical, living brain. 
 
-But if we pull back the curtain, we find a database engine. This engine runs on millions of human creations. AI models do not write or paint from their own minds. They learn by studying huge databases of human work. They find mathematical patterns in past creations.
+But if we pull back the curtain, we find a **database engine**. This engine runs on millions of human creations. AI models do not write or paint from their own minds. They learn by studying huge databases of human work. They find mathematical patterns in past creations.
 
-To build these datasets, AI companies use automated crawlers. These programs are called web scrapers. Scrapers travel the web and harvest files.
+To build these datasets, AI companies use automated **crawlers**. These programs are called **web scrapers**. **Scrapers** travel the web and harvest files.
 
 The scraping process follows five basic steps:
 
@@ -50,7 +50,7 @@ The scraping process follows five basic steps:
 
 3.  The program finds all links on the webpage. It adds these addresses to its target list.
 
-4.  The program saves the text, image links, and key details into a flat database.
+4.  The program saves the text, image links, and key details (called **metadata**) into a flat database.
 
 5.  The system repeats this process automatically. It works day and night to build a huge web index.
 
@@ -60,11 +60,11 @@ Search engines like Google used this process to index websites. Today, AI compan
 
 This automated harvesting has caused intense real-world battles. 
 
-First, consider the Books3 leak. In 2021, experts found that major AI models studied a dataset called "Books3." This dataset held over 190,000 copyrighted books. The books were scraped from pirated libraries. Authors found that the AI could summarize their books page-by-page. Their private books were harvested without pay or credit.
+First, consider the **Books3 leak**. In 2021, experts found that major AI models studied a dataset called "Books3." This dataset held over 190,000 copyrighted books. The books were scraped from pirated libraries. Authors found that the AI could summarize their books page-by-page. Their private books were harvested without pay or credit.
 
-Second, consider the Getty Images lawsuit. Art generators like Stable Diffusion scraped millions of digital paintings and photos. Artists found that the AI could copy their styles instantly. This took away their freelance work. In 2023, Getty Images sued Stability AI. Getty proved the company scraped 12 million photos without a license. Some AI drawings even showed warped versions of Getty's visual watermark.
+Second, consider the **Getty Images lawsuit**. Art generators like Stable Diffusion scraped millions of digital paintings and photos. Artists found that the AI could copy their styles instantly. This took away their freelance work. In 2023, Getty Images sued Stability AI. Getty proved the company scraped 12 million photos without a license. Some AI drawings even showed warped versions of Getty's visual watermark.
 
-Third, consider open-source code wrongs. Coding tools like GitHub Copilot studied billions of lines of public code. Developers noticed that the AI generated their exact algorithms. Yet, the AI ignored the open-source software licenses. These licenses require proper credit and sharing. The AI treated the code as free property.
+Third, consider open-source code wrongs. Coding tools like GitHub Copilot studied billions of lines of public code. Developers noticed that the AI generated their exact algorithms. Yet, the AI ignored the **open-source software licenses**. These licenses require proper credit and sharing. The AI treated the code as free property.
 
 ---
 
@@ -74,7 +74,7 @@ This clash between automated harvesting and creative rights highlights three maj
 
 ### Copyright and Fair Use
 
-The first conflict is about copyright law and Fair Use. Fair Use allows people to use copyrighted work without permission. This applies to teaching or news. The debate can be seen in two standard arguments.
+The first conflict is about copyright law and **Fair Use**. **Fair Use** allows people to use copyrighted work without permission. This applies to teaching or news. The debate can be seen in two standard arguments.
 
 The AI developers' argument is structured as follows:
 
@@ -86,7 +86,7 @@ The AI developers' argument is structured as follows:
 **Premise 2**: AI models study public data strictly to learn abstract patterns, not to copy files directly.
 :::
 ::: {.argument-conclusion}
-**Conclusion**: Therefore, training an AI model on public data is a transformative educational act that falls under Fair Use.
+**Conclusion**: Therefore, training an AI model on public data is a transformative educational act that falls under **Fair Use**.
 :::
 :::
 
@@ -94,7 +94,7 @@ The content creators' argument is structured as follows:
 
 ::: {.argument-block}
 ::: {.argument-premise}
-**Premise 1**: Fair Use is meant to protect human learning, not corporate harvesting.
+**Premise 1**: **Fair Use** is meant to protect human learning, not corporate harvesting.
 :::
 ::: {.argument-premise}
 **Premise 2**: AI companies build commercial tools that directly replace the creators whose work was harvested.
@@ -106,37 +106,37 @@ The content creators' argument is structured as follows:
 
 ### The Illusion of Informed Consent
 
-The second dilemma is about consent. When writers publish stories or code online, they expect human readers. They do not expect machines to harvest their work. They do not want companies building competing products. 
+The second dilemma is about **consent**. When writers publish stories or code online, they expect human readers. They do not expect machines to harvest their work. They do not want companies building competing products. 
 
-Today, websites rely on a standard called the `robots.txt` file. This text file tells crawlers which pages they can visit. But this old standard has three huge flaws:
+Today, websites rely on a standard called the **robots.txt** file. This text file tells crawlers which pages they can visit. But this old standard has three huge flaws:
 
 1.  Compliance is entirely voluntary. Rogue scrapers can easily ignore the file. There are no database locks to stop them.
 
-2.  Website owners face an all-or-nothing choice. They must allow all crawlers so humans can find them. Or they must block all crawlers and lose their web traffic.
+2.  Website owners face an **all-or-nothing choice**. They must allow all crawlers so humans can find them. Or they must block all crawlers and lose their web traffic.
 
 3.  The control has no retroactive power. Once an AI developer scrapes a site, updating the text file does not remove the data from the trained model.
 
 ### Privacy and the Right to be Forgotten
 
-The third dilemma is about personal privacy. Web scrapers act like massive digital vacuums. They harvest everything on a page. This includes personal email addresses, phone numbers, and sensitive forum posts.
+The third dilemma is about personal privacy. Web scrapers act like massive digital vacuums. They harvest everything on a page. This includes **Personally Identifiable Information (PII)**. PII means personal details like email addresses, phone numbers, and sensitive forum posts.
 
-Modern privacy laws like the GDPR in Europe and the CCPA in California protect citizens. They grant three basic rights:
+Modern privacy laws like the **GDPR** in Europe and the **CCPA** in California protect citizens. They grant three basic rights:
 
-*   Individuals have a Right to Data Portability. This lets them download a copy of their stored personal data.
+*   Individuals have a **Right to Data Portability**. This lets them download a copy of their stored personal data.
 
-*   Individuals have a Right to Rectification. This lets them demand that incorrect personal details be fixed.
+*   Individuals have a **Right to Rectification**. This lets them demand that incorrect personal details be fixed.
 
-*   Individuals have a Right to Erasure. This is also called the Right to be Forgotten. It lets them demand that all personal records be deleted.
+*   Individuals have a **Right to Erasure**. This is also called the **Right to be Forgotten**. It lets them demand that all personal records be deleted.
 
 For a standard database, deleting a user is very simple. An administrator runs a quick delete query. But once that data is used to train an AI model, a huge problem arises. 
 
-An AI model does not store raw text files. Instead, it converts the data into millions of numbers called weights. Complying with the Right to Erasure is impossible without deleting the entire model. The company must retrain the model from scratch. This costs millions of dollars. This creates a permanent legal risk for tech companies.
+An AI model does not store raw text files. Instead, it converts the data into millions of numbers called **weights**. Complying with the **Right to Erasure** is impossible without deleting the entire model. The company must retrain the model from scratch. This costs millions of dollars. This creates a permanent legal risk for tech companies.
 
 ---
 
 ## Database & Data Governance Considerations
 
-To avoid lawsuits, modern tech companies must use strong data rules. Instead of scraping the web blindly, database engineers design schemas that enforce data history. Data history is the record of where a file came from. It tracks its license and consent settings.
+To avoid lawsuits, modern tech companies must use strong **data governance** (data rules). Instead of scraping the web blindly, database engineers design schemas that enforce **data provenance** (data history). Data history is the record of where a file came from. It tracks its license and consent settings.
 
 Database administrators use tables to store and filter crawled records before they reach the AI.
 
@@ -182,11 +182,11 @@ The database performs a three-step matching process to clear data:
 
 We can write this filter as a set of simple, logical database rules:
 
-*   First, our approval rule states that a document is only eligible for training if a review team has checked it and marked it as approved.
+*   First, our **approval rule** states that a document is only eligible for training if a review team has checked it and marked it as approved.
 
-*   Second, our permissions constraint immediately blocks a document if the parent website has forbidden automated web crawlers.
+*   Second, our **permissions constraint** immediately blocks a document if the parent website has forbidden automated web crawlers.
 
-*   Third, our opt-out mandate requires that a document be immediately deleted if the original creator has requested a formal opt-out.
+*   Third, our **opt-out mandate** requires that a document be immediately deleted if the original creator has requested a formal opt-out.
 
 In practice, the system combines these rules into a single check:
 
@@ -196,11 +196,11 @@ In practice, the system combines these rules into a single check:
 
 ### Enforcing Purges and Erasure Logs
 
-When a creator sends a copyright removal request or invokes their privacy rights, the data system must execute a two-step purge process to maintain legal and ethical integrity:
+When a creator sends a copyright removal request or invokes their privacy rights, the data system must execute a two-step **purge process** to maintain legal and ethical integrity:
 
-1.  The system records the document's web address, the reason for deletion (such as a GDPR erasure request), and the exact timestamp in a secure audit log table.
+1.  The system records the document's web address, the reason for deletion (such as a GDPR erasure request), and the exact timestamp in a secure **audit log** table.
 
-2.  The system deletes the original document from the database and flags the parent domain to ensure that future automated web crawlers can never harvest files from that website again.
+2.  The system executes a **referential purging** action. It deletes the original document from the database and flags the parent domain to ensure that future automated web crawlers can never harvest files from that website again.
 
 By maintaining a permanent audit trail of all deleted files, the organization can prove to regulators and creators that it respects digital boundaries.
 
@@ -217,7 +217,6 @@ By maintaining a permanent audit trail of all deleted files, the organization ca
 4.  Under privacy laws, citizens can demand that companies delete their personal data. It is easy to delete a record from a database. But the patterns remain in the trained AI model. Does deleting a record from the database satisfy the legal right to erasure? What should a compliance team do if the AI cannot be easily un-trained?
 
 5.  Imagine you are the database manager at a new AI startup. Write a simple three-sentence data policy for your team. Address how they must handle raw scraped data, license reviews, and sudden creator removal requests.
-
 
 ---
 
