@@ -20,10 +20,12 @@ Welcome to this interactive, openly licensed textbook for database design, SQL q
 ---
 
 ## For Students
-Each chapter is structured as a self-contained, story-driven learning experience set in familiar pop-culture universes (like exploring database models through *Star Trek*, tracking inventory for *Mario Bros Plumbing*, or managing security at *Gotham City Bank*). You can read each chapter in your browser or launch it directly in **Google Colab** with a single click. There are no complex software installations, version mismatches, or setup hurdles—you can start writing and running SQL immediately.
+Each chapter is structured as a self-contained, story-driven learning experience set in familiar pop-culture universes (including *Star Trek*, *Mario Bros*, *Gotham City*, *Pokémon*, and *Emerald City Clinic*). You can read each chapter in your browser or launch it directly in **Google Colab** with a single click. 
+
+There are no complex software installations, version mismatches, or setup hurdles—you can start writing and running SQL immediately. Interactive, **auto-graded quizzes are built directly into the notebooks**, giving you instant feedback on your SQL query writing and schema design skills as you read and practice.
 
 ## For Instructors
-This curriculum is closely aligned with the **CompTIA DataSys+ (DS0-002)** certification exam, covering core database foundations, design, deployment, security, and integration. It provides a complete, zero-setup, active-learning framework featuring built-in, autograded quizzes and game-based review sets. As an **Open Educational Resource (OER)**, it is freely shareable, adaptable, and optimized for digital publishing.
+This curriculum is closely aligned with the **CompTIA DataSys+ (DS0-002)** certification exam, covering core database foundations, design, deployment, security, and integration. It provides a complete, zero-setup, active-learning framework featuring built-in, autograded quizzes and game-based review sets. Every single chapter features a unique pop-culture case study that helps make abstract database and SQL concepts approachable and memorable. As an **Open Educational Resource (OER)**, it is freely shareable, adaptable, and optimized for digital publishing.
 
 <div class="home-hero__support" style="margin-top: 1.5rem; padding: 1.2rem; border-left: 4px solid var(--db-accent); background-color: var(--db-paper); border-radius: 0 12px 12px 0; font-size: 0.95rem; line-height: 1.6; color: var(--db-ink-soft);">
   Development of this textbook was made possible by generous grant funding from the <strong>Minnesota State (MinnState)</strong> system and <strong>Rochester Community and Technical College (RCTC)</strong>, as part of their ongoing commitment to high-quality, zero-cost learning resources for students.
@@ -54,23 +56,9 @@ Each chapter is Google Colab-ready. Launch a notebook to execute code dynamicall
 
 ---
 
-## Integrated Case Studies
+## Chapter Review Games (Loop of the Recursive Dragon)
 
-To bring abstract concepts to life, instruction is anchored in story-driven case studies inspired by pop culture:
-
-* 🛰️ **Starship SQL (Chapter 1)**: Explore database data models (Relational, JSON, Graph) on board the USS Enterprise.
-* 🍄 **Mario Bros Plumbing (Chapter 6 & 8)**: Build a service database, handle concurrent repair orders, and manage ACID transactions.
-* 🦇 **Gotham City Bank (Chapter 10)**: Secure vault keys and assign role-based access to protect against bank robberies.
-* 💎 **Emerald City Clinic (Chapter 12)**: Ingest patient records across CSV, JSON, and APIs to design an advanced medical ETL pipeline.
-
----
-
-## Learning & Practice Resources
-
-Each chapter is supported by comprehensive self-check quizzes and gamified review sets to reinforce core skills:
-
-### Chapter Review Games (Loop of the Recursive Dragon)
-Test your knowledge with RPG-style adaptive review sets set in the *Loop of the Recursive Dragon* review game. Select a chapter and play:
+Each chapter is supported by an RPG-style adaptive review set in the *Loop of the Recursive Dragon* review game. Select a chapter and play:
 
 * ⚔️ [Ch 1 — Foundations](https://brendanpshea.github.io/LotRD/?set=database_01_foundations.json) (Data, models, structures)
 * ⚔️ [Ch 2 — SELECT basics](https://brendanpshea.github.io/LotRD/?set=database_02_select.json) (Filtering, sorting, aggregates)
@@ -85,11 +73,6 @@ Test your knowledge with RPG-style adaptive review sets set in the *Loop of the 
 * ⚔️ [Ch 11 — Architecture & testing](https://brendanpshea.github.io/LotRD/?set=database_11_architecture_testing.json) (Design patterns, deployment models)
 * ⚔️ [Ch 12 — Data integration](https://brendanpshea.github.io/LotRD/?set=database_12_data_integration.json) (ETL, formats, AI tooling)
 * ⚔️ [Ch 13 — Capstone review](https://brendanpshea.github.io/LotRD/?set=database_13_final_project.json) (Comprehensive final project prep)
-
-### Autograded Practical Quizzes
-To test your hands-on query writing skills, launch these auto-graded CLI/Python practice tests in your terminal:
-* 📝 **[SQL SELECT Quiz](https://github.com/brendanpshea/database_sql/tree/main/sql_select_quiz)**: Focused practice for retrieving, filtering, sorting, and combining data.
-* 📝 **[SQL DDL Quiz](https://github.com/brendanpshea/database_sql/tree/main/sql_ddl_quiz)**: Focused practice for building, altering, and managing relational schemas.
 
 ---
 
