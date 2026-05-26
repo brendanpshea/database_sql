@@ -34,9 +34,11 @@ Social media platforms are free to use. But they are powered by the **attention 
 
 In the classic movie *The Truman Show*, Truman Burbank lives in a perfect suburban town. His life seems completely normal. But Truman does not know a shocking secret. His entire town is a massive television set. His friends are hired actors. Every second of his life is broadcast live to the world. A corporate director controls the weather, the news, and the advertisements. Truman's private life is captured by hidden cameras to sell products. He is the star of a commercial show. But he never gave his **consent**.
 
-Modern social media platforms operate like a digital version of *The Truman Show*. We scroll through Instagram, watch videos on TikTok, and chat with friends. These activities seem free and simple. But behind the screen, hidden databases act like corporate cameras. 
+In the film *The Social Network*, we see the origins of modern platforms. It shows how Mark Zuckerberg built early Facebook to track and rank college relationships. The system mapped who was dating whom, who had which friends, and what people liked. 
 
-These databases track our digital footprint. This tracking is the engine of the **attention economy**. In this business model, our screen time and attention are the main products. The database logs:
+What started as a simple college directory soon became a global database engine. Today, social media platforms operate like a digital version of *The Truman Show*. We scroll through Instagram, watch videos on TikTok, and chat with friends. These activities seem free and simple. But behind the screen, hidden databases act like corporate cameras. 
+
+These databases track our digital footprint. This tracking is the engine of the **attention economy**. In this business model, our screen time and attention are the main products. The database does not just log simple posts. It logs:
 
 1.  Every comment we write.
 
@@ -44,25 +46,63 @@ These databases track our digital footprint. This tracking is the engine of the 
 
 3.  The exact speed at which we scroll through our feed.
 
-4.  Every product link we click.
+4.  The time we spend looking at a post without clicking, which is called hover time.
+
+5.  When we start and stop typing, using active typing indicators.
+
+6.  Our device battery levels, screen rotations, and internet connections.
 
 This behavioral data is worth billions of dollars. Companies use it to show us highly specific, targeted ads.
 
+### The Mechanics of the Attention Economy
+
+This data harvesting is extremely profitable. Social media platforms do not sell physical goods. Instead, they sell our screen time to advertisers. The transaction works through real-time database auctions. When a user opens their app feed, the database runs an automated bidding war in milliseconds. Advertisers bid to show their ads on the user's screen. 
+
+This process is called **Programmatic Real-Time Bidding (RTB)**. When you scroll past a post, a split-second request is sent to a data broker database. 
+
+This database cross-references your tracking cookies, device profiles, and demographic tables. It runs millions of automated ad auctions in under 100 milliseconds. The winner gets to display their ad on your screen instantly.
+
+To maximize their profits, the platform's database uses active ranking formulas. The database prioritizes content that generates the highest engagement. 
+
+A typical engagement formula looks like this: `Engagement Score = Likes * 1 + Comments * 5 + Shares * 10`. 
+
+Because comments and shares are weighted much higher than simple likes, the database algorithm naturally promotes emotionally charged, controversial, or polarizing posts. This encourages users to spend more time on the app, creating more ad views for corporate profit.
+
 ### The Facebook Emotional Experiment
 
-In 2014, the public learned about a shocking Facebook study. Facebook researchers conducted an **emotional contagion experiment** on nearly 700,000 users. The goal was to see if they could manipulate human emotions. 
+In 2014, the public learned about a shocking Facebook study. Facebook researchers conducted an **emotional contagion experiment** on 689,003 users. The goal was to see if they could manipulate human emotions. 
 
-Without asking or telling the users, researchers modified the database algorithms. They filtered out happy posts for some users, showing them only sad news. For other users, they did the opposite. The experiment worked. The database logs showed that users exposed to sad posts wrote sadder comments. 
+Without asking or telling the users, researchers modified the database algorithms. They filtered out positive words for some users, showing them only negative news. For other users, they did the opposite. 
 
-The study proved that a database system could manipulate human feelings. But it sparked intense anger. Users were horrified to learn that their emotions were being played with without their **informed consent**.
+To classify the emotions of each post, the database used an automated language screening system called LIWC (Linguistic Inquiry and Word Count). This tool scanned every post for happy or sad words in real time.
+
+The researchers then analyzed the database logs of these users' subsequent posts. The experiment worked. The logs showed that users exposed to sad posts wrote sadder comments. Users exposed to happy posts wrote happier comments. 
+
+The study proved that a database system could manipulate human feelings. The research was published in the *Proceedings of the National Academy of Sciences* as a peer-reviewed article: [PNAS Emotional Contagion Study](https://www.pnas.org/doi/full/10.1073/pnas.1320040111). But it sparked intense anger worldwide. Users were horrified to learn that their emotions were being played with without their **informed consent**.
 
 ### The Cambridge Analytica Scandal
 
 The most famous clash occurred in 2018 with **Cambridge Analytica**. This political consulting firm harvested the personal data of over 87 million Facebook users. 
 
-They gathered the data using a simple online quiz app. The app did not just scrape the quiz taker's data. It also scraped the profiles of all their Facebook friends. Most of these friends had no idea the app even existed. 
+They gathered the data using a simple online quiz app created by researcher Aleksandr Kogan. The app was called "thisisyourdigitallife." The app did not just scrape the quiz taker's data. It also scraped the profiles of all their Facebook friends. Most of these friends had no idea the app even existed, and they had never consented to share their profiles. Kogan was able to do this because Facebook's older v1.0 API allowed apps to silently query the friends networks of any user who logged in.
 
-Cambridge Analytica used this massive database to build deep psychological profiles of voters. They then showed them highly targeted political ads to influence their votes in the 2016 election. The scandal forced Facebook to pay a record $5 billion fine to regulators. It proved how easily harvested data can be used to manipulate democratic societies.
+Cambridge Analytica used this massive database to build deep psychological profiles of voters. They used a psychological model called the "Big Five" or "OCEAN" model. This model scores personality traits:
+
+*   **Openness**: How open a person is to new experiences.
+
+*   **Conscientiousness**: How organized and responsible they are.
+
+*   **Extroversion**: How outgoing and social they are.
+
+*   **Agreeableness**: How friendly and cooperative they are.
+
+*   **Neuroticism**: How anxious, fearful, or easily stressed they are.
+
+By mining Kogan's database, Cambridge Analytica identified highly neurotic or fearful voters. They then showed them customized, fear-based political ads to exploit those exact anxieties during the 2016 election. 
+
+For example, to a highly "Neurotic" user, the database served fear-based ads displaying home invasions to push specific gun laws. To an "Agreeable" user, the same group served friendly ads showing local neighborhood watches. 
+
+The scandal forced Facebook to pay a record $5 billion fine to the Federal Trade Commission, which officially detailed the privacy violations and governance overhauls in its [FTC Facebook Press Release](https://www.ftc.gov/news-events/news/press-releases/2019/07/ftc-imposes-5-billion-penalty-sweeping-new-privacy-restrictions-facebook). It proved how easily harvested data can be used to manipulate democratic societies. It forced Facebook to completely overhaul its API systems, blocking third-party developers from accessing friends networks.
 
 ---
 
@@ -88,6 +128,8 @@ The argument for targeted advertising is structured as follows:
 :::
 :::
 
+Advocates argue that users enjoy personalized feeds. They say that without these database systems, users would see irrelevant ads and cluttered layouts. For these supporters, the database is simply a tool to create a better user experience.
+
 The argument against targeted advertising is structured as follows:
 
 ::: {.argument-block}
@@ -102,11 +144,17 @@ The argument against targeted advertising is structured as follows:
 :::
 :::
 
+Opponents argue that the business model is inherently exploitative. It treats humans as natural resources to be mined. It encourages companies to make their apps as addictive as possible to keep harvesting data.
+
 ### The Illusion of Free Will
 
 The second dilemma is the threat of behavioral manipulation. In the past, ads were shown to everyone. Today, database algorithms know our exact vulnerabilities. 
 
-If the database knows a user is feeling lonely or insecure, it can instantly serve ads that exploit those feelings. This high level of targeting is not just advertising. It represents a form of psychological control. It limits our free choice by quietly steering our desires behind the scenes.
+### Algorithmic Steering and Mental Health
+
+If the database knows a user is feeling lonely or insecure, it can instantly serve ads that exploit those feelings. It can steer their desires, opinions, and mental states behind the scenes. 
+
+Studies show that this constant social comparison and validation seeking harms mental health, particularly among teens. The database algorithm's drive to keep users hooked leads to increased anxiety and depression. It creates a digital bubble that manipulates what we believe and how we feel.
 
 ---
 
@@ -147,11 +195,21 @@ erDiagram
     }
 ```
 
+### Detailed Attribute Descriptions
+
+To understand how this data history system works, let us look at the key details stored in our database tables:
+
+First, consider the `USER_ACCOUNTS` table. This table holds basic user registration files. It stores the `user_id`, which is a unique number for each account. It logs the `email_address` and the `account_status` (such as Active or Suspended).
+
+Second, consider the `CONSENT_SETTINGS` table. This table manages user permissions. The `setting_id` is a unique permissions log number. The `user_id` links the setting back to the account. The `tracking_allowed` column records the user's active choice. This choice can be set to True (allow tracking) or False (block tracking). The `last_updated` column logs the exact timestamp of their latest choice.
+
+Third, consider the `TRACKED_EVENTS` table. This table logs user behavior. The `event_id` is a unique number for each action. The `event_type` records the action (such as Likes or Scroll). The `scroll_duration_seconds` tracks how long they lingered on a post. Finally, the `targeted_ad_tag` stores the commercial marketing tags used to serve ads.
+
 ### Structured Logic for Compliance Filtering
 
 Instead of relying on fragile application code, database designers write automated rules to enforce user privacy choices instantly.
 
-The database runs a three-step trigger process:
+The database performs a three-step trigger process:
 
 1.  First, when a user toggles their privacy settings to "Opt-Out," the database updates their consent table.
 
@@ -188,6 +246,13 @@ By using these automated database tools, organizations can guarantee that privac
 4.  If a political group uses database profiling to show voters customized fear-based ads during an election, should this be allowed? Where does helpful political speech end and democratic manipulation begin?
 
 5.  Imagine you are the chief database manager at a major social media platform. Write a simple three-sentence user consent policy. Address how you will handle behavioral tracking logs, third-party quiz apps, and sudden user opt-out requests.
+
+---
+
+## References
+
+*   **PNAS Emotional Contagion Study**: Kramer, Adam D. I., et al. "Experimental evidence of massive-scale emotional contagion through social networks." *Proceedings of the National Academy of Sciences*, vol. 111, no. 24, 2014, pp. 8788-8790, [pnas.org/doi/full/10.1073/pnas.1320040111](https://www.pnas.org/doi/full/10.1073/pnas.1320040111). This peer-reviewed study details the massive experiment manipulating Facebook feeds without users' informed consent.
+*   **FTC Facebook $5 Billion Settlement**: "FTC Imposes $5 Billion Penalty and Sweeping New Privacy Restrictions on Facebook." *Federal Trade Commission*, 24 July 2019, [ftc.gov/news-events/news/press-releases/2019/07/ftc-imposes-5-billion-penalty-sweeping-new-privacy-restrictions-facebook](https://www.ftc.gov/news-events/news/press-releases/2019/07/ftc-imposes-5-billion-penalty-sweeping-new-privacy-restrictions-facebook). This official press release details the record-breaking settlement, compliance mandates, and corporate governance reforms following the Cambridge Analytica scandal.
 
 ---
 

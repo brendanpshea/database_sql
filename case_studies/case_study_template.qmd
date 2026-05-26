@@ -30,7 +30,7 @@ format:
 
 ## The Scenario
 
-*An engaging, narrative-driven case story that establishes the setting, the characters (pop-culture or realistic enterprise settings), and the specific actions that led to the conflict. Written in natural, flowing academic textbook prose.*
+*An engaging, narrative-driven case story that establishes the setting, the characters (pop-culture or realistic enterprise settings), and the specific actions that led to the conflict. Written in natural, flowing academic textbook prose. Any real-world historical incidents mentioned in the narrative MUST include active, verified, non-fabricated hyperlinks to primary news coverage, official reports, or academic publications.*
 
 ---
 
@@ -83,6 +83,15 @@ WHERE opt_in = 1;
 3.  **Database Design Trade-off**: A problem-solving question asking students to weigh the technical or usability trade-offs of the database solutions proposed in this case.
 4.  **Regulatory & Social Impact**: An open-ended prompt exploring the long-term societal, legal, or institutional consequences of these data practices.
 5.  **Policy Drafting**: A scenario-based question asking students to roleplay as a lead DBA or compliance officer and draft a basic operational policy for their organization.
+
+---
+
+## References
+
+*A list of primary sources, official government reports, and journalistic investigations used in this case study. All real-world events MUST be backed by active, verified, non-fabricated hyperlinks to their original publications.*
+
+*   [Source Title/Organization](https://example.com/actual-verified-link) - A brief, one-sentence description of the reference's contents and relevance to the case study.
+*   [Source Title/Organization](https://example.com/actual-verified-link) - A brief, one-sentence description of the reference's contents and relevance to the case study.
 
 ---
 
