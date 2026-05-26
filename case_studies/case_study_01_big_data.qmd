@@ -1,0 +1,194 @@
+---
+title: "Data Ethics Case Study 1: Big Data and Privacy"
+subtitle: "Case Studies in Data Governance & Relational Systems"
+author: "Brendan Shea, PhD"
+date: last-modified
+categories: [Big Data, Telemetry, Privacy, Smart Devices]
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    code-fold: show
+    code-summary: "Show Database/SQL Reference"
+    embed-resources: true
+---
+
+## Executive Summary
+
+We live in the era of **big data**. Every digital device logs our moves automatically. Sensors stream real-time data to massive corporate files. This study looks at **data privacy** and sensory logging. We explore the balance between safety and personal freedom. We show how databases use a **staging filter** to clean raw records. This design helps protect privacy while keeping valuable trends.
+
+::: {.callout-note}
+### Core Concepts Covered
+*   We study how to manage the massive flow of sensory records using staging files.
+*   We explore the three core features of modern databases: volume, velocity, and variety.
+*   We learn how to filter out sensitive details before saving data permanently.
+:::
+
+---
+
+## The Scenario
+
+### Telemetry on the Starship Enterprise
+
+In the classic television show *Star Trek*, the Starship Enterprise travels the deep galaxy. The ship is a marvel of advanced technology. It constantly scans alien planets and cosmic storms. Behind the scenes, Starfleet Command monitors the ship from Earth. Computers log every shield-up event. Sensors record warp speed changes. Bio-sensors stream the heartbeats of the crew in real time.
+
+This massive flow of sensory records is called **telemetry data**. Telemetry means automated readings sent from a distance. For Starfleet, this data is vital for survival. But it also represents the classic features of **big data**. We can understand big data through three core features:
+
+1.  First, we look at **volume**. Volume means the sheer physical size of the data. Starfleet databases hold petabytes of sensory logs from hundreds of ships.
+
+2.  Second, we look at **velocity**. Velocity means the extreme speed of the data. Sensor readings stream back to Earth in milliseconds, requiring instant database updates.
+
+3.  Third, we look at **variety**. Variety means the different formats of the data. The database must store engine temperature numbers, shield status logs, and crew medical text reports all at once.
+
+This data helps Starfleet keep the crew safe. But it also records every single crew member's private life. It logs where they walk, how they feel, and what they do.
+
+### From Starfleet to Smart Homes
+
+Today, we do not need a starship to experience this level of logging. Modern homes are filled with connected sensors. Smart thermostats track our daily schedules. Smart watches count our steps and heart rates. Security cameras log our movements.
+
+These devices stream details back to corporate databases. This creates a massive record of our personal lives. The companies say this data makes our lives easier. But it also creates a permanent digital footprint.
+
+### The Real-World battles
+
+This continuous harvesting has led to major real-world clashes:
+
+1.  The first major conflict is the **Strava heatmap leak**. In 2018, a fitness app company named Strava released a public map. The map showed every run recorded by its users worldwide. The map looked beautiful. But experts soon noticed a massive problem. In desert war zones, the map showed bright glowing lines. These lines were recorded by soldiers jogging around secret military bases. The database had accidentally mapped the exact layouts of top-secret bases in war zones.
+
+2.  The second major conflict is the **smart thermostat tracking** debate. Millions of smart thermostats stream home temperature logs to corporate databases. These databases record when people are home, when they sleep, and when they travel. Companies can sell this data to utility companies or advertising firms. This reveals private home patterns without clear customer choice.
+
+---
+
+## The Ethical Dilemma
+
+This massive growth of sensory data raises two major ethical conflicts.
+
+### Safety Surveillance versus Personal Freedom
+
+The first conflict is about safety and surveillance. Organizations argue that they must log data to protect people or manage resources. But this creates a total surveillance state. 
+
+The argument for telemetry logging is structured as follows:
+
+::: {.argument-block}
+::: {.argument-premise}
+**Premise 1**: Keeping soldiers safe and tracking equipment health is necessary for national security and public safety.
+:::
+::: {.argument-premise}
+**Premise 2**: Collecting real-time sensory data is the only way to detect equipment failures and spot safety threats instantly.
+:::
+::: {.argument-conclusion}
+**Conclusion**: Therefore, organizations have a moral duty to log sensory telemetry from all connected devices.
+:::
+:::
+
+The argument against telemetry logging is structured as follows:
+
+::: {.argument-block}
+::: {.argument-premise}
+**Premise 1**: Individuals have a basic right to privacy, which includes their physical movements and home habits.
+:::
+::: {.argument-premise}
+**Premise 2**: Collecting permanent sensory logs creates an inescapable tracking system that can be leaked or abused.
+:::
+::: {.argument-conclusion}
+**Conclusion**: Therefore, logging detailed personal sensory telemetry without active boundaries violates basic rights.
+:::
+:::
+
+### The Dilemma of Metadata
+
+The second dilemma is about **metadata** (data about data). Companies often argue that they protect privacy by removing names. They claim that anonymous coordinates are safe. 
+
+But the Strava leak proved this claim is false. Even without names, a database of coordinates reveals private realities. If a runner jogs the same loop every morning, it is easy to find where they live. Removing a name does not make data anonymous. When databases combine location, time, and frequency, **deanonymization** is very simple.
+
+---
+
+## Database & Data Governance Considerations
+
+To protect privacy, modern organizations use strong **data governance** (data rules). They do not save raw sensory feeds directly. Instead, they design database systems to act as a **staging filter**. 
+
+A staging filter is a temporary database zone. It isolates and cleans raw data before sending it to a permanent archive.
+
+### Graphic Depiction of the Schema
+
+The following diagram outlines an ethical staging database. It shows how raw telemetry logs are filtered, sanitized, and stored:
+
+```{mermaid}
+erDiagram
+    RAW_TELEMETRY ||--o{ STAGING_FILTERS : "feeds into"
+    STAGING_FILTERS ||--o{ APPROVED_LOGS : "clears into"
+    
+    RAW_TELEMETRY {
+        string log_id
+        string device_id
+        string gps_coordinates
+        string heart_rate_reading
+    }
+    
+    STAGING_FILTERS {
+        string filter_id
+        string raw_log_id
+        string anonymize_status
+        string geographic_mask_applied
+    }
+    
+    APPROVED_LOGS {
+        string archive_id
+        string masked_device_id
+        string generalized_region
+        string average_heart_rate
+    }
+```
+
+### Structured Logic for Compliance Filtering
+
+Instead of writing complex code, database designers enforce ethics directly in the database structure. The database checks every incoming telemetry log before it is saved.
+
+The database performs a three-step cleaning process:
+
+1.  First, when a device streams new telemetry, the system saves it in a temporary raw table. This table is kept separate from the main archive.
+
+2.  Second, the database runs a cleaning program. It strips away precise GPS coordinates. It masks unique device serial numbers.
+
+3.  Third, the system evaluates the data against compliance rules to ensure it is safe to keep.
+
+We can write this filter as a set of simple, logical database rules:
+
+*   First, our **permissions check** blocks any log if the user has disabled location sharing in their account.
+
+*   Second, our **geographic mask** generalizes coordinates, converting exact street addresses into broad zip codes.
+
+*   Third, our **data retention rule** deletes all raw logs from the temporary table after 24 hours.
+
+In practice, the system combines these rules into a single check:
+
+*   **IF** location sharing is active **AND** coordinates are generalized **AND** device identifiers are masked, **THEN** save the cleaned record into the approved logs archive.
+
+*   **IF** any of these requirements are violated, **THEN** immediately reject the log and delete the raw record.
+
+By using this temporary staging area, organizations can study broad fitness or temperature trends. But they can never be used to track a specific person's home schedule or secret movements.
+
+---
+
+## Discussion Questions
+
+1.  In the Star Trek scenario, Starfleet Command logs biosensor data to protect the crew during danger. Do you think a military branch has the right to monitor soldiers' health and location when they are off duty? Where should we draw the line between safety and privacy?
+
+2.  Create a real-world analogy for fitness tracking heatmaps. Is it like a runner leaving physical footprints on a muddy public trail? Or is it like a tracker following them with a video camera and posting the tape online? Explain the strengths and weaknesses of your analogy.
+
+3.  Our database diagram generalizes location details to protect users. But what if a city planning office needs precise GPS logs to fix dangerous roads? How can a database manager balance the need for precise details with the need for privacy?
+
+4.  Fitness trackers gather location data. If a user commits a crime, should the police be allowed to search the company's database to find where the suspect was? How might this impact public trust in smart devices?
+
+5.  Imagine you are the data manager at a fitness app company. Write a simple three-sentence privacy policy for your users. Address how you will handle raw GPS logs, public map sharing, and user requests to delete their tracks.
+
+---
+
+## Key Takeaways
+
+*   Every database collecting sensory data must use a staging filter to isolate and sanitize raw records before permanent storage.
+
+*   Removing names does not guarantee privacy. Location, time, and frequency coordinates can be combined to identify specific users.
+
+*   Active compliance rules must be built into the database layer to automatically delete temporary raw telemetry records after a short period.
