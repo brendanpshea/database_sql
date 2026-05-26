@@ -1,5 +1,5 @@
 ---
-title: "Data Ethics Case Study 12: Generative AI, Web Scraping, and copyright"
+title: "Data Ethics Case Study 12: Generative AI, Web Scraping, and Copyright"
 subtitle: "Case Studies in Data Governance & Relational Systems"
 author: "Brendan Shea, PhD"
 date: last-modified
@@ -17,197 +17,214 @@ format:
 
 ## Executive Summary
 
-The rapid advancement of generative artificial intelligence (AI) has been fueled by massive quantities of text, images, and source code scraped from the open web. While these datasets have enabled breakthrough capabilities in models like GPT-4, Claude, Midjourney, and GitHub Copilot, they have sparked intense legal and ethical conflicts. Content creators, artists, and software developers increasingly argue that their intellectual property has been scraped and ingested without their consent, compensation, or attribution. 
+Generative AI tools are growing very fast. These tools learn from massive amounts of data. Scrapers harvest text, images, and code from the web. They do this automatically. But many creators are very angry. They say their work is taken without consent. They get no pay and no credit. 
 
-This case study examines the intersection of automated data collection (web scraping) and copyright law, analyzing the ethical boundaries of AI training datasets. It bridges the gap between ethical principles and database operations, demonstrating how relational database schemas can be designed to track content provenance, respect licensing agreements, and enforce user opt-out requests at scale.
+This case study looks at web scraping and copyright laws. We explore the ethical borders of AI training datasets. We show how databases can track data history. This history helps companies respect choices and avoid legal risks.
 
 ::: {.callout-note}
 ### Core Concepts Covered
-*   **Data Provenance**: Tracking the origin, ownership, and license conditions of database records.
-*   **Informed Consent & Opt-Outs**: Relational methods for managing creator choices and filtering datasets.
-*   **AI Training Audits**: Writing SQL queries to validate dataset licensing and ensure copyright compliance before model training.
+*   We study how to track data history and data origin.
+*   We explore how databases respect creator choice and opt-out requests.
+*   We learn how simple data filters protect copyright before training.
 :::
 
 ---
 
 ## The Scenario
 
-In the race to build state-of-the-art Large Language Models (LLMs) and art generation engines, tech companies deploy specialized web scrapers—automated crawlers or "spiders"—that traverse millions of websites daily. These crawlers extract text, images, and source code, saving them into massive, structured databases (often stored as CSV, JSON, or columnar files) before feeding them to deep learning neural networks.
+### The Illusion of the Magic Machine
 
-As AI models began generating human-like writing, stunning artwork in the styles of living illustrators, and complex code snippets, three high-profile controversies emerged:
+In the classic story *The Wizard of Oz*, visitors see a great Wizard. He appears as a giant green head. He projects a magical illusion of power and knowledge. The citizens bow to him. They believe he is a magical force. But then, Dorothy pulls back a velvet curtain. She finds an ordinary man. He pulls mechanical levers. He speaks into a microphone. The magical Wizard is just a man using machines.
 
-1.  **Large Language Models and the "Books3" Dataset**:
-    In 2021, investigators revealed that several prominent LLMs had been trained on "Books3," a text corpus containing over 190,000 copyrighted books scraped from pirated repositories. Authors discovered that these AI models could summarize their books page-by-page, essentially copying their work without consent or royalties.
-2.  **AI Art Generators and Image Scraping**:
-    Image models like Stable Diffusion and Midjourney were trained on millions of images scraped from galleries like ArtStation, Flickr, and Pinterest. Illustrators found the AI generating exact stylistic replicas of their signature art styles, competing directly with them in the marketplace and devaluing human creativity.
-3.  **Code Completion Engines and Open-Source Licensing**:
-    Tools like GitHub Copilot were trained on billions of lines of public source code from open-source repositories. Developers noticed the AI generating unique copyrighted algorithms without complying with their associated open-source licenses (such as the GPL or MIT licenses, which require proper attribution and sharing of derivative work).
+Modern generative AI works under a similar illusion. We type a prompt into tools like ChatGPT or Midjourney. We get an essay or a drawing in seconds. The AI feels like a magical, living brain. 
+
+But if we pull back the curtain, we find a database engine. This engine runs on millions of human creations. AI models do not write or paint from their own minds. They learn by studying huge databases of human work. They find mathematical patterns in past creations.
+
+To build these datasets, AI companies use automated crawlers. These programs are called web scrapers. Scrapers travel the web and harvest files.
+
+The scraping process follows five basic steps:
+
+1.  The crawler starts with a list of seed website addresses. It requests the content of those pages.
+
+2.  The crawler reads the webpage's raw code. It strips away all formatting to isolate text and images.
+
+3.  The program finds all links on the webpage. It adds these addresses to its target list.
+
+4.  The program saves the text, image links, and key details into a flat database.
+
+5.  The system repeats this process automatically. It works day and night to build a huge web index.
+
+Search engines like Google used this process to index websites. Today, AI companies use it to build commercial products. They often ignore whether creators want their work harvested.
+
+### The Real-World Legal and Creative Battles
+
+This automated harvesting has caused intense real-world battles. 
+
+First, consider the Books3 leak. In 2021, experts found that major AI models studied a dataset called "Books3." This dataset held over 190,000 copyrighted books. The books were scraped from pirated libraries. Authors found that the AI could summarize their books page-by-page. Their private books were harvested without pay or credit.
+
+Second, consider the Getty Images lawsuit. Art generators like Stable Diffusion scraped millions of digital paintings and photos. Artists found that the AI could copy their styles instantly. This took away their freelance work. In 2023, Getty Images sued Stability AI. Getty proved the company scraped 12 million photos without a license. Some AI drawings even showed warped versions of Getty's visual watermark.
+
+Third, consider open-source code wrongs. Coding tools like GitHub Copilot studied billions of lines of public code. Developers noticed that the AI generated their exact algorithms. Yet, the AI ignored the open-source software licenses. These licenses require proper credit and sharing. The AI treated the code as free property.
 
 ---
 
 ## The Ethical Dilemma
 
-The collection of open-web data for AI training presents a fundamental conflict between **technological innovation** and **individual rights**:
+This clash between automated harvesting and creative rights highlights three major ethical dilemmas.
 
-*   **Copyright and Fair Use**: AI developers argue that training models is "transformative" and falls under the **Fair Use doctrine**—similar to a human reading books to learn how to write. Content creators counter that AI systems do not merely learn; they build commercial products that directly compete with the original creators using their own scraped intellectual property.
-*   **Privacy & Inadvertent Harvesting**: Web scrapers capture data indiscriminately, harvesting personal email addresses, phone numbers, sensitive opinions, and private forum posts. Under regulations like the European Union's **General Data Protection Regulation (GDPR)** and the **California Consumer Privacy Act (CCPA)**, individuals have a "Right to be Forgotten" (data erasure), which is incredibly difficult to enforce once data is baked into an AI model's weights.
-*   **Consent and Autonomy**: Traditional web browsing operates under the assumption of human readership. Scraping millions of assets at scale bypasses traditional licensing markets, forcing creators to choose between removing their content from the web entirely or letting private tech companies use it to build competing software.
+### Copyright and Fair Use
+
+The first conflict is about copyright law and Fair Use. Fair Use allows people to use copyrighted work without permission. This applies to teaching or news. The debate can be seen in two standard arguments.
+
+The AI developers' argument is structured as follows:
+
+::: {.argument-block}
+::: {.argument-premise}
+**Premise 1**: Human artists learn to paint by studying public art in museums, which is legal.
+:::
+::: {.argument-premise}
+**Premise 2**: AI models study public data strictly to learn abstract patterns, not to copy files directly.
+:::
+::: {.argument-conclusion}
+**Conclusion**: Therefore, training an AI model on public data is a transformative educational act that falls under Fair Use.
+:::
+:::
+
+The content creators' argument is structured as follows:
+
+::: {.argument-block}
+::: {.argument-premise}
+**Premise 1**: Fair Use is meant to protect human learning, not corporate harvesting.
+:::
+::: {.argument-premise}
+**Premise 2**: AI companies build commercial tools that directly replace the creators whose work was harvested.
+:::
+::: {.argument-conclusion}
+**Conclusion**: Therefore, scraping copyrighted work to build competing tools is a form of theft.
+:::
+:::
+
+### The Illusion of Informed Consent
+
+The second dilemma is about consent. When writers publish stories or code online, they expect human readers. They do not expect machines to harvest their work. They do not want companies building competing products. 
+
+Today, websites rely on a standard called the `robots.txt` file. This text file tells crawlers which pages they can visit. But this old standard has three huge flaws:
+
+1.  Compliance is entirely voluntary. Rogue scrapers can easily ignore the file. There are no database locks to stop them.
+
+2.  Website owners face an all-or-nothing choice. They must allow all crawlers so humans can find them. Or they must block all crawlers and lose their web traffic.
+
+3.  The control has no retroactive power. Once an AI developer scrapes a site, updating the text file does not remove the data from the trained model.
+
+### Privacy and the Right to be Forgotten
+
+The third dilemma is about personal privacy. Web scrapers act like massive digital vacuums. They harvest everything on a page. This includes personal email addresses, phone numbers, and sensitive forum posts.
+
+Modern privacy laws like the GDPR in Europe and the CCPA in California protect citizens. They grant three basic rights:
+
+*   Individuals have a Right to Data Portability. This lets them download a copy of their stored personal data.
+
+*   Individuals have a Right to Rectification. This lets them demand that incorrect personal details be fixed.
+
+*   Individuals have a Right to Erasure. This is also called the Right to be Forgotten. It lets them demand that all personal records be deleted.
+
+For a standard database, deleting a user is very simple. An administrator runs a quick delete query. But once that data is used to train an AI model, a huge problem arises. 
+
+An AI model does not store raw text files. Instead, it converts the data into millions of numbers called weights. Complying with the Right to Erasure is impossible without deleting the entire model. The company must retrain the model from scratch. This costs millions of dollars. This creates a permanent legal risk for tech companies.
 
 ---
 
-## Database & SQL Considerations
+## Database & Data Governance Considerations
 
-To prevent legal liability and uphold ethical standards, modern data companies do not scrape blindly. They use a **relational database management system (RDBMS)** to establish **data provenance**—the documented history of a record’s origin, licensing, and consent status.
+To avoid lawsuits, modern tech companies must use strong data rules. Instead of scraping the web blindly, database engineers design schemas that enforce data history. Data history is the record of where a file came from. It tracks its license and consent settings.
 
-Before any data is passed to the AI training pipeline, database administrators (DBAs) enforce strict integrity rules. They design tables to store:
-*   The domain's scraping permissions (e.g., `robots.txt` directives).
-*   The copyright/licensing status of every scraped document.
-*   Creator opt-out requests, ensuring opted-out content is immediately purged or filtered.
-*   Cryptographic hash checks (SHA-256) to validate data integrity.
+Database administrators use tables to store and filter crawled records before they reach the AI.
 
-### The Provenance Tracking Schema
+### Graphic Depiction of the Schema
 
-Below is a relational schema designed to enforce ethical scraping and compliance checks:
+The following diagram outlines an ethical tracking database. This design ensures that every scraped document is linked to its parent website, tracks crawling permissions, and logs deleted files:
 
-```mermaid
+```{mermaid}
 erDiagram
     DOMAINS ||--o{ DOCUMENTS : "hosts"
     DOCUMENTS ||--o{ PURGE_AUDITS : "logs removal"
     
     DOMAINS {
-        int domain_id PK
         string domain_name
-        boolean robots_allowed
-        boolean creator_opt_out
-        timestamp last_checked
+        string crawler_permission
+        string creator_opt_out_status
     }
     
     DOCUMENTS {
-        int document_id PK
-        int domain_id FK
-        string source_url
+        string website_url
         string license_type
-        string sha256_hash
-        string extracted_metadata "JSON object"
-        timestamp scraped_at
-        boolean is_approved
+        string compliance_approval_state
     }
     
     PURGE_AUDITS {
-        int audit_id PK
-        int document_id
-        string original_url
-        string purge_reason
-        timestamp purged_at
+        string deleted_url
+        string deletion_reason
+        string date_purged
     }
 ```
 
-### Implementing the Compliance Schema (DDL)
+### Structured Logic for Compliance Filtering
 
-The following SQL DDL statements create the tables and enforce check constraints to prevent the ingestion of unauthorized data:
+Instead of writing complex code, database designers enforce ethics directly in the database structure. The database acts as a digital gatekeeper. It checks every scraped file before it is used for training. 
 
-```sql
--- DDL definition for the Provenance Tracking System
-CREATE TABLE domains (
-    domain_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    domain_name TEXT UNIQUE NOT NULL,
-    robots_allowed BOOLEAN DEFAULT 1,
-    creator_opt_out BOOLEAN DEFAULT 0, -- Set to 1 if domain or creator requests an opt-out
-    last_checked TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+The database performs a three-step matching process to clear data:
 
-CREATE TABLE documents (
-    document_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    domain_id INTEGER NOT NULL,
-    source_url TEXT UNIQUE NOT NULL,
-    license_type TEXT CHECK(license_type IN ('Public Domain', 'Creative Commons', 'MIT', 'GPL', 'Proprietary', 'Unknown')),
-    sha256_hash TEXT UNIQUE NOT NULL,
-    extracted_metadata TEXT, -- JSON column containing author, word count, publication date, etc.
-    scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    is_approved BOOLEAN DEFAULT 0,
-    FOREIGN KEY (domain_id) REFERENCES domains(domain_id) ON DELETE CASCADE
-);
+1.  First, when the scraper harvests a new file, the system creates a document record. The database automatically links this document to its parent website.
 
-CREATE TABLE purge_audits (
-    audit_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    original_url TEXT NOT NULL,
-    purge_reason TEXT NOT NULL,
-    purged_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
+2.  Second, the database inspects the website's crawling permissions and consent settings. It checks if the domain blocks automated crawlers or has flagged an opt-out.
 
-### Querying to Enforce Ethical Safeguards
+3.  Third, a compliance review team inspects the harvested documents. They assign approval states to ensure that only files with safe, non-pirated license types (such as Public Domain or Creative Commons) are certified.
 
-#### 1. Filtering Out Opted-Out Datasets
-Before training, the database engine must generate a clean dataset containing only approved files from domains that have *not* requested an opt-out:
+We can write this filter as a set of simple, logical database rules:
 
-```sql
--- Retrieve all approved scraped documents that are ethically cleared for AI training
-SELECT 
-    d.document_id,
-    dom.domain_name,
-    d.source_url,
-    d.license_type,
-    d.sha256_hash
-FROM 
-    documents d
-    JOIN domains dom ON d.domain_id = dom.domain_id
-WHERE 
-    dom.creator_opt_out = 0  -- Filter out domains that requested opt-outs
-    AND dom.robots_allowed = 1 -- Filter out domains that forbid crawlers in robots.txt
-    AND d.is_approved = 1;     -- Ensure document has passed basic curation checks
-```
+*   First, our approval rule states that a document is only eligible for training if a review team has checked it and marked it as approved.
 
-#### 2. Identifying and Auditing Flagged Licenses
-If an LLM must only be trained on open-source code or Creative Commons assets, we write a query to isolate and audit any `Proprietary` or `Unknown` licenses:
+*   Second, our permissions constraint immediately blocks a document if the parent website has forbidden automated web crawlers.
 
-```sql
--- Count and list documents by license type to audit potential copyright risks
-SELECT 
-    license_type,
-    COUNT(*) AS total_documents,
-    AVG(LENGTH(extracted_metadata)) AS avg_meta_size
-FROM 
-    documents
-GROUP BY 
-    license_type
-ORDER BY 
-    total_documents DESC;
-```
+*   Third, our opt-out mandate requires that a document be immediately deleted if the original creator has requested a formal opt-out.
 
-#### 3. Enforcing Purge Compliance (The Right to be Forgotten)
-When a creator issues a copyright takedown request or invokes the GDPR Right to Erasure, a database transaction must delete their documents and log the action in the audit table for legal compliance:
+In practice, the system combines these rules into a single check:
 
-```sql
--- Simulate a copyright purge transaction for a specific domain
--- Step A: Log the deletion in our compliance audit table
-INSERT INTO purge_audits (original_url, purge_reason)
-SELECT source_url, 'GDPR Right to Be Forgotten / Copyright Takedown Request'
-FROM documents
-WHERE domain_id = (SELECT domain_id FROM domains WHERE domain_name = 'piratedbooks.example.com');
+*   **IF** a document is approved **AND** the website allows crawlers **AND** the creator has not requested an opt-out, **THEN** include the document in the active training dataset.
 
--- Step B: Delete the actual documents from the database (cascades or purges)
-DELETE FROM documents
-WHERE domain_id = (SELECT domain_id FROM domains WHERE domain_name = 'piratedbooks.example.com');
+*   **IF** any of these three requirements are violated, **THEN** immediately reject the document from the dataset and log the action in our compliance ledger.
 
--- Step C: Mark the domain status as opted-out to prevent future crawls
-UPDATE domains
-SET creator_opt_out = 1
-WHERE domain_name = 'piratedbooks.example.com';
-```
+### Enforcing Purges and Erasure Logs
+
+When a creator sends a copyright removal request or invokes their privacy rights, the data system must execute a two-step purge process to maintain legal and ethical integrity:
+
+1.  The system records the document's web address, the reason for deletion (such as a GDPR erasure request), and the exact timestamp in a secure audit log table.
+
+2.  The system deletes the original document from the database and flags the parent domain to ensure that future automated web crawlers can never harvest files from that website again.
+
+By maintaining a permanent audit trail of all deleted files, the organization can prove to regulators and creators that it respects digital boundaries.
 
 ---
 
 ## Discussion Questions
 
-1.  **Innovation vs. Property**: Do you believe that using copyrighted material to train generative AI models is "Fair Use" (since the models learn patterns and write new things) or is it copyright infringement (since they use full copies of the work during training)? Defend your position.
-2.  **Database Provenance Design**: Examine the proposed `documents` schema. What additional attributes or logging tables would you add if you needed to track user-level consent (e.g. users on a blogging platform opting-out individually) rather than domain-level opt-outs?
-3.  **The Purge Practicality**: Once a deep learning neural network has been fully trained on a dataset, it is technically impossible to "un-train" it on individual records without completely retraining the model from scratch (which costs millions of dollars). Under privacy laws like the GDPR, if a user demands the deletion of their database records, does removing them from the SQL database suffice if their "learned patterns" remain in the active AI model? How should compliance officers address this?
+1.  In *The Wizard of Oz*, the Wizard speaks with a powerful voice made of many stolen voices. Does training an AI model on millions of copyrighted works count as Fair Use? Or is it copyright theft? Where should we draw the line between human learning and machine copying?
+
+2.  Create a real-world analogy for training an AI on scraped portfolio websites. Is it like a student visiting a public museum to study painting styles? Or is it like a factory owner taking photos of local crafts to mass-produce cheap plastic replicas? Explain the strengths and weaknesses of your analogy.
+
+3.  Our database diagram manages choice at the website level. But websites have thousands of different users. How would you change the database diagram to track choices for each individual user? What performance challenges would a database manager face when querying billions of user preferences?
+
+4.  Under privacy laws, citizens can demand that companies delete their personal data. It is easy to delete a record from a database. But the patterns remain in the trained AI model. Does deleting a record from the database satisfy the legal right to erasure? What should a compliance team do if the AI cannot be easily un-trained?
+
+5.  Imagine you are the database manager at a new AI startup. Write a simple three-sentence data policy for your team. Address how they must handle raw scraped data, license reviews, and sudden creator removal requests.
+
 
 ---
 
 ## Key Takeaways
 
-*   **Explicit Provenance is Required**: Every database containing scraped content must maintain **data provenance** metadata, linking every record back to its source domain, license type, and date of acquisition.
-*   **Consent Must Be Actionable**: Opt-out preferences (e.g. from `robots.txt` or manual creator contact) must be stored as **actionable constraints** in the database layer, allowing queries to dynamically filter out restricted files in real time.
-*   **Compliance Auditing Saves Legal Costs**: Regularly run **license audit queries** to verify that zero proprietary or pirated records are present in the active dataset, preventing severe copyright lawsuits before the model is compiled.
+*   Every database containing scraped content must maintain an explicit record of its origin, legal license type, and date of acquisition to guarantee full data provenance.
+
+*   User consent preferences and web crawler permissions must be stored as active constraints in the database layer so queries can automatically filter out restricted files.
+
+*   Regular license audit queries must be executed to verify that no proprietary or unauthorized records exist in the dataset before model training begins.
