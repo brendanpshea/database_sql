@@ -1,0 +1,273 @@
+---
+title: "Data Ethics Case Study 5: Public Health Tracking & Surveillance"
+subtitle: "Case Studies in Data Governance & Relational Systems"
+author: "Brendan Shea, PhD"
+date: last-modified
+categories: [Epidemiology, Surveillance, Public Health, Data Integrity]
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    code-fold: show
+    code-summary: "Show Database/SQL Reference"
+    embed-resources: true
+---
+
+## Executive Summary
+
+Public health organizations rely on rapid data collection to stop dangerous epidemics. When a contagious virus spreads, doctors use contact tracing and medical surveillance to identify infected people. This data must travel fast. But massive tracking systems also create major privacy concerns. This study looks at population monitoring and data rights. We explore the balance between public safety and individual privacy. We show how databases use **data validation** and check constraints. This design ensures data accuracy without exposing private records to unrelated government departments.
+
+::: {.callout-note}
+### Core Concepts Covered
+*   We study how databases enforce data quality using active check constraints.
+*   We explore the balance between public safety audits and individual tracking records.
+*   We learn how to design compliance barriers that prevent unauthorized data sharing between agencies.
+:::
+
+---
+
+## The Scenario
+
+### Isolating the Spore Infection on the Enterprise
+
+In the classic science fiction series *Star Trek*, the Starship Enterprise travels deep space. The crew meets strange alien life. Sometimes, they encounter cosmic dangers. In one classic incident, the ship encounters a mysterious alien spore. The spore infects the crew members silently. It alters their feelings. It makes them overly happy and lazy. The infected crew members stop doing their jobs. They want to abandon the ship to live on a wild planet. 
+
+Inside the sickbay, Dr. Leonard McCoy works fast to find a cure. Behind the scenes, the ship's computer logs biosensor readings automatically. It streams heart rates and body heat levels in real time to the central database. Dr. McCoy uses these logs to track the infection's spread. 
+
+To manage the crisis, Dr. McCoy sets up three basic tables:
+
+1.  A table to log all active crew members and their current shift duties.
+
+2.  A table to record biosensor feeds, showing temperature and heart rates.
+
+3.  A table to map physical locations and quarantine zones inside the ship.
+
+This tracking system helps Dr. McCoy find infected crew members. He can dispatch security teams to isolate them in safe rooms. But it also creates a major power. The captain and security officers can see every crew member's private medical logs. They can track where they walk and how they feel during their off-duty hours. 
+
+The crew members argue that this surveillance breaks their basic personal freedom. They fear the security officers will keep these databases active even after the spore infection is fully cured.
+
+### From Sickbay to Global Public Health
+
+In our real world, public health officials face similar challenges. They do not fight alien spores. But they fight dangerous viruses like influenza, Ebola, and COVID-19. To protect the public, governments must gather massive amounts of **epidemiological data**. **Epidemiological data** is information about how diseases spread across populations. 
+
+When a patient visits a doctor, their test results are saved in a clinic database. If they test positive for a dangerous virus, the clinic must report the case. The record travels to a central public health archive. 
+
+This tracking follows a five-step matching pipeline:
+
+1.  A clinic diagnoses a contagious patient and logs the case.
+
+2.  The system assigns a unique case number to protect their name.
+
+3.  The database links the case to a geographic region using a zip code.
+
+4.  A public health officer reviews the record to verify the details.
+
+5.  The system adds the record to a national dashboard to track active hot spots.
+
+This data helps governments make fast policy decisions. They can send medical supplies to busy hospitals. They can warn local schools to prepare for outbreaks. But it also builds a permanent digital footprint. It collects sensitive medical histories, physical locations, and personal habits.
+
+### The Singapore TraceTogether Reversal
+
+This clash between tracking and privacy led to a major controversy in Singapore. In March 2020, Singapore launched a contact-tracing program called **TraceTogether**. The system used Bluetooth signals on smartphones to detect when users were close to each other. If a user tested positive for COVID-19, health officers could query the database. They could see everyone the infected person had stood near. 
+
+The government encouraged citizens to download the app. Officials promised that the database would be used strictly for virus tracking. They assured the public that the data would be kept separate from other systems, and deleted after the pandemic ended. Relying on these explicit privacy promises, millions of citizens activated the app.
+
+But in January 2021, the government made a shocking confession. Officials admitted that the Singapore Police Force could access the TraceTogether database. The police used the contact logs to investigate serious crimes, including a murder. The data was accessed under the country's Criminal Procedure Code. 
+
+This admission sparked intense public anger. Citizens felt the government had broken its solemn privacy promise. The controversy was reported globally, including in major investigations by [The Guardian](https://www.theguardian.com/world/2021/jan/05/singapore-police-can-access-covid-contact-tracing-data-for-criminal-investigations). 
+
+The outcry was so severe that Singapore's parliament had to pass emergency legislation. The new law restricted police queries to seven categories of serious crime, such as kidnapping and murder. But the damage to public trust was already done. It proved that once a tracking database is built, the temptation to reuse it for police surveillance is incredibly strong.
+
+---
+
+## The Ethical Dilemma
+
+This aggressive collection of public health data highlights two central ethical conflicts.
+
+### Safety surveillance versus Privacy Rights
+
+The first conflict is about public safety and personal rights. Governments argue that during a health emergency, they must track citizens to save lives. This view fits the theory of **utilitarianism**, which argues that the moral choice is the one that creates the greatest good for the greatest number of people. 
+
+But privacy advocates argue that citizens have fundamental rights. These rights should not be ignored, even during a crisis.
+
+The argument for public health surveillance is structured as follows:
+
+::: {.argument-block}
+::: {.argument-premise}
+**Premise 1**: Stopping a dangerous pandemic and saving human lives is a government's highest moral duty.
+:::
+::: {.argument-premise}
+**Premise 2**: Collecting detailed contact logs and physical locations is the most effective way to trace virus carriers and prevent outbreaks.
+:::
+::: {.argument-conclusion}
+**Conclusion**: Therefore, governments have a moral right to gather and query personal contact telemetry during a health emergency.
+:::
+:::
+
+Supporters argue that individual privacy is a minor concern when millions of lives are at risk. They believe that tracking locations is a fair trade for keeping schools and businesses open.
+
+The argument against unchecked health surveillance is structured as follows:
+
+::: {.argument-block}
+::: {.argument-premise}
+**Premise 1**: Individuals have an absolute right to bodily privacy, personal travel freedom, and informed consent.
+:::
+::: {.argument-premise}
+**Premise 2**: Building permanent government tracking databases creates a tool for surveillance that can be easily abused by police.
+:::
+::: {.argument-conclusion}
+**Conclusion**: Therefore, collecting detailed citizen location records without their explicit, ongoing consent is an ethical wrong.
+:::
+:::
+
+Opponents argue that once surveillance databases are created, they are never deleted. They create a permanent infrastructure for state control.
+
+### The Ethics of Function Creep
+
+The second dilemma is the problem of **function creep**. **Function creep** occurs when a database built for one specific purpose is slowly expanded to serve different, unintended uses. 
+
+In the Singapore case, the contact database was built strictly to fight a virus. But the police quickly realized it was also a perfect tool to track criminal suspects. 
+
+### Secondary Data Use and Public Trust
+
+This secondary use of data destroys public trust. If citizens believe their health data will be shared with the police, they will stop participating in health programs. They will hide their symptoms, refuse to get tested, and delete health apps. 
+
+This lack of trust makes it impossible for public health officials to gather the data they need to stop future outbreaks, ultimately harming public safety.
+
+---
+
+## Database & Data Governance Considerations
+
+To protect privacy and maintain public trust, database engineers use strong **data governance** rules. They do not allow direct queries on raw contact tables. Instead, they design systems that enforce strict **data validation** and role blocks.
+
+**Data validation** ensures that only clean, authorized data enters the database, while role blocks prevent unrelated departments from querying sensitive columns.
+
+### Graphic Depiction of the Schema
+
+The following diagram outlines an ethical public health database. It shows how patient details, contact logs, and access permissions are kept separate:
+
+```{mermaid}
+erDiagram
+    PATIENTS ||--o{ DIAGNOSIS_LOGS : "registers"
+    DIAGNOSIS_LOGS ||--o{ CONTACT_INTERACTIONS : "triggers"
+    ACCESS_TIERS ||--o{ SYSTEM_AUDITS : "authorizes"
+    
+    PATIENTS {
+      string anonymized_patient_id
+      string geographic_region
+      string risk_category
+    }
+    
+    DIAGNOSIS_LOGS {
+      string log_id
+      string anonymized_patient_id
+      string infection_status
+      string reporting_date
+    }
+    
+    CONTACT_INTERACTIONS {
+      string interaction_id
+      string primary_anonymized_id
+      string contact_anonymized_id
+      string interaction_duration_minutes
+    }
+    
+    ACCESS_TIERS {
+      string tier_id
+      string department_name
+      string permissions_granted
+    }
+    
+    SYSTEM_AUDITS {
+      string audit_id
+      string user_login
+      string table_queried
+      string query_purpose
+      string query_timestamp
+    }
+```
+
+### Detailed Attribute Descriptions
+
+To understand how this data tracking system protects privacy, let us look at the key details stored in our database tables:
+
+First, consider the `PATIENTS` table. This table stores no real names or government numbers. It records only an `anonymized_patient_id`, which is a random code. It logs the `geographic_region` (a broad county code rather than a street address) and the `risk_category` (such as High or Low risk based on age).
+
+Second, consider the `DIAGNOSIS_LOGS` table. This table tracks infected cases. The `log_id` is a unique event number. The `anonymized_patient_id` links the log to the parent profile. The `infection_status` records the test result, while the `reporting_date` tracks when the case was registered.
+
+Third, consider the `CONTACT_INTERACTIONS` table. This table holds the proximity logs. The `interaction_id` is a unique number. The `primary_anonymized_id` and `contact_anonymized_id` record which anonymous users were near each other. The `interaction_duration_minutes` tracks how long they were close. This table contains zero personal identifiers.
+
+Fourth, consider the `SYSTEM_AUDITS` table. This table acts as a security lock. The `audit_id` is a unique record. The `user_login` and `table_queried` log exactly who accessed which data. The `query_purpose` records their justification, while the `query_timestamp` logs the exact millisecond of access. This table is un-editable to ensure permanent accountability.
+
+### Structured Logic for Compliance Filtering
+
+Instead of writing complex code, database designers enforce privacy rules directly in the database schemas. The system acts as a digital barrier, blocking unauthorized sharing between departments.
+
+The database performs a three-step matching check:
+
+1.  First, when a user queries the database, the system identifies their pre-assigned department tier.
+
+2.  Second, the database checks if their tier is authorized to view the requested table.
+
+3.  Third, the system evaluates the query's purpose against compliance rules before returning any rows.
+
+We can write this filter as a set of simple, logical database rules:
+
+*   First, our **health authority rule** allows verified doctors to read the diagnosis logs and contact interactions tables for contact tracing.
+
+*   Second, our **security block** immediately rejects any query from police departments targeting the contact interactions table.
+
+*   Third, our **validation rule** enforces that all coordinate coordinates are generalized into broad regions before they are saved.
+
+In practice, the system combines these rules into a single query gate:
+
+*   **IF** the user's role is set to Public Health Officer **AND** their query purpose is active contact tracing, **THEN** allow access to the anonymized interactions view and log the query in the audit table.
+
+*   **IF** the user's role is set to Police Officer **AND** they request contact logs, **THEN** immediately block the query, reject the access, and trigger a high-priority security alert.
+
+By enforcing these boundaries in the database structure, Dr. McCoy can use biosensors to stop spore infections safely. But security officers can never reuse the logs to monitor the crew's private lives.
+
+### Enforcing Purges and Data Quality
+
+To prevent permanent surveillance, database administrators must enforce strict data retention rules. The system executes a automated **purge process** to delete old tracking logs:
+
+1.  The database runs an automated cleanup program every midnight.
+
+2.  The program identifies all contact records that are older than 21 days (the maximum incubation period of the virus).
+
+3.  The system deletes these expired records from the interactions table, ensuring the data cannot be harvested in the future.
+
+By maintaining a permanent audit log of these deletions, the organization can prove to citizens that its database is a temporary health tool, not a permanent surveillance system.
+
+---
+
+## Discussion Questions
+
+1.  In the Star Trek scenario, Dr. McCoy logs biosensor data to track an active infection. Do you believe a government has the right to track citizens' locations during a severe pandemic? Where should we draw the line between public safety and personal privacy?
+
+2.  Create a real-world analogy for Singapore's TraceTogether data reversal. Is it like a landlord installing cameras to stop fires, and then giving the tapes to the police to monitor tenant guests? Or is it like a doctor sharing their patient files with a local employer? Explain the strengths of your analogy.
+
+3.  Our database schema blocks the police from querying contact tables. But what if the police present a valid court warrant to investigate a serious crime? Should a database manager design a "backdoor" to allow emergency access? What security risks does this backdoor create?
+
+4.  We use anonymized identifiers to protect patient names. But what if a researcher combines our contact database with public social media check-in logs? How easily could they identify specific users? Does true anonymity exist in a highly connected world?
+
+5.  Imagine you are the chief data officer at a public health agency. Write a simple three-sentence data policy for your database. Address how you will handle raw test results, secondary data sharing with police, and the automatic deletion of old contact logs.
+
+---
+
+## References
+
+*   **Singapore TraceTogether Police Access**: Graham-Harrison, Emma. "Singapore police can access Covid contact-tracing data for criminal investigations." *The Guardian*, 5 Jan. 2021, [theguardian.com/world/2021/jan/05/singapore-police-can-access-covid-contact-tracing-data-for-criminal-investigations](https://www.theguardian.com/world/2021/jan/05/singapore-police-can-access-covid-contact-tracing-data-for-criminal-investigations). This report covers the Singapore government's admission that its contact-tracing logs were accessed by law enforcement, sparking widespread public backlash over privacy violations.
+*   **Singapore contact-tracing legislative limit**: "Parliament passes bill to restrict police use of TraceTogether data." *CSIS Technology Policy Program*, Feb. 2021, [csis.org/analysis/singapore-tracetogether-data-access](https://www.csis.org/analysis/singapore-tracetogether-data-access). This policy review details the emergency legislation passed to limit police queries to seven serious crime categories following public outcry.
+
+---
+
+## Key Takeaways
+
+*   Public health databases must use check constraints and data validation to guarantee that sensitive files are generalized and anonymized at the point of ingestion.
+
+*   Centralized tracking databases are highly vulnerable to function creep, where data collected for medical purposes is slowly repurposed for security surveillance.
+
+*   Strict database barriers and permanent, un-editable audit logs are required to block unauthorized secondary sharing between government agencies, protecting public trust.
