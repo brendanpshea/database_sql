@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>SQLite Database Final Project: Design, Implementation, and Optimization &#8212; SQL and Database Management Through Pop Culture</title>
   
@@ -16,60 +17,64 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=30c8ad15" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Database_13_FinalProject';</script>
-    <script src="_static/sandbox-html-output.js?v=a1fc3548"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Introduction to Normalization" href="labs/Database_Ex_Normalization.html" />
     <link rel="prev" title="Data Integration at Emerald City Clinic" href="Database_12_DataIntegration.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -85,8 +90,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -94,15 +110,16 @@
   <input type="search"
          class="form-control"
          name="q"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -118,8 +135,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,27 +165,12 @@
     
     
     <img src="_static/database_cover.jpg" class="logo__image only-light" alt="SQL and Database Management Through Pop Culture - Home"/>
-    <img src="_static/database_cover.jpg" class="logo__image only-dark pst-js-only" alt="SQL and Database Management Through Pop Culture - Home"/>
+    <script>document.write(`<img src="_static/database_cover.jpg" class="logo__image only-dark" alt="SQL and Database Management Through Pop Culture - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="index.html">
-                    SQL and Database Management Through Pop Culture
-                </a>
-            </li>
-        </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Database_00_Introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Database_01_StarShipSQL.html">Starship SQL: An Introduction to Databases</a></li>
@@ -198,14 +199,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -224,9 +220,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -236,52 +232,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/./Database_13_FinalProject.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="Colab logo" src="_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-<a href="https://github.com/brendanpshea/database_sql" target="_blank"
-   class="btn btn-sm btn-source-repository-button"
-   title="Source repository"
-   data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
-
 
 
 
@@ -334,7 +284,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -348,19 +298,27 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -466,12 +424,12 @@
                   
   <p><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_13_FinalProject.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section id="sqlite-database-final-project-design-implementation-and-optimization">
-<h1>SQLite Database Final Project: Design, Implementation, and Optimization<a class="headerlink" href="#sqlite-database-final-project-design-implementation-and-optimization" title="Link to this heading">#</a></h1>
+<h1>SQLite Database Final Project: Design, Implementation, and Optimization<a class="headerlink" href="#sqlite-database-final-project-design-implementation-and-optimization" title="Permalink to this heading">#</a></h1>
 <p><strong>Note: To start working on this project, you should choose File: “Save Copy in Drive” and then name the file whatever you want. Then, you can type your answers directly into the document.</strong></p>
 <p>Welcome to your final project for the Database and SQL course. In this assignment, you will apply what you have learned about database design, SQL, and optimization to a topic of your choice.</p>
 <p>You will design, populate, query, and optimize a SQLite database in Google Colab using the SQL magic extension.</p>
 <section id="learning-outcomes">
-<h2>Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Link to this heading">#</a></h2>
+<h2>Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this heading">#</a></h2>
 <p>By the end of this project, you will be able to:</p>
 <ol class="arabic simple">
 <li><p>Translate a real-world scenario into business rules, entities, attributes, relationships, and an ERD.</p></li>
@@ -485,7 +443,7 @@
 <p><strong>Aim for a project that takes roughly 6 to 9 hours to complete: challenging enough to be meaningful, but still manageable.</strong></p>
 </section>
 <section id="sample-project-ideas">
-<h2>Sample Project Ideas<a class="headerlink" href="#sample-project-ideas" title="Link to this heading">#</a></h2>
+<h2>Sample Project Ideas<a class="headerlink" href="#sample-project-ideas" title="Permalink to this heading">#</a></h2>
 <p>Use one of these ideas or invent your own:</p>
 <ol class="arabic simple">
 <li><p>A music library management system</p></li>
@@ -502,7 +460,7 @@
 <p>These are just starting points. Feel free to come up with your own topic.</p>
 </section>
 <section id="brendan-s-lecture">
-<h2>Brendan’s Lecture<a class="headerlink" href="#brendan-s-lecture" title="Link to this heading">#</a></h2>
+<h2>Brendan’s Lecture<a class="headerlink" href="#brendan-s-lecture" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">YouTubeVideo</span>
@@ -523,14 +481,14 @@
         </div></div>
 </div>
 <section id="policy-on-ai-tools">
-<h3>Policy on AI Tools<a class="headerlink" href="#policy-on-ai-tools" title="Link to this heading">#</a></h3>
+<h3>Policy on AI Tools<a class="headerlink" href="#policy-on-ai-tools" title="Permalink to this heading">#</a></h3>
 <p>You are allowed to use AI tools (chatGPT, Gemini, Claude, etc.), as these are increasingly important in many areas of database and computer science.</p>
 <p>If relevent, please indicate which AI tools did you use in this project. How did they work for you?</p>
 <p>[You answer goes here).</p>
 </section>
 </section>
 <section id="part-2-conceptual-modeling-business-rules">
-<h2>Part 2: Conceptual Modeling - Business Rules<a class="headerlink" href="#part-2-conceptual-modeling-business-rules" title="Link to this heading">#</a></h2>
+<h2>Part 2: Conceptual Modeling - Business Rules<a class="headerlink" href="#part-2-conceptual-modeling-business-rules" title="Permalink to this heading">#</a></h2>
 <p>Start by defining the business rules for your chosen database topic. These rules should clearly state the purpose of your database and the relationships between different entities. Write at least 5-7 business rules that govern your database’s structure and operations.</p>
 <p>Example (for a music library):</p>
 <ol class="arabic simple">
@@ -543,11 +501,11 @@
 <li><p>Each song has one primary genre, but can be associated with multiple subgenres.</p></li>
 </ol>
 <section id="my-answer-business-rules">
-<h3>My Answer: Business Rules<a class="headerlink" href="#my-answer-business-rules" title="Link to this heading">#</a></h3>
+<h3>My Answer: Business Rules<a class="headerlink" href="#my-answer-business-rules" title="Permalink to this heading">#</a></h3>
 </section>
 </section>
 <section id="part-3-conceptual-modeling-entities-and-attributes">
-<h2>Part 3: Conceptual Modeling - Entities and Attributes<a class="headerlink" href="#part-3-conceptual-modeling-entities-and-attributes" title="Link to this heading">#</a></h2>
+<h2>Part 3: Conceptual Modeling - Entities and Attributes<a class="headerlink" href="#part-3-conceptual-modeling-entities-and-attributes" title="Permalink to this heading">#</a></h2>
 <p>Based on your business rules, identify the main entities in your database and list their attributes. You should have at THREE entities and the attributes should span various data types (INTEGER, TEXT, REAL, BLOB, etc.).</p>
 <p>Example (continuing with the music library):</p>
 <ol class="arabic simple">
@@ -593,12 +551,12 @@
 </ol>
 <p>Ensure your entities and attributes adequately represent your chosen topic and align with your business rules.</p>
 <section id="my-answer-entities-and-attributes">
-<h3>My Answer: Entities and Attributes<a class="headerlink" href="#my-answer-entities-and-attributes" title="Link to this heading">#</a></h3>
+<h3>My Answer: Entities and Attributes<a class="headerlink" href="#my-answer-entities-and-attributes" title="Permalink to this heading">#</a></h3>
 <p>Write your answer below.</p>
 </section>
 </section>
 <section id="part-4-conceptual-modeling-entity-relationship-diagram-erd">
-<h2>Part 4: Conceptual Modeling - Entity Relationship Diagram (ERD)<a class="headerlink" href="#part-4-conceptual-modeling-entity-relationship-diagram-erd" title="Link to this heading">#</a></h2>
+<h2>Part 4: Conceptual Modeling - Entity Relationship Diagram (ERD)<a class="headerlink" href="#part-4-conceptual-modeling-entity-relationship-diagram-erd" title="Permalink to this heading">#</a></h2>
 <p>Create an Entity Relationship Diagram (ERD) using Mermaid syntax. This diagram should visually represent the entities you’ve identified and show the relationships between them. Include cardinality in your diagram (one-to-one, one-to-many, many-to-many).</p>
 <p>Here’s an example of how to start your Mermaid ERD:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>erDiagram
@@ -610,16 +568,15 @@
 </div>
 <p>Complete the diagram for all entities in your database. Make sure the relationships accurately reflect your business rules.</p>
 <section id="my-answer-erd-diagram">
-<h3>My Answer: ERD Diagram<a class="headerlink" href="#my-answer-erd-diagram" title="Link to this heading">#</a></h3>
+<h3>My Answer: ERD Diagram<a class="headerlink" href="#my-answer-erd-diagram" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/a1f40777e23bfe337297177b8cb470ad0a16f678ef0301d5331e3f10a4ba62ff.svg" src="_images/a1f40777e23bfe337297177b8cb470ad0a16f678ef0301d5331e3f10a4ba62ff.svg" />
-</div>
+<img alt="_images/a1f40777e23bfe337297177b8cb470ad0a16f678ef0301d5331e3f10a4ba62ff.svg" src="_images/a1f40777e23bfe337297177b8cb470ad0a16f678ef0301d5331e3f10a4ba62ff.svg" /></div>
 </div>
 </section>
 </section>
 <section id="part-5-logical-modeling-relational-model">
-<h2>Part 5: Logical Modeling - Relational Model<a class="headerlink" href="#part-5-logical-modeling-relational-model" title="Link to this heading">#</a></h2>
+<h2>Part 5: Logical Modeling - Relational Model<a class="headerlink" href="#part-5-logical-modeling-relational-model" title="Permalink to this heading">#</a></h2>
 <p>Transform your conceptual model into a logical model using the relational model. List all the tables in your database, including columns, primary keys, and foreign keys. You may use JSON columns for certain complex attributes if appropriate for your design.</p>
 <p>Example:</p>
 <ol class="arabic simple">
@@ -631,12 +588,12 @@
 <li><p><strong>PlaylistSong</strong> (PlaylistID PK FK→Playlist(PlaylistID), SongID PK FK→Song(SongID))</p></li>
 </ol>
 <section id="my-answer-logical-model">
-<h3>My Answer: Logical Model<a class="headerlink" href="#my-answer-logical-model" title="Link to this heading">#</a></h3>
+<h3>My Answer: Logical Model<a class="headerlink" href="#my-answer-logical-model" title="Permalink to this heading">#</a></h3>
 <p>Type your answer here.</p>
 </section>
 </section>
 <section id="part-6-logical-modeling-key-selection-rationale">
-<h2>Part 6: Logical Modeling - Key Selection Rationale<a class="headerlink" href="#part-6-logical-modeling-key-selection-rationale" title="Link to this heading">#</a></h2>
+<h2>Part 6: Logical Modeling - Key Selection Rationale<a class="headerlink" href="#part-6-logical-modeling-key-selection-rationale" title="Permalink to this heading">#</a></h2>
 <p>Explain your choices for primary and foreign keys. Discuss why you selected certain attributes as keys and how these choices support data integrity and efficient querying.</p>
 <p>Consider addressing the following points:</p>
 <ul class="simple">
@@ -646,11 +603,11 @@
 <li><p>Did you implement any composite keys? If so, why?</p></li>
 </ul>
 <section id="part-6-my-answer">
-<h3>Part 6: My Answer<a class="headerlink" href="#part-6-my-answer" title="Link to this heading">#</a></h3>
+<h3>Part 6: My Answer<a class="headerlink" href="#part-6-my-answer" title="Permalink to this heading">#</a></h3>
 </section>
 </section>
 <section id="part-7-physical-model-create-simple-tables">
-<h2>Part 7: Physical Model - Create Simple Tables<a class="headerlink" href="#part-7-physical-model-create-simple-tables" title="Link to this heading">#</a></h2>
+<h2>Part 7: Physical Model - Create Simple Tables<a class="headerlink" href="#part-7-physical-model-create-simple-tables" title="Permalink to this heading">#</a></h2>
 <p>Write SQL statements to create a simple version of your tables. At this stage, include only the column names and their data types, without keys or constraints.</p>
 <p>Example:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -674,10 +631,10 @@
 </div>
 <p>Create all the tables in your database using this simple structure.</p>
 <section id="my-answer-create-tables">
-<h3>My Answer: Create Tables<a class="headerlink" href="#my-answer-create-tables" title="Link to this heading">#</a></h3>
+<h3>My Answer: Create Tables<a class="headerlink" href="#my-answer-create-tables" title="Permalink to this heading">#</a></h3>
 </section>
 <section id="first-create-the-database">
-<h3>First, Create the Database<a class="headerlink" href="#first-create-the-database" title="Link to this heading">#</a></h3>
+<h3>First, Create the Database<a class="headerlink" href="#first-create-the-database" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -702,7 +659,7 @@ SELECT &#39;Student workspace: add your CREATE TABLE statements here.&#39; AS no
 </section>
 </section>
 <section id="part-8-physical-model-drop-tables">
-<h2>Part 8: Physical Model - Drop Tables<a class="headerlink" href="#part-8-physical-model-drop-tables" title="Link to this heading">#</a></h2>
+<h2>Part 8: Physical Model - Drop Tables<a class="headerlink" href="#part-8-physical-model-drop-tables" title="Permalink to this heading">#</a></h2>
 <p>Write SQL statements to drop all the tables you’ve created. This will allow you to easily reset your database if needed.</p>
 <p>Example:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -714,7 +671,7 @@ SELECT &#39;Student workspace: add your CREATE TABLE statements here.&#39; AS no
 </div>
 <p>Ensure you include DROP statements for all tables in your database.</p>
 <section id="my-answer-drop-table">
-<h3>My ANswer: Drop Table<a class="headerlink" href="#my-answer-drop-table" title="Link to this heading">#</a></h3>
+<h3>My ANswer: Drop Table<a class="headerlink" href="#my-answer-drop-table" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -739,7 +696,7 @@ SELECT &#39;Student workspace: add your DROP TABLE statements here.&#39; AS note
 </section>
 </section>
 <section id="part-9-physical-model-create-full-tables">
-<h2>Part 9: Physical Model - Create Full Tables<a class="headerlink" href="#part-9-physical-model-create-full-tables" title="Link to this heading">#</a></h2>
+<h2>Part 9: Physical Model - Create Full Tables<a class="headerlink" href="#part-9-physical-model-create-full-tables" title="Permalink to this heading">#</a></h2>
 <p>Now, create the full version of your tables, including primary keys, foreign keys, and any other constraints (e.g., NOT NULL, UNIQUE, CHECK).</p>
 <p>Example:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -764,7 +721,7 @@ SELECT &#39;Student workspace: add your DROP TABLE statements here.&#39; AS note
 </div>
 <p>Implement all your tables with full constraints.</p>
 <section id="my-answer-create-full-tables">
-<h3>My Answer: Create Full Tables<a class="headerlink" href="#my-answer-create-full-tables" title="Link to this heading">#</a></h3>
+<h3>My Answer: Create Full Tables<a class="headerlink" href="#my-answer-create-full-tables" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -789,7 +746,7 @@ SELECT &#39;Student workspace: add your full CREATE TABLE statements here.&#39; 
 </section>
 </section>
 <section id="part-10-data-population-insert-sample-data">
-<h2>Part 10: Data Population - Insert Sample Data<a class="headerlink" href="#part-10-data-population-insert-sample-data" title="Link to this heading">#</a></h2>
+<h2>Part 10: Data Population - Insert Sample Data<a class="headerlink" href="#part-10-data-population-insert-sample-data" title="Permalink to this heading">#</a></h2>
 <p>Insert sample data into your tables. Use a mix of direct INSERT statements and, where appropriate, generate data using AI tools.</p>
 <p>Example:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Artist</span><span class="w"> </span><span class="p">(</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Country</span><span class="p">,</span><span class="w"> </span><span class="n">FormedDate</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span>
@@ -802,7 +759,7 @@ SELECT &#39;Student workspace: add your full CREATE TABLE statements here.&#39; 
 </div>
 <p>Provide at least 5-10 rows of sample data for each table in your database.</p>
 <section id="my-answer-data-population">
-<h3>My Answer: Data Population<a class="headerlink" href="#my-answer-data-population" title="Link to this heading">#</a></h3>
+<h3>My Answer: Data Population<a class="headerlink" href="#my-answer-data-population" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -827,7 +784,7 @@ SELECT &#39;Student workspace: add your sample INSERT statements here.&#39; AS n
 </section>
 </section>
 <section id="part-11-basic-select-queries">
-<h2>Part 11: Basic SELECT Queries<a class="headerlink" href="#part-11-basic-select-queries" title="Link to this heading">#</a></h2>
+<h2>Part 11: Basic SELECT Queries<a class="headerlink" href="#part-11-basic-select-queries" title="Permalink to this heading">#</a></h2>
 <p>Write and execute at least five SELECT queries that demonstrate your understanding of basic SQL operations. These should include:</p>
 <ol class="arabic simple">
 <li><p>A simple SELECT with a WHERE clause</p></li>
@@ -853,7 +810,7 @@ SELECT &#39;Student workspace: add your sample INSERT statements here.&#39; AS n
 </div>
 <p>Explain the purpose and expected output of each query.</p>
 <section id="my-answer-basic-select-queries">
-<h3>My Answer: Basic SELECT Queries<a class="headerlink" href="#my-answer-basic-select-queries" title="Link to this heading">#</a></h3>
+<h3>My Answer: Basic SELECT Queries<a class="headerlink" href="#my-answer-basic-select-queries" title="Permalink to this heading">#</a></h3>
 <p>Create code and text cells below to run and explain your queries.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -879,7 +836,7 @@ SELECT &#39;Student workspace: add your SELECT queries here.&#39; AS note;
 </section>
 </section>
 <section id="part-12-advanced-select-queries">
-<h2>Part 12: Advanced SELECT Queries<a class="headerlink" href="#part-12-advanced-select-queries" title="Link to this heading">#</a></h2>
+<h2>Part 12: Advanced SELECT Queries<a class="headerlink" href="#part-12-advanced-select-queries" title="Permalink to this heading">#</a></h2>
 <p>Write and execute at least THREE more complex SELECT queries that demonstrate advanced SQL concepts. Possible examples include:</p>
 <ol class="arabic simple">
 <li><p>A query using a self-join</p></li>
@@ -904,12 +861,12 @@ SELECT &#39;Student workspace: add your SELECT queries here.&#39; AS note;
 </div>
 <p>Explain the purpose and impact of each modification query.</p>
 <section id="my-answer-advanced-queries">
-<h3>My Answer: Advanced Queries<a class="headerlink" href="#my-answer-advanced-queries" title="Link to this heading">#</a></h3>
+<h3>My Answer: Advanced Queries<a class="headerlink" href="#my-answer-advanced-queries" title="Permalink to this heading">#</a></h3>
 <p>Create code/text cells below to run and explain your queries.</p>
 </section>
 </section>
 <section id="part-14-index-creation-and-analysis">
-<h2>Part 14: Index Creation and Analysis<a class="headerlink" href="#part-14-index-creation-and-analysis" title="Link to this heading">#</a></h2>
+<h2>Part 14: Index Creation and Analysis<a class="headerlink" href="#part-14-index-creation-and-analysis" title="Permalink to this heading">#</a></h2>
 <p>Create at least two indexes on your tables. Then, use the EXPLAIN QUERY PLAN statement to analyze the performance impact of your indexes on relevant queries.</p>
 <p>Example:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -923,12 +880,12 @@ SELECT &#39;Student workspace: add your SELECT queries here.&#39; AS note;
 </div>
 <p>Discuss the results of your EXPLAIN QUERY PLAN analysis. How do the indexes affect query performance?</p>
 <section id="my-answer-create-indexes">
-<h3>My Answer: Create Indexes<a class="headerlink" href="#my-answer-create-indexes" title="Link to this heading">#</a></h3>
+<h3>My Answer: Create Indexes<a class="headerlink" href="#my-answer-create-indexes" title="Permalink to this heading">#</a></h3>
 <p>Create code and text cells below.</p>
 </section>
 </section>
 <section id="part-15-view-creation">
-<h2>Part 15: View Creation<a class="headerlink" href="#part-15-view-creation" title="Link to this heading">#</a></h2>
+<h2>Part 15: View Creation<a class="headerlink" href="#part-15-view-creation" title="Permalink to this heading">#</a></h2>
 <p>Create at least two views that could be useful for your database users. Explain the purpose of each view and how it simplifies complex queries.</p>
 <p>Example:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -942,7 +899,7 @@ SELECT &#39;Student workspace: add your SELECT queries here.&#39; AS note;
 <p>Provide a brief explanation of how each view could be used in practice.</p>
 </section>
 <section id="part-16-transaction-management">
-<h2>Part 16: Transaction Management<a class="headerlink" href="#part-16-transaction-management" title="Link to this heading">#</a></h2>
+<h2>Part 16: Transaction Management<a class="headerlink" href="#part-16-transaction-management" title="Permalink to this heading">#</a></h2>
 <p>Write a multi-statement transaction that demonstrates the use of BEGIN, COMMIT, and ROLLBACK. This transaction should perform a series of related operations that need to be executed atomically.</p>
 <p><strong>Note: This won’t actually “work” in this environment. However, just write the query as best you can.</strong></p>
 <p>Example:</p>
@@ -963,7 +920,7 @@ SELECT &#39;Student workspace: add your SELECT queries here.&#39; AS note;
 </div>
 <p>Explain the importance of transactions in maintaining data consistency and how your example demonstrates this concept.</p>
 <section id="my-answer-transactions">
-<h3>My Answer: Transactions<a class="headerlink" href="#my-answer-transactions" title="Link to this heading">#</a></h3>
+<h3>My Answer: Transactions<a class="headerlink" href="#my-answer-transactions" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -988,7 +945,7 @@ SELECT &#39;Student workspace: add your transaction example here.&#39; AS note;
 </section>
 </section>
 <section id="parts-17-to-20-reflection-and-future-improvements">
-<h2>Parts 17 to 20: Reflection and Future Improvements<a class="headerlink" href="#parts-17-to-20-reflection-and-future-improvements" title="Link to this heading">#</a></h2>
+<h2>Parts 17 to 20: Reflection and Future Improvements<a class="headerlink" href="#parts-17-to-20-reflection-and-future-improvements" title="Permalink to this heading">#</a></h2>
 <p>Write a brief reflection (300-500 words) on your database project. Address the following points:</p>
 <ol class="arabic simple">
 <li><p>What were the main challenges you faced during this project?</p></li>
@@ -1000,10 +957,10 @@ SELECT &#39;Student workspace: add your transaction example here.&#39; AS note;
 <p>Your reflection should demonstrate critical thinking about your design choices and the database development process.</p>
 </section>
 <section id="part-21-project-documentation-packet">
-<h2>Part 21: Project Documentation Packet<a class="headerlink" href="#part-21-project-documentation-packet" title="Link to this heading">#</a></h2>
+<h2>Part 21: Project Documentation Packet<a class="headerlink" href="#part-21-project-documentation-packet" title="Permalink to this heading">#</a></h2>
 <p>A real database project is judged on more than its tables and queries. The team that has to run the system after you turns the documentation packet first. For this final project, your packet must include four short pieces.</p>
 <section id="standard-operating-procedure-sop">
-<h3>1. Standard Operating Procedure (SOP)<a class="headerlink" href="#standard-operating-procedure-sop" title="Link to this heading">#</a></h3>
+<h3>1. Standard Operating Procedure (SOP)<a class="headerlink" href="#standard-operating-procedure-sop" title="Permalink to this heading">#</a></h3>
 <p>One-page document describing the routine maintenance for your database. At minimum:</p>
 <ul class="simple">
 <li><p>How to take a backup, and how often it should run.</p></li>
@@ -1014,7 +971,7 @@ SELECT &#39;Student workspace: add your transaction example here.&#39; AS note;
 <p>Write the SOP so a teammate could follow it without asking you any questions.</p>
 </section>
 <section id="organizational-compliance-note">
-<h3>2. Organizational compliance note<a class="headerlink" href="#organizational-compliance-note" title="Link to this heading">#</a></h3>
+<h3>2. Organizational compliance note<a class="headerlink" href="#organizational-compliance-note" title="Permalink to this heading">#</a></h3>
 <p>One paragraph identifying the regulations that would apply if your project were a real system. Examples:</p>
 <ul class="simple">
 <li><p>A patient-records project would face <strong>HIPAA</strong>.</p></li>
@@ -1025,7 +982,7 @@ SELECT &#39;Student workspace: add your transaction example here.&#39; AS note;
 <p>Name the regulation, say what data triggers it, and list one specific control you would put in place to comply (encryption at rest, audit logging, access reviews, etc.).</p>
 </section>
 <section id="third-party-compliance-note">
-<h3>3. Third-party compliance note<a class="headerlink" href="#third-party-compliance-note" title="Link to this heading">#</a></h3>
+<h3>3. Third-party compliance note<a class="headerlink" href="#third-party-compliance-note" title="Permalink to this heading">#</a></h3>
 <p>One paragraph naming any <strong>vendor or partner agreements</strong> the project would need. Examples:</p>
 <ul class="simple">
 <li><p>A cloud provider Business Associate Agreement (BAA) for HIPAA data.</p></li>
@@ -1035,7 +992,7 @@ SELECT &#39;Student workspace: add your transaction example here.&#39; AS note;
 <p>If your project would not involve a third party, say so explicitly and explain why.</p>
 </section>
 <section id="maintenance-documentation-entry">
-<h3>4. Maintenance documentation entry<a class="headerlink" href="#maintenance-documentation-entry" title="Link to this heading">#</a></h3>
+<h3>4. Maintenance documentation entry<a class="headerlink" href="#maintenance-documentation-entry" title="Permalink to this heading">#</a></h3>
 <p>A short note describing how schema changes will be tracked over time. At minimum:</p>
 <ul class="simple">
 <li><p>Where migrations or change scripts will live (version control, a shared folder, a wiki).</p></li>
@@ -1046,13 +1003,13 @@ SELECT &#39;Student workspace: add your transaction example here.&#39; AS note;
 </section>
 </section>
 <section id="submission-guidelines">
-<h2>Submission Guidelines<a class="headerlink" href="#submission-guidelines" title="Link to this heading">#</a></h2>
+<h2>Submission Guidelines<a class="headerlink" href="#submission-guidelines" title="Permalink to this heading">#</a></h2>
 <p>When you are done, download the notebook as an <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file and submit that file.</p>
 <p>Your submission should include your SQL statements, query results, and explanations.</p>
 <p>You will receive full credit as long as you make a legitimate attempt to answer each part of the project.</p>
 </section>
 <section id="chapter-summary">
-<h2>Chapter Summary<a class="headerlink" href="#chapter-summary" title="Link to this heading">#</a></h2>
+<h2>Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
 <p>Use this list as a self-check. After working through the chapter, you should be able to do each of the following:</p>
 <ul class="simple">
 <li><p>You can translate a real-world topic into business rules, entities, attributes, and relationships.</p></li>
@@ -1064,12 +1021,12 @@ SELECT &#39;Student workspace: add your transaction example here.&#39; AS note;
 </ul>
 </section>
 <section id="practice-with-the-loop-of-the-recursive-dragon">
-<h2>Practice with the Loop of the Recursive Dragon<a class="headerlink" href="#practice-with-the-loop-of-the-recursive-dragon" title="Link to this heading">#</a></h2>
+<h2>Practice with the Loop of the Recursive Dragon<a class="headerlink" href="#practice-with-the-loop-of-the-recursive-dragon" title="Permalink to this heading">#</a></h2>
 <p>Sharpen what you just learned with a chapter-matched review set in the <strong>Loop of the Recursive Dragon</strong> — an adaptive review game with multiple question types and RPG-style mechanics, built for this book.</p>
 <p><a class="reference external" href="https://brendanpshea.github.io/LotRD/?set=database_13_final_project.json"><strong>Launch the Chapter 13 review set →</strong></a></p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
 <p>Use this reference while you complete the final project.</p>
 <ul class="simple">
 <li><p><strong>Business rule</strong> — A short statement describing how the system should behave or what it must enforce.</p></li>
@@ -1155,94 +1112,6 @@ SELECT &#39;Student workspace: add your transaction example here.&#39; AS note;
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning Outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-project-ideas">Sample Project Ideas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brendan-s-lecture">Brendan’s Lecture</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#policy-on-ai-tools">Policy on AI Tools</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-conceptual-modeling-business-rules">Part 2: Conceptual Modeling - Business Rules</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-business-rules">My Answer: Business Rules</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-conceptual-modeling-entities-and-attributes">Part 3: Conceptual Modeling - Entities and Attributes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-entities-and-attributes">My Answer: Entities and Attributes</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-conceptual-modeling-entity-relationship-diagram-erd">Part 4: Conceptual Modeling - Entity Relationship Diagram (ERD)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-erd-diagram">My Answer: ERD Diagram</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-logical-modeling-relational-model">Part 5: Logical Modeling - Relational Model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-logical-model">My Answer: Logical Model</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-logical-modeling-key-selection-rationale">Part 6: Logical Modeling - Key Selection Rationale</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-my-answer">Part 6: My Answer</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-7-physical-model-create-simple-tables">Part 7: Physical Model - Create Simple Tables</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-create-tables">My Answer: Create Tables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-create-the-database">First, Create the Database</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-8-physical-model-drop-tables">Part 8: Physical Model - Drop Tables</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-drop-table">My ANswer: Drop Table</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-9-physical-model-create-full-tables">Part 9: Physical Model - Create Full Tables</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-create-full-tables">My Answer: Create Full Tables</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-10-data-population-insert-sample-data">Part 10: Data Population - Insert Sample Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-data-population">My Answer: Data Population</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-11-basic-select-queries">Part 11: Basic SELECT Queries</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-basic-select-queries">My Answer: Basic SELECT Queries</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-12-advanced-select-queries">Part 12: Advanced SELECT Queries</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-advanced-queries">My Answer: Advanced Queries</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-14-index-creation-and-analysis">Part 14: Index Creation and Analysis</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-create-indexes">My Answer: Create Indexes</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-15-view-creation">Part 15: View Creation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-16-transaction-management">Part 16: Transaction Management</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-answer-transactions">My Answer: Transactions</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parts-17-to-20-reflection-and-future-improvements">Parts 17 to 20: Reflection and Future Improvements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-21-project-documentation-packet">Part 21: Project Documentation Packet</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-operating-procedure-sop">1. Standard Operating Procedure (SOP)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#organizational-compliance-note">2. Organizational compliance note</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#third-party-compliance-note">3. Third-party compliance note</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maintenance-documentation-entry">4. Maintenance documentation entry</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-guidelines">Submission Guidelines</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-the-loop-of-the-recursive-dragon">Practice with the Loop of the Recursive Dragon</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
             
           </div>
           <footer class="bd-footer-content">
@@ -1286,8 +1155,8 @@ By Brendan Shea, PhD
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

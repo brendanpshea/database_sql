@@ -1,0 +1,26 @@
+patient_id,first_name,last_name,date_of_birth,town,primary_provider
+ECC0001,Toto,Munchkin,1987-06-07,Quadling Country,Dr. Pingaree
+ECC0002,Boq,Gale,1986-09-11,Gillikin Country,Dr. Pumperdink
+ECC0003,Fiyero,Munchkin,1989-09-17,Winkie Country,Dr. Gale
+ECC0004,Tip,Gale,2020-12-05,Gillikin Country,Dr. Emerald
+ECC0005,Glinda,Emerald,1966-08-13,Winkie Country,Dr. Emerald
+ECC0006,Jack,Gale,1986-06-03,Winkie Country,Dr. Pumperdink
+ECC0007,Toto,Gillikin,1940-10-11,Emerald City,Dr. Pumperdink
+ECC0008,Tip,Emerald,1939-04-26,Emerald City,Dr. Quadling
+ECC0009,Nessa,Pumperdink,2019-12-01,Quadling Country,Dr. Emerald
+ECC0010,Aunt Em,Gillikin,2004-08-05,Emerald City,Dr. Lurline
+ECC0011,Jinjur,Gillikin,1996-05-09,Emerald City,Dr. Pingaree
+ECC0012,Mombi,Munchkin,1986-12-19,Emerald City,Dr. Lurline
+ECC0013,Mombi,Pumperdink,1945-03-14,Munchkinland,Dr. Gale
+ECC0014,Glinda,Quadling,1979-11-06,Emerald City,Dr. Quadling
+ECC0015,Jinjur,Winkie,1994-08-07,Quadling Country,Dr. Quadling
+ECC0016,Aunt Em,Lurline,1955-07-04,Munchkinland,Dr. Lurline
+ECC0017,Tip,Winkie,2011-12-13,Emerald City,Dr. Emerald
+ECC0018,Dorothy,Gale,1981-02-16,Winkie Country,Dr. Emerald
+ECC0019,Boq,Lurline,1936-08-24,Winkie Country,Dr. Gale
+ECC0020,Fiyero,Gale,2008-04-13,Emerald City,Dr. Pingaree
+ECC0021,Dorothy,Munchkin,1938-03-07,Winkie Country,Dr. Winkie
+ECC0022,Toto,Pingaree,2017-12-05,Emerald City,Dr. Lurline
+ECC0023,Uncle Henry,Emerald,1952-09-27,Quadling Country,Dr. Winkie
+ECC0024,Boq,Emerald,1974-06-26,Winkie Country,Dr. Pumperdink
+ECC0025,Uncle Henry,Winkie,1984-05-13,Winkie Country,Dr. Emerald

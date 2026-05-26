@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Postgres and Pokemon &#8212; SQL and Database Management Through Pop Culture</title>
   
@@ -16,60 +17,64 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=30c8ad15" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Database_09_PokemonAndPostgres';</script>
-    <script src="_static/sandbox-html-output.js?v=a1fc3548"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Guarding the Virtual Vault: A Deep Dive into Database Security" href="Database_10_DatabaseSecurity.html" />
     <link rel="prev" title="Database Performance: Index, Query Plans, and Transaction Management" href="Database_08_IndexesTransactions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -85,8 +90,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -94,15 +110,16 @@
   <input type="search"
          class="form-control"
          name="q"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -118,8 +135,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,27 +165,12 @@
     
     
     <img src="_static/database_cover.jpg" class="logo__image only-light" alt="SQL and Database Management Through Pop Culture - Home"/>
-    <img src="_static/database_cover.jpg" class="logo__image only-dark pst-js-only" alt="SQL and Database Management Through Pop Culture - Home"/>
+    <script>document.write(`<img src="_static/database_cover.jpg" class="logo__image only-dark" alt="SQL and Database Management Through Pop Culture - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="index.html">
-                    SQL and Database Management Through Pop Culture
-                </a>
-            </li>
-        </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Database_00_Introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Database_01_StarShipSQL.html">Starship SQL: An Introduction to Databases</a></li>
@@ -198,14 +199,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -224,9 +220,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -236,52 +232,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/./Database_09_PokemonAndPostgres.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="Colab logo" src="_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-<a href="https://github.com/brendanpshea/database_sql" target="_blank"
-   class="btn btn-sm btn-source-repository-button"
-   title="Source repository"
-   data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
-
 
 
 
@@ -334,7 +284,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -348,19 +298,27 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -467,9 +425,9 @@
                   
   <p><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_09_PokemonAndPostgres.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section id="postgres-and-pokemon">
-<h1>Postgres and Pokemon<a class="headerlink" href="#postgres-and-pokemon" title="Link to this heading">#</a></h1>
+<h1>Postgres and Pokemon<a class="headerlink" href="#postgres-and-pokemon" title="Permalink to this heading">#</a></h1>
 <section id="database-and-sql-through-pop-culture-brendan-shea-phd">
-<h2>Database and SQL Through Pop Culture | Brendan Shea, PhD<a class="headerlink" href="#database-and-sql-through-pop-culture-brendan-shea-phd" title="Link to this heading">#</a></h2>
+<h2>Database and SQL Through Pop Culture | Brendan Shea, PhD<a class="headerlink" href="#database-and-sql-through-pop-culture-brendan-shea-phd" title="Permalink to this heading">#</a></h2>
 <p>Welcome to the exciting world of PostgreSQL! In this chapter, we’ll embark on a thrilling adventure as we explore the wonders of this powerful database system. Think of it as leveling up from SQLite to a more advanced and feature-packed database.</p>
 <p>We’ll start by comparing PostgreSQL with SQLite, which you’ve already befriended in the previous chapters. You’ll discover the superpowers that PostgreSQL brings to the table, like its robust architecture, extensive feature set, and ability to handle more complex scenarios.</p>
 <p>Get ready to dive into the practical side of things! We’ll guide you through the installation process and show you how to create your very own “Pokemon Research Center” database. It’s like building a virtual laboratory for your beloved Pokemon. You’ll learn how to define tables with special abilities, such as unique data types, powerful constraints, and relationships that bind them together. We’ll also teach you how to populate these tables with sample data, bringing your database to life!</p>
@@ -478,7 +436,7 @@
 <p>So, grab your Pokedex and get ready to level up your database skills with PostgreSQL! Let’s embark on this exciting adventure together and become masters of the database universe!</p>
 </section>
 <section id="learning-outcomes">
-<h2>Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Link to this heading">#</a></h2>
+<h2>Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this heading">#</a></h2>
 <p>By the end of this chapter, you will be able to:</p>
 <ol class="arabic simple">
 <li><p>Compare PostgreSQL with SQLite and explain when a server-based database is the better choice.</p></li>
@@ -495,7 +453,7 @@
 <p>Keywords: PostgreSQL, SQLite, data types, constraints, password hashing, arrays, JSONB, ALTER TABLE, stored procedures, users, roles, privileges, window functions</p>
 </section>
 <section id="brendan-s-lecture">
-<h2>Brendan’s Lecture<a class="headerlink" href="#brendan-s-lecture" title="Link to this heading">#</a></h2>
+<h2>Brendan’s Lecture<a class="headerlink" href="#brendan-s-lecture" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## Video Lecture</span>
@@ -518,7 +476,7 @@
 </div>
 </section>
 <section id="what-is-postgresql-how-does-it-differ-from-sqlite">
-<h2>What is PostgreSQL? How Does it Differ from SQLite?<a class="headerlink" href="#what-is-postgresql-how-does-it-differ-from-sqlite" title="Link to this heading">#</a></h2>
+<h2>What is PostgreSQL? How Does it Differ from SQLite?<a class="headerlink" href="#what-is-postgresql-how-does-it-differ-from-sqlite" title="Permalink to this heading">#</a></h2>
 <p>PostgreSQL and SQLite are both relational database management systems that support ACID (Atomicity, Consistency, Isolation, Durability) properties and transactions. However, they have significant differences in their architectures, feature sets, and use cases.</p>
 <p><strong>SQLite</strong> is a lightweight, serverless, and self-contained database engine. It’s ideal for small to medium-scale applications, embedded systems, or local data storage. SQLite stores the entire database as a single file on disk, making it easy to set up and manage. It’s often used in mobile apps, desktop applications, and small websites.</p>
 <p>On the other hand, <strong>PostgreSQL</strong> is a full-featured, server-based RDBMS designed to handle large amounts of data and support multiple concurrent users. Its client-server architecture allows it to manage resources more efficiently and handle heavier workloads.</p>
@@ -542,7 +500,7 @@
 <p>For example, a large institution like a university or a financial organization would likely choose PostgreSQL over SQLite due to its ability to handle large amounts of data, support multiple concurrent users, and provide advanced features necessary for complex data management tasks.</p>
 </section>
 <section id="table-postgresql-vs-sqlite">
-<h2>Table: PostgreSQL vs SQLite<a class="headerlink" href="#table-postgresql-vs-sqlite" title="Link to this heading">#</a></h2>
+<h2>Table: PostgreSQL vs SQLite<a class="headerlink" href="#table-postgresql-vs-sqlite" title="Permalink to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Feature</p></th>
@@ -608,7 +566,7 @@
 </div>
 </section>
 <section id="key-similarities">
-<h2>Key Similarities<a class="headerlink" href="#key-similarities" title="Link to this heading">#</a></h2>
+<h2>Key Similarities<a class="headerlink" href="#key-similarities" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Both are relational databases using SQL</p></li>
 <li><p>Both support ACID transactions</p></li>
@@ -617,7 +575,7 @@
 </ul>
 </section>
 <section id="key-differences">
-<h2>Key Differences<a class="headerlink" href="#key-differences" title="Link to this heading">#</a></h2>
+<h2>Key Differences<a class="headerlink" href="#key-differences" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Deployment Model</strong>: PostgreSQL requires a server process to run continuously, while SQLite is just a file and library</p></li>
 <li><p><strong>Concurrency</strong>: PostgreSQL handles many users simultaneously, while SQLite has limitations with multiple writers</p></li>
@@ -627,7 +585,7 @@ s.</p></li>
 </ul>
 </section>
 <section id="data-types-in-postgres">
-<h2>Data Types in Postgres<a class="headerlink" href="#data-types-in-postgres" title="Link to this heading">#</a></h2>
+<h2>Data Types in Postgres<a class="headerlink" href="#data-types-in-postgres" title="Permalink to this heading">#</a></h2>
 <p>PostgreSQL offers a rich set of data types, including several that are not available in SQLite. These data types allow you to store and manipulate data more efficiently and with greater precision. Let’s explore some of the key data types in PostgreSQL.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -701,7 +659,7 @@ s.</p></li>
 <p>It’s worth noting that while SQLite also supports many of these data types, such as numeric, character, and date/time types, it lacks some of the more advanced types like arrays, UUIDs, and range types. PostgreSQL’s extensive set of data types is one of the factors that make it a more versatile and feature-rich database system.</p>
 </section>
 <section id="overview-of-the-pokemon-research-center-database">
-<h2>Overview of the Pokemon Research Center Database<a class="headerlink" href="#overview-of-the-pokemon-research-center-database" title="Link to this heading">#</a></h2>
+<h2>Overview of the Pokemon Research Center Database<a class="headerlink" href="#overview-of-the-pokemon-research-center-database" title="Permalink to this heading">#</a></h2>
 <p>To demonstrate the power of Postgres, we’ll be creating a <strong>Pokemon Research Center</strong> database consisting of three main tables: researchers, pokemon, and research_records. These tables are designed to store information about Pokemon researchers, their Pokemon, and the research records associated with each Pokemon.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -866,7 +824,7 @@ Done.
 </div></div>
 </div>
 <section id="entity-relationship-diagram">
-<h3>Entity-Relationship Diagram<a class="headerlink" href="#entity-relationship-diagram" title="Link to this heading">#</a></h3>
+<h3>Entity-Relationship Diagram<a class="headerlink" href="#entity-relationship-diagram" title="Permalink to this heading">#</a></h3>
 <p>The ERD for this database is as follows:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -894,7 +852,7 @@ Done.
 </section>
 </section>
 <section id="test-data-for-pokemon-research-center">
-<h2>Test Data for Pokemon Research Center<a class="headerlink" href="#test-data-for-pokemon-research-center" title="Link to this heading">#</a></h2>
+<h2>Test Data for Pokemon Research Center<a class="headerlink" href="#test-data-for-pokemon-research-center" title="Permalink to this heading">#</a></h2>
 <p>Now, let’s insert some test data for our Pokemon Research Center:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1048,7 +1006,7 @@ Done.
 </div>
 </section>
 <section id="researchers-table-what-is-a-password-hash">
-<h2>Researchers Table: What is a Password “Hash”?<a class="headerlink" href="#researchers-table-what-is-a-password-hash" title="Link to this heading">#</a></h2>
+<h2>Researchers Table: What is a Password “Hash”?<a class="headerlink" href="#researchers-table-what-is-a-password-hash" title="Permalink to this heading">#</a></h2>
 <p>Again, much of the above INSERT statement should be familiar. However, if you look closely at the ways the researcher’s passwords are handled, you’ll notice something a bit different.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">password_hash</span></code> column stores the hashed version of the researcher’s password. <strong>Hashing</strong> is a one-way process that converts the plain-text password into a fixed-size string of characters. The resulting hash is irreversible, meaning it is computationally infeasible to obtain the original password from the hash.</p>
 <p>In this example, the <code class="docutils literal notranslate"><span class="pre">crypt</span></code> function is used along with the <code class="docutils literal notranslate"><span class="pre">gen_salt</span></code> function to hash the passwords. The <code class="docutils literal notranslate"><span class="pre">crypt</span></code> function applies a cryptographic hash function to the password, and the <code class="docutils literal notranslate"><span class="pre">gen_salt</span></code> function generates a random salt value using the Blowfish (‘bf’) algorithm. The salt is appended to the password before hashing, making it more resistant to rainbow table attacks and increasing the security of stored passwords.</p>
@@ -1337,7 +1295,7 @@ Done.
 </ul>
 </section>
 <section id="postgres-arrays-in-the-pokemon-table">
-<h2>Postgres Arrays in the Pokemon Table<a class="headerlink" href="#postgres-arrays-in-the-pokemon-table" title="Link to this heading">#</a></h2>
+<h2>Postgres Arrays in the Pokemon Table<a class="headerlink" href="#postgres-arrays-in-the-pokemon-table" title="Permalink to this heading">#</a></h2>
 <p>Let’s now take a look at the pokemon table, which has an array.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1959,10 +1917,10 @@ Done.
 <p>The attempt to access the third ability fails (since the Pokemon don’t have one!). However, it doesn’t crash the database—it just returns None.</p>
 </section>
 <section id="a-better-alter-table">
-<h2>A Better ALTER TABLE<a class="headerlink" href="#a-better-alter-table" title="Link to this heading">#</a></h2>
+<h2>A Better ALTER TABLE<a class="headerlink" href="#a-better-alter-table" title="Permalink to this heading">#</a></h2>
 <p>In PostgreSQL, the <code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span></code> command is more versatile and feature-rich compared to SQLite. While SQLite supports basic table modifications, PostgreSQL offers a wide range of options to alter tables efficiently. Let’s explore some of the key improvements in PostgreSQL’s <code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span></code> command.</p>
 <section id="adding-columns-with-default-values">
-<h3>Adding Columns with Default Values<a class="headerlink" href="#adding-columns-with-default-values" title="Link to this heading">#</a></h3>
+<h3>Adding Columns with Default Values<a class="headerlink" href="#adding-columns-with-default-values" title="Permalink to this heading">#</a></h3>
 <p>In PostgreSQL, you can add a new column to a table and specify a default value for existing rows in a single statement. Example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2089,7 +2047,7 @@ Done.
 <p>This statement adds a new column named <code class="docutils literal notranslate"><span class="pre">created_at</span></code> of type <code class="docutils literal notranslate"><span class="pre">TIMESTAMP</span></code> to the <code class="docutils literal notranslate"><span class="pre">researchers</span></code> table and sets the default value to the current timestamp for existing rows.</p>
 </section>
 <section id="modifying-column-data-types">
-<h3>Modifying Column Data Types<a class="headerlink" href="#modifying-column-data-types" title="Link to this heading">#</a></h3>
+<h3>Modifying Column Data Types<a class="headerlink" href="#modifying-column-data-types" title="Permalink to this heading">#</a></h3>
 <p>PostgreSQL allows you to modify the data type of a column using the <code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span></code> command. Example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2216,7 +2174,7 @@ Done.
 <p>This statement changes the data type of the <code class="docutils literal notranslate"><span class="pre">phone</span></code> column in the <code class="docutils literal notranslate"><span class="pre">researchers</span></code> table from <code class="docutils literal notranslate"><span class="pre">VARCHAR(20)</span></code> to <code class="docutils literal notranslate"><span class="pre">VARCHAR(15)</span></code>.</p>
 </section>
 <section id="adding-constraints">
-<h3>Adding Constraints<a class="headerlink" href="#adding-constraints" title="Link to this heading">#</a></h3>
+<h3>Adding Constraints<a class="headerlink" href="#adding-constraints" title="Permalink to this heading">#</a></h3>
 <p>PostgreSQL enables you to add constraints to existing tables using the <code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span></code> command. Example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2347,10 +2305,10 @@ Done.
 </section>
 </section>
 <section id="stored-procedures-in-postgresql">
-<h2>Stored Procedures in PostgreSQL<a class="headerlink" href="#stored-procedures-in-postgresql" title="Link to this heading">#</a></h2>
+<h2>Stored Procedures in PostgreSQL<a class="headerlink" href="#stored-procedures-in-postgresql" title="Permalink to this heading">#</a></h2>
 <p>In the world of Pokemon, trainers often follow routines for feeding, training, and caring for their Pokemon. Those routines make their work more consistent. Similarly, databases use stored procedures to package common tasks or complex operations so they can be reused safely and consistently.</p>
 <section id="what-are-stored-procedures">
-<h3>What are Stored Procedures?<a class="headerlink" href="#what-are-stored-procedures" title="Link to this heading">#</a></h3>
+<h3>What are Stored Procedures?<a class="headerlink" href="#what-are-stored-procedures" title="Permalink to this heading">#</a></h3>
 <p>A <strong>stored procedure</strong> is a precompiled collection of SQL statements and optional control-flow statements stored under a name and processed as a unit. It is a database object that performs a specific task or a series of tasks when invoked.</p>
 <p>Think of a stored procedure as named database-side logic you can call whenever you need it.</p>
 <p>Stored procedures offer several benefits:</p>
@@ -2362,15 +2320,15 @@ Done.
 </ol>
 </section>
 <section id="basic-syntax-of-stored-procedures">
-<h3>Basic Syntax of Stored Procedures<a class="headerlink" href="#basic-syntax-of-stored-procedures" title="Link to this heading">#</a></h3>
+<h3>Basic Syntax of Stored Procedures<a class="headerlink" href="#basic-syntax-of-stored-procedures" title="Permalink to this heading">#</a></h3>
 <p>In PostgreSQL, you can create a stored procedure using the <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">PROCEDURE</span></code> statement. Here’s the basic syntax:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">procedure_name</span><span class="p">(</span><span class="n">parameter1</span><span class="w"> </span><span class="n">datatype</span><span class="p">,</span><span class="w"> </span><span class="n">parameter2</span><span class="w"> </span><span class="n">datatype</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span>
-<span class="k">AS</span><span class="w"> </span><span class="err">$$</span>
-<span class="k">BEGIN</span>
-<span class="w">  </span><span class="c1">-- Procedure logic goes here</span>
-<span class="w">  </span><span class="c1">-- SQL statements and control-flow statements</span>
-<span class="k">END</span><span class="p">;</span>
-<span class="err">$$</span><span class="w"> </span><span class="k">LANGUAGE</span><span class="w"> </span><span class="n">plpgsql</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span>CREATE PROCEDURE procedure_name(parameter1 datatype, parameter2 datatype, ...)
+AS $$
+BEGIN
+  -- Procedure logic goes here
+  -- SQL statements and control-flow statements
+END;
+$$ LANGUAGE plpgsql;
 </pre></div>
 </div>
 <p>Let’s break down the syntax:</p>
@@ -2383,30 +2341,30 @@ Done.
 </ul>
 </section>
 <section id="example-stored-procedure-for-the-pokemon-clinic">
-<h3>Example: Stored Procedure for the Pokemon Clinic<a class="headerlink" href="#example-stored-procedure-for-the-pokemon-clinic" title="Link to this heading">#</a></h3>
+<h3>Example: Stored Procedure for the Pokemon Clinic<a class="headerlink" href="#example-stored-procedure-for-the-pokemon-clinic" title="Permalink to this heading">#</a></h3>
 <p>Let’s create a stored procedure for the Pokemon Clinic that retrieves the medical records of a specific Pokemon based on its ID.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
-<span class="n">CREATE</span> <span class="n">OR</span> <span class="n">REPLACE</span> <span class="n">PROCEDURE</span> <span class="n">update_pokemon_level</span><span class="p">(</span>
-  <span class="n">p_pokemon_id</span> <span class="n">INTEGER</span><span class="p">,</span>
-  <span class="n">p_new_level</span> <span class="n">INTEGER</span>
-<span class="p">)</span>
-<span class="n">AS</span> <span class="err">$$</span>
-<span class="n">BEGIN</span>
-  <span class="o">--</span> <span class="n">Update</span> <span class="n">the</span> <span class="n">level</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Pokemon</span>
-  <span class="n">UPDATE</span> <span class="n">pokemon</span>
-  <span class="n">SET</span> <span class="n">level</span> <span class="o">=</span> <span class="n">p_new_level</span>
-  <span class="n">WHERE</span> <span class="nb">id</span> <span class="o">=</span> <span class="n">p_pokemon_id</span><span class="p">;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>%%sql
+CREATE OR REPLACE PROCEDURE update_pokemon_level(
+  p_pokemon_id INTEGER,
+  p_new_level INTEGER
+)
+AS $$
+BEGIN
+  -- Update the level of the Pokemon
+  UPDATE pokemon
+  SET level = p_new_level
+  WHERE id = p_pokemon_id;
 
-  <span class="o">--</span> <span class="n">Check</span> <span class="k">if</span> <span class="nb">any</span> <span class="n">rows</span> <span class="n">were</span> <span class="n">affected</span>
-  <span class="n">IF</span> <span class="n">FOUND</span> <span class="n">THEN</span>
-    <span class="n">RAISE</span> <span class="n">NOTICE</span> <span class="s1">&#39;Pokemon level updated successfully&#39;</span><span class="p">;</span>
-  <span class="n">ELSE</span>
-    <span class="n">RAISE</span> <span class="n">NOTICE</span> <span class="s1">&#39;No Pokemon found with the given ID&#39;</span><span class="p">;</span>
-  <span class="n">END</span> <span class="n">IF</span><span class="p">;</span>
-<span class="n">END</span><span class="p">;</span>
-<span class="err">$$</span> <span class="n">LANGUAGE</span> <span class="n">plpgsql</span><span class="p">;</span>
+  -- Check if any rows were affected
+  IF FOUND THEN
+    RAISE NOTICE &#39;Pokemon level updated successfully&#39;;
+  ELSE
+    RAISE NOTICE &#39;No Pokemon found with the given ID&#39;;
+  END IF;
+END;
+$$ LANGUAGE plpgsql;
 </pre></div>
 </div>
 </div>
@@ -2658,20 +2616,20 @@ Done.
 <p>This statement calls the <code class="docutils literal notranslate"><span class="pre">update_pokemon_level</span></code> procedure, passing the values <code class="docutils literal notranslate"><span class="pre">1</span></code> as the <code class="docutils literal notranslate"><span class="pre">p_pokemon_id</span></code> parameter and <code class="docutils literal notranslate"><span class="pre">30</span></code> as the <code class="docutils literal notranslate"><span class="pre">p_new_level</span></code> parameter. The procedure will then execute the <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> statement and update the level of the Pokemon with ID 1 to 30.</p>
 </section>
 <section id="user-defined-functions">
-<h3>User-defined functions<a class="headerlink" href="#user-defined-functions" title="Link to this heading">#</a></h3>
+<h3>User-defined functions<a class="headerlink" href="#user-defined-functions" title="Permalink to this heading">#</a></h3>
 <p>A <strong>stored procedure</strong> performs an action; a <strong>user-defined function (UDF)</strong> returns a value. In PostgreSQL, both are written in PL/pgSQL, but you use a function when you want a reusable calculation you can drop into a <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> like any other built-in function.</p>
 <p>At the Pokemon Research Center, Professor Oak wants a quick way to ask “how long has this Pokemon been in our care?” That is a scalar calculation, perfect for a UDF.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
-<span class="n">CREATE</span> <span class="n">OR</span> <span class="n">REPLACE</span> <span class="n">FUNCTION</span> <span class="n">pokemon_age_in_days</span><span class="p">(</span><span class="n">captured_on</span> <span class="n">DATE</span><span class="p">)</span>
-<span class="n">RETURNS</span> <span class="n">INTEGER</span>
-<span class="n">LANGUAGE</span> <span class="n">plpgsql</span>
-<span class="n">AS</span> <span class="err">$$</span>
-<span class="n">BEGIN</span>
-  <span class="n">RETURN</span> <span class="p">(</span><span class="n">CURRENT_DATE</span> <span class="o">-</span> <span class="n">captured_on</span><span class="p">);</span>
-<span class="n">END</span><span class="p">;</span>
-<span class="err">$$</span><span class="p">;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>%%sql
+CREATE OR REPLACE FUNCTION pokemon_age_in_days(captured_on DATE)
+RETURNS INTEGER
+LANGUAGE plpgsql
+AS $$
+BEGIN
+  RETURN (CURRENT_DATE - captured_on);
+END;
+$$;
 </pre></div>
 </div>
 </div>
@@ -2695,12 +2653,12 @@ Done.
 </section>
 </section>
 <section id="user-management-and-roles-in-postgresql">
-<h2>User Management and Roles in PostgreSQL<a class="headerlink" href="#user-management-and-roles-in-postgresql" title="Link to this heading">#</a></h2>
+<h2>User Management and Roles in PostgreSQL<a class="headerlink" href="#user-management-and-roles-in-postgresql" title="Permalink to this heading">#</a></h2>
 <p>When it comes to managing a database, one of the most critical aspects is ensuring the security and integrity of the data. In the world of Pokemon, this means safeguarding sensitive information about trainers, their Pokemon, and the medical records of the Pokemon Clinic. Just like how a Pokemon trainer must carefully manage their team and delegate responsibilities, a database administrator must effectively manage user access and privileges to maintain a secure and organized system.</p>
 <p>PostgreSQL provides a robust user management system that allows you to create, modify, and delete user accounts, as well as assign privileges and roles to users. By properly setting up user accounts and roles, you can ensure that each user has access to only the necessary data and functionality, reducing the risk of unauthorized access or data breaches.</p>
 <p>Let’s explore how to manage users and their roles in PostgreSQL using our Pokemon Research Center database as an example.</p>
 <section id="creating-users">
-<h3>Creating Users<a class="headerlink" href="#creating-users" title="Link to this heading">#</a></h3>
+<h3>Creating Users<a class="headerlink" href="#creating-users" title="Permalink to this heading">#</a></h3>
 <p>In PostgreSQL, you can create a new user using the <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">USER</span></code> statement. For example, let’s create a user account for the head nurse of the Pokemon Research Center:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2827,7 +2785,7 @@ Done.
 <p>This statement creates a new user named <code class="docutils literal notranslate"><span class="pre">nurse_joy</span></code> with the password <code class="docutils literal notranslate"><span class="pre">'chansey123'</span></code>. It’s important to choose a strong and secure password to protect the user account from unauthorized access.</p>
 </section>
 <section id="creating-roles">
-<h3>Creating Roles<a class="headerlink" href="#creating-roles" title="Link to this heading">#</a></h3>
+<h3>Creating Roles<a class="headerlink" href="#creating-roles" title="Permalink to this heading">#</a></h3>
 <p><strong>Roles</strong> in PostgreSQL are used to group together privileges and assign them to users. Think of roles as job titles or categories that define what actions users can perform. Let’s create a role for Pokemon trainers:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2954,7 +2912,7 @@ Done.
 <p>This statement creates a new role named <code class="docutils literal notranslate"><span class="pre">pokemon_trainer</span></code>. We can later assign this role to users who are authorized to perform actions related to Pokemon training.</p>
 </section>
 <section id="granting-privileges-to-roles">
-<h3>Granting Privileges to Roles<a class="headerlink" href="#granting-privileges-to-roles" title="Link to this heading">#</a></h3>
+<h3>Granting Privileges to Roles<a class="headerlink" href="#granting-privileges-to-roles" title="Permalink to this heading">#</a></h3>
 <p>Once you have created a role, you can grant specific privileges to that role using the <code class="docutils literal notranslate"><span class="pre">GRANT</span></code> statement. For example, let’s grant the necessary privileges to the <code class="docutils literal notranslate"><span class="pre">pokemon_trainer</span></code> role:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3080,7 +3038,7 @@ Done.
 </div>
 </section>
 <section id="assigning-roles-to-users">
-<h3>Assigning Roles to Users<a class="headerlink" href="#assigning-roles-to-users" title="Link to this heading">#</a></h3>
+<h3>Assigning Roles to Users<a class="headerlink" href="#assigning-roles-to-users" title="Permalink to this heading">#</a></h3>
 <p>To assign a role to a user, you can use the GRANT statement with the TO clause. Let’s assign the pokemon_trainer role to a user named ash_ketchum:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3209,7 +3167,7 @@ Done.
 <p>This statement grants the <code class="docutils literal notranslate"><span class="pre">pokemon_trainer</span></code> role to the user <code class="docutils literal notranslate"><span class="pre">ash_ketchum</span></code>. Now, <code class="docutils literal notranslate"><span class="pre">ash_ketchum</span></code> has all the privileges associated with the <code class="docutils literal notranslate"><span class="pre">pokemon_trainer</span></code> role.</p>
 </section>
 <section id="revoking-privileges-and-roles">
-<h3>Revoking Privileges and Roles<a class="headerlink" href="#revoking-privileges-and-roles" title="Link to this heading">#</a></h3>
+<h3>Revoking Privileges and Roles<a class="headerlink" href="#revoking-privileges-and-roles" title="Permalink to this heading">#</a></h3>
 <p>Sometimes, you may need to revoke privileges or roles from users or roles. This is useful when a user’s responsibilities change or when you want to restrict access to certain data. You can use the <code class="docutils literal notranslate"><span class="pre">REVOKE</span></code> statement to revoke privileges and roles. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3464,14 +3422,14 @@ Done.
 <p>The first statement changes the password of the user <code class="docutils literal notranslate"><span class="pre">nurse_joy</span></code> to <code class="docutils literal notranslate"><span class="pre">'blissey456'</span></code>. It’s a good practice to regularly update passwords to enhance security. The second statement deletes the user <code class="docutils literal notranslate"><span class="pre">ash_ketchum</span></code> from the database. This should be done with caution and only when necessary, as it permanently removes the user and their associated permissions.</p>
 </section>
 <section id="graphic-role-based-access-control">
-<h3>Graphic: Role-Based Access Control<a class="headerlink" href="#graphic-role-based-access-control" title="Link to this heading">#</a></h3>
+<h3>Graphic: Role-Based Access Control<a class="headerlink" href="#graphic-role-based-access-control" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><img src="https://mermaid.ink/img/CmdyYXBoIFRECiAgICAlJSBVc2VycwogICAgc3ViZ3JhcGggVXNlcnNbUG9rZW1vbiBMYWIgU3RhZmZdCiAgICAgICAgVTFbUHJvZmVzc29yIE9ha10KICAgICAgICBVMltOdXJzZSBKb3ldCiAgICAgICAgVTNbUmVzZWFyY2ggQXNzaXN0YW50XQogICAgICAgIFU0W0xhYiBJbnRlcm5dCiAgICBlbmQKCiAgICAlJSBSb2xlcwogICAgc3ViZ3JhcGggUm9sZXNbRGF0YWJhc2UgUm9sZXNdCiAgICAgICAgUjFbcG9rZW1vbl9hZG1pbl0KICAgICAgICBSMltwb2tlbW9uX3Jlc2VhcmNoZXJdCiAgICAgICAgUjNbcG9rZW1vbl9udXJzZV0KICAgICAgICBSNFtwb2tlbW9uX3ZpZXdlcl0KICAgIGVuZAoKICAgICUlIFBlcm1pc3Npb25zCiAgICBzdWJncmFwaCBQZXJtaXNzaW9uc1tUYWJsZSBQZXJtaXNzaW9uc10KICAgICAgICBQMVtBTEwgb24gYWxsIHRhYmxlc10KICAgICAgICBQMltTRUxFQ1QsIElOU0VSVCwgVVBEQVRFIG9uIHBva2Vtb25dCiAgICAgICAgUDNbU0VMRUNULCBVUERBVEUgb24gaGVhbHRoX3N0YXR1c10KICAgICAgICBQNFtTRUxFQ1Qgb24gcG9rZW1vbiwgcmVzZWFyY2hfcmVjb3Jkc10KICAgIGVuZAoKICAgICUlIFJvbGUgSGllcmFyY2h5CiAgICBSMSAtLT4gUjIKICAgIFIyIC0tPiBSMwogICAgUjMgLS0-IFI0CgogICAgJSUgVXNlciB0byBSb2xlIGFzc2lnbm1lbnRzCiAgICBVMSAtLT4gUjEKICAgIFUyIC0tPiBSMwogICAgVTMgLS0-IFIyCiAgICBVNCAtLT4gUjQKCiAgICAlJSBSb2xlIHRvIFBlcm1pc3Npb24gYXNzaWdubWVudHMKICAgIFIxIC0tPiBQMQogICAgUjIgLS0-IFAyCiAgICBSMyAtLT4gUDMKICAgIFI0IC0tPiBQNAoKICAgICUlIFN0eWxpbmcKICAgIGNsYXNzRGVmIHVzZXIgZmlsbDojZTZmM2ZmLHN0cm9rZTojNGQ5NGZmCiAgICBjbGFzc0RlZiByb2xlIGZpbGw6I2YyZTZmZixzdHJva2U6Izk5MzNmZgogICAgY2xhc3NEZWYgcGVybWlzc2lvbiBmaWxsOiNlNmZmZTYsc3Ryb2tlOiMzM2NjMzMKCiAgICBjbGFzcyBVMSxVMixVMyxVNCB1c2VyCiAgICBjbGFzcyBSMSxSMixSMyxSNCByb2xlCiAgICBjbGFzcyBQMSxQMixQMyxQNCBwZXJtaXNzaW9uCgogICAgJSUgQWRkIGV4cGxhbmF0b3J5IG5vdGUKICAgIHN0eWxlIFVzZXJzIGZpbGw6I2U2ZjNmZixzdHJva2U6IzMzMyxzdHJva2Utd2lkdGg6MnB4CiAgICBzdHlsZSBSb2xlcyBmaWxsOiNmMmU2ZmYsc3Ryb2tlOiMzMzMsc3Ryb2tlLXdpZHRoOjJweAogICAgc3R5bGUgUGVybWlzc2lvbnMgZmlsbDojZTZmZmU2LHN0cm9rZTojMzMzLHN0cm9rZS13aWR0aDoycHgK?width=1000&height=700"/></div></div>
 </div>
 </section>
 <section id="importance-of-user-management-and-security">
-<h3>Importance of User Management and Security<a class="headerlink" href="#importance-of-user-management-and-security" title="Link to this heading">#</a></h3>
+<h3>Importance of User Management and Security<a class="headerlink" href="#importance-of-user-management-and-security" title="Permalink to this heading">#</a></h3>
 <p>Proper user management is crucial for maintaining the security of your database. By creating separate user accounts and assigning appropriate privileges and roles, you can ensure that users have access only to the necessary data and operations. Some important security considerations include:</p>
 <ul class="simple">
 <li><p>Use strong and unique passwords for user accounts.</p></li>
@@ -3483,10 +3441,10 @@ Done.
 </section>
 </section>
 <section id="basic-data-analytics-in-postgres">
-<h2>Basic Data Analytics in Postgres<a class="headerlink" href="#basic-data-analytics-in-postgres" title="Link to this heading">#</a></h2>
+<h2>Basic Data Analytics in Postgres<a class="headerlink" href="#basic-data-analytics-in-postgres" title="Permalink to this heading">#</a></h2>
 <p>Data analytics is a powerful tool that allows us to extract meaningful insights from our data. PostgreSQL, with its robust SQL capabilities, provides a wide range of features to perform data analytics directly within the database. In this section, we’ll explore some basic data analytics techniques using our <strong>Pokemon Research Center</strong> database. Much (though not all!) of this will serve as a review of what we learned using SQLite in earlier chapters.</p>
 <section id="aggregating-data">
-<h3>Aggregating Data<a class="headerlink" href="#aggregating-data" title="Link to this heading">#</a></h3>
+<h3>Aggregating Data<a class="headerlink" href="#aggregating-data" title="Permalink to this heading">#</a></h3>
 <p>One of the fundamental operations in data analytics is aggregation, which involves summarizing data to provide useful insights. Let’s start with some basic aggregation queries.</p>
 <p>We can count the number of Pokemon each researcher is studying.</p>
 <div class="cell docutils container">
@@ -4303,7 +4261,7 @@ Done.
 </div>
 </section>
 <section id="filtering-data">
-<h3>Filtering Data<a class="headerlink" href="#filtering-data" title="Link to this heading">#</a></h3>
+<h3>Filtering Data<a class="headerlink" href="#filtering-data" title="Permalink to this heading">#</a></h3>
 <p>Filtering data is essential to focus on specific subsets of data that meet certain criteria. Let’s explore some examples. First, we can retrieve all Pokemon that are currently injured.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4715,7 +4673,7 @@ Done.
 </div>
 </section>
 <section id="joining-tables">
-<h3>Joining Tables<a class="headerlink" href="#joining-tables" title="Link to this heading">#</a></h3>
+<h3>Joining Tables<a class="headerlink" href="#joining-tables" title="Permalink to this heading">#</a></h3>
 <p>Joining tables allows us to combine data from multiple tables based on related columns. Let’s explore some examples.</p>
 <p>We can retrieve a list of Pokemon along with their researchers’ names.</p>
 <div class="cell docutils container">
@@ -5275,7 +5233,7 @@ Done.
 </div>
 </section>
 <section id="advanced-analysis-with-window-functions">
-<h3>Advanced Analysis with Window Functions<a class="headerlink" href="#advanced-analysis-with-window-functions" title="Link to this heading">#</a></h3>
+<h3>Advanced Analysis with Window Functions<a class="headerlink" href="#advanced-analysis-with-window-functions" title="Permalink to this heading">#</a></h3>
 <p><strong>Window functions</strong> perform calculations across a set of table rows related to the current row. They are powerful tools for advanced data analytics.</p>
 <p>For example, let’s rank Pokemon by their level within each researcher’s group.</p>
 <div class="cell docutils container">
@@ -5896,10 +5854,10 @@ Done.
 </section>
 </section>
 <section id="json-data-in-postgresql">
-<h2>JSON Data in PostgreSQL<a class="headerlink" href="#json-data-in-postgresql" title="Link to this heading">#</a></h2>
+<h2>JSON Data in PostgreSQL<a class="headerlink" href="#json-data-in-postgresql" title="Permalink to this heading">#</a></h2>
 <p>PostgreSQL provides robust support for JSON data through two distinct data types: JSON and JSONB. While both can store JSON documents, they have different characteristics and use cases.</p>
 <section id="json-type">
-<h3>JSON Type<a class="headerlink" href="#json-type" title="Link to this heading">#</a></h3>
+<h3>JSON Type<a class="headerlink" href="#json-type" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Stores an exact copy of the input text</p></li>
 <li><p>Slower to process (must be parsed on each operation)</p></li>
@@ -5908,7 +5866,7 @@ Done.
 </ul>
 </section>
 <section id="jsonb-type">
-<h3>JSONB Type<a class="headerlink" href="#jsonb-type" title="Link to this heading">#</a></h3>
+<h3>JSONB Type<a class="headerlink" href="#jsonb-type" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Stores data in a decomposed binary format</p></li>
 <li><p>Faster to process (no parsing needed)</p></li>
@@ -5919,7 +5877,7 @@ Done.
 </section>
 </section>
 <section id="creating-tables-with-json-columns">
-<h2>Creating Tables with JSON Columns<a class="headerlink" href="#creating-tables-with-json-columns" title="Link to this heading">#</a></h2>
+<h2>Creating Tables with JSON Columns<a class="headerlink" href="#creating-tables-with-json-columns" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sql</span>
@@ -6975,7 +6933,7 @@ Done.
 </div></div>
 </div>
 <section id="best-practices">
-<h3>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h3>
+<h3>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p><strong>Choose the Right Type</strong></p>
 <ul class="simple">
@@ -7014,7 +6972,7 @@ Done.
 </section>
 </section>
 <section id="computed-columns">
-<h2>Computed columns<a class="headerlink" href="#computed-columns" title="Link to this heading">#</a></h2>
+<h2>Computed columns<a class="headerlink" href="#computed-columns" title="Permalink to this heading">#</a></h2>
 <p>A <strong>computed column</strong> (also called a <strong>generated column</strong>) is a column whose value is derived automatically from an expression involving the other columns in the row. You never write to it directly. The database keeps it in sync.</p>
 <p>PostgreSQL supports <code class="docutils literal notranslate"><span class="pre">GENERATED</span> <span class="pre">ALWAYS</span> <span class="pre">AS</span> <span class="pre">(...)</span> <span class="pre">STORED</span></code>. The expression runs whenever the row is inserted or updated, and the result is stored on disk like any other column.</p>
 <p>At the Pokemon Research Center, Professor Oak’s team wants a quick display label for each Pokemon — the Pokemon’s nickname combined with its species. A computed column gives them that without changing any application code.</p>
@@ -7047,7 +7005,7 @@ Done.
 </section>
 </section>
 <section id="postgresql-lab-pikachu-s-detective-agency">
-<h1>PostgreSQL Lab: Pikachu’s Detective Agency<a class="headerlink" href="#postgresql-lab-pikachu-s-detective-agency" title="Link to this heading">#</a></h1>
+<h1>PostgreSQL Lab: Pikachu’s Detective Agency<a class="headerlink" href="#postgresql-lab-pikachu-s-detective-agency" title="Permalink to this heading">#</a></h1>
 <p>Welcome, aspiring database detectives! Pikachu has opened a detective agency in Ryme City and needs your help to set up and manage the case database. Follow these steps to assist in cracking the code and solving mysteries!</p>
 <ol class="arabic simple">
 <li><p>Using the code cells, below design and create three tables: “detectives”, “cases”, and “evidence”. The detectives table should include fields for detective ID, name, and specialty. The cases table should have fields for case ID, title, status, and lead detective ID (as a foreign key). The evidence table should record evidence ID, description, case ID (as a foreign key), and location found.</p></li>
@@ -7063,7 +7021,7 @@ Done.
 </ol>
 <p>Remember, junior detectives, in the world of database investigation, every query counts! Your SQL skills are the magnifying glass that brings the clues into focus. Good luck, and may your joins be as strong as Pikachu’s Thunderbolt!</p>
 <section id="chapter-summary">
-<h2>Chapter Summary<a class="headerlink" href="#chapter-summary" title="Link to this heading">#</a></h2>
+<h2>Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
 <p>Use this list as a self-check. After working through the chapter, you should be able to do each of the following:</p>
 <ul class="simple">
 <li><p>You can name the key differences between PostgreSQL and SQLite.</p></li>
@@ -7079,15 +7037,15 @@ Done.
 </ul>
 </section>
 <section id="practice-with-the-loop-of-the-recursive-dragon">
-<h2>Practice with the Loop of the Recursive Dragon<a class="headerlink" href="#practice-with-the-loop-of-the-recursive-dragon" title="Link to this heading">#</a></h2>
+<h2>Practice with the Loop of the Recursive Dragon<a class="headerlink" href="#practice-with-the-loop-of-the-recursive-dragon" title="Permalink to this heading">#</a></h2>
 <p>Sharpen what you just learned with a chapter-matched review set in the <strong>Loop of the Recursive Dragon</strong> — an adaptive review game with multiple question types and RPG-style mechanics, built for this book.</p>
 <p><a class="reference external" href="https://brendanpshea.github.io/LotRD/?set=database_09_postgres.json"><strong>Launch the Chapter 9 review set →</strong></a></p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
 <p>Use this list as a quick review sheet for the chapter.</p>
 <section id="postgresql-essentials">
-<h3>PostgreSQL essentials<a class="headerlink" href="#postgresql-essentials" title="Link to this heading">#</a></h3>
+<h3>PostgreSQL essentials<a class="headerlink" href="#postgresql-essentials" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>PostgreSQL</strong> — An open-source, object-relational database management system known for reliability and rich features.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">EXTENSION</span></code></strong> — A PostgreSQL command that loads optional features into a database, such as new data types or functions.</p></li>
@@ -7098,14 +7056,14 @@ Done.
 </ul>
 </section>
 <section id="schema-changes">
-<h3>Schema changes<a class="headerlink" href="#schema-changes" title="Link to this heading">#</a></h3>
+<h3>Schema changes<a class="headerlink" href="#schema-changes" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">ADD</span> <span class="pre">CONSTRAINT</span></code></strong> — A SQL command that adds a constraint to an existing table, such as a primary key, foreign key, or check.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">COLUMN</span></code></strong> — A SQL command that modifies the properties of an existing column, such as its data type or default value.</p></li>
 </ul>
 </section>
 <section id="data-types">
-<h3>Data types<a class="headerlink" href="#data-types" title="Link to this heading">#</a></h3>
+<h3>Data types<a class="headerlink" href="#data-types" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">BOOLEAN</span></code></strong> — A data type that can hold TRUE, FALSE, or NULL.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">DATE</span></code></strong> — A data type that stores a calendar date without a time.</p></li>
@@ -7122,7 +7080,7 @@ Done.
 </ul>
 </section>
 <section id="stored-procedures">
-<h3>Stored procedures<a class="headerlink" href="#stored-procedures" title="Link to this heading">#</a></h3>
+<h3>Stored procedures<a class="headerlink" href="#stored-procedures" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Stored procedure</strong> — A named set of SQL and procedural statements stored in the database and called when needed.</p></li>
 <li><p><strong>User-defined function</strong> — A named, reusable expression that returns a value; callable from inside a <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> like any built-in function.</p></li>
@@ -7132,7 +7090,7 @@ Done.
 </ul>
 </section>
 <section id="users-and-security">
-<h3>Users and security<a class="headerlink" href="#users-and-security" title="Link to this heading">#</a></h3>
+<h3>Users and security<a class="headerlink" href="#users-and-security" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">USER</span></code></strong> — A SQL command that creates a new user account in the database system.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">USER</span></code></strong> — A SQL command that changes attributes of a database user, such as password or role.</p></li>
@@ -7147,7 +7105,7 @@ Done.
 </ul>
 </section>
 <section id="window-functions">
-<h3>Window functions<a class="headerlink" href="#window-functions" title="Link to this heading">#</a></h3>
+<h3>Window functions<a class="headerlink" href="#window-functions" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Window function</strong> — A SQL function that performs a calculation across a set of rows related to the current row.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">OVER</span> <span class="pre">(PARTITION</span> <span class="pre">BY</span> <span class="pre">c1</span> <span class="pre">ORDER</span> <span class="pre">BY</span> <span class="pre">c2)</span></code></strong> — The clause that defines the window of rows over which a window function operates, partitioned by <code class="docutils literal notranslate"><span class="pre">c1</span></code> and ordered by <code class="docutils literal notranslate"><span class="pre">c2</span></code>.</p></li>
@@ -7212,95 +7170,6 @@ Done.
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Postgres and Pokemon</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#database-and-sql-through-pop-culture-brendan-shea-phd">Database and SQL Through Pop Culture | Brendan Shea, PhD</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning Outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brendan-s-lecture">Brendan’s Lecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-postgresql-how-does-it-differ-from-sqlite">What is PostgreSQL? How Does it Differ from SQLite?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-postgresql-vs-sqlite">Table: PostgreSQL vs SQLite</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-similarities">Key Similarities</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-differences">Key Differences</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types-in-postgres">Data Types in Postgres</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-the-pokemon-research-center-database">Overview of the Pokemon Research Center Database</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entity-relationship-diagram">Entity-Relationship Diagram</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-data-for-pokemon-research-center">Test Data for Pokemon Research Center</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#researchers-table-what-is-a-password-hash">Researchers Table: What is a Password “Hash”?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postgres-arrays-in-the-pokemon-table">Postgres Arrays in the Pokemon Table</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-better-alter-table">A Better ALTER TABLE</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-columns-with-default-values">Adding Columns with Default Values</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-column-data-types">Modifying Column Data Types</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-constraints">Adding Constraints</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stored-procedures-in-postgresql">Stored Procedures in PostgreSQL</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-stored-procedures">What are Stored Procedures?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax-of-stored-procedures">Basic Syntax of Stored Procedures</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-stored-procedure-for-the-pokemon-clinic">Example: Stored Procedure for the Pokemon Clinic</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-functions">User-defined functions</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-management-and-roles-in-postgresql">User Management and Roles in PostgreSQL</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-users">Creating Users</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-roles">Creating Roles</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#granting-privileges-to-roles">Granting Privileges to Roles</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assigning-roles-to-users">Assigning Roles to Users</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revoking-privileges-and-roles">Revoking Privileges and Roles</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphic-role-based-access-control">Graphic: Role-Based Access Control</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-user-management-and-security">Importance of User Management and Security</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-analytics-in-postgres">Basic Data Analytics in Postgres</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregating-data">Aggregating Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data">Filtering Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-tables">Joining Tables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-analysis-with-window-functions">Advanced Analysis with Window Functions</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-data-in-postgresql">JSON Data in PostgreSQL</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#json-type">JSON Type</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jsonb-type">JSONB Type</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-tables-with-json-columns">Creating Tables with JSON Columns</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computed-columns">Computed columns</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql-lab-pikachu-s-detective-agency">PostgreSQL Lab: Pikachu’s Detective Agency</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-the-loop-of-the-recursive-dragon">Practice with the Loop of the Recursive Dragon</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql-essentials">PostgreSQL essentials</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schema-changes">Schema changes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">Data types</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stored-procedures">Stored procedures</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#users-and-security">Users and security</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#window-functions">Window functions</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-  </nav></div>
-
-</div></div>
-              
             
           </div>
           <footer class="bd-footer-content">
@@ -7344,8 +7213,8 @@ By Brendan Shea, PhD
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

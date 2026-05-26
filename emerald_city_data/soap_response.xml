@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body><GetClinicHoursResponse>
+    <Hours><Day>Monday</Day><Open>08:00</Open><Close>17:00</Close></Hours>
+    <Hours><Day>Saturday</Day><Open>09:00</Open><Close>13:00</Close></Hours>
+  </GetClinicHoursResponse></soap:Body>
+</soap:Envelope>

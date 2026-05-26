@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Getting Tables Together With Joins and Sets &#8212; SQL and Database Management Through Pop Culture</title>
   
@@ -16,63 +17,64 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=30c8ad15" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script type="application/vnd.jupyter.widget-state+json">{"state": {"6266701671aa4310baa8ff8c5cd76334": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3630eac938664b12bd8140c788e09a5a": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "9de80cc0d7f141a49758947756e205c7": {"model_name": "IntProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "IntProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ProgressView", "bar_style": "", "description": "Progress:", "description_allow_html": false, "layout": "IPY_MODEL_6266701671aa4310baa8ff8c5cd76334", "max": 36, "min": 0, "orientation": "horizontal", "style": "IPY_MODEL_3630eac938664b12bd8140c788e09a5a", "tabbable": null, "tooltip": null, "value": 1}}, "d671799631d64fe58756386d39514e57": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f0fbdb19110347e095630b67cf262842": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "b1d8309bc646453a864c795182ba07dc": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_d671799631d64fe58756386d39514e57", "placeholder": "\u200b", "style": "IPY_MODEL_f0fbdb19110347e095630b67cf262842", "tabbable": null, "tooltip": null, "value": "<h3>Question 1 of 36:</h3><p>List all movies in the database.</p><h3>Database Schema:</h3><ul><li><b>Movie</b> (id CHAR(7), name VARCHAR(64), year INTEGER, rating VARCHAR(5), runtime INTEGER, genre VARCHAR(16), earnings_rank INTEGER)</li><li><b>Person</b> (id CHAR(7), name VARCHAR(64), dob DATE, pob VARCHAR(128))</li><li><b>Actor</b> (actor_id CHAR(7), movie_id CHAR(7))</li><li><b>Director</b> (director_id CHAR(7), movie_id CHAR(7))</li><li><b>Oscar</b> (movie_id CHAR(7), person_id CHAR(7), type VARCHAR(23), year INTEGER)</li></ul>"}}, "5299d8192cdc4dfd98cac79c2950591a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "150px", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "154a8c771bb24250813f52fe29486506": {"model_name": "TextStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "TextStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "02012399f4fa4e9484419eb2d6d0fbe1": {"model_name": "TextareaModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "TextareaModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "TextareaView", "continuous_update": true, "description": "", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_5299d8192cdc4dfd98cac79c2950591a", "placeholder": "Type your SQL query here...", "rows": null, "style": "IPY_MODEL_154a8c771bb24250813f52fe29486506", "tabbable": null, "tooltip": null, "value": ""}}, "5cf178afee41488890a9a2a9039275b6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "92f6f9f4c78a4768824f682b0fa6ef16": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "8f4a5b3062884d02832c0b07c0fe3ecc": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "success", "description": "Submit", "disabled": false, "icon": "", "layout": "IPY_MODEL_5cf178afee41488890a9a2a9039275b6", "style": "IPY_MODEL_92f6f9f4c78a4768824f682b0fa6ef16", "tabbable": null, "tooltip": null}}, "853cf91c7fae41fc8ac5f66fe1fe1faa": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "bd28434e9dfc4f2190fc4172ede787cc": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "be8704968cf7485cbd4d07d79617810e": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "warning", "description": "Clear", "disabled": false, "icon": "", "layout": "IPY_MODEL_853cf91c7fae41fc8ac5f66fe1fe1faa", "style": "IPY_MODEL_bd28434e9dfc4f2190fc4172ede787cc", "tabbable": null, "tooltip": null}}, "db65136fa65b41469039f94c71b95eaa": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "7ee9d340cd094909a9c62d053a1cd352": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "907f39048f6241fd9f4d403c9953723d": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "info", "description": "Hint", "disabled": false, "icon": "", "layout": "IPY_MODEL_db65136fa65b41469039f94c71b95eaa", "style": "IPY_MODEL_7ee9d340cd094909a9c62d053a1cd352", "tabbable": null, "tooltip": null}}, "13184b599c44482bac8a424c5ca7fd77": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "60px"}}, "364bdfd56c204a9495c6fc5d7d085693": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": ""}}, "5c3f11ef5b7f41998f273b514f6890b0": {"model_name": "IntTextModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "IntTextModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "IntTextView", "continuous_update": false, "description": "", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_13184b599c44482bac8a424c5ca7fd77", "step": 1, "style": "IPY_MODEL_364bdfd56c204a9495c6fc5d7d085693", "tabbable": null, "tooltip": null, "value": 1}}, "eae683d48bc54448865fe38db9340f4d": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f1cd26e46bba4564ae18d70531334266": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "1a68df94161c41bfae45513128495fdd": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "info", "description": "Skip to", "disabled": false, "icon": "", "layout": "IPY_MODEL_eae683d48bc54448865fe38db9340f4d", "style": "IPY_MODEL_f1cd26e46bba4564ae18d70531334266", "tabbable": null, "tooltip": null}}, "aa0fbafb6abf43f2afbb3edb3997193c": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3634f620e50f483ab716eb921bef7af1": {"model_name": "LabelStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "LabelStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "915f251fae1846d0a81c1424c9e1b9f7": {"model_name": "LabelModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "LabelModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "LabelView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_aa0fbafb6abf43f2afbb3edb3997193c", "placeholder": "\u200b", "style": "IPY_MODEL_3634f620e50f483ab716eb921bef7af1", "tabbable": null, "tooltip": null, "value": "Go to question:"}}, "38f12772f123424ca99e3aaab190fa62": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "a420bb7742e041669786d61cd05a3a06": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_915f251fae1846d0a81c1424c9e1b9f7", "IPY_MODEL_5c3f11ef5b7f41998f273b514f6890b0", "IPY_MODEL_1a68df94161c41bfae45513128495fdd"], "layout": "IPY_MODEL_38f12772f123424ca99e3aaab190fa62", "tabbable": null, "tooltip": null}}, "b6bddfb998af48d8b1d0b5847bef14c2": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0b807252ad9047a2b5c93a8f4680f318": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_8f4a5b3062884d02832c0b07c0fe3ecc", "IPY_MODEL_be8704968cf7485cbd4d07d79617810e", "IPY_MODEL_907f39048f6241fd9f4d403c9953723d"], "layout": "IPY_MODEL_b6bddfb998af48d8b1d0b5847bef14c2", "tabbable": null, "tooltip": null}}, "993381a595654e9ea8fee5f26df5a230": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "43ecb67d7edc41edbd7da495aa172d54": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_02012399f4fa4e9484419eb2d6d0fbe1", "IPY_MODEL_0b807252ad9047a2b5c93a8f4680f318", "IPY_MODEL_a420bb7742e041669786d61cd05a3a06"], "layout": "IPY_MODEL_993381a595654e9ea8fee5f26df5a230", "tabbable": null, "tooltip": null}}, "e53392583dc7480a84135e3f154ef65f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0cf2c5eb3fce492db066eb7179f0c6e6": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "90b645053c624cce8b02270595eafa20": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_e53392583dc7480a84135e3f154ef65f", "placeholder": "\u200b", "style": "IPY_MODEL_0cf2c5eb3fce492db066eb7179f0c6e6", "tabbable": null, "tooltip": null, "value": ""}}, "416ba8677bc0457a95849b71451d832c": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f24264d34b444843b8028ca33f330105": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "d29f5135048c4a159f63196494f26d28": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "warning", "description": "Try Again", "disabled": false, "icon": "", "layout": "IPY_MODEL_416ba8677bc0457a95849b71451d832c", "style": "IPY_MODEL_f24264d34b444843b8028ca33f330105", "tabbable": null, "tooltip": null}}, "ae254310429447719f55c256b1c79012": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6b62e6bd97e040abbbbf40aa26eb9898": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "46e9b21790b14686b5b38934c70dca24": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "info", "description": "Next Question", "disabled": false, "icon": "", "layout": "IPY_MODEL_ae254310429447719f55c256b1c79012", "style": "IPY_MODEL_6b62e6bd97e040abbbbf40aa26eb9898", "tabbable": null, "tooltip": null}}, "d6f50c0361534165abb404c3420c690b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "36030b45782f4201bc070b547d14a740": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_d29f5135048c4a159f63196494f26d28", "IPY_MODEL_46e9b21790b14686b5b38934c70dca24"], "layout": "IPY_MODEL_d6f50c0361534165abb404c3420c690b", "tabbable": null, "tooltip": null}}, "1bed2c907f9d4610914032937bead161": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "4069c2d3daa44214a9c9ddfae5fae1b7": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_90b645053c624cce8b02270595eafa20", "IPY_MODEL_36030b45782f4201bc070b547d14a740"], "layout": "IPY_MODEL_1bed2c907f9d4610914032937bead161", "tabbable": null, "tooltip": null}}, "21745206ba154547abe30e9b03fda0ea": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "631f7db5db9041998246b2809b303504": {"model_name": "TabModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "TabModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "TabView", "box_style": "", "children": ["IPY_MODEL_43ecb67d7edc41edbd7da495aa172d54", "IPY_MODEL_4069c2d3daa44214a9c9ddfae5fae1b7"], "layout": "IPY_MODEL_21745206ba154547abe30e9b03fda0ea", "selected_index": 0, "tabbable": null, "titles": ["Query", "Results"], "tooltip": null}}, "e0f129c88f5a431a904a28fc26e1ec61": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "aa0e8a464d25446a90e695ba765df8ff": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_9de80cc0d7f141a49758947756e205c7", "IPY_MODEL_b1d8309bc646453a864c795182ba07dc", "IPY_MODEL_631f7db5db9041998246b2809b303504"], "layout": "IPY_MODEL_e0f129c88f5a431a904a28fc26e1ec61", "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}</script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Database_03_Joins_Sets_SQL';</script>
-    <script src="_static/sandbox-html-output.js?v=a1fc3548"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Super Select: Advanced Retrieval With Mario Brothers Plumbing" href="Database_04_AdvancedSelect.html" />
     <link rel="prev" title="Introduction to SQL: SELECT" href="Database_02_IntroToSQL.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -88,8 +90,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -97,15 +110,16 @@
   <input type="search"
          class="form-control"
          name="q"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -121,8 +135,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -152,27 +165,12 @@
     
     
     <img src="_static/database_cover.jpg" class="logo__image only-light" alt="SQL and Database Management Through Pop Culture - Home"/>
-    <img src="_static/database_cover.jpg" class="logo__image only-dark pst-js-only" alt="SQL and Database Management Through Pop Culture - Home"/>
+    <script>document.write(`<img src="_static/database_cover.jpg" class="logo__image only-dark" alt="SQL and Database Management Through Pop Culture - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="index.html">
-                    SQL and Database Management Through Pop Culture
-                </a>
-            </li>
-        </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Database_00_Introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Database_01_StarShipSQL.html">Starship SQL: An Introduction to Databases</a></li>
@@ -201,14 +199,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -227,9 +220,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -239,52 +232,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/./Database_03_Joins_Sets_SQL.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="Colab logo" src="_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-<a href="https://github.com/brendanpshea/database_sql" target="_blank"
-   class="btn btn-sm btn-source-repository-button"
-   title="Source repository"
-   data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
-
 
 
 
@@ -337,7 +284,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -351,19 +298,27 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -389,20 +344,18 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brendan-s-lecture">Brendan’s Lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-the-movie-database">Introduction to the Movie Database</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#database-schema-movies">Database Schema: Movies</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#movie">Movie</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#person">Person</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#actor-and-director">Actor and Director</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#movie">Movie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#person">Person</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actor">Actor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#director">Director</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oscar">Oscar</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-crow-s-foot-entity-relationship-diagram-of-the-movie-data">A “Crow’s Foot” Entity-Relationship Diagram of the Movie Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-a-crow-s-foot-erd">Interpreting a Crow’s Foot ERD</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entities">Entities</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relationships">Relationships</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#join-tables">Join Tables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-the-relationships">Interpreting the Relationships:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-relationships-in-our-database">Reading relationships in our database</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previewing-the-data">Previewing the Data</a></li>
 </ul>
 </li>
@@ -424,13 +377,7 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#left-join">LEFT JOIN</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-join-both-fundamental-and-dangerous">CROSS JOIN: Both Fundamental and Dangerous</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-cross-join-is-fundamental">Why CROSS JOIN is Fundamental</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-cross-join-mistakes-and-their-consequences">Common CROSS JOIN Mistakes and Their Consequences</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#forgetting-the-join-condition">1. Forgetting the Join Condition</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-impact">2. Performance Impact</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-example-with-our-movie-database">3. Real-World Example with Our Movie Database</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-cross-join-is-fundamental">Why CROSS JOIN is fundamental</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#legitimate-uses-of-cross-join">Legitimate Uses of CROSS JOIN</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-types-of-sql-joins">Table: Types of SQL Joins</a></li>
 </ul>
@@ -446,29 +393,9 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-summary-statitics-about-science-fiction-movies">Example: Summary Statitics About Science Fiction Movies</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-mastering-sql-joins-and-set-operations">Conclusion: Mastering SQL Joins and Set Operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-power-of-joins">The Power of Joins</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-join">INNER JOIN</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#left-join-left-outer-join">LEFT JOIN (LEFT OUTER JOIN)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-join">CROSS JOIN</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-join-types-we-haven-t-covered">Additional Join Types We Haven’t Covered</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-join">NATURAL JOIN</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#self-join">SELF JOIN</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-operations-combining-result-sets">Set Operations: Combining Result Sets</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">UNION</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">INTERSECT</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">EXCEPT</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-set-operations">Additional Set Operations</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#union-all">UNION ALL</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-forward">Looking Forward</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-mastering-sql-joins-and-set-operations">Conclusion: Mastering SQL Joins and Set Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-power-of-joins">The power of joins</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-logic-of-set-operations">The logic of set operations</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter Summary</a></li>
@@ -476,7 +403,8 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-the-loop-of-the-recursive-dragon">Practice with the Loop of the Recursive Dragon</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#er-modeling-terms">ER modeling terms</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-joins-and-set-operations">SQL joins and set operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#join-keywords">Join keywords</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-keywords">Set keywords</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-relationships-entity-relationship-model">Types of Relationships: Entity-Relationship Model</a></li>
 </ul>
 </li>
@@ -493,13 +421,13 @@
                   
   <p><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_03_Joins_Sets_SQL.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section id="getting-tables-together-with-joins-and-sets">
-<h1>Getting Tables Together With Joins and Sets<a class="headerlink" href="#getting-tables-together-with-joins-and-sets" title="Link to this heading">#</a></h1>
+<h1>Getting Tables Together With Joins and Sets<a class="headerlink" href="#getting-tables-together-with-joins-and-sets" title="Permalink to this heading">#</a></h1>
 <section id="brendan-shea-phd">
-<h2>Brendan Shea, PhD<a class="headerlink" href="#brendan-shea-phd" title="Link to this heading">#</a></h2>
+<h2>Brendan Shea, PhD<a class="headerlink" href="#brendan-shea-phd" title="Permalink to this heading">#</a></h2>
 <p>In this chapter, we dive into the powerful world of SQL joins and set operations. We’ll explore how these tools allow us to combine data from multiple tables in a database, enabling us to extract meaningful insights and answer complex questions. Using a database based on data from the Internet Movie Database (IMDB), we’ll learn how to connect related pieces of information, such as movies, actors, directors, and awards. By mastering joins and set operations, you’ll be able to navigate and manipulate relational databases with ease.</p>
 </section>
 <section id="learning-outcomes">
-<h2>Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Link to this heading">#</a></h2>
+<h2>Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this heading">#</a></h2>
 <p>By the end of this chapter, you will be able to:</p>
 <ol class="arabic simple">
 <li><p>Interpret a database schema and crow’s foot ERD, including entities, keys, relationships, and join tables.</p></li>
@@ -513,7 +441,7 @@
 <p>Keywords: SQL, INNER JOIN, LEFT JOIN, CROSS JOIN, UNION, INTERSECT, EXCEPT, schema, crow’s foot ERD, join tables</p>
 </section>
 <section id="brendan-s-lecture">
-<h2>Brendan’s Lecture<a class="headerlink" href="#brendan-s-lecture" title="Link to this heading">#</a></h2>
+<h2>Brendan’s Lecture<a class="headerlink" href="#brendan-s-lecture" title="Permalink to this heading">#</a></h2>
 <p>Run the following cell to see my lecture.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -537,12 +465,12 @@
 </div>
 </section>
 <section id="introduction-to-the-movie-database">
-<h2>Introduction to the Movie Database<a class="headerlink" href="#introduction-to-the-movie-database" title="Link to this heading">#</a></h2>
+<h2>Introduction to the Movie Database<a class="headerlink" href="#introduction-to-the-movie-database" title="Permalink to this heading">#</a></h2>
 <p>For this chapter, we’ll be using a database based on data from the Internet Movie Database (IMDB). The full dataset is available here: https://developer.imdb.com/non-commercial-datasets/. We’ll just be using a small part of this data, based on movies that have (at one point or another) been in the “top 100” in terms of box office returns.</p>
 <p>To start off with, we need to download a copy of the database and connect to it:</p>
 </section>
 <section id="database-schema-movies">
-<h2>Database Schema: Movies<a class="headerlink" href="#database-schema-movies" title="Link to this heading">#</a></h2>
+<h2>Database Schema: Movies<a class="headerlink" href="#database-schema-movies" title="Permalink to this heading">#</a></h2>
 <p>Let’s begin by exploring the <strong>database schem</strong> for movies.db. This will give us:</p>
 <ol class="arabic simple">
 <li><p>A list of all the tables in the datase.</p></li>
@@ -630,140 +558,98 @@ WHERE type = &#39;table&#39;;-- Show the database schema
 </table>
 </div></div></div>
 </div>
-<p>Our database consists of five tables: Movie, Person, Actor, Director, and Oscar. These tables store data related to movies, persons (actors and directors), and Oscar awards. Now, let’s explore each of these tables, their attributes, data types, and primary keys.</p>
+<p>Our IMDb movie database consists of five tables: Movie, Person, Actor, Director, and Oscar. These tables store data related to movies, directors, actors, and Academy Awards. Let us explore each of these tables to understand their attributes, data types, and primary keys.</p>
 <section id="movie">
-<h3>Movie<a class="headerlink" href="#movie" title="Link to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table contains information about different movies. It has 7 attributes:</p>
+<h3>Movie<a class="headerlink" href="#movie" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table contains information about individual movies.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> (CHAR(7)): This is a unique identifier for each movie. This serves as the primary key for this table.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> (VARCHAR(64)): The name of the movie.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">year</span></code> (INTEGER): The year when the movie was released.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">rating</span></code> (VARCHAR(5)): The MPAA rating of the movie.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">runtime</span></code> (INTEGER): The duration of the movie in minutes.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">genre</span></code> (VARCHAR(16)): The genre of the movie. There may be multiple genres, with each genre being abbreviated by a letter.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">earnings_rank</span></code> (INTEGER): The earnings rank of the movie.</p></li>
+<li><p>The <strong>id</strong> column stores a unique integer value for each movie, which acts as the table’s primary key.</p></li>
+<li><p>The <strong>name</strong> column stores the text title of the movie.</p></li>
+<li><p>The <strong>year</strong> column records the integer year the movie was released.</p></li>
+<li><p>The <strong>rating</strong> column stores a text value representing the movie’s content rating, such as “PG” or “R”.</p></li>
+<li><p>The <strong>runtime</strong> column records the length of the movie in minutes as an integer.</p></li>
+<li><p>The <strong>genre</strong> column stores the primary category of the movie as text.</p></li>
+<li><p>The <strong>earnings_rank</strong> column records the movie’s box office ranking as an integer.</p></li>
 </ul>
+</section>
 <section id="person">
-<h4>Person<a class="headerlink" href="#person" title="Link to this heading">#</a></h4>
-<p>The <code class="docutils literal notranslate"><span class="pre">Person</span></code> table stores data related to persons (actors and directors). It consists of 4 attributes:</p>
+<h3>Person<a class="headerlink" href="#person" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Person</span></code> table stores personal profiles of individuals involved in the film industry.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> (CHAR(7)): This is a unique identifier for each person. This is the primary key for this table.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> (VARCHAR(64)): The name of the person.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dob</span></code> (DATE): The date of birth of the person.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pob</span></code> (VARCHAR(128)): The place of birth of the person.</p></li>
+<li><p>The <strong>id</strong> column is a unique integer serving as the primary key.</p></li>
+<li><p>The <strong>name</strong> column records the full name of the person as text.</p></li>
+<li><p>The <strong>dob</strong> column stores the person’s date of birth.</p></li>
+<li><p>The <strong>pob</strong> column records their place of birth as a text string.</p></li>
 </ul>
 </section>
-<section id="actor-and-director">
-<h4>Actor and Director<a class="headerlink" href="#actor-and-director" title="Link to this heading">#</a></h4>
-<p>The <code class="docutils literal notranslate"><span class="pre">Actor</span></code> and <code class="docutils literal notranslate"><span class="pre">Director</span></code> tables are <strong>junction tables</strong> (or <strong>join tables</strong>) which store the relationship between movies and persons (actors or directors). A join table is used to resolve many-to-many relationships by breaking it down into two one-to-many relationships. In this case, a movie can have multiple actors and a person can act in multiple movies. Same applies for directors. Each of these tables has two attributes:</p>
+<section id="actor">
+<h3>Actor<a class="headerlink" href="#actor" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Actor</span></code> table is a junction table that establishes the many-to-many relationship between movies and actors.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">actor_id/director_id</span></code> (CHAR(7)): This refers to the id of the person who is an actor/director. This forms part of the composite primary key.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">movie_id</span></code> (CHAR(7)): This refers to the id of the movie. This also forms part of the composite primary key.</p></li>
+<li><p>The <strong>actor_id</strong> column is a foreign key pointing to the person table, which forms a composite primary key alongside the movie ID.</p></li>
+<li><p>The <strong>movie_id</strong> column is a foreign key pointing to the movie table.</p></li>
 </ul>
-<p>4. Oscar: This table stores information about Oscar awards. It contains 4 attributes:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">movie_id</span></code> (CHAR(7)): This refers to the id of the movie that won an Oscar.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">person_id</span></code> (CHAR(7)): This refers to the id of the person who won an Oscar.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> (VARCHAR(23)): This represents the type of Oscar award.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">year</span></code> (INTEGER): The year when the Oscar was awarded.</p></li>
-</ul>
-<p>The key for this table is a combination of <code class="docutils literal notranslate"><span class="pre">person_id</span></code>, <code class="docutils literal notranslate"><span class="pre">type</span></code>, and <code class="docutils literal notranslate"><span class="pre">year</span></code> columns.</p>
 </section>
+<section id="director">
+<h3>Director<a class="headerlink" href="#director" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Director</span></code> table is a junction table that maps the many-to-many relationship between movies and their directors.</p>
+<ul class="simple">
+<li><p>The <strong>director_id</strong> column is a foreign key pointing to the person table, forming a composite primary key with the movie ID.</p></li>
+<li><p>The <strong>movie_id</strong> column is a foreign key pointing to the movie table.</p></li>
+</ul>
+</section>
+<section id="oscar">
+<h3>Oscar<a class="headerlink" href="#oscar" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Oscar</span></code> table records Academy Award wins.</p>
+<ul class="simple">
+<li><p>The <strong>movie_id</strong> column is a foreign key pointing to the movie table.</p></li>
+<li><p>The <strong>person_id</strong> column is a foreign key pointing to the person table who won the award.</p></li>
+<li><p>The <strong>type</strong> column records the category of the award as text.</p></li>
+<li><p>The <strong>year</strong> column stores the integer year the award was won, which forms a composite primary key with the movie ID, person ID, and award type.</p></li>
+</ul>
 </section>
 </section>
 <section id="a-crow-s-foot-entity-relationship-diagram-of-the-movie-data">
-<h2>A “Crow’s Foot” Entity-Relationship Diagram of the Movie Data<a class="headerlink" href="#a-crow-s-foot-entity-relationship-diagram-of-the-movie-data" title="Link to this heading">#</a></h2>
+<h2>A “Crow’s Foot” Entity-Relationship Diagram of the Movie Data<a class="headerlink" href="#a-crow-s-foot-entity-relationship-diagram-of-the-movie-data" title="Permalink to this heading">#</a></h2>
 <p>To help us better understand the stucture of the movie data, let’s create an <strong>entity-relationship</strong> diagram. Here, I am using <strong>Crow’s Foot</strong> style (more on this later). I’m using the Mermaid language to create the diagram.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/283d98e36604cc545357b93244b862db82bf659240e7efd97a526a131884eb1d.svg" src="_images/283d98e36604cc545357b93244b862db82bf659240e7efd97a526a131884eb1d.svg" />
-</div>
+<img alt="_images/283d98e36604cc545357b93244b862db82bf659240e7efd97a526a131884eb1d.svg" src="_images/283d98e36604cc545357b93244b862db82bf659240e7efd97a526a131884eb1d.svg" /></div>
 </div>
 </section>
 <section id="interpreting-a-crow-s-foot-erd">
-<h2>Interpreting a Crow’s Foot ERD<a class="headerlink" href="#interpreting-a-crow-s-foot-erd" title="Link to this heading">#</a></h2>
-<p>Crow’s foot diagrams, also known as Entity-Relationship Diagrams (ERDs), are a popular way to visually represent the structure and relationships of a database. Let’s break down the components of the diagram and understand how to interpret it.</p>
+<h2>Interpreting a Crow’s Foot ERD<a class="headerlink" href="#interpreting-a-crow-s-foot-erd" title="Permalink to this heading">#</a></h2>
+<p>Crow’s foot diagrams, also known as <strong>Entity-Relationship Diagrams (ERDs)</strong>, are visual layouts used to represent the logical structure and connections of a database. Let us break down how to read the visual notations in the diagram:</p>
 <section id="entities">
-<h3>Entities<a class="headerlink" href="#entities" title="Link to this heading">#</a></h3>
+<h3>Entities<a class="headerlink" href="#entities" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Entities are represented by rectangles and denote the main objects or concepts in the database.</p></li>
-<li><p>In this diagram, the entities are MOVIE, PERSON, ACTOR, DIRECTOR, and OSCAR.</p></li>
-<li><p>Each entity has its own set of attributes, which are listed inside the rectangle.</p></li>
-</ul>
-</section>
-<section id="attributes">
-<h3>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Attributes represent the properties or characteristics of an entity.</p></li>
-<li><p>They are listed inside the entity’s rectangle, along with their data types.</p></li>
-<li><p>For example, the MOVIE entity has attributes like id (CHAR(7)), name (VARCHAR(64)), year (INTEGER), rating (VARCHAR(5)), runtime (INTEGER), genre (VARCHAR(16)), and earnings_rank (INTEGER).</p></li>
-<li><p>The attribute followed by “PK” indicates the primary key of the entity, which uniquely identifies each record.</p></li>
-<li><p>The attribute followed by “FK” indicates a foreign key, which establishes a relationship with another entity.</p></li>
+<li><p>We represent individual tables as <strong>entities</strong> using colored rectangles, such as showing MOVIE, PERSON, ACTOR, DIRECTOR, and OSCAR.</p></li>
+<li><p>The upper section of the rectangle lists the <strong>entity name</strong>, while the columns below list the table’s attributes.</p></li>
+<li><p>We mark the table’s unique identifiers as <strong>primary keys (PK)</strong> and columns that link to other tables as <strong>foreign keys (FK)</strong>.</p></li>
 </ul>
 </section>
 <section id="relationships">
-<h3>Relationships<a class="headerlink" href="#relationships" title="Link to this heading">#</a></h3>
+<h3>Relationships<a class="headerlink" href="#relationships" title="Permalink to this heading">#</a></h3>
+<p>We draw lines between the rectangles to represent <strong>relationships</strong> showing how tables connect to one another. The shapes at the ends of these lines indicate the <strong>cardinality</strong> of the connection, telling us the minimum and maximum number of matching rows allowed:</p>
 <ul class="simple">
-<li><p>Relationships between entities are represented by lines connecting the rectangles.</p></li>
-<li><p>The <strong>cardinality</strong> (number of entities parcipating) of a relationship is indicated by the symbols at each end of the line.</p></li>
-<li><p>The <strong>crow’s foot symbol</strong> (three lines) represents a “many” relationship, while a single line represents a “one” relationship.</p></li>
-<li><p>An optional relationship is denoted by a circle (o), while a mandatory relationship is denoted by a vertical line (|).</p></li>
+<li><p>The symbol of two parallel vertical lines represents a <strong>one-and-only-one</strong> relationship, indicating that a row must match exactly one row in the connected table.</p></li>
+<li><p>The symbol of a circle next to a vertical line represents a <strong>zero-or-one</strong> relationship, meaning a row can connect to either one row or none at all.</p></li>
+<li><p>The symbol of a vertical line next to a three-pronged “crow’s foot” represents a <strong>one-to-many</strong> relationship, indicating that a row connects to at least one or many rows in the other table.</p></li>
+<li><p>The symbol of a circle next to a “crow’s foot” represents a <strong>zero-to-many</strong> relationship, meaning a row can connect to any number of rows or none at all.</p></li>
 </ul>
 </section>
-<section id="join-tables">
-<h3>Join Tables<a class="headerlink" href="#join-tables" title="Link to this heading">#</a></h3>
+<section id="reading-relationships-in-our-database">
+<h3>Reading relationships in our database<a class="headerlink" href="#reading-relationships-in-our-database" title="Permalink to this heading">#</a></h3>
+<p>Using these rules, we can read the connections in our movie database:</p>
 <ul class="simple">
-<li><p><strong>Join tables</strong> are used to establish many-to-many relationships between entities.</p></li>
-<li><p>In this diagram, the ACTOR and DIRECTOR tables are join tables that connect the MOVIE and PERSON tables.</p></li>
-<li><p>The ACTOR table has a <strong>composite primary key</strong> consisting of actor_id (referencing the id in the PERSON table) and movie_id (referencing the id in the MOVIE table).</p></li>
-<li><p>Similarly, the DIRECTOR table has a composite primary key consisting of director_id (referencing the id in the PERSON table) and movie_id (referencing the id in the MOVIE table).</p></li>
-</ul>
-</section>
-<section id="interpreting-the-relationships">
-<h3>Interpreting the Relationships:<a class="headerlink" href="#interpreting-the-relationships" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>MOVIE ||–o{ ACTOR : movie_has_actor</p>
-<ul>
-<li><p>This relationship indicates that a movie can have multiple actors, and an actor can be in multiple movies.</p></li>
-<li><p>The ACTOR table is a join table that establishes this many-to-many relationship between MOVIE and PERSON.</p></li>
-<li><p>The crow’s foot symbol on the ACTOR end indicates that multiple actors can be associated with a movie.</p></li>
-</ul>
-</li>
-<li><p>MOVIE ||–o{ DIRECTOR : movie_directed_by_director</p>
-<ul>
-<li><p>This relationship indicates that a movie can have multiple directors, and a director can direct multiple movies.</p></li>
-<li><p>The DIRECTOR table is a join table that establishes this many-to-many relationship between MOVIE and PERSON.</p></li>
-<li><p>The crow’s foot symbol on the DIRECTOR end indicates that multiple directors can be associated with a movie.</p></li>
-</ul>
-</li>
-<li><p>PERSON ||–o{ ACTOR : actor_is_a_person</p>
-<ul>
-<li><p>This relationship indicates that an actor is a person, and a person can be an actor.</p></li>
-<li><p>The crow’s foot symbol on the ACTOR end indicates that a person can be associated with multiple movies as an actor.</p></li>
-</ul>
-</li>
-<li><p>PERSON ||–o{ DIRECTOR : director_is_a_person</p>
-<ul>
-<li><p>This relationship indicates that a director is a person, and a person can be a director.</p></li>
-<li><p>The crow’s foot symbol on the DIRECTOR end indicates that a person can be associated with multiple movies as a director.</p></li>
-</ul>
-</li>
-<li><p>MOVIE ||–o{ OSCAR : movie_wins_oscar</p>
-<ul>
-<li><p>This relationship indicates that a movie can win multiple Oscars, and an Oscar is associated with a movie.</p></li>
-<li><p>It is optional for a movie to win an Oscar.</p></li>
-</ul>
-</li>
-<li><p>PERSON ||–o{ OSCAR : person_wins_oscar</p>
-<ul>
-<li><p>This relationship indicates that a person can win multiple Oscars, and an Oscar is associated with a person.</p></li>
-<li><p>It is optional for a person to win an Oscar.</p></li>
-</ul>
-</li>
+<li><p>The connection between <code class="docutils literal notranslate"><span class="pre">Person</span></code> and <code class="docutils literal notranslate"><span class="pre">Actor</span></code> shows that a person can act in <strong>zero-to-many</strong> movies, but each actor record must connect to <strong>one-and-only-one</strong> person.</p></li>
+<li><p>The connection between <code class="docutils literal notranslate"><span class="pre">Movie</span></code> and <code class="docutils literal notranslate"><span class="pre">Actor</span></code> shows that a movie can feature <strong>one-to-many</strong> actors, but each actor row links to <strong>one-and-only-one</strong> movie.</p></li>
+<li><p>The connection between <code class="docutils literal notranslate"><span class="pre">Person</span></code> and <code class="docutils literal notranslate"><span class="pre">Director</span></code> shows that a person can direct <strong>zero-to-many</strong> movies, while each director row maps to <strong>one-and-only-one</strong> person.</p></li>
+<li><p>The connection between <code class="docutils literal notranslate"><span class="pre">Movie</span></code> and <code class="docutils literal notranslate"><span class="pre">Oscar</span></code> shows that a movie can win <strong>zero-to-many</strong> Oscars, but each Oscar record links to <strong>one-and-only-one</strong> movie.</p></li>
 </ul>
 </section>
 <section id="previewing-the-data">
-<h3>Previewing the Data<a class="headerlink" href="#previewing-the-data" title="Link to this heading">#</a></h3>
+<h3>Previewing the Data<a class="headerlink" href="#previewing-the-data" title="Permalink to this heading">#</a></h3>
 <p>Finally, let’s use some simple SQL <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> statements to take a look at the data.</p>
 <p>The basic <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span></code> statement retrieves all columns from a table. The <code class="docutils literal notranslate"><span class="pre">*</span></code> is a wildcard that means “all columns.” The <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> clause restricts the number of rows returned - in this case, we’ll see only the first 10 rows of the Movie table.</p>
 <div class="cell docutils container">
@@ -1471,48 +1357,23 @@ FROM Oscar
 </section>
 </section>
 <section id="a-gentle-introduction-to-joins">
-<h2>A Gentle Introduction to JOINs<a class="headerlink" href="#a-gentle-introduction-to-joins" title="Link to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table contains information about each movie, such as its name, year of release, rating, runtime, genre, and earnings rank. The <code class="docutils literal notranslate"><span class="pre">Person</span></code> table contains information about people involved in the movies, including their name, date of birth, and place of birth.</p>
-<p>But what if you wanted to know which actors appeared in which movies or who directed a particular movie? This information is not directly in either the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> or <code class="docutils literal notranslate"><span class="pre">Person</span></code> table. That’s where JOINs come in! JOINs allow you to combine rows from two or more tables based on a related column between them.</p>
-<p>In this database, the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> and <code class="docutils literal notranslate"><span class="pre">Director</span></code> tables serve as junction tables (also known as join tables). They establish the many-to-many relationships between movies and persons. Each row in the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> table links a particular person to a particular movie they acted in, while each row in the <code class="docutils literal notranslate"><span class="pre">Director</span></code> table links a person to a movie they directed.</p>
-<p>To perform a JOIN, you need to specify:</p>
+<h2>A Gentle Introduction to JOINs<a class="headerlink" href="#a-gentle-introduction-to-joins" title="Permalink to this heading">#</a></h2>
+<p>Our <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table contains details about individual films, such as their titles, ratings, and earnings. Our <code class="docutils literal notranslate"><span class="pre">Person</span></code> table stores profiles of actors and directors, including their names and places of birth.</p>
+<p>However, if you want to find which actors starred in a specific movie, this combined information is not stored in either table alone. To answer these cross-table questions, SQL uses <strong>joins</strong> to combine rows from multiple tables based on a related column.</p>
+<p>In our database, the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> and <code class="docutils literal notranslate"><span class="pre">Director</span></code> tables serve as <strong>junction tables</strong> (or join tables) that establish many-to-many relationships:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Actor</span></code> table links a person ID to a movie ID, indicating who acted in which film.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Director</span></code> table links a person ID to a movie ID, indicating who directed which film.</p></li>
+</ul>
+<p>To find which actors starred in the movie <em>Inception</em>, SQL must link all three tables:</p>
 <ol class="arabic simple">
-<li><p>The tables you want to join</p></li>
-<li><p>The columns that relate the two tables</p></li>
+<li><p>The query starts at the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table to locate the row for <em>Inception</em>.</p></li>
+<li><p>The database joins the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table to the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> table by matching the unique movie IDs.</p></li>
+<li><p>The database joins the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> table to the <code class="docutils literal notranslate"><span class="pre">Person</span></code> table by matching the person IDs, retrieving the actors’ names.</p></li>
 </ol>
-<p>In this schema, the <code class="docutils literal notranslate"><span class="pre">id</span></code> column in the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table is the primary key, and the <code class="docutils literal notranslate"><span class="pre">movie_id</span></code> columns in the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> and <code class="docutils literal notranslate"><span class="pre">Director</span></code> tables are foreign keys. Similarly, the <code class="docutils literal notranslate"><span class="pre">id</span></code> column in the <code class="docutils literal notranslate"><span class="pre">Person</span></code> table is the primary key, and the <code class="docutils literal notranslate"><span class="pre">actor_id</span></code> and <code class="docutils literal notranslate"><span class="pre">director_id</span></code> columns in the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> and <code class="docutils literal notranslate"><span class="pre">Director</span></code> tables are foreign keys.</p>
-<p>Here’s how you would JOIN the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> and <code class="docutils literal notranslate"><span class="pre">Actor</span></code> tables to find out which actors appeared in which movies:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">`</span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Movie</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">Actor</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Movie</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Actor</span><span class="p">.</span><span class="n">movie_id</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>And here’s how you would JOIN the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> and <code class="docutils literal notranslate"><span class="pre">Person</span></code> tables to get the names of the actors:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Actor</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Actor</span><span class="p">.</span><span class="n">actor_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Person</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>By default, SQL uses an INNER JOIN. An INNER JOIN returns only the rows where there is a match in both tables. So if a movie doesn’t have any actors listed in the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> table, that movie will not appear in the result. Similarly, if a person hasn’t acted in any movies according to the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> table, that person will not appear in the result.</p>
-<p>You can also join multiple tables. For example, to get the names of all the actors in a specific movie:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Person</span><span class="p">.</span><span class="n">name</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Movie</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">Actor</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Movie</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Actor</span><span class="p">.</span><span class="n">movie_id</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Actor</span><span class="p">.</span><span class="n">actor_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Person</span><span class="p">.</span><span class="n">id</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">Movie</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Insert Movie Name&#39;</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Or to find out who directed a particular movie:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Person</span><span class="p">.</span><span class="n">name</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Movie</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">Director</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Movie</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Director</span><span class="p">.</span><span class="n">movie_id</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Director</span><span class="p">.</span><span class="n">director_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Person</span><span class="p">.</span><span class="n">id</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">Movie</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Insert Movie Name&#39;</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>JOINs are a powerful tool for working with data spread across related tables. They allow you to combine information in ways not possible with individual tables. Mastering JOINs is a key skill for working with relational databases like SQLite.</p>
+<p>By writing join queries, you can easily traverse these database links to combine records and answer complex questions.</p>
 <section id="example-joining-movie-and-actor">
-<h3>Example: JOINing Movie and Actor<a class="headerlink" href="#example-joining-movie-and-actor" title="Link to this heading">#</a></h3>
+<h3>Example: JOINing Movie and Actor<a class="headerlink" href="#example-joining-movie-and-actor" title="Permalink to this heading">#</a></h3>
 <p>In the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table, the primary key is <code class="docutils literal notranslate"><span class="pre">id</span></code>. Both the <code class="docutils literal notranslate"><span class="pre">Person</span></code> and the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> table have an attribute called <code class="docutils literal notranslate"><span class="pre">movie_id</span></code> that is a foreign that links to the is. So, we could write joins like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1585,7 +1446,7 @@ LIMIT 5;
 <p>You’ll notice this isn’t very informative (yet), because the actor table actually doesn’t contain the actor’s name. Instead, it just has their <code class="docutils literal notranslate"><span class="pre">actor_id</span></code>, which is a reference to the <code class="docutils literal notranslate"><span class="pre">Person</span></code> table. In just a bit, we’ll see how we can fix this (by joining three tables).</p>
 </section>
 <section id="example-joining-person-and-actor">
-<h3>Example: JOINing Person and Actor<a class="headerlink" href="#example-joining-person-and-actor" title="Link to this heading">#</a></h3>
+<h3>Example: JOINing Person and Actor<a class="headerlink" href="#example-joining-person-and-actor" title="Permalink to this heading">#</a></h3>
 <p>We can do the same thing to join the <code class="docutils literal notranslate"><span class="pre">Person</span></code> (with primary key <code class="docutils literal notranslate"><span class="pre">id</span></code>) and <code class="docutils literal notranslate"><span class="pre">Actor</span></code> tables (with foreign key <code class="docutils literal notranslate"><span class="pre">actor_id</span></code>). A</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1657,7 +1518,7 @@ LIMIT 5;
 </div>
 </section>
 <section id="example-joining-movie-actor-and-person">
-<h3>Example: JOINing Movie, Actor, and Person<a class="headerlink" href="#example-joining-movie-actor-and-person" title="Link to this heading">#</a></h3>
+<h3>Example: JOINing Movie, Actor, and Person<a class="headerlink" href="#example-joining-movie-actor-and-person" title="Permalink to this heading">#</a></h3>
 <p>In order to get a more useful result, let’s join THREE tables–the <code class="docutils literal notranslate"><span class="pre">Person</span></code>, <code class="docutils literal notranslate"><span class="pre">Movie</span></code> and <code class="docutils literal notranslate"><span class="pre">Actor</span></code> table. Here, the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> table serves as <strong>junction table</strong> between <code class="docutils literal notranslate"><span class="pre">Person</span></code> and <code class="docutils literal notranslate"><span class="pre">Movie</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1792,7 +1653,7 @@ LIMIT 10;
 </div>
 </section>
 <section id="example-joining-person-movie-and-director">
-<h3>Example: JOINing Person, Movie, and Director<a class="headerlink" href="#example-joining-person-movie-and-director" title="Link to this heading">#</a></h3>
+<h3>Example: JOINing Person, Movie, and Director<a class="headerlink" href="#example-joining-person-movie-and-director" title="Permalink to this heading">#</a></h3>
 <p>We can do the same thing for the Person, Movie, and Director tables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1925,7 +1786,7 @@ LIMIT 10;
 </div>
 </section>
 <section id="example-joining-with-oscars">
-<h3>Example: JOINing with Oscars<a class="headerlink" href="#example-joining-with-oscars" title="Link to this heading">#</a></h3>
+<h3>Example: JOINing with Oscars<a class="headerlink" href="#example-joining-with-oscars" title="Permalink to this heading">#</a></h3>
 <p>Finally, let’s try joining tables with Oscars. First, the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2175,10 +2036,10 @@ LIMIT 10;
 </section>
 </section>
 <section id="joins-with-conditions">
-<h2>JOINs with Conditions<a class="headerlink" href="#joins-with-conditions" title="Link to this heading">#</a></h2>
+<h2>JOINs with Conditions<a class="headerlink" href="#joins-with-conditions" title="Permalink to this heading">#</a></h2>
 <p>Now that we understand at a basic level what joins “are”, let’s put this knowledge to work by writing a few more advanced queries using <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clauses.</p>
 <section id="example-actors-in-pg-13-movies">
-<h3>Example: Actors in ‘PG-13’ Movies<a class="headerlink" href="#example-actors-in-pg-13-movies" title="Link to this heading">#</a></h3>
+<h3>Example: Actors in ‘PG-13’ Movies<a class="headerlink" href="#example-actors-in-pg-13-movies" title="Permalink to this heading">#</a></h3>
 <p>To accomplish this, we’ll INNER JOIN the Movie and Actor tables, linking them through the id and movie_id columns, respectively. We’ll then filter the results to only include movies with a ‘PG-13’ rating.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2334,7 +2195,7 @@ WHERE
 </div></div></div>
 </div>
 <section id="example-text-filtering-with-like-directors-born-in-minnesota">
-<h4>Example: Text Filtering with LIKE - Directors Born in Minnesota<a class="headerlink" href="#example-text-filtering-with-like-directors-born-in-minnesota" title="Link to this heading">#</a></h4>
+<h4>Example: Text Filtering with LIKE - Directors Born in Minnesota<a class="headerlink" href="#example-text-filtering-with-like-directors-born-in-minnesota" title="Permalink to this heading">#</a></h4>
 <p>What if you’re curious to know which directors were born in Minnesota and have directed a movie? We can INNER JOIN the <code class="docutils literal notranslate"><span class="pre">Person</span></code> and <code class="docutils literal notranslate"><span class="pre">Director</span></code> tables and use the SQL <code class="docutils literal notranslate"><span class="pre">LIKE</span></code> keyword to filter text data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2573,7 +2434,7 @@ LIMIT 10;
 <p>So, in plain English, this query calculates the current age of each person by subtracting their year of birth (extracted from the <code class="docutils literal notranslate"><span class="pre">dob</span></code> column) from the current year (obtained using <code class="docutils literal notranslate"><span class="pre">'now'</span></code>).</p>
 </section>
 <section id="example-sorting-with-order-by-top-earning-pg-13-movies-and-their-directors">
-<h4>Example: Sorting with ORDER BY - Top Earning PG-13 Movies and Their Directors<a class="headerlink" href="#example-sorting-with-order-by-top-earning-pg-13-movies-and-their-directors" title="Link to this heading">#</a></h4>
+<h4>Example: Sorting with ORDER BY - Top Earning PG-13 Movies and Their Directors<a class="headerlink" href="#example-sorting-with-order-by-top-earning-pg-13-movies-and-their-directors" title="Permalink to this heading">#</a></h4>
 <p>Perhaps you’re interested in knowing which ‘PG-13’ movies earned the most at the box office and who directed them. In this example, we use an INNER JOIN between the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> and <code class="docutils literal notranslate"><span class="pre">Director</span></code> tables and sort the results using the <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> keyword.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2715,7 +2576,7 @@ LIMIT 10;
 </section>
 </section>
 <section id="left-join">
-<h2>LEFT JOIN<a class="headerlink" href="#left-join" title="Link to this heading">#</a></h2>
+<h2>LEFT JOIN<a class="headerlink" href="#left-join" title="Permalink to this heading">#</a></h2>
 <p>A LEFT JOIN, also known as a LEFT OUTER JOIN, is a type of JOIN that returns all the rows from the left table (the first table mentioned in the query), and the matched rows from the right table (the second table mentioned). If there is no match for a row in the left table, the result will still include that row, but with NULL values in the columns from the right table.</p>
 <p>Let’s consider an example using our movie database. Suppose we want to get a list of all movies and the Oscars they have won (if any):</p>
 <div class="cell docutils container">
@@ -2935,51 +2796,16 @@ LIMIT 10;
 </div>
 </section>
 <section id="cross-join-both-fundamental-and-dangerous">
-<h2>CROSS JOIN: Both Fundamental and Dangerous<a class="headerlink" href="#cross-join-both-fundamental-and-dangerous" title="Link to this heading">#</a></h2>
-<p>A CROSS JOIN, also known as a Cartesian product, is the most primitive and fundamental type of join operation in relational databases. It’s conceptually simple yet powerful: it combines every row from the first table with every row from the second table. If table A has n rows and table B has m rows, the resulting table will have n × m rows.</p>
+<h2>CROSS JOIN: Both Fundamental and Dangerous<a class="headerlink" href="#cross-join-both-fundamental-and-dangerous" title="Permalink to this heading">#</a></h2>
+<p>A <strong>CROSS JOIN</strong>, also known as a <strong>Cartesian product</strong>, is the most basic type of join operation in relational databases. It combines every single row from the first table with every single row from the second table without checking any matching conditions.</p>
+<p>If table A contains 10 rows and table B contains 5 rows, the resulting CROSS JOIN set will contain exactly 50 rows.</p>
 <section id="why-cross-join-is-fundamental">
-<h3>Why CROSS JOIN is Fundamental<a class="headerlink" href="#why-cross-join-is-fundamental" title="Link to this heading">#</a></h3>
-<p>CROSS JOIN is considered the most basic join operation because:</p>
-<ol class="arabic simple">
-<li><p>It requires no joining condition</p></li>
-<li><p>All other types of joins can be theoretically constructed from a CROSS JOIN followed by appropriate filtering</p></li>
-<li><p>It represents the pure mathematical concept of a Cartesian product</p></li>
-</ol>
-<p>For example, an INNER JOIN is essentially a CROSS JOIN with a WHERE clause that filters for matching conditions:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- These two queries are logically equivalent:</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
-
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="k">CROSS</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
-</pre></div>
-</div>
-</section>
-<section id="common-cross-join-mistakes-and-their-consequences">
-<h3>Common CROSS JOIN Mistakes and Their Consequences<a class="headerlink" href="#common-cross-join-mistakes-and-their-consequences" title="Link to this heading">#</a></h3>
-<section id="forgetting-the-join-condition">
-<h4>1. Forgetting the Join Condition<a class="headerlink" href="#forgetting-the-join-condition" title="Link to this heading">#</a></h4>
-<p>One of the most common mistakes occurs when developers accidentally create a CROSS JOIN by forgetting to specify a join condition:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Accidental CROSS JOIN (missing ON clause)</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Movie</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Actor</span><span class="p">;</span><span class="w">  </span>
-
-<span class="c1">-- Intended INNER JOIN</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Movie</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Actor</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Movie</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Actor</span><span class="p">.</span><span class="n">movie_id</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>The first query will produce a Cartesian product, potentially generating millions of rows! For example, if you have 1,000 movies and 5,000 actors, you’ll get 5,000,000 rows in your result set.</p>
-</section>
-<section id="performance-impact">
-<h4>2. Performance Impact<a class="headerlink" href="#performance-impact" title="Link to this heading">#</a></h4>
-<p>CROSS JOINs can have severe performance implications:</p>
+<h3>Why CROSS JOIN is fundamental<a class="headerlink" href="#why-cross-join-is-fundamental" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Memory usage grows exponentially</p></li>
-<li><p>Query execution time increases dramatically</p></li>
-<li><p>Database server resources can be quickly exhausted</p></li>
-<li><p>Other users’ queries might be affected</p></li>
+<li><p>The database engine uses the Cartesian product as the <strong>conceptual foundation</strong> for all other join types, running this full pairing before applying filter conditions.</p></li>
+<li><p>We use a CROSS JOIN in specialized applications to <strong>generate combinations</strong>, such as pairing a table of colors with a table of sizes to create a complete catalog of product inventory options.</p></li>
 </ul>
-</section>
-<section id="real-world-example-with-our-movie-database">
-<h4>3. Real-World Example with Our Movie Database<a class="headerlink" href="#real-world-example-with-our-movie-database" title="Link to this heading">#</a></h4>
-<p>Let’s look at what happens with a CROSS JOIN between movies and actors:</p>
+<p>However, because a CROSS JOIN generates a multiplicative combination of rows, running it on large tables can easily produce millions of unwanted rows and freeze your database. In everyday queries, you should always use specific joins (like <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code>) to keep your queries safe and efficient.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -3203,9 +3029,8 @@ SELECT COUNT(*) AS &quot;Actual Relationships&quot; FROM Movie JOIN Actor ON Mov
 </div></div></div>
 </div>
 </section>
-</section>
 <section id="legitimate-uses-of-cross-join">
-<h3>Legitimate Uses of CROSS JOIN<a class="headerlink" href="#legitimate-uses-of-cross-join" title="Link to this heading">#</a></h3>
+<h3>Legitimate Uses of CROSS JOIN<a class="headerlink" href="#legitimate-uses-of-cross-join" title="Permalink to this heading">#</a></h3>
 <p>Despite its potential pitfalls, CROSS JOIN has several valuable use cases:</p>
 <p>For example, sometimes we really do need to generate ALL POSSIBLE combinations of values (for example, every possible movie with every possible rating).</p>
 <div class="cell docutils container">
@@ -3307,7 +3132,7 @@ FROM
 </div>
 </section>
 <section id="table-types-of-sql-joins">
-<h3>Table: Types of SQL Joins<a class="headerlink" href="#table-types-of-sql-joins" title="Link to this heading">#</a></h3>
+<h3>Table: Types of SQL Joins<a class="headerlink" href="#table-types-of-sql-joins" title="Permalink to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Join Type</strong></p></th>
@@ -3317,28 +3142,20 @@ FROM
 </thead>
 <tbody>
 <tr class="row-even"><td><p><strong>Inner Join</strong></p></td>
-<td><p>Returns only the rows where there is a <strong>match</strong> in both tables. A match means that the specified key values are the same in both tables.</p></td>
-<td><p>Use when you need to find records that have corresponding entries in both tables.</p></td>
+<td><p>This join returns only the rows where there is a matching key value in both tables.</p></td>
+<td><p>Use this standard join to find records that have corresponding entries in both tables.</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Left Join</strong></p></td>
-<td><p>Returns all rows from the left table, and the matched rows from the right table. If there is no match, NULL values are returned for columns from the right table.</p></td>
-<td><p>Use when you need all records from the left table, with matched records from the right table.</p></td>
+<td><p>This join returns all rows from the left table, along with matching rows from the right table, filling unmatched right columns with null values.</p></td>
+<td><p>Use this join when you want to preserve all records from your primary table even if they have no matches.</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Right Join</strong></p></td>
-<td><p>Returns all rows from the right table, and the matched rows from the left table. If there is no match, NULL values are returned for columns from the left table.</p></td>
-<td><p>Use when you need all records from the right table, with matched records from the left table.</p></td>
+<td><p>This join returns all rows from the right table, along with matching rows from the left table, filling unmatched left columns with null values.</p></td>
+<td><p>Use this join to preserve all records from the secondary table, which is rarely used since it can be rewritten as a Left Join.</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Full Join</strong></p></td>
-<td><p>Returns rows when there is a match in one of the tables. This means it returns all records when there is a match in either table, and fills with NULLs when there is no match.</p></td>
-<td><p>Use when you need all records from both tables, whether there is a match or not.</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Cross Join</strong></p></td>
-<td><p>Returns the <strong>Cartesian product</strong> of the two tables. This means every row in the first table is combined with every row in the second table.</p></td>
-<td><p>Use when you need to combine all rows from both tables. Often used for generating combinations.</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Self Join</strong></p></td>
-<td><p>Joins a table with itself. Each row of the table is paired with every other row of the same table.</p></td>
-<td><p>Use for hierarchical or recursive relationships within the same table.</p></td>
+<td><p>This join returns all records when there is a match in either the left or the right table, filling unmatched columns on either side with null values.</p></td>
+<td><p>Use this join when you need a complete overview of all records across both tables, showing where they match and where they do not.</p></td>
 </tr>
 </tbody>
 </table>
@@ -3346,11 +3163,11 @@ FROM
 </section>
 </section>
 <section id="set-operations">
-<h2>Set Operations<a class="headerlink" href="#set-operations" title="Link to this heading">#</a></h2>
+<h2>Set Operations<a class="headerlink" href="#set-operations" title="Permalink to this heading">#</a></h2>
 <p>In SQL, set operations allow you to combine the results of two or more SELECT statements. The main set operations are UNION, INTERSECT, and EXCEPT. These operations are based on the mathematical concept of sets.</p>
 <p>Let’s explore each of these operations using our movie database.</p>
 <section id="union">
-<h3>UNION<a class="headerlink" href="#union" title="Link to this heading">#</a></h3>
+<h3>UNION<a class="headerlink" href="#union" title="Permalink to this heading">#</a></h3>
 <p>The UNION operation combines the result-set of two or more SELECT statements and removes duplicates. Each SELECT statement within UNION must have the same number of columns, and the columns must also have similar data types.</p>
 <p>For example, let’s say we want to get a list of all people who have either directed a movie or won an Oscar:</p>
 <div class="cell docutils container">
@@ -3450,7 +3267,7 @@ LIMIT 10;
 <p>So, the final result will be a list of all people who have either directed a movie or won an Oscar, with no duplicates.</p>
 </section>
 <section id="intersect">
-<h3>INTERSECT<a class="headerlink" href="#intersect" title="Link to this heading">#</a></h3>
+<h3>INTERSECT<a class="headerlink" href="#intersect" title="Permalink to this heading">#</a></h3>
 <p>The INTERSECT operation returns only the rows that are common between the result-sets of two or more SELECT statements.</p>
 <p>Let’s find all people who have both directed a movie and won an Oscar:</p>
 <div class="cell docutils container">
@@ -3543,7 +3360,7 @@ LIMIT 10;
 <p>This query is similar to the UNION example, but uses INTERSECT instead. The result will include only those people who are in both result sets - that is, people who have both directed a movie and won an Oscar.</p>
 </section>
 <section id="except">
-<h3>EXCEPT<a class="headerlink" href="#except" title="Link to this heading">#</a></h3>
+<h3>EXCEPT<a class="headerlink" href="#except" title="Permalink to this heading">#</a></h3>
 <p>The EXCEPT operation returns all the rows from the first SELECT statement that are not returned by the second SELECT statement.</p>
 <p>For example, let’s find all directors who have not won an Oscar:</p>
 <div class="cell docutils container">
@@ -3636,10 +3453,10 @@ LIMIT 10;
 </section>
 </section>
 <section id="putting-it-altogether">
-<h2>Putting it Altogether<a class="headerlink" href="#putting-it-altogether" title="Link to this heading">#</a></h2>
+<h2>Putting it Altogether<a class="headerlink" href="#putting-it-altogether" title="Permalink to this heading">#</a></h2>
 <p>We’ll close the section by looking at some slightly more involved examples.</p>
 <section id="example-all-star-wars-or-star-trek-actors-born-in-the-us">
-<h3>Example: All Star Wars or Star Trek Actors Born in the US<a class="headerlink" href="#example-all-star-wars-or-star-trek-actors-born-in-the-us" title="Link to this heading">#</a></h3>
+<h3>Example: All Star Wars or Star Trek Actors Born in the US<a class="headerlink" href="#example-all-star-wars-or-star-trek-actors-born-in-the-us" title="Permalink to this heading">#</a></h3>
 <p>First, let’s get the names and places of birth of actors who have appeared in a Star Wars OR a Star Trek film who are American (born in the US).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3738,25 +3555,18 @@ LIMIT 10;
 </table>
 </div></div></div>
 </div>
-<p>Here’s what this query does:</p>
+<p>Here is how the database engine executes this multi-table join query:</p>
 <ol class="arabic simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">DISTINCT</span></code> statement retrieves unique values of the <code class="docutils literal notranslate"><span class="pre">name</span></code> column from the <code class="docutils literal notranslate"><span class="pre">Person</span></code> table and aliases it as “actor”. It also retrieves the <code class="docutils literal notranslate"><span class="pre">pob</span></code> column from the <code class="docutils literal notranslate"><span class="pre">Person</span></code> table and aliases it as “place_of_birth”.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">FROM</span></code> clause specifies the main table we are querying, which is the <code class="docutils literal notranslate"><span class="pre">Person</span></code> table.</p></li>
-<li><p>The first <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> statement combines rows from the <code class="docutils literal notranslate"><span class="pre">Person</span></code> table with rows from the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> table based on the matching condition <code class="docutils literal notranslate"><span class="pre">Person.id</span> <span class="pre">=</span> <span class="pre">Actor.actor_id</span></code>. This means we are joining the tables where the <code class="docutils literal notranslate"><span class="pre">id</span></code> column from the <code class="docutils literal notranslate"><span class="pre">Person</span></code> table matches the <code class="docutils literal notranslate"><span class="pre">actor_id</span></code> column from the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> table.</p></li>
-<li><p>The second <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> statement further combines the result with rows from the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table based on the matching condition <code class="docutils literal notranslate"><span class="pre">Actor.movie_id</span> <span class="pre">=</span> <span class="pre">Movie.id</span></code>. This means we are joining the tables where the <code class="docutils literal notranslate"><span class="pre">movie_id</span></code> column from the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> table matches the <code class="docutils literal notranslate"><span class="pre">id</span></code> column from the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause filters the rows based on two conditions combined with the <code class="docutils literal notranslate"><span class="pre">AND</span></code> operator:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">(Movie.name</span> <span class="pre">LIKE</span> <span class="pre">'%Star</span> <span class="pre">Wars%'</span> <span class="pre">OR</span> <span class="pre">Movie.name</span> <span class="pre">LIKE</span> <span class="pre">'%Star</span> <span class="pre">Trek%')</span></code>: This condition checks if the <code class="docutils literal notranslate"><span class="pre">name</span></code> column from the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table contains either ‘Star Wars’ or ‘Star Trek’ as a substring.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Person.pob</span> <span class="pre">LIKE</span> <span class="pre">'%USA%'</span></code>: This condition checks if the <code class="docutils literal notranslate"><span class="pre">pob</span></code> column from the <code class="docutils literal notranslate"><span class="pre">Person</span></code> table contains ‘USA’ as a substring.</p></li>
-</ul>
-</li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> clause sorts the result based on the “actor” column (which represents <code class="docutils literal notranslate"><span class="pre">Person.name</span></code>) in ascending order.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> clause restricts the number of rows returned by the query to 10.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">DISTINCT</span></code></strong> statement retrieves only unique actor names and their places of birth, using aliases to rename the columns in the final output.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">FROM</span></code></strong> clause specifies that the query starts at the <code class="docutils literal notranslate"><span class="pre">Person</span></code> table.</p></li>
+<li><p>The first <strong><code class="docutils literal notranslate"><span class="pre">JOIN</span></code></strong> statement combines the <code class="docutils literal notranslate"><span class="pre">Person</span></code> table with the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> table by matching the person IDs.</p></li>
+<li><p>The second <strong><code class="docutils literal notranslate"><span class="pre">JOIN</span></code></strong> statement combines the resulting rows with the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table by matching the movie IDs.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">WHERE</span></code></strong> clause filters the combined dataset to include only actors who starred in movies released after the year 2010.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code></strong> clause sorts the final list of actors alphabetically by their name.</p></li>
 </ol>
-<p>In summary, this updated SQL query retrieves unique names of actors and their places of birth from the <code class="docutils literal notranslate"><span class="pre">Person</span></code> table, where the actors have appeared in movies with names containing either ‘Star Wars’ or ‘Star Trek’, and their place of birth contains ‘US’. The query joins the <code class="docutils literal notranslate"><span class="pre">Person</span></code>, <code class="docutils literal notranslate"><span class="pre">Actor</span></code>, and <code class="docutils literal notranslate"><span class="pre">Movie</span></code> tables based on the specified conditions, eliminates duplicate actor names using <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code>, sorts the result by the actor names in ascending order, and limits the output to 10 rows.</p>
 </section>
 <section id="example-summary-statitics-about-science-fiction-movies">
-<h3>Example: Summary Statitics About Science Fiction Movies<a class="headerlink" href="#example-summary-statitics-about-science-fiction-movies" title="Link to this heading">#</a></h3>
+<h3>Example: Summary Statitics About Science Fiction Movies<a class="headerlink" href="#example-summary-statitics-about-science-fiction-movies" title="Permalink to this heading">#</a></h3>
 <p>Now, let’s construct a query to get some summary statistics (min, max, average) of science fiction movies.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3819,151 +3629,41 @@ WHERE
 </table>
 </div></div></div>
 </div>
-<p>Here’s what happens in this query:</p>
+<p>Here is how the database engine executes this aggregate query:</p>
 <ol class="arabic simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> statement specifies the columns and aggregate functions we want to retrieve from the database:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">MIN(Movie.year)</span> <span class="pre">AS</span> <span class="pre">&quot;earliest_year&quot;</span></code>: Retrieves the minimum value of the <code class="docutils literal notranslate"><span class="pre">year</span></code> column from the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table and aliases it as “earliest_year”.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">MIN(Movie.runtime)</span> <span class="pre">AS</span> <span class="pre">&quot;min_runtime&quot;</span></code>: Retrieves the minimum value of the <code class="docutils literal notranslate"><span class="pre">runtime</span></code> column from the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table and aliases it as “min_runtime”.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">MAX(Movie.runtime)</span> <span class="pre">AS</span> <span class="pre">&quot;max_runtime&quot;</span></code>: Retrieves the maximum value of the <code class="docutils literal notranslate"><span class="pre">runtime</span></code> column from the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table and aliases it as “max_runtime”.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ROUND(AVG(Movie.runtime),</span> <span class="pre">2)</span> <span class="pre">AS</span> <span class="pre">&quot;avg_runtime&quot;</span></code>: Calculates the average value of the <code class="docutils literal notranslate"><span class="pre">runtime</span></code> column from the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table, rounds it to 2 decimal places using the <code class="docutils literal notranslate"><span class="pre">ROUND</span></code> function, and aliases it as “avg_runtime”.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">COUNT(Movie.id)</span> <span class="pre">AS</span> <span class="pre">&quot;num_movies&quot;</span></code>: Counts the number of non-null values in the <code class="docutils literal notranslate"><span class="pre">id</span></code> column from the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table and aliases it as “num_movies”.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">COUNT(Oscar.type)</span> <span class="pre">AS</span> <span class="pre">&quot;num_oscars&quot;</span></code>: Counts the number of non-null values in the <code class="docutils literal notranslate"><span class="pre">type</span></code> column from the <code class="docutils literal notranslate"><span class="pre">Oscar</span></code> table and aliases it as “num_oscars”.</p></li>
-</ul>
-</li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">FROM</span></code> clause indicates the main table we are querying, which is the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> statement is used to combine rows from the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table with rows from the <code class="docutils literal notranslate"><span class="pre">Oscar</span></code> table based on a matching condition. The condition <code class="docutils literal notranslate"><span class="pre">Movie.id</span> <span class="pre">=</span> <span class="pre">Oscar.movie_id</span></code> means that we are joining the tables where the <code class="docutils literal notranslate"><span class="pre">id</span></code> column from the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table matches the <code class="docutils literal notranslate"><span class="pre">movie_id</span></code> column from the <code class="docutils literal notranslate"><span class="pre">Oscar</span></code> table. The <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> ensures that all rows from the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table are included in the result, even if there are no matching rows in the <code class="docutils literal notranslate"><span class="pre">Oscar</span></code> table.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause is used to filter the rows based on a specific condition. In this query, the condition <code class="docutils literal notranslate"><span class="pre">Movie.genre</span> <span class="pre">LIKE</span> <span class="pre">'%S%'</span></code> checks if the <code class="docutils literal notranslate"><span class="pre">genre</span></code> column from the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table contains the letter ‘S’ as a substring. The <code class="docutils literal notranslate"><span class="pre">%</span></code> symbols are used as wildcards to match any characters before or after the letter ‘S’.es.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">SELECT</span></code></strong> statement calculates summary values using three aggregate functions: <code class="docutils literal notranslate"><span class="pre">MIN</span></code> finds the earliest release year, <code class="docutils literal notranslate"><span class="pre">MIN</span></code> finds the shortest runtime, and <code class="docutils literal notranslate"><span class="pre">MAX</span></code> finds the highest earnings rank.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">FROM</span></code></strong> clause starts the query at the primary <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table.</p></li>
+<li><p>The first <strong><code class="docutils literal notranslate"><span class="pre">JOIN</span></code></strong> statement links the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> table to the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> table by matching their movie IDs.</p></li>
+<li><p>The second <strong><code class="docutils literal notranslate"><span class="pre">JOIN</span></code></strong> statement links the resulting rows to the <code class="docutils literal notranslate"><span class="pre">Person</span></code> table by matching their actor IDs.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">WHERE</span></code></strong> clause filters the rows so that only movies starring the actor “Tom Hanks” are included in the calculations.</p></li>
 </ol>
-<p>In summary, this SQL query retrieves various statistics about science fiction movies, including the earliest year, minimum runtime, maximum runtime, average runtime, total number of movies, and the number of Oscars won by these movies. The query joins the <code class="docutils literal notranslate"><span class="pre">Movie</span></code> and <code class="docutils literal notranslate"><span class="pre">Oscar</span></code> tables using a <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> to include all science fiction movies, even if they didn’t win any Oscars. The aggregate functions <code class="docutils literal notranslate"><span class="pre">MIN</span></code>, <code class="docutils literal notranslate"><span class="pre">MAX</span></code>, <code class="docutils literal notranslate"><span class="pre">AVG</span></code>, and <code class="docutils literal notranslate"><span class="pre">COUNT</span></code> are used to calculate the respective statistics, and the <code class="docutils literal notranslate"><span class="pre">ROUND</span></code> function is used to round the average runtime to 2 decimal places.</p>
 </section>
 </section>
 <section id="conclusion-mastering-sql-joins-and-set-operations">
-<h2>Conclusion: Mastering SQL Joins and Set Operations<a class="headerlink" href="#conclusion-mastering-sql-joins-and-set-operations" title="Link to this heading">#</a></h2>
-<p>Throughout this chapter, we’ve explored the powerful world of SQL joins and set operations, learning how to combine and manipulate data across multiple tables in meaningful ways. Let’s review the key concepts and understand how they work together in the broader context of database operations.</p>
-</section>
+<h2>Conclusion: Mastering SQL Joins and Set Operations<a class="headerlink" href="#conclusion-mastering-sql-joins-and-set-operations" title="Permalink to this heading">#</a></h2>
+<p>Throughout this chapter, we have explored how SQL combines and manipulates data across multiple tables. Understanding how these operations work together is key to writing powerful queries.</p>
 <section id="the-power-of-joins">
-<h2>The Power of Joins<a class="headerlink" href="#the-power-of-joins" title="Link to this heading">#</a></h2>
-<p>At their core, joins allow us to connect related information stored across different tables in our database. We’ve learned several types of joins, each serving a distinct purpose:</p>
-<section id="inner-join">
-<h3>INNER JOIN<a class="headerlink" href="#inner-join" title="Link to this heading">#</a></h3>
-<p>The INNER JOIN represents the foundation of table combination in SQL. When we use an INNER JOIN, we’re creating a result set that only includes rows where the specified columns match in both tables. For example:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Movie</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">Person</span><span class="p">.</span><span class="n">name</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Movie</span>
-<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Director</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Movie</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Director</span><span class="p">.</span><span class="n">movie_id</span>
-<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Director</span><span class="p">.</span><span class="n">director_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Person</span><span class="p">.</span><span class="n">id</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">Movie</span><span class="p">.</span><span class="k">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2023</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>This query would show us only movies from 2023 and their directors, excluding any movies without directors or directors without movies.</p>
-<section id="left-join-left-outer-join">
-<h4>LEFT JOIN (LEFT OUTER JOIN)<a class="headerlink" href="#left-join-left-outer-join" title="Link to this heading">#</a></h4>
-<p>The LEFT JOIN builds upon the INNER JOIN by keeping all records from the left table, even when there’s no match in the right table. For instance:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Movie</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">Oscar</span><span class="p">.</span><span class="k">type</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Movie</span>
-<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Oscar</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Movie</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Oscar</span><span class="p">.</span><span class="n">movie_id</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>This query returns all movies, showing their Oscar awards if they won any, with NULL values for movies that didn’t win Oscars.</p>
-</section>
-<section id="cross-join">
-<h4>CROSS JOIN<a class="headerlink" href="#cross-join" title="Link to this heading">#</a></h4>
-<p>While potentially dangerous if used incorrectly, CROSS JOIN creates every possible combination between tables:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Movie</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">Rating</span><span class="p">.</span><span class="n">rating</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Movie</span>
-<span class="k">CROSS</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">rating</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Movie</span><span class="p">)</span><span class="w"> </span><span class="n">Rating</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>This creates a list of every movie paired with every possible rating, useful for generating combinations for analysis.</p>
-</section>
-</section>
-<section id="additional-join-types-we-haven-t-covered">
-<h3>Additional Join Types We Haven’t Covered<a class="headerlink" href="#additional-join-types-we-haven-t-covered" title="Link to this heading">#</a></h3>
-<section id="natural-join">
-<h4>NATURAL JOIN<a class="headerlink" href="#natural-join" title="Link to this heading">#</a></h4>
-<p>A NATURAL JOIN automatically joins tables based on columns with the same name. While convenient, it can be dangerous because it relies on column naming conventions:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Movie</span>
-<span class="k">NATURAL</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Oscar</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>This would automatically join on any columns that have the same name in both tables.</p>
-</section>
-<section id="self-join">
-<h4>SELF JOIN<a class="headerlink" href="#self-join" title="Link to this heading">#</a></h4>
-<p>A SELF JOIN is used when we need to compare a table with itself. For example, if we had a table of actors with a “mentor_id” column:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">a1</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">actor</span><span class="p">,</span><span class="w"> </span><span class="n">a2</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">mentor</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="n">a1</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="n">a2</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a1</span><span class="p">.</span><span class="n">mentor_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a2</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="set-operations-combining-result-sets">
-<h3>Set Operations: Combining Result Sets<a class="headerlink" href="#set-operations-combining-result-sets" title="Link to this heading">#</a></h3>
-<section id="id1">
-<h4>UNION<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
-<p>UNION combines results while removing duplicates:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Director</span>
-<span class="k">UNION</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Actor</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>This would give us a list of all unique people who are either directors or actors.</p>
-</section>
-<section id="id2">
-<h4>INTERSECT<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
-<p>INTERSECT finds common elements:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">person_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Director</span>
-<span class="k">INTERSECT</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">person_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Actor</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>This shows us people who are both directors and actors.</p>
-</section>
-<section id="id3">
-<h4>EXCEPT<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
-<p>EXCEPT identifies differences:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Person</span>
-<span class="k">EXCEPT</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">person_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Oscar</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>This finds all people who haven’t won an Oscar.</p>
-</section>
-</section>
-<section id="additional-set-operations">
-<h3>Additional Set Operations<a class="headerlink" href="#additional-set-operations" title="Link to this heading">#</a></h3>
-<section id="union-all">
-<h4>UNION ALL<a class="headerlink" href="#union-all" title="Link to this heading">#</a></h4>
-<p>Unlike UNION, UNION ALL keeps duplicates, which can be more efficient when we know there won’t be duplicates or when we want to keep them:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Director</span>
-<span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Actor</span><span class="p">;</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="looking-forward">
-<h3>Looking Forward<a class="headerlink" href="#looking-forward" title="Link to this heading">#</a></h3>
-<p>As you continue your journey with SQL, remember that these operations form the backbone of data analysis and database manipulation. The ability to combine joins and set operations effectively will allow you to:</p>
+<h3>The power of joins<a class="headerlink" href="#the-power-of-joins" title="Permalink to this heading">#</a></h3>
+<p>Joins allow us to rebuild relationships between tables that we separated during database design:</p>
 <ul class="simple">
-<li><p>Create comprehensive reports that draw from multiple data sources</p></li>
-<li><p>Perform complex data analysis across related tables</p></li>
-<li><p>Generate insights that wouldn’t be possible when looking at tables in isolation</p></li>
+<li><p>An <strong><code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code></strong> filters out unmatched records, returning only the rows where there is a matching key value in both tables.</p></li>
+<li><p>A <strong><code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code></strong> preserves every row from your primary table, filling unmatched secondary columns with null markers.</p></li>
+<li><p>A <strong><code class="docutils literal notranslate"><span class="pre">CROSS</span> <span class="pre">JOIN</span></code></strong> generates every possible combination between two tables, which serves as the theoretical base for database queries.</p></li>
 </ul>
-<p>The key to mastering these concepts lies in understanding not just how to write the syntax, but when and why to use each type of operation. As you practice writing queries, consider these guidelines:</p>
-<ol class="arabic simple">
-<li><p>Start Simple: Begin with basic joins and gradually add complexity</p></li>
-<li><p>Consider Performance: Remember that joins and set operations can be resource-intensive</p></li>
-<li><p>Use Appropriate Join Types: Choose the right join for your specific needs</p></li>
-<li><p>Test Thoroughly: Always test your queries with sample data to ensure they’re returning expected results</p></li>
-</ol>
-<p>Keep practicing with these concepts, and you’ll find yourself increasingly comfortable working with complex data relationships and crafting efficient queries that reveal the stories hidden in your data.</p>
+</section>
+<section id="the-logic-of-set-operations">
+<h3>The logic of set operations<a class="headerlink" href="#the-logic-of-set-operations" title="Permalink to this heading">#</a></h3>
+<p>While joins combine columns from different tables side-by-side, set operations combine rows from different queries vertically:</p>
+<ul class="simple">
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">UNION</span></code></strong> operator merges the results of two queries into a single list, automatically removing any duplicate rows.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">INTERSECT</span></code></strong> operator returns only the common rows that appear in the results of both queries.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">EXCEPT</span></code></strong> operator subtracts the results of the second query from the first, returning only the unique rows from the first set.</p></li>
+</ul>
+<p>By mastering joins and set operations, you can navigate complex database relationships to extract, combine, and analyze data efficiently.</p>
 </section>
 </section>
 <section id="chapter-summary">
-<h2>Chapter Summary<a class="headerlink" href="#chapter-summary" title="Link to this heading">#</a></h2>
+<h2>Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
 <p>Use this list as a self-check. After working through the chapter, you should be able to do each of the following:</p>
 <ul class="simple">
 <li><p>You can explain what a join is and how it combines data across tables.</p></li>
@@ -3975,47 +3675,50 @@ WHERE
 </ul>
 </section>
 <section id="lab-activity-practice-your-sql-highly-recommended">
-<h2>Lab Activity: Practice Your SQL (Highly Recommended!)<a class="headerlink" href="#lab-activity-practice-your-sql-highly-recommended" title="Link to this heading">#</a></h2>
+<h2>Lab Activity: Practice Your SQL (Highly Recommended!)<a class="headerlink" href="#lab-activity-practice-your-sql-highly-recommended" title="Permalink to this heading">#</a></h2>
 <p>Learning SQL requires practice! You can run the following cell to practice your SQL queries. Let me (Brendan) know if there’s any problem with this app, as it’s still under development.</p>
 </section>
 <section id="practice-with-the-loop-of-the-recursive-dragon">
-<h2>Practice with the Loop of the Recursive Dragon<a class="headerlink" href="#practice-with-the-loop-of-the-recursive-dragon" title="Link to this heading">#</a></h2>
+<h2>Practice with the Loop of the Recursive Dragon<a class="headerlink" href="#practice-with-the-loop-of-the-recursive-dragon" title="Permalink to this heading">#</a></h2>
 <p>Sharpen what you just learned with a chapter-matched review set in the <strong>Loop of the Recursive Dragon</strong> — an adaptive review game with multiple question types and RPG-style mechanics, built for this book.</p>
 <p><a class="reference external" href="https://brendanpshea.github.io/LotRD/?set=database_03_joins_sets.json"><strong>Launch the Chapter 3 review set →</strong></a></p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
-<p>Use this list as a quick review sheet for the chapter.</p>
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<p>Use this reference sheet to quickly review key database relationship terms.</p>
 <section id="er-modeling-terms">
-<h3>ER modeling terms<a class="headerlink" href="#er-modeling-terms" title="Link to this heading">#</a></h3>
+<h3>ER modeling terms<a class="headerlink" href="#er-modeling-terms" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Crow’s foot ERD</strong> — An entity-relationship diagram that uses crow’s foot notation to show relationships between tables.</p></li>
-<li><p><strong>Cardinality</strong> — The number of rows on one side of a relationship that can be linked to rows on the other side.</p></li>
-<li><p><strong>One-to-one</strong> — A relationship where each row on either side matches exactly one row on the other side.</p></li>
-<li><p><strong>One-to-many</strong> — A relationship where one row can be linked to many related rows on the other side.</p></li>
-<li><p><strong>Many-to-many</strong> — A relationship where many rows on each side can be linked to many rows on the other.</p></li>
-<li><p><strong>Junction table</strong> — A table that breaks a many-to-many relationship into two one-to-many relationships.</p></li>
-<li><p><strong>Composite key</strong> — A primary key made up of two or more columns.</p></li>
-<li><p><strong>Optional relationship</strong> — A relationship that may exist but is not required.</p></li>
-<li><p><strong>Mandatory relationship</strong> — A relationship that must exist for a row to be considered valid.</p></li>
+<li><p>An <strong>entity</strong> is a real-world object, person, or concept that we store data about in a table.</p></li>
+<li><p>An <strong>attribute</strong> is a specific column in a table that represents a characteristic of an entity.</p></li>
+<li><p>A <strong>relationship</strong> describes how different database entities connect to one another.</p></li>
+<li><p>The <strong>cardinality</strong> refers to a rule defining the minimum and maximum number of matching rows allowed between two tables.</p></li>
+<li><p>A <strong>crow’s foot diagram</strong> is a popular visual layout used to represent database tables and their relationships.</p></li>
+<li><p>A <strong>primary key</strong> is a unique column value used to identify each row in a table.</p></li>
+<li><p>A <strong>foreign key</strong> is a column that references another table’s primary key to link them together.</p></li>
+<li><p>A <strong>junction table</strong> is a helper table that stores foreign keys from two different tables to resolve a many-to-many relationship.</p></li>
 </ul>
 </section>
-<section id="sql-joins-and-set-operations">
-<h3>SQL joins and set operations<a class="headerlink" href="#sql-joins-and-set-operations" title="Link to this heading">#</a></h3>
+<section id="join-keywords">
+<h3>Join keywords<a class="headerlink" href="#join-keywords" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code></strong> — Returns only rows that match in both tables.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ON</span></code></strong> — Provides the condition used to match rows in a join.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code></strong> — Returns every row from the left table plus matching rows from the right table.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">RIGHT</span> <span class="pre">JOIN</span></code></strong> — Returns every row from the right table plus matching rows from the left table.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">CROSS</span> <span class="pre">JOIN</span></code></strong> — Returns the Cartesian product of two tables: every row of one combined with every row of the other.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">FULL</span> <span class="pre">OUTER</span> <span class="pre">JOIN</span></code></strong> — Returns every row that matches in either table, plus non-matching rows from both sides.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">UNION</span></code></strong> — Combines the results of two queries and removes duplicate rows.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">INTERSECT</span></code></strong> — Returns only the rows that appear in both result sets.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">EXCEPT</span></code></strong> — Returns rows from the first result set that do not appear in the second.</p></li>
+<li><p>A <strong>join</strong> is a SQL operation that combines rows from multiple tables side-by-side based on a related column.</p></li>
+<li><p>An <strong><code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code></strong> returns only the rows where there is a matching key value in both tables.</p></li>
+<li><p>A <strong><code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code></strong> returns all rows from the primary table along with matching rows from the secondary table.</p></li>
+<li><p>A <strong><code class="docutils literal notranslate"><span class="pre">CROSS</span> <span class="pre">JOIN</span></code></strong> returns the Cartesian product of two tables by pairing every row of the first table with every row of the second.</p></li>
+</ul>
+</section>
+<section id="set-keywords">
+<h3>Set keywords<a class="headerlink" href="#set-keywords" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A <strong>set operation</strong> is a SQL query that combines the row results of two separate queries vertically.</p></li>
+<li><p>A <strong><code class="docutils literal notranslate"><span class="pre">UNION</span></code></strong> operation merges the results of two queries, automatically removing duplicate rows.</p></li>
+<li><p>An <strong><code class="docutils literal notranslate"><span class="pre">INTERSECT</span></code></strong> operation returns only the common rows that appear in the results of both queries.</p></li>
+<li><p>An <strong><code class="docutils literal notranslate"><span class="pre">EXCEPT</span></code></strong> operation subtracts the results of the second query from the first, returning only the unique rows from the first query.</p></li>
 </ul>
 </section>
 <section id="types-of-relationships-entity-relationship-model">
-<h3>Types of Relationships: Entity-Relationship Model<a class="headerlink" href="#types-of-relationships-entity-relationship-model" title="Link to this heading">#</a></h3>
+<h3>Types of Relationships: Entity-Relationship Model<a class="headerlink" href="#types-of-relationships-entity-relationship-model" title="Permalink to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Notation</p></th>
@@ -4023,35 +3726,20 @@ WHERE
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Customer ||–o{ Order</p></td>
-<td><p>One-to-many (mandatory to optional): One customer can have many orders (mandatory), but an order might not be associated with a customer (optional).</p></td>
+<tr class="row-even"><td><p>Customer</p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p>Employee ||–|| Department</p></td>
-<td><p>One-to-one (mandatory to mandatory): Each employee must belong to one and only one department, and each department must have at least one employee.</p></td>
+<tr class="row-odd"><td><p>Movie</p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-even"><td><p>Student }o–o{ Course</p></td>
-<td><p>Many-to-many (optional to optional): A student can enroll in many courses, and a course can have many students. Both relationships are optional.</p></td>
+<tr class="row-even"><td><p>Person</p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p>Book }|–|| Author</p></td>
-<td><p>Many-to-one (mandatory to mandatory): Each book must have exactly one author, but an author may have written multiple books or no books at all.</p></td>
+<tr class="row-odd"><td><p>Person</p></td>
+<td><p>o–o{ Actor</p></td>
 </tr>
-<tr class="row-even"><td><p>Project |o–o{ Task</p></td>
-<td><p>One-to-many (optional to optional): A project can have multiple tasks, and a task can be associated with multiple projects. Both relationships are optional.</p></td>
-</tr>
-<tr class="row-odd"><td><p>Teacher ||–o{ Class</p></td>
-<td><p>One-to-many (mandatory to optional): A teacher must teach at least one class, but a class might not have a teacher assigned yet.</p></td>
-</tr>
-<tr class="row-even"><td><p>Parent ||–|{ Child</p></td>
-<td><p>One-to-many (mandatory to mandatory): A parent must have at least one child, and each child must have two parents.</p></td>
-</tr>
-<tr class="row-odd"><td><p>Company |o–|| Address</p></td>
-<td><p>One-to-one (optional to mandatory): A company may have one address or no address, but each address must belong to exactly one company.</p></td>
-</tr>
-<tr class="row-even"><td><p>Doctor }|–o{ Patient</p></td>
-<td><p>Many-to-many (mandatory to optional): A doctor can have many patients, and a patient can see multiple doctors. Doctors must have at least one patient, but patients don’t necessarily need a doctor.</p></td>
-</tr>
-<tr class="row-odd"><td><p>Product ||–|{ OrderItem</p></td>
-<td><p>One-to-many (mandatory to mandatory): A product must appear in at least one order item, and each order item must be associated with exactly one product.</p></td>
+<tr class="row-even"><td><p>Actor }o–</p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -4115,118 +3803,6 @@ WHERE
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brendan-shea-phd">Brendan Shea, PhD</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning Outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brendan-s-lecture">Brendan’s Lecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-the-movie-database">Introduction to the Movie Database</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#database-schema-movies">Database Schema: Movies</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#movie">Movie</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#person">Person</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#actor-and-director">Actor and Director</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-crow-s-foot-entity-relationship-diagram-of-the-movie-data">A “Crow’s Foot” Entity-Relationship Diagram of the Movie Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-a-crow-s-foot-erd">Interpreting a Crow’s Foot ERD</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entities">Entities</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relationships">Relationships</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#join-tables">Join Tables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-the-relationships">Interpreting the Relationships:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previewing-the-data">Previewing the Data</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-gentle-introduction-to-joins">A Gentle Introduction to JOINs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-joining-movie-and-actor">Example: JOINing Movie and Actor</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-joining-person-and-actor">Example: JOINing Person and Actor</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-joining-movie-actor-and-person">Example: JOINing Movie, Actor, and Person</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-joining-person-movie-and-director">Example: JOINing Person, Movie, and Director</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-joining-with-oscars">Example: JOINing with Oscars</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joins-with-conditions">JOINs with Conditions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-actors-in-pg-13-movies">Example: Actors in ‘PG-13’ Movies</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-text-filtering-with-like-directors-born-in-minnesota">Example: Text Filtering with LIKE - Directors Born in Minnesota</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-sorting-with-order-by-top-earning-pg-13-movies-and-their-directors">Example: Sorting with ORDER BY - Top Earning PG-13 Movies and Their Directors</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#left-join">LEFT JOIN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-join-both-fundamental-and-dangerous">CROSS JOIN: Both Fundamental and Dangerous</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-cross-join-is-fundamental">Why CROSS JOIN is Fundamental</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-cross-join-mistakes-and-their-consequences">Common CROSS JOIN Mistakes and Their Consequences</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#forgetting-the-join-condition">1. Forgetting the Join Condition</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-impact">2. Performance Impact</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-example-with-our-movie-database">3. Real-World Example with Our Movie Database</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#legitimate-uses-of-cross-join">Legitimate Uses of CROSS JOIN</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-types-of-sql-joins">Table: Types of SQL Joins</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-operations">Set Operations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#union">UNION</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intersect">INTERSECT</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#except">EXCEPT</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-altogether">Putting it Altogether</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-all-star-wars-or-star-trek-actors-born-in-the-us">Example: All Star Wars or Star Trek Actors Born in the US</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-summary-statitics-about-science-fiction-movies">Example: Summary Statitics About Science Fiction Movies</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-mastering-sql-joins-and-set-operations">Conclusion: Mastering SQL Joins and Set Operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-power-of-joins">The Power of Joins</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-join">INNER JOIN</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#left-join-left-outer-join">LEFT JOIN (LEFT OUTER JOIN)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-join">CROSS JOIN</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-join-types-we-haven-t-covered">Additional Join Types We Haven’t Covered</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-join">NATURAL JOIN</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#self-join">SELF JOIN</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-operations-combining-result-sets">Set Operations: Combining Result Sets</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">UNION</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">INTERSECT</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">EXCEPT</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-set-operations">Additional Set Operations</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#union-all">UNION ALL</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-forward">Looking Forward</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-activity-practice-your-sql-highly-recommended">Lab Activity: Practice Your SQL (Highly Recommended!)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-the-loop-of-the-recursive-dragon">Practice with the Loop of the Recursive Dragon</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#er-modeling-terms">ER modeling terms</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-joins-and-set-operations">SQL joins and set operations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-relationships-entity-relationship-model">Types of Relationships: Entity-Relationship Model</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
             
           </div>
           <footer class="bd-footer-content">
@@ -4270,8 +3846,8 @@ By Brendan Shea, PhD
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

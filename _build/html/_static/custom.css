@@ -416,3 +416,20 @@ body:has(.home-hero) .navbar-brand img {
   background: #ffffff;
   box-shadow: 0 10px 28px rgba(18, 38, 58, 0.1);
 }
+
+/* Remove the secondary (right) sidebar globally to have left-only columns */
+.bd-sidebar-secondary,
+.sidebar-secondary,
+.bd-toc {
+  display: none !important;
+}
+
+/* Reclaim the main content area width to prevent an empty right column */
+.bd-content .bd-article-container {
+  max-width: 100% !important;
+}
+
+/* Ensure the main grid layout expands to fill the available space */
+.bd-main .bd-content {
+  flex-grow: 1 !important;
+}

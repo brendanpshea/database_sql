@@ -1,0 +1,77 @@
+Traceback (most recent call last):
+  File "c:\Users\brend\OneDrive\Documents\Github\database_sql\.venv\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "c:\Users\brend\OneDrive\Documents\Github\database_sql\.venv\Lib\site-packages\nbclient\client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\brend\OneDrive\Documents\Github\database_sql\.venv\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\brend\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "c:\Users\brend\OneDrive\Documents\Github\database_sql\.venv\Lib\site-packages\nbclient\client.py", line 705, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "c:\Users\brend\OneDrive\Documents\Github\database_sql\.venv\Lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "c:\Users\brend\OneDrive\Documents\Github\database_sql\.venv\Lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import matplotlib.pyplot as plt
+from matplotlib.patches import FancyBboxPatch
+
+clauses = [
+    ("FROM", "#7ED321", "1"),
+    ("WHERE", "#F5A623", "2"),
+    ("GROUP BY", "#BD10E0", "3"),
+    ("HAVING", "#D0021B", "4"),
+    ("SELECT", "#4A90E2", "5"),
+    ("ORDER BY", "#50E3C2", "6"),
+    ("LIMIT", "#8B572A", "7"),
+]
+
+fig, ax = plt.subplots(figsize=(14, 2.8))
+ax.set_xlim(0, 14)
+ax.set_ylim(0, 2.4)
+ax.axis("off")
+
+x_positions = [0.4, 2.2, 4.0, 5.8, 7.6, 9.7, 11.9]
+for (label, color, step), x in zip(clauses, x_positions):
+    box = FancyBboxPatch(
+        (x, 0.9), 1.5, 0.7,
+        boxstyle="round,pad=0.02,rounding_size=0.08",
+        linewidth=1.5, edgecolor="#333333", facecolor=color
+    )
+    ax.add_patch(box)
+    ax.text(x + 0.75, 1.25, label, ha="center", va="center", color="white", fontweight="bold", fontsize=12)
+    ax.text(x + 1.36, 1.53, step, ha="right", va="center", color="white", fontsize=10, style="italic")
+
+for start, end in zip(x_positions, x_positions[1:]):
+    ax.annotate("", xy=(end, 1.25), xytext=(start + 1.5, 1.25), arrowprops=dict(arrowstyle="->", lw=1.5, color="#333333"))
+
+ax.set_title("SQL clause order: written left to right, evaluated by the database in numbered order", pad=18)
+plt.show()
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mModuleNotFoundError[39m                       Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[14][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [38;5;28;01mimport[39;00m matplotlib.pyplot [38;5;28;01mas[39;00m plt
+[32m      2[39m [38;5;28;01mfrom[39;00m matplotlib.patches [38;5;28;01mimport[39;00m FancyBboxPatch
+[32m      3[39m 
+[32m      4[39m clauses = [
+
+[31mModuleNotFoundError[39m: No module named 'matplotlib'
+

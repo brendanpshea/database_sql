@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Database Performance: Index, Query Plans, and Transaction Management &#8212; SQL and Database Management Through Pop Culture</title>
   
@@ -16,63 +17,64 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=30c8ad15" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script type="application/vnd.jupyter.widget-state+json">{"state": {"2792c8a3dd554d1983aa5ba2616cd4b6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3ad6debcf7fe4b36b2f5909a930bd4ea": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "33c3951478414551a3d8b7ac6777df92": {"model_name": "IntProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "IntProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ProgressView", "bar_style": "", "description": "Progress:", "description_allow_html": false, "layout": "IPY_MODEL_2792c8a3dd554d1983aa5ba2616cd4b6", "max": 24, "min": 0, "orientation": "horizontal", "style": "IPY_MODEL_3ad6debcf7fe4b36b2f5909a930bd4ea", "tabbable": null, "tooltip": null, "value": 1}}, "980c951e900241dc8e4a15c5df44bcae": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "8999717521c4476c8d55d33fa2846022": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "81c3316d8a75417d90ba3ad71c1a1887": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_980c951e900241dc8e4a15c5df44bcae", "placeholder": "\u200b", "style": "IPY_MODEL_8999717521c4476c8d55d33fa2846022", "tabbable": null, "tooltip": null, "value": "<h3>Question 1 of 24:</h3><p>Retrieve the total number of log entries in the Logs table. Display the result as 'total_logs'.</p><h3>Database Schema:</h3><ul><li><b>Logs</b> (id INTEGER, timestamp DATETIME, data JSON)</li><li><b>sqlite_sequence</b> (name , seq )</li></ul>"}}, "c4d01c60092b45c8b7233634688ef540": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "150px", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "093e50d581af4c25b73d1f294abbd7a6": {"model_name": "TextStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "TextStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "1af87bf238e843af90b684742b20fe81": {"model_name": "TextareaModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "TextareaModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "TextareaView", "continuous_update": true, "description": "", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_c4d01c60092b45c8b7233634688ef540", "placeholder": "Type your SQL query here...", "rows": null, "style": "IPY_MODEL_093e50d581af4c25b73d1f294abbd7a6", "tabbable": null, "tooltip": null, "value": ""}}, "70625805d0ec4661981a0f71843400c9": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f1319c822011474fbe0503837423d663": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "34a19a014b184ae0a6b65df62dacdaee": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "success", "description": "Submit", "disabled": false, "icon": "", "layout": "IPY_MODEL_70625805d0ec4661981a0f71843400c9", "style": "IPY_MODEL_f1319c822011474fbe0503837423d663", "tabbable": null, "tooltip": null}}, "486233d37c6749f28b074209b173d387": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3a862b4e9f734b9faf1447528ac79723": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "121ae7570e28460fa4a3d71ad46c927b": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "warning", "description": "Clear", "disabled": false, "icon": "", "layout": "IPY_MODEL_486233d37c6749f28b074209b173d387", "style": "IPY_MODEL_3a862b4e9f734b9faf1447528ac79723", "tabbable": null, "tooltip": null}}, "3ab62c9246f74838a9188702fe0e70a7": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6516e8c8d1ee4f2895797c2f5afde049": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "56c8005b155942079045ec31a9ed9786": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "info", "description": "Hint", "disabled": false, "icon": "", "layout": "IPY_MODEL_3ab62c9246f74838a9188702fe0e70a7", "style": "IPY_MODEL_6516e8c8d1ee4f2895797c2f5afde049", "tabbable": null, "tooltip": null}}, "36f0034776be45d485476d8afd61b1fb": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "60px"}}, "518b89556a644955b79e00104cc68dc9": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": ""}}, "204abe2a032d4f238da9311a0a1b9666": {"model_name": "IntTextModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "IntTextModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "IntTextView", "continuous_update": false, "description": "", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_36f0034776be45d485476d8afd61b1fb", "step": 1, "style": "IPY_MODEL_518b89556a644955b79e00104cc68dc9", "tabbable": null, "tooltip": null, "value": 1}}, "4dab791b3de945968639f3583094fcad": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "abaed3bc94fb4bc2820605bab2de5fc1": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "8baafdfb9326462ca965fa2d6c99a966": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "info", "description": "Skip to", "disabled": false, "icon": "", "layout": "IPY_MODEL_4dab791b3de945968639f3583094fcad", "style": "IPY_MODEL_abaed3bc94fb4bc2820605bab2de5fc1", "tabbable": null, "tooltip": null}}, "67217e050c9645d8a1b4f8afb07a675f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "92131d3fdfe84023af218120ae5f2072": {"model_name": "LabelStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "LabelStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "7c373adb32d9464f901dd4cb4c69758d": {"model_name": "LabelModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "LabelModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "LabelView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_67217e050c9645d8a1b4f8afb07a675f", "placeholder": "\u200b", "style": "IPY_MODEL_92131d3fdfe84023af218120ae5f2072", "tabbable": null, "tooltip": null, "value": "Go to question:"}}, "80e25e17c13c4f3393860f0a368a4886": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d1d332dadb1f4f4189dee37ca91b681a": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_7c373adb32d9464f901dd4cb4c69758d", "IPY_MODEL_204abe2a032d4f238da9311a0a1b9666", "IPY_MODEL_8baafdfb9326462ca965fa2d6c99a966"], "layout": "IPY_MODEL_80e25e17c13c4f3393860f0a368a4886", "tabbable": null, "tooltip": null}}, "f700cab3610a4d899fe21d35fe745f99": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "991b7d12940f4bfbb2f42da803519c26": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_34a19a014b184ae0a6b65df62dacdaee", "IPY_MODEL_121ae7570e28460fa4a3d71ad46c927b", "IPY_MODEL_56c8005b155942079045ec31a9ed9786"], "layout": "IPY_MODEL_f700cab3610a4d899fe21d35fe745f99", "tabbable": null, "tooltip": null}}, "f32c772b62f941c3a097535c1d66abc9": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5b3d534b92594142bbf0d5e33fd066e1": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_1af87bf238e843af90b684742b20fe81", "IPY_MODEL_991b7d12940f4bfbb2f42da803519c26", "IPY_MODEL_d1d332dadb1f4f4189dee37ca91b681a"], "layout": "IPY_MODEL_f32c772b62f941c3a097535c1d66abc9", "tabbable": null, "tooltip": null}}, "13a969b0efaa4b059086145dcbded5e4": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "cbc176d125784f008f6296217c093c80": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "6059e99905bb487d8bbdff86a4584820": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_13a969b0efaa4b059086145dcbded5e4", "placeholder": "\u200b", "style": "IPY_MODEL_cbc176d125784f008f6296217c093c80", "tabbable": null, "tooltip": null, "value": ""}}, "78ed565eaad44b1fbabe9ef4a0ee03b3": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "4b4621bb544d4f508f3fa37f6bdc5670": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "76e7379218ce4a6bad2ac3819cccdc26": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "warning", "description": "Try Again", "disabled": false, "icon": "", "layout": "IPY_MODEL_78ed565eaad44b1fbabe9ef4a0ee03b3", "style": "IPY_MODEL_4b4621bb544d4f508f3fa37f6bdc5670", "tabbable": null, "tooltip": null}}, "d320dad4d0064b9facde9ea984dbd784": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "832cb4be71b64e08be1ebdd31671195a": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "eee7a6f7daf341019f59ea519ad18bd1": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "info", "description": "Next Question", "disabled": false, "icon": "", "layout": "IPY_MODEL_d320dad4d0064b9facde9ea984dbd784", "style": "IPY_MODEL_832cb4be71b64e08be1ebdd31671195a", "tabbable": null, "tooltip": null}}, "f3eab635424a465e9c94912fccbd9453": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f1bc9064258c4d5894dd999289688e03": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_76e7379218ce4a6bad2ac3819cccdc26", "IPY_MODEL_eee7a6f7daf341019f59ea519ad18bd1"], "layout": "IPY_MODEL_f3eab635424a465e9c94912fccbd9453", "tabbable": null, "tooltip": null}}, "61c185fb404c4f439776ee729d9a8aff": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e900a29788b94f2aac6430748abcdbf0": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_6059e99905bb487d8bbdff86a4584820", "IPY_MODEL_f1bc9064258c4d5894dd999289688e03"], "layout": "IPY_MODEL_61c185fb404c4f439776ee729d9a8aff", "tabbable": null, "tooltip": null}}, "b575e48c77124fbc8a31ff8b022ccb10": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "7cd7a4fdb032445e944423ecd7338ff8": {"model_name": "TabModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "TabModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "TabView", "box_style": "", "children": ["IPY_MODEL_5b3d534b92594142bbf0d5e33fd066e1", "IPY_MODEL_e900a29788b94f2aac6430748abcdbf0"], "layout": "IPY_MODEL_b575e48c77124fbc8a31ff8b022ccb10", "selected_index": 0, "tabbable": null, "titles": ["Query", "Results"], "tooltip": null}}, "5d12c7b5bc2941b39adb7ac9fcad57b0": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b3df7fcb1de346b5839d538d6ff5c83c": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_33c3951478414551a3d8b7ac6777df92", "IPY_MODEL_81c3316d8a75417d90ba3ad71c1a1887", "IPY_MODEL_7cd7a4fdb032445e944423ecd7338ff8"], "layout": "IPY_MODEL_5d12c7b5bc2941b39adb7ac9fcad57b0", "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}</script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Database_08_IndexesTransactions';</script>
-    <script src="_static/sandbox-html-output.js?v=a1fc3548"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Postgres and Pokemon" href="Database_09_PokemonAndPostgres.html" />
     <link rel="prev" title="A Musical “VIEW” For Better Data Presentation" href="Database_07_Views.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -88,8 +90,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -97,15 +110,16 @@
   <input type="search"
          class="form-control"
          name="q"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -121,8 +135,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -152,27 +165,12 @@
     
     
     <img src="_static/database_cover.jpg" class="logo__image only-light" alt="SQL and Database Management Through Pop Culture - Home"/>
-    <img src="_static/database_cover.jpg" class="logo__image only-dark pst-js-only" alt="SQL and Database Management Through Pop Culture - Home"/>
+    <script>document.write(`<img src="_static/database_cover.jpg" class="logo__image only-dark" alt="SQL and Database Management Through Pop Culture - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="index.html">
-                    SQL and Database Management Through Pop Culture
-                </a>
-            </li>
-        </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Database_00_Introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Database_01_StarShipSQL.html">Starship SQL: An Introduction to Databases</a></li>
@@ -201,14 +199,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -227,9 +220,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -239,52 +232,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/./Database_08_IndexesTransactions.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="Colab logo" src="_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-<a href="https://github.com/brendanpshea/database_sql" target="_blank"
-   class="btn btn-sm btn-source-repository-button"
-   title="Source repository"
-   data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
-
 
 
 
@@ -337,7 +284,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -351,19 +298,27 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -496,41 +451,34 @@
                   
   <p><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_08_IndexesTransactions.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section id="database-performance-index-query-plans-and-transaction-management">
-<h1>Database Performance: Index, Query Plans, and Transaction Management<a class="headerlink" href="#database-performance-index-query-plans-and-transaction-management" title="Link to this heading">#</a></h1>
+<h1>Database Performance: Index, Query Plans, and Transaction Management<a class="headerlink" href="#database-performance-index-query-plans-and-transaction-management" title="Permalink to this heading">#</a></h1>
 <section id="database-and-sql-through-pop-culture-brendan-shea-phd">
-<h2>Database and SQL Through Pop Culture | Brendan Shea, PhD<a class="headerlink" href="#database-and-sql-through-pop-culture-brendan-shea-phd" title="Link to this heading">#</a></h2>
+<h2>Database and SQL Through Pop Culture | Brendan Shea, PhD<a class="headerlink" href="#database-and-sql-through-pop-culture-brendan-shea-phd" title="Permalink to this heading">#</a></h2>
 <p>In this chapter, we will explore the inner workings of SQLite using a dataset from the fictional Gotham National Bank. Our focus will be on understanding how indexes, transactions, and database monitoring can optimize SQLite database performance and ensure smooth operations. We will cover the fundamentals of indexes, demonstrate their impact on query speed and database size, and discuss best practices for implementing them effectively.</p>
 <p>Additionally, we will delve into the concept of transactions and the crucial role they play in ensuring data integrity and reliability. We will examine the ACID properties that transactions must adhere to and showcase how to work with transactions in SQLite using commands like BEGIN, COMMIT, and ROLLBACK.</p>
 <p>Furthermore, we will emphasize the importance of database monitoring, reporting, and logging in maintaining the health and performance of SQLite databases. We will explore various monitoring techniques, discuss the types of logs generated, and highlight the tools and practices used by database administrators like ORACLE to keep databases running optimally.</p>
 <p>Throughout the chapter, we will use practical examples and step-by-step explanations to illustrate how indexes, transactions, and monitoring can be leveraged to build robust and efficient databases. By the end, you should have a solid foundation in these key concepts and be well-equipped to apply them in your own SQLite projects.</p>
 </section>
 <section id="learning-outcomes">
-<h2>Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Link to this heading">#</a></h2>
+<h2>Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this heading">#</a></h2>
 <p>By the end of this chapter, you will be able to:</p>
 <ol class="arabic simple">
-<li><p>Explain why indexes can improve query performance and when an index is or is not worth its storage and maintenance cost.</p></li>
-<li><p>Create indexes and use EXPLAIN QUERY PLAN to compare indexed and non-indexed queries.</p></li>
-<li><p>Interpret basic query-plan terms and explain how SQLite uses B-trees for tables, indexes, and sorting.</p></li>
-<li><p>Measure the trade-off between query speed and database size when adding indexes.</p></li>
-<li><p>Explain transactions and the ACID properties that protect data integrity.</p></li>
+<li><p>Explain how database indexes improve query performance and evaluate their storage and maintenance trade-offs.</p></li>
+<li><p>Create indexes and use EXPLAIN QUERY PLAN to compare indexed and non-indexed query paths.</p></li>
+<li><p>Describe how database engines use B-trees for physical tables, indexes, and sorting.</p></li>
+<li><p>Explain transactions and the ACID properties that protect database integrity.</p></li>
 <li><p>Use BEGIN, COMMIT, ROLLBACK, and SAVEPOINT to control transaction boundaries and recover from errors.</p></li>
-<li><p>Describe locking, concurrency limits, and deadlock-related concerns in transactional systems.</p></li>
-<li><p>Compare ACID-oriented relational systems with BASE-style NoSQL trade-offs and identify cases where hybrid approaches make sense.</p></li>
-<li><p>Identify common performance metrics, monitoring signals, and log data used to keep databases healthy.</p></li>
+<li><p>Describe locking, concurrency, and deadlock detection in multi-user systems.</p></li>
+<li><p>Choose and configure an appropriate transaction isolation level for a specific database workload.</p></li>
+<li><p>Compare ACID relational systems with BASE NoSQL databases and identify where hybrid architectures fit.</p></li>
+<li><p>Monitor query statistics, database logs, and daily metrics to keep systems healthy.</p></li>
+<li><p>Establish performance baselines and design database alerts, notifications, and integrity checks.</p></li>
+<li><p>Apply schema migration, version control, change approvals, and CI/CD pipelines to database deployments.</p></li>
 </ol>
 <p>Keywords: SQLite, indexes, EXPLAIN QUERY PLAN, B-tree, transactions, ACID, SAVEPOINT, locking, concurrency, monitoring, logs, NoSQL, BASE</p>
-<ul class="simple">
-<li><p>Establish a baseline configuration and design alerts and notifications based on it.</p></li>
-<li><p>List the metrics a DBA monitors daily and connect each to an operational concern.</p></li>
-<li><p>Plan a database patch and release cycle including change approval and release schedules.</p></li>
-<li><p>Distinguish integrity checks from database refreshes and describe when to use each.</p></li>
-<li><p>Apply version control and CI/CD concepts to database schema changes.</p></li>
-<li><p>Update query-planner statistics and explain how stale statistics hurt performance.</p></li>
-<li><p>Choose and configure a transaction isolation level appropriate for a workload.</p></li>
-</ul>
 </section>
 <section id="brendan-s-lecture">
-<h2>Brendan’s Lecture<a class="headerlink" href="#brendan-s-lecture" title="Link to this heading">#</a></h2>
+<h2>Brendan’s Lecture<a class="headerlink" href="#brendan-s-lecture" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># play youtube video</span>
@@ -553,7 +501,7 @@
 </div>
 </section>
 <section id="gotham-national-bank-database">
-<h2>Gotham National Bank Database<a class="headerlink" href="#gotham-national-bank-database" title="Link to this heading">#</a></h2>
+<h2>Gotham National Bank Database<a class="headerlink" href="#gotham-national-bank-database" title="Permalink to this heading">#</a></h2>
 <p>In this chapter, we’ll be exploring the inner workings of <strong>SQLite</strong> using a dataset from the fictional <strong>Gotham National Bank</strong>. Our database, <em>gotham.db</em>, contains two tables:</p>
 <ol class="arabic simple">
 <li><p><strong>Customers</strong>: Stores customer information like name, address, and contact details.</p></li>
@@ -562,7 +510,7 @@
 <p>Throughout this chapter, we’ll use these tables to understand how <strong>indexes</strong> and <strong>transactions</strong> can optimize our SQLite database performance. We’ll cover the fundamentals of indexes, demonstrate their impact on query speed and database size, and discuss best practices for implementing them effectively.</p>
 </section>
 <section id="database-schema-for-gotham-city-bank">
-<h2>Database Schema for Gotham City Bank<a class="headerlink" href="#database-schema-for-gotham-city-bank" title="Link to this heading">#</a></h2>
+<h2>Database Schema for Gotham City Bank<a class="headerlink" href="#database-schema-for-gotham-city-bank" title="Permalink to this heading">#</a></h2>
 <p>Here is the database schema.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -596,7 +544,7 @@ SELECT sql FROM sqlite_master WHERE type=&#39;table&#39;;
 </div>
 </section>
 <section id="a-closer-look-at-customers-and-accounts">
-<h2>A Closer Look at Customers and Accounts<a class="headerlink" href="#a-closer-look-at-customers-and-accounts" title="Link to this heading">#</a></h2>
+<h2>A Closer Look at Customers and Accounts<a class="headerlink" href="#a-closer-look-at-customers-and-accounts" title="Permalink to this heading">#</a></h2>
 <p>Now, let’s take a quick look at the head of our table.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -744,7 +692,7 @@ SELECT * FROM Accounts LIMIT 5;
 </div>
 </section>
 <section id="what-are-indexes-and-how-do-i-create-them">
-<h2>What are Indexes and How Do I Create Them?<a class="headerlink" href="#what-are-indexes-and-how-do-i-create-them" title="Link to this heading">#</a></h2>
+<h2>What are Indexes and How Do I Create Them?<a class="headerlink" href="#what-are-indexes-and-how-do-i-create-them" title="Permalink to this heading">#</a></h2>
 <p>If you’ve ever used a book index to quickly locate a specific topic, you already understand the basic concept of a database <strong>index</strong>. In the context of databases, an index is a separate data structure that allows the database engine to find and retrieve data more efficiently without having to scan the entire table.</p>
 <p>When you create a table, SQLite (like all versions of SQL) automatically creates a unique index on the <strong>primary key</strong> column(s). However, you can also create additional indexes on other columns to speed up frequently used queries.</p>
 <p>To create an index in SQL, you use the <strong>CREATE INDEX</strong> statement with the following syntax:</p>
@@ -785,7 +733,7 @@ ON Customers (LastName);
 <p>Creating appropriate indexes is crucial for optimizing database performance, but how do they actually impact query speed? In the next section, we’ll explore the power of indexes in action using the EXPLAIN QUERY PLAN command and some practical examples from our Gotham City dataset.</p>
 </section>
 <section id="how-indexes-impact-speed">
-<h2>How Indexes Impact Speed<a class="headerlink" href="#how-indexes-impact-speed" title="Link to this heading">#</a></h2>
+<h2>How Indexes Impact Speed<a class="headerlink" href="#how-indexes-impact-speed" title="Permalink to this heading">#</a></h2>
 <p>To understand the impact of indexes on query speed, we’ll use the <strong>EXPLAIN QUERY PLAN</strong> command. This command provides insight into how SQLite executes a query, including which indexes (if any) are being used.</p>
 <p>Let’s start with an example query on our <em>Accounts</em> table that gets customers with higher than average balances</p>
 <div class="cell docutils container">
@@ -904,7 +852,7 @@ ORDER BY Balance DESC;
 <li><p><strong>Temporary B-Tree</strong>: In this case, <code class="docutils literal notranslate"><span class="pre">USE</span> <span class="pre">TEMP</span> <span class="pre">B-TREE</span> <span class="pre">FOR</span> <span class="pre">ORDER</span> <span class="pre">BY</span></code> indicates that SQLite is using a temporary B-tree data structure to sort the result set in descending order by the <em>Balance</em> column. We’ll dive deeper into B-trees in a future section.</p></li>
 </ul>
 <section id="impact-of-indexes">
-<h3>Impact of Indexes<a class="headerlink" href="#impact-of-indexes" title="Link to this heading">#</a></h3>
+<h3>Impact of Indexes<a class="headerlink" href="#impact-of-indexes" title="Permalink to this heading">#</a></h3>
 <p>If an index were created on the <code class="docutils literal notranslate"><span class="pre">Balance</span></code> column, the query execution plan would likely be different. For example, with an index on <code class="docutils literal notranslate"><span class="pre">Balance</span></code>, the execution plan might show an <strong>index search</strong> instead of a full table scan, resulting in faster query execution times.</p>
 <p>To create an index on the <code class="docutils literal notranslate"><span class="pre">Balance</span></code> column, you could use the following command:</p>
 <div class="cell docutils container">
@@ -977,7 +925,7 @@ ORDER BY Balance DESC;
 </section>
 </section>
 <section id="timing-our-queries">
-<h2>Timing Our Queries<a class="headerlink" href="#timing-our-queries" title="Link to this heading">#</a></h2>
+<h2>Timing Our Queries<a class="headerlink" href="#timing-our-queries" title="Permalink to this heading">#</a></h2>
 <p>To further demonstrate the performance impact, let’s measure the execution time of our query with and without the index. We’ll be using Colab’s builtin <strong>timeit</strong> function, which will run this query many times, and give us the average runninng time. This helps miminize the role of chance in evaluating query performance based on a single case.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1009,7 +957,7 @@ DROP INDEX idx_accounts_balance;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.6 ms ± 1.21 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.4 ms ± 850 μs per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -1044,7 +992,7 @@ ON Accounts (Balance);
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.88 ms ± 1.38 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output text_html"><span style="None">Running query in &#x27;sqlite:///indexes_gotham.db&#x27;</span></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.73 ms ± 472 μs per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -1052,28 +1000,28 @@ ON Accounts (Balance);
 <p>While the specific results you get will vary each time you run the test, you should find that (on average) the index scan runs a bit faster than the full table scan. (The differences in speed will be much more pronounced with large data sets).</p>
 </section>
 <section id="how-indexes-impact-storage">
-<h2>How Indexes Impact Storage<a class="headerlink" href="#how-indexes-impact-storage" title="Link to this heading">#</a></h2>
+<h2>How Indexes Impact Storage<a class="headerlink" href="#how-indexes-impact-storage" title="Permalink to this heading">#</a></h2>
 <p>Indexes can speed up queries, but they are not free. Each index takes additional disk space because SQLite stores it in its own B-tree structure.</p>
 <section id="b-trees-the-backbone-of-database-storage">
-<h3>B-trees: The Backbone of Database Storage<a class="headerlink" href="#b-trees-the-backbone-of-database-storage" title="Link to this heading">#</a></h3>
-<p>A B-tree is a self-balancing tree structure that keeps keys sorted. Databases use B-trees because they reduce disk I/O: instead of scanning every row, the engine can move through a small number of nodes to find the right part of the data.</p>
+<h3>B-trees: The Backbone of Database Storage<a class="headerlink" href="#b-trees-the-backbone-of-database-storage" title="Permalink to this heading">#</a></h3>
+<p>A <strong>B-tree</strong> is a self-balancing tree structure that keeps keys sorted for high-speed searches. Databases use B-trees because they dramatically reduce disk operations. Instead of scanning every row in a table, the database engine only needs to traverse a few nodes to find the exact data it needs.</p>
 <p>Each node in a B-tree stores:</p>
-<ol class="arabic simple">
-<li><p>Sorted keys</p></li>
-<li><p>Pointers to child nodes</p></li>
-</ol>
-<p>At each step, SQLite compares the value you want with the keys in the current node and follows the matching pointer. That is what makes searches, inserts, and range queries efficient.</p>
+<ul class="simple">
+<li><p>A set of sorted keys.</p></li>
+<li><p>Pointers pointing to other child nodes.</p></li>
+</ul>
+<p>At each step, SQLite compares the search value with the keys in the current node and follows the matching pointer, which makes searches, inserts, and range queries incredibly efficient.</p>
 </section>
 <section id="how-sqlite-uses-b-trees">
-<h3>How SQLite Uses B-trees<a class="headerlink" href="#how-sqlite-uses-b-trees" title="Link to this heading">#</a></h3>
-<p>SQLite uses B-trees for both tables and indexes, but the two trees hold different information:</p>
+<h3>How SQLite Uses B-trees<a class="headerlink" href="#how-sqlite-uses-b-trees" title="Permalink to this heading">#</a></h3>
+<p>SQLite uses B-trees for both tables and indexes, but they store different information:</p>
 <ul class="simple">
-<li><p>The <strong>table B-tree</strong> stores table rows, usually ordered by the primary key.</p></li>
-<li><p>The <strong>index B-tree</strong> stores indexed values plus pointers back to the matching table rows.</p></li>
+<li><p>The <strong>table B-tree</strong> stores the actual table rows, usually ordered by the primary key.</p></li>
+<li><p>The <strong>index B-tree</strong> stores only the indexed values along with pointers back to the matching table rows.</p></li>
 </ul>
 <section id="table-b-tree-example">
-<h4>Table B-tree example<a class="headerlink" href="#table-b-tree-example" title="Link to this heading">#</a></h4>
-<p>For example, let’s consider a simplified representation of the <em>Accounts</em> table:</p>
+<h4>Table B-tree example<a class="headerlink" href="#table-b-tree-example" title="Permalink to this heading">#</a></h4>
+<p>Consider a simplified representation of the <em>Accounts</em> table:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AccountID</span> <span class="o">|</span> <span class="n">CustomerID</span> <span class="o">|</span> <span class="n">Balance</span>
 <span class="mi">1</span>         <span class="o">|</span> <span class="mi">1</span>          <span class="o">|</span> <span class="mi">10000</span>
 <span class="mi">2</span>         <span class="o">|</span> <span class="mi">1</span>          <span class="o">|</span> <span class="mi">5000</span>
@@ -1081,26 +1029,24 @@ ON Accounts (Balance);
 <span class="mi">4</span>         <span class="o">|</span> <span class="mi">3</span>          <span class="o">|</span> <span class="mi">12000</span>
 </pre></div>
 </div>
-<p>In the table’s B-tree, the rows would be stored in nodes, sorted by the primary key (AccountID):</p>
+<p>In the table’s B-tree, rows are stored in nodes sorted by the primary key:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Node</span> <span class="mi">1</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5000</span><span class="p">)</span>
 <span class="n">Node</span> <span class="mi">2</span><span class="p">:</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7500</span><span class="p">)</span>  <span class="o">|</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">12000</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="index-b-tree-example">
-<h4>Index B-tree example<a class="headerlink" href="#index-b-tree-example" title="Link to this heading">#</a></h4>
-<p>When you create an index on a column, SQLite generates a separate B-tree for that index. The index B-tree stores the indexed column’s values along with pointers to the corresponding rows in the table’s B-tree.</p>
-<p>Let’s say we create an index on the <em>Balance</em> column. Then the <em>idx_accounts_balance</em> index B-tree would store the <em>Balance</em> values in sorted order, along with pointers to the corresponding rows in the <em>Accounts</em> table’s B-tree:</p>
+<h4>Index B-tree example<a class="headerlink" href="#index-b-tree-example" title="Permalink to this heading">#</a></h4>
+<p>When you create an index on a column, SQLite generates a separate index B-tree. If we index the <em>Balance</em> column, the new <em>idx_accounts_balance</em> B-tree stores the balances in sorted order along with pointers back to the main table:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">Node</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">7500</span><span class="p">,</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
 <span class="n">Node</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">12000</span><span class="p">,</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>When you query the table using the indexed column, SQLite can quickly traverse the index B-tree to find the matching values and then follow the pointers to retrieve the full row data from the table’s B-tree.</p>
-<p>By using B-trees for both tables and indexes, SQLite ensures efficient data storage and retrieval, even for large datasets. The tradeoff is storage: every index needs its own B-tree, so every index increases the size of the database file.</p>
+<p>When you search by balance, SQLite quickly traverses the index B-tree to find the value and follows the pointer to retrieve the full row. While this makes queries fast, every index requires its own B-tree, which increases the database file size.</p>
 </section>
 </section>
 <section id="graphic-b-trees">
-<h3>Graphic: B-Trees<a class="headerlink" href="#graphic-b-trees" title="Link to this heading">#</a></h3>
+<h3>Graphic: B-Trees<a class="headerlink" href="#graphic-b-trees" title="Permalink to this heading">#</a></h3>
 <p>Here’s what our B-tree for our original table might look like:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -1113,7 +1059,7 @@ ON Accounts (Balance);
 </div>
 </section>
 <section id="checking-file-size">
-<h3>Checking File Size<a class="headerlink" href="#checking-file-size" title="Link to this heading">#</a></h3>
+<h3>Checking File Size<a class="headerlink" href="#checking-file-size" title="Permalink to this heading">#</a></h3>
 <p>Because indexes require the construction of new B-trees, they require additional disk space. We can  check the file size (using Windows, Linux, etc.). Let’s first first check the size our database:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1171,7 +1117,7 @@ operable program or batch file.
 <p>This is a large difference–over 10%–and reinforces the principle that indexes (especially ones that combine multiple columns) need to be used with care.</p>
 </section>
 <section id="statistics-and-the-query-planner">
-<h3>Statistics and the query planner<a class="headerlink" href="#statistics-and-the-query-planner" title="Link to this heading">#</a></h3>
+<h3>Statistics and the query planner<a class="headerlink" href="#statistics-and-the-query-planner" title="Permalink to this heading">#</a></h3>
 <p>The query planner does not actually scan your tables before it picks a plan. It relies on <strong>query statistics</strong> — counts of rows, distribution of values, average column widths — to estimate how expensive each option would be. If those statistics are out of date, the planner makes the wrong choice and a fast query suddenly turns slow.</p>
 <p>PostgreSQL refreshes statistics with <code class="docutils literal notranslate"><span class="pre">ANALYZE</span></code>:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ANALYZE</span><span class="w"> </span><span class="n">customers</span><span class="p">;</span>
@@ -1182,7 +1128,7 @@ operable program or batch file.
 </section>
 </section>
 <section id="sql-indexing-guidelines-when-to-create-and-avoid-indexes">
-<h1>SQL Indexing Guidelines: When to Create and Avoid Indexes<a class="headerlink" href="#sql-indexing-guidelines-when-to-create-and-avoid-indexes" title="Link to this heading">#</a></h1>
+<h1>SQL Indexing Guidelines: When to Create and Avoid Indexes<a class="headerlink" href="#sql-indexing-guidelines-when-to-create-and-avoid-indexes" title="Permalink to this heading">#</a></h1>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Create an Index When…</p></th>
@@ -1225,155 +1171,94 @@ operable program or batch file.
 </div>
 <p><strong>Note</strong>: Always test the performance impact of indexes in your specific database environment. The effectiveness of an index can vary based on factors such as data distribution, query patterns, and the specific database management system being used.</p>
 <section id="introduction-to-transactions">
-<h2>Introduction to Transactions<a class="headerlink" href="#introduction-to-transactions" title="Link to this heading">#</a></h2>
-<p>In the world of databases, much like in the bustling financial district of Gotham City, many operations happen simultaneously. Imagine the chaos if every bank transaction in Gotham wasn’t carefully managed - it would be a playground for villains! This is where database transactions come into play. A <strong>transaction</strong> is a sequence of one or more database operations that are treated as a single unit of work. These operations could be inserting, updating, or deleting data. The key characteristic of a transaction is that it’s all-or-nothing: either all the operations within the transaction are completed successfully, or none of them are.</p>
-<p>Let’s consider a scenario at Gotham City Bank. Bruce Wayne wants to transfer money from his personal account to Wayne Enterprises’ account. This seemingly simple transfer actually involves multiple steps: first, the money is deducted from Bruce’s account, and then it’s added to the company’s account. If something goes wrong halfway through - perhaps due to a system crash or The Riddler’s latest cyber attack - we wouldn’t want Bruce’s money to vanish into thin air. This is why we use transactions.</p>
-<p>Transactions are crucial in maintaining the integrity and consistency of our database. They ensure that our data remains accurate even when multiple operations are happening concurrently or when unexpected errors occur. In our Gotham City Bank example, a transaction would guarantee that either both steps of the money transfer are completed, or neither is - the money can’t be deducted from Bruce’s account without being added to Wayne Enterprises’, or vice versa.</p>
+<h2>Introduction to Transactions<a class="headerlink" href="#introduction-to-transactions" title="Permalink to this heading">#</a></h2>
+<p>In the financial district of Gotham City, many banking operations happen at the same time. Imagine the chaos if every bank transaction was not carefully managed — it would be a playground for villains! To prevent this, databases use transactions. A <strong>database transaction</strong> is a sequence of one or more SQL operations that are treated as a single, indivisible unit of work. The defining characteristic of a transaction is that it is all-or-nothing: either every single operation completes successfully, or the entire transaction fails.</p>
+<p>Consider a transfer at Gotham City Bank where Bruce Wayne wants to send money from his personal account to Wayne Enterprises. This transfer requires two steps: first, the money is deducted from Bruce’s account, and then it is added to the company’s account. If a system crash or cyber attack occurs halfway through, we do not want Bruce’s money to vanish. Transactions solve this by ensuring that either both steps succeed, or the database reverts so that neither happens.</p>
 <section id="acid-properties-overview">
-<h3>ACID Properties Overview<a class="headerlink" href="#acid-properties-overview" title="Link to this heading">#</a></h3>
-<p>When discussing database transactions, you’ll often hear the term <strong>ACID</strong>. This isn’t a reference to Joker’s favorite chemical weapons, but rather an acronym that stands for four critical properties of transactions: <strong>Atomicity</strong>, <strong>Consistency</strong>, <strong>Isolation</strong>, and <strong>Durability</strong>. These properties ensure that database transactions are processed reliably and maintain data integrity, even in the face of errors, system failures, or concurrent access.</p>
-<p>Let’s break down what each of these properties means:</p>
-<ol class="arabic simple">
-<li><p><strong>Atomicity</strong> ensures that a transaction is treated as a single, indivisible unit. Either all operations in the transaction are completed successfully, or none are.</p></li>
-<li><p><strong>Consistency</strong> guarantees that a transaction brings the database from one valid state to another, maintaining all predefined rules and constraints.</p></li>
-<li><p><strong>Isolation</strong> ensures that concurrent execution of transactions leaves the database in the same state as if the transactions were executed sequentially.</p></li>
-<li><p><strong>Durability</strong>  means that once a transaction is committed, it remains so, even in the event of power loss, crashes, or errors.</p></li>
-</ol>
-<p>Understanding ACID properties is crucial for anyone working with databases, as they form the foundation of reliable data management. They’re like the principles Batman follows to keep Gotham safe - non-negotiable rules that maintain order in the face of chaos.</p>
-<p>In the following sections, we’ll dive deeper into each of these properties, exploring how they work and why they’re important. We’ll see how they apply in various scenarios in Gotham City, from managing the Batcave’s high-tech systems to keeping track of Arkham Asylum’s ever-rotating cast of inmates. By the end, you’ll have a solid grasp of how transactions and ACID properties help maintain order in the complex world of databases.</p>
+<h3>ACID Properties Overview<a class="headerlink" href="#acid-properties-overview" title="Permalink to this heading">#</a></h3>
+<p>To ensure data integrity during errors or crashes, database transactions must follow four critical rules known as the <strong>ACID</strong> properties:</p>
+<ul class="simple">
+<li><p>We use <strong>atomicity</strong> to ensure that a transaction is treated as a single, indivisible unit of work where all steps succeed or none do.</p></li>
+<li><p>We use <strong>consistency</strong> to guarantee that a transaction always brings the database from one valid state to another, enforcing all database rules.</p></li>
+<li><p>We use <strong>isolation</strong> to ensure that concurrent transactions run without interfering with each other’s in-progress data.</p></li>
+<li><p>We use <strong>durability</strong> to guarantee that once a transaction is committed, its changes are permanently recorded and survive any system crashes.</p></li>
+</ul>
+<p>These properties are the non-negotiable rules that maintain database order in the face of errors or concurrent access.</p>
 </section>
 <section id="atomicity">
-<h3>Atomicity<a class="headerlink" href="#atomicity" title="Link to this heading">#</a></h3>
-<p><strong>Atomicity</strong> is the first pillar of ACID properties, and it’s a concept as uncompromising as Batman’s commitment to justice. In database terms, atomicity guarantees that a transaction is treated as a single, indivisible unit of work. This means that all operations within a transaction must be completed successfully, or none of them will be. There’s no middle ground - it’s all or nothing.</p>
-<p>Let’s illustrate this with a scenario from Gotham City. Imagine Bruce Wayne is updating the Batcave’s inventory system. He’s adding a new Batmobile while simultaneously removing an older model. This process involves two operations:</p>
+<h3>Atomicity<a class="headerlink" href="#atomicity" title="Permalink to this heading">#</a></h3>
+<p>The property of <strong>atomicity</strong> guarantees that a transaction is treated as a single, indivisible unit of work where everything succeeds or nothing does. There is no middle ground.</p>
+<p>For example, imagine Bruce Wayne is updating the Batcave’s inventory system to add a new Batmobile while removing an older model:</p>
 <ol class="arabic simple">
-<li><p>Insert a record for the new Batmobile</p></li>
-<li><p>Delete the record of the old Batmobile</p></li>
+<li><p>Insert a record for the new Batmobile.</p></li>
+<li><p>Delete the record of the old Batmobile.</p></li>
 </ol>
-<p>Atomicity ensures that either both of these operations succeed, or neither does. If something goes wrong halfway through - perhaps a power outage caused by one of Mr. Freeze’s attacks - the database will revert to its original state. We won’t end up in a situation where we’ve added the new Batmobile but failed to remove the old one, or vice versa.</p>
-<p>This “all-or-nothing” approach is crucial for maintaining data integrity. Without atomicity, we could end up with inconsistent data that doesn’t reflect reality. In our Batcave example, an inventory that shows two Batmobiles when there’s really only one could lead to confusion and inefficiency in Batman’s operations.</p>
-<p>Implementing atomicity involves using <strong>commits</strong> and <strong>rollbacks</strong>. When a transaction completes successfully, we <strong>commit</strong> it, making all of its changes permanent. If any part of the transaction fails, we perform a <strong>rollback</strong>, undoing any changes made by the transaction and returning the database to its previous consistent state.</p>
-<p>In standard SQL, you can implement atomic transactions using the following basic syntax:</p>
+<p>Atomicity guarantees that if a sudden power outage occurs halfway through, the database immediately aborts and rolls back to its original state. We will never end up in an invalid state where the database shows two Batmobiles when only one actually exists in the cave.</p>
+<p>To enforce this, database engines use commits and rollbacks:</p>
+<ul class="simple">
+<li><p>We run a <strong>commit</strong> to permanently save and apply all database changes when a transaction completes successfully.</p></li>
+<li><p>We run a <strong>rollback</strong> to undo all changes and restore the database to its previous clean state if any part of a transaction fails.</p></li>
+</ul>
+<p>In standard SQL, you wrap your operations in a transaction block:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">BEGIN</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span>
 <span class="c1">-- Your SQL operations here</span>
 <span class="k">COMMIT</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>If an error occurs, you can use <code class="docutils literal notranslate"><span class="pre">ROLLBACK</span></code> instead of <code class="docutils literal notranslate"><span class="pre">COMMIT</span></code> to undo the changes:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">BEGIN</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span>
-<span class="c1">-- Your SQL operations here</span>
-<span class="c1">-- If an error occurs:</span>
-<span class="k">ROLLBACK</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Understanding and properly implementing atomicity is crucial for maintaining the integrity of your database, ensuring that complex operations either complete fully or don’t happen at all.</p>
+<p>If an error occurs, the application can issue a <code class="docutils literal notranslate"><span class="pre">ROLLBACK</span></code> instead of a <code class="docutils literal notranslate"><span class="pre">COMMIT</span></code> to completely undo the changes.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><img src="https://mermaid.ink/img/CmZsb3djaGFydCBURAogICAgc3ViZ3JhcGggVHJhbnNhY3Rpb25fUHJvY2VzcwogICAgICAgIEFbU3RhcnRpbmcgU3RhdGUgQTxicj5Db25zaXN0ZW50IFN0YXRlIG9mIERhdGFiYXNlXSAtLT4gQltCRUdJTiBUUkFOU0FDVElPTl0KICAgICAgICBCIC0tPiBDW1BlcmZvcm0gT3BlcmF0aW9uc10KICAgICAgICBDIC0tPiBEe0Vycm9yIE9jY3VycmVkP30KICAgICAgICBEIC0tIE5vIC0tPiBFW0NPTU1JVCBUUkFOU0FDVElPTjxicj5Xcml0ZSBvcGVyYXRpb25zIHRvIGRpc2tdCiAgICAgICAgRCAtLSBZZXMgLS0+IEZbUk9MTEJBQ0s8YnI+VW5kbyBhbGwgb3BlcmF0aW9uc10KICAgICAgICBGIC0tPiBBCiAgICAgICAgRSAtLT5HW0VuZGluZyBTdGF0ZSBCPGJyPkNvbnNpc3RlbnQgU3RhdGUgb2YgRGF0YWJhc2VdCiAgICBlbmQK"/></div></div>
 </div>
 </section>
 <section id="consistency">
-<h3>Consistency<a class="headerlink" href="#consistency" title="Link to this heading">#</a></h3>
-<p><strong>Consistency</strong>, the second ACID property, is all about maintaining the database in a valid state. It ensures that a transaction can only bring the database from one valid state to another, adhering to all predefined rules and constraints. This property is like the laws and regulations that keep Gotham City functioning - they ensure that no matter what changes occur, the city (or in our case, the database) remains in a valid, predictable state.</p>
-<p>In database terms, consistency means that all data written to the database must adhere to all defined rules, including constraints, cascades, and triggers. These rules might include:</p>
+<h3>Consistency<a class="headerlink" href="#consistency" title="Permalink to this heading">#</a></h3>
+<p>The property of <strong>consistency</strong> ensures that a transaction can only bring the database from one valid state to another, strictly adhering to all predefined rules. Just as laws keep Gotham City functioning, database constraints prevent incorrect or corrupted data from being written.</p>
+<p>Consistency guarantees that all data written to the database must follow existing rules:</p>
 <ul class="simple">
-<li><p>Data types (e.g., you can’t store text in a numeric field)</p></li>
-<li><p>Unique constraints</p></li>
-<li><p>Foreign key constraints</p></li>
-<li><p>Check constraints that enforce specific business rules</p></li>
+<li><p>Column <strong>data types</strong> prevent you from accidentally saving text inside a numeric balance column.</p></li>
+<li><p>A <strong>unique constraint</strong> prevents duplicate values in a column, such as ensuring that two different users cannot have the same email address.</p></li>
+<li><p>A <strong>foreign key constraint</strong> maintains links between tables, ensuring you cannot assign a record to a parent table row that does not exist.</p></li>
+<li><p>A <strong>check constraint</strong> enforces custom business rules, such as verifying that an account balance never drops below zero.</p></li>
 </ul>
-<p>Let’s consider an example from the Gotham City Police Department (GCPD). They maintain a database of known super-villains, including which cell they’re assigned to in Arkham Asylum. The database has a rule that each cell can only hold one villain at a time. Consistency ensures that no transaction can violate this rule.</p>
-<p>Imagine Commissioner Gordon is updating the database after capturing both The Joker and The Penguin in a single night. Here’s what the transaction might look like:</p>
-<ol class="arabic simple">
-<li><p>Assign The Joker to Cell A1</p></li>
-<li><p>Assign The Penguin to Cell B2</p></li>
-<li><p>Update the status of both villains to “Incarcerated”</p></li>
-</ol>
-<p>Consistency guarantees that if any part of this transaction would violate the “one villain per cell” rule (for example, if Cell A1 was already occupied), the entire transaction would fail. The database would remain in its previous consistent state, rather than ending up in an invalid state with two villains assigned to the same cell.</p>
-<p>SQL provides various mechanisms to enforce consistency, some of which we have discussed earlier:</p>
-<ol class="arabic simple">
-<li><p><strong>Constraints</strong>: These are rules defined on columns or tables. For example:</p></li>
-</ol>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Villains</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="n">ID</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Name</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Cell</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">UNIQUE</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Status</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">Status</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;At Large&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Incarcerated&#39;</span><span class="p">))</span>
-<span class="p">);</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="2">
-<li><p><strong>Triggers</strong>: These are automated actions that occur in response to certain database events. For example:</p></li>
-</ol>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TRIGGER</span><span class="w"> </span><span class="n">check_cell_occupancy</span>
-<span class="k">BEFORE</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Villains</span>
-<span class="k">FOR</span><span class="w"> </span><span class="k">EACH</span><span class="w"> </span><span class="k">ROW</span>
-<span class="k">BEGIN</span>
-<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="k">CASE</span>
-<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Villains</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">NEW</span><span class="p">.</span><span class="n">Cell</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span>
-<span class="w">        </span><span class="k">THEN</span><span class="w"> </span><span class="n">RAISE</span><span class="p">(</span><span class="k">ABORT</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Cell already occupied&#39;</span><span class="p">)</span>
-<span class="w">    </span><span class="k">END</span><span class="p">;</span>
-<span class="k">END</span><span class="p">;</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="3">
-<li><p><strong>Transactions</strong>: By grouping operations together in a transaction, you ensure that either all consistency rules are met, or none of the operations are performed.</p></li>
-</ol>
-<p>Maintaining consistency is crucial for ensuring that your database always reflects a valid real-world scenario. It prevents contradictions and impossibilities in your data, much like how the laws of Gotham prevent (or at least try to prevent) chaos from taking over the city.</p>
+<p>For example, Arkham Asylum has a database rule that each cell can only hold one villain at a time. If Commissioner Gordon attempts a transaction to assign both the Joker and the Penguin to cell A1, the database will block the insert to enforce consistency. The entire transaction will fail, leaving the cell assignments in their previous valid state.</p>
+<p>SQL provides three primary tools to enforce consistency:</p>
+<ul class="simple">
+<li><p>We define <strong>constraints</strong> directly on tables to restrict what data is allowed in columns.</p></li>
+<li><p>We build database <strong>triggers</strong> to run automatic verification scripts before a write operation occurs.</p></li>
+<li><p>We group operations into <strong>transactions</strong> so that either all consistency rules are met, or the database undoes the entire operation.</p></li>
+</ul>
 </section>
 <section id="isolation">
-<h3>Isolation<a class="headerlink" href="#isolation" title="Link to this heading">#</a></h3>
-<p><strong>Isolation</strong>, the third ACID property, ensures that concurrent execution of transactions leaves the database in the same state as if the transactions were executed sequentially. In other words, each transaction should feel like it’s the only one interacting with the database, even when multiple transactions are running simultaneously. This property is crucial in multi-user database systems, much like how Batman needs to isolate and handle multiple crimes occurring simultaneously in Gotham without letting them interfere with each other.</p>
-<p>Imagine a scenario where both Bruce Wayne and Alfred are accessing the Batcomputer’s database at the same time. Bruce is updating the Batmobile’s fuel levels after a night of patrol, while Alfred is logging new equipment arrivals. Isolation ensures that these two operations don’t interfere with each other, preventing scenarios like lost updates or dirty reads.</p>
-<p><strong>Concurrency</strong> in databases refers to the ability of the database management system (DBMS) to handle multiple transactions simultaneously. While concurrency can greatly improve performance and responsiveness, it also introduces challenges. For instance, if two villains, let’s say The Riddler and The Penguin, try to access Wayne Enterprises’ financial records simultaneously, we need to ensure they don’t interfere with each other’s operations or see partially updated data.</p>
-<p>To manage concurrency and maintain isolation, databases use <strong>locks</strong>. A <strong>lock</strong> is a mechanism that restricts access to a piece of data. There are typically two types of locks:</p>
-<ol class="arabic simple">
-<li><p><strong>Shared locks (“read locks”)</strong>: Allow multiple transactions to read data simultaneously.</p></li>
-<li><p><strong>Exclusive locks (“write locks”)</strong>: Restrict access to a single transaction for write operations.</p></li>
-</ol>
-<p>For example, when Bruce is updating the Batmobile’s fuel levels, the database might place an exclusive lock on that record, preventing Alfred from making changes to the same data until Bruce’s transaction is complete.</p>
-<p>However, excessive locking can lead to performance issues and, in some cases, <strong>deadlocks</strong>. A <strong>deadlock</strong> occurs when two or more transactions are waiting for each other to release locks, resulting in a standoff. Imagine Batman and Catwoman each holding a piece of evidence the other needs - neither can proceed without the other’s item, but neither is willing to give up their own first. Databases have mechanisms to detect and resolve deadlocks, often by choosing one transaction to roll back.</p>
-<p>Full-featured client-server databases (such as PostgreSQL, MySQL, ORacle, etc.) offer various <strong>isolation levels</strong> that provide different trade-offs between consistency and performance:</p>
+<h3>Isolation<a class="headerlink" href="#isolation" title="Permalink to this heading">#</a></h3>
+<p>The property of <strong>isolation</strong> ensures that when multiple transactions run at the same time, the database ends up in the same state as if they had run one after the other. Each transaction should feel like it is the only one interacting with the database, preventing concurrent operations from creating conflicts.</p>
+<p>Database engines manage <strong>concurrency</strong>—the ability to handle multiple users simultaneously—by using locks:</p>
 <ul class="simple">
-<li><p><strong>Read Uncommitted.</strong> Transactions can see changes made by other transactions before they are finalized, which can lead to inconsistent data.</p></li>
-<li><p><strong>Read Committed.</strong>  Transactions can only see changes made by other transactions after they are finalized, reducing the risk of inconsistent data.</p></li>
-<li><p><strong>Repeatable Read.</strong>  Once a transaction reads data, it will see the same data if it reads it again, even if other transactions make changes in the meantime.</p></li>
-<li><p><strong>Serializable.</strong> Transactions are completely isolated from each other, as if they are happening one after the other, ensuring the highest level of data consistency.</p></li>
+<li><p>We place a <strong>shared lock</strong> (or read lock) on a record to allow multiple transactions to read the data at the same time while blocking any edits.</p></li>
+<li><p>We place an <strong>exclusive lock</strong> (or write lock) on a record to prevent other transactions from reading or writing the data while an edit is in progress.</p></li>
 </ul>
-<p>Each level provides stronger guarantees but potentially at the cost of reduced concurrency. SQLite, by default, operates at the Serializable isolation level.</p>
-<p>Understanding and properly implementing isolation is crucial for maintaining data integrity in multi-user environments, ensuring that concurrent operations don’t lead to data inconsistencies or conflicts.</p>
+<p>If Alfred is logging new equipment arrivals while Bruce is updating the Batmobile’s fuel levels, the database uses these locks to isolate their actions. However, excessive locking can lead to a <strong>deadlock</strong>, which occurs when two transactions are waiting for locks held by each other, causing a complete standoff. Databases solve this by automatically aborting and rolling back one of the transactions.</p>
+<p>Full database systems offer different <strong>isolation levels</strong> to balance speed and consistency:</p>
+<ul class="simple">
+<li><p>Under <strong>read uncommitted</strong>, transactions can see unfinalized changes made by others, which is fast but highly risky.</p></li>
+<li><p>Under <strong>read committed</strong>, transactions can only see changes after they are officially committed, preventing dirty reads.</p></li>
+<li><p>Under <strong>repeatable read</strong>, a transaction is guaranteed to see the exact same data every time it queries a row, even if others edit it in the meantime.</p></li>
+<li><p>Under <strong>serializable</strong>, transactions are completely isolated and run as if they executed one at a time, ensuring the highest consistency.</p></li>
+</ul>
 </section>
 <section id="durability">
-<h3>Durability<a class="headerlink" href="#durability" title="Link to this heading">#</a></h3>
-<p><strong>Durability</strong>, the final ACID property, guarantees that once a transaction has been committed, it will remain so, even in the event of a system failure, power outage, or crash. This property ensures that your data persists, much like how the legacy of Batman endures through all of Gotham’s trials and tribulations.</p>
-<p>In database terms, durability means that all completed transactions are recorded in non-volatile memory. Once the database confirms that a transaction has been committed, that data should be safe, even if the server crashes immediately afterward.</p>
-<p>Let’s consider a scenario at Arkham Asylum. Dr. Harleen Quinzel (before her transformation into Harley Quinn) is updating patient records. She’s just finished noting that The Joker has been administered his daily medication - a crucial piece of information for maintaining order in the asylum. Durability ensures that even if there’s a sudden power outage (perhaps caused by Electrocutioner), this update will not be lost.</p>
-<p>Both SQLite and PostgreSQL implement durability, but they do so in slightly different ways:</p>
-<ol class="arabic simple">
-<li><p><strong>SQLite</strong> uses a write-ahead log (WAL) by default. Before changes are made to the main database file, they are written to this log. If a crash occurs during a transaction, SQLite can recover the changes from the WAL.</p></li>
-<li><p><strong>PostgreSQL</strong> uses a write-ahead log as well, but it also provides more advanced features for ensuring durability, such as:</p>
+<h3>Durability<a class="headerlink" href="#durability" title="Permalink to this heading">#</a></h3>
+<p>The property of <strong>durability</strong> guarantees that once a transaction is committed, its changes are saved permanently in non-volatile storage and will survive any system crash or power outage.</p>
+<p>To enforce durability, database engines write all changes to a <strong>transaction log</strong> (often called a write-ahead log) on disk before updating the main database file. If a sudden crash occurs, the database uses these logs to recover all committed data.</p>
+<p>Different systems implement durability in tailored ways:</p>
 <ul class="simple">
-<li><p>Asynchronous Commit: Allows for faster performance at the risk of losing the latest transactions in case of a crash.</p></li>
-<li><p>Synchronous Replication: Ensures that data is written to multiple servers before considering a transaction complete.</p></li>
+<li><p>The <strong>SQLite</strong> database uses a local write-ahead log file to recover database changes automatically after a crash.</p></li>
+<li><p>The <strong>PostgreSQL</strong> database supports advanced features like synchronous replication, which copies data to multiple physical servers before confirming a transaction is complete.</p></li>
 </ul>
-</li>
-</ol>
-<p>To ensure durability, databases use <strong>transaction logs</strong>. These logs record all database modifications. In the event of a system failure, the database can use these logs to recover to a consistent state. It’s like Batman’s case files - even if the Batcave is compromised, he can reconstruct his investigations from these detailed records.</p>
-<p>Here’s a simple example of a durable transaction in SQL:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">BEGIN</span><span class="p">;</span>
-<span class="k">UPDATE</span><span class="w"> </span><span class="n">Inmates</span>
-<span class="k">SET</span><span class="w"> </span><span class="n">MedicationAdministered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">TRUE</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Joker&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="nb">Date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">CURRENT_DATE</span><span class="p">;</span>
-<span class="k">COMMIT</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Once this COMMIT statement successfully completes, the database guarantees that this update will persist, even in the face of subsequent system failures.</p>
-<p>While durability provides strong guarantees, it’s important to note that it can impact performance. Writing every change to disk immediately can slow down transaction processing. Database administrators often need to balance durability requirements with performance needs, much like how Batman must balance his desire for justice with the practical limitations of his resources.</p>
-<p>Proper backup strategies are also crucial for maintaining durability over the long term. Regular backups ensure that even in catastrophic scenarios, your data can be recovered. It’s the database equivalent of Batman’s contingency plans - always prepared for the worst-case scenario.</p>
-<p>Understanding durability helps ensure that critical data is never lost, maintaining the integrity and reliability of your database system even in the face of unexpected events or system failures.</p>
+<p>While durability guarantees that your data is safe, writing every change directly to disk can impact performance. Administrators must balance durability settings with speed requirements, backed by regular backup strategies to protect against physical drive failures.</p>
 </section>
 <section id="deadlocks">
-<h3>Deadlocks<a class="headerlink" href="#deadlocks" title="Link to this heading">#</a></h3>
+<h3>Deadlocks<a class="headerlink" href="#deadlocks" title="Permalink to this heading">#</a></h3>
 <p>A deadlock happens when two transactions each hold a resource the other needs, so neither can finish.</p>
 <p>Simple example:</p>
 <ol class="arabic simple">
@@ -1390,7 +1275,7 @@ operable program or batch file.
 </ul>
 </section>
 <section id="transaction-performance-and-error-handling">
-<h3>Transaction Performance and Error Handling<a class="headerlink" href="#transaction-performance-and-error-handling" title="Link to this heading">#</a></h3>
+<h3>Transaction Performance and Error Handling<a class="headerlink" href="#transaction-performance-and-error-handling" title="Permalink to this heading">#</a></h3>
 <p>Transactions protect data, but they also add overhead through locks, logging, and isolation rules.</p>
 <p>Keep in mind:</p>
 <ul class="simple">
@@ -1411,7 +1296,7 @@ operable program or batch file.
 <p>Use savepoints when you want part of a transaction to be reversible without losing all of the work.</p>
 </section>
 <section id="isolation-levels-in-practice">
-<h3>Isolation levels in practice<a class="headerlink" href="#isolation-levels-in-practice" title="Link to this heading">#</a></h3>
+<h3>Isolation levels in practice<a class="headerlink" href="#isolation-levels-in-practice" title="Permalink to this heading">#</a></h3>
 <p>The “I” in ACID is a setting, not a fixed value. SQL defines four standard <strong>isolation levels</strong>, each preventing more anomalies than the last and each costing more concurrency:</p>
 <ul class="simple">
 <li><p><strong>READ UNCOMMITTED</strong> — A transaction can see another transaction’s uncommitted writes. Fast, but allows <strong>dirty reads</strong>. Rarely used.</p></li>
@@ -1436,9 +1321,9 @@ operable program or batch file.
 </section>
 </section>
 <section id="nosql-case-study-harley-s-havoc">
-<h2>NoSQL Case Study: Harley’s Havoc<a class="headerlink" href="#nosql-case-study-harley-s-havoc" title="Link to this heading">#</a></h2>
-<p>After her latest split with the Joker, Harley Quinn decides to launch “Harley’s Havoc” - a marketplace for circus equipment, practical joke supplies, and questionably-obtained collectibles. Given the chaotic nature of her business and the need to handle thousands of simultaneous users during her infamous flash sales, she needs a database that can scale horizontally and handle rapid writes. She decides to use <strong>MongoDB</strong>, a widely used <strong>NoSQL</strong> database.</p>
-<p>MongoDB stores data in BSON (Binary JSON) format. Here’s how a typical product listing in Harley’s store might look:</p>
+<h2>NoSQL Case Study: Harley’s Havoc<a class="headerlink" href="#nosql-case-study-harley-s-havoc" title="Permalink to this heading">#</a></h2>
+<p>Harley Quinn decided to launch “Harley’s Havoc” — an online marketplace for circus equipment and practical joke supplies. Because her business experiences massive traffic spikes during flash sales, she needs a highly scalable database that can handle rapid writes. She selected <strong>MongoDB</strong>, which is a popular <strong>NoSQL</strong> database that stores data in flexible BSON format.</p>
+<p>A typical product document in Harley’s database looks like this:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="s2">&quot;_id&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">ObjectId</span><span class="p">(</span><span class="s2">&quot;5f7d3a2e9d3b2c1234567890&quot;</span><span class="p">),</span>
 <span class="w">  </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Authentic Trick Mallet&quot;</span><span class="p">,</span>
@@ -1465,15 +1350,10 @@ operable program or batch file.
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Notice how flexible this structure is - we can nest arrays and objects, and each product document can have different fields. This flexibility is one of MongoDB’s key advantages over rigid SQL schemas.</p>
+<p>This nested structure allows Harley to store complex product details in a single document without requiring a rigid schema, which is a major advantage over traditional relational tables.</p>
 <section id="scaling-out-why-harley-chose-mongodb">
-<h3>Scaling Out: Why Harley Chose MongoDB<a class="headerlink" href="#scaling-out-why-harley-chose-mongodb" title="Link to this heading">#</a></h3>
-<p>Unlike Gotham City Bank’s traditional SQL database, MongoDB can easily distribute data across multiple machines using <strong>sharding</strong>. When Harley’s flash sales cause traffic spikes, the system can handle it by:</p>
-<ol class="arabic simple">
-<li><p>Automatically distributing data across multiple shards</p></li>
-<li><p>Routing queries to appropriate shards</p></li>
-<li><p>Balancing data as new shards are added</p></li>
-</ol>
+<h3>Scaling Out: Why Harley Chose MongoDB<a class="headerlink" href="#scaling-out-why-harley-chose-mongodb" title="Permalink to this heading">#</a></h3>
+<p>Unlike traditional SQL databases, MongoDB scales horizontally using a technique called <strong>sharding</strong>, which distributes data automatically across multiple physical machines:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Example of how MongoDB might shard Harley&#39;s collection</span>
 <span class="nx">db</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span><span class="s2">&quot;products&quot;</span><span class="p">)</span>
 <span class="nx">sh</span><span class="p">.</span><span class="nx">shardCollection</span><span class="p">(</span><span class="s2">&quot;harleysHavoc.products&quot;</span><span class="p">,</span>
@@ -1481,58 +1361,53 @@ operable program or batch file.
 </pre></div>
 </div>
 <section id="the-move-from-acid-to-base">
-<h4>The Move from ACID to BASE<a class="headerlink" href="#the-move-from-acid-to-base" title="Link to this heading">#</a></h4>
-<p>To achieve this scalability, MongoDB adopts <strong>BASE (Basically Available, Soft state, Eventually consistent)</strong> instead of ACID properties. Here’s what this means for Harley’s business:</p>
-<p><strong>Advantages:</strong></p>
+<h4>The Move from ACID to BASE<a class="headerlink" href="#the-move-from-acid-to-base" title="Permalink to this heading">#</a></h4>
+<p>To achieve this horizontal scalability, MongoDB adopts a <strong>BASE</strong> model instead of strict ACID properties:</p>
 <ul class="simple">
-<li><p>Can handle thousands of simultaneous writes during flash sales</p></li>
-<li><p>New product categories can be added without schema changes</p></li>
-<li><p>Queries can be distributed across multiple servers</p></li>
-<li><p>Quick recovery if a server goes down (high availability)</p></li>
+<li><p>A <strong>BASE</strong> system prioritizes high availability and uses <strong>eventual consistency</strong>, meaning that data copies across servers will eventually sync up, though they might be temporarily different.</p></li>
 </ul>
-<p><strong>Trade-offs:</strong></p>
+<p>This model provides major benefits for Harley’s store:</p>
 <ul class="simple">
-<li><p>No true multi-document transactions (until recent versions, which impose a speed cost)</p></li>
-<li><p>Eventual consistency means inventory counts might be temporarily incorrect</p></li>
-<li><p>Complex queries across multiple collections are more challenging</p></li>
-<li><p>No built-in referential integrity</p></li>
+<li><p>The system can process thousands of simultaneous writes during flash sales.</p></li>
+<li><p>Developers can add new product categories instantly without modifying a table schema.</p></li>
+<li><p>Data is automatically distributed across multiple servers for fast recovery.</p></li>
+</ul>
+<p>However, this model has significant trade-offs:</p>
+<ul class="simple">
+<li><p>The lack of strict multi-row transactions makes complex, multi-table operations difficult.</p></li>
+<li><p>Eventual consistency means inventory counts might be temporarily inaccurate on different servers.</p></li>
+<li><p>The database does not enforce built-in referential integrity between collections.</p></li>
 </ul>
 </section>
 </section>
 <section id="why-this-would-be-disastrous-for-gotham-city-bank">
-<h3>Why This Would Be Disastrous for Gotham City Bank<a class="headerlink" href="#why-this-would-be-disastrous-for-gotham-city-bank" title="Link to this heading">#</a></h3>
-<p>Let’s contrast this with banking requirements:</p>
-<ol class="arabic simple">
-<li><p><strong>Atomicity</strong>: When the Joker transfers money between accounts, it must either completely succeed or completely fail. There’s no room for “eventual consistency” when dealing with money.</p></li>
-<li><p><strong>Consistency</strong>: Account balances must be accurate at all times. The bank can’t tell Batman his account balance is $10,000,000 on one server and $9,000,000 on another.</p></li>
-<li><p><strong>Isolation</strong>: If Penguin and Riddler are both trying to withdraw from the same account, their transactions must be properly serialized to prevent double-spending.</p></li>
-<li><p><strong>Durability</strong>: Once a transaction is confirmed, it must survive any system crashes. The bank can’t tell Two-Face “sorry, that deposit might have gotten lost during a server failover.”</p></li>
-</ol>
+<h3>Why This Would Be Disastrous for Gotham City Bank<a class="headerlink" href="#why-this-would-be-disastrous-for-gotham-city-bank" title="Permalink to this heading">#</a></h3>
+<p>While BASE works well for product catalogs, it would be catastrophic for a bank:</p>
+<ul class="simple">
+<li><p>A bank requires <strong>atomicity</strong> because transferring money must either complete fully or fail completely, with no middle ground.</p></li>
+<li><p>A bank requires <strong>consistency</strong> so that account balances are perfectly accurate and identical on every server.</p></li>
+<li><p>A bank requires <strong>isolation</strong> to prevent concurrent withdrawals from allowing users to double-spend funds.</p></li>
+<li><p>A bank requires <strong>durability</strong> to guarantee that confirmed deposits are never lost in a server crash.</p></li>
+</ul>
 </section>
 <section id="best-of-both-worlds-hybrid-approaches">
-<h3>Best of Both Worlds: Hybrid Approaches<a class="headerlink" href="#best-of-both-worlds-hybrid-approaches" title="Link to this heading">#</a></h3>
-<p>Modern applications often use both SQL and NoSQL databases. For Harley’s business, she could:</p>
-<ul class="simple">
-<li><p>Use MongoDB for product catalog and user sessions</p></li>
-<li><p>Use PostgreSQL for payment processing and critical inventory tracking</p></li>
-<li><p>Implement application-level consistency checks for critical operations</p></li>
-</ul>
-<p>Finally, it is important to note that MongoDB has gotten more “relational” over the years (for example, providing better support for transactions) even while popular RDBMSs (Postgres, Oracle, SQL Server) have provided native support for JSON and sharding.</p>
+<h3>Best of Both Worlds: Hybrid Approaches<a class="headerlink" href="#best-of-both-worlds-hybrid-approaches" title="Permalink to this heading">#</a></h3>
+<p>Modern applications often combine both systems by using MongoDB for product catalogs and web sessions, while using a relational database like PostgreSQL for payment processing and inventory tracking.</p>
 </section>
 </section>
 </section>
 <section id="a-day-in-the-life-of-a-database-administrator">
-<h1>A Day in the Life of a Database Administrator<a class="headerlink" href="#a-day-in-the-life-of-a-database-administrator" title="Link to this heading">#</a></h1>
+<h1>A Day in the Life of a Database Administrator<a class="headerlink" href="#a-day-in-the-life-of-a-database-administrator" title="Permalink to this heading">#</a></h1>
 <p>Barbara Gordon (“Oracle”) is the DBA for Gotham City PD. Her day illustrates what DBAs monitor and why logs matter.</p>
 <section id="morning-health-checks">
-<h2>Morning: health checks<a class="headerlink" href="#morning-health-checks" title="Link to this heading">#</a></h2>
+<h2>Morning: health checks<a class="headerlink" href="#morning-health-checks" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>review overnight backups</p></li>
 <li><p>check CPU, memory, and disk I/O</p></li>
 <li><p>scan error logs for failures</p></li>
 </ul>
 <section id="mid-morning-performance-tuning">
-<h3>Mid-morning: performance tuning<a class="headerlink" href="#mid-morning-performance-tuning" title="Link to this heading">#</a></h3>
+<h3>Mid-morning: performance tuning<a class="headerlink" href="#mid-morning-performance-tuning" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>inspect slow queries</p></li>
 <li><p>add or adjust indexes</p></li>
@@ -1540,7 +1415,7 @@ operable program or batch file.
 </ul>
 </section>
 <section id="afternoon-security-and-change-management">
-<h3>Afternoon: security and change management<a class="headerlink" href="#afternoon-security-and-change-management" title="Link to this heading">#</a></h3>
+<h3>Afternoon: security and change management<a class="headerlink" href="#afternoon-security-and-change-management" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>investigate suspicious logins</p></li>
 <li><p>review access patterns</p></li>
@@ -1550,7 +1425,7 @@ operable program or batch file.
 </section>
 </section>
 <section id="common-database-performance-metrics">
-<h2>Common Database Performance Metrics<a class="headerlink" href="#common-database-performance-metrics" title="Link to this heading">#</a></h2>
+<h2>Common Database Performance Metrics<a class="headerlink" href="#common-database-performance-metrics" title="Permalink to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Metric</p></th>
@@ -1588,10 +1463,10 @@ operable program or batch file.
 <p>Watching these metrics helps a DBA decide whether a problem is caused by query design, concurrency, hardware pressure, or workload spikes.</p>
 </section>
 <section id="monitoring-as-an-operations-discipline">
-<h2>Monitoring as an operations discipline<a class="headerlink" href="#monitoring-as-an-operations-discipline" title="Link to this heading">#</a></h2>
+<h2>Monitoring as an operations discipline<a class="headerlink" href="#monitoring-as-an-operations-discipline" title="Permalink to this heading">#</a></h2>
 <p>Barbara Gordon’s day above gives the flavor of a DBA’s work. The rest of this section turns that into a discipline: how baselines are set, how alerts get tied to them, and what a DBA actually checks every day.</p>
 <section id="baselines-and-thresholds">
-<h3>Baselines and thresholds<a class="headerlink" href="#baselines-and-thresholds" title="Link to this heading">#</a></h3>
+<h3>Baselines and thresholds<a class="headerlink" href="#baselines-and-thresholds" title="Permalink to this heading">#</a></h3>
 <p>A <strong>baseline configuration</strong> is “what normal looks like.” Before you can sensibly alert on a metric, you need to know what its value usually is, at what time of day, and under what load.</p>
 <p>For Gotham National Bank, a baseline might say:</p>
 <ul class="simple">
@@ -1602,7 +1477,7 @@ operable program or batch file.
 <p>Thresholds become useful only after the baseline exists. “Page on-call if CPU exceeds 70% for more than five minutes” only makes sense once you know that 70% is well above normal.</p>
 </section>
 <section id="alerts-and-notifications">
-<h3>Alerts and notifications<a class="headerlink" href="#alerts-and-notifications" title="Link to this heading">#</a></h3>
+<h3>Alerts and notifications<a class="headerlink" href="#alerts-and-notifications" title="Permalink to this heading">#</a></h3>
 <p>An <strong>alert</strong> is an automated signal that some metric has crossed a threshold. A <strong>notification</strong> is how the alert gets to a human — email, SMS, pager, chat channel.</p>
 <p>A real alert specification names every part of the response:</p>
 <blockquote>
@@ -1617,7 +1492,7 @@ operable program or batch file.
 <p>Tuning these levels is a never-ending job. Too aggressive and the team learns to ignore the pager; too quiet and real problems slip past.</p>
 </section>
 <section id="what-dbas-watch-every-day">
-<h3>What DBAs watch every day<a class="headerlink" href="#what-dbas-watch-every-day" title="Link to this heading">#</a></h3>
+<h3>What DBAs watch every day<a class="headerlink" href="#what-dbas-watch-every-day" title="Permalink to this heading">#</a></h3>
 <p>A working DBA checklist at Gotham National Bank looks something like this:</p>
 <ul class="simple">
 <li><p><strong>Job completion and failure</strong> — Did every scheduled job finish? Which ones errored?</p></li>
@@ -1675,10 +1550,10 @@ operable program or batch file.
 </section>
 </section>
 <section id="maintenance-operations">
-<h2>Maintenance operations<a class="headerlink" href="#maintenance-operations" title="Link to this heading">#</a></h2>
+<h2>Maintenance operations<a class="headerlink" href="#maintenance-operations" title="Permalink to this heading">#</a></h2>
 <p>Monitoring tells you what is wrong. <strong>Maintenance</strong> is what you do about it on purpose, on a schedule, with a paper trail. Commissioner Gordon does not want surprises in the IT report; the DBA team plans maintenance carefully so changes never look like accidents.</p>
 <section id="patch-and-release-management">
-<h3>Patch and release management<a class="headerlink" href="#patch-and-release-management" title="Link to this heading">#</a></h3>
+<h3>Patch and release management<a class="headerlink" href="#patch-and-release-management" title="Permalink to this heading">#</a></h3>
 <p><strong>Patch management</strong> is the discipline of applying vendor-issued fixes to the database engine, the operating system, and the surrounding libraries.</p>
 <p>A typical quarterly cycle at Gotham National Bank:</p>
 <ol class="arabic simple">
@@ -1692,7 +1567,7 @@ operable program or batch file.
 <p>A <strong>release schedule</strong> is the published calendar of these windows. Stakeholders know exactly when systems may be briefly unavailable and can plan around it.</p>
 </section>
 <section id="integrity-checks-and-database-refresh">
-<h3>Integrity checks and database refresh<a class="headerlink" href="#integrity-checks-and-database-refresh" title="Link to this heading">#</a></h3>
+<h3>Integrity checks and database refresh<a class="headerlink" href="#integrity-checks-and-database-refresh" title="Permalink to this heading">#</a></h3>
 <p>An <strong>integrity check</strong> scans the database for problems that should not exist: corrupted pages, broken foreign-key references, orphaned rows. SQLite has <code class="docutils literal notranslate"><span class="pre">PRAGMA</span> <span class="pre">integrity_check</span></code>. PostgreSQL has <code class="docutils literal notranslate"><span class="pre">amcheck</span></code>. SQL Server has <code class="docutils literal notranslate"><span class="pre">DBCC</span> <span class="pre">CHECKDB</span></code>. Each does roughly the same job: confirm that nothing has rotted under the surface.</p>
 <p>A <strong>database refresh</strong> is the controlled copy of production data into a non-production environment so developers and testers can work against realistic data without touching the real system. For Gotham National Bank:</p>
 <ul class="simple">
@@ -1703,7 +1578,7 @@ operable program or batch file.
 <p>Refreshes are typically scheduled — weekly for active projects, monthly for stable ones — so developers know when the test data is changing.</p>
 </section>
 <section id="version-control-and-ci-cd-for-databases">
-<h3>Version control and CI/CD for databases<a class="headerlink" href="#version-control-and-ci-cd-for-databases" title="Link to this heading">#</a></h3>
+<h3>Version control and CI/CD for databases<a class="headerlink" href="#version-control-and-ci-cd-for-databases" title="Permalink to this heading">#</a></h3>
 <p>Application code lives in version control, but database schemas often do not. Modern teams fix that with <strong>schema migrations</strong>: small, ordered SQL files that describe each change to the schema. Tools like <strong>Flyway</strong> and <strong>Liquibase</strong> apply migrations in order and remember which ones have already run.</p>
 <p>A typical CI/CD pipeline for Gotham National Bank’s customer database:</p>
 <ol class="arabic simple">
@@ -1716,7 +1591,7 @@ operable program or batch file.
 </section>
 </section>
 <section id="chapter-summary">
-<h2>Chapter Summary<a class="headerlink" href="#chapter-summary" title="Link to this heading">#</a></h2>
+<h2>Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
 <p>Use this list as a self-check. After working through the chapter, you should be able to do each of the following:</p>
 <ul class="simple">
 <li><p>You can explain what an index is and what problem it solves.</p></li>
@@ -1738,10 +1613,10 @@ operable program or batch file.
 </ul>
 </section>
 <section id="lab-querying-database-logs">
-<h2>Lab: Querying Database Logs<a class="headerlink" href="#lab-querying-database-logs" title="Link to this heading">#</a></h2>
+<h2>Lab: Querying Database Logs<a class="headerlink" href="#lab-querying-database-logs" title="Permalink to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">dbms_logs.db</span></code> database contains one table, <code class="docutils literal notranslate"><span class="pre">Logs</span></code>, with structured events stored as JSON in the <code class="docutils literal notranslate"><span class="pre">data</span></code> column.</p>
 <section id="table-structure">
-<h3>Table structure<a class="headerlink" href="#table-structure" title="Link to this heading">#</a></h3>
+<h3>Table structure<a class="headerlink" href="#table-structure" title="Permalink to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Column</p></th>
@@ -1767,7 +1642,7 @@ operable program or batch file.
 </div>
 </section>
 <section id="what-to-look-for-in-this-lab">
-<h3>What to look for in this lab<a class="headerlink" href="#what-to-look-for-in-this-lab" title="Link to this heading">#</a></h3>
+<h3>What to look for in this lab<a class="headerlink" href="#what-to-look-for-in-this-lab" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>query performance</p></li>
 <li><p>transaction activity</p></li>
@@ -1779,7 +1654,7 @@ operable program or batch file.
 </section>
 </section>
 <section id="log-entry-types-to-know">
-<h2>Log Entry Types to Know<a class="headerlink" href="#log-entry-types-to-know" title="Link to this heading">#</a></h2>
+<h2>Log Entry Types to Know<a class="headerlink" href="#log-entry-types-to-know" title="Permalink to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">data</span></code> JSON object varies by event type.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -1814,7 +1689,7 @@ operable program or batch file.
 </div>
 <p>A good first step is to filter by <code class="docutils literal notranslate"><span class="pre">json_extract(data,</span> <span class="pre">'$.type')</span></code> and then pull only the fields relevant to that event class.</p>
 <section id="querying-the-database">
-<h3>Querying the Database<a class="headerlink" href="#querying-the-database" title="Link to this heading">#</a></h3>
+<h3>Querying the Database<a class="headerlink" href="#querying-the-database" title="Permalink to this heading">#</a></h3>
 <p>To extract information from the <code class="docutils literal notranslate"><span class="pre">Logs</span></code> table, you can use SQLite’s JSON functions. Below are some sample queries to help you get started.</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">json_extract(json,</span> <span class="pre">path)</span></code></strong>: Extracts a value from a JSON string.</p></li>
@@ -1823,7 +1698,7 @@ operable program or batch file.
 <p>Some sample queries:</p>
 </section>
 <section id="sample-queries">
-<h3>Sample Queries<a class="headerlink" href="#sample-queries" title="Link to this heading">#</a></h3>
+<h3>Sample Queries<a class="headerlink" href="#sample-queries" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -2095,9 +1970,9 @@ WHERE json_extract(data, &#39;$.type&#39;) = &#39;query_execution&#39;;
 </section>
 </section>
 <section id="lab-practice-your-sql">
-<h2>Lab: Practice Your SQL<a class="headerlink" href="#lab-practice-your-sql" title="Link to this heading">#</a></h2>
+<h2>Lab: Practice Your SQL<a class="headerlink" href="#lab-practice-your-sql" title="Permalink to this heading">#</a></h2>
 <section id="loop-of-the-recursive-dragon-databse-theory">
-<h3>Loop of the Recursive Dragon: Databse Theory<a class="headerlink" href="#loop-of-the-recursive-dragon-databse-theory" title="Link to this heading">#</a></h3>
+<h3>Loop of the Recursive Dragon: Databse Theory<a class="headerlink" href="#loop-of-the-recursive-dragon-databse-theory" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The external LOTR mini-game is skipped during automated execution. Run this cell interactively if you want the activity.&#39;</span><span class="p">)</span>
@@ -2105,15 +1980,39 @@ WHERE json_extract(data, &#39;$.type&#39;) = &#39;query_execution&#39;;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The external LOTR mini-game is skipped during automated execution. Run this cell interactively if you want the activity.
-</pre></div>
-</div>
-</div>
+<div class="output text_html">
+<style>
+.bbs-container {
+    background-color: #1e1e1e;
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+}
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.section {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.bold { font-weight: bold; }
+.underline { text-decoration: underline; }
+.yellow { color: #ffff00; }
+.red { color: #ff0000; }
+.cyan { color: #00ffff; }
+</style>
+</div><script type="application/vnd.jupyter.widget-view+json">{"model_id": "706ef7fc0c6b4bb7b7ef7a6d7058a0e4", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 </section>
 <section id="key-points-summary">
-<h2>Key Points Summary<a class="headerlink" href="#key-points-summary" title="Link to this heading">#</a></h2>
+<h2>Key Points Summary<a class="headerlink" href="#key-points-summary" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Indexes are separate data structures that allow the database engine to find and retrieve data more efficiently without scanning the entire table.</p></li>
 <li><p>Creating appropriate indexes is crucial for optimizing database performance, but indexes also require additional storage space.</p></li>
@@ -2127,93 +2026,93 @@ WHERE json_extract(data, &#39;$.type&#39;) = &#39;query_execution&#39;;
 </ul>
 </section>
 <section id="practice-with-the-loop-of-the-recursive-dragon">
-<h2>Practice with the Loop of the Recursive Dragon<a class="headerlink" href="#practice-with-the-loop-of-the-recursive-dragon" title="Link to this heading">#</a></h2>
+<h2>Practice with the Loop of the Recursive Dragon<a class="headerlink" href="#practice-with-the-loop-of-the-recursive-dragon" title="Permalink to this heading">#</a></h2>
 <p>Sharpen what you just learned with a chapter-matched review set in the <strong>Loop of the Recursive Dragon</strong> — an adaptive review game with multiple question types and RPG-style mechanics, built for this book.</p>
 <p><a class="reference external" href="https://brendanpshea.github.io/LotRD/?set=database_08_performance_transactions.json"><strong>Launch the Chapter 8 review set →</strong></a></p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
-<p>Use this list as a quick review sheet for the chapter.</p>
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<p>Use this reference sheet to quickly review key index and transaction terms.</p>
 <section id="indexes">
-<h3>Indexes<a class="headerlink" href="#indexes" title="Link to this heading">#</a></h3>
+<h3>Indexes<a class="headerlink" href="#indexes" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Index</strong> — A data structure that speeds up data retrieval by giving the database a quick way to find specific rows.</p></li>
-<li><p><strong>B-tree</strong> — A self-balancing tree structure commonly used to implement indexes for fast lookup, insertion, and deletion.</p></li>
-<li><p><strong>Clustered index</strong> — An index that determines the physical order of rows in a table, allowing faster retrieval on the indexed columns.</p></li>
-<li><p><strong>Non-clustered index</strong> — An index stored separately from the data, containing the indexed columns and pointers to the matching rows.</p></li>
-<li><p><strong>Covering index</strong> — An index that contains every column a query needs, so the database can answer the query without reading the table.</p></li>
-<li><p><strong>Index scan</strong> — A retrieval operation that uses an index to find specific rows, usually faster than scanning the whole table.</p></li>
-<li><p><strong>Full table scan</strong> — A retrieval operation that reads every row in a table, typically used when no helpful index exists.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">INDEX</span> <span class="pre">index_name</span> <span class="pre">ON</span> <span class="pre">tb1</span> <span class="pre">(c1,</span> <span class="pre">c2,</span> <span class="pre">…)</span></code></strong> — A SQL command that creates an index on one or more columns of a table to improve query performance.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">EXPLAIN</span> <span class="pre">QUERY</span> <span class="pre">PLAN</span></code></strong> — A SQL command that displays how the database plans to run a query, used to spot performance issues.</p></li>
+<li><p>An <strong>index</strong> is a database structure that speeds up query performance by providing a quick lookup path to table rows.</p></li>
+<li><p>A <strong>B-tree</strong> is a self-balancing tree structure commonly used to implement database indexes for fast retrieval.</p></li>
+<li><p>A <strong>clustered index</strong> determines the physical storage order of the rows in a table.</p></li>
+<li><p>A <strong>non-clustered index</strong> is stored in a separate B-tree structure and contains pointers back to the main table rows.</p></li>
+<li><p>A <strong>covering index</strong> contains all the columns a query requests, allowing the database to answer the query without reading the table itself.</p></li>
+<li><p>An <strong>index scan</strong> is a search operation that traverses an index B-tree to find matching rows quickly.</p></li>
+<li><p>A <strong>full table scan</strong> occurs when the database engine reads every single row in a table to find matching data.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">INDEX</span></code></strong> command is the SQL statement used to build a new index on specified table columns.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">EXPLAIN</span> <span class="pre">QUERY</span> <span class="pre">PLAN</span></code></strong> command is used to inspect how the database engine plans to execute a query.</p></li>
 </ul>
 </section>
 <section id="transactions-and-acid">
-<h3>Transactions and ACID<a class="headerlink" href="#transactions-and-acid" title="Link to this heading">#</a></h3>
+<h3>Transactions and ACID<a class="headerlink" href="#transactions-and-acid" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Transaction</strong> — A sequence of one or more SQL statements treated as a single unit of work.</p></li>
-<li><p><strong>ACID</strong> — An acronym for the four key properties of reliable transactions: Atomicity, Consistency, Isolation, and Durability.</p></li>
-<li><p><strong>Atomicity</strong> — The property that a transaction either completes entirely or has no effect at all.</p></li>
-<li><p><strong>Consistency</strong> — The property that a transaction moves the database from one valid state to another, preserving all rules and constraints.</p></li>
-<li><p><strong>Isolation</strong> — The property that concurrent transactions do not interfere with each other.</p></li>
-<li><p><strong>Durability</strong> — The property that once a transaction has been committed, its changes survive system failures or crashes.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">BEGIN</span></code></strong> — A SQL command that explicitly starts a new transaction.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">COMMIT</span></code></strong> — A SQL command that permanently saves the changes made during a transaction.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ROLLBACK</span></code></strong> — A SQL command that undoes all changes made during the current transaction.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">SAVEPOINT</span></code></strong> — A marker inside a transaction that you can roll back to without ending the whole transaction.</p></li>
+<li><p>A <strong>transaction</strong> is a sequence of database operations executed together as a single, indivisible unit of work.</p></li>
+<li><p>The <strong>ACID</strong> acronym represents the four essential properties of reliable transactions, which are atomicity, consistency, isolation, and durability.</p></li>
+<li><p>The <strong>atomicity</strong> is the property ensuring that all operations in a transaction succeed completely or fail completely.</p></li>
+<li><p>The <strong>consistency</strong> is the property guaranteeing that a transaction always leaves the database in a valid, rule-abiding state.</p></li>
+<li><p>The <strong>isolation</strong> is the property ensuring that concurrent transactions do not interfere with each other’s in-progress data.</p></li>
+<li><p>The <strong>durability</strong> is the property guaranteeing that committed transaction data is permanently saved and survives system crashes.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">BEGIN</span></code></strong> statement is the SQL command used to start a new transaction block.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">COMMIT</span></code></strong> statement is the SQL command used to permanently save all changes made during a transaction.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">ROLLBACK</span></code></strong> statement is the SQL command used to undo all changes made in an active transaction.</p></li>
+<li><p>A <strong><code class="docutils literal notranslate"><span class="pre">SAVEPOINT</span></code></strong> is a marker inside a transaction that allows you to roll back a portion of your changes without canceling the entire transaction.</p></li>
 </ul>
 </section>
 <section id="concurrency">
-<h3>Concurrency<a class="headerlink" href="#concurrency" title="Link to this heading">#</a></h3>
+<h3>Concurrency<a class="headerlink" href="#concurrency" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Concurrency</strong> — The ability of a database to handle many transactions or operations at the same time without conflicts.</p></li>
-<li><p><strong>Shared (read) lock</strong> — A lock that allows multiple transactions to read the same data at once but blocks writes to it.</p></li>
-<li><p><strong>Exclusive (write) lock</strong> — A lock that prevents other transactions from reading or modifying the locked data, used for write operations.</p></li>
+<li><p>The <strong>concurrency</strong> is the ability of a database to handle multiple active transactions at the same time without conflicts.</p></li>
+<li><p>A <strong>shared lock</strong> allows multiple transactions to read a record simultaneously while blocking any edits.</p></li>
+<li><p>An <strong>exclusive lock</strong> blocks all other transactions from reading or writing a record while an edit is in progress.</p></li>
 </ul>
 </section>
 <section id="monitoring">
-<h3>Monitoring<a class="headerlink" href="#monitoring" title="Link to this heading">#</a></h3>
+<h3>Monitoring<a class="headerlink" href="#monitoring" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Database monitoring</strong> — The ongoing process of tracking performance, resource use, and potential issues in a database.</p></li>
-<li><p><strong>Database reporting</strong> — The generation of structured summaries about database activity, performance, and usage patterns.</p></li>
-<li><p><strong>Connection logs</strong> — Records of database connections, including user, time, duration, and connection status.</p></li>
-<li><p><strong>System logs</strong> — Records of database system events, errors, and activities used for troubleshooting and auditing.</p></li>
+<li><p>The <strong>database monitoring</strong> is the ongoing process of tracking system performance, resources, and connections.</p></li>
+<li><p>The <strong>database reporting</strong> is the act of generating structured summaries about database activity and health.</p></li>
+<li><p>The <strong>connection logs</strong> are system files that record details about user logins, connection times, and errors.</p></li>
+<li><p>The <strong>system logs</strong> are database records tracking system events, startup operations, and errors.</p></li>
 </ul>
 </section>
 <section id="other">
-<h3>Other<a class="headerlink" href="#other" title="Link to this heading">#</a></h3>
+<h3>Other<a class="headerlink" href="#other" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Scalar subquery</strong> — A subquery that returns a single value, usable inside another query as part of a condition or expression.</p></li>
+<li><p>A <strong>scalar subquery</strong> is a nested query that returns exactly one single value to the main outer query.</p></li>
 </ul>
 </section>
 <section id="monitoring-and-maintenance">
-<h3>Monitoring and maintenance<a class="headerlink" href="#monitoring-and-maintenance" title="Link to this heading">#</a></h3>
+<h3>Monitoring and maintenance<a class="headerlink" href="#monitoring-and-maintenance" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Baseline configuration</strong> — A documented record of what normal looks like for each metric on a system, used as the basis for alert thresholds.</p></li>
-<li><p><strong>Alert</strong> — An automated signal that a metric has crossed a defined threshold.</p></li>
-<li><p><strong>Notification</strong> — The delivery of an alert to a human, through email, SMS, paging, or chat.</p></li>
-<li><p><strong>Job monitoring</strong> — Watching scheduled background jobs to confirm they complete on time and reporting on failures.</p></li>
-<li><p><strong>Session monitoring</strong> — Watching open database sessions to spot stuck connections or unusual concurrency.</p></li>
-<li><p><strong>Replication lag</strong> — The delay between a write on a primary database and the same write appearing on a replica.</p></li>
-<li><p><strong>Patch management</strong> — The discipline of applying vendor-issued fixes to a database, its operating system, and surrounding libraries on a planned schedule.</p></li>
-<li><p><strong>Change approval</strong> — A formal review step that authorizes a planned database change before it happens.</p></li>
-<li><p><strong>Release schedule</strong> — A published calendar of approved maintenance windows during which changes may be deployed.</p></li>
-<li><p><strong>Integrity check</strong> — A scan that looks for corruption, broken references, or orphaned rows inside a database.</p></li>
-<li><p><strong>Database refresh</strong> — A controlled copy of production data into a non-production environment, typically with sensitive fields masked.</p></li>
-<li><p><strong>Schema migration</strong> — A small, ordered SQL file that describes one change to the database schema, applied in sequence by a migration tool.</p></li>
-<li><p><strong>CI/CD</strong> — Continuous integration and continuous delivery; the automated pipelines that build, test, and deploy application and schema changes.</p></li>
+<li><p>A <strong>baseline configuration</strong> is a documented record of normal system performance used to set alert thresholds.</p></li>
+<li><p>An <strong>alert</strong> is an automated warning triggered when a database metric crosses a defined safety threshold.</p></li>
+<li><p>A <strong>notification</strong> is the delivery of a system alert to a database administrator via email or text.</p></li>
+<li><p>The <strong>job monitoring</strong> is the process of tracking scheduled background tasks to verify they complete successfully.</p></li>
+<li><p>The <strong>session monitoring</strong> is the practice of tracking active database connections to spot hung queries.</p></li>
+<li><p>The <strong>replication lag</strong> is the physical delay before a write on a primary database replica appears on its backup nodes.</p></li>
+<li><p>The <strong>patch management</strong> is the ongoing discipline of installing software updates and security fixes.</p></li>
+<li><p>A <strong>change approval</strong> is a formal review step required before any modification is deployed to a production database.</p></li>
+<li><p>A <strong>release schedule</strong> is a shared calendar of approved maintenance windows for deploying database updates.</p></li>
+<li><p>An <strong>integrity check</strong> is a database scan that checks for corrupt data blocks or broken foreign key links.</p></li>
+<li><p>A <strong>database refresh</strong> is the process of copying production data into a test environment with sensitive data masked.</p></li>
+<li><p>A <strong>schema migration</strong> is an ordered SQL script that applies a specific structural update to a database schema.</p></li>
+<li><p>The <strong>CI/CD</strong> represents automated pipelines used to build, test, and deploy database and code updates.</p></li>
 </ul>
 </section>
 <section id="statistics-and-isolation">
-<h3>Statistics and isolation<a class="headerlink" href="#statistics-and-isolation" title="Link to this heading">#</a></h3>
+<h3>Statistics and isolation<a class="headerlink" href="#statistics-and-isolation" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Query statistics</strong> — Counts and distributions of values that the query planner uses to estimate the cost of possible execution plans.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ANALYZE</span></code></strong> — A PostgreSQL command that refreshes the query planner’s statistics for a table.</p></li>
-<li><p><strong>Isolation level</strong> — A configurable setting that decides what one transaction is allowed to see of another transaction’s in-progress work.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">READ</span> <span class="pre">UNCOMMITTED</span></code></strong> — The weakest standard isolation level; allows dirty reads.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">READ</span> <span class="pre">COMMITTED</span></code></strong> — An isolation level that only shows committed data; prevents dirty reads.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">REPEATABLE</span> <span class="pre">READ</span></code></strong> — An isolation level that guarantees the same rows for the same query across one transaction; prevents non-repeatable reads.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">SERIALIZABLE</span></code></strong> — The strongest standard isolation level; behaves as if transactions ran one at a time.</p></li>
+<li><p>The <strong>query statistics</strong> are value distributions used by the query planner to calculate the fastest execution path.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">ANALYZE</span></code></strong> statement is the command used to update the query planner’s value statistics for a table.</p></li>
+<li><p>An <strong>isolation level</strong> is a database setting that controls how much in-progress transaction data is visible to other users.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">READ</span> <span class="pre">UNCOMMITTED</span></code></strong> isolation level is the weakest setting, allowing transactions to read uncommitted changes.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">READ</span> <span class="pre">COMMITTED</span></code></strong> isolation level ensures that transactions can only read data after it has been committed.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">REPEATABLE</span> <span class="pre">READ</span></code></strong> isolation level guarantees that a transaction will see the exact same values every time it queries a row.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">SERIALIZABLE</span></code></strong> isolation level is the strongest setting, forcing concurrent transactions to run as if they executed one at a time.</p></li>
 </ul>
 </section>
 </section>
@@ -2274,121 +2173,6 @@ WHERE json_extract(data, &#39;$.type&#39;) = &#39;query_execution&#39;;
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Database Performance: Index, Query Plans, and Transaction Management</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#database-and-sql-through-pop-culture-brendan-shea-phd">Database and SQL Through Pop Culture | Brendan Shea, PhD</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning Outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brendan-s-lecture">Brendan’s Lecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gotham-national-bank-database">Gotham National Bank Database</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#database-schema-for-gotham-city-bank">Database Schema for Gotham City Bank</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-closer-look-at-customers-and-accounts">A Closer Look at Customers and Accounts</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-indexes-and-how-do-i-create-them">What are Indexes and How Do I Create Them?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-indexes-impact-speed">How Indexes Impact Speed</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-of-indexes">Impact of Indexes</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timing-our-queries">Timing Our Queries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-indexes-impact-storage">How Indexes Impact Storage</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-trees-the-backbone-of-database-storage">B-trees: The Backbone of Database Storage</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-sqlite-uses-b-trees">How SQLite Uses B-trees</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#table-b-tree-example">Table B-tree example</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#index-b-tree-example">Index B-tree example</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphic-b-trees">Graphic: B-Trees</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-file-size">Checking File Size</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics-and-the-query-planner">Statistics and the query planner</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-indexing-guidelines-when-to-create-and-avoid-indexes">SQL Indexing Guidelines: When to Create and Avoid Indexes</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-transactions">Introduction to Transactions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acid-properties-overview">ACID Properties Overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atomicity">Atomicity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency">Consistency</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isolation">Isolation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#durability">Durability</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deadlocks">Deadlocks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transaction-performance-and-error-handling">Transaction Performance and Error Handling</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isolation-levels-in-practice">Isolation levels in practice</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nosql-case-study-harley-s-havoc">NoSQL Case Study: Harley’s Havoc</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-out-why-harley-chose-mongodb">Scaling Out: Why Harley Chose MongoDB</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-move-from-acid-to-base">The Move from ACID to BASE</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-would-be-disastrous-for-gotham-city-bank">Why This Would Be Disastrous for Gotham City Bank</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-of-both-worlds-hybrid-approaches">Best of Both Worlds: Hybrid Approaches</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-day-in-the-life-of-a-database-administrator">A Day in the Life of a Database Administrator</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#morning-health-checks">Morning: health checks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mid-morning-performance-tuning">Mid-morning: performance tuning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#afternoon-security-and-change-management">Afternoon: security and change management</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-database-performance-metrics">Common Database Performance Metrics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-as-an-operations-discipline">Monitoring as an operations discipline</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#baselines-and-thresholds">Baselines and thresholds</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alerts-and-notifications">Alerts and notifications</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-dbas-watch-every-day">What DBAs watch every day</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maintenance-operations">Maintenance operations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#patch-and-release-management">Patch and release management</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrity-checks-and-database-refresh">Integrity checks and database refresh</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control-and-ci-cd-for-databases">Version control and CI/CD for databases</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-querying-database-logs">Lab: Querying Database Logs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-structure">Table structure</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-look-for-in-this-lab">What to look for in this lab</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-entry-types-to-know">Log Entry Types to Know</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-the-database">Querying the Database</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-queries">Sample Queries</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-practice-your-sql">Lab: Practice Your SQL</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-of-the-recursive-dragon-databse-theory">Loop of the Recursive Dragon: Databse Theory</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points-summary">Key Points Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-the-loop-of-the-recursive-dragon">Practice with the Loop of the Recursive Dragon</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexes">Indexes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transactions-and-acid">Transactions and ACID</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concurrency">Concurrency</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring">Monitoring</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other">Other</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-and-maintenance">Monitoring and maintenance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics-and-isolation">Statistics and isolation</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-  </nav></div>
-
-</div></div>
-              
             
           </div>
           <footer class="bd-footer-content">
@@ -2432,8 +2216,8 @@ By Brendan Shea, PhD
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

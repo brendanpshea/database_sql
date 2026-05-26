@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Database Architecture Patterns: Design, Deployment, and Testing for Modern Applications &#8212; SQL and Database Management Through Pop Culture</title>
   
@@ -16,60 +17,64 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=30c8ad15" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Database_11_DesignDeployTest';</script>
-    <script src="_static/sandbox-html-output.js?v=a1fc3548"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Data Integration at Emerald City Clinic" href="Database_12_DataIntegration.html" />
     <link rel="prev" title="Guarding the Virtual Vault: A Deep Dive into Database Security" href="Database_10_DatabaseSecurity.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -85,8 +90,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -94,15 +110,16 @@
   <input type="search"
          class="form-control"
          name="q"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -118,8 +135,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,27 +165,12 @@
     
     
     <img src="_static/database_cover.jpg" class="logo__image only-light" alt="SQL and Database Management Through Pop Culture - Home"/>
-    <img src="_static/database_cover.jpg" class="logo__image only-dark pst-js-only" alt="SQL and Database Management Through Pop Culture - Home"/>
+    <script>document.write(`<img src="_static/database_cover.jpg" class="logo__image only-dark" alt="SQL and Database Management Through Pop Culture - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="index.html">
-                    SQL and Database Management Through Pop Culture
-                </a>
-            </li>
-        </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Database_00_Introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Database_01_StarShipSQL.html">Starship SQL: An Introduction to Databases</a></li>
@@ -198,14 +199,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -224,9 +220,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -236,52 +232,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/./Database_11_DesignDeployTest.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="Colab logo" src="_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-<a href="https://github.com/brendanpshea/database_sql" target="_blank"
-   class="btn btn-sm btn-source-repository-button"
-   title="Source repository"
-   data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
-
 
 
 
@@ -334,7 +284,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -348,19 +298,27 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -413,18 +371,14 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-considerations">Implementation considerations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-polymorphic-associations-pattern-when-things-need-to-connect-to-many-types-of-other-things">The Polymorphic Associations Pattern: When Things Need to Connect to Many Types of Other Things</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-polymorphic-associations-pattern-connecting-to-multiple-tables">The Polymorphic Associations Pattern: Connecting to Multiple Tables</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-with-simple-relationships">The problem with simple relationships</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-polymorphic-solution">The polymorphic solution</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-partitioning-pattern-when-tables-get-too-big">The Partitioning Pattern: When Tables Get Too Big</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-with-big-tables">The problem with big tables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-partitioning-solution">The partitioning solution</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#range-partitioning-by-date">1. Range partitioning by date</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#list-partitioning-by-type">2. List partitioning by type</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-partitioning-solution">The partitioning solution</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-relational-json-balancing-structure-and-flexibility">Hybrid Relational-JSON: Balancing Structure and Flexibility</a><ul class="nav section-nav flex-column">
@@ -473,7 +427,6 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-schema">Testing the schema</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-stored-procedures">Testing stored procedures</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-triggers">Testing triggers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-each-one-matters">Why each one matters</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-unit-tests">Table: Unit Tests</a></li>
 </ul>
 </li>
@@ -481,13 +434,11 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-testing-data-flow-between-systems">Example 1: testing data flow between systems</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-testing-api-interactions">Example 2: testing API interactions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-testing-dependencies-between-components">Example 3: testing dependencies between components</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-integration-testing-matters">Why integration testing matters</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-tests">Integration Tests</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-testing-can-the-system-take-over-the-world">Performance Testing: Can the System Take Over the World?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-performance-testing">Types of performance testing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-performance-testing-matters">Why performance testing matters</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-tests">Performance Tests</a></li>
 </ul>
 </li>
@@ -518,35 +469,30 @@
                   
   <p><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_11_DesignDeployTest.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section id="database-architecture-patterns-design-deployment-and-testing-for-modern-applications">
-<h1>Database Architecture Patterns: Design, Deployment, and Testing for Modern Applications<a class="headerlink" href="#database-architecture-patterns-design-deployment-and-testing-for-modern-applications" title="Link to this heading">#</a></h1>
+<h1>Database Architecture Patterns: Design, Deployment, and Testing for Modern Applications<a class="headerlink" href="#database-architecture-patterns-design-deployment-and-testing-for-modern-applications" title="Permalink to this heading">#</a></h1>
 <section id="database-and-sql-through-pop-culture-brendan-shea-phd">
-<h2>Database and SQL Through Pop Culture | Brendan Shea, PhD<a class="headerlink" href="#database-and-sql-through-pop-culture-brendan-shea-phd" title="Link to this heading">#</a></h2>
+<h2>Database and SQL Through Pop Culture | Brendan Shea, PhD<a class="headerlink" href="#database-and-sql-through-pop-culture-brendan-shea-phd" title="Permalink to this heading">#</a></h2>
 <p>Modern database systems need careful thought about three things: how the data is shaped, where the servers live, and how you confirm it all works. This chapter walks through each one using familiar characters — Springfield’s power plant for normalization, Rick and Morty for deployment choices, SpongeBob for unit tests, and a few other cameos along the way.</p>
 </section>
 <section id="learning-outcomes">
-<h2>Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Link to this heading">#</a></h2>
+<h2>Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this heading">#</a></h2>
 <p>By the end of this chapter, you will be able to:</p>
 <ol class="arabic simple">
-<li><p>Choose appropriate database design patterns, including normalization, star schemas, bridge tables, temporal data, polymorphic associations, partitioning, and hybrid relational-JSON models.</p></li>
-<li><p>Explain the trade-offs these patterns make in consistency, query simplicity, flexibility, and scalability.</p></li>
-<li><p>Compare on-premises, cloud, and hybrid deployment models and match them to business requirements.</p></li>
-<li><p>Identify operational concerns in deployment decisions, including cost, control, scalability, backups, monitoring, and disaster recovery.</p></li>
+<li><p>Choose appropriate database design patterns, such as normalization, star schemas, bridge tables, temporal data, and polymorphic associations.</p></li>
+<li><p>Evaluate database patterns in terms of consistency, query simplicity, flexibility, and scalability.</p></li>
+<li><p>Compare OLTP and OLAP workloads and design schemas optimized for each query type.</p></li>
+<li><p>Compare on-premises, cloud, and hybrid deployment models and select client/server or embedded architectures.</p></li>
+<li><p>Identify operational concerns in deployments, including requirements gathering, resource projection, costs, and standard deployment phases.</p></li>
+<li><p>Apply SLAs, SLOs, KPIs, RPO, and RTO to database deployment and monitoring plans.</p></li>
+<li><p>Select high-availability deployment structures, including load-balanced and multizone replica architectures.</p></li>
+<li><p>Identify default ports, transport protocols, and connection strings of common database engines.</p></li>
 <li><p>Distinguish unit, integration, and performance testing in database systems.</p></li>
-<li><p>Design unit tests for schemas, stored procedures, and triggers.</p></li>
-<li><p>Design integration tests for data flow, APIs, and dependencies between systems.</p></li>
-<li><p>Explain load, stress, and scalability testing and use them to reason about system capacity.</p></li>
+<li><p>Design database unit tests for schemas, stored procedures, and automated triggers.</p></li>
+<li><p>Design integration tests for system dependencies and run load, stress, and scalability tests.</p></li>
 </ol>
-<ul class="simple">
-<li><p>Identify the inputs to database requirements gathering and resource projection.</p></li>
-<li><p>Apply SLAs, SLOs, KPIs, RPO, and RTO to a sample database deployment.</p></li>
-<li><p>Walk a database through the standard deployment phases, from provisioning to decommission.</p></li>
-<li><p>Distinguish OLTP and OLAP workloads and explain when each pattern fits.</p></li>
-<li><p>Distinguish client/server, embedded, load-balanced, and multizone deployment architectures.</p></li>
-<li><p>Identify the default ports and transport protocols of common DBMSes.</p></li>
-</ul>
 </section>
 <section id="brendan-s-lecture">
-<h2>Brendan’s Lecture<a class="headerlink" href="#brendan-s-lecture" title="Link to this heading">#</a></h2>
+<h2>Brendan’s Lecture<a class="headerlink" href="#brendan-s-lecture" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">YouTubeVideo</span>
@@ -568,15 +514,15 @@
 </div>
 </section>
 <section id="introduction-to-design-patterns">
-<h2>Introduction to Design Patterns<a class="headerlink" href="#introduction-to-design-patterns" title="Link to this heading">#</a></h2>
+<h2>Introduction to Design Patterns<a class="headerlink" href="#introduction-to-design-patterns" title="Permalink to this heading">#</a></h2>
 <p>A <strong>design pattern</strong> is a tested solution to a common problem. Database patterns come from decades of practice across many industries. No pattern fits every situation, but knowing the common ones helps you choose well. This section covers seven patterns, with the trade-offs of each.</p>
 </section>
 <section id="planning-and-operations">
-<h2>Planning and operations<a class="headerlink" href="#planning-and-operations" title="Link to this heading">#</a></h2>
+<h2>Planning and operations<a class="headerlink" href="#planning-and-operations" title="Permalink to this heading">#</a></h2>
 <p>“I want a database. Buy me one!” Mr. Burns slams his fist on Homer’s desk at the Springfield Nuclear Power Plant. Homer blinks. Behind him, the plant’s IT team exchanges nervous glances. You cannot just <em>buy</em> a database — you have to plan one.</p>
 <p>Patterns sit on top of planning. Before you choose a star schema or a partitioning strategy, you have to know who needs the system, how much data will land in it, how fast it has to respond, and what happens when it goes down. This section walks through the planning work that makes the patterns later in the chapter useful.</p>
 <section id="requirements-gathering">
-<h3>Requirements gathering<a class="headerlink" href="#requirements-gathering" title="Link to this heading">#</a></h3>
+<h3>Requirements gathering<a class="headerlink" href="#requirements-gathering" title="Permalink to this heading">#</a></h3>
 <p><strong>Requirements gathering</strong> is the process of asking the right questions before you build anything. The inputs typically include:</p>
 <ul class="simple">
 <li><p><strong>Stakeholders.</strong> Who uses the system? At the plant: control-room operators, safety auditors, payroll, Mr. Burns.</p></li>
@@ -588,7 +534,7 @@
 <p>Skip this step and you end up with a system that meets nobody’s needs particularly well. Mr. Burns does not actually want “a database.” He wants a system that prints a quarterly safety report on demand and never embarrasses him in front of regulators.</p>
 </section>
 <section id="resource-projection-slas-and-kpis">
-<h3>Resource projection, SLAs, and KPIs<a class="headerlink" href="#resource-projection-slas-and-kpis" title="Link to this heading">#</a></h3>
+<h3>Resource projection, SLAs, and KPIs<a class="headerlink" href="#resource-projection-slas-and-kpis" title="Permalink to this heading">#</a></h3>
 <p>Once you know the requirements, you can project resources and write commitments around them.</p>
 <ul class="simple">
 <li><p><strong>SLA (Service Level Agreement)</strong> — A formal promise to the people who depend on the system. “The plant’s safety database will be available 99.9% of the time.”</p></li>
@@ -630,7 +576,7 @@
 <p><strong>RPO (Recovery Point Objective)</strong> and <strong>RTO (Recovery Time Objective)</strong> were introduced in Chapter 4. They belong here too: they are the disaster-recovery side of a deployment plan.</p>
 </section>
 <section id="deployment-phases">
-<h3>Deployment phases<a class="headerlink" href="#deployment-phases" title="Link to this heading">#</a></h3>
+<h3>Deployment phases<a class="headerlink" href="#deployment-phases" title="Permalink to this heading">#</a></h3>
 <p>A real database deployment moves through a predictable sequence of phases. Each phase produces something you can hand to the next.</p>
 <ol class="arabic simple">
 <li><p><strong>Provision</strong> — Stand up the hardware or cloud resources. Decide on CPU, memory, storage, network.</p></li>
@@ -644,22 +590,16 @@
 </section>
 </section>
 <section id="normalize-to-3nf-bringing-order-to-chaos">
-<h2>Normalize to 3NF: Bringing Order to Chaos<a class="headerlink" href="#normalize-to-3nf-bringing-order-to-chaos" title="Link to this heading">#</a></h2>
-<p>Springfield Nuclear Power Plant’s database was a mess. Mr. Burns kept all employee data in one giant table: personal details, safety certifications, departments, and incident reports. Homer Simpson, somehow promoted to DBA after the last one met a radioactive donut, was drowning.</p>
-<p>The problems showed up everywhere:</p>
+<h2>Normalize to 3NF: Bringing Order to Chaos<a class="headerlink" href="#normalize-to-3nf-bringing-order-to-chaos" title="Permalink to this heading">#</a></h2>
+<p>The Springfield Nuclear Power Plant database was a mess. Mr. Burns insisted on keeping all employee records, department details, safety certifications, and incident reports in one giant spreadsheet. Homer Simpson, who was somehow promoted to database administrator, was completely overwhelmed.</p>
+<p>Whenever a worker moved, Homer had to update their address in dozens of different rows, creating massive headaches. This situation highlights two classic database problems:</p>
 <ul class="simple">
-<li><p>When Lenny moved, Homer had to update his address in many rows.</p></li>
-<li><p>When Carl switched departments, some records showed the new department and some showed the old one.</p></li>
-<li><p>Safety inspections and payroll ran into constant inconsistencies.</p></li>
+<li><p>Having <strong>data redundancy</strong> means you are storing the exact same piece of information in multiple places.</p></li>
+<li><p>Creating <strong>data anomalies</strong> means that when you update one record, the other copies do not change and your data becomes inconsistent.</p></li>
 </ul>
-<p>These are classic symptoms of two related problems:</p>
-<ul class="simple">
-<li><p><strong>Data redundancy</strong> — storing the same fact in multiple places.</p></li>
-<li><p><strong>Data anomalies</strong> — inconsistencies that appear when redundant data is not updated everywhere.</p></li>
-</ul>
-<p><strong>Normalization</strong> is the design pattern that fixes them. It breaks one large, problem-prone table into smaller tables, each focused on one kind of information. The process follows formal steps called <strong>normal forms</strong>.</p>
+<p>To solve this, designers use <strong>normalization</strong>. This design pattern breaks one large, messy table into several smaller tables that each focus on a single topic by following rules called <strong>normal forms</strong>.</p>
 <section id="the-problem-table">
-<h3>The problem table<a class="headerlink" href="#the-problem-table" title="Link to this heading">#</a></h3>
+<h3>The problem table<a class="headerlink" href="#the-problem-table" title="Permalink to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>EmpID</p></th>
@@ -697,27 +637,21 @@
 </tbody>
 </table>
 </div>
-<p>This single table has three big problems:</p>
+<p>This table contains three major design flaws:</p>
 <ul class="simple">
-<li><p>Employee information repeats for every certification.</p></li>
-<li><p>Department location repeats for every employee in that department.</p></li>
-<li><p>Supervisor information is stored over and over.</p></li>
+<li><p>The employee name and home address repeat for every single certification they earn.</p></li>
+<li><p>The department location is duplicated for every employee assigned to that department.</p></li>
+<li><p>The supervisor details are typed out over and over again for each employee record.</p></li>
 </ul>
 </section>
 <section id="the-three-normal-forms">
-<h3>The three normal forms<a class="headerlink" href="#the-three-normal-forms" title="Link to this heading">#</a></h3>
+<h3>The three normal forms<a class="headerlink" href="#the-three-normal-forms" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>First Normal Form (1NF):</strong> Each column holds a single, atomic value. No repeating groups in a row. Homer started by giving each certification its own row and breaking address into its parts.</p></li>
-<li><p><strong>Second Normal Form (2NF):</strong> Remove partial dependencies on the primary key. An employee’s name and address depend only on EmpID, not on the certification, so they move to a separate <code class="docutils literal notranslate"><span class="pre">employees</span></code> table.</p></li>
-<li><p><strong>Third Normal Form (3NF):</strong> Remove transitive dependencies, where a non-key column depends on another non-key column. Department location depends on department name, not on the employee, so it moves to a separate <code class="docutils literal notranslate"><span class="pre">departments</span></code> table.</p></li>
+<li><p>A table is in <strong>First Normal Form (1NF)</strong> when every cell contains only one single, indivisible value with no repeating groups. Homer started by giving each certification its own row and splitting the addresses into street, city, state, and zip code columns.</p></li>
+<li><p>A table reaches <strong>Second Normal Form (2NF)</strong> when you remove partial dependencies, meaning every column must depend on the entire primary key. Because employee names and addresses depend only on the employee ID and not on their certifications, Homer moved employee details into their own table.</p></li>
+<li><p>A table achieves <strong>Third Normal Form (3NF)</strong> when you remove transitive dependencies, meaning columns cannot depend on other non-key columns. Since department locations depend on the department name rather than the employee, Homer moved department details into a separate table.</p></li>
 </ul>
-<p>After normalization:</p>
-<ul class="simple">
-<li><p>Addresses live in one row each. Updates are a one-line change.</p></li>
-<li><p>Department information lives in one place. Inconsistencies go away.</p></li>
-<li><p>Certifications can be added or removed without disturbing employee records.</p></li>
-</ul>
-<p>The resulting structure is shown in the entity-relationship diagram below.</p>
+<p>After normalization, Homer only has to update an address in a single row. Department records stay consistent, and new certifications can be added without messing up employee profiles. The resulting clean structure is shown in the diagram below.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><img src="https://mermaid.ink/img/CmVyRGlhZ3JhbQogICAgRU1QTE9ZRUVTIHx8LS1veyBFTVBMT1lFRV9DRVJUSUZJQ0FUSU9OUyA6IGhhcwogICAgRU1QTE9ZRUVTIHx8LS1veyBERVBBUlRNRU5UX0FTU0lHTk1FTlRTIDogd29ya3NfaW4KICAgIERFUEFSVE1FTlRTIHx8LS1veyBERVBBUlRNRU5UX0FTU0lHTk1FTlRTIDogY29udGFpbnMKICAgIEVNUExPWUVFUyB8fC0tb3sgRU1QTE9ZRUVTIDogc3VwZXJ2aXNlcwogICAgQ0VSVElGSUNBVElPTlMgfHwtLW97IEVNUExPWUVFX0NFUlRJRklDQVRJT05TIDogaW5jbHVkZXMKCiAgICBFTVBMT1lFRVMgewogICAgICAgIGludCBlbXBsb3llZV9pZCBQSwogICAgICAgIHN0cmluZyBmaXJzdF9uYW1lCiAgICAgICAgc3RyaW5nIGxhc3RfbmFtZQogICAgICAgIHN0cmluZyBzdHJlZXRfYWRkcmVzcwogICAgICAgIHN0cmluZyBjaXR5CiAgICAgICAgc3RyaW5nIHN0YXRlCiAgICAgICAgc3RyaW5nIHppcF9jb2RlCiAgICAgICAgaW50IHN1cGVydmlzb3JfaWQgRksKICAgIH0KCiAgICBERVBBUlRNRU5UUyB7CiAgICAgICAgaW50IGRlcGFydG1lbnRfaWQgUEsKICAgICAgICBzdHJpbmcgZGVwYXJ0bWVudF9uYW1lCiAgICAgICAgc3RyaW5nIGxvY2F0aW9uCiAgICAgICAgc3RyaW5nIGJ1aWxkaW5nX2NvZGUKICAgIH0KCiAgICBDRVJUSUZJQ0FUSU9OUyB7CiAgICAgICAgaW50IGNlcnRpZmljYXRpb25faWQgUEsKICAgICAgICBzdHJpbmcgY2VydGlmaWNhdGlvbl9uYW1lCiAgICAgICAgc3RyaW5nIGRlc2NyaXB0aW9uCiAgICAgICAgaW50IHZhbGlkaXR5X3BlcmlvZAogICAgfQoKICAgIEVNUExPWUVFX0NFUlRJRklDQVRJT05TIHsKICAgICAgICBpbnQgZW1wbG95ZWVfaWQgUEssIEZLCiAgICAgICAgaW50IGNlcnRpZmljYXRpb25faWQgUEssIEZLCiAgICAgICAgZGF0ZSBpc3N1ZV9kYXRlCiAgICAgICAgZGF0ZSBleHBpcnlfZGF0ZQogICAgICAgIHN0cmluZyBzdGF0dXMKICAgIH0KCiAgICBERVBBUlRNRU5UX0FTU0lHTk1FTlRTIHsKICAgICAgICBpbnQgZW1wbG95ZWVfaWQgUEssIEZLCiAgICAgICAgaW50IGRlcGFydG1lbnRfaWQgUEssIEZLCiAgICAgICAgZGF0ZSBzdGFydF9kYXRlCiAgICAgICAgZGF0ZSBlbmRfZGF0ZQogICAgICAgIHN0cmluZyByb2xlCiAgICB9Cg==?width=1000&height=700"/></div></div>
@@ -725,7 +659,7 @@
 </section>
 </section>
 <section id="oltp-vs-olap">
-<h2>OLTP vs. OLAP<a class="headerlink" href="#oltp-vs-olap" title="Link to this heading">#</a></h2>
+<h2>OLTP vs. OLAP<a class="headerlink" href="#oltp-vs-olap" title="Permalink to this heading">#</a></h2>
 <p>Before the star schema makes sense, the difference between <strong>OLTP</strong> and <strong>OLAP</strong> has to be clear.</p>
 <p>Bob Belcher’s burger restaurant runs on <strong>OLTP</strong> — <em>online transactional processing</em>. Every order is a small, fast transaction: a few row inserts and updates, finished in milliseconds, hundreds of times an hour. The schema is normalized, the queries are short, and the workload is many small writes.</p>
 <p>Louise’s analytics, built on top of those orders, are <strong>OLAP</strong> — <em>online analytical processing</em>. The queries are bigger (“how do Tuesday burger sales compare to Wednesday over the last two years?”), the writes happen in batches (last night’s data loaded once), and the schema is denormalized so the joins do not crush the laptop.</p>
@@ -767,38 +701,28 @@
 <p>Most businesses end up with both — a normalized OLTP database for the day-to-day, and a denormalized OLAP warehouse built from it for reporting. The Star Schema below is the canonical OLAP design.</p>
 </section>
 <section id="the-star-schema-pattern-optimizing-for-analysis">
-<h2>The Star Schema Pattern: Optimizing for Analysis<a class="headerlink" href="#the-star-schema-pattern-optimizing-for-analysis" title="Link to this heading">#</a></h2>
-<p>Bob Belcher’s burger restaurant had a problem. His daughter Louise, the self-proclaimed “data wizard” of the family, wanted to analyze the business from every angle: daily sales by burger, ingredient costs by supplier, customer preferences by time of day, seasonal trends, and the impact of Jimmy Pesto’s daily specials. Their normalized database was great for recording each sale, but Louise’s reports required joining six or seven tables, and Bob’s ancient laptop kept giving up.</p>
-<p>This is a common tension in database design. Normalization works well for day-to-day transactions, but it slows down deep analytical queries. The <strong>Star Schema</strong> is designed for the analytical side.</p>
-<p>A <strong>Star Schema</strong> intentionally denormalizes data around a central <strong>fact table</strong>, surrounded by <strong>dimension tables</strong> like points around a star. The result is a <strong>dimensional model</strong> that makes complex analyses simpler and faster.</p>
+<h2>The Star Schema Pattern: Optimizing for Analysis<a class="headerlink" href="#the-star-schema-pattern-optimizing-for-analysis" title="Permalink to this heading">#</a></h2>
+<p>Bob Belcher’s burger restaurant had a problem. His daughter Louise wanted to analyze their sales from every angle: daily sales by burger type, ingredient costs by supplier, and the impact of Jimmy Pesto’s daily specials. Their normalized database worked well for recording each individual customer order, but Louise’s reports required joining six or seven tables, which caused Bob’s ancient laptop to freeze.</p>
+<p>This is a common issue in database design. Normalization is excellent for day-to-day transactions, but it slows down deep analytical queries. The <strong>Star Schema</strong> pattern solves this by organizing data specifically for analysis.</p>
+<p>A <strong>Star Schema</strong> intentionally denormalizes data around a central <strong>fact table</strong> surrounded by multiple <strong>dimension tables</strong>, resembling points around a star. This structure creates a <strong>dimensional model</strong> that makes complex queries much faster and simpler.</p>
 <section id="key-components">
-<h3>Key components<a class="headerlink" href="#key-components" title="Link to this heading">#</a></h3>
-<p>A <strong>fact table</strong> holds the numbers you want to analyze. Each row records one business event — in Bob’s case, one sale. A fact table contains:</p>
+<h3>Key components<a class="headerlink" href="#key-components" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Numeric measures (quantity sold, price, cost)</p></li>
-<li><p>Foreign keys to dimension tables</p></li>
-<li><p>The lowest level of detail you need</p></li>
-</ul>
-<p>A <strong>dimension table</strong> holds descriptive context — the who, what, where, when, and why. For Bob’s Burgers, dimensions include:</p>
-<ul class="simple">
-<li><p><strong>Time</strong> (date, day of week, month, season)</p></li>
-<li><p><strong>Product</strong> (burger name, category, ingredients)</p></li>
-<li><p><strong>Customer</strong> (type, frequency, preferences)</p></li>
-<li><p><strong>Location</strong> (table number, section, inside/outside)</p></li>
+<li><p>A <strong>fact table</strong> holds the actual numbers and measurements you want to analyze. For Bob’s Burgers, the fact table records individual sale events, storing numeric details like quantity sold, price, cost, and foreign keys to the surrounding dimension tables.</p></li>
+<li><p>A <strong>dimension table</strong> holds the descriptive context that answers who, what, where, when, and why. For Bob’s Burgers, the dimensions include <strong>time</strong> (dates, months, and seasons), <strong>products</strong> (burger names and categories), <strong>customers</strong> (visit frequency), and <strong>locations</strong> (table numbers).</p></li>
 </ul>
 </section>
 <section id="from-normalized-to-star-bob-s-transformation">
-<h3>From normalized to star: Bob’s transformation<a class="headerlink" href="#from-normalized-to-star-bob-s-transformation" title="Link to this heading">#</a></h3>
-<p>Louise kept the normalized tables for daily operations and built a star schema for analysis. The burger sales fact table records each sale with measures like quantity sold, sale price, food cost, prep time, and profit margin.</p>
-<p>The dimension tables add context:</p>
+<h3>From normalized to star: Bob’s transformation<a class="headerlink" href="#from-normalized-to-star-bob-s-transformation" title="Permalink to this heading">#</a></h3>
+<p>Louise kept the normalized tables for daily restaurant operations but built a new star schema for analysis. Now, her sales fact table records each sale alongside its cost and prep time.</p>
+<p>The dimension tables add crucial context:</p>
 <ul class="simple">
-<li><p><strong>Date dimension:</strong> weather, local events, and whether Jimmy Pesto was running a competing special.</p></li>
-<li><p><strong>Product dimension:</strong> burger type, ingredients, and Burger-of-the-Day status.</p></li>
-<li><p><strong>Customer dimension:</strong> diner preferences and visit patterns.</p></li>
-<li><p><strong>Time-of-day dimension:</strong> breakfast, lunch, dinner, late-night.</p></li>
+<li><p>The <strong>date dimension</strong> tracks local weather, events, and competitor promotions.</p></li>
+<li><p>The <strong>product dimension</strong> tracks burger type, ingredients, and whether a burger was the special of the day.</p></li>
+<li><p>The <strong>customer dimension</strong> tracks dining preferences.</p></li>
+<li><p>The <strong>time-of-day dimension</strong> groups sales into breakfast, lunch, and dinner shifts.</p></li>
 </ul>
-<p>With this structure, Louise could quickly answer questions like “What burgers sell best on rainy days?” or “How do Jimmy Pesto’s promotions affect our sales?”</p>
-<p>ETL (Extract, Transform, Load) is the process most often used to move data from operational systems into a star schema warehouse. Chapter 12 covers ETL — and its newer cousin, ELT — in depth, against a Wizard of Oz–themed clinic dataset.</p>
+<p>With this setup, Louise can quickly find which burgers sell best on rainy days, or how competitors’ promotions impact her family’s business. To move data from daily operations into this analytical warehouse, engineers use a process called <strong>Extract, Transform, Load (ETL)</strong>, which we will explore in detail in Chapter 12.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><img src="https://mermaid.ink/img/CgplckRpYWdyYW0KICAgIFNBTEVTX0ZBQ1QgfHwtLW97IERJTV9EQVRFIDogd2hlbgogICAgU0FMRVNfRkFDVCB8fC0tb3sgRElNX1BST0RVQ1QgOiB3aGF0CiAgICBTQUxFU19GQUNUIHx8LS1veyBESU1fQ1VTVE9NRVIgOiB3aG8KICAgIFNBTEVTX0ZBQ1QgfHwtLW97IERJTV9USU1FIDogIndoYXQgdGltZSIKCiAgICBTQUxFU19GQUNUIHsKICAgICAgICBpbnQgc2FsZV9pZCBQSwogICAgICAgIGludCBkYXRlX2tleSBGSwogICAgICAgIGludCBwcm9kdWN0X2tleSBGSwogICAgICAgIGludCBjdXN0b21lcl9rZXkgRksKICAgICAgICBpbnQgdGltZV9rZXkgRksKICAgICAgICBkZWNpbWFsIHNhbGVfYW1vdW50CiAgICAgICAgaW50IHF1YW50aXR5CiAgICAgICAgZGVjaW1hbCBmb29kX2Nvc3QKICAgICAgICBkZWNpbWFsIHByb2ZpdF9tYXJnaW4KICAgICAgICBpbnQgcHJlcF90aW1lX21pbnV0ZXMKICAgIH0KCiAgICBESU1fREFURSB7CiAgICAgICAgaW50IGRhdGVfa2V5IFBLCiAgICAgICAgZGF0ZSBmdWxsX2RhdGUKICAgICAgICBzdHJpbmcgZGF5X29mX3dlZWsKICAgICAgICBzdHJpbmcgbW9udGhfbmFtZQogICAgICAgIHN0cmluZyBzZWFzb24KICAgICAgICBib29sZWFuIGlzX2hvbGlkYXkKICAgICAgICBzdHJpbmcgd2VhdGhlcl90eXBlCiAgICAgICAgYm9vbGVhbiBwZXN0b19wcm9tb3Rpb25fZGF5CiAgICB9CgogICAgRElNX1BST0RVQ1QgewogICAgICAgIGludCBwcm9kdWN0X2tleSBQSwogICAgICAgIHN0cmluZyBidXJnZXJfbmFtZQogICAgICAgIHN0cmluZyBjYXRlZ29yeQogICAgICAgIGJvb2xlYW4gaXNfYnVyZ2VyX29mX2RheQogICAgICAgIHN0cmluZyBzcGVjaWFsX2luZ3JlZGllbnRzCiAgICAgICAgZGVjaW1hbCBiYXNlX3ByaWNlCiAgICAgICAgc3RyaW5nIHNwaWNlX2xldmVsCiAgICB9CgogICAgRElNX0NVU1RPTUVSIHsKICAgICAgICBpbnQgY3VzdG9tZXJfa2V5IFBLCiAgICAgICAgc3RyaW5nIHR5cGUKICAgICAgICBzdHJpbmcgZnJlcXVlbmN5X2NhdGVnb3J5CiAgICAgICAgc3RyaW5nIHByZWZlcnJlZF9zZWF0aW5nCiAgICAgICAgYm9vbGVhbiByZWd1bGFyX3N0YXR1cwogICAgfQoKICAgIERJTV9USU1FIHsKICAgICAgICBpbnQgdGltZV9rZXkgUEsKICAgICAgICBzdHJpbmcgdGltZV9wZXJpb2QKICAgICAgICBzdHJpbmcgbWVhbF9jYXRlZ29yeQogICAgICAgIGJvb2xlYW4gcGVha19ob3VycwogICAgICAgIHN0cmluZyBzaGlmdF9wZXJpb2QKICAgIH0K?width=1000&height=700"/></div></div>
@@ -809,49 +733,26 @@
 </section>
 </section>
 <section id="the-bridge-tables-pattern-managing-many-to-many-relationships">
-<h2>The Bridge Tables Pattern: Managing Many-to-Many Relationships<a class="headerlink" href="#the-bridge-tables-pattern-managing-many-to-many-relationships" title="Link to this heading">#</a></h2>
-<p>Principal Victoria of South Park Elementary had a database headache. Mr. Garrison kept complaining that the system could not track which students were in which classes, who joined which extracurricular activities, or which parents sat on which PTA committees. The schema forced staff to cram multiple classes into a single student record, which turned every change into a maintenance nightmare — especially when Cartman switched from Music to Art mid-semester, or Kenny’s frequent absences (and resurrections) needed to be logged.</p>
-<p>This is a classic <strong>many-to-many</strong> problem. One student can enroll in many classes, and one class has many students. One parent can join several committees, and each committee has many parents.</p>
-<p>A <strong>Bridge Table</strong> (also called a <strong>junction table</strong> or <strong>association table</strong>) resolves this by sitting between the two parent tables. It holds foreign keys to both, and can also store information about the relationship itself.</p>
+<h2>The Bridge Tables Pattern: Managing Many-to-Many Relationships<a class="headerlink" href="#the-bridge-tables-pattern-managing-many-to-many-relationships" title="Permalink to this heading">#</a></h2>
+<p>Principal Victoria of South Park Elementary had a major database headache. Mr. Garrison complained that the school database could not track which students were in which classes, which parents sat on which PTA committees, or who joined extracurricular activities. The old design forced staff to cram multiple classes into a single student record, which turned every schedule change into a maintenance nightmare.</p>
+<p>This is a classic <strong>many-to-many</strong> relationship problem. A single student can enroll in many classes, and a single class contains many students.</p>
+<p>A <strong>bridge table</strong> (also known as a <strong>junction table</strong> or <strong>association table</strong>) resolves this problem by sitting directly between the two main tables. The bridge table holds foreign keys pointing to both parent tables, linking them together cleanly.</p>
 <section id="anatomy-of-a-bridge-table">
-<h3>Anatomy of a bridge table<a class="headerlink" href="#anatomy-of-a-bridge-table" title="Link to this heading">#</a></h3>
-<p>A well-designed bridge table usually contains:</p>
+<h3>Anatomy of a bridge table<a class="headerlink" href="#anatomy-of-a-bridge-table" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Foreign keys to both parent tables</p></li>
-<li><p>A composite primary key made of those two foreign keys</p></li>
-<li><p>Extra columns describing the relationship</p></li>
-<li><p>Optional dates showing when the relationship started or ended</p></li>
+<li><p>The table contains <strong>foreign keys</strong> pointing to both parent tables to establish the connection.</p></li>
+<li><p>The database uses a <strong>composite primary key</strong> made by combining both foreign keys to ensure each relationship is unique.</p></li>
+<li><p>The table can store <strong>relationship attributes</strong> to record extra details, such as the date a student enrolled or the grade they earned in that class.</p></li>
 </ul>
 </section>
 <section id="south-park-elementary-s-solution">
-<h3>South Park Elementary’s solution<a class="headerlink" href="#south-park-elementary-s-solution" title="Link to this heading">#</a></h3>
-<p><strong>Student-class relationships</strong> moved into an <code class="docutils literal notranslate"><span class="pre">enrollments</span></code> bridge table:</p>
+<h3>South Park Elementary’s solution<a class="headerlink" href="#south-park-elementary-s-solution" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Which student is in which class</p></li>
-<li><p>When they enrolled</p></li>
-<li><p>Current grade</p></li>
-<li><p>Attendance and assignment status</p></li>
+<li><p>School staff moved student-class relationships into an <strong>enrollments</strong> bridge table that tracks which student is in which class, when they joined, and their current grade.</p></li>
+<li><p>They moved parent-committee relationships into a <strong>memberships</strong> bridge table that tracks parent roles, term dates, and contact preferences.</p></li>
+<li><p>They moved student-activity relationships into an <strong>extracurriculars</strong> bridge table that tracks participation and permission slips.</p></li>
 </ul>
-<p><strong>Parent-committee relationships</strong> use a similar bridge table tracking:</p>
-<ul class="simple">
-<li><p>Which parent serves on which committee</p></li>
-<li><p>Their role</p></li>
-<li><p>Term dates and contact preferences</p></li>
-</ul>
-<p><strong>Student-activity relationships</strong> track extracurriculars:</p>
-<ul class="simple">
-<li><p>Which students do which activities</p></li>
-<li><p>Permission slip status</p></li>
-<li><p>Equipment assignments and achievements</p></li>
-</ul>
-<p>This approach solved several problems at once:</p>
-<ol class="arabic simple">
-<li><p>Cartman’s class switch became a single row update.</p></li>
-<li><p>Kenny’s attendance was tracked per class without touching his student record.</p></li>
-<li><p>Mr. Garrison could generate clean class rosters and participation reports.</p></li>
-<li><p>The PTA had clear committee membership records.</p></li>
-</ol>
-<p>The entity-relationship diagram below shows the bridge table pattern in action.</p>
+<p>This simple change solved their database problems. Cartman’s class switches became simple single-row updates, Kenny’s attendance could be tracked per class without touching his main profile, and Mr. Garrison could generate clean rosters instantly. The diagram below shows the bridge table pattern in action.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><img src="https://mermaid.ink/img/CgplckRpYWdyYW0KICAgIFNUVURFTlRTIHx8LS1veyBFTlJPTExNRU5UUyA6IGVucm9sbHMKICAgIENMQVNTRVMgfHwtLW97IEVOUk9MTE1FTlRTIDogY29udGFpbnMKICAgIFNUVURFTlRTIHx8LS1veyBBQ1RJVklUWV9QQVJUSUNJUEFOVFMgOiBwYXJ0aWNpcGF0ZXMKICAgIEFDVElWSVRJRVMgfHwtLW97IEFDVElWSVRZX1BBUlRJQ0lQQU5UUyA6IGluY2x1ZGVzCiAgICBQQVJFTlRTIHx8LS1veyBDT01NSVRURUVfTUVNQkVSUyA6IHNlcnZlcwogICAgQ09NTUlUVEVFUyB8fC0tb3sgQ09NTUlUVEVFX01FTUJFUlMgOiBzdGFmZmVkX2J5CiAgICBTVFVERU5UUyB8fC0tb3sgU1RVREVOVF9QQVJFTlRTIDogaGFzCiAgICBQQVJFTlRTIHx8LS1veyBTVFVERU5UX1BBUkVOVFMgOiBvZgoKICAgIFNUVURFTlRTIHsKICAgICAgICBpbnQgc3R1ZGVudF9pZCBQSwogICAgICAgIHN0cmluZyBmaXJzdF9uYW1lCiAgICAgICAgc3RyaW5nIGxhc3RfbmFtZQogICAgICAgIGludCBncmFkZV9sZXZlbAogICAgICAgIHN0cmluZyBob21lcm9vbQogICAgICAgIGRhdGUgZW5yb2xsbWVudF9kYXRlCiAgICB9CgogICAgQ0xBU1NFUyB7CiAgICAgICAgaW50IGNsYXNzX2lkIFBLCiAgICAgICAgc3RyaW5nIHN1YmplY3QKICAgICAgICBzdHJpbmcgdGVhY2hlcgogICAgICAgIGludCByb29tX251bWJlcgogICAgICAgIHN0cmluZyBzZW1lc3RlcgogICAgICAgIGludCBtYXhfY2FwYWNpdHkKICAgIH0KCiAgICBFTlJPTExNRU5UUyB7CiAgICAgICAgaW50IHN0dWRlbnRfaWQgUEssRksKICAgICAgICBpbnQgY2xhc3NfaWQgUEssRksKICAgICAgICBkYXRlIGVucm9sbF9kYXRlCiAgICAgICAgc3RyaW5nIGdyYWRlCiAgICAgICAgaW50IGF0dGVuZGFuY2VfY291bnQKICAgICAgICBzdHJpbmcgc3RhdHVzCiAgICB9CgogICAgQUNUSVZJVElFUyB7CiAgICAgICAgaW50IGFjdGl2aXR5X2lkIFBLCiAgICAgICAgc3RyaW5nIG5hbWUKICAgICAgICBzdHJpbmcgc3VwZXJ2aXNvcgogICAgICAgIHN0cmluZyBtZWV0aW5nX3RpbWUKICAgICAgICBzdHJpbmcgbG9jYXRpb24KICAgICAgICBpbnQgbWF4X3BhcnRpY2lwYW50cwogICAgfQoKICAgIEFDVElWSVRZX1BBUlRJQ0lQQU5UUyB7CiAgICAgICAgaW50IHN0dWRlbnRfaWQgUEssRksKICAgICAgICBpbnQgYWN0aXZpdHlfaWQgUEssRksKICAgICAgICBkYXRlIGpvaW5fZGF0ZQogICAgICAgIGJvb2xlYW4gcGVybWlzc2lvbl9zbGlwCiAgICAgICAgc3RyaW5nIHJvbGUKICAgICAgICBzdHJpbmcgYWNoaWV2ZW1lbnRfbGV2ZWwKICAgIH0KCiAgICBQQVJFTlRTIHsKICAgICAgICBpbnQgcGFyZW50X2lkIFBLCiAgICAgICAgc3RyaW5nIGZpcnN0X25hbWUKICAgICAgICBzdHJpbmcgbGFzdF9uYW1lCiAgICAgICAgc3RyaW5nIGNvbnRhY3RfaW5mbwogICAgICAgIGJvb2xlYW4gYmFja2dyb3VuZF9jaGVjawogICAgfQoKICAgIENPTU1JVFRFRVMgewogICAgICAgIGludCBjb21taXR0ZWVfaWQgUEsKICAgICAgICBzdHJpbmcgbmFtZQogICAgICAgIHN0cmluZyBwdXJwb3NlCiAgICAgICAgc3RyaW5nIG1lZXRpbmdfc2NoZWR1bGUKICAgICAgICBpbnQgYnVkZ2V0CiAgICB9CgogICAgQ09NTUlUVEVFX01FTUJFUlMgewogICAgICAgIGludCBwYXJlbnRfaWQgUEssRksKICAgICAgICBpbnQgY29tbWl0dGVlX2lkIFBLLEZLCiAgICAgICAgZGF0ZSBqb2luX2RhdGUKICAgICAgICBzdHJpbmcgcm9sZQogICAgICAgIGJvb2xlYW4gdm90aW5nX3JpZ2h0cwogICAgICAgIGludCB0ZXJtX2xlbmd0aAogICAgfQoKICAgIFNUVURFTlRfUEFSRU5UUyB7CiAgICAgICAgaW50IHN0dWRlbnRfaWQgUEssRksKICAgICAgICBpbnQgcGFyZW50X2lkIFBLLEZLCiAgICAgICAgc3RyaW5nIHJlbGF0aW9uc2hpcAogICAgICAgIGJvb2xlYW4gcHJpbWFyeV9jb250YWN0CiAgICAgICAgYm9vbGVhbiBlbWVyZ2VuY3lfY29udGFjdAogICAgfQo=?width=1000&height=700"/></div></div>
@@ -861,35 +762,20 @@
 </section>
 </section>
 <section id="the-temporal-pattern-tracking-changes-through-time">
-<h2>The Temporal Pattern: Tracking Changes Through Time<a class="headerlink" href="#the-temporal-pattern-tracking-changes-through-time" title="Link to this heading">#</a></h2>
-<p>“Good news, everyone!” Professor Farnsworth announced. “I’ve discovered our employee database is completely wrong about everyone’s historical salary data, job titles, and delivery routes!” This was, of course, not actually good news. The database only stored current values, overwriting history with each update. When the Space Tax Bureau audited, no one could explain why Fry’s salary had jumped from $0.01 to $100.00 per minute (a glitch caused by Dr. Zoidberg eating a sandwich over the keyboard).</p>
-<p>Many systems only store the current state of a record. But businesses often need to see how data changed: salary histories, customer address changes, product price evolution, or the shifting risk levels of delivery routes through dangerous nebulae.</p>
+<h2>The Temporal Pattern: Tracking Changes Through Time<a class="headerlink" href="#the-temporal-pattern-tracking-changes-through-time" title="Permalink to this heading">#</a></h2>
+<p>“Good news, everyone!” Professor Farnsworth announced. “I’ve discovered our employee database is completely wrong about everyone’s past salaries, job titles, and delivery routes!” This was, of course, terrible news. The Planet Express database only stored current values, overwriting history with each update. When the Space Tax Bureau audited, no one could explain why Fry’s salary had suddenly jumped (a glitch caused by Dr. Zoidberg eating a sandwich over the keyboard).</p>
+<p>Many databases only store the current state of a record. However, businesses frequently need to see how data has changed over time, such as tracking salary histories, price evolution, or address changes.</p>
 <section id="understanding-temporal-data">
-<h3>Understanding temporal data<a class="headerlink" href="#understanding-temporal-data" title="Link to this heading">#</a></h3>
-<p><strong>Temporal data</strong> is information whose meaning depends on time. The <strong>Temporal Pattern</strong> keeps history while still serving current operational needs.</p>
-<p><strong>Effective dating</strong> uses date ranges to mark when a record was valid:</p>
+<h3>Understanding temporal data<a class="headerlink" href="#understanding-temporal-data" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Effective start date</strong> — when the record became valid</p></li>
-<li><p><strong>Effective end date</strong> — when it stopped being valid</p></li>
-<li><p><strong>Current flag</strong> — optional boolean marking the current record</p></li>
-</ul>
-<p><strong>Temporal types</strong> include:</p>
-<ul class="simple">
-<li><p><strong>Valid time</strong> — when something was true in the real world</p></li>
-<li><p><strong>Transaction time</strong> — when it was recorded in the database</p></li>
-<li><p><strong>Bi-temporal</strong> — both at once</p></li>
+<li><p>We use <strong>temporal data</strong> to describe information whose meaning and validity depends directly on time.</p></li>
+<li><p>The database uses <strong>effective dating</strong> to mark when a record was valid by adding an <strong>effective start date</strong> and an <strong>effective end date</strong> to each row.</p></li>
+<li><p>The system can track <strong>valid time</strong>, which is when an event was true in the real world, and <strong>transaction time</strong>, which is when the data was actually written to the database.</p></li>
 </ul>
 </section>
 <section id="employee-history-at-planet-express">
-<h3>Employee history at Planet Express<a class="headerlink" href="#employee-history-at-planet-express" title="Link to this heading">#</a></h3>
-<p>Planet Express built temporal tables to track:</p>
-<ul class="simple">
-<li><p>Salary history</p></li>
-<li><p>Job title changes</p></li>
-<li><p>Department assignments</p></li>
-<li><p>Employee status (alive, dead, temporarily dead, roboticized)</p></li>
-</ul>
-<p>Fry’s salary history might look like:</p>
+<h3>Employee history at Planet Express<a class="headerlink" href="#employee-history-at-planet-express" title="Permalink to this heading">#</a></h3>
+<p>Planet Express built temporal tables to track salary history and job title changes. Fry’s salary history table shows this pattern in action:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Employee</p></th>
@@ -927,14 +813,7 @@
 </tbody>
 </table>
 </div>
-<p>Planet Express also tracked:</p>
-<ul class="simple">
-<li><p>Historical delivery routes and their risk levels</p></li>
-<li><p>Pricing changes over time</p></li>
-<li><p>Variations in space-time anomalies</p></li>
-<li><p>Customer location changes across dimensional rifts</p></li>
-</ul>
-<p>The entity-relationship diagram below shows how the temporal tracking system fits together.</p>
+<p>Using this layout, Planet Express can easily track historical delivery routes, pricing updates, and space-time anomalies. The diagram below shows how the temporal tracking system fits together.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><img src="https://mermaid.ink/img/CgplckRpYWdyYW0KICAgIEVNUExPWUVFUyB8fC0tb3sgRU1QTE9ZRUVfSElTVE9SWSA6IGhhcwogICAgRU1QTE9ZRUVTIHx8LS1veyBTQUxBUllfSElTVE9SWSA6IGVhcm5zCiAgICBFTVBMT1lFRVMgfHwtLW97IFBPU0lUSU9OX0hJU1RPUlkgOiBob2xkcwogICAgREVMSVZFUllfUk9VVEVTIHx8LS1veyBST1VURV9ISVNUT1JZIDogY2hhbmdlcwogICAgREVMSVZFUllfUk9VVEVTIHx8LS1veyBQUklDRV9ISVNUT1JZIDogY29zdHMKCiAgICBFTVBMT1lFRVMgewogICAgICAgIGludCBlbXBsb3llZV9pZCBQSwogICAgICAgIHN0cmluZyBuYW1lCiAgICAgICAgc3RyaW5nIHNwZWNpZXMKICAgICAgICBkYXRlIGhpcmVfZGF0ZQogICAgICAgIGJvb2xlYW4gaXNfcm9ib3QKICAgIH0KCiAgICBFTVBMT1lFRV9ISVNUT1JZIHsKICAgICAgICBpbnQgaGlzdG9yeV9pZCBQSwogICAgICAgIGludCBlbXBsb3llZV9pZCBGSwogICAgICAgIHN0cmluZyBzdGF0dXMKICAgICAgICBkYXRldGltZSBlZmZlY3RpdmVfc3RhcnQKICAgICAgICBkYXRldGltZSBlZmZlY3RpdmVfZW5kCiAgICAgICAgYm9vbGVhbiBpc19jdXJyZW50CiAgICAgICAgZGF0ZXRpbWUgc3lzdGVtX3N0YXJ0CiAgICAgICAgZGF0ZXRpbWUgc3lzdGVtX2VuZAogICAgfQoKICAgIFNBTEFSWV9ISVNUT1JZIHsKICAgICAgICBpbnQgaGlzdG9yeV9pZCBQSwogICAgICAgIGludCBlbXBsb3llZV9pZCBGSwogICAgICAgIGRlY2ltYWwgc2FsYXJ5X2Ftb3VudAogICAgICAgIHN0cmluZyBzYWxhcnlfdW5pdAogICAgICAgIGRhdGV0aW1lIGVmZmVjdGl2ZV9zdGFydAogICAgICAgIGRhdGV0aW1lIGVmZmVjdGl2ZV9lbmQKICAgICAgICBib29sZWFuIGlzX2N1cnJlbnQKICAgICAgICBzdHJpbmcgY2hhbmdlX3JlYXNvbgogICAgfQoKICAgIFBPU0lUSU9OX0hJU1RPUlkgewogICAgICAgIGludCBoaXN0b3J5X2lkIFBLCiAgICAgICAgaW50IGVtcGxveWVlX2lkIEZLCiAgICAgICAgc3RyaW5nIGpvYl90aXRsZQogICAgICAgIHN0cmluZyBkZXBhcnRtZW50CiAgICAgICAgZGF0ZXRpbWUgZWZmZWN0aXZlX3N0YXJ0CiAgICAgICAgZGF0ZXRpbWUgZWZmZWN0aXZlX2VuZAogICAgICAgIGJvb2xlYW4gaXNfY3VycmVudAogICAgICAgIHN0cmluZyBjaGFuZ2VfcmVhc29uCiAgICB9CgogICAgREVMSVZFUllfUk9VVEVTIHsKICAgICAgICBpbnQgcm91dGVfaWQgUEsKICAgICAgICBzdHJpbmcgcm91dGVfbmFtZQogICAgICAgIHN0cmluZyBzdGFydF9sb2NhdGlvbgogICAgICAgIHN0cmluZyBlbmRfbG9jYXRpb24KICAgICAgICBpbnQgZGFuZ2VyX2xldmVsCiAgICB9CgogICAgUk9VVEVfSElTVE9SWSB7CiAgICAgICAgaW50IGhpc3RvcnlfaWQgUEsKICAgICAgICBpbnQgcm91dGVfaWQgRksKICAgICAgICBnZW9tZXRyeSBwYXRoX2Nvb3JkaW5hdGVzCiAgICAgICAgaW50IHNwYWNlX3RpbWVfcmlzawogICAgICAgIGRhdGV0aW1lIGVmZmVjdGl2ZV9zdGFydAogICAgICAgIGRhdGV0aW1lIGVmZmVjdGl2ZV9lbmQKICAgICAgICBib29sZWFuIGlzX2N1cnJlbnQKICAgICAgICBzdHJpbmcgY2hhbmdlX3JlYXNvbgogICAgfQoKICAgIFBSSUNFX0hJU1RPUlkgewogICAgICAgIGludCBoaXN0b3J5X2lkIFBLCiAgICAgICAgaW50IHJvdXRlX2lkIEZLCiAgICAgICAgZGVjaW1hbCBiYXNlX3ByaWNlCiAgICAgICAgZGVjaW1hbCBkYW5nZXJfbXVsdGlwbGllcgogICAgICAgIGRhdGV0aW1lIGVmZmVjdGl2ZV9zdGFydAogICAgICAgIGRhdGV0aW1lIGVmZmVjdGl2ZV9lbmQKICAgICAgICBib29sZWFuIGlzX2N1cnJlbnQKICAgICAgICBzdHJpbmcgY2hhbmdlX3JlYXNvbgogICAgfQo=?width=1000&height=700"/></div></div>
@@ -948,7 +827,7 @@
 </ol>
 </section>
 <section id="implementation-considerations">
-<h3>Implementation considerations<a class="headerlink" href="#implementation-considerations" title="Link to this heading">#</a></h3>
+<h3>Implementation considerations<a class="headerlink" href="#implementation-considerations" title="Permalink to this heading">#</a></h3>
 <p>The temporal pattern adds power but also costs:</p>
 <ul class="simple">
 <li><p><strong>Storage:</strong> keeping every historical row uses far more space.</p></li>
@@ -961,11 +840,11 @@
 <p>Next up: the Polymorphic Associations Pattern, illustrated through the diverse characters in Professor Oak’s Pokémon research database.</p>
 </section>
 </section>
-<section id="the-polymorphic-associations-pattern-when-things-need-to-connect-to-many-types-of-other-things">
-<h2>The Polymorphic Associations Pattern: When Things Need to Connect to Many Types of Other Things<a class="headerlink" href="#the-polymorphic-associations-pattern-when-things-need-to-connect-to-many-types-of-other-things" title="Link to this heading">#</a></h2>
-<p>Professor Oak had an unusual challenge in his Pokémon Research Database. Researchers needed to track many kinds of interactions: Pokémon could belong to Trainers or live in the wild, Items could be held by either Pokémon or Trainers, and Battles could involve Wild Pokémon, Trainer Pokémon, or Gym Leaders’ Pokémon. Every new kind of interaction (like Pokémon watching TV shows) forced changes to the schema.</p>
+<section id="the-polymorphic-associations-pattern-connecting-to-multiple-tables">
+<h2>The Polymorphic Associations Pattern: Connecting to Multiple Tables<a class="headerlink" href="#the-polymorphic-associations-pattern-connecting-to-multiple-tables" title="Permalink to this heading">#</a></h2>
+<p>Professor Oak faced a unique database challenge at his Pokémon Research Laboratory. Researchers needed to track many different kinds of interactions: Pokémon could belong to Trainers or live in the wild, Items could be held by either Pokémon or Trainers, and Battles could involve different combinations of wild and trained Pokémon.</p>
 <section id="the-problem-with-simple-relationships">
-<h3>The problem with simple relationships<a class="headerlink" href="#the-problem-with-simple-relationships" title="Link to this heading">#</a></h3>
+<h3>The problem with simple relationships<a class="headerlink" href="#the-problem-with-simple-relationships" title="Permalink to this heading">#</a></h3>
 <p>Oak’s team first created a separate table for each relationship type:</p>
 <p><strong>TRAINER_POKEMON</strong></p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -982,11 +861,6 @@
 <td><p>Sparky</p></td>
 <td><p>2024-01-15</p></td>
 </tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p>6</p></td>
-<td><p>Flamey</p></td>
-<td><p>2024-02-01</p></td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -1002,10 +876,6 @@
 <tr class="row-even"><td><p>147</p></td>
 <td><p>23</p></td>
 <td><p>2024-03-20</p></td>
-</tr>
-<tr class="row-odd"><td><p>149</p></td>
-<td><p>23</p></td>
-<td><p>2024-03-21</p></td>
 </tr>
 </tbody>
 </table>
@@ -1025,11 +895,6 @@
 <td><p>5</p></td>
 <td><p>2024-03-01</p></td>
 </tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>2024-03-15</p></td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -1046,18 +911,14 @@
 <td><p>3</p></td>
 <td><p>2024-03-10</p></td>
 </tr>
-<tr class="row-odd"><td><p>6</p></td>
-<td><p>4</p></td>
-<td><p>2024-03-12</p></td>
-</tr>
 </tbody>
 </table>
 </div>
-<p>This approach broke down fast. Each new interaction type meant another table, and queries like “find every holder of a given item” had to check several tables at once.</p>
+<p>This approach quickly became unmanageable. Every new kind of interaction required creating a brand new table, and simple queries like “find who holds this item” had to search across multiple tables at the same time.</p>
 </section>
 <section id="the-polymorphic-solution">
-<h3>The polymorphic solution<a class="headerlink" href="#the-polymorphic-solution" title="Link to this heading">#</a></h3>
-<p>Instead of a new table per relationship type, Oak’s team used a single design that could describe any relationship between any two things:</p>
+<h3>The polymorphic solution<a class="headerlink" href="#the-polymorphic-solution" title="Permalink to this heading">#</a></h3>
+<p>To solve this, Oak’s team designed a flexible model where a single relationship table can connect any entities in the database:</p>
 <p><strong>ENTITIES</strong></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -1139,15 +1000,10 @@
 <td><p>duration_minutes</p></td>
 <td><p>30</p></td>
 </tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>enjoyment_level</p></td>
-<td><p>high</p></td>
-</tr>
 </tbody>
 </table>
 </div>
-<p>This design can handle any kind of relationship between any entities. When researchers discovered that Pokémon enjoyed watching TV shows, they just added new rows — no schema change required.</p>
-<p>The diagram below shows how the whole system fits together.</p>
+<p>This design handles any kind of connection. When researchers discovered that Pokémon enjoyed watching TV shows, they simply added a new row to the database without needing to change the table structure. The diagram below shows this flexible design.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><img src="https://mermaid.ink/img/CgplckRpYWdyYW0KICAgIEVOVElUSUVTIHx8LS1veyBSRUxBVElPTlNISVBTIDogInBhcnRpY2lwYXRlcyBpbiIKICAgIEVOVElUSUVTIHx8LS1veyBFTlRJVFlfQVRUUklCVVRFUyA6ICJoYXMiCiAgICBSRUxBVElPTlNISVBTIHx8LS1veyBSRUxBVElPTlNISVBfQVRUUklCVVRFUyA6ICJoYXMiCgogICAgRU5USVRJRVMgewogICAgICAgIGludCBlbnRpdHlfaWQgUEsKICAgICAgICBzdHJpbmcgdHlwZQogICAgICAgIHN0cmluZyBuYW1lCiAgICAgICAgZGF0ZXRpbWUgY3JlYXRlZF9hdAogICAgfQoKICAgIFJFTEFUSU9OU0hJUFMgewogICAgICAgIGludCByZWxhdGlvbnNoaXBfaWQgUEsKICAgICAgICBpbnQgZnJvbV9lbnRpdHlfaWQgRksKICAgICAgICBzdHJpbmcgcmVsYXRpb25zaGlwX3R5cGUKICAgICAgICBpbnQgdG9fZW50aXR5X2lkIEZLCiAgICAgICAgZGF0ZXRpbWUgc3RhcnRlZF9hdAogICAgICAgIGRhdGV0aW1lIGVuZGVkX2F0CiAgICB9CgogICAgUkVMQVRJT05TSElQX0FUVFJJQlVURVMgewogICAgICAgIGludCByZWxhdGlvbnNoaXBfaWQgRksKICAgICAgICBzdHJpbmcgYXR0cmlidXRlCiAgICAgICAgc3RyaW5nIHZhbHVlCiAgICB9CgogICAgRU5USVRZX0FUVFJJQlVURVMgewogICAgICAgIGludCBlbnRpdHlfaWQgRksKICAgICAgICBzdHJpbmcgYXR0cmlidXRlCiAgICAgICAgc3RyaW5nIHZhbHVlCiAgICB9Cg==?width=1000&height=700"/></div></div>
@@ -1157,17 +1013,11 @@
 </section>
 </section>
 <section id="the-partitioning-pattern-when-tables-get-too-big">
-<h2>The Partitioning Pattern: When Tables Get Too Big<a class="headerlink" href="#the-partitioning-pattern-when-tables-get-too-big" title="Link to this heading">#</a></h2>
-<p>“Dee Dee, get out of my laboratory database!” Dexter’s frustration was not just about interruptions. His research database had grown to billions of experimental measurements, and routine work was slowing down badly.</p>
-<p>The warning signs were clear:</p>
-<ul class="simple">
-<li><p>Queries that once took milliseconds now took hours.</p></li>
-<li><p>Backups needed multiple robotic assistants working in shifts.</p></li>
-<li><p>Purging bad data, like Dee Dee’s dance-recital videos mixed into experiment results, stalled the entire system.</p></li>
-</ul>
+<h2>The Partitioning Pattern: When Tables Get Too Big<a class="headerlink" href="#the-partitioning-pattern-when-tables-get-too-big" title="Permalink to this heading">#</a></h2>
+<p>“Dee Dee, get out of my laboratory database!” Dexter’s frustration was mounting. His research database had grown to billions of rows of experimental data, and basic queries were taking hours instead of milliseconds.</p>
 <section id="the-problem-with-big-tables">
-<h3>The problem with big tables<a class="headerlink" href="#the-problem-with-big-tables" title="Link to this heading">#</a></h3>
-<p>Imagine if every book in the library was one enormous scroll instead of separate books. Finding anything would mean unrolling the whole scroll. That is what was happening in Dexter’s database. His main experiments table had grown to billions of rows:</p>
+<h3>The problem with big tables<a class="headerlink" href="#the-problem-with-big-tables" title="Permalink to this heading">#</a></h3>
+<p>When a single table grows too large, the database engine must search through billions of rows to find a record, which slows down queries and stalls backups. Dexter’s primary experiments table had simply grown too massive:</p>
 <p><strong>EXPERIMENTS table</strong></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -1205,25 +1055,18 @@
 <td><p>…</p></td>
 <td><p>…</p></td>
 </tr>
-<tr class="row-odd"><td><p>(billions of rows)</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
 </tbody>
 </table>
 </div>
 </section>
 <section id="the-partitioning-solution">
-<h3>The partitioning solution<a class="headerlink" href="#the-partitioning-solution" title="Link to this heading">#</a></h3>
-<p><strong>Partitioning</strong> splits a huge table into smaller pieces that still act like one logical table. Think of how a library spreads books across shelves and floors but keeps one catalog.</p>
-<p>Dexter used two main kinds of partitioning:</p>
-<section id="range-partitioning-by-date">
-<h4>1. Range partitioning by date<a class="headerlink" href="#range-partitioning-by-date" title="Link to this heading">#</a></h4>
-<p>The experiments table was split into monthly chunks:</p>
+<h3>The partitioning solution<a class="headerlink" href="#the-partitioning-solution" title="Permalink to this heading">#</a></h3>
+<p>To fix this, Dexter used <strong>partitioning</strong>, which splits a giant table into smaller physical pieces that still act like a single logical table. The application code still queries a single table name, but the database engine only reads the relevant slice.</p>
+<p>Dexter implemented two main partitioning strategies:</p>
+<ul class="simple">
+<li><p>We use <strong>range partitioning</strong> to split data by a continuous range of values, such as grouping Dexter’s experiments into separate monthly tables.</p></li>
+<li><p>We use <strong>list partitioning</strong> to group rows by a specific list of values, such as partitioning sensor readings by the type of measurement.</p></li>
+</ul>
 <p><strong>EXPERIMENTS_2024_03</strong> (March experiments only)</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -1241,46 +1084,10 @@
 <td><p>295.2</p></td>
 <td><p>1.013</p></td>
 </tr>
-<tr class="row-odd"><td><p>1002</p></td>
-<td><p>2024-03-01 10:15</p></td>
-<td><p>quantum_tunnel</p></td>
-<td><p>2.1</p></td>
-<td><p>0.001</p></td>
-</tr>
 </tbody>
 </table>
 </div>
-<p><strong>EXPERIMENTS_2024_02</strong> (February experiments only)</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>experiment_id</p></th>
-<th class="head"><p>timestamp</p></th>
-<th class="head"><p>experiment_type</p></th>
-<th class="head"><p>temperature</p></th>
-<th class="head"><p>pressure</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>901</p></td>
-<td><p>2024-02-28 09:00</p></td>
-<td><p>particle_accel</p></td>
-<td><p>295.0</p></td>
-<td><p>1.012</p></td>
-</tr>
-<tr class="row-odd"><td><p>902</p></td>
-<td><p>2024-02-28 10:15</p></td>
-<td><p>quantum_tunnel</p></td>
-<td><p>2.0</p></td>
-<td><p>0.001</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="list-partitioning-by-type">
-<h4>2. List partitioning by type<a class="headerlink" href="#list-partitioning-by-type" title="Link to this heading">#</a></h4>
-<p>For sensor readings, Dexter partitioned by the type of measurement:</p>
-<p><strong>TEMPERATURE_READINGS</strong></p>
+<p><strong>TEMPERATURE_READINGS</strong> (Temperature list partition)</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>reading_id</p></th>
@@ -1295,39 +1102,10 @@
 <td><p>295.2</p></td>
 <td><p>2024-03-01 09:00</p></td>
 </tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>1002</p></td>
-<td><p>2.1</p></td>
-<td><p>2024-03-01 10:15</p></td>
-</tr>
 </tbody>
 </table>
 </div>
-<p><strong>PRESSURE_READINGS</strong></p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>reading_id</p></th>
-<th class="head"><p>experiment_id</p></th>
-<th class="head"><p>value</p></th>
-<th class="head"><p>timestamp</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>1001</p></td>
-<td><p>1.013</p></td>
-<td><p>2024-03-01 09:00</p></td>
-</tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>1002</p></td>
-<td><p>0.001</p></td>
-<td><p>2024-03-01 10:15</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>The pattern is transparent to applications. Dexter’s code could still treat these as single logical tables (<code class="docutils literal notranslate"><span class="pre">EXPERIMENTS</span></code>, <code class="docutils literal notranslate"><span class="pre">SENSOR_READINGS</span></code>). The database decides which partition to read or write.</p>
-<p>Here is how the whole system fits together:</p>
+<p>By splitting the data, queries for a specific month or sensor type run incredibly fast, and backups can be managed in smaller, safer batches. The diagram below shows how partitioning slices the database.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><img src="https://mermaid.ink/img/CgplckRpYWdyYW0KICAgIEVYUEVSSU1FTlRTIHx8LS1veyBTRU5TT1JfUkVBRElOR1MgOiBnZW5lcmF0ZXMKICAgIEVYUEVSSU1FTlRTIHx8LS18eyBFWFBFUklNRU5UU19CWV9NT05USCA6ICJwYXJ0aXRpb25lZCBieSBkYXRlIgogICAgU0VOU09SX1JFQURJTkdTIHx8LS18eyBSRUFESU5HU19CWV9UWVBFIDogInBhcnRpdGlvbmVkIGJ5IHR5cGUiCgogICAgRVhQRVJJTUVOVFNfQllfTU9OVEggewogICAgICAgIHBhcnRpdGlvbiBNYXJjaF8yMDI0CiAgICAgICAgcGFydGl0aW9uIEZlYnJ1YXJ5XzIwMjQKICAgICAgICBwYXJ0aXRpb24gSmFudWFyeV8yMDI0CiAgICAgICAgcGFydGl0aW9uIERlY2VtYmVyXzIwMjMKICAgIH0KCiAgICBSRUFESU5HU19CWV9UWVBFIHsKICAgICAgICBwYXJ0aXRpb24gVGVtcGVyYXR1cmUKICAgICAgICBwYXJ0aXRpb24gUHJlc3N1cmUKICAgICAgICBwYXJ0aXRpb24gVm9sdGFnZQogICAgICAgIHBhcnRpdGlvbiBSYWRpYXRpb24KICAgIH0K?width=1000&height=700"/></div></div>
@@ -1341,13 +1119,12 @@
 <p>Even when accidents happened (like the time Dee Dee’s ballet shoes ended up in the particle accelerator), damage was contained to specific partitions. The database stayed up, experiments continued, and Dexter could fix the affected partition without shutting down the whole lab.</p>
 </section>
 </section>
-</section>
 <section id="hybrid-relational-json-balancing-structure-and-flexibility">
-<h2>Hybrid Relational-JSON: Balancing Structure and Flexibility<a class="headerlink" href="#hybrid-relational-json-balancing-structure-and-flexibility" title="Link to this heading">#</a></h2>
-<p>Wile E. Coyote, freshly promoted (and slightly scorched) as ACME Corporation’s database administrator, faced a daunting challenge. ACME’s catalog ran from explosive TNT to giant rubber bands to spring-loaded anvil launchers. Each product type had its own attributes: TNT needed an explosion radius and fuse length, while rubber bands needed flexibility and stretch distance. Every new invention forced Wile E. to rework the schema.</p>
+<h2>Hybrid Relational-JSON: Balancing Structure and Flexibility<a class="headerlink" href="#hybrid-relational-json-balancing-structure-and-flexibility" title="Permalink to this heading">#</a></h2>
+<p>Wile E. Coyote, the database administrator for ACME Corporation, faced a major challenge. ACME’s product catalog was highly diverse, ranging from explosive TNT to giant rubber bands. Each product type had its own unique attributes: TNT required an explosion radius and fuse length, while rubber bands needed flexibility ratings.</p>
 <section id="the-problem-fixed-columns-for-a-diverse-catalog">
-<h3>The problem: fixed columns for a diverse catalog<a class="headerlink" href="#the-problem-fixed-columns-for-a-diverse-catalog" title="Link to this heading">#</a></h3>
-<p>ACME’s first design used fixed columns for every possible attribute:</p>
+<h3>The problem: fixed columns for a diverse catalog<a class="headerlink" href="#the-problem-fixed-columns-for-a-diverse-catalog" title="Permalink to this heading">#</a></h3>
+<p>ACME’s initial table design used fixed columns for every possible product attribute:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>product_id</p></th>
@@ -1382,82 +1159,45 @@
 <td><p>100</p></td>
 <td><p>95</p></td>
 </tr>
-<tr class="row-even"><td><p>ANV-789</p></td>
-<td><p>Mega Anvil</p></td>
-<td><p>3</p></td>
-<td><p>299.99</p></td>
-<td><p>500.0</p></td>
-<td><p>null</p></td>
-<td><p>null</p></td>
-<td><p>null</p></td>
-<td><p>null</p></td>
-</tr>
 </tbody>
 </table>
 </div>
-<p>This approach broke down quickly:</p>
+<p>This rigid design had serious drawbacks:</p>
 <ul class="simple">
-<li><p><strong>Sparsity:</strong> most columns were null for any given product.</p></li>
-<li><p><strong>Rigid structure:</strong> adding a new product type meant another <code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span></code>.</p></li>
-<li><p><strong>Scalability:</strong> the schema could not keep up with ACME’s growing catalog.</p></li>
+<li><p>It causes <strong>attribute sparsity</strong> because most columns are left empty and marked as null for any given product.</p></li>
+<li><p>It creates a <strong>rigid schema</strong> where adding a new ACME invention forces Wile E. to run risky database modifications to add new columns.</p></li>
 </ul>
 </section>
 <section id="the-hybrid-solution">
-<h3>The hybrid solution<a class="headerlink" href="#the-hybrid-solution" title="Link to this heading">#</a></h3>
-<p>ACME mixed two approaches. The shared attributes that every product has stayed in normal relational columns:</p>
+<h3>The hybrid solution<a class="headerlink" href="#the-hybrid-solution" title="Permalink to this heading">#</a></h3>
+<p>Wile E. solved this by combining relational columns and flexible JSON data. The shared attributes that apply to every product remain in standard columns, while product-specific details are stored in a single JSON column:</p>
+<p><strong>ACME Products Table</strong></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>product_id</p></th>
 <th class="head"><p>name</p></th>
-<th class="head"><p>category_id</p></th>
 <th class="head"><p>base_price</p></th>
 <th class="head"><p>weight</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>TNT-123</p></td>
-<td><p>Deluxe TNT</p></td>
-<td><p>1</p></td>
-<td><p>99.99</p></td>
-<td><p>5.0</p></td>
-</tr>
-<tr class="row-odd"><td><p>RBD-456</p></td>
-<td><p>Giant Rubber</p></td>
-<td><p>2</p></td>
-<td><p>149.99</p></td>
-<td><p>2.0</p></td>
-</tr>
-<tr class="row-even"><td><p>ANV-789</p></td>
-<td><p>Mega Anvil</p></td>
-<td><p>3</p></td>
-<td><p>299.99</p></td>
-<td><p>500.0</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Product-specific attributes moved into a single JSON column:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>product_id</p></th>
 <th class="head"><p>attributes</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>TNT-123</p></td>
+<td><p>Deluxe TNT</p></td>
+<td><p>99.99</p></td>
+<td><p>5.0</p></td>
 <td><p>{“explosion_radius”: 50, “fuse_length”: 10}</p></td>
 </tr>
 <tr class="row-odd"><td><p>RBD-456</p></td>
+<td><p>Giant Rubber</p></td>
+<td><p>149.99</p></td>
+<td><p>2.0</p></td>
 <td><p>{“stretch_distance”: 100, “flexibility_rating”: 95}</p></td>
-</tr>
-<tr class="row-even"><td><p>ANV-789</p></td>
-<td><p>{“impact_force”: 1000, “drop_speed”: 200}</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>A <code class="docutils literal notranslate"><span class="pre">CATEGORIES</span></code> table lists which attributes are allowed for each category, so the JSON does not become a free-for-all:</p>
-<p>| id | name        | parent_id | allowed_attributes                                       |</p>
+<p>This hybrid pattern gives ACME the best of both worlds: standard columns ensure fast indexes for common queries, while the JSON column allows Wile E. to add new products instantly without changing the table structure.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><img src="https://mermaid.ink/img/CmVyRGlhZ3JhbQogICAgQ0FURUdPUklFUyB8fC0tb3sgUFJPRFVDVFMgOiBjb250YWlucwogICAgQ0FURUdPUklFUyB8fC0tb3sgQ0FURUdPUklFUyA6IGhhc19wYXJlbnQKCiAgICBDQVRFR09SSUVTIHsKICAgICAgICBpbnQgaWQKICAgICAgICBzdHJpbmcgbmFtZQogICAgICAgIGludCBwYXJlbnRfaWQKICAgICAgICBqc29uIGFsbG93ZWRfYXR0cmlidXRlcwogICAgfQoKICAgIFBST0RVQ1RTIHsKICAgICAgICBzdHJpbmcgcHJvZHVjdF9pZAogICAgICAgIHN0cmluZyBuYW1lCiAgICAgICAgaW50IGNhdGVnb3J5X2lkCiAgICAgICAgZGVjaW1hbCBiYXNlX3ByaWNlCiAgICAgICAgZGVjaW1hbCB3ZWlnaHQKICAgICAgICBqc29uIGF0dHJpYnV0ZXMKICAgIH0K?width=1000&height=700"/></div></div>
@@ -1467,12 +1207,12 @@
 </section>
 </section>
 <section id="database-deployment-models-choosing-your-data-s-home">
-<h2>Database Deployment Models: Choosing Your Data’s Home<a class="headerlink" href="#database-deployment-models-choosing-your-data-s-home" title="Link to this heading">#</a></h2>
+<h2>Database Deployment Models: Choosing Your Data’s Home<a class="headerlink" href="#database-deployment-models-choosing-your-data-s-home" title="Permalink to this heading">#</a></h2>
 <p>“Morty, <em>burp</em> Morty! The Council of Ricks hacked our database again!” Rick frantically unplugged servers in his garage while liquid oozed from a nearby portal. “They got into our local servers, our cloud backups, everything! This is why we need to talk about database deployment models, Morty!”</p>
 <p>“Oh geez Rick, what does that even mean?”</p>
 <p>There are three common deployment models, and each has trade-offs:</p>
 <section id="the-three-deployment-models">
-<h3>The three deployment models<a class="headerlink" href="#the-three-deployment-models" title="Link to this heading">#</a></h3>
+<h3>The three deployment models<a class="headerlink" href="#the-three-deployment-models" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p><strong>On-Premises</strong> (Rick calls it “Paranoid Mode”)</p>
 <ul class="simple">
@@ -1513,7 +1253,7 @@
 </section>
 </section>
 <section id="on-premises-your-data-at-home">
-<h2>On-Premises: Your Data at Home<a class="headerlink" href="#on-premises-your-data-at-home" title="Link to this heading">#</a></h2>
+<h2>On-Premises: Your Data at Home<a class="headerlink" href="#on-premises-your-data-at-home" title="Permalink to this heading">#</a></h2>
 <p>“Bojack, I just got off the phone with the publisher,” Princess Carolyn paced around her office at VIM. “They want to store your tell-all autobiography data on their cloud servers. I told them absolutely not — we’re keeping everything on-premises after what happened with Sarah Lynn’s ghostwriter leaks.”</p>
 <p>“But PC, what does ‘on-premises’ even mean?”</p>
 <p><strong>On-premises</strong> (or just <strong>“on-prem”</strong>) means keeping your data and servers physically in your own facility. At VIM, that meant:</p>
@@ -1526,7 +1266,7 @@
 <p>“Think of it like your house, Bojack,” Princess Carolyn explained. “Instead of renting an apartment where the landlord controls everything, you own the place. More work, but when things go wrong, you know exactly who to blame.”</p>
 <p>“So… like always, blame Todd?”</p>
 <section id="the-reality-of-running-your-own-servers">
-<h3>The reality of running your own servers<a class="headerlink" href="#the-reality-of-running-your-own-servers" title="Link to this heading">#</a></h3>
+<h3>The reality of running your own servers<a class="headerlink" href="#the-reality-of-running-your-own-servers" title="Permalink to this heading">#</a></h3>
 <p>VIM’s on-prem setup needed three things:</p>
 <ol class="arabic simple">
 <li><p><strong>Physical infrastructure</strong></p>
@@ -1561,7 +1301,7 @@
 </div>
 </section>
 <section id="when-on-premises-makes-sense">
-<h3>When on-premises makes sense<a class="headerlink" href="#when-on-premises-makes-sense" title="Link to this heading">#</a></h3>
+<h3>When on-premises makes sense<a class="headerlink" href="#when-on-premises-makes-sense" title="Permalink to this heading">#</a></h3>
 <p>Princess Carolyn chose on-prem for VIM because:</p>
 <ol class="arabic simple">
 <li><p><strong>Control.</strong> “After the ‘What Time Is It Right Now’ data breach, we need total control over our celebrity client data.”</p></li>
@@ -1571,7 +1311,7 @@
 </ol>
 </section>
 <section id="the-downsides">
-<h3>The downsides<a class="headerlink" href="#the-downsides" title="Link to this heading">#</a></h3>
+<h3>The downsides<a class="headerlink" href="#the-downsides" title="Permalink to this heading">#</a></h3>
 <p>On-prem isn’t perfect:</p>
 <ul class="simple">
 <li><p>Scaling up means buying new hardware, not clicking a button.</p></li>
@@ -1584,49 +1324,23 @@
 </section>
 </section>
 <section id="cloud-your-data-in-someone-else-s-datacenter">
-<h2>Cloud: Your Data in Someone Else’s Datacenter<a class="headerlink" href="#cloud-your-data-in-someone-else-s-datacenter" title="Link to this heading">#</a></h2>
+<h2>Cloud: Your Data in Someone Else’s Datacenter<a class="headerlink" href="#cloud-your-data-in-someone-else-s-datacenter" title="Permalink to this heading">#</a></h2>
 <p>“STIMPY, YOU EEDIOT!” Ren’s eye twitched as he stared at their empty server room. “What happened to all our servers?”</p>
-<p>“Oh joy! I moved everything to the CLOUD!” Stimpy twirled happily. “Now our Happy Happy Pet Shop data lives in magical internet land!”</p>
+<p>“Oh joy! I moved everything to the CLOUD!” Stimpy giggled. “Now our Happy Happy Pet Shop data lives in magical internet land!”</p>
 <section id="what-cloud-deployment-means">
-<h3>What cloud deployment means<a class="headerlink" href="#what-cloud-deployment-means" title="Link to this heading">#</a></h3>
-<p><strong>Cloud deployment</strong> means storing your data on servers owned and maintained by companies like AWS, Google Cloud, or Azure. Instead of keeping servers in your basement (or, in Ren and Stimpy’s case, next to the kitty litter), your data lives in big datacenters run by professionals.</p>
-<p>“It’s like when we moved from our tiny house to the big apartment building,” Stimpy explained. “Instead of fixing our own plumbing, we have a building superintendent.”</p>
+<h3>What cloud deployment means<a class="headerlink" href="#what-cloud-deployment-means" title="Permalink to this heading">#</a></h3>
+<p>A <strong>cloud deployment</strong> means storing your database on remote servers owned and managed by large providers like Amazon Web Services, Google Cloud, or Microsoft Azure. Instead of maintaining physical hardware in your office, your data lives in highly secure, professional datacenters.</p>
 </section>
 <section id="cloud-service-models">
-<h3>Cloud service models<a class="headerlink" href="#cloud-service-models" title="Link to this heading">#</a></h3>
-<p>There are four main ways to use the cloud, which Stimpy explained with his patented “Log” analogy:</p>
-<ol class="arabic simple">
-<li><p><strong>Infrastructure as a Service (IaaS)</strong> — like buying a raw log to carve yourself.</p>
+<h3>Cloud service models<a class="headerlink" href="#cloud-service-models" title="Permalink to this heading">#</a></h3>
+<p>Stimpy explained how companies rent cloud databases using a few standard service models:</p>
 <ul class="simple">
-<li><p>You get basic computing resources.</p></li>
-<li><p>You manage the operating system and everything above.</p></li>
+<li><p>We use <strong>Infrastructure as a Service (IaaS)</strong> when we rent raw virtual servers and install the operating system and database software ourselves.</p></li>
+<li><p>We use <strong>Platform as a Service (PaaS)</strong> when the cloud provider manages the operating system and database platform, leaving us to focus only on building our application.</p></li>
+<li><p>We use <strong>Software as a Service (SaaS)</strong> when we rent a fully completed software application over the web with no hosting worries.</p></li>
+<li><p>We use <strong>Database as a Service (DBaaS)</strong> when the provider handles all database administration, backups, and server maintenance, letting us focus entirely on writing SQL and designing schemas.</p></li>
 </ul>
-</li>
-<li><p><strong>Platform as a Service (PaaS)</strong> — like getting a pre-carved log.</p>
-<ul class="simple">
-<li><p>The provider handles the infrastructure and platform.</p></li>
-<li><p>You just build your application.</p></li>
-</ul>
-</li>
-<li><p><strong>Software as a Service (SaaS)</strong> — like buying a finished log product.</p>
-<ul class="simple">
-<li><p>Everything is managed by the provider.</p></li>
-<li><p>You just use the application.</p></li>
-</ul>
-</li>
-<li><p><strong>Database as a Service (DBaaS)</strong> — like a log that’s pre-carved <em>and</em> hollowed out for storage.</p>
-<ul class="simple">
-<li><p>The provider manages the database infrastructure, software, and maintenance.</p></li>
-<li><p>You focus on queries and schemas.</p></li>
-</ul>
-</li>
-</ol>
-<p>When moving data to the cloud, you also need <strong>Domain Name System (DNS)</strong> records to route traffic to your database. You choose between:</p>
-<ul class="simple">
-<li><p>A <strong>static IP</strong> — a permanent address.</p></li>
-<li><p>A <strong>dynamic IP</strong> — an address that changes periodically.</p></li>
-</ul>
-<p>Here is how data flows in a cloud setup:</p>
+<p>To connect your applications to a cloud database, you also need the <strong>Domain Name System (DNS)</strong> to translate database domain names into network IP addresses. You can choose a <strong>static IP</strong> for a permanent, unchanging address, or a <strong>dynamic IP</strong> which can change periodically. The diagram below shows how applications connect to a cloud database.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><img src="https://mermaid.ink/img/CgoKZmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCAiSGFwcHkgSGFwcHkgUGV0IFNob3AiCiAgICAgICAgQVtTdG9yZSBDb21wdXRlcnNdCiAgICAgICAgQltNb2JpbGUgRGV2aWNlc10KICAgICAgICBDW0Nhc2ggUmVnaXN0ZXJzXQogICAgZW5kCgogICAgc3ViZ3JhcGggIlRoZSBDbG91ZCIKICAgICAgICBEW0xvYWQgQmFsYW5jZXJdCiAgICAgICAgRVtXZWIgU2VydmljZXNdCiAgICAgICAgRltEYXRhYmFzZV0KICAgICAgICBHW1N0b3JhZ2VdCgogICAgICAgIHN1YmdyYXBoICJNYW5hZ2VkIFNlcnZpY2VzIgogICAgICAgICAgICBIW0JhY2t1cF0KICAgICAgICAgICAgSVtTZWN1cml0eV0KICAgICAgICAgICAgSltNb25pdG9yaW5nXQogICAgICAgIGVuZAogICAgZW5kCgogICAgQSAtLT4gRAogICAgQiAtLT4gRAogICAgQyAtLT4gRAogICAgRCAtLT4gRQogICAgRSAtLT4gRgogICAgRSAtLT4gRwogICAgRiAtLT4gSAogICAgRiAtLT4gSQogICAgRiAtLT4gSgo=?width=1000&height=700"/></div></div>
@@ -1635,7 +1349,7 @@
 <p>“Oh, somewhere in Virginia! Or Oregon! Or maybe Mars! That’s the beauty of it — we don’t have to worry about those details anymore!”</p>
 </section>
 <section id="benefits-of-cloud-deployment">
-<h3>Benefits of cloud deployment<a class="headerlink" href="#benefits-of-cloud-deployment" title="Link to this heading">#</a></h3>
+<h3>Benefits of cloud deployment<a class="headerlink" href="#benefits-of-cloud-deployment" title="Permalink to this heading">#</a></h3>
 <p>Stimpy’s move to the cloud solved several problems:</p>
 <ol class="arabic simple">
 <li><p><strong>Scalability.</strong> The database grows automatically when they get rushed during Free Nose Hair Day.</p></li>
@@ -1645,7 +1359,7 @@
 </ol>
 </section>
 <section id="id1">
-<h3>The downsides<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3>The downsides<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>Cloud has its own headaches:</p>
 <ul class="simple">
 <li><p><strong>Unpredictable bills.</strong> That time Stimpy’s infinite loop kept spawning new servers cost a fortune.</p></li>
@@ -1658,16 +1372,16 @@
 </section>
 </section>
 <section id="hybrid-the-best-or-worst-of-both-worlds">
-<h2>Hybrid: The Best (or Worst) of Both Worlds<a class="headerlink" href="#hybrid-the-best-or-worst-of-both-worlds" title="Link to this heading">#</a></h2>
+<h2>Hybrid: The Best (or Worst) of Both Worlds<a class="headerlink" href="#hybrid-the-best-or-worst-of-both-worlds" title="Permalink to this heading">#</a></h2>
 <p>“Aww geez, what do you mean we’re doing hybrid deployment?” Summer stared at her grandfather, who was simultaneously uploading data to the cloud and reinforcing the bunker servers under the garage.</p>
 <p>“<em>burp</em> Look Summer, some data you want close, and some data you want far away.”</p>
 <section id="what-hybrid-deployment-means">
-<h3>What hybrid deployment means<a class="headerlink" href="#what-hybrid-deployment-means" title="Link to this heading">#</a></h3>
+<h3>What hybrid deployment means<a class="headerlink" href="#what-hybrid-deployment-means" title="Permalink to this heading">#</a></h3>
 <p><strong>Hybrid deployment</strong> uses both on-premises and cloud storage in a coordinated way. Sensitive or frequently used data stays local, while the rest goes to the cloud.</p>
 <p>“It’s like how I keep my favorite booze in the garage but store my infinite backup booze in warehouses across multiple dimensions,” Rick explained. “You never want all your eggs — or interdimensional contraband — in one basket.”</p>
 </section>
 <section id="common-hybrid-setups">
-<h3>Common hybrid setups<a class="headerlink" href="#common-hybrid-setups" title="Link to this heading">#</a></h3>
+<h3>Common hybrid setups<a class="headerlink" href="#common-hybrid-setups" title="Permalink to this heading">#</a></h3>
 <p>Rick’s deployment looked something like this:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -1675,7 +1389,7 @@
 </div>
 </section>
 <section id="how-rick-uses-hybrid-deployment">
-<h3>How Rick uses hybrid deployment<a class="headerlink" href="#how-rick-uses-hybrid-deployment" title="Link to this heading">#</a></h3>
+<h3>How Rick uses hybrid deployment<a class="headerlink" href="#how-rick-uses-hybrid-deployment" title="Permalink to this heading">#</a></h3>
 <p><strong>Kept locally:</strong></p>
 <ul class="simple">
 <li><p>Portal gun formulas</p></li>
@@ -1692,7 +1406,7 @@
 </ul>
 </section>
 <section id="benefits-of-going-hybrid">
-<h3>Benefits of going hybrid<a class="headerlink" href="#benefits-of-going-hybrid" title="Link to this heading">#</a></h3>
+<h3>Benefits of going hybrid<a class="headerlink" href="#benefits-of-going-hybrid" title="Permalink to this heading">#</a></h3>
 <p>Rick’s reasons for hybrid:</p>
 <ol class="arabic simple">
 <li><p><strong>Security control.</strong> Critical data stays under direct supervision.</p></li>
@@ -1702,7 +1416,7 @@
 </ol>
 </section>
 <section id="the-challenges">
-<h3>The challenges<a class="headerlink" href="#the-challenges" title="Link to this heading">#</a></h3>
+<h3>The challenges<a class="headerlink" href="#the-challenges" title="Permalink to this heading">#</a></h3>
 <p>Hybrid is not free:</p>
 <ul class="simple">
 <li><p><strong>Complex setup.</strong> Two architectures to design instead of one.</p></li>
@@ -1717,11 +1431,11 @@
 </section>
 </section>
 <section id="connectivity">
-<h2>Connectivity<a class="headerlink" href="#connectivity" title="Link to this heading">#</a></h2>
+<h2>Connectivity<a class="headerlink" href="#connectivity" title="Permalink to this heading">#</a></h2>
 <p>“<em>burp</em> Morty, the database has to stay up across dimensions. That means more than one server, on more than one network, talking through more than one channel.” Rick scrawls a diagram on the garage whiteboard while Morty looks confused.</p>
 <p>Deployment decides <em>where</em> the database lives. <strong>Connectivity</strong> decides <em>how</em> anything reaches it. This section covers three pieces: the difference between embedded and client/server databases, the patterns that let a database stay reachable when one server fails, and the ports and protocols you will see again and again.</p>
 <section id="client-server-vs-embedded-named-explicitly">
-<h3>Client/server vs. embedded, named explicitly<a class="headerlink" href="#client-server-vs-embedded-named-explicitly" title="Link to this heading">#</a></h3>
+<h3>Client/server vs. embedded, named explicitly<a class="headerlink" href="#client-server-vs-embedded-named-explicitly" title="Permalink to this heading">#</a></h3>
 <p>Two patterns cover almost every database deployment.</p>
 <ul class="simple">
 <li><p><strong>Client/server architecture.</strong> The database runs as its own server process, and applications connect to it over the network. The client and the database are separate programs, often on separate machines. PostgreSQL (Chapter 9) is the canonical example — <code class="docutils literal notranslate"><span class="pre">psql</span></code> is a client, <code class="docutils literal notranslate"><span class="pre">postgres</span></code> is the server, and they talk over TCP.</p></li>
@@ -1730,7 +1444,7 @@
 <p>Each pattern has its place. Embedded databases are simple, fast, and great for one user at a time. Client/server databases support many concurrent users, central administration, and remote access — at the cost of a separate process to manage.</p>
 </section>
 <section id="load-balancing-and-multizone-deployment">
-<h3>Load balancing and multizone deployment<a class="headerlink" href="#load-balancing-and-multizone-deployment" title="Link to this heading">#</a></h3>
+<h3>Load balancing and multizone deployment<a class="headerlink" href="#load-balancing-and-multizone-deployment" title="Permalink to this heading">#</a></h3>
 <p>A single database server is also a single point of failure. Two techniques smooth the rough edges.</p>
 <ul class="simple">
 <li><p><strong>Load balancing.</strong> Place a load balancer in front of multiple database replicas. Read queries are spread across the replicas; writes go to a primary node and replicate to the rest. The Council of Ricks’s read-heavy “find Rick by serial number” lookups can fan out across many replicas without overloading any one of them.</p></li>
@@ -1752,7 +1466,7 @@
 <p>The application talks to the load balancer; the load balancer routes around any replica that is unavailable.</p>
 </section>
 <section id="ports-and-protocols-you-ll-see">
-<h3>Ports and protocols you’ll see<a class="headerlink" href="#ports-and-protocols-you-ll-see" title="Link to this heading">#</a></h3>
+<h3>Ports and protocols you’ll see<a class="headerlink" href="#ports-and-protocols-you-ll-see" title="Permalink to this heading">#</a></h3>
 <p>Every DBMS has a default network port. Knowing them by sight is half the connectivity battle, because firewall rules, connection strings, and error messages all reference them.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -1804,12 +1518,12 @@
 </section>
 </section>
 <section id="database-testing-making-sure-your-data-doesn-t-go-full-schwifty">
-<h2>Database Testing: Making Sure Your Data Doesn’t Go Full Schwifty<a class="headerlink" href="#database-testing-making-sure-your-data-doesn-t-go-full-schwifty" title="Link to this heading">#</a></h2>
+<h2>Database Testing: Making Sure Your Data Doesn’t Go Full Schwifty<a class="headerlink" href="#database-testing-making-sure-your-data-doesn-t-go-full-schwifty" title="Permalink to this heading">#</a></h2>
 <p>“GIR! Why are the humans not succumbing to my latest evil plan?” Zim stared at his base’s computer screen. “According to our database, they should be helpless against the power of… cheese?”</p>
 <p>“I PUT THE CHEESE IN THE DATABASE!” GIR rolled around happily. “AND TACOS! AND WAFFLES! I DIDN’T TEST IT THOUGH! I LOVE UNTESTED DATA!”</p>
 <p>“GIR! This is why our conquest of Earth keeps failing! We need… <em>shudders</em>… database testing.”</p>
 <section id="why-we-test">
-<h3>Why we test<a class="headerlink" href="#why-we-test" title="Link to this heading">#</a></h3>
+<h3>Why we test<a class="headerlink" href="#why-we-test" title="Permalink to this heading">#</a></h3>
 <p>Database testing is checking your evil plans for flaws before unleashing them on an unsuspecting planet. Without testing:</p>
 <ul class="simple">
 <li><p>Data can become corrupt (like GIR’s “humans are made of soap” theory).</p></li>
@@ -1818,7 +1532,7 @@
 </ul>
 </section>
 <section id="types-of-testing">
-<h3>Types of testing<a class="headerlink" href="#types-of-testing" title="Link to this heading">#</a></h3>
+<h3>Types of testing<a class="headerlink" href="#types-of-testing" title="Permalink to this heading">#</a></h3>
 <p>Three kinds of tests catch three different kinds of problems:</p>
 <ul class="simple">
 <li><p><strong>Unit tests</strong> check individual parts in isolation.</p></li>
@@ -1832,7 +1546,7 @@
 </div>
 </section>
 <section id="the-real-cost-of-not-testing">
-<h3>The real cost of not testing<a class="headerlink" href="#the-real-cost-of-not-testing" title="Link to this heading">#</a></h3>
+<h3>The real cost of not testing<a class="headerlink" href="#the-real-cost-of-not-testing" title="Permalink to this heading">#</a></h3>
 <p>Zim’s failed invasions due to bad data:</p>
 <ol class="arabic simple">
 <li><p><strong>The Cheese Incident.</strong> Database claimed humans were allergic to cheese. Reality: they really enjoy it. Result: humans thanked Zim for free cheese rain.</p></li>
@@ -1845,26 +1559,25 @@
 </section>
 </section>
 <section id="unit-testing-keeping-the-ingredients-fresh">
-<h2>Unit Testing: Keeping the Ingredients Fresh<a class="headerlink" href="#unit-testing-keeping-the-ingredients-fresh" title="Link to this heading">#</a></h2>
-<p>“Order up, Squidward!” SpongeBob yelled, flipping through the database terminal. “Schema validated, stored procedures tested, triggers ready for action!”</p>
-<p>“SpongeBob!” Mr. Krabs stormed out of his office. “Be sure yer testing all the database parts, boy! The last thing we need is another faulty trigger messin’ up me profits!”</p>
-<p><strong>Unit testing</strong> means testing the smallest individual parts of your database, one at a time, in isolation. At the Krusty Krab, that means checking each piece — schema, stored procedures, triggers — on its own.</p>
+<h2>Unit Testing: Keeping the Ingredients Fresh<a class="headerlink" href="#unit-testing-keeping-the-ingredients-fresh" title="Permalink to this heading">#</a></h2>
+<p>“Order up, Squidward!” SpongeBob yelled. “Schema validated, stored procedures tested, triggers ready for action!”</p>
+<p>“SpongeBob!” Mr. Krabs warned. “Be sure you are testing all the database parts, boy! The last thing we need is a faulty trigger messing up my profits!”</p>
+<p><strong>Unit testing</strong> is the practice of checking the smallest individual parts of your database in complete isolation to verify they work correctly on their own.</p>
 <section id="testing-the-schema">
-<h3>Testing the schema<a class="headerlink" href="#testing-the-schema" title="Link to this heading">#</a></h3>
-<p><strong>Schema validation</strong> confirms the database structure (tables, columns, constraints) matches the intended design. Suppose the Krusty Krab’s customer table is supposed to require an “Order Time” value on every row. A unit test can catch the case where a NULL slips through:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- SpongeBob&#39;s Test Case #249: Schema Validation</span>
+<h3>Testing the schema<a class="headerlink" href="#testing-the-schema" title="Permalink to this heading">#</a></h3>
+<p>We use <strong>schema validation</strong> to confirm that our tables, columns, and constraints match our exact design rules. For example, a unit test can verify that our database successfully blocks entries with missing information:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- SpongeBob&#39;s Test Case: Schema Validation</span>
 <span class="k">DESCRIBE</span><span class="w"> </span><span class="ss">&quot;Customer Table Schema&quot;</span>
 <span class="n">IT</span><span class="w"> </span><span class="ss">&quot;should not allow null values in Order Time&quot;</span>
 <span class="n">EXPECT</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Customers</span><span class="w"> </span><span class="p">(</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">OrderTime</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Squilliam&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">NULL</span><span class="p">)</span>
 <span class="k">TO</span><span class="w"> </span><span class="n">FAIL</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">ERROR</span><span class="w"> </span><span class="s1">&#39;Column &quot;OrderTime&quot; cannot be null&#39;</span>
 </pre></div>
 </div>
-<p>“See?” SpongeBob beamed. “If the schema is wrong, it’s like building a Krabby Patty without pickles. Total disaster!”</p>
 </section>
 <section id="testing-stored-procedures">
-<h3>Testing stored procedures<a class="headerlink" href="#testing-stored-procedures" title="Link to this heading">#</a></h3>
-<p>A <strong>stored procedure</strong> is a pre-written block of SQL that performs a specific task, like building a daily revenue report or calculating a customer discount. Unit tests confirm the procedure returns the right answer for known inputs.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- SpongeBob&#39;s Test Case #250: Stored Procedure Validation</span>
+<h3>Testing stored procedures<a class="headerlink" href="#testing-stored-procedures" title="Permalink to this heading">#</a></h3>
+<p>A <strong>stored procedure</strong> is a pre-written block of SQL stored in the database to run specific tasks, like calculating a daily revenue report. Unit tests verify the procedure returns the correct output for a given input:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- SpongeBob&#39;s Test Case: Stored Procedure Validation</span>
 <span class="k">DESCRIBE</span><span class="w"> </span><span class="ss">&quot;getDailyRevenue()&quot;</span>
 <span class="n">IT</span><span class="w"> </span><span class="ss">&quot;should return the correct total for a given day&quot;</span>
 <span class="n">EXPECT</span><span class="w"> </span><span class="k">CALL</span><span class="w"> </span><span class="n">getDailyRevenue</span><span class="p">(</span><span class="s1">&#39;2024-11-25&#39;</span><span class="p">)</span>
@@ -1873,28 +1586,19 @@
 </div>
 </section>
 <section id="testing-triggers">
-<h3>Testing triggers<a class="headerlink" href="#testing-triggers" title="Link to this heading">#</a></h3>
-<p>A <strong>trigger</strong> runs automatically in response to a database event, like updating inventory when a new order is placed. Mr. Krabs pointed to the <code class="docutils literal notranslate"><span class="pre">updateInventory</span></code> trigger. “Last week, a faulty trigger gave away free Krabby Patties to the anchovies! Don’t let it happen again, SpongeBob!”</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- SpongeBob&#39;s Test Case #251: Trigger Validation</span>
+<h3>Testing triggers<a class="headerlink" href="#testing-triggers" title="Permalink to this heading">#</a></h3>
+<p>A <strong>trigger</strong> is a database script that runs automatically when a specific event occurs, such as updating inventory whenever a customer places a new order. Unit tests verify that these automatic updates execute correctly:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- SpongeBob&#39;s Test Case: Trigger Validation</span>
 <span class="k">DESCRIBE</span><span class="w"> </span><span class="ss">&quot;updateInventory Trigger&quot;</span>
 <span class="n">IT</span><span class="w"> </span><span class="ss">&quot;should reduce inventory when an order is placed&quot;</span>
-<span class="n">EXPECT</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Orders</span><span class="w"> </span><span class="p">(</span><span class="n">Customer</span><span class="p">,</span><span class="w"> </span><span class="n">Item</span><span class="p">,</span><span class="w"> </span><span class="n">Quantity</span><span class="p">)</span>
-<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Patrick&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Krabby Patty&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="n">EXPECT</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Orders</span><span class="w"> </span><span class="p">(</span><span class="n">Customer</span><span class="p">,</span><span class="w"> </span><span class="n">Item</span><span class="p">,</span><span class="w"> </span><span class="n">Quantity</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Patrick&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Krabby Patty&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
 <span class="k">TO</span><span class="w"> </span><span class="n">CHANGE</span><span class="w"> </span><span class="n">Inventory</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Krabby Patty&#39;</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span>
 </pre></div>
 </div>
-</section>
-<section id="why-each-one-matters">
-<h3>Why each one matters<a class="headerlink" href="#why-each-one-matters" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Schema tests</strong> prevent structural errors that could make the database unusable.</p></li>
-<li><p><strong>Stored procedure tests</strong> ensure consistent, accurate results across runs.</p></li>
-<li><p><strong>Trigger tests</strong> catch unintended side effects from automatic actions — like an anchovy apocalypse.</p></li>
-</ul>
-<p>Squidward sighed. “Just don’t let the triggers give away more free food.”</p>
+<p>By isolating and testing these individual components, SpongeBob ensures that structural bugs, calculation errors, and unexpected side effects are caught before they disrupt the business.</p>
 </section>
 <section id="table-unit-tests">
-<h3>Table: Unit Tests<a class="headerlink" href="#table-unit-tests" title="Link to this heading">#</a></h3>
+<h3>Table: Unit Tests<a class="headerlink" href="#table-unit-tests" title="Permalink to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Subtype</strong></p></th>
@@ -1923,60 +1627,45 @@
 </section>
 </section>
 <section id="integration-testing-making-sure-it-all-works-together">
-<h2>Integration Testing: Making Sure It All Works Together<a class="headerlink" href="#integration-testing-making-sure-it-all-works-together" title="Link to this heading">#</a></h2>
-<p>“Uncle Scrooge!” Huey exclaimed, waving a tablet. “The database is live, but nothing’s working together. We need to test how all the parts interact!”</p>
-<p>Scrooge McDuck adjusted his top hat. “Bah! I didn’t build me fortune by lettin’ pieces of a system act like strangers. Integration testing, lads! That’s how we get the whole treasure map to fit together.”</p>
-<p><strong>Integration testing</strong> checks how different components work together. <strong>Unit testing</strong> confirms that each piece works on its own. <strong>Integration testing</strong> confirms that the pieces talk to each other correctly — data flows, function calls, and dependencies.</p>
-<p>At Scrooge’s money bin, integration testing is like fitting the pieces of a treasure map together. Each piece can look right on its own, but the value comes from the way they connect.</p>
+<h2>Integration Testing: Making Sure It All Works Together<a class="headerlink" href="#integration-testing-making-sure-it-all-works-together" title="Permalink to this heading">#</a></h2>
+<p>“Uncle Scrooge!” Huey exclaimed. “The database is online, but the systems are not communicating. We need to test how all the parts interact!”</p>
+<p>Scrooge McDuck adjusted his top hat. “Bah! I didn’t build my fortune by letting parts of a system act like strangers. We need integration testing, lads!”</p>
+<p><strong>Integration testing</strong> verifies that different database and software components work together correctly, checking that data flows smoothly across system boundaries and external APIs.</p>
 <section id="example-1-testing-data-flow-between-systems">
-<h3>Example 1: testing data flow between systems<a class="headerlink" href="#example-1-testing-data-flow-between-systems" title="Link to this heading">#</a></h3>
-<p>Huey ran a test on the gold-delivery pipeline. “When the <code class="docutils literal notranslate"><span class="pre">GoldInventory</span></code> database updates, it’s supposed to notify the <code class="docutils literal notranslate"><span class="pre">Shipping</span></code> system to send out the treasure chest.”</p>
+<h3>Example 1: testing data flow between systems<a class="headerlink" href="#example-1-testing-data-flow-between-systems" title="Permalink to this heading">#</a></h3>
+<p>Huey tested the gold-delivery pipeline to ensure that updating the gold inventory database automatically triggers the shipping system to send a treasure chest:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Integration Test: Data Flow</span>
 <span class="k">DESCRIBE</span><span class="w"> </span><span class="ss">&quot;GoldInventory to Shipping System&quot;</span>
 <span class="n">IT</span><span class="w"> </span><span class="ss">&quot;should send a notification when gold stock decreases&quot;</span>
-<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">GoldInventory</span><span class="w"> </span><span class="p">(</span><span class="n">Item</span><span class="p">,</span><span class="w"> </span><span class="n">Quantity</span><span class="p">)</span>
-<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Gold Coin&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">EXPECT</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">Notification</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ShippingSystem</span>
-<span class="k">TO</span><span class="w"> </span><span class="k">RETURN</span><span class="w"> </span><span class="s1">&#39;Send chest for 100 Gold Coins&#39;</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">GoldInventory</span><span class="w"> </span><span class="p">(</span><span class="n">Item</span><span class="p">,</span><span class="w"> </span><span class="n">Quantity</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Gold Coin&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">EXPECT</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">Notification</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ShippingSystem</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="k">RETURN</span><span class="w"> </span><span class="s1">&#39;Send chest for 100 Gold Coins&#39;</span>
 </pre></div>
 </div>
-<p>“See?” Huey grinned. “The inventory update triggers the shipping system.”</p>
 </section>
 <section id="example-2-testing-api-interactions">
-<h3>Example 2: testing API interactions<a class="headerlink" href="#example-2-testing-api-interactions" title="Link to this heading">#</a></h3>
-<p>Dewey tested the <strong>API</strong> that the Beagle Boys once hacked. “If <code class="docutils literal notranslate"><span class="pre">getGoldBalance()</span></code> doesn’t talk to the API correctly, it might show zero gold in the vault — Scrooge’s worst nightmare.”</p>
+<h3>Example 2: testing API interactions<a class="headerlink" href="#example-2-testing-api-interactions" title="Permalink to this heading">#</a></h3>
+<p>Dewey tested the <strong>Application Programming Interface (API)</strong> that routes data from the gold vault to Scrooge’s dashboard. If the API link breaks, the dashboard might display an empty vault:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Integration Test: API Interaction</span>
 <span class="k">DESCRIBE</span><span class="w"> </span><span class="ss">&quot;API for Gold Vault Balance&quot;</span>
 <span class="n">IT</span><span class="w"> </span><span class="ss">&quot;should return the correct gold amount&quot;</span>
-<span class="n">EXPECT</span><span class="w"> </span><span class="n">getGoldBalance</span><span class="p">(</span><span class="s1">&#39;vault123&#39;</span><span class="p">)</span>
-<span class="k">TO</span><span class="w"> </span><span class="k">RETURN</span><span class="w"> </span><span class="mi">1000000</span>
+<span class="n">EXPECT</span><span class="w"> </span><span class="n">getGoldBalance</span><span class="p">(</span><span class="s1">&#39;vault123&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="k">RETURN</span><span class="w"> </span><span class="mi">1000000</span>
 </pre></div>
 </div>
 </section>
 <section id="example-3-testing-dependencies-between-components">
-<h3>Example 3: testing dependencies between components<a class="headerlink" href="#example-3-testing-dependencies-between-components" title="Link to this heading">#</a></h3>
-<p>Louie pointed to the discount system. “When customers buy Duckburg memorabilia, the <code class="docutils literal notranslate"><span class="pre">OrderProcessing</span></code> system has to check both the <code class="docutils literal notranslate"><span class="pre">Discounts</span></code> and <code class="docutils literal notranslate"><span class="pre">Inventory</span></code> databases. If one fails, customers could walk away.”</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Integration Test: Dependency Handling</span>
-<span class="k">DESCRIBE</span><span class="w"> </span><span class="ss">&quot;OrderProcessing System&quot;</span>
-<span class="n">IT</span><span class="w"> </span><span class="ss">&quot;should process orders only when Discounts and Inventory are valid&quot;</span>
-<span class="k">INPUT</span><span class="w"> </span><span class="k">Order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="n">Item</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Duckburg T-Shirt&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">Quantity</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">DiscountCode</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;SAVE50&#39;</span><span class="err">}</span>
-<span class="n">EXPECT</span><span class="w"> </span><span class="n">OrderProcessingSystem</span>
-<span class="k">TO</span><span class="w"> </span><span class="k">RETURN</span><span class="w"> </span><span class="s1">&#39;Order confirmed&#39;</span>
+<h3>Example 3: testing dependencies between components<a class="headerlink" href="#example-3-testing-dependencies-between-components" title="Permalink to this heading">#</a></h3>
+<p>Louie verified the ordering system. When a customer buys memorabilia, the system must check both the discounts database and the product inventory database. If either connection fails, the order should fail gracefully:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span>-- Integration Test: Dependency Handling
+DESCRIBE &quot;OrderProcessing System&quot;
+IT &quot;should process orders only when Discounts and Inventory are valid&quot;
+INPUT Order = {Item: &#39;Duckburg T-Shirt&#39;, Quantity: 1, DiscountCode: &#39;SAVE50&#39;}
+EXPECT OrderProcessingSystem TO RETURN &#39;Order confirmed&#39;
 </pre></div>
 </div>
-</section>
-<section id="why-integration-testing-matters">
-<h3>Why integration testing matters<a class="headerlink" href="#why-integration-testing-matters" title="Link to this heading">#</a></h3>
-<p>Integration testing makes sure that:</p>
-<ol class="arabic simple">
-<li><p><strong>Components communicate properly.</strong> Inventory updates trigger shipping correctly.</p></li>
-<li><p><strong>Dependencies are resolved.</strong> When one component relies on another, the link works.</p></li>
-<li><p><strong>Errors surface early.</strong> Bugs in interactions are caught before they hit production.</p></li>
-</ol>
-<p>“Remember, lads,” Scrooge said, “even the richest duck can be sunk if his systems don’t work together. Integration testing keeps the whole operation afloat.”</p>
+<p>While unit tests check each part in isolation, integration tests ensure that communication links work, dependencies resolve correctly, and errors surface early before they affect production.</p>
 </section>
 <section id="integration-tests">
-<h3>Integration Tests<a class="headerlink" href="#integration-tests" title="Link to this heading">#</a></h3>
+<h3>Integration Tests<a class="headerlink" href="#integration-tests" title="Permalink to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Subtype</strong></p></th>
@@ -2005,58 +1694,45 @@
 </section>
 </section>
 <section id="performance-testing-can-the-system-take-over-the-world">
-<h2>Performance Testing: Can the System Take Over the World?<a class="headerlink" href="#performance-testing-can-the-system-take-over-the-world" title="Link to this heading">#</a></h2>
+<h2>Performance Testing: Can the System Take Over the World?<a class="headerlink" href="#performance-testing-can-the-system-take-over-the-world" title="Permalink to this heading">#</a></h2>
 <p><strong>“Gee, Brain, what are we doing tonight?”</strong>
 <strong>“The same thing we do every night, Pinky: test the database’s performance so we can take over the world!”</strong></p>
-<p>Pinky watched as Brain typed furiously. “But, Brain, why does the database need to perform so well if we’re taking over the world?”</p>
-<p>Brain adjusted his lab coat. “Pinky, performance testing makes sure our database can handle anything — millions of users, extreme conditions, unexpected demands. Without it, our plan would collapse faster than your last attempt at a cheese-powered engine.”</p>
-<p><strong>Performance testing</strong> measures a system’s speed, responsiveness, and stability under different conditions. It confirms the database holds up under load and recovers gracefully when things go wrong.</p>
+<p>Pinky watched as Brain typed furiously. “But, Brain, why does our database speed matter so much?”</p>
+<p>Brain adjusted his lab coat. “Pinky, performance testing ensures our database can handle extreme loads and unexpected traffic spikes. Without it, our global network will collapse.”</p>
+<p><strong>Performance testing</strong> measures a database’s speed, stability, and responsiveness under varying workloads to ensure it can survive real-world demands.</p>
 <section id="types-of-performance-testing">
-<h3>Types of performance testing<a class="headerlink" href="#types-of-performance-testing" title="Link to this heading">#</a></h3>
-<p><strong>1. Load testing</strong></p>
-<p>Pinky pressed a big red button, and the database began processing thousands of fake user logins at once.</p>
+<h3>Types of performance testing<a class="headerlink" href="#types-of-performance-testing" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>We run <strong>load testing</strong> to measure how the database performs under normal, expected user traffic:</p></li>
+</ul>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Load Test</span>
 <span class="k">DESCRIBE</span><span class="w"> </span><span class="ss">&quot;User Login System Under Load&quot;</span>
 <span class="n">IT</span><span class="w"> </span><span class="ss">&quot;should handle 10,000 simultaneous logins&quot;</span>
 <span class="n">EXPECT</span><span class="w"> </span><span class="n">RESPONSE_TIME</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">seconds</span>
 </pre></div>
 </div>
-<p>Load testing confirms the system can handle typical demand.</p>
-<p><strong>2. Stress testing</strong></p>
-<p>Brain cranked the load until sparks flew. Stress testing pushes past normal limits to find the breaking point.</p>
+<ul class="simple">
+<li><p>We run <strong>stress testing</strong> to push the database past its normal limits to find the breaking point and see how it recovers from failure:</p></li>
+</ul>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Stress Test</span>
 <span class="k">DESCRIBE</span><span class="w"> </span><span class="ss">&quot;Order Processing System Under High Stress&quot;</span>
 <span class="n">IT</span><span class="w"> </span><span class="ss">&quot;should not crash with 50,000 simultaneous orders&quot;</span>
 <span class="n">EXPECT</span><span class="w"> </span><span class="n">SYSTEM_UPTIME</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">99</span><span class="p">.</span><span class="mi">9</span><span class="o">%</span>
 </pre></div>
 </div>
-<p>“But what if it does crash, Brain?”</p>
-<p>“Then we fix the weaknesses and try again. Failure is part of testing.”</p>
-<p><strong>3. Scalability testing</strong></p>
-<p>“Imagine our plan succeeds. We must ensure the database scales as our empire grows.”</p>
+<ul class="simple">
+<li><p>We run <strong>scalability testing</strong> to verify that the database continues to perform quickly as the total volume of data grows over time:</p></li>
+</ul>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Scalability Test</span>
 <span class="k">DESCRIBE</span><span class="w"> </span><span class="ss">&quot;Database Response Time With Increased Data&quot;</span>
 <span class="n">IT</span><span class="w"> </span><span class="ss">&quot;should maintain query response time under 5 seconds&quot;</span>
 <span class="k">FOR</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">million</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">million</span><span class="p">,</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="n">million</span><span class="w"> </span><span class="k">rows</span>
 </pre></div>
 </div>
-<p>Scalability testing checks whether the database keeps performing as data and users grow.</p>
-</section>
-<section id="why-performance-testing-matters">
-<h3>Why performance testing matters<a class="headerlink" href="#why-performance-testing-matters" title="Link to this heading">#</a></h3>
-<p>Performance testing protects three things:</p>
-<ol class="arabic simple">
-<li><p><strong>Reliability.</strong> The database stays online during high traffic.</p></li>
-<li><p><strong>Uptime.</strong> Bottlenecks get caught before they cause a crash.</p></li>
-<li><p><strong>User experience.</strong> Fast, stable systems keep users (and would-be world conquerors) happy.</p></li>
-</ol>
-<p>“So, Brain, with performance testing, we can make the system as unstoppable as your giant robotic hamster!”</p>
-<p>“Exactly, Pinky. Now, let’s prepare for tomorrow night.”</p>
-<p>“What are we going to do tomorrow night, Brain?”</p>
-<p>“The same thing we do every night: optimize, test, and take over the world.”</p>
+<p>By measuring these limits, Brain ensures the system remains reliable, stays online during traffic spikes, and delivers a fast user experience.</p>
 </section>
 <section id="performance-tests">
-<h3>Performance Tests<a class="headerlink" href="#performance-tests" title="Link to this heading">#</a></h3>
+<h3>Performance Tests<a class="headerlink" href="#performance-tests" title="Permalink to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Subtype</strong></p></th>
@@ -2088,7 +1764,7 @@
 </section>
 </section>
 <section id="chapter-conclusion">
-<h2>Chapter Conclusion<a class="headerlink" href="#chapter-conclusion" title="Link to this heading">#</a></h2>
+<h2>Chapter Conclusion<a class="headerlink" href="#chapter-conclusion" title="Permalink to this heading">#</a></h2>
 <p>Good database architecture comes down to three connected choices:</p>
 <ul class="simple">
 <li><p><strong>Design patterns</strong> — normalization, star schema, bridge tables, temporal, polymorphic, partitioning, and hybrid relational/JSON — each fits a specific problem.</p></li>
@@ -2105,7 +1781,7 @@
 </ul>
 </section>
 <section id="chapter-summary">
-<h2>Chapter Summary<a class="headerlink" href="#chapter-summary" title="Link to this heading">#</a></h2>
+<h2>Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
 <p>Use this list as a self-check. After working through the chapter, you should be able to do each of the following:</p>
 <ul class="simple">
 <li><p>You can apply common database design patterns to architectural problems.</p></li>
@@ -2122,99 +1798,98 @@
 </ul>
 </section>
 <section id="lab-practice-your-sql">
-<h2>Lab: Practice Your SQL<a class="headerlink" href="#lab-practice-your-sql" title="Link to this heading">#</a></h2>
+<h2>Lab: Practice Your SQL<a class="headerlink" href="#lab-practice-your-sql" title="Permalink to this heading">#</a></h2>
 <p>Run the following cell to practice your SQL.</p>
 </section>
 <section id="practice-with-the-loop-of-the-recursive-dragon">
-<h2>Practice with the Loop of the Recursive Dragon<a class="headerlink" href="#practice-with-the-loop-of-the-recursive-dragon" title="Link to this heading">#</a></h2>
+<h2>Practice with the Loop of the Recursive Dragon<a class="headerlink" href="#practice-with-the-loop-of-the-recursive-dragon" title="Permalink to this heading">#</a></h2>
 <p>Sharpen what you just learned with a chapter-matched review set in the <strong>Loop of the Recursive Dragon</strong> — an adaptive review game with multiple question types and RPG-style mechanics, built for this book.</p>
 <p><a class="reference external" href="https://brendanpshea.github.io/LotRD/?set=database_11_architecture_testing.json"><strong>Launch the Chapter 11 review set →</strong></a></p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
-<p>Use this list as a quick review sheet for the chapter.</p>
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<p>Use this reference sheet to quickly review the key terms from this chapter.</p>
 <section id="design-and-schemas">
-<h3>Design and schemas<a class="headerlink" href="#design-and-schemas" title="Link to this heading">#</a></h3>
+<h3>Design and schemas<a class="headerlink" href="#design-and-schemas" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Database design</strong> — The process of producing a detailed data model, including logical and physical decisions.</p></li>
-<li><p><strong>Database schema</strong> — A formal description of the structure, organization, and relationships of the data in a database.</p></li>
-<li><p><strong>Logical schema</strong> — A conceptual representation of the database’s structure that does not commit to a specific DBMS.</p></li>
-<li><p><strong>Physical schema</strong> — The actual implementation of a database design in a specific DBMS, including data types, indexes, and storage choices.</p></li>
-<li><p><strong>View schema</strong> — The structure of a virtual table built from a SQL query.</p></li>
-<li><p><strong>Data cardinality</strong> — A measure of how unique the values in a database column are.</p></li>
-<li><p><strong>Database connectivity</strong> — The ability of a database to communicate with other systems or applications.</p></li>
+<li><p>A <strong>database design</strong> is the complete process of planning and producing a detailed data model for a database.</p></li>
+<li><p>A <strong>database schema</strong> is the formal description of the structure, organization, and relationships of data in a database.</p></li>
+<li><p>A <strong>logical schema</strong> is a conceptual representation of the database structure that does not depend on a specific database software.</p></li>
+<li><p>A <strong>physical schema</strong> is the actual implementation of a database design in a specific database software, including data types and indexes.</p></li>
+<li><p>A <strong>view schema</strong> describes the structure of a virtual table created by running a SQL query.</p></li>
+<li><p>The <strong>data cardinality</strong> refers to a measure of how unique the values in a database column are.</p></li>
+<li><p>The <strong>database connectivity</strong> is the ability of a database to communicate and exchange data with other systems.</p></li>
 </ul>
 </section>
 <section id="deployment">
-<h3>Deployment<a class="headerlink" href="#deployment" title="Link to this heading">#</a></h3>
+<h3>Deployment<a class="headerlink" href="#deployment" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Database deployment</strong> — The process of making a database system available for use in a specific environment.</p></li>
-<li><p><strong>Database provisioning</strong> — The process of setting up, deploying, and configuring a new database instance.</p></li>
-<li><p><strong>Database implementation</strong> — The process of installing, configuring, testing, and maintaining a database system.</p></li>
-<li><p><strong>Client-server architecture</strong> — A computing model in which client programs request services from server programs over a network.</p></li>
-<li><p><strong>Cloud computing</strong> — The delivery of computing services like storage, databases, and software over the internet rather than from local hardware.</p></li>
-<li><p><strong>Database as a Service (DBaaS)</strong> — A cloud model that gives users a managed database without requiring them to set up hardware or install software.</p></li>
-<li><p><strong>Platform as a Service (PaaS)</strong> — A cloud model in which a provider delivers hardware and software tools developers use to build applications.</p></li>
-<li><p><strong>Infrastructure as a Service (IaaS)</strong> — A cloud model that delivers virtualized computing resources, such as servers and storage, over the internet.</p></li>
-<li><p><strong>Domain Name System (DNS)</strong> — A hierarchical, decentralized naming system that maps human-readable names to network resources.</p></li>
-<li><p><strong>Static IP</strong> — An IP address that stays the same over time and is typically assigned manually.</p></li>
-<li><p><strong>Dynamic IP</strong> — An IP address that changes periodically, usually assigned by an Internet Service Provider.</p></li>
-<li><p><strong>Hardware</strong> — The physical parts of a computer system, such as the CPU, monitor, mouse, and storage devices.</p></li>
-<li><p><strong>Software</strong> — The programs and operating information that run on a computer, including system, application, and middleware software.</p></li>
-<li><p><strong>Storage capacity</strong> — The amount of data a computer or storage device can hold, usually measured in bytes (GB, TB, etc.).</p></li>
+<li><p>A <strong>database deployment</strong> is the process of setting up and making a database system ready for use in a specific environment.</p></li>
+<li><p>The <strong>database provisioning</strong> is the act of allocating hardware resources and setting up a new database instance.</p></li>
+<li><p>The <strong>database implementation</strong> refers to the complete process of installing, configuring, testing, and maintaining a database system.</p></li>
+<li><p>In a <strong>client-server architecture</strong>, client programs request services and data from a central server program over a network.</p></li>
+<li><p>In a <strong>cloud computing</strong> model, computing services like servers, storage, and databases are delivered over the internet.</p></li>
+<li><p>A <strong>Database as a Service (DBaaS)</strong> is a managed cloud model where a provider handles database hosting and maintenance.</p></li>
+<li><p>A <strong>Platform as a Service (PaaS)</strong> is a cloud model where the provider delivers the hardware and software tools used to build applications.</p></li>
+<li><p>An <strong>Infrastructure as a Service (IaaS)</strong> is a cloud model that rents basic computing resources like virtual servers and storage.</p></li>
+<li><p>The <strong>Domain Name System (DNS)</strong> is a network service that translates human-readable domain names into numerical IP addresses.</p></li>
+<li><p>A <strong>static IP</strong> is a permanent, unchanging network address manually assigned to a computer or server.</p></li>
+<li><p>A <strong>dynamic IP</strong> is a temporary network address that is assigned automatically and can change over time.</p></li>
+<li><p>The <strong>hardware</strong> refers to the physical components of a computer system, such as the CPU, memory, and storage drives.</p></li>
+<li><p>The <strong>software</strong> refers to the digital programs and operating systems that run on a computer system.</p></li>
+<li><p>The <strong>storage capacity</strong> is the total amount of data a device can hold, usually measured in gigabytes or terabytes.</p></li>
 </ul>
 </section>
 <section id="testing">
-<h3>Testing<a class="headerlink" href="#testing" title="Link to this heading">#</a></h3>
+<h3>Testing<a class="headerlink" href="#testing" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Database testing</strong> — The process of checking the functionality, performance, and reliability of a database system.</p></li>
-<li><p><strong>Database quality check</strong> — The process of evaluating the accuracy, consistency, and reliability of data inside a database.</p></li>
-<li><p><strong>Stress testing</strong> — Performance testing that pushes a system past normal limits to see how it behaves under extreme conditions.</p></li>
-<li><p><strong>Regression testing</strong> — Testing that verifies previously working software still works correctly after changes.</p></li>
-<li><p><strong>Negative testing</strong> — Testing that confirms a system handles invalid or unexpected input correctly.</p></li>
-<li><p><strong>Version control testing</strong> — Testing that confirms different versions of software or schemas are compatible.</p></li>
+<li><p>The <strong>database testing</strong> is the process of verifying that a database meets its functional and performance requirements.</p></li>
+<li><p>A <strong>database quality check</strong> is the process of evaluating the accuracy, consistency, and reliability of the data.</p></li>
+<li><p>The <strong>stress testing</strong> is the practice of pushing a database past its normal limits to observe how it handles extreme workloads.</p></li>
+<li><p>The <strong>regression testing</strong> verifies that existing database features and code still work correctly after a new update is applied.</p></li>
+<li><p>The <strong>negative testing</strong> is the practice of verifying that a database handles invalid inputs and errors gracefully.</p></li>
+<li><p>The <strong>version control testing</strong> confirms that different versions of database schemas and software are compatible.</p></li>
 </ul>
 </section>
 <section id="requirements-and-process">
-<h3>Requirements and process<a class="headerlink" href="#requirements-and-process" title="Link to this heading">#</a></h3>
+<h3>Requirements and process<a class="headerlink" href="#requirements-and-process" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Requirements gathering</strong> — The process of collecting and documenting what stakeholders need from a new or modified system.</p></li>
-<li><p><strong>Systems requirement documentation</strong> — A complete description of a software system’s features, constraints, and goals, used as the basis for design and development.</p></li>
-<li><p><strong>Gap analysis</strong> — A method that compares current performance to desired performance to find areas for improvement.</p></li>
+<li><p>The <strong>requirements gathering</strong> is the process of collecting and documenting what users and businesses need from a database.</p></li>
+<li><p>The <strong>systems requirement documentation</strong> is a formal document describing the features, constraints, and goals of a database project.</p></li>
+<li><p>A <strong>gap analysis</strong> is a business method that compares current database performance to desired performance to find improvements.</p></li>
 </ul>
 </section>
 <section id="other">
-<h3>Other<a class="headerlink" href="#other" title="Link to this heading">#</a></h3>
+<h3>Other<a class="headerlink" href="#other" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Customer Relationship Management (CRM)</strong> — Software used to manage a company’s interactions with customers and prospects.</p></li>
-<li><p><strong>Firewall</strong> — A network security system that monitors and controls network traffic based on predefined rules.</p></li>
-<li><p><strong>Notification trigger</strong> — A database object that runs automatically when a defined event occurs.</p></li>
+<li><p>A <strong>Customer Relationship Management (CRM)</strong> system is a software application used to manage interactions with customers.</p></li>
+<li><p>A <strong>firewall</strong> is a security system that monitors and controls network traffic based on predefined security rules.</p></li>
+<li><p>A <strong>notification trigger</strong> is an automatic database action that sends an alert when a specific event occurs.</p></li>
 </ul>
 </section>
 <section id="planning-operations-and-oltp-olap">
-<h3>Planning, operations, and OLTP/OLAP<a class="headerlink" href="#planning-operations-and-oltp-olap" title="Link to this heading">#</a></h3>
+<h3>Planning, operations, and OLTP/OLAP<a class="headerlink" href="#planning-operations-and-oltp-olap" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>SLA (Service Level Agreement)</strong> — A formal commitment to users about the availability or performance of a service.</p></li>
-<li><p><strong>SLO (Service Level Objective)</strong> — An internal performance target chosen to support an SLA.</p></li>
-<li><p><strong>KPI (Key Performance Indicator)</strong> — A measurable signal used to confirm that an SLO is being met.</p></li>
-<li><p><strong>Requirements gathering</strong> — The process of collecting stakeholder needs, regulatory rules, data volume, and performance targets before building a system.</p></li>
-<li><p><strong>Resource projection</strong> — The estimate of the hardware, storage, and network resources a system will need at expected and peak load.</p></li>
-<li><p><strong>Computational persistence</strong> — The property that stored values survive crashes, restarts, and software upgrades.</p></li>
-<li><p><strong>Database validation workflow</strong> — A sequence of checks that confirm a new or upgraded database meets its requirements, including schema, constraints, and sample queries.</p></li>
-<li><p><strong>Provisioning</strong> — The act of standing up the hardware or cloud resources a new database needs.</p></li>
-<li><p><strong>Decommission</strong> — The act of retiring a database, archiving its data, and destroying its storage according to policy.</p></li>
-<li><p><strong>OLTP (online transactional processing)</strong> — A workload made up of many small, fast reads and writes against a normalized schema.</p></li>
-<li><p><strong>OLAP (online analytical processing)</strong> — A workload made up of fewer, larger analytical reads against a denormalized schema.</p></li>
+<li><p>A <strong>Service Level Agreement (SLA)</strong> is a formal commitment to users regarding the uptime and performance of a database.</p></li>
+<li><p>A <strong>Service Level Objective (SLO)</strong> is an internal performance target chosen to support an external SLA.</p></li>
+<li><p>A <strong>Key Performance Indicator (KPI)</strong> is a measurable metric used to track whether a database is meeting its SLOs.</p></li>
+<li><p>The <strong>resource projection</strong> is the process of estimating the hardware, storage, and network needs of a database.</p></li>
+<li><p>The <strong>computational persistence</strong> is the property that ensures database values survive system crashes and upgrades.</p></li>
+<li><p>A <strong>database validation workflow</strong> is a sequence of checks that confirm a new database meets its design requirements.</p></li>
+<li><p>The <strong>provisioning</strong> is the act of allocating and preparing the hardware resources needed for a database.</p></li>
+<li><p>The <strong>decommission</strong> is the process of retiring a database, archiving its data, and safely destroying the storage.</p></li>
+<li><p>The <strong>OLTP (Online Transactional Processing)</strong> workload is characterized by many small, fast reads and writes against a normalized database.</p></li>
+<li><p>The <strong>OLAP (Online Analytical Processing)</strong> workload is characterized by fewer, larger analytical queries against a denormalized database.</p></li>
 </ul>
 </section>
 <section id="id2">
-<h3>Connectivity<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3>Connectivity<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Client/server architecture</strong> — A deployment in which the database runs as its own server process and applications connect to it over the network.</p></li>
-<li><p><strong>Embedded database</strong> — A database engine that runs as a library inside the application, with no separate server process.</p></li>
-<li><p><strong>Load balancing</strong> — Distributing incoming requests across multiple database replicas so no single node is overwhelmed.</p></li>
-<li><p><strong>Multizone region</strong> — A deployment pattern that places database replicas in different data-center zones within a cloud region, so a single-zone outage does not take down the whole system.</p></li>
-<li><p><strong>Database connection string</strong> — A URL-shaped value that combines the host, port, database name, and credentials needed to reach a database.</p></li>
+<li><p>In a <strong>client/server architecture</strong>, the database runs as its own server process and applications connect to it over a network.</p></li>
+<li><p>An <strong>embedded database</strong> runs as a code library directly inside the host application, with no separate database server process.</p></li>
+<li><p>The <strong>load balancing</strong> is the practice of distributing incoming database requests across multiple replicas to prevent overload.</p></li>
+<li><p>A <strong>multizone region</strong> is a cloud deployment that places database replicas in different physical zones to ensure high availability.</p></li>
+<li><p>A <strong>database connection string</strong> is a formatted text string containing the host, port, credentials, and database name needed to connect.</p></li>
 </ul>
 </section>
 </section>
@@ -2275,146 +1950,6 @@
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#database-and-sql-through-pop-culture-brendan-shea-phd">Database and SQL Through Pop Culture | Brendan Shea, PhD</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning Outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brendan-s-lecture">Brendan’s Lecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-design-patterns">Introduction to Design Patterns</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#planning-and-operations">Planning and operations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements-gathering">Requirements gathering</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource-projection-slas-and-kpis">Resource projection, SLAs, and KPIs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-phases">Deployment phases</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalize-to-3nf-bringing-order-to-chaos">Normalize to 3NF: Bringing Order to Chaos</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-table">The problem table</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-three-normal-forms">The three normal forms</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oltp-vs-olap">OLTP vs. OLAP</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-star-schema-pattern-optimizing-for-analysis">The Star Schema Pattern: Optimizing for Analysis</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-components">Key components</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-normalized-to-star-bob-s-transformation">From normalized to star: Bob’s transformation</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bridge-tables-pattern-managing-many-to-many-relationships">The Bridge Tables Pattern: Managing Many-to-Many Relationships</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-a-bridge-table">Anatomy of a bridge table</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#south-park-elementary-s-solution">South Park Elementary’s solution</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-temporal-pattern-tracking-changes-through-time">The Temporal Pattern: Tracking Changes Through Time</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-temporal-data">Understanding temporal data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#employee-history-at-planet-express">Employee history at Planet Express</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-considerations">Implementation considerations</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-polymorphic-associations-pattern-when-things-need-to-connect-to-many-types-of-other-things">The Polymorphic Associations Pattern: When Things Need to Connect to Many Types of Other Things</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-with-simple-relationships">The problem with simple relationships</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-polymorphic-solution">The polymorphic solution</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-partitioning-pattern-when-tables-get-too-big">The Partitioning Pattern: When Tables Get Too Big</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-with-big-tables">The problem with big tables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-partitioning-solution">The partitioning solution</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#range-partitioning-by-date">1. Range partitioning by date</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#list-partitioning-by-type">2. List partitioning by type</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-relational-json-balancing-structure-and-flexibility">Hybrid Relational-JSON: Balancing Structure and Flexibility</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-fixed-columns-for-a-diverse-catalog">The problem: fixed columns for a diverse catalog</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hybrid-solution">The hybrid solution</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#database-deployment-models-choosing-your-data-s-home">Database Deployment Models: Choosing Your Data’s Home</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-three-deployment-models">The three deployment models</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-premises-your-data-at-home">On-Premises: Your Data at Home</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-reality-of-running-your-own-servers">The reality of running your own servers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-on-premises-makes-sense">When on-premises makes sense</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-downsides">The downsides</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-your-data-in-someone-else-s-datacenter">Cloud: Your Data in Someone Else’s Datacenter</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-cloud-deployment-means">What cloud deployment means</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-service-models">Cloud service models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-cloud-deployment">Benefits of cloud deployment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">The downsides</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-the-best-or-worst-of-both-worlds">Hybrid: The Best (or Worst) of Both Worlds</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-hybrid-deployment-means">What hybrid deployment means</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-hybrid-setups">Common hybrid setups</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-rick-uses-hybrid-deployment">How Rick uses hybrid deployment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-going-hybrid">Benefits of going hybrid</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-challenges">The challenges</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connectivity">Connectivity</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#client-server-vs-embedded-named-explicitly">Client/server vs. embedded, named explicitly</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-balancing-and-multizone-deployment">Load balancing and multizone deployment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ports-and-protocols-you-ll-see">Ports and protocols you’ll see</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#database-testing-making-sure-your-data-doesn-t-go-full-schwifty">Database Testing: Making Sure Your Data Doesn’t Go Full Schwifty</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-we-test">Why we test</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-testing">Types of testing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-real-cost-of-not-testing">The real cost of not testing</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-testing-keeping-the-ingredients-fresh">Unit Testing: Keeping the Ingredients Fresh</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-schema">Testing the schema</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-stored-procedures">Testing stored procedures</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-triggers">Testing triggers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-each-one-matters">Why each one matters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-unit-tests">Table: Unit Tests</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-testing-making-sure-it-all-works-together">Integration Testing: Making Sure It All Works Together</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-testing-data-flow-between-systems">Example 1: testing data flow between systems</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-testing-api-interactions">Example 2: testing API interactions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-testing-dependencies-between-components">Example 3: testing dependencies between components</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-integration-testing-matters">Why integration testing matters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-tests">Integration Tests</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-testing-can-the-system-take-over-the-world">Performance Testing: Can the System Take Over the World?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-performance-testing">Types of performance testing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-performance-testing-matters">Why performance testing matters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-tests">Performance Tests</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-conclusion">Chapter Conclusion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-practice-your-sql">Lab: Practice Your SQL</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-the-loop-of-the-recursive-dragon">Practice with the Loop of the Recursive Dragon</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design-and-schemas">Design and schemas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">Deployment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements-and-process">Requirements and process</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other">Other</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#planning-operations-and-oltp-olap">Planning, operations, and OLTP/OLAP</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Connectivity</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
             
           </div>
           <footer class="bd-footer-content">
@@ -2458,8 +1993,8 @@ By Brendan Shea, PhD
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

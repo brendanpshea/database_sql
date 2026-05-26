@@ -1,0 +1,238 @@
+Traceback (most recent call last):
+  File "c:\Users\brend\OneDrive\Documents\Github\database_sql\.venv\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "c:\Users\brend\OneDrive\Documents\Github\database_sql\.venv\Lib\site-packages\nbclient\client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\brend\OneDrive\Documents\Github\database_sql\.venv\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\brend\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "c:\Users\brend\OneDrive\Documents\Github\database_sql\.venv\Lib\site-packages\nbclient\client.py", line 705, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "c:\Users\brend\OneDrive\Documents\Github\database_sql\.venv\Lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "c:\Users\brend\OneDrive\Documents\Github\database_sql\.venv\Lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# @title Run this cell to connect and set up the Starfleet database
+import sqlite3
+import json
+import sys
+import shutil
+import os
+
+# Close any active Jupysql connections to avoid database locks on re-run
+try:
+    from sql.connection import ConnectionManager
+    ConnectionManager.close_all()
+except Exception:
+    pass
+
+# Create and populate the SQLite database directly
+conn = sqlite3.connect("starfleet.db")
+cursor = conn.cursor()
+
+# Drop tables if they exist
+cursor.execute("DROP TABLE IF EXISTS crew;")
+cursor.execute("DROP TABLE IF EXISTS missions;")
+cursor.execute("DROP TABLE IF EXISTS starships;")
+cursor.execute("DROP TABLE IF EXISTS officer_profiles;")
+
+# Create tables
+cursor.execute("""
+CREATE TABLE starships (
+    registry TEXT PRIMARY KEY,
+    name TEXT,
+    class TEXT,
+    commissioning_date TEXT
+);
+""")
+
+cursor.execute("""
+CREATE TABLE crew (
+    officer_id INTEGER PRIMARY KEY,
+    name TEXT,
+    rank TEXT,
+    role TEXT,
+    registry_assignment TEXT,
+    FOREIGN KEY(registry_assignment) REFERENCES starships(registry)
+);
+""")
+
+cursor.execute("""
+CREATE TABLE missions (
+    mission_id INTEGER PRIMARY KEY,
+    name TEXT,
+    planet TEXT,
+    objective TEXT,
+    status TEXT,
+    registry_assignment TEXT,
+    FOREIGN KEY(registry_assignment) REFERENCES starships(registry)
+);
+""")
+
+cursor.execute("""
+CREATE TABLE officer_profiles (
+    officer_id INTEGER PRIMARY KEY,
+    profile_json TEXT
+);
+""")
+
+# Insert data
+cursor.executemany("""
+INSERT INTO starships (registry, name, class, commissioning_date)
+VALUES (?, ?, ?, ?);
+""", [
+    ("NCC-1701", "USS Enterprise", "Constitution", "2245-12-31"),
+    ("NCC-1864", "USS Reliant", "Miranda", "2264-03-15")
+])
+
+cursor.executemany("""
+INSERT INTO crew (officer_id, name, rank, role, registry_assignment)
+VALUES (?, ?, ?, ?, ?);
+""", [
+    (1, "James T. Kirk", "Captain", "Commanding Officer", "NCC-1701"),
+    (2, "Spock", "Commander", "First Officer / Science Officer", "NCC-1701"),
+    (3, "Leonard McCoy", "Lieutenant Commander", "Chief Medical Officer", "NCC-1701"),
+    (4, "Nyota Uhura", "Lieutenant", "Communications Officer", "NCC-1701"),
+    (5, "Clark Terrell", "Captain", "Commanding Officer", "NCC-1864")
+])
+
+cursor.executemany("""
+INSERT INTO missions (mission_id, name, planet, objective, status, registry_assignment)
+VALUES (?, ?, ?, ?, ?, ?);
+""", [
+    (101, "Vulcan Diplomatic", "Vulcan", "Diplomatic meeting", "Completed", "NCC-1701"),
+    (102, "Andoria Research", "Andoria", "Scientific research", "Completed", "NCC-1701"),
+    (103, "Ceti Alpha Survey", "Ceti Alpha V", "Scientific survey", "In Progress", "NCC-1864")
+])
+
+cursor.execute("""
+INSERT INTO officer_profiles (officer_id, profile_json)
+VALUES (2, '{\n  "name": "Spock",\n  "rank": "Commander",\n  "role": "First Officer / Science Officer",\n  "home_planet": "Vulcan",\n  "skills": ["Logic", "Vulcan Harp", "Starship Operations"]\n}');
+""")
+
+conn.commit()
+conn.close()
+
+# Install and load pandas if missing (target current active virtualenv kernel)
+try:
+    import pandas
+except ImportError:
+    print("Installing pandas into active kernel...")
+    get_ipython().system(f"{sys.executable} -m pip install --quiet pandas")
+
+# Install and load Jupysql if missing
+try:
+    import sql
+except ImportError:
+    print("Installing jupysql into active kernel...")
+    get_ipython().system(f"{sys.executable} -m pip install --quiet jupysql")
+
+# Install and load kuzu if missing
+try:
+    import kuzu
+except ImportError:
+    print("Installing kuzu into active kernel...")
+    get_ipython().system(f"{sys.executable} -m pip install --quiet kuzu")
+
+import kuzu
+from IPython.core.magic import register_cell_magic
+import pandas as pd
+
+# Clean up any existing database directory to make it run-again safe
+graph_db_dir = "starfleet_graph_db"
+if os.path.exists(graph_db_dir):
+    try:
+        shutil.rmtree(graph_db_dir)
+    except Exception:
+        pass
+
+# Initialize Kùzu database and connection
+db = kuzu.Database(graph_db_dir)
+conn_kuzu = kuzu.Connection(db)
+
+# Create schema
+conn_kuzu.execute("CREATE NODE TABLE Officer(name STRING, rank STRING, PRIMARY KEY (name))")
+conn_kuzu.execute("CREATE NODE TABLE Starship(name STRING, registry STRING, class STRING, PRIMARY KEY (registry))")
+conn_kuzu.execute("CREATE REL TABLE REPORTS_TO(FROM Officer TO Officer)")
+conn_kuzu.execute("CREATE REL TABLE SERVES_ON(FROM Officer TO Starship)")
+
+# Insert data
+conn_kuzu.execute("CREATE (:Officer {name: 'James T. Kirk', rank: 'Captain'})")
+conn_kuzu.execute("CREATE (:Officer {name: 'Spock', rank: 'Commander'})")
+conn_kuzu.execute("CREATE (:Officer {name: 'Leonard McCoy', rank: 'Lieutenant Commander'})")
+conn_kuzu.execute("CREATE (:Starship {name: 'USS Enterprise', registry: 'NCC-1701', class: 'Constitution'})")
+
+conn_kuzu.execute("MATCH (o:Officer {name: 'Spock'}), (c:Officer {name: 'James T. Kirk'}) CREATE (o)-[:REPORTS_TO]->(c)")
+conn_kuzu.execute("MATCH (o:Officer {name: 'Leonard McCoy'}), (c:Officer {name: 'James T. Kirk'}) CREATE (o)-[:REPORTS_TO]->(c)")
+conn_kuzu.execute("MATCH (o:Officer {name: 'Spock'}), (s:Starship {registry: 'NCC-1701'}) CREATE (o)-[:SERVES_ON]->(s)")
+conn_kuzu.execute("MATCH (o:Officer {name: 'James T. Kirk'}), (s:Starship {registry: 'NCC-1701'}) CREATE (o)-[:SERVES_ON]->(s)")
+
+# Define custom %%cypher cell magic
+@register_cell_magic
+def cypher(line, cell):
+    # Run the query
+    res = conn_kuzu.execute(cell)
+    cols = res.get_column_names()
+    rows = []
+    while res.has_next():
+        rows.append(res.get_next())
+    return pd.DataFrame(rows, columns=cols)
+
+# Load SQL magic and connect SQLite
+get_ipython().run_line_magic("load_ext", "sql")
+get_ipython().run_line_magic("config", "SqlMagic.autopandas = True")
+get_ipython().run_line_magic("sql", "sqlite:///starfleet.db")
+print("Successfully connected to Starfleet Database! (starfleet.db and starfleet_graph_db)")
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mRuntimeError[39m                              Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[6][39m[32m, line 136[39m
+[32m    132[39m     [38;5;28;01mexcept[39;00m Exception:
+[32m    133[39m         [38;5;28;01mpass[39;00m
+[32m    134[39m 
+[32m    135[39m [38;5;66;03m# Initialize Kùzu database and connection[39;00m
+[32m--> [39m[32m136[39m db = kuzu.Database(graph_db_dir)
+[32m    137[39m conn_kuzu = kuzu.Connection(db)
+[32m    138[39m 
+[32m    139[39m [38;5;66;03m# Create schema[39;00m
+
+[36mFile [39m[32mc:\Users\brend\OneDrive\Documents\Github\database_sql\.venv\Lib\site-packages\kuzu\database.py:104[39m, in [36mDatabase.__init__[39m[34m(self, database_path, buffer_pool_size, max_num_threads, compression, lazy_init, read_only, max_db_size, auto_checkpoint, checkpoint_threshold)[39m
+[32m    102[39m [38;5;28mself[39m._database: Any = [38;5;28;01mNone[39;00m  [38;5;66;03m# (type: _kuzu.Database from pybind11)[39;00m
+[32m    103[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m lazy_init:
+[32m--> [39m[32m104[39m     [30;43mself[39;49m[30;43m.[39;49m[30;43minit_database[39;49m[30;43m([39;49m[30;43m)[39;49m
+
+[36mFile [39m[32mc:\Users\brend\OneDrive\Documents\Github\database_sql\.venv\Lib\site-packages\kuzu\database.py:155[39m, in [36mDatabase.init_database[39m[34m(self)[39m
+[32m    153[39m [38;5;28mself[39m.check_for_database_close()
+[32m    154[39m [38;5;28;01mif[39;00m [38;5;28mself[39m._database [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m--> [39m[32m155[39m     [38;5;28mself[39m._database = [30;43m_kuzu[39;49m[30;43m.[39;49m[30;43mDatabase[39;49m[30;43m([39;49m[30;43m  [39;49m[30;43;03m# type: ignore[union-attr][39;49;00m
+[32m    156[39m [30;43m        [39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mdatabase_path[39;49m[30;43m,[39;49m
+[32m    157[39m [30;43m        [39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mbuffer_pool_size[39;49m[30;43m,[39;49m
+[32m    158[39m [30;43m        [39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mmax_num_threads[39;49m[30;43m,[39;49m
+[32m    159[39m [30;43m        [39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mcompression[39;49m[30;43m,[39;49m
+[32m    160[39m [30;43m        [39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mread_only[39;49m[30;43m,[39;49m
+[32m    161[39m [30;43m        [39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mmax_db_size[39;49m[30;43m,[39;49m
+[32m    162[39m [30;43m        [39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mauto_checkpoint[39;49m[30;43m,[39;49m
+[32m    163[39m [30;43m        [39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mcheckpoint_threshold[39;49m[30;43m,[39;49m
+[32m    164[39m [30;43m    [39;49m[30;43m)[39;49m
+
+[31mRuntimeError[39m: IO exception: Could not set lock on file : C:\Users\brend\OneDrive\Documents\Github\database_sql\starfleet_graph_db
+See the docs: https://docs.kuzudb.com/concurrency for more information.
+

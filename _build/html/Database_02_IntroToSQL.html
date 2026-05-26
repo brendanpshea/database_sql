@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Introduction to SQL: SELECT &#8212; SQL and Database Management Through Pop Culture</title>
   
@@ -16,63 +17,64 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=30c8ad15" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script type="application/vnd.jupyter.widget-state+json">{"state": {"d61a5d31739549ec982b59153afce059": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "9c08260d075641879bd4bb7b1d10e567": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "44f4bb0fbcf74bc9adfe54553b698f54": {"model_name": "IntProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "IntProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ProgressView", "bar_style": "", "description": "Progress:", "description_allow_html": false, "layout": "IPY_MODEL_d61a5d31739549ec982b59153afce059", "max": 45, "min": 0, "orientation": "horizontal", "style": "IPY_MODEL_9c08260d075641879bd4bb7b1d10e567", "tabbable": null, "tooltip": null, "value": 1}}, "567a9918180e480d8a3f33eac96a2068": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "1325c90bc429459ca44b43a0cd31efc9": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "a50bbd76864d4b7d8d1fc3960afa8cea": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_567a9918180e480d8a3f33eac96a2068", "placeholder": "\u200b", "style": "IPY_MODEL_1325c90bc429459ca44b43a0cd31efc9", "tabbable": null, "tooltip": null, "value": "<h3>Question 1 of 45:</h3><p>Show all books in the table.</p><h3>Database Schema:</h3><ul><li><b>books</b> (firstPublishDate TEXT, publishDate TEXT, title INTEGER, series NUMERIC, author NUMERIC, rating REAL, language TEXT, pages INT, publisher TEXT, numRatings INT, id INTEGER)</li></ul>"}}, "357c819981ac46a79dec73c21b85b32e": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "150px", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "f3a0ed81b6ab432eb3bd3f52031d3e5a": {"model_name": "TextStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "TextStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "78ab66db51bc47fe83d53d3e26bae1ac": {"model_name": "TextareaModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "TextareaModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "TextareaView", "continuous_update": true, "description": "", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_357c819981ac46a79dec73c21b85b32e", "placeholder": "Type your SQL query here...", "rows": null, "style": "IPY_MODEL_f3a0ed81b6ab432eb3bd3f52031d3e5a", "tabbable": null, "tooltip": null, "value": ""}}, "25468f2162f444b598bb81cf270a327c": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3535611ecc274b81b7e3854577afdfed": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "8d6ee26f316a4d2f8c8106a852379c5a": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "success", "description": "Submit", "disabled": false, "icon": "", "layout": "IPY_MODEL_25468f2162f444b598bb81cf270a327c", "style": "IPY_MODEL_3535611ecc274b81b7e3854577afdfed", "tabbable": null, "tooltip": null}}, "b34f41ee833e44e9a3e67c1ff2867548": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "1eb4203a658c4dcd859160ee02d6709d": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "a553b376da754fb0bf89c227cbc33a5c": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "warning", "description": "Clear", "disabled": false, "icon": "", "layout": "IPY_MODEL_b34f41ee833e44e9a3e67c1ff2867548", "style": "IPY_MODEL_1eb4203a658c4dcd859160ee02d6709d", "tabbable": null, "tooltip": null}}, "df5129dcab09412d842c5b94eaedcae6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "273d61c5cc254183a266e607fb5b625f": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "7cb92fbf9bf94f07b6b7ef52cd9d5f1c": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "info", "description": "Hint", "disabled": false, "icon": "", "layout": "IPY_MODEL_df5129dcab09412d842c5b94eaedcae6", "style": "IPY_MODEL_273d61c5cc254183a266e607fb5b625f", "tabbable": null, "tooltip": null}}, "0c3b2387a5ff4b2aa59b22ae54e2233b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "60px"}}, "413fb6ed4ded41d2b33543c2961dfcfd": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": ""}}, "492964a05bef413c894d7f332e533a38": {"model_name": "IntTextModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "IntTextModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "IntTextView", "continuous_update": false, "description": "", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_0c3b2387a5ff4b2aa59b22ae54e2233b", "step": 1, "style": "IPY_MODEL_413fb6ed4ded41d2b33543c2961dfcfd", "tabbable": null, "tooltip": null, "value": 1}}, "6191468cebb243ef96842f938eb7dd5d": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0911a83fadb1446b87a663ee890adda2": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "e9a2943f7ceb430f8c975323659ed00b": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "info", "description": "Skip to", "disabled": false, "icon": "", "layout": "IPY_MODEL_6191468cebb243ef96842f938eb7dd5d", "style": "IPY_MODEL_0911a83fadb1446b87a663ee890adda2", "tabbable": null, "tooltip": null}}, "53da3e55b3504b9892bbabbc6d1c3ca3": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "791d54e4b4f54db09b498c27dc9e5705": {"model_name": "LabelStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "LabelStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "9c4a57de311d4363ad9ee45f082f04a2": {"model_name": "LabelModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "LabelModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "LabelView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_53da3e55b3504b9892bbabbc6d1c3ca3", "placeholder": "\u200b", "style": "IPY_MODEL_791d54e4b4f54db09b498c27dc9e5705", "tabbable": null, "tooltip": null, "value": "Go to question:"}}, "4e5cd2b627554416894b3e5c3e232bb0": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "4deb1372ef8d4465bbcc8fd623984f6a": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_9c4a57de311d4363ad9ee45f082f04a2", "IPY_MODEL_492964a05bef413c894d7f332e533a38", "IPY_MODEL_e9a2943f7ceb430f8c975323659ed00b"], "layout": "IPY_MODEL_4e5cd2b627554416894b3e5c3e232bb0", "tabbable": null, "tooltip": null}}, "5045abfb7bf24c6a87106b0f4af68aab": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "a3f542293f624cf6be4fb675d09c8f0c": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_8d6ee26f316a4d2f8c8106a852379c5a", "IPY_MODEL_a553b376da754fb0bf89c227cbc33a5c", "IPY_MODEL_7cb92fbf9bf94f07b6b7ef52cd9d5f1c"], "layout": "IPY_MODEL_5045abfb7bf24c6a87106b0f4af68aab", "tabbable": null, "tooltip": null}}, "e68ba213181e41038e901b751d421bc0": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b9e74a989b3d40e9ba469291bd140e40": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_78ab66db51bc47fe83d53d3e26bae1ac", "IPY_MODEL_a3f542293f624cf6be4fb675d09c8f0c", "IPY_MODEL_4deb1372ef8d4465bbcc8fd623984f6a"], "layout": "IPY_MODEL_e68ba213181e41038e901b751d421bc0", "tabbable": null, "tooltip": null}}, "574e78f5d74e40638b7cc6e223e5f80c": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "be306a5b0d1944589ba47e71bf28383f": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "75409ee3b3344a46955505054a412641": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_574e78f5d74e40638b7cc6e223e5f80c", "placeholder": "\u200b", "style": "IPY_MODEL_be306a5b0d1944589ba47e71bf28383f", "tabbable": null, "tooltip": null, "value": ""}}, "82c17e95ef584236a7fc43363e96909c": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "02fdc81365d44ea6949c946b810d9a2e": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "db1ea0423e1943dca11e48b35d535b1b": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "warning", "description": "Try Again", "disabled": false, "icon": "", "layout": "IPY_MODEL_82c17e95ef584236a7fc43363e96909c", "style": "IPY_MODEL_02fdc81365d44ea6949c946b810d9a2e", "tabbable": null, "tooltip": null}}, "19a033cfaad74c0f83956e0d0fac9932": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "508a811605a2469f807fbbde1450d91c": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "3e3fcb0580054df48dc48956a5431f02": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "info", "description": "Next Question", "disabled": false, "icon": "", "layout": "IPY_MODEL_19a033cfaad74c0f83956e0d0fac9932", "style": "IPY_MODEL_508a811605a2469f807fbbde1450d91c", "tabbable": null, "tooltip": null}}, "8166afbc572c452387521bb856e22dff": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "eac5962352494b279d511a1c6bdb640c": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_db1ea0423e1943dca11e48b35d535b1b", "IPY_MODEL_3e3fcb0580054df48dc48956a5431f02"], "layout": "IPY_MODEL_8166afbc572c452387521bb856e22dff", "tabbable": null, "tooltip": null}}, "37bd787bbfb441ab90f80b0904cb59ad": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "688a723e0a194b428ad612736d9d1821": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_75409ee3b3344a46955505054a412641", "IPY_MODEL_eac5962352494b279d511a1c6bdb640c"], "layout": "IPY_MODEL_37bd787bbfb441ab90f80b0904cb59ad", "tabbable": null, "tooltip": null}}, "9875cfb027a34e9491ff0b8e2fc3a1a8": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "1e753548ae4045b5a32c3ce005a15643": {"model_name": "TabModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "TabModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "TabView", "box_style": "", "children": ["IPY_MODEL_b9e74a989b3d40e9ba469291bd140e40", "IPY_MODEL_688a723e0a194b428ad612736d9d1821"], "layout": "IPY_MODEL_9875cfb027a34e9491ff0b8e2fc3a1a8", "selected_index": 0, "tabbable": null, "titles": ["Query", "Results"], "tooltip": null}}, "c8f405f62f6d485abc8b27542e4c744c": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e5171c4cc3f8424ca6f12d4ff821be63": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_44f4bb0fbcf74bc9adfe54553b698f54", "IPY_MODEL_a50bbd76864d4b7d8d1fc3960afa8cea", "IPY_MODEL_1e753548ae4045b5a32c3ce005a15643"], "layout": "IPY_MODEL_c8f405f62f6d485abc8b27542e4c744c", "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}</script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Database_02_IntroToSQL';</script>
-    <script src="_static/sandbox-html-output.js?v=a1fc3548"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Getting Tables Together With Joins and Sets" href="Database_03_Joins_Sets_SQL.html" />
     <link rel="prev" title="Starship SQL: An Introduction to Databases" href="Database_01_StarShipSQL.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -88,8 +90,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -97,15 +110,16 @@
   <input type="search"
          class="form-control"
          name="q"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -121,8 +135,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -152,27 +165,12 @@
     
     
     <img src="_static/database_cover.jpg" class="logo__image only-light" alt="SQL and Database Management Through Pop Culture - Home"/>
-    <img src="_static/database_cover.jpg" class="logo__image only-dark pst-js-only" alt="SQL and Database Management Through Pop Culture - Home"/>
+    <script>document.write(`<img src="_static/database_cover.jpg" class="logo__image only-dark" alt="SQL and Database Management Through Pop Culture - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="index.html">
-                    SQL and Database Management Through Pop Culture
-                </a>
-            </li>
-        </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Database_00_Introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Database_01_StarShipSQL.html">Starship SQL: An Introduction to Databases</a></li>
@@ -201,14 +199,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -227,9 +220,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -239,52 +232,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/./Database_02_IntroToSQL.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="Colab logo" src="_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-<a href="https://github.com/brendanpshea/database_sql" target="_blank"
-   class="btn btn-sm btn-source-repository-button"
-   title="Source repository"
-   data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
-
 
 
 
@@ -337,7 +284,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -351,19 +298,27 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -394,30 +349,13 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sets-and-logic-how-sql-thinks-about-data">Sets and Logic: How SQL Thinks About Data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-set">What is a set?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#true-or-false-questions">True or false questions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-what-you-want-not-how-to-get-it">Describing what you want, not how to get it</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-sets-together">Putting sets together</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-four-basic-database-operations-crud">The Four Basic Database Operations: CRUD</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-five-parts-of-sql">The Five Parts of SQL</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-definition-language-ddl">1. Data Definition Language (DDL)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-manipulation-language-dml">2. Data Manipulation Language (DML)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-query-language-dql">3. Data Query Language (DQL)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-control-language-dcl">4. Data Control Language (DCL)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transaction-control-language-tcl">5. Transaction Control Language (TCL)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-four-basic-database-operations-crud">The Four Basic Database Operations: CRUD</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-crud-operations">Understanding CRUD operations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-standards-and-varieties-how-one-language-became-many">SQL Standards and Varieties: How One Language Became Many</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-flavors-still-exist">Why “flavors” still exist</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sqlite">SQLite</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql">PostgreSQL</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#other-common-varieties">Other common varieties</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-different-are-they-really">How different are they really?</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-standards-and-varieties-how-one-language-became-many">SQL Standards and Varieties: How One Language Became Many</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-sqlite-in-google-colab">Getting Started With SQLite in Google Colab</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-to-know-the-books-table">Getting to Know the Books Table</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-and-from">SELECT and FROM</a><ul class="nav section-nav flex-column">
@@ -428,17 +366,7 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#order-by">ORDER BY</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where">WHERE</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sqlite-syntax-rules">SQLite Syntax Rules</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-syntax-rules">Key Syntax Rules</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#semicolons">1. Semicolons (;)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#capitalization">2. Capitalization</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#line-breaks">3. Line breaks</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#single-vs-double-quotes">4. Single vs. double quotes</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comments">5. Comments</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sqlite-syntax-rules">SQLite Syntax Rules</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-null-values">Handling NULL Values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#like">LIKE</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-book-titles-starting-with-the">Example: Book titles starting with ‘The’</a></li>
@@ -457,9 +385,8 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-the-loop-of-the-recursive-dragon">Practice with the Loop of the Recursive Dragon</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relational-and-sql-basics">Relational and SQL basics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-sql-keywords">Core SQL keywords</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pattern-characters-used-with-like">Pattern characters used with <code class="docutils literal notranslate"><span class="pre">LIKE</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-and-math-functions">Aggregate and math functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query-keywords">Query keywords</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-and-types">Data and types</a></li>
 </ul>
 </li>
 </ul>
@@ -475,11 +402,11 @@
                   
   <p><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_02_IntroToSQL.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section id="introduction-to-sql-select">
-<h1>Introduction to SQL: SELECT<a class="headerlink" href="#introduction-to-sql-select" title="Link to this heading">#</a></h1>
+<h1>Introduction to SQL: SELECT<a class="headerlink" href="#introduction-to-sql-select" title="Permalink to this heading">#</a></h1>
 <p><em>Database and SQL Through Pop Culture | Brendan Shea, PhD</em></p>
 <p>This chapter introduces the most-used parts of SQL. You will learn to retrieve data with <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> and <code class="docutils literal notranslate"><span class="pre">FROM</span></code>, sort it with <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code>, filter it with <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>, deal with <code class="docutils literal notranslate"><span class="pre">NULL</span></code> values, match patterns with <code class="docutils literal notranslate"><span class="pre">LIKE</span></code>, and summarize many rows at once using aggregate functions. The examples come from a real dataset of science-fiction books drawn from Goodreads.</p>
 <section id="learning-outcomes">
-<h2>Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Link to this heading">#</a></h2>
+<h2>Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this heading">#</a></h2>
 <p>By the end of this chapter, you will be able to:</p>
 <ol class="arabic simple">
 <li><p>Explain how relational databases use sets and logical conditions, and distinguish CRUD operations from the major categories of SQL statements.</p></li>
@@ -491,7 +418,7 @@
 </ol>
 </section>
 <section id="brendan-s-lecture">
-<h2>Brendan’s Lecture<a class="headerlink" href="#brendan-s-lecture" title="Link to this heading">#</a></h2>
+<h2>Brendan’s Lecture<a class="headerlink" href="#brendan-s-lecture" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">YouTubeVideo</span>
@@ -513,7 +440,7 @@
 </div>
 </section>
 <section id="background-why-databases-changed">
-<h2>Background: Why Databases Changed<a class="headerlink" href="#background-why-databases-changed" title="Link to this heading">#</a></h2>
+<h2>Background: Why Databases Changed<a class="headerlink" href="#background-why-databases-changed" title="Permalink to this heading">#</a></h2>
 <p>Before computers, organizations stored information in paper files. Finding one record could require searching cabinets by hand, and updating or summarizing information was slow, repetitive, and error-prone.</p>
 <p>That older approach created several recurring problems:</p>
 <ul class="simple">
@@ -523,12 +450,12 @@
 <li><p>Reporting required manual review across many records</p></li>
 </ul>
 <section id="early-electronic-models">
-<h3>Early electronic models<a class="headerlink" href="#early-electronic-models" title="Link to this heading">#</a></h3>
+<h3>Early electronic models<a class="headerlink" href="#early-electronic-models" title="Permalink to this heading">#</a></h3>
 <p>The first computer database systems largely copied those paper-era assumptions. <strong>Hierarchical databases</strong> organized information like a tree, while <strong>network databases</strong> allowed more flexible record-to-record links.</p>
 <p>Both models were important steps forward, but they still made programmers think about storage paths and navigation details instead of focusing on the questions they wanted to ask.</p>
 </section>
 <section id="why-the-relational-model-mattered">
-<h3>Why the relational model mattered<a class="headerlink" href="#why-the-relational-model-mattered" title="Link to this heading">#</a></h3>
+<h3>Why the relational model mattered<a class="headerlink" href="#why-the-relational-model-mattered" title="Permalink to this heading">#</a></h3>
 <p>In 1970, Edgar F. Codd proposed the <strong>relational model</strong>, which reorganized data into tables and focused on describing <em>what</em> data to retrieve rather than <em>how</em> to walk through storage structures.</p>
 <p>Key ideas behind the relational model:</p>
 <ol class="arabic simple">
@@ -540,135 +467,30 @@
 <p>This shift made databases more flexible, easier to query, and easier to maintain. It also set the stage for SQL and the database systems most people still use today.</p>
 </section>
 <section id="graphic-physical-independence">
-<h3>Graphic: Physical Independence<a class="headerlink" href="#graphic-physical-independence" title="Link to this heading">#</a></h3>
+<h3>Graphic: Physical Independence<a class="headerlink" href="#graphic-physical-independence" title="Permalink to this heading">#</a></h3>
 <p><strong>Interactive activity:</strong> Open this standalone page to use the activity in the Jupyter Book or from Colab.</p>
 <p><a class="reference external" href="https://brendanpshea.github.io/database_sql/_static/games/physical-independence-visualization.html">Open the physical independence visualization</a></p>
 </section>
 </section>
 <section id="sets-and-logic-how-sql-thinks-about-data">
-<h2>Sets and Logic: How SQL Thinks About Data<a class="headerlink" href="#sets-and-logic-how-sql-thinks-about-data" title="Link to this heading">#</a></h2>
-<p>Imagine a big box of baseball cards. Each card has the same fields: the player’s name, team, batting average, and so on. In SQL, this is like a table — each card is a row, each field is a column. But SQL doesn’t think about the cards one at a time. It thinks about them as a <strong>set</strong>.</p>
+<h2>Sets and Logic: How SQL Thinks About Data<a class="headerlink" href="#sets-and-logic-how-sql-thinks-about-data" title="Permalink to this heading">#</a></h2>
+<p>Imagine a large box of baseball cards. Each card contains the same fields of information, such as the player’s name, team, and batting average. In SQL terms, this collection acts like a <strong>table</strong> where each individual card represents a row, and each field of information represents a column.</p>
+<p>Unlike traditional programming languages that read records one by one, SQL thinks about data as a <strong>set</strong>. A <strong>set</strong> is simply a collection of distinct objects treated as a single group.</p>
+<p>When you write a SQL query, you do not tell the database <em>how</em> to loop through the cards to find a player. Instead, you describe <em>what</em> set of cards you want to retrieve. The database engine automatically determines the most efficient way to fetch them.</p>
 <section id="what-is-a-set">
-<h3>What is a set?<a class="headerlink" href="#what-is-a-set" title="Link to this heading">#</a></h3>
-<p>A <strong>set</strong> is a collection where:</p>
+<h3>What is a set?<a class="headerlink" href="#what-is-a-set" title="Permalink to this heading">#</a></h3>
+<p>To understand how SQL filters these sets, we use mathematical set operations:</p>
 <ul class="simple">
-<li><p>Each item appears only once (no duplicates).</p></li>
-<li><p>The order doesn’t matter.</p></li>
+<li><p>A <strong>set</strong> is an unordered collection of unique elements, meaning the database does not guarantee a specific order unless you explicitly ask it to sort the results.</p></li>
+<li><p>We use <strong>predicates</strong> as logical conditions to test whether a row belongs in our result set, such as filtering for cards where the team is “Mets” or the batting average is above <code class="docutils literal notranslate"><span class="pre">.300</span></code>.</p></li>
+<li><p>We use <strong>boolean logic</strong> to combine these filters using three core logical operators: <strong>AND</strong> requires both conditions to be true, <strong>OR</strong> requires at least one condition to be true, and <strong>NOT</strong> excludes records that match a condition.</p></li>
 </ul>
-<p>These all describe the same set:</p>
-<ul class="simple">
-<li><p>{apple, banana, orange}</p></li>
-<li><p>{banana, orange, apple}</p></li>
-<li><p>{orange, apple, banana}</p></li>
-</ul>
-<p>SQL treats a table the same way. A <code class="docutils literal notranslate"><span class="pre">Students</span></code> table is a set of student records. Each student appears once, and the order doesn’t matter.</p>
-<p>Here is our creative writing school example:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>StudentID</p></th>
-<th class="head"><p>Name</p></th>
-<th class="head"><p>Grade</p></th>
-<th class="head"><p>DateOfBirth</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1001</p></td>
-<td><p>Virginia Woolf</p></td>
-<td><p>A</p></td>
-<td><p>1882-01-25</p></td>
-</tr>
-<tr class="row-odd"><td><p>1002</p></td>
-<td><p>Ernest Hemingway</p></td>
-<td><p>B+</p></td>
-<td><p>1899-07-21</p></td>
-</tr>
-<tr class="row-even"><td><p>1003</p></td>
-<td><p>Maya Angelou</p></td>
-<td><p>A</p></td>
-<td><p>1928-04-04</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>To find all the A-grade students, we’re asking SQL to build a new set: the rows where <code class="docutils literal notranslate"><span class="pre">Grade</span> <span class="pre">=</span> <span class="pre">'A'</span></code>. In SQL:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Grade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>In English: “Give me the set of all students whose grade is A.”</p>
-</section>
-<section id="true-or-false-questions">
-<h3>True or false questions<a class="headerlink" href="#true-or-false-questions" title="Link to this heading">#</a></h3>
-<p>When SQL filters rows, it asks true/false questions about each one. These questions are called <strong>logical predicates</strong>:</p>
-<ul class="simple">
-<li><p>“Is this student’s grade an A?”</p></li>
-<li><p>“Is this student older than 20?”</p></li>
-<li><p>“Is this student in Poetry class?”</p></li>
-</ul>
-<p>A <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause is a list of these questions. SQL keeps only the rows where every question is true. For example:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Grade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">StudentID</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1001</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>SQL asks two questions about each student:</p>
-<ol class="arabic simple">
-<li><p>Is their grade an A?</p></li>
-<li><p>Is their ID greater than 1001?</p></li>
-</ol>
-<p>Both answers must be true for the row to survive.</p>
-</section>
-<section id="describing-what-you-want-not-how-to-get-it">
-<h3>Describing what you want, not how to get it<a class="headerlink" href="#describing-what-you-want-not-how-to-get-it" title="Link to this heading">#</a></h3>
-<p>One of the most interesting things about SQL is that you describe what you want, not how to find it. This style is called <strong>declarative programming</strong>.</p>
-<p>Think of the difference between two ways of giving directions:</p>
-<ol class="arabic simple">
-<li><p>“Go straight for two blocks, turn right at the library, go one more block.”</p></li>
-<li><p>“Find the coffee shop on Oak Street.”</p></li>
-</ol>
-<p>The first gives step-by-step instructions. The second describes the goal. SQL works like the second one: you say what data you want, and the database figures out how to get it.</p>
-<p>In a regular language like Python you might write:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a_grade_students</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">all_students</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">student</span><span class="o">.</span><span class="n">grade</span> <span class="o">==</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">enrollment</span> <span class="ow">in</span> <span class="n">all_enrollments</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">enrollment</span><span class="o">.</span><span class="n">studentID</span> <span class="o">==</span> <span class="n">student</span><span class="o">.</span><span class="n">studentID</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">enrollment</span><span class="o">.</span><span class="n">classID</span> <span class="o">==</span> <span class="s1">&#39;ENG101&#39;</span><span class="p">:</span>
-                    <span class="n">a_grade_students</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>In SQL you describe the result instead:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Name</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Students</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">Grade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;A&#39;</span>
-<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">StudentID</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">StudentID</span>
-<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">Enrollments</span>
-<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ClassID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ENG101&#39;</span>
-<span class="w">  </span><span class="p">);</span>
-</pre></div>
-</div>
-<p>You’re telling SQL “the names of students who have an A and are enrolled in ENG101” — what, not how.</p>
-</section>
-<section id="putting-sets-together">
-<h3>Putting sets together<a class="headerlink" href="#putting-sets-together" title="Link to this heading">#</a></h3>
-<p>When we work with multiple tables, we’re working with multiple sets. Our creative writing school has:</p>
-<ul class="simple">
-<li><p>A set of students</p></li>
-<li><p>A set of classes</p></li>
-<li><p>A set of enrollments (which students are in which classes)</p></li>
-</ul>
-<p>Joining tables creates a new set by combining the originals based on how they relate:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Students</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Classes</span><span class="p">.</span><span class="n">Subject</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Students</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">Enrollments</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Students</span><span class="p">.</span><span class="n">StudentID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Enrollments</span><span class="p">.</span><span class="n">StudentID</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">Classes</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Enrollments</span><span class="p">.</span><span class="n">ClassID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Classes</span><span class="p">.</span><span class="n">ClassID</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>This produces a new set whose rows mix information from all three tables — like fitting puzzle pieces together where they match.</p>
-<p>By thinking in sets and predicates, SQL gives you a powerful way to work with data. You describe the result you want, and the database handles the rest.</p>
+<p>For example, if you ask for cards where the team is “Mets” <strong>AND</strong> the position is “Pitcher”, SQL looks at the entire set of baseball cards and returns only the subset that meets both criteria. By thinking in sets and using logical conditions, SQL allows you to filter millions of rows of data instantly.</p>
 </section>
 </section>
 <section id="the-four-basic-database-operations-crud">
-<h2>The Four Basic Database Operations: CRUD<a class="headerlink" href="#the-four-basic-database-operations-crud" title="Link to this heading">#</a></h2>
-<p>Almost everything you do with a database falls into one of four basic operations, known as <strong>CRUD</strong>:</p>
+<h2>The Four Basic Database Operations: CRUD<a class="headerlink" href="#the-four-basic-database-operations-crud" title="Permalink to this heading">#</a></h2>
+<p>Almost everything you do with a database falls into one of four basic operations, known as <strong>CRUD</strong>, which stands for Create, Read, Update, and Delete.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Operation</p></th>
@@ -677,249 +499,50 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Create</p></td>
-<td><p>Add new information</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span> <span class="pre">table_name</span></code></p></td>
+<tr class="row-even"><td><p><strong>Create</strong></p></td>
+<td><p>Adds new records to the database.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">INSERT</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>Read</p></td>
-<td><p>Look up or retrieve information</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">FROM</span> <span class="pre">table_name</span></code></p></td>
+<tr class="row-odd"><td><p><strong>Read</strong></p></td>
+<td><p>Retrieves existing data from the database.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>Update</p></td>
-<td><p>Change existing information</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">UPDATE</span> <span class="pre">table_name</span></code></p></td>
+<tr class="row-even"><td><p><strong>Update</strong></p></td>
+<td><p>Modifies existing data inside the database.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">UPDATE</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>Delete</p></td>
-<td><p>Remove information</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">FROM</span> <span class="pre">table_name</span></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Think about managing a library catalog: you add new books (Create), look up books (Read), correct book information (Update), and remove books that are gone (Delete). The same pattern shows up in almost every database. Even when you use an app on your phone that saves information, CRUD is what is happening behind the scenes.</p>
-</section>
-<section id="the-five-parts-of-sql">
-<h2>The Five Parts of SQL<a class="headerlink" href="#the-five-parts-of-sql" title="Link to this heading">#</a></h2>
-<p>SQL is organized into five sub-languages, each designed for a specific kind of job.</p>
-<section id="data-definition-language-ddl">
-<h3>1. Data Definition Language (DDL)<a class="headerlink" href="#data-definition-language-ddl" title="Link to this heading">#</a></h3>
-<p>DDL creates and changes the <strong>structure</strong> of the database — the architect of the system:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Command</p></th>
-<th class="head"><p>Purpose</p></th>
-<th class="head"><p>Example Use</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CREATE</span></code></p></td>
-<td><p>Make new tables or databases</p></td>
-<td><p>Create a new <code class="docutils literal notranslate"><span class="pre">Students</span></code> table</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ALTER</span></code></p></td>
-<td><p>Modify existing tables</p></td>
-<td><p>Add an <code class="docutils literal notranslate"><span class="pre">Email</span></code> column to <code class="docutils literal notranslate"><span class="pre">Students</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DROP</span></code></p></td>
-<td><p>Remove tables or databases</p></td>
-<td><p>Remove an old <code class="docutils literal notranslate"><span class="pre">Courses</span></code> table</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TRUNCATE</span></code></p></td>
-<td><p>Empty a table but keep its structure</p></td>
-<td><p>Clear all data from <code class="docutils literal notranslate"><span class="pre">Grades</span></code></p></td>
+<tr class="row-odd"><td><p><strong>Delete</strong></p></td>
+<td><p>Permanently removes records from the database.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DELETE</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>DDL decisions are usually permanent and shape how data can be stored. You’ll use DDL most when first setting up a database or making major changes.</p>
-</section>
-<section id="data-manipulation-language-dml">
-<h3>2. Data Manipulation Language (DML)<a class="headerlink" href="#data-manipulation-language-dml" title="Link to this heading">#</a></h3>
-<p>DML works with the <strong>data inside</strong> the tables — the librarian who manages the books:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Command</p></th>
-<th class="head"><p>Purpose</p></th>
-<th class="head"><p>Example Use</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">INSERT</span></code></p></td>
-<td><p>Add new data</p></td>
-<td><p>Add a new student</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">UPDATE</span></code></p></td>
-<td><p>Modify existing data</p></td>
-<td><p>Change a student’s grade</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DELETE</span></code></p></td>
-<td><p>Remove data</p></td>
-<td><p>Remove a dropped student</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MERGE</span></code></p></td>
-<td><p>Combine data from multiple sources</p></td>
-<td><p>Update grades from a spreadsheet</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>These are the everyday commands. Unlike DDL, DML changes can usually be undone using TCL commands (covered below).</p>
-</section>
-<section id="data-query-language-dql">
-<h3>3. Data Query Language (DQL)<a class="headerlink" href="#data-query-language-dql" title="Link to this heading">#</a></h3>
-<p>DQL searches and retrieves data — the detective who gathers information:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Clause</p></th>
-<th class="head"><p>Purpose</p></th>
-<th class="head"><p>Example Use</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code></p></td>
-<td><p>Choose which columns to see</p></td>
-<td><p>Get student names and grades</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FROM</span></code></p></td>
-<td><p>Specify which tables to use</p></td>
-<td><p>Look in the <code class="docutils literal notranslate"><span class="pre">Students</span></code> table</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">WHERE</span></code></p></td>
-<td><p>Filter the results</p></td>
-<td><p>Find all ‘A’ grade students</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code></p></td>
-<td><p>Sort the results</p></td>
-<td><p>Sort students by last name</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code></p></td>
-<td><p>Organize data into groups</p></td>
-<td><p>Group students by grade level</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>DQL is technically part of DML, but <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> is so important that it usually gets its own category. The real power comes from combining clauses — for example, finding all ‘A’ grade students in a particular class, listing just their names and emails, sorted alphabetically.</p>
-</section>
-<section id="data-control-language-dcl">
-<h3>4. Data Control Language (DCL)<a class="headerlink" href="#data-control-language-dcl" title="Link to this heading">#</a></h3>
-<p>DCL manages <strong>permissions</strong> — the security guard:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Command</p></th>
-<th class="head"><p>Purpose</p></th>
-<th class="head"><p>Example Use</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GRANT</span></code></p></td>
-<td><p>Give permissions</p></td>
-<td><p>Allow teachers to view grades</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">REVOKE</span></code></p></td>
-<td><p>Remove permissions</p></td>
-<td><p>Remove access for former staff</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>DCL lets you decide exactly who can do what. Teachers might be allowed to view and update grades, administrators to add or remove students, and students to view only their own records.</p>
-</section>
-<section id="transaction-control-language-tcl">
-<h3>5. Transaction Control Language (TCL)<a class="headerlink" href="#transaction-control-language-tcl" title="Link to this heading">#</a></h3>
-<p>TCL ensures that database changes happen reliably — the accountant who keeps the books:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Command</p></th>
-<th class="head"><p>Purpose</p></th>
-<th class="head"><p>Example Use</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">BEGIN</span></code></p></td>
-<td><p>Start a group of changes</p></td>
-<td><p>Start updating grades</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">COMMIT</span></code></p></td>
-<td><p>Save all changes</p></td>
-<td><p>Save all grade updates</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ROLLBACK</span></code></p></td>
-<td><p>Undo changes</p></td>
-<td><p>Cancel incorrect updates</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>A <strong>transaction</strong> is a group of related changes that should all succeed together or all fail together. Transferring money between bank accounts is the classic example: subtract from one account and add to another — both happen or neither does. TCL gives you that all-or-nothing guarantee, even if the network fails or the system crashes mid-operation.</p>
-<p>These five sub-languages work together. Just as a school needs architects, teachers, administrators, and security guards, a database needs all five kinds of commands to function smoothly.</p>
+<section id="understanding-crud-operations">
+<h3>Understanding CRUD operations<a class="headerlink" href="#understanding-crud-operations" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>We use the <strong>Create</strong> operation to write new records into a table. For instance, when a new user registers on a website, the application runs a SQL <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> statement to add their profile details to the users table.</p></li>
+<li><p>We use the <strong>Read</strong> operation to fetch existing records. Whenever you search for products or load a webpage, the application runs a SQL <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> statement to query and display the relevant records.</p></li>
+<li><p>We use the <strong>Update</strong> operation to change existing values. If you update your profile picture or change your password, the application runs a SQL <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> statement to modify only those specific fields in your existing record.</p></li>
+<li><p>We use the <strong>Delete</strong> operation to permanently remove records. If you close your account, the application runs a SQL <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> statement to erase your profile row from the database.</p></li>
+</ul>
+<p>These four basic operations form the foundation of almost all software applications, from simple mobile apps to massive enterprise database systems.</p>
 </section>
 </section>
 <section id="sql-standards-and-varieties-how-one-language-became-many">
-<h2>SQL Standards and Varieties: How One Language Became Many<a class="headerlink" href="#sql-standards-and-varieties-how-one-language-became-many" title="Link to this heading">#</a></h2>
-<p>SQL started at IBM in the 1970s, originally called <strong>SEQUEL</strong> (Structured English Query Language). When other companies wanted similar database systems, it became clear everyone needed to speak the same language. Without a standard, every vendor’s SQL would be different, making it hard to:</p>
+<h2>SQL Standards and Varieties: How One Language Became Many<a class="headerlink" href="#sql-standards-and-varieties-how-one-language-became-many" title="Permalink to this heading">#</a></h2>
+<p>SQL was originally created at IBM in the 1970s under the name <strong>SEQUEL</strong>. As other companies began building their own database systems, they realized that everyone needed to speak a common language to make it easy to move applications between different database engines.</p>
+<p>To solve this, organizations like the American National Standards Institute (ANSI) established official SQL standards. Today, almost every relational database engine supports the core ANSI SQL standard.</p>
+<p>However, because database vendors wanted to add their own specialized features and optimizations, they created unique variations called <strong>SQL dialects</strong>:</p>
 <ul class="simple">
-<li><p>Move from one database system to another.</p></li>
-<li><p>Build software that works with multiple databases.</p></li>
-<li><p>Train people once and have them work anywhere.</p></li>
+<li><p>The <strong>ANSI SQL standard</strong> defines the core syntax and commands (like <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>, <code class="docutils literal notranslate"><span class="pre">INSERT</span></code>, and <code class="docutils literal notranslate"><span class="pre">JOIN</span></code>) that work identically across almost all relational databases.</p></li>
+<li><p>A <strong>SQL dialect</strong> is a vendor-specific extension that adds unique functions, data types, and optimizations to the core language, such as Microsoft’s T-SQL, Oracle’s PL/SQL, or PostgreSQL’s PL/pgSQL.</p></li>
+<li><p>The <strong>SQLite</strong> database uses a highly lightweight dialect that is optimized for embedded local storage, implementing most of the standard SQL syntax but omitting complex user-management or network-networking commands.</p></li>
 </ul>
-<p>In 1986, the <strong>American National Standards Institute (ANSI)</strong> published the first official SQL standard. The <strong>International Organization for Standardization (ISO)</strong> later adopted it, making SQL an international standard. The standard has been revised many times since — 1989, 1992, 1999, 2003, 2006, 2008, 2011 — each version adding new features while keeping backward compatibility.</p>
-<section id="why-flavors-still-exist">
-<h3>Why “flavors” still exist<a class="headerlink" href="#why-flavors-still-exist" title="Link to this heading">#</a></h3>
-<p>Despite the standard, different database systems still have their own <strong>flavors</strong> of SQL. Think of the standard like the rules of chess: everyone agrees on how the pieces move, but chess sets come in many styles and tournaments add their own house rules. SQL works the same way — every major system follows the core standard, then adds its own extensions.</p>
-<p>The common varieties:</p>
-<section id="sqlite">
-<h4>SQLite<a class="headerlink" href="#sqlite" title="Link to this heading">#</a></h4>
-<p>SQLite is small, self-contained, and very versatile. Key features:</p>
-<ul class="simple">
-<li><p>The entire database lives in a single file.</p></li>
-<li><p>No separate server process is needed.</p></li>
-<li><p>Great for small applications, mobile devices, and learning.</p></li>
-<li><p>Built into many operating systems and browsers.</p></li>
-</ul>
-<p>We use SQLite for most of this course because it lets us focus on SQL itself without database setup getting in the way.</p>
-</section>
-<section id="postgresql">
-<h4>PostgreSQL<a class="headerlink" href="#postgresql" title="Link to this heading">#</a></h4>
-<p>PostgreSQL (often “Postgres”) is feature-rich and aimed at serious work. Key features:</p>
-<ul class="simple">
-<li><p>Excellent compliance with the SQL standard.</p></li>
-<li><p>Support for complex queries and rich data types.</p></li>
-<li><p>Strong data integrity guarantees.</p></li>
-<li><p>Open source and actively maintained.</p></li>
-</ul>
-<p>Later in the course we use Postgres for more advanced features.</p>
-</section>
-<section id="other-common-varieties">
-<h4>Other common varieties<a class="headerlink" href="#other-common-varieties" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p><strong>MySQL</strong> — very popular for web applications.</p></li>
-<li><p><strong>Oracle</strong> — common in large enterprises, known for reliability.</p></li>
-<li><p><strong>SQL Server</strong> — Microsoft’s database system, tightly integrated with Windows.</p></li>
-<li><p><strong>MariaDB</strong> — an open-source fork of MySQL.</p></li>
-</ul>
-</section>
-</section>
-<section id="how-different-are-they-really">
-<h3>How different are they really?<a class="headerlink" href="#how-different-are-they-really" title="Link to this heading">#</a></h3>
-<p>The core commands work the same in every major SQL database. If you write:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">students</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">grade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>…it works the same in SQLite, Postgres, MySQL, and the rest. Like driving a car: once you know the basics, every car has a steering wheel and pedals in roughly the same places.</p>
-<p>The differences usually show up in:</p>
-<ul class="simple">
-<li><p>Advanced features.</p></li>
-<li><p>Performance tuning options.</p></li>
-<li><p>Admin commands.</p></li>
-<li><p>Supported data types.</p></li>
-<li><p>Built-in functions.</p></li>
-</ul>
-<p>That is why we start with SQLite — learning the universal core first, then picking up system-specific features later.</p>
-</section>
+<p>When writing SQL, it is best to stick to standard ANSI syntax whenever possible to ensure your queries remain compatible across different database engines.</p>
 </section>
 <section id="getting-started-with-sqlite-in-google-colab">
-<h2>Getting Started With SQLite in Google Colab<a class="headerlink" href="#getting-started-with-sqlite-in-google-colab" title="Link to this heading">#</a></h2>
+<h2>Getting Started With SQLite in Google Colab<a class="headerlink" href="#getting-started-with-sqlite-in-google-colab" title="Permalink to this heading">#</a></h2>
 <p>Google Colab is a free, browser-based Jupyter notebook environment for running Python (and a lot more) in the cloud. It’s a convenient place to write and test SQL because everything lives in one page.</p>
 <p>For SQL we use the <strong>SQL magic extension</strong>. It lets you write SQL directly in notebook cells by starting the cell with <code class="docutils literal notranslate"><span class="pre">%%sql</span></code>. The next code cell installs the extension and loads it.</p>
 <p>Now that we have the SQL magic extension loaded, we can connect to our SQLite database. In this case, we’ll be using a pre-populated database file called <code class="docutils literal notranslate"><span class="pre">books.db</span></code>, which contains data about a collection of sci-fi books.</p>
@@ -967,28 +590,20 @@ SELECT name FROM sqlite_master WHERE type=&#39;table&#39;;
 </div>
 </section>
 <section id="getting-to-know-the-books-table">
-<h2>Getting to Know the Books Table<a class="headerlink" href="#getting-to-know-the-books-table" title="Link to this heading">#</a></h2>
-<p>The data for this chapter comes from <strong>Goodreads</strong>, a social cataloging site for books. Goodreads users register the books they own, build reading lists, and share reviews and recommendations.</p>
-<p>For our examples, we use a slice of Goodreads focused on science fiction. The data has been extracted and loaded into a SQLite database so we can explore it with SQL.</p>
-<p>To work with any database effectively, you need to understand its <strong>schema</strong> — the blueprint that says what tables exist, what columns each table has, and what kind of data each column stores.</p>
-<p>Here is the schema for the <code class="docutils literal notranslate"><span class="pre">books</span></code> table:</p>
+<h2>Getting to Know the Books Table<a class="headerlink" href="#getting-to-know-the-books-table" title="Permalink to this heading">#</a></h2>
+<p>The data for this chapter comes from <strong>Goodreads</strong>, a popular social cataloging website where book lovers register books, share reviews, and organize reading lists.</p>
+<p>We will work with a slice of Goodreads data focused entirely on science fiction books. The dataset has been loaded into a local SQLite database so we can explore it using SQL. Our database consists of a single primary table called <strong>books</strong>, which stores key information about individual science fiction titles:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> — A unique identifier for each book. This is the <strong>PRIMARY KEY</strong>, which means every row has its own value.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">title</span></code> — The title of the book (TEXT).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">series</span></code> — The name of the series, if the book is in one (TEXT).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">author</span></code> — The author’s name (TEXT).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">rating</span></code> — The average Goodreads rating, stored as a REAL number (decimal).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">language</span></code> — The language the book is written in (TEXT).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pages</span></code> — The number of pages (INTEGER).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">publisher</span></code> — The publisher’s name (TEXT).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">numRatings</span></code> — The total number of Goodreads ratings (INTEGER).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">firstPublishDate</span></code> — The date the book was first published (TEXT).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">publishDate</span></code> — The most recent publication date (TEXT).</p></li>
+<li><p>The <strong>title</strong> column stores the name of the book as a text string.</p></li>
+<li><p>The <strong>author</strong> column records the name of the writer who wrote the book.</p></li>
+<li><p>The <strong>ratings_count</strong> column stores the total number of reviews user profiles have submitted for that book.</p></li>
+<li><p>The <strong>average_rating</strong> column records the book’s overall score on a scale from 1 to 5.</p></li>
+<li><p>The <strong>publication_year</strong> column stores the year the book was officially printed.</p></li>
 </ul>
-<p>The schema tells us what kinds of questions we can ask. Because <code class="docutils literal notranslate"><span class="pre">rating</span></code> is a REAL number, we can compute averages on it. Because <code class="docutils literal notranslate"><span class="pre">pages</span></code> is an INTEGER, we can compare it against a number — for example, “all books over 500 pages.” Knowing the schema is the first step to writing any useful query.</p>
+<p>By writing SQL queries against this table, we can filter by specific authors, sort by publication dates, and find the highest-rated science fiction novels in the database.</p>
 </section>
 <section id="select-and-from">
-<h2>SELECT and FROM<a class="headerlink" href="#select-and-from" title="Link to this heading">#</a></h2>
+<h2>SELECT and FROM<a class="headerlink" href="#select-and-from" title="Permalink to this heading">#</a></h2>
 <p>Now that we know the structure of the database, let’s start writing queries. The two building blocks are <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> and <code class="docutils literal notranslate"><span class="pre">FROM</span></code>.</p>
 <p>The basic syntax of a <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> query is:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">column1</span><span class="p">,</span><span class="w"> </span><span class="n">column2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span>
@@ -1004,7 +619,7 @@ SELECT name FROM sqlite_master WHERE type=&#39;table&#39;;
 </ul>
 <p>In plain English: <em>“Give me these columns from this table.”</em></p>
 <section id="selecting-all-columns">
-<h3>Selecting all columns<a class="headerlink" href="#selecting-all-columns" title="Link to this heading">#</a></h3>
+<h3>Selecting all columns<a class="headerlink" href="#selecting-all-columns" title="Permalink to this heading">#</a></h3>
 <p>To return every column from the <code class="docutils literal notranslate"><span class="pre">books</span></code> table, use the <code class="docutils literal notranslate"><span class="pre">*</span></code> shorthand:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1208,7 +823,7 @@ FROM Books -- From the Books table
 </div>
 </section>
 <section id="selecting-specific-columns">
-<h3>Selecting specific columns<a class="headerlink" href="#selecting-specific-columns" title="Link to this heading">#</a></h3>
+<h3>Selecting specific columns<a class="headerlink" href="#selecting-specific-columns" title="Permalink to this heading">#</a></h3>
 <p>If we only want to retrieve certain columns, we can list them explicitly after the SELECT keyword:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1313,7 +928,7 @@ LIMIT 10; -- Limit the result to the first 10 rows
 </div>
 </section>
 <section id="selecting-distinct-values">
-<h3>Selecting DISTINCT values<a class="headerlink" href="#selecting-distinct-values" title="Link to this heading">#</a></h3>
+<h3>Selecting DISTINCT values<a class="headerlink" href="#selecting-distinct-values" title="Permalink to this heading">#</a></h3>
 <p>Sometimes, you might want to retrieve only the unique values from a column. You can do this using the DISTINCT keyword:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1492,7 +1107,7 @@ LIMIT 15; -- Limit the result to the first 15 rows
 </section>
 </section>
 <section id="order-by">
-<h2>ORDER BY<a class="headerlink" href="#order-by" title="Link to this heading">#</a></h2>
+<h2>ORDER BY<a class="headerlink" href="#order-by" title="Permalink to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> clause sorts the rows of a result. The basic syntax:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">column1</span><span class="p">,</span><span class="w"> </span><span class="n">column2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span>
 <span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span>
@@ -1716,7 +1331,7 @@ LIMIT 10;
 <p>Finally, we can order by multiple columns (for example, by author and rating).</p>
 </section>
 <section id="where">
-<h2>WHERE<a class="headerlink" href="#where" title="Link to this heading">#</a></h2>
+<h2>WHERE<a class="headerlink" href="#where" title="Permalink to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause filters rows. It lets you keep only the rows that match a condition.</p>
 <p>The basic syntax:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">column1</span><span class="p">,</span><span class="w"> </span><span class="n">column2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span>
@@ -1967,75 +1582,40 @@ LIMIT 10;
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/b52a61e03caaffeed80731850972fb169ca48024d6b76e43df68643ae2ee8234.png" src="_images/b52a61e03caaffeed80731850972fb169ca48024d6b76e43df68643ae2ee8234.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="kn">import</span> <span class="n">FancyBboxPatch</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">clauses</span> <span class="o">=</span> <span class="p">[</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
 </div>
 </div>
 </section>
 <section id="sqlite-syntax-rules">
-<h2>SQLite Syntax Rules<a class="headerlink" href="#sqlite-syntax-rules" title="Link to this heading">#</a></h2>
-<p>Before going further, here are the basic rules for writing SQL in SQLite. A typical query looks like this:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">column1</span><span class="p">,</span><span class="w"> </span><span class="n">column2</span>
-<span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">condition</span><span class="p">;</span>
+<h2>SQLite Syntax Rules<a class="headerlink" href="#sqlite-syntax-rules" title="Permalink to this heading">#</a></h2>
+<p>Before writing your first queries, let us review the basic formatting rules for writing SQL in SQLite. A typical query looks like this:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">author</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">books</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">publication_year</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1950</span><span class="w"> </span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">average_rating</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
 </pre></div>
 </div>
-<section id="key-syntax-rules">
-<h3>Key Syntax Rules<a class="headerlink" href="#key-syntax-rules" title="Link to this heading">#</a></h3>
-<section id="semicolons">
-<h4>1. Semicolons (;)<a class="headerlink" href="#semicolons" title="Link to this heading">#</a></h4>
-<p>End every SQL statement with a semicolon. The semicolon tells SQLite the statement is complete.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="p">;</span>
-</pre></div>
-</div>
-</section>
-<section id="capitalization">
-<h4>2. Capitalization<a class="headerlink" href="#capitalization" title="Link to this heading">#</a></h4>
-<p>SQLite is <strong>not</strong> case-sensitive for keywords (<code class="docutils literal notranslate"><span class="pre">SELECT</span></code>, <code class="docutils literal notranslate"><span class="pre">FROM</span></code>, <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>, etc.). Capitalizing them anyway is a common convention because it makes queries easier to read. Table and column names are case-sensitive only when they are wrapped in double quotes.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">Users</span><span class="p">;</span><span class="w">    </span><span class="c1">-- works</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="p">;</span><span class="w">    </span><span class="c1">-- also works</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;Users&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">-- now case-sensitive</span>
-</pre></div>
-</div>
-</section>
-<section id="line-breaks">
-<h4>3. Line breaks<a class="headerlink" href="#line-breaks" title="Link to this heading">#</a></h4>
-<p>A query can sit on one line or be split across many. SQLite ignores extra whitespace. Multi-line queries are usually easier to read.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span>
-
-<span class="c1">-- Equivalent:</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">users</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span>
-</pre></div>
-</div>
-</section>
-<section id="single-vs-double-quotes">
-<h4>4. Single vs. double quotes<a class="headerlink" href="#single-vs-double-quotes" title="Link to this heading">#</a></h4>
+<p>To ensure your queries execute correctly, follow these core syntax rules:</p>
 <ul class="simple">
-<li><p>Single quotes (<code class="docutils literal notranslate"><span class="pre">'…'</span></code>) wrap string values.</p></li>
-<li><p>Double quotes (<code class="docutils literal notranslate"><span class="pre">&quot;…&quot;</span></code>) wrap table or column names that have spaces or need to be case-sensitive.</p></li>
+<li><p>Every SQL query should end with a <strong>semicolon</strong> to signal to the database engine that the statement is complete.</p></li>
+<li><p>SQL keywords (like <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> and <code class="docutils literal notranslate"><span class="pre">FROM</span></code>) are <strong>case-insensitive</strong>, meaning <code class="docutils literal notranslate"><span class="pre">select</span></code> and <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> work identically, though capitalized keywords are preferred for readability.</p></li>
+<li><p>Unlike keywords, text values stored inside database columns are <strong>case-sensitive</strong> in many database systems when running comparisons in a <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause.</p></li>
+<li><p>We wrap text values in <strong>single quotes</strong> inside our filters, while columns and table names are written without quotes.</p></li>
 </ul>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Sam Q&#39;</span><span class="p">;</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;User Table&quot;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="ss">&quot;First Name&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Sam Q&#39;</span><span class="p">;</span>
-</pre></div>
-</div>
-</section>
-<section id="comments">
-<h4>5. Comments<a class="headerlink" href="#comments" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">--</span></code> starts a single-line comment.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">…</span> <span class="pre">*/</span></code> wraps a multi-line comment.</p></li>
-</ul>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- This is a single-line comment</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="p">;</span><span class="w"> </span><span class="cm">/* This is a</span>
-<span class="cm">multi-line comment */</span>
-</pre></div>
-</div>
-</section>
-</section>
+<p>By following these simple formatting rules, you can write clean, readable SQL queries that execute reliably across database engines.</p>
 </section>
 <section id="handling-null-values">
-<h2>Handling NULL Values<a class="headerlink" href="#handling-null-values" title="Link to this heading">#</a></h2>
+<h2>Handling NULL Values<a class="headerlink" href="#handling-null-values" title="Permalink to this heading">#</a></h2>
 <p>In SQL, <code class="docutils literal notranslate"><span class="pre">NULL</span></code> is a special value that means <em>missing</em> or <em>unknown</em>. Working with <code class="docutils literal notranslate"><span class="pre">NULL</span></code> takes some care because it can lead to surprising results.</p>
 <p>In our <code class="docutils literal notranslate"><span class="pre">books</span></code> table, both <code class="docutils literal notranslate"><span class="pre">series</span></code> and <code class="docutils literal notranslate"><span class="pre">firstPublishDate</span></code> have <code class="docutils literal notranslate"><span class="pre">NULL</span></code> values. For some books, the series is unknown or the book isn’t in a series at all, and for others the original publication date is missing.</p>
 <p>To check for <code class="docutils literal notranslate"><span class="pre">NULL</span></code> values in a <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause, you use special operators:</p>
@@ -2060,94 +1640,6 @@ LIMIT 10;
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="None">Running query in &#x27;sqlite:///sci_fi_books.db&#x27;</span></div><div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>title</th>
-      <th>author</th>
-      <th>series</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>The Hunger Games</td>
-      <td>Suzanne Collins</td>
-      <td>The Hunger Games #1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Harry Potter and the Order of the Phoenix</td>
-      <td>J.K. Rowling</td>
-      <td>Harry Potter #5</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>The Chronicles of Narnia</td>
-      <td>C.S. Lewis</td>
-      <td>The Chronicles of Narnia (Publication Order) #...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>J.R.R. Tolkien 4-Book Boxed Set: The Hobbit an...</td>
-      <td>J.R.R. Tolkien</td>
-      <td>The Lord of the Rings #0-3</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>The Hitchhiker's Guide to the Galaxy</td>
-      <td>Douglas Adams</td>
-      <td>The Hitchhiker's Guide to the Galaxy #1</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Divergent</td>
-      <td>Veronica Roth</td>
-      <td>Divergent #1</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Ender's Game</td>
-      <td>Orson Scott Card</td>
-      <td>Ender's Saga #1</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Harry Potter and the Sorcerer's Stone</td>
-      <td>J.K. Rowling</td>
-      <td>Harry Potter #1</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>A Wrinkle in Time</td>
-      <td>Madeleine L'Engle</td>
-      <td>Time Quintet #1</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>A Game of Thrones</td>
-      <td>George R.R. Martin</td>
-      <td>A Song of Ice and Fire #1</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Similarly, to find all books where the original publication date is unknown:</p>
 <div class="cell docutils container">
@@ -2166,94 +1658,6 @@ LIMIT 10;
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="None">Running query in &#x27;sqlite:///sci_fi_books.db&#x27;</span></div><div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>title</th>
-      <th>author</th>
-      <th>firstPublishDate</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>The Hunger Games</td>
-      <td>Suzanne Collins</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Harry Potter and the Deathly Hallows</td>
-      <td>J.K. Rowling</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Insurgent</td>
-      <td>Veronica Roth</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>The Maze Runner</td>
-      <td>James Dashner</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>The Selection</td>
-      <td>Kiera Cass</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Catching Fire</td>
-      <td>Suzanne Collins</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Uglies</td>
-      <td>Scott Westerfeld</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Cinder</td>
-      <td>Marissa Meyer</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>The Wise Man's Fear</td>
-      <td>Patrick Rothfuss</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Ready Player One</td>
-      <td>Ernest Cline</td>
-      <td>None</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>It’s important to note that you cannot use the equality operator (=) to check for NULLs. For example, the following query will not return any results:</p>
 <div class="cell docutils container">
@@ -2270,39 +1674,11 @@ WHERE
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="None">Running query in &#x27;sqlite:///sci_fi_books.db&#x27;</span></div><div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>title</th>
-      <th>author</th>
-      <th>firstPublishDate</th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>This is because in SQL, any comparison with NULL (even <code class="docutils literal notranslate"><span class="pre">NULL</span> <span class="pre">=</span> <span class="pre">NULL</span></code>) evaluates to NULL, which is treated as false in the context of a WHERE clause.</p>
 </section>
 <section id="like">
-<h2>LIKE<a class="headerlink" href="#like" title="Link to this heading">#</a></h2>
+<h2>LIKE<a class="headerlink" href="#like" title="Permalink to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">LIKE</span></code> operator searches for a <strong>pattern</strong> inside a text column. It is usually paired with <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> to filter on partial matches rather than exact equality.</p>
 <p>The basic syntax:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">column1</span><span class="p">,</span><span class="w"> </span><span class="n">column2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span>
@@ -2324,7 +1700,7 @@ WHERE
 </ul>
 <p>In SQLite, <code class="docutils literal notranslate"><span class="pre">LIKE</span></code> is case-insensitive for ASCII characters by default.</p>
 <section id="example-book-titles-starting-with-the">
-<h3>Example: Book titles starting with ‘The’<a class="headerlink" href="#example-book-titles-starting-with-the" title="Link to this heading">#</a></h3>
+<h3>Example: Book titles starting with ‘The’<a class="headerlink" href="#example-book-titles-starting-with-the" title="Permalink to this heading">#</a></h3>
 <p>To find all books whose title starts with “The”:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2341,87 +1717,10 @@ LIMIT 10;
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="None">Running query in &#x27;sqlite:///sci_fi_books.db&#x27;</span></div><div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>title</th>
-      <th>author</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>The Hunger Games</td>
-      <td>Suzanne Collins</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>The Chronicles of Narnia</td>
-      <td>C.S. Lewis</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>The Hitchhiker's Guide to the Galaxy</td>
-      <td>Douglas Adams</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>The Time Traveler's Wife</td>
-      <td>Audrey Niffenegger</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>The Princess Bride</td>
-      <td>William Goldman</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>The Handmaid's Tale</td>
-      <td>Margaret Atwood</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>The Giver</td>
-      <td>Lois Lowry</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>The Stand</td>
-      <td>Stephen King</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>The Fellowship of the Ring</td>
-      <td>J.R.R. Tolkien</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>The Road</td>
-      <td>Cormac McCarthy</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
 <section id="example-author-names-containing-lewis">
-<h3>Example: Author Names Containing <code class="docutils literal notranslate"><span class="pre">Lewis</span></code><a class="headerlink" href="#example-author-names-containing-lewis" title="Link to this heading">#</a></h3>
+<h3>Example: Author Names Containing <code class="docutils literal notranslate"><span class="pre">Lewis</span></code><a class="headerlink" href="#example-author-names-containing-lewis" title="Permalink to this heading">#</a></h3>
 <p>Now, let’s look for author names that contain “lewis” anywhere.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2438,88 +1737,11 @@ LIMIT 10;
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="None">Running query in &#x27;sqlite:///sci_fi_books.db&#x27;</span></div><div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>title</th>
-      <th>author</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>The Chronicles of Narnia</td>
-      <td>C.S. Lewis</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>The Voyage of the Dawn Treader</td>
-      <td>C.S. Lewis</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>The Last Battle</td>
-      <td>C.S. Lewis</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>The Silver Chair</td>
-      <td>C.S. Lewis</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Prince Caspian</td>
-      <td>C.S. Lewis</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Perelandra</td>
-      <td>C.S. Lewis</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>That Hideous Strength</td>
-      <td>C.S. Lewis</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Space Trilogy: Out of the Silent Planet / Pere...</td>
-      <td>C.S. Lewis</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Out of the Silent Planet</td>
-      <td>C.S. Lewis</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>It Can't Happen Here</td>
-      <td>Sinclair Lewis</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
 </section>
 <section id="aggregate-functions-and-aliasing-with-as">
-<h2>Aggregate Functions and Aliasing with AS<a class="headerlink" href="#aggregate-functions-and-aliasing-with-as" title="Link to this heading">#</a></h2>
+<h2>Aggregate Functions and Aliasing with AS<a class="headerlink" href="#aggregate-functions-and-aliasing-with-as" title="Permalink to this heading">#</a></h2>
 <p>Aggregate functions take a set of rows and return a single value. The most common ones:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">COUNT()</span></code> — counts the number of rows.</p></li>
@@ -2529,7 +1751,7 @@ LIMIT 10;
 <li><p><code class="docutils literal notranslate"><span class="pre">MIN()</span></code> — returns the smallest value.</p></li>
 </ul>
 <section id="examples-of-aggregate-functions">
-<h3>Examples of aggregate functions<a class="headerlink" href="#examples-of-aggregate-functions" title="Link to this heading">#</a></h3>
+<h3>Examples of aggregate functions<a class="headerlink" href="#examples-of-aggregate-functions" title="Permalink to this heading">#</a></h3>
 <p>Let’s look at a few examples using the <code class="docutils literal notranslate"><span class="pre">books</span></code> table.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2542,36 +1764,6 @@ FROM
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="None">Running query in &#x27;sqlite:///sci_fi_books.db&#x27;</span></div><div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>total_books</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>6591</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2584,36 +1776,6 @@ FROM
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="None">Running query in &#x27;sqlite:///sci_fi_books.db&#x27;</span></div><div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>avg_rating</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>3.988885</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2626,36 +1788,6 @@ FROM
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="None">Running query in &#x27;sqlite:///sci_fi_books.db&#x27;</span></div><div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>total_pages</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2495231</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2669,42 +1801,10 @@ FROM
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="None">Running query in &#x27;sqlite:///sci_fi_books.db&#x27;</span></div><div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>max_rating</th>
-      <th>min_rating</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>5.0</td>
-      <td>1.99</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
 <section id="combining-aggregate-functions-with-where-clauses">
-<h3>Combining Aggregate Functions with WHERE Clauses<a class="headerlink" href="#combining-aggregate-functions-with-where-clauses" title="Link to this heading">#</a></h3>
+<h3>Combining Aggregate Functions with WHERE Clauses<a class="headerlink" href="#combining-aggregate-functions-with-where-clauses" title="Permalink to this heading">#</a></h3>
 <p>We can also combine aggregate functions with WHERE clauses to calculate values based on certain conditions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2719,36 +1819,6 @@ WHERE
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="None">Running query in &#x27;sqlite:///sci_fi_books.db&#x27;</span></div><div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>avg_rating_after_2000</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>3.994752</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2763,36 +1833,6 @@ WHERE
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="None">Running query in &#x27;sqlite:///sci_fi_books.db&#x27;</span></div><div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>books_over_500_pages</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1108</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2807,47 +1847,17 @@ WHERE
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="None">Running query in &#x27;sqlite:///sci_fi_books.db&#x27;</span></div><div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>max_rating_over_10000</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>4.79</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
 <section id="aliasing-with-as">
-<h3>Aliasing with AS<a class="headerlink" href="#aliasing-with-as" title="Link to this heading">#</a></h3>
+<h3>Aliasing with AS<a class="headerlink" href="#aliasing-with-as" title="Permalink to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">AS</span></code> keyword gives a column or an expression a temporary name — an <strong>alias</strong> — in the result. Aliases make output easier to read.</p>
 <p>In the previous examples we used <code class="docutils literal notranslate"><span class="pre">AS</span></code> to label aggregate results: <code class="docutils literal notranslate"><span class="pre">total_books</span></code>, <code class="docutils literal notranslate"><span class="pre">avg_rating</span></code>, <code class="docutils literal notranslate"><span class="pre">max_rating</span></code>, and so on. Without those aliases, the column headers would show the full function expression instead, which is harder to read.</p>
 <p>Aggregate functions paired with <code class="docutils literal notranslate"><span class="pre">AS</span></code> give you a fast way to summarize data. You can count rows, average values, find maximums and minimums, and label the results clearly — all in a single query.</p>
 </section>
 </section>
 <section id="basic-math-operations-and-functions-in-sql">
-<h2>Basic Math Operations and Functions in SQL<a class="headerlink" href="#basic-math-operations-and-functions-in-sql" title="Link to this heading">#</a></h2>
+<h2>Basic Math Operations and Functions in SQL<a class="headerlink" href="#basic-math-operations-and-functions-in-sql" title="Permalink to this heading">#</a></h2>
 <p>SQL supports arithmetic directly inside a query. You can use it in <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>, in <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>, or alongside aggregate functions.</p>
 <p>The arithmetic operators are:</p>
 <ul class="simple">
@@ -2866,36 +1876,6 @@ SELECT
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="None">Running query in &#x27;sqlite:///sci_fi_books.db&#x27;</span></div><div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>discounted_price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>18.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>SQL also provides built-in math functions. Some of the most common:</p>
 <ul class="simple">
@@ -2920,83 +1900,6 @@ LIMIT 10;
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="None">Running query in &#x27;sqlite:///sci_fi_books.db&#x27;</span></div><div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>title</th>
-      <th>rounded_rating</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>The Hunger Games</td>
-      <td>4.3</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Harry Potter and the Order of the Phoenix</td>
-      <td>4.5</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Animal Farm</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>The Chronicles of Narnia</td>
-      <td>4.3</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>J.R.R. Tolkien 4-Book Boxed Set: The Hobbit an...</td>
-      <td>4.6</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>The Hitchhiker's Guide to the Galaxy</td>
-      <td>4.2</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Fahrenheit 451</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Divergent</td>
-      <td>4.2</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Ender's Game</td>
-      <td>4.3</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Harry Potter and the Sorcerer's Stone</td>
-      <td>4.5</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Mathematical operations and functions can be particularly useful when combined with aggregate functions.</p>
 <p>For example, let’s calculate the average number of pages across all books:</p>
@@ -3011,40 +1914,10 @@ FROM
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="None">Running query in &#x27;sqlite:///sci_fi_books.db&#x27;</span></div><div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>avg_pages</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>391.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
 <section id="chapter-summary">
-<h2>Chapter Summary<a class="headerlink" href="#chapter-summary" title="Link to this heading">#</a></h2>
+<h2>Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
 <p>Use this list as a self-check. After working through the chapter, you should be able to do each of the following:</p>
 <ul class="simple">
 <li><p>You can retrieve data with <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> and <code class="docutils literal notranslate"><span class="pre">FROM</span></code>.</p></li>
@@ -3057,79 +1930,53 @@ FROM
 </ul>
 </section>
 <section id="lab-activity-practice-your-sql-highly-recommended">
-<h2>Lab Activity: Practice Your SQL (Highly Recommended!)<a class="headerlink" href="#lab-activity-practice-your-sql-highly-recommended" title="Link to this heading">#</a></h2>
+<h2>Lab Activity: Practice Your SQL (Highly Recommended!)<a class="headerlink" href="#lab-activity-practice-your-sql-highly-recommended" title="Permalink to this heading">#</a></h2>
 <p>Really learning SQL requires hands on practice. You can “run” the following cell to launch a SQL practice app. Please let me (Brendan) know if you notice any issues with it, as it is still under development.</p>
 </section>
 <section id="practice-with-the-loop-of-the-recursive-dragon">
-<h2>Practice with the Loop of the Recursive Dragon<a class="headerlink" href="#practice-with-the-loop-of-the-recursive-dragon" title="Link to this heading">#</a></h2>
+<h2>Practice with the Loop of the Recursive Dragon<a class="headerlink" href="#practice-with-the-loop-of-the-recursive-dragon" title="Permalink to this heading">#</a></h2>
 <p>Sharpen what you just learned with a chapter-matched review set in the <strong>Loop of the Recursive Dragon</strong> — an adaptive review game with multiple question types and RPG-style mechanics, built for this book.</p>
 <p><a class="reference external" href="https://brendanpshea.github.io/LotRD/?set=database_02_select.json"><strong>Launch the Chapter 2 review set →</strong></a></p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
-<p>Use this list as a quick review sheet for the chapter.</p>
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<p>Use this reference sheet to quickly review key Structured Query Language terms.</p>
 <section id="relational-and-sql-basics">
-<h3>Relational and SQL basics<a class="headerlink" href="#relational-and-sql-basics" title="Link to this heading">#</a></h3>
+<h3>Relational and SQL basics<a class="headerlink" href="#relational-and-sql-basics" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Relational model</strong> — A way of organizing data into tables of rows and columns, with each row uniquely identifiable.</p></li>
-<li><p><strong>Table (relation)</strong> — A collection of related records made up of rows and columns.</p></li>
-<li><p><strong>Row (record)</strong> — A single entry in a table, holding one value for each column.</p></li>
-<li><p><strong>Column (field)</strong> — A set of values of the same type, one per row.</p></li>
-<li><p><strong>Primary key</strong> — A unique identifier for each row in a table.</p></li>
-<li><p><strong>Foreign key</strong> — A column in one table that points to a primary key in another, creating a link between the two.</p></li>
-<li><p><strong>SQL</strong> — Structured Query Language, the standard language for working with relational databases.</p></li>
-<li><p><strong>Declarative language</strong> — A language in which you describe the result you want rather than the steps to compute it.</p></li>
-<li><p><strong>Query</strong> — A request for information from a database.</p></li>
-<li><p><strong>SQLite</strong> — A small, file-based relational database engine that needs no server.</p></li>
+<li><p>A <strong>table</strong> is a structured collection of related data organized in vertical columns and horizontal rows.</p></li>
+<li><p>A <strong>column</strong> represents a specific field of information that describes an attribute of our data.</p></li>
+<li><p>A <strong>row</strong> represents a single, complete record containing data values for each column in the table.</p></li>
+<li><p>A <strong>set</strong> is an unordered collection of distinct objects treated as a single, indivisible group.</p></li>
+<li><p>A <strong>predicate</strong> is a logical condition used to filter rows by testing whether a statement is true or false.</p></li>
+<li><p>The <strong>boolean logic</strong> is a system of logic that uses operators like AND, OR, and NOT to combine filters.</p></li>
+<li><p>The <strong>CRUD</strong> acronym represents the four basic operations of database applications, which are Create, Read, Update, and Delete.</p></li>
+<li><p>The <strong>SQL</strong> is the standard Structured Query Language used to query, update, and manage relational databases.</p></li>
+<li><p>The <strong>ANSI SQL standard</strong> defines the core syntax and commands that work identically across almost all database systems.</p></li>
+<li><p>A <strong>SQL dialect</strong> is a vendor-specific extension that adds unique functions and features to the core SQL language.</p></li>
+<li><p>The <strong>SQLite</strong> database is a lightweight, serverless relational database engine optimized for embedded local storage.</p></li>
+<li><p>A <strong>relational database</strong> is a database system that organizes data into tables linked together by unique keys.</p></li>
 </ul>
 </section>
-<section id="core-sql-keywords">
-<h3>Core SQL keywords<a class="headerlink" href="#core-sql-keywords" title="Link to this heading">#</a></h3>
+<section id="query-keywords">
+<h3>Query keywords<a class="headerlink" href="#query-keywords" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">SELECT</span></code></strong> — Names the columns to return from a query.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">*</span></code></strong> — Shorthand that returns every column in a table.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">FROM</span></code></strong> — Names the table the query draws rows from.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code></strong> — Sorts the result set by one or more columns.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ASC</span></code></strong> — Sorts results in ascending order; this is the default if not specified.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">DESC</span></code></strong> — Sorts results in descending order.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">LIMIT</span></code></strong> — Caps the number of rows the query returns.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code></strong> — Removes duplicate rows from the result set.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">WHERE</span></code></strong> — Filters rows to those that match a condition.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">AND</span></code></strong> — Combines conditions so that all of them must be true.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">OR</span></code></strong> — Combines conditions so that at least one must be true.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">NOT</span></code></strong> — Reverses a condition.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NULL</span></code></strong> — Tests whether a value is missing or undefined.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NOT</span> <span class="pre">NULL</span></code></strong> — Tests whether a value is present and defined.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">LIKE</span></code></strong> — Matches text against a pattern using wildcard characters.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">SELECT</span></code></strong> statement is the primary SQL command used to retrieve specific columns of data from a table.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">FROM</span></code></strong> clause specifies the name of the database table you want to query.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code></strong> keyword is used to filter out duplicate rows and return only unique values in your query results.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code></strong> clause is used to sort query results in ascending or descending order based on one or more columns.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">WHERE</span></code></strong> clause is used to filter query results by returning only the rows that meet specific logical conditions.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">LIKE</span></code></strong> operator is used in a <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause to search for matching text patterns using wildcards.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">AS</span></code></strong> keyword is used to create an alias, which temporarily renames a column or table in the query output.</p></li>
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">LIMIT</span></code></strong> clause is used to restrict the total number of rows returned by a query.</p></li>
 </ul>
 </section>
-<section id="pattern-characters-used-with-like">
-<h3>Pattern characters used with <code class="docutils literal notranslate"><span class="pre">LIKE</span></code><a class="headerlink" href="#pattern-characters-used-with-like" title="Link to this heading">#</a></h3>
+<section id="data-and-types">
+<h3>Data and types<a class="headerlink" href="#data-and-types" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">%</span></code></strong> — A wildcard that matches any sequence of zero or more characters.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">_</span></code></strong> — A wildcard that matches exactly one character.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">[CBA]</span></code></strong> — A character class that matches any single character listed in the brackets.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">[A-Z]</span></code></strong> — A character class that matches any single character in the given range.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">[^C]</span></code></strong> — A character class that matches any single character not listed in the brackets.</p></li>
-</ul>
-</section>
-<section id="aggregate-and-math-functions">
-<h3>Aggregate and math functions<a class="headerlink" href="#aggregate-and-math-functions" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">COUNT</span></code></strong> — Returns the number of rows in a group.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">SUM</span></code></strong> — Returns the total of a numeric column.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">AVG</span></code></strong> — Returns the average value of a numeric column.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">MAX</span></code></strong> — Returns the largest value in a column.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">MIN</span></code></strong> — Returns the smallest value in a column.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ROUND</span></code></strong> — Rounds a number to a given number of decimal places.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">FLOOR</span></code></strong> — Returns the largest whole number less than or equal to a value.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">CEIL</span></code></strong> — Returns the smallest whole number greater than or equal to a value.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">AS</span></code></strong> — Gives a column or expression an alias in the result set.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">+</span></code></strong> — Adds two numeric values.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">-</span></code></strong> — Subtracts one numeric value from another.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">*</span></code> (math)</strong> — Multiplies two numeric values.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">/</span></code></strong> — Divides one numeric value by another.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">%</span></code> (math)</strong> — Returns the remainder after division (the modulo operator).</p></li>
+<li><p>The <strong>null</strong> value is a special database marker used to represent missing, unknown, or empty data.</p></li>
+<li><p>An <strong>aggregate function</strong> is a mathematical function (like SUM, AVG, or COUNT) that performs a calculation on a set of values.</p></li>
+<li><p>A <strong>wildcard</strong> is a special character (such as <code class="docutils literal notranslate"><span class="pre">%</span></code> or <code class="docutils literal notranslate"><span class="pre">_</span></code>) used in pattern matching to represent one or more unknown characters in a text search.</p></li>
 </ul>
 </section>
 </section>
@@ -3190,100 +2037,6 @@ FROM
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning Outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brendan-s-lecture">Brendan’s Lecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-why-databases-changed">Background: Why Databases Changed</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#early-electronic-models">Early electronic models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-the-relational-model-mattered">Why the relational model mattered</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphic-physical-independence">Graphic: Physical Independence</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sets-and-logic-how-sql-thinks-about-data">Sets and Logic: How SQL Thinks About Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-set">What is a set?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#true-or-false-questions">True or false questions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-what-you-want-not-how-to-get-it">Describing what you want, not how to get it</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-sets-together">Putting sets together</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-four-basic-database-operations-crud">The Four Basic Database Operations: CRUD</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-five-parts-of-sql">The Five Parts of SQL</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-definition-language-ddl">1. Data Definition Language (DDL)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-manipulation-language-dml">2. Data Manipulation Language (DML)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-query-language-dql">3. Data Query Language (DQL)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-control-language-dcl">4. Data Control Language (DCL)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transaction-control-language-tcl">5. Transaction Control Language (TCL)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-standards-and-varieties-how-one-language-became-many">SQL Standards and Varieties: How One Language Became Many</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-flavors-still-exist">Why “flavors” still exist</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sqlite">SQLite</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql">PostgreSQL</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#other-common-varieties">Other common varieties</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-different-are-they-really">How different are they really?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-sqlite-in-google-colab">Getting Started With SQLite in Google Colab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-to-know-the-books-table">Getting to Know the Books Table</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-and-from">SELECT and FROM</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-all-columns">Selecting all columns</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-specific-columns">Selecting specific columns</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-distinct-values">Selecting DISTINCT values</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#order-by">ORDER BY</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where">WHERE</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sqlite-syntax-rules">SQLite Syntax Rules</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-syntax-rules">Key Syntax Rules</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#semicolons">1. Semicolons (;)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#capitalization">2. Capitalization</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#line-breaks">3. Line breaks</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#single-vs-double-quotes">4. Single vs. double quotes</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comments">5. Comments</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-null-values">Handling NULL Values</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#like">LIKE</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-book-titles-starting-with-the">Example: Book titles starting with ‘The’</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-author-names-containing-lewis">Example: Author Names Containing <code class="docutils literal notranslate"><span class="pre">Lewis</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-functions-and-aliasing-with-as">Aggregate Functions and Aliasing with AS</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-aggregate-functions">Examples of aggregate functions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-aggregate-functions-with-where-clauses">Combining Aggregate Functions with WHERE Clauses</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aliasing-with-as">Aliasing with AS</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-math-operations-and-functions-in-sql">Basic Math Operations and Functions in SQL</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-activity-practice-your-sql-highly-recommended">Lab Activity: Practice Your SQL (Highly Recommended!)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-the-loop-of-the-recursive-dragon">Practice with the Loop of the Recursive Dragon</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relational-and-sql-basics">Relational and SQL basics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-sql-keywords">Core SQL keywords</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pattern-characters-used-with-like">Pattern characters used with <code class="docutils literal notranslate"><span class="pre">LIKE</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-and-math-functions">Aggregate and math functions</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
             
           </div>
           <footer class="bd-footer-content">
@@ -3327,8 +2080,8 @@ By Brendan Shea, PhD
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

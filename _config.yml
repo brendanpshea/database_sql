@@ -46,6 +46,9 @@ sphinx:
       - custom.css
     html_js_files:
       - sandbox-html-output.js
+    html_theme_options:
+      secondary_sidebar_items: []
+
 
 repository:
   url: https://github.com/brendanpshea/database_sql

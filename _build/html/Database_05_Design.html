@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Database Design &#8212; SQL and Database Management Through Pop Culture</title>
   
@@ -16,63 +17,64 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=30c8ad15" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
+    <script src="_static/sandbox-html-output.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script type="application/vnd.jupyter.widget-state+json">{"state": {"b986468f229a46bcba41184b73599980": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "19eb9a2764a94988aabc11efd3aae497": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_b986468f229a46bcba41184b73599980", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}, "3e5466aba5014188b9b7d4e32ab8b864": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "97e3f81cd3b940a383dff62d89fb00d0": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_3e5466aba5014188b9b7d4e32ab8b864", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}, "ff67c33a6fc74b4a8a6fe17b25459682": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2aaba43a01144d538adcd6942144ce0b": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_ff67c33a6fc74b4a8a6fe17b25459682", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {}, "data": {"text/plain": "HTML(value='<span>No tables available.</span>')", "application/vnd.jupyter.widget-view+json": {"version_major": 2, "version_minor": 0, "model_id": "7a6f9617a77b4312a56a6021421d9635"}}}], "tabbable": null, "tooltip": null}}, "9913248b87bc45bd9b5d79203013938b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "a10daa3421ce4b44930c05ffa1ed6ddb": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "bar_color": null, "description_width": "initial"}}, "474a1bef63ee40988362c74fb0151f66": {"model_name": "IntProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "IntProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ProgressView", "bar_style": "info", "description": "Progress:", "description_allow_html": false, "layout": "IPY_MODEL_9913248b87bc45bd9b5d79203013938b", "max": 100, "min": 0, "orientation": "horizontal", "style": "IPY_MODEL_a10daa3421ce4b44930c05ffa1ed6ddb", "tabbable": null, "tooltip": null, "value": 0}}, "01cf16d8f22d49cbb650dd8c60324bdd": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "1ee3e04767544ffb8dc62de5442780c5": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "f0e900e56b3f42f2894aa97c4f79dc73": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_01cf16d8f22d49cbb650dd8c60324bdd", "placeholder": "\u200b", "style": "IPY_MODEL_1ee3e04767544ffb8dc62de5442780c5", "tabbable": null, "tooltip": null, "value": "<h2>Question 1 of 38:</h2><p>Create a table named \"agents\" that includes an integer column 'agent_id' as the primary key and a text column 'name' for the agent's name.</p>"}}, "39b63bb09ca843e1861c0bab148c6cd1": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "8e0fea6e41fd4c92a82bf4a26627d91d": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "d4cd90209688406f9d226ef1007d80c1": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_39b63bb09ca843e1861c0bab148c6cd1", "placeholder": "\u200b", "style": "IPY_MODEL_8e0fea6e41fd4c92a82bf4a26627d91d", "tabbable": null, "tooltip": null, "value": "<h3>Table Schema:</h3>"}}, "661f04d2d0284d6297ad83b9bcbd912f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "200px"}}, "2c455a6c6c2547949fcc0c2d28a07dd7": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": ""}}, "71ec0b03dd894bd6bbbde959d1e80eb2": {"model_name": "DropdownModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "DropdownModel", "_options_labels": ["Question 1", "Question 2", "Question 3", "Question 4", "Question 5", "Question 6", "Question 7", "Question 8", "Question 9", "Question 10", "Question 11", "Question 12", "Question 13", "Question 14", "Question 15", "Question 16", "Question 17", "Question 18", "Question 19", "Question 20", "Question 21", "Question 22", "Question 23", "Question 24", "Question 25", "Question 26", "Question 27", "Question 28", "Question 29", "Question 30", "Question 31", "Question 32", "Question 33", "Question 34", "Question 35", "Question 36", "Question 37", "Question 38"], "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "DropdownView", "description": "Go to:", "description_allow_html": false, "disabled": false, "index": 0, "layout": "IPY_MODEL_661f04d2d0284d6297ad83b9bcbd912f", "style": "IPY_MODEL_2c455a6c6c2547949fcc0c2d28a07dd7", "tabbable": null, "tooltip": null}}, "5cd3ca771e4e457e9f570fc7569e3d7b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "120px", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "67057bddbae74112ae1df2b3eebf88ba": {"model_name": "TextStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "TextStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "476d94a5057c4696a0a92c3156ee84fa": {"model_name": "TextareaModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "TextareaModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "TextareaView", "continuous_update": true, "description": "Your SQL:", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_5cd3ca771e4e457e9f570fc7569e3d7b", "placeholder": "-- Write your SQL query here", "rows": null, "style": "IPY_MODEL_67057bddbae74112ae1df2b3eebf88ba", "tabbable": null, "tooltip": null, "value": ""}}, "51b0783802fd489bbc05c2b698ce9324": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": "inline-block", "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "100px"}}, "f2e2e4bfdf434ab3aa530c4bce512580": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "f219777e133449679eb053443791b1a6": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "primary", "description": "Submit", "disabled": false, "icon": "", "layout": "IPY_MODEL_51b0783802fd489bbc05c2b698ce9324", "style": "IPY_MODEL_f2e2e4bfdf434ab3aa530c4bce512580", "tabbable": null, "tooltip": null}}, "d1c5d32238c54922a8ba60b88a69d18a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": "none", "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "100px"}}, "5586d410318f49b29d338d65bb8ae74e": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "db148473f48e470989e84e800002531d": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "warning", "description": "Retry", "disabled": false, "icon": "", "layout": "IPY_MODEL_d1c5d32238c54922a8ba60b88a69d18a", "style": "IPY_MODEL_5586d410318f49b29d338d65bb8ae74e", "tabbable": null, "tooltip": null}}, "4315a0d5de864fd18083468eb20b3b90": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": "none", "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "100px"}}, "0fd81846f62c4cbaa19ceca6dee120b3": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "5cffeb4407ac43e0bc4e572707288a3b": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "success", "description": "Next", "disabled": false, "icon": "", "layout": "IPY_MODEL_4315a0d5de864fd18083468eb20b3b90", "style": "IPY_MODEL_0fd81846f62c4cbaa19ceca6dee120b3", "tabbable": null, "tooltip": null}}, "39eda593d4be44e2835e83133632d8e0": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": "center", "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "234413142918485699b4c02e8fc221b1": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_f219777e133449679eb053443791b1a6", "IPY_MODEL_db148473f48e470989e84e800002531d", "IPY_MODEL_5cffeb4407ac43e0bc4e572707288a3b"], "layout": "IPY_MODEL_39eda593d4be44e2835e83133632d8e0", "tabbable": null, "tooltip": null}}, "980467b2cbc248479cbd33e9e01e7508": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": "space-between", "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "84fa12b6cb3c46508debacb300139b42": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_d4cd90209688406f9d226ef1007d80c1", "IPY_MODEL_71ec0b03dd894bd6bbbde959d1e80eb2"], "layout": "IPY_MODEL_980467b2cbc248479cbd33e9e01e7508", "tabbable": null, "tooltip": null}}, "657d013ab06842e9bc3c3bda58a218ec": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": "solid 1px #ddd", "border_left": "solid 1px #ddd", "border_right": "solid 1px #ddd", "border_top": "solid 1px #ddd", "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": "20px", "right": null, "top": null, "visibility": null, "width": "800px"}}, "354892f3d0c64c65af7c6212b2174069": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_474a1bef63ee40988362c74fb0151f66", "IPY_MODEL_84fa12b6cb3c46508debacb300139b42", "IPY_MODEL_f0e900e56b3f42f2894aa97c4f79dc73", "IPY_MODEL_476d94a5057c4696a0a92c3156ee84fa", "IPY_MODEL_234413142918485699b4c02e8fc221b1", "IPY_MODEL_19eb9a2764a94988aabc11efd3aae497", "IPY_MODEL_97e3f81cd3b940a383dff62d89fb00d0"], "layout": "IPY_MODEL_657d013ab06842e9bc3c3bda58a218ec", "tabbable": null, "tooltip": null}}, "5430e407b7184a7d99f269de488660b1": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "fa13f311b95c4b4b9e9bcd120bfb2099": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "0b5ec08ece66490f9481e213836ae367": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_5430e407b7184a7d99f269de488660b1", "placeholder": "\u200b", "style": "IPY_MODEL_fa13f311b95c4b4b9e9bcd120bfb2099", "tabbable": null, "tooltip": null, "value": "<h2>Current Tables Content</h2>"}}, "26bf781467234040bdb48674be248f98": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": "solid 1px #ddd", "border_left": "solid 1px #ddd", "border_right": "solid 1px #ddd", "border_top": "solid 1px #ddd", "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": "20px", "right": null, "top": null, "visibility": null, "width": "800px"}}, "2421c598d9b74b2e910a389e7f9d92c8": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_0b5ec08ece66490f9481e213836ae367", "IPY_MODEL_2aaba43a01144d538adcd6942144ce0b"], "layout": "IPY_MODEL_26bf781467234040bdb48674be248f98", "tabbable": null, "tooltip": null}}, "20cbcea20d734082839dfea0fd9a9c7e": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "9fc625bed1fa4c4e9f7e2f417b560eea": {"model_name": "TabModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "TabModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "TabView", "box_style": "", "children": ["IPY_MODEL_354892f3d0c64c65af7c6212b2174069", "IPY_MODEL_2421c598d9b74b2e910a389e7f9d92c8"], "layout": "IPY_MODEL_20cbcea20d734082839dfea0fd9a9c7e", "selected_index": 0, "tabbable": null, "titles": ["Quiz", "View Tables"], "tooltip": null}}, "2d3a61efbd7e447a991417274adbd4a9": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f8d0f5d0d39b41518db6467652c3f8d8": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "7a6f9617a77b4312a56a6021421d9635": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_2d3a61efbd7e447a991417274adbd4a9", "placeholder": "\u200b", "style": "IPY_MODEL_f8d0f5d0d39b41518db6467652c3f8d8", "tabbable": null, "tooltip": null, "value": "<span>No tables available.</span>"}}}, "version_major": 2, "version_minor": 0}</script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Database_05_Design';</script>
-    <script src="_static/sandbox-html-output.js?v=a1fc3548"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Writing Data With Rolling Stone’s Greatest Albums" href="Database_06_WritingData.html" />
     <link rel="prev" title="Super Select: Advanced Retrieval With Mario Brothers Plumbing" href="Database_04_AdvancedSelect.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -88,8 +90,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -97,15 +110,16 @@
   <input type="search"
          class="form-control"
          name="q"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -121,8 +135,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -152,27 +165,12 @@
     
     
     <img src="_static/database_cover.jpg" class="logo__image only-light" alt="SQL and Database Management Through Pop Culture - Home"/>
-    <img src="_static/database_cover.jpg" class="logo__image only-dark pst-js-only" alt="SQL and Database Management Through Pop Culture - Home"/>
+    <script>document.write(`<img src="_static/database_cover.jpg" class="logo__image only-dark" alt="SQL and Database Management Through Pop Culture - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="index.html">
-                    SQL and Database Management Through Pop Culture
-                </a>
-            </li>
-        </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Database_00_Introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Database_01_StarShipSQL.html">Starship SQL: An Introduction to Databases</a></li>
@@ -201,14 +199,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -227,9 +220,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -239,52 +232,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/./Database_05_Design.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="Colab logo" src="_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-<a href="https://github.com/brendanpshea/database_sql" target="_blank"
-   class="btn btn-sm btn-source-repository-button"
-   title="Source repository"
-   data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
-
 
 
 
@@ -337,7 +284,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -351,19 +298,27 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -486,11 +441,11 @@
                   
   <p><a href="https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_05_Design.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section id="database-design">
-<h1>Database Design<a class="headerlink" href="#database-design" title="Link to this heading">#</a></h1>
+<h1>Database Design<a class="headerlink" href="#database-design" title="Permalink to this heading">#</a></h1>
 <p><em>Database and SQL Through Pop Culture | Brendan Shea, PhD</em></p>
 <p>Welcome to the exciting world of database design. In this chapter, we move through the full process of creating a database from scratch. We begin with conceptual modeling, where we identify the key entities, attributes, and relationships in our spy academy database. From there, we move to logical modeling, where keys, normalization, and join tables help us avoid redundancy and protect data integrity. Finally, we move into physical modeling, where we use SQL to create, modify, and delete tables in SQLite.</p>
 <section id="learning-outcomes">
-<h2>Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Link to this heading">#</a></h2>
+<h2>Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this heading">#</a></h2>
 <p>By the end of this chapter, you will be able to:</p>
 <ol class="arabic simple">
 <li><p>Distinguish conceptual, logical, and physical database design.</p></li>
@@ -504,7 +459,7 @@
 <p>Keywords: database design, conceptual modeling, logical modeling, physical modeling, entities, attributes, relationships, ERD, primary key, foreign key, normalization, 1NF, 2NF, 3NF, join tables, data types, constraints, CREATE TABLE, DROP TABLE</p>
 </section>
 <section id="brendan-s-lecture">
-<h2>Brendan’s Lecture<a class="headerlink" href="#brendan-s-lecture" title="Link to this heading">#</a></h2>
+<h2>Brendan’s Lecture<a class="headerlink" href="#brendan-s-lecture" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">YouTubeVideo</span>
@@ -526,15 +481,15 @@
 </div>
 </section>
 <section id="conceptual-design-at-the-covert-academy">
-<h2>Conceptual Design at the Covert Academy<a class="headerlink" href="#conceptual-design-at-the-covert-academy" title="Link to this heading">#</a></h2>
+<h2>Conceptual Design at the Covert Academy<a class="headerlink" href="#conceptual-design-at-the-covert-academy" title="Permalink to this heading">#</a></h2>
 <p>Welcome to the Covert Academy, the world’s premier educational institution for aspiring secret agents! Our state-of-the-art facility is hidden beneath the streets of London and equipped with the latest in espionage technology. We offer a wide range of classes to train our students in the arts of surveillance, infiltration, disguise, and more.</p>
 <p>To keep track of our students and classes, we need a well-designed database. Let’s walk through the process of conceptual design for this database.</p>
 <section id="what-is-conceptual-design">
-<h3>What is Conceptual Design?<a class="headerlink" href="#what-is-conceptual-design" title="Link to this heading">#</a></h3>
+<h3>What is Conceptual Design?<a class="headerlink" href="#what-is-conceptual-design" title="Permalink to this heading">#</a></h3>
 <p>Conceptual design is the first step in creating a database. It involves <strong>formulating business rules</strong>, which define how the database should work and what constraints it should have. It also involves creating a <strong>preliminary list of entities and attributes</strong>, which represent the key concepts and data elements in the system. Finally, it involves creating a <strong>preliminary Entity-Relationship Diagram (ERD)</strong> to visually represent the entities and their relationships.</p>
 </section>
 <section id="formulating-business-rules">
-<h3>Formulating Business Rules<a class="headerlink" href="#formulating-business-rules" title="Link to this heading">#</a></h3>
+<h3>Formulating Business Rules<a class="headerlink" href="#formulating-business-rules" title="Permalink to this heading">#</a></h3>
 <p><strong>Business rules</strong> are concise, unambiguous statements that define or constrain some aspect of the database. They are derived through a combination of <strong>descriptive processes</strong>, such as interviewing stakeholders to understand their needs and requirements, and <strong>normative processes</strong>, which involve making decisions about how the system should work.</p>
 <p>For the Covert Academy, we have the following business rules:</p>
 <ol class="arabic simple">
@@ -550,7 +505,7 @@
 </ul>
 </section>
 <section id="preliminary-list-of-entities-and-attributes">
-<h3>Preliminary List of Entities and Attributes<a class="headerlink" href="#preliminary-list-of-entities-and-attributes" title="Link to this heading">#</a></h3>
+<h3>Preliminary List of Entities and Attributes<a class="headerlink" href="#preliminary-list-of-entities-and-attributes" title="Permalink to this heading">#</a></h3>
 <p>Based on our business rules, we can identify our preliminary <strong>entities</strong>, which are the key concepts or objects in our system, and their <strong>attributes</strong>, which are the data elements that describe each entity.</p>
 <p>For the Covert Academy, our entities and attributes are:</p>
 <p><strong>Student</strong></p>
@@ -570,7 +525,7 @@
 <p>Note that at this stage, we don’t include data types, identifier columns, or join tables. We’re just focusing on the core entities and their key attributes.</p>
 </section>
 <section id="preliminary-erd">
-<h3>Preliminary ERD<a class="headerlink" href="#preliminary-erd" title="Link to this heading">#</a></h3>
+<h3>Preliminary ERD<a class="headerlink" href="#preliminary-erd" title="Permalink to this heading">#</a></h3>
 <p>Finally, we can create a preliminary ERD to visualize our entities and their relationship. Here’s what it looks like for the Covert Academy:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -581,7 +536,7 @@
 </section>
 </section>
 <section id="what-is-logical-modeling">
-<h2>What is Logical Modeling?<a class="headerlink" href="#what-is-logical-modeling" title="Link to this heading">#</a></h2>
+<h2>What is Logical Modeling?<a class="headerlink" href="#what-is-logical-modeling" title="Permalink to this heading">#</a></h2>
 <p>In the previous section, we laid the conceptual foundation for the Covert Academy’s database. Now it’s time to take that conceptual model and transform it into a <strong>logical model</strong> using the <strong>relational model</strong>.</p>
 <p>Logical modeling is the process of taking a conceptual model and adapting it to fit a specific logical data model. In our case, we’ll be using the <strong>relational model</strong>, which organizes data into <strong>tables</strong> (also known as relations) with <strong>rows</strong> (also known as tuples) and <strong>columns</strong> (also known as attributes).</p>
 <p>In the relational model:</p>
@@ -592,7 +547,7 @@
 <li><p>Each table should have a <strong>primary key</strong>, a unique identifier for each row</p></li>
 </ul>
 <section id="resolving-many-to-many-relationships">
-<h3>Resolving Many-to-Many Relationships<a class="headerlink" href="#resolving-many-to-many-relationships" title="Link to this heading">#</a></h3>
+<h3>Resolving Many-to-Many Relationships<a class="headerlink" href="#resolving-many-to-many-relationships" title="Permalink to this heading">#</a></h3>
 <p>In our conceptual model, we had a many-to-many relationship between <strong>STUDENT</strong> and <strong>CLASS</strong>. However, in the relational model, we can’t directly represent many-to-many relationships. Instead, we need to introduce a <strong>join table</strong>.</p>
 <p>A join table is a table that breaks down a many-to-many relationship into two one-to-many relationships. It does this by having foreign keys to both of the original tables.</p>
 <p>For the Covert Academy, our join table will be called <strong>ENROLLMENT</strong>. It will have the following structure:</p>
@@ -609,7 +564,7 @@
 </ul>
 </section>
 <section id="choosing-primary-keys">
-<h3>Choosing Primary Keys<a class="headerlink" href="#choosing-primary-keys" title="Link to this heading">#</a></h3>
+<h3>Choosing Primary Keys<a class="headerlink" href="#choosing-primary-keys" title="Permalink to this heading">#</a></h3>
 <p>Each table in our database needs a primary key. A primary key is a unique identifier for each row in a table. There are two main options for primary keys:</p>
 <ol class="arabic simple">
 <li><p><strong>Natural Key</strong>: A natural key is a key that uses one of the existing attributes of the entity. For example, we could use a student’s email as the primary key for the STUDENT table. Natural keys can be convenient because they don’t require an additional column. However, they can also be problematic if the natural key ever needs to change.</p></li>
@@ -618,7 +573,7 @@
 <p>For the Covert Academy, we’ll use surrogate keys for all of our tables. We’ll call these <code class="docutils literal notranslate"><span class="pre">ID</span></code> columns.</p>
 </section>
 <section id="updated-erd">
-<h3>Updated ERD<a class="headerlink" href="#updated-erd" title="Link to this heading">#</a></h3>
+<h3>Updated ERD<a class="headerlink" href="#updated-erd" title="Permalink to this heading">#</a></h3>
 <p>With these changes in mind, here’s our updated ERD:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -631,10 +586,10 @@
 </section>
 </section>
 <section id="logical-modeling-normalization">
-<h2>Logical Modeling: Normalization<a class="headerlink" href="#logical-modeling-normalization" title="Link to this heading">#</a></h2>
+<h2>Logical Modeling: Normalization<a class="headerlink" href="#logical-modeling-normalization" title="Permalink to this heading">#</a></h2>
 <p>Normalization helps you organize tables so each fact is stored once and relationships stay clear.</p>
 <section id="why-normalize">
-<h3>Why normalize?<a class="headerlink" href="#why-normalize" title="Link to this heading">#</a></h3>
+<h3>Why normalize?<a class="headerlink" href="#why-normalize" title="Permalink to this heading">#</a></h3>
 <p>A single table that mixes agents, missions, and handler contacts looks convenient, but it creates:</p>
 <ol class="arabic simple">
 <li><p>Redundant data</p></li>
@@ -645,7 +600,7 @@
 <p>Using the SPECTRE Academy example, repeating handler phone numbers or storing many skills in one field makes the design hard to maintain.</p>
 </section>
 <section id="first-normal-form-1nf">
-<h3>First Normal Form (1NF)<a class="headerlink" href="#first-normal-form-1nf" title="Link to this heading">#</a></h3>
+<h3>First Normal Form (1NF)<a class="headerlink" href="#first-normal-form-1nf" title="Permalink to this heading">#</a></h3>
 <p>A table is in 1NF when:</p>
 <ol class="arabic simple">
 <li><p>Each column holds one value per row.</p></li>
@@ -661,7 +616,7 @@
 <p>That change makes each skill searchable, sortable, and easy to validate.</p>
 </section>
 <section id="nf-checklist-and-tradeoffs">
-<h3>1NF Checklist and Tradeoffs<a class="headerlink" href="#nf-checklist-and-tradeoffs" title="Link to this heading">#</a></h3>
+<h3>1NF Checklist and Tradeoffs<a class="headerlink" href="#nf-checklist-and-tradeoffs" title="Permalink to this heading">#</a></h3>
 <p>Common warning signs:</p>
 <ul class="simple">
 <li><p>comma-separated lists in one column</p></li>
@@ -679,7 +634,7 @@
 </section>
 </section>
 <section id="second-normal-form-2nf">
-<h2>Second Normal Form (2NF)<a class="headerlink" href="#second-normal-form-2nf" title="Link to this heading">#</a></h2>
+<h2>Second Normal Form (2NF)<a class="headerlink" href="#second-normal-form-2nf" title="Permalink to this heading">#</a></h2>
 <p>Once a database achieves First Normal Form, the next step is to evaluate it for Second Normal Form compliance. Second Normal Form builds upon 1NF by addressing a specific type of data dependency.</p>
 <p>A table is in Second Normal Form when:</p>
 <ol class="arabic simple">
@@ -688,7 +643,7 @@
 </ol>
 <p>The concept of <strong>functional dependency</strong> means that one attribute’s value determines another attribute’s value. A <strong>full functional dependency</strong> exists when an attribute depends on the entire primary key, not just part of it.</p>
 <section id="recognizing-partial-dependencies">
-<h3>Recognizing Partial Dependencies<a class="headerlink" href="#recognizing-partial-dependencies" title="Link to this heading">#</a></h3>
+<h3>Recognizing Partial Dependencies<a class="headerlink" href="#recognizing-partial-dependencies" title="Permalink to this heading">#</a></h3>
 <p>Let’s examine a table from our spy training academy that tracks agent certifications:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -730,7 +685,7 @@
 <p>The partial dependencies in this table violate Second Normal Form because SkillName and SkillDifficulty depend only on SkillID, which is just part of the primary key.</p>
 </section>
 <section id="converting-to-2nf">
-<h3>Converting to 2NF<a class="headerlink" href="#converting-to-2nf" title="Link to this heading">#</a></h3>
+<h3>Converting to 2NF<a class="headerlink" href="#converting-to-2nf" title="Permalink to this heading">#</a></h3>
 <p>To achieve Second Normal Form, we separate the attributes that depend on only part of the primary key into their own table:</p>
 <p><strong>AGENT_CERTIFICATIONS table:</strong></p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -778,7 +733,7 @@
 </div>
 </section>
 <section id="another-2nf-example">
-<h3>Another 2NF Example<a class="headerlink" href="#another-2nf-example" title="Link to this heading">#</a></h3>
+<h3>Another 2NF Example<a class="headerlink" href="#another-2nf-example" title="Permalink to this heading">#</a></h3>
 <p>Consider a table tracking mission equipment assignments:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -884,7 +839,7 @@
 </div>
 </section>
 <section id="benefits-of-second-normal-form">
-<h3>Benefits of Second Normal Form<a class="headerlink" href="#benefits-of-second-normal-form" title="Link to this heading">#</a></h3>
+<h3>Benefits of Second Normal Form<a class="headerlink" href="#benefits-of-second-normal-form" title="Permalink to this heading">#</a></h3>
 <p>Moving to Second Normal Form provides several important benefits:</p>
 <ol class="arabic simple">
 <li><p>Data consistency improves because information about each entity is stored in only one place.</p></li>
@@ -894,7 +849,7 @@
 </ol>
 </section>
 <section id="common-2nf-mistakes-to-avoid">
-<h3>Common 2NF Mistakes to Avoid<a class="headerlink" href="#common-2nf-mistakes-to-avoid" title="Link to this heading">#</a></h3>
+<h3>Common 2NF Mistakes to Avoid<a class="headerlink" href="#common-2nf-mistakes-to-avoid" title="Permalink to this heading">#</a></h3>
 <p>Database designers should watch for these common issues when working with Second Normal Form:</p>
 <ol class="arabic simple">
 <li><p>Composite keys are sometimes overlooked when analyzing dependencies, leading to incomplete normalization.</p></li>
@@ -905,7 +860,7 @@
 </section>
 </section>
 <section id="third-normal-form-and-beyond">
-<h2>Third Normal Form and Beyond<a class="headerlink" href="#third-normal-form-and-beyond" title="Link to this heading">#</a></h2>
+<h2>Third Normal Form and Beyond<a class="headerlink" href="#third-normal-form-and-beyond" title="Permalink to this heading">#</a></h2>
 <p>Third Normal Form (3NF) removes transitive dependencies. A transitive dependency happens when a non-key field depends on another non-key field instead of directly on the key.</p>
 <p>Example:</p>
 <p><code class="docutils literal notranslate"><span class="pre">AGENT(AgentID,</span> <span class="pre">Name,</span> <span class="pre">HandlerID,</span> <span class="pre">HandlerName,</span> <span class="pre">HandlerRank)</span></code></p>
@@ -917,7 +872,7 @@
 </ul>
 <p>This reduces duplication and keeps handler updates in one place.</p>
 <section id="practical-normalization-strategy">
-<h3>Practical Normalization Strategy<a class="headerlink" href="#practical-normalization-strategy" title="Link to this heading">#</a></h3>
+<h3>Practical Normalization Strategy<a class="headerlink" href="#practical-normalization-strategy" title="Permalink to this heading">#</a></h3>
 <p>Use this workflow when reviewing a design:</p>
 <ol class="arabic simple">
 <li><p>Get each table into 1NF.</p></li>
@@ -935,12 +890,12 @@
 </section>
 </section>
 <section id="quiz-normalize-this">
-<h2>Quiz: Normalize This<a class="headerlink" href="#quiz-normalize-this" title="Link to this heading">#</a></h2>
+<h2>Quiz: Normalize This<a class="headerlink" href="#quiz-normalize-this" title="Permalink to this heading">#</a></h2>
 <p><strong>Interactive activity:</strong> Open this standalone page to use the activity in the Jupyter Book or from Colab.</p>
 <p><a class="reference external" href="https://brendanpshea.github.io/database_sql/_static/games/database-normalization-quiz.html">Open the database normalization quiz</a></p>
 </section>
 <section id="physical-modeling-bringing-the-database-to-life">
-<h2>Physical Modeling - Bringing the Database to Life<a class="headerlink" href="#physical-modeling-bringing-the-database-to-life" title="Link to this heading">#</a></h2>
+<h2>Physical Modeling - Bringing the Database to Life<a class="headerlink" href="#physical-modeling-bringing-the-database-to-life" title="Permalink to this heading">#</a></h2>
 <p>We’ve conceptually designed our database and transformed it into a logical model using the relational model and normalization techniques. Now it’s time for the exciting part - actually creating our database!</p>
 <p><strong>Physical modeling</strong> is the process of taking the logical model and implementing it in a specific database management system (DBMS). This involves defining the actual tables, columns, data types, and constraints in the database using the Data Definition Language (DDL) of the chosen DBMS.</p>
 <p>For the Covert Academy’s database, we’ll be using <strong>SQLite</strong> (which is what we’ve used in the class so far).</p>
@@ -954,10 +909,10 @@
 <p>SQLite, like most modern DBMSs, uses <strong>SQL (Structured Query Language)</strong> for defining and manipulating databases.</p>
 </section>
 <section id="ansi-sql-data-types-big-picture">
-<h2>ANSI SQL Data Types: Big Picture<a class="headerlink" href="#ansi-sql-data-types-big-picture" title="Link to this heading">#</a></h2>
+<h2>ANSI SQL Data Types: Big Picture<a class="headerlink" href="#ansi-sql-data-types-big-picture" title="Permalink to this heading">#</a></h2>
 <p>The ANSI/ISO SQL standard gives database systems a shared vocabulary for types, but each DBMS implements that standard a little differently.</p>
 <section id="common-type-families">
-<h3>Common type families<a class="headerlink" href="#common-type-families" title="Link to this heading">#</a></h3>
+<h3>Common type families<a class="headerlink" href="#common-type-families" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Numeric: <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code>, <code class="docutils literal notranslate"><span class="pre">SMALLINT</span></code>, <code class="docutils literal notranslate"><span class="pre">BIGINT</span></code>, <code class="docutils literal notranslate"><span class="pre">DECIMAL</span></code>, <code class="docutils literal notranslate"><span class="pre">REAL</span></code></p></li>
 <li><p>Character: <code class="docutils literal notranslate"><span class="pre">CHAR</span></code>, <code class="docutils literal notranslate"><span class="pre">VARCHAR</span></code>, <code class="docutils literal notranslate"><span class="pre">TEXT</span></code></p></li>
@@ -967,7 +922,7 @@
 </ul>
 </section>
 <section id="why-the-standard-matters">
-<h3>Why the standard matters<a class="headerlink" href="#why-the-standard-matters" title="Link to this heading">#</a></h3>
+<h3>Why the standard matters<a class="headerlink" href="#why-the-standard-matters" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>improves portability between database systems</p></li>
 <li><p>helps teams talk about schema choices precisely</p></li>
@@ -977,7 +932,7 @@
 </section>
 </section>
 <section id="sqlite-type-affinity-in-practice">
-<h2>SQLite Type Affinity in Practice<a class="headerlink" href="#sqlite-type-affinity-in-practice" title="Link to this heading">#</a></h2>
+<h2>SQLite Type Affinity in Practice<a class="headerlink" href="#sqlite-type-affinity-in-practice" title="Permalink to this heading">#</a></h2>
 <p>SQLite is more flexible than many other databases. Instead of enforcing types rigidly, it uses five storage classes:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">NULL</span></code></p></li>
@@ -998,10 +953,10 @@
 <p>The design takeaway is simple: declare types clearly even in SQLite, because the schema communicates your intent to both the database and future readers.</p>
 </section>
 <section id="practical-database-design-for-beginners">
-<h2>Practical Database Design for Beginners<a class="headerlink" href="#practical-database-design-for-beginners" title="Link to this heading">#</a></h2>
+<h2>Practical Database Design for Beginners<a class="headerlink" href="#practical-database-design-for-beginners" title="Permalink to this heading">#</a></h2>
 <p>When you’re creating your first database for an intelligence operation (or any application), choosing the right data types is one of the most important decisions you’ll make. Here are some straightforward guidelines:</p>
 <section id="choosing-the-right-data-type">
-<h3>Choosing the Right Data Type<a class="headerlink" href="#choosing-the-right-data-type" title="Link to this heading">#</a></h3>
+<h3>Choosing the Right Data Type<a class="headerlink" href="#choosing-the-right-data-type" title="Permalink to this heading">#</a></h3>
 <p><em>Keep it simple when starting out.</em> Begin with these basic types for most of your needs:</p>
 <ul class="simple">
 <li><p><strong>INTEGER</strong> for IDs, counts, and whole numbers</p></li>
@@ -1019,7 +974,7 @@
 </ul>
 </section>
 <section id="examples-of-basic-data-type-decisions">
-<h3>Examples of Basic Data Type Decisions<a class="headerlink" href="#examples-of-basic-data-type-decisions" title="Link to this heading">#</a></h3>
+<h3>Examples of Basic Data Type Decisions<a class="headerlink" href="#examples-of-basic-data-type-decisions" title="Permalink to this heading">#</a></h3>
 <p>For an agent management system, you might choose:</p>
 <ul class="simple">
 <li><p>agent_id: <strong>INTEGER</strong> - Simple, efficient for primary keys</p></li>
@@ -1038,7 +993,7 @@
 </ul>
 </section>
 <section id="sqlite-s-simple-approach-for-beginners">
-<h3>SQLite’s Simple Approach for Beginners<a class="headerlink" href="#sqlite-s-simple-approach-for-beginners" title="Link to this heading">#</a></h3>
+<h3>SQLite’s Simple Approach for Beginners<a class="headerlink" href="#sqlite-s-simple-approach-for-beginners" title="Permalink to this heading">#</a></h3>
 <p><em>SQLite makes data types easier for beginners.</em> Unlike other databases, SQLite is flexible about data types. This means:</p>
 <ul class="simple">
 <li><p>You can store a number in a TEXT column (it will convert automatically)</p></li>
@@ -1087,7 +1042,7 @@
 </div>
 </section>
 <section id="common-beginner-mistakes-to-avoid">
-<h3>Common Beginner Mistakes to Avoid<a class="headerlink" href="#common-beginner-mistakes-to-avoid" title="Link to this heading">#</a></h3>
+<h3>Common Beginner Mistakes to Avoid<a class="headerlink" href="#common-beginner-mistakes-to-avoid" title="Permalink to this heading">#</a></h3>
 <p><em>Using TEXT for everything.</em> While SQLite allows this, it’s not a good practice because:</p>
 <ul class="simple">
 <li><p>You lose the ability to do proper numeric sorting (TEXT “10” comes before “2”)</p></li>
@@ -1103,7 +1058,7 @@
 <p><em>Forgetting about NULL values.</em> Decide whether each column should allow NULL values (unknown/missing information) or require data.</p>
 </section>
 <section id="simple-performance-tips">
-<h3>Simple Performance Tips<a class="headerlink" href="#simple-performance-tips" title="Link to this heading">#</a></h3>
+<h3>Simple Performance Tips<a class="headerlink" href="#simple-performance-tips" title="Permalink to this heading">#</a></h3>
 <p><em>Make smart choices for smoother operations:</em></p>
 <ul class="simple">
 <li><p>Use INTEGER for primary keys and foreign keys when possible</p></li>
@@ -1113,7 +1068,7 @@
 </ul>
 </section>
 <section id="when-to-keep-it-simple-vs-when-to-be-specific">
-<h3>When to Keep It Simple vs. When to Be Specific<a class="headerlink" href="#when-to-keep-it-simple-vs-when-to-be-specific" title="Link to this heading">#</a></h3>
+<h3>When to Keep It Simple vs. When to Be Specific<a class="headerlink" href="#when-to-keep-it-simple-vs-when-to-be-specific" title="Permalink to this heading">#</a></h3>
 <p><em>For most beginner projects, stick to these guidelines:</em></p>
 <ul class="simple">
 <li><p><strong>Keep it simple when:</strong></p>
@@ -1136,12 +1091,12 @@
 </section>
 </section>
 <section id="conclusion-data-types">
-<h2>Conclusion: Data Types<a class="headerlink" href="#conclusion-data-types" title="Link to this heading">#</a></h2>
+<h2>Conclusion: Data Types<a class="headerlink" href="#conclusion-data-types" title="Permalink to this heading">#</a></h2>
 <p>Understanding data types is an important first step in database design. For beginners, start with the basic types (INTEGER, TEXT, REAL) and gradually introduce more specific types as your needs and skills grow.</p>
 <p>Remember that SQLite’s flexible approach makes it forgiving for beginners, but developing good habits around data type selection will serve you well as you advance to more complex database systems and larger projects. The right data types ensure your intelligence operations (or any application) run efficiently, maintain data integrity, and scale effectively as your needs grow.</p>
 </section>
 <section id="the-create-table-statement">
-<h2>The CREATE TABLE Statement<a class="headerlink" href="#the-create-table-statement" title="Link to this heading">#</a></h2>
+<h2>The CREATE TABLE Statement<a class="headerlink" href="#the-create-table-statement" title="Permalink to this heading">#</a></h2>
 <p>Now that we know about data types, we can start creating our tables! In SQL, we use the <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span></code> statement for this.</p>
 <p>The general syntax is:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="p">(</span>
@@ -1391,7 +1346,7 @@ PRAGMA table_info(ENROLLMENT);
 </div>
 </section>
 <section id="column-constraints">
-<h2>Column Constraints<a class="headerlink" href="#column-constraints" title="Link to this heading">#</a></h2>
+<h2>Column Constraints<a class="headerlink" href="#column-constraints" title="Permalink to this heading">#</a></h2>
 <p>Before we start inserting data into our database, let’s discuss some important concepts that help maintain the integrity and consistency of our data: <strong>constraints</strong>.</p>
 <p>Column constraints are rules applied to individual columns in a table. They restrict the type of data that can be stored in a column. The most common constraints are:</p>
 <ol class="arabic simple">
@@ -1402,7 +1357,7 @@ PRAGMA table_info(ENROLLMENT);
 </ol>
 <p>Let’s see how we can apply these constraints to our tables.</p>
 <section id="the-drop-table-statement">
-<h3>The DROP TABLE Statement<a class="headerlink" href="#the-drop-table-statement" title="Link to this heading">#</a></h3>
+<h3>The DROP TABLE Statement<a class="headerlink" href="#the-drop-table-statement" title="Permalink to this heading">#</a></h3>
 <p>But first, let’s discuss how to drop a table. The <code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span></code> statement is used to remove a table definition and all its data. The syntax is simple:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span><span class="p">;</span>
 </pre></div>
@@ -1411,7 +1366,7 @@ PRAGMA table_info(ENROLLMENT);
 <p>Now, let’s recreate our tables with some constraints.</p>
 </section>
 <section id="recreating-the-student-table">
-<h3>Recreating the STUDENT Table<a class="headerlink" href="#recreating-the-student-table" title="Link to this heading">#</a></h3>
+<h3>Recreating the STUDENT Table<a class="headerlink" href="#recreating-the-student-table" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -1441,7 +1396,7 @@ CREATE TABLE STUDENT (
 <p>Here, we’ve added a UNIQUE constraint to the Codename column, a DEFAULT constraint to the Nationality column, and a CHECK constraint to ensure that all students are at least 18 years old.</p>
 </section>
 <section id="recreating-the-class-table">
-<h3>Recreating the CLASS Table<a class="headerlink" href="#recreating-the-class-table" title="Link to this heading">#</a></h3>
+<h3>Recreating the CLASS Table<a class="headerlink" href="#recreating-the-class-table" title="Permalink to this heading">#</a></h3>
 <p>For the CLASS table, we’ve added a NOT NULL constraint to the Instructor column and a CHECK constraint to ensure that the StartDate is always before the EndDate.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1473,7 +1428,7 @@ CREATE TABLE CLASS (
 </div>
 </section>
 <section id="recreating-the-enrollment-table">
-<h3>Recreating the ENROLLMENT Table<a class="headerlink" href="#recreating-the-enrollment-table" title="Link to this heading">#</a></h3>
+<h3>Recreating the ENROLLMENT Table<a class="headerlink" href="#recreating-the-enrollment-table" title="Permalink to this heading">#</a></h3>
 <p>For the ENROLLMENT table, we’ve added a DEFAULT constraint to set the EnrollmentDate to the current date if no value is provided.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1505,24 +1460,24 @@ CREATE TABLE ENROLLMENT (
 </section>
 </section>
 <section id="erd-physical-model">
-<h2>ERD: Physical Model<a class="headerlink" href="#erd-physical-model" title="Link to this heading">#</a></h2>
+<h2>ERD: Physical Model<a class="headerlink" href="#erd-physical-model" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><img src="https://mermaid.ink/img/CmVyRGlhZ3JhbQogICAgU1RVREVOVCB8fC0tb3sgRU5ST0xMTUVOVCA6IGVucm9sbHMKICAgIENMQVNTIHx8LS1veyBFTlJPTExNRU5UIDogaGFzCgogICAgU1RVREVOVCB7CiAgICAgICAgaW50IElEIFBLCiAgICAgICAgdmFyY2hhciBOYW1lICJOT1QgTlVMTCIKICAgICAgICB2YXJjaGFyIENvZGVuYW1lICJVTklRVUUiCiAgICAgICAgdmFyY2hhciBOYXRpb25hbGl0eSAiREVGQVVMVCAnVW5rbm93biciCiAgICAgICAgdmFyY2hhciBTcGVjaWFsaXphdGlvbgogICAgICAgIGludCBBZ2UgIkNIRUNLIChBZ2UgPj0gMTgpIgogICAgfQoKICAgIENMQVNTIHsKICAgICAgICBpbnQgSUQgUEsKICAgICAgICB2YXJjaGFyIE5hbWUgIk5PVCBOVUxMIgogICAgICAgIHZhcmNoYXIgRGVzY3JpcHRpb24KICAgICAgICB2YXJjaGFyIEluc3RydWN0b3IgIk5PVCBOVUxMIgogICAgICAgIHZhcmNoYXIgTG9jYXRpb24KICAgICAgICBkYXRlIFN0YXJ0RGF0ZQogICAgICAgIGRhdGUgRW5kRGF0ZSAiQ0hFQ0sgKFN0YXJ0RGF0ZSA8IEVuZERhdGUpIgogICAgfQoKICAgIEVOUk9MTE1FTlQgewogICAgICAgIGludCBTdHVkZW50SUQgUEssRksKICAgICAgICBpbnQgQ2xhc3NJRCBQSyxGSwogICAgICAgIGRhdGUgRW5yb2xsbWVudERhdGUgIkRFRkFVTFQgQ1VSUkVOVF9EQVRFIgogICAgfQ=="/></div></div>
 </div>
 <section id="the-drop-table-if-exists-syntax">
-<h3>The DROP TABLE IF EXISTS Syntax<a class="headerlink" href="#the-drop-table-if-exists-syntax" title="Link to this heading">#</a></h3>
+<h3>The DROP TABLE IF EXISTS Syntax<a class="headerlink" href="#the-drop-table-if-exists-syntax" title="Permalink to this heading">#</a></h3>
 <p>One more thing to note: in our previous examples, we used the syntax <code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span> <span class="pre">IF</span> <span class="pre">EXISTS</span></code> instead of just <code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span></code>. What does this do?</p>
 <p><code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span> <span class="pre">IF</span> <span class="pre">EXISTS</span></code> is a safer way to drop tables. If the specified table doesn’t exist, <code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span></code> would normally throw an error. However, with <code class="docutils literal notranslate"><span class="pre">IF</span> <span class="pre">EXISTS</span></code>, the statement doesn’t throw an error if the table doesn’t exist; it simply does nothing.</p>
 <p>This is useful in scripts where you want to ensure that a table doesn’t exist before creating it, but you don’t want the script to fail if the table doesn’t exist to begin with.</p>
 </section>
 </section>
 <section id="alter-table-modifying-your-database-structure">
-<h2>ALTER TABLE: Modifying Your Database Structure<a class="headerlink" href="#alter-table-modifying-your-database-structure" title="Link to this heading">#</a></h2>
+<h2>ALTER TABLE: Modifying Your Database Structure<a class="headerlink" href="#alter-table-modifying-your-database-structure" title="Permalink to this heading">#</a></h2>
 <p>As your database evolves, you may find yourself needing to modify the structure of existing tables. Maybe you need to add a new column, change a column’s data type, or add a new constraint. This is where the <code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span></code> statement comes in.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span></code> statement allows you to change the structure of an existing table without deleting and recreating it. This is useful because it preserves the existing data in the table.</p>
 <section id="adding-a-new-column">
-<h3>Adding a New Column<a class="headerlink" href="#adding-a-new-column" title="Link to this heading">#</a></h3>
+<h3>Adding a New Column<a class="headerlink" href="#adding-a-new-column" title="Permalink to this heading">#</a></h3>
 <p>To add a new column to an existing table, you use the <code class="docutils literal notranslate"><span class="pre">ADD</span> <span class="pre">COLUMN</span></code> clause:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span>
 <span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">new_column_name</span><span class="w"> </span><span class="n">datatype</span><span class="w"> </span><span class="k">constraint</span><span class="p">;</span>
@@ -1629,7 +1584,7 @@ PRAGMA table_info(STUDENT);
 </div>
 </section>
 <section id="dropping-a-column">
-<h3>Dropping a Column<a class="headerlink" href="#dropping-a-column" title="Link to this heading">#</a></h3>
+<h3>Dropping a Column<a class="headerlink" href="#dropping-a-column" title="Permalink to this heading">#</a></h3>
 <p>We can drop (remove) a column using the drop table keyword:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span>
 <span class="k">DROP</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="k">column_name</span>
@@ -1656,7 +1611,7 @@ DROP COLUMN DateOfBirth;
 </div>
 </section>
 <section id="renaming-tables-and-columns">
-<h3>Renaming Tables and Columns<a class="headerlink" href="#renaming-tables-and-columns" title="Link to this heading">#</a></h3>
+<h3>Renaming Tables and Columns<a class="headerlink" href="#renaming-tables-and-columns" title="Permalink to this heading">#</a></h3>
 <p>We can also rename tables and columns. For examples, let’s suppose we prefer table names like <code class="docutils literal notranslate"><span class="pre">Students</span></code>, <code class="docutils literal notranslate"><span class="pre">Classes</span></code>, and <code class="docutils literal notranslate"><span class="pre">Enrollments</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1714,7 +1669,7 @@ RENAME TO Enrollments;
 </div>
 </section>
 <section id="modifying-a-column-s-definition">
-<h3>Modifying a Column’s Definition<a class="headerlink" href="#modifying-a-column-s-definition" title="Link to this heading">#</a></h3>
+<h3>Modifying a Column’s Definition<a class="headerlink" href="#modifying-a-column-s-definition" title="Permalink to this heading">#</a></h3>
 <p>To change a column’s data type in databases like Oracle, MySQL, or Postgres, you use the <code class="docutils literal notranslate"><span class="pre">MODIFY</span> <span class="pre">COLUMN</span></code> clause (or <code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">COLUMN</span></code> in other databases):</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span>
 <span class="k">MODIFY</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="k">column_name</span><span class="w"> </span><span class="n">new_datatype</span><span class="p">;</span>
@@ -1769,10 +1724,10 @@ ALTER TABLE Students RENAME COLUMN Age_NEW TO Age;
 </section>
 </section>
 <section id="chapter-summary">
-<h2>Chapter Summary<a class="headerlink" href="#chapter-summary" title="Link to this heading">#</a></h2>
+<h2>Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
 <p>Database design is a structured process that unfolds in three main phases:</p>
 <section id="conceptual-modeling">
-<h3>Conceptual Modeling<a class="headerlink" href="#conceptual-modeling" title="Link to this heading">#</a></h3>
+<h3>Conceptual Modeling<a class="headerlink" href="#conceptual-modeling" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Business Rules</strong>: Establish clear, testable statements that define database constraints and behavior</p></li>
 <li><p><strong>Entity Identification</strong>: Identify key entities (like students and classes) and their attributes</p></li>
@@ -1780,7 +1735,7 @@ ALTER TABLE Students RENAME COLUMN Age_NEW TO Age;
 </ul>
 </section>
 <section id="logical-modeling">
-<h3>Logical Modeling<a class="headerlink" href="#logical-modeling" title="Link to this heading">#</a></h3>
+<h3>Logical Modeling<a class="headerlink" href="#logical-modeling" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Relational Model</strong>: Organize data into tables with rows and columns</p></li>
 <li><p><strong>Keys</strong>: Implement primary keys (unique identifiers) and foreign keys (relationship links)</p></li>
@@ -1795,7 +1750,7 @@ ALTER TABLE Students RENAME COLUMN Age_NEW TO Age;
 </ul>
 </section>
 <section id="physical-modeling">
-<h3>Physical Modeling<a class="headerlink" href="#physical-modeling" title="Link to this heading">#</a></h3>
+<h3>Physical Modeling<a class="headerlink" href="#physical-modeling" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>SQL Implementation</strong>: Translate logical models into actual database structures</p></li>
 <li><p><strong>Data Types</strong>: Select appropriate types (INTEGER, VARCHAR, DATE, etc.) for each column</p></li>
@@ -1820,18 +1775,18 @@ ALTER TABLE Students RENAME COLUMN Age_NEW TO Age;
 </section>
 </section>
 <section id="lab-sql-data-definition-langauge-practice">
-<h2>Lab: SQL Data Definition Langauge Practice<a class="headerlink" href="#lab-sql-data-definition-langauge-practice" title="Link to this heading">#</a></h2>
+<h2>Lab: SQL Data Definition Langauge Practice<a class="headerlink" href="#lab-sql-data-definition-langauge-practice" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="practice-with-the-loop-of-the-recursive-dragon">
-<h2>Practice with the Loop of the Recursive Dragon<a class="headerlink" href="#practice-with-the-loop-of-the-recursive-dragon" title="Link to this heading">#</a></h2>
+<h2>Practice with the Loop of the Recursive Dragon<a class="headerlink" href="#practice-with-the-loop-of-the-recursive-dragon" title="Permalink to this heading">#</a></h2>
 <p>Sharpen what you just learned with a chapter-matched review set in the <strong>Loop of the Recursive Dragon</strong> — an adaptive review game with multiple question types and RPG-style mechanics, built for this book.</p>
 <p><a class="reference external" href="https://brendanpshea.github.io/LotRD/?set=database_05_design.json"><strong>Launch the Chapter 5 review set →</strong></a></p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
 <p>Use this list as a quick review sheet for the chapter.</p>
 <section id="design-process">
-<h3>Design process<a class="headerlink" href="#design-process" title="Link to this heading">#</a></h3>
+<h3>Design process<a class="headerlink" href="#design-process" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Conceptual model</strong> — A high-level picture of the data and how it relates, with no technology details.</p></li>
 <li><p><strong>Logical model</strong> — A detailed design that captures attributes, keys, and constraints without committing to a specific DBMS.</p></li>
@@ -1842,7 +1797,7 @@ ALTER TABLE Students RENAME COLUMN Age_NEW TO Age;
 </ul>
 </section>
 <section id="keys-and-relationships">
-<h3>Keys and relationships<a class="headerlink" href="#keys-and-relationships" title="Link to this heading">#</a></h3>
+<h3>Keys and relationships<a class="headerlink" href="#keys-and-relationships" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">PRIMARY</span> <span class="pre">KEY</span></code></strong> — A constraint that uniquely identifies each row in a table.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">FOREIGN</span> <span class="pre">KEY</span> <span class="pre">(...)</span> <span class="pre">REFERENCES</span> <span class="pre">...</span></code></strong> — A constraint that points to a key in another table.</p></li>
@@ -1852,7 +1807,7 @@ ALTER TABLE Students RENAME COLUMN Age_NEW TO Age;
 </ul>
 </section>
 <section id="normalization">
-<h3>Normalization<a class="headerlink" href="#normalization" title="Link to this heading">#</a></h3>
+<h3>Normalization<a class="headerlink" href="#normalization" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Normalization</strong> — The process of organizing data to reduce redundancy and improve integrity.</p></li>
 <li><p><strong>First normal form (1NF)</strong> — A normalization level that removes repeating groups and keeps values atomic.</p></li>
@@ -1861,7 +1816,7 @@ ALTER TABLE Students RENAME COLUMN Age_NEW TO Age;
 </ul>
 </section>
 <section id="erd-elements">
-<h3>ERD elements<a class="headerlink" href="#erd-elements" title="Link to this heading">#</a></h3>
+<h3>ERD elements<a class="headerlink" href="#erd-elements" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Entities (Crow’s foot ERD)</strong> — The main objects or concepts drawn as boxes in an ER diagram.</p></li>
 <li><p><strong>Attributes (Crow’s foot ERD)</strong> — The properties listed inside an entity box.</p></li>
@@ -1869,7 +1824,7 @@ ALTER TABLE Students RENAME COLUMN Age_NEW TO Age;
 </ul>
 </section>
 <section id="sql-data-definition">
-<h3>SQL data definition<a class="headerlink" href="#sql-data-definition" title="Link to this heading">#</a></h3>
+<h3>SQL data definition<a class="headerlink" href="#sql-data-definition" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span></code></strong> — Creates a new table in the database.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span></code></strong> — Removes a table and all of its data.</p></li>
@@ -1880,7 +1835,7 @@ ALTER TABLE Students RENAME COLUMN Age_NEW TO Age;
 </ul>
 </section>
 <section id="constraints">
-<h3>Constraints<a class="headerlink" href="#constraints" title="Link to this heading">#</a></h3>
+<h3>Constraints<a class="headerlink" href="#constraints" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">NULL</span></code></strong> — A constraint that prevents empty values in a column.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">UNIQUE</span></code></strong> — A constraint that requires every value in a column to be distinct.</p></li>
@@ -1888,7 +1843,7 @@ ALTER TABLE Students RENAME COLUMN Age_NEW TO Age;
 </ul>
 </section>
 <section id="data-types">
-<h3>Data types<a class="headerlink" href="#data-types" title="Link to this heading">#</a></h3>
+<h3>Data types<a class="headerlink" href="#data-types" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">INTEGER</span></code></strong> — Stores whole numbers.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">REAL</span></code></strong> — Stores floating-point numbers.</p></li>
@@ -1902,7 +1857,7 @@ ALTER TABLE Students RENAME COLUMN Age_NEW TO Age;
 </ul>
 </section>
 <section id="standards">
-<h3>Standards<a class="headerlink" href="#standards" title="Link to this heading">#</a></h3>
+<h3>Standards<a class="headerlink" href="#standards" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>ANSI</strong> — The American National Standards Institute, which helps define SQL standards.</p></li>
 <li><p><strong>ISO</strong> — The International Organization for Standardization, which also publishes SQL standards.</p></li>
@@ -1966,111 +1921,6 @@ ALTER TABLE Students RENAME COLUMN Age_NEW TO Age;
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning Outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brendan-s-lecture">Brendan’s Lecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-design-at-the-covert-academy">Conceptual Design at the Covert Academy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-conceptual-design">What is Conceptual Design?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulating-business-rules">Formulating Business Rules</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-list-of-entities-and-attributes">Preliminary List of Entities and Attributes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-erd">Preliminary ERD</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-logical-modeling">What is Logical Modeling?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-many-to-many-relationships">Resolving Many-to-Many Relationships</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-primary-keys">Choosing Primary Keys</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updated-erd">Updated ERD</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-modeling-normalization">Logical Modeling: Normalization</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-normalize">Why normalize?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-normal-form-1nf">First Normal Form (1NF)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nf-checklist-and-tradeoffs">1NF Checklist and Tradeoffs</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-normal-form-2nf">Second Normal Form (2NF)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recognizing-partial-dependencies">Recognizing Partial Dependencies</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-to-2nf">Converting to 2NF</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#another-2nf-example">Another 2NF Example</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-second-normal-form">Benefits of Second Normal Form</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-2nf-mistakes-to-avoid">Common 2NF Mistakes to Avoid</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#third-normal-form-and-beyond">Third Normal Form and Beyond</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-normalization-strategy">Practical Normalization Strategy</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quiz-normalize-this">Quiz: Normalize This</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-modeling-bringing-the-database-to-life">Physical Modeling - Bringing the Database to Life</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansi-sql-data-types-big-picture">ANSI SQL Data Types: Big Picture</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-type-families">Common type families</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-the-standard-matters">Why the standard matters</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sqlite-type-affinity-in-practice">SQLite Type Affinity in Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-database-design-for-beginners">Practical Database Design for Beginners</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-right-data-type">Choosing the Right Data Type</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-basic-data-type-decisions">Examples of Basic Data Type Decisions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sqlite-s-simple-approach-for-beginners">SQLite’s Simple Approach for Beginners</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-beginner-mistakes-to-avoid">Common Beginner Mistakes to Avoid</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-performance-tips">Simple Performance Tips</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-keep-it-simple-vs-when-to-be-specific">When to Keep It Simple vs. When to Be Specific</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-data-types">Conclusion: Data Types</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-create-table-statement">The CREATE TABLE Statement</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#column-constraints">Column Constraints</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-drop-table-statement">The DROP TABLE Statement</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recreating-the-student-table">Recreating the STUDENT Table</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recreating-the-class-table">Recreating the CLASS Table</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recreating-the-enrollment-table">Recreating the ENROLLMENT Table</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erd-physical-model">ERD: Physical Model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-drop-table-if-exists-syntax">The DROP TABLE IF EXISTS Syntax</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alter-table-modifying-your-database-structure">ALTER TABLE: Modifying Your Database Structure</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-new-column">Adding a New Column</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dropping-a-column">Dropping a Column</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-tables-and-columns">Renaming Tables and Columns</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-a-column-s-definition">Modifying a Column’s Definition</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter Summary</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-modeling">Conceptual Modeling</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-modeling">Logical Modeling</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-modeling">Physical Modeling</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-sql-data-definition-langauge-practice">Lab: SQL Data Definition Langauge Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-the-loop-of-the-recursive-dragon">Practice with the Loop of the Recursive Dragon</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design-process">Design process</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keys-and-relationships">Keys and relationships</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization">Normalization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erd-elements">ERD elements</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-data-definition">SQL data definition</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints">Constraints</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">Data types</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standards">Standards</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
             
           </div>
           <footer class="bd-footer-content">
@@ -2114,8 +1964,8 @@ By Brendan Shea, PhD
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
