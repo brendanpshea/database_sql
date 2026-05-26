@@ -5,7 +5,7 @@ An open educational resource built as a public Jupyter Book and a set of noteboo
 The main public entry point for this project is the GitHub Pages site:
 
 - [Read the live book](https://brendanpshea.github.io/database_sql/)
-- [Open Chapter 1 in Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/Database_01_StarShipSQL.ipynb)
+- [Open Chapter 1 in Colab](https://colab.research.google.com/github/brendanpshea/database_sql/blob/main/database_ch01_foundations_starfleet.ipynb)
 - [Browse the repository](https://github.com/brendanpshea/database_sql)
 
 ## What this project includes

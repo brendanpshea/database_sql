@@ -7,8 +7,8 @@ execute:
   execute_notebooks: auto
   timeout: 900
   exclude_patterns:
-    - Database_09_PokemonAndPostgres.ipynb
-    - Database_10_DatabaseSecurity.ipynb
+    - database_ch09_postgres_pokemon.ipynb
+    - database_ch10_security_toad.ipynb
 
 parse:
   myst_enable_extensions:

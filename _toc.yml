@@ -1,18 +1,18 @@
 format: jb-book
 root: index
 chapters:
-  - file: Database_00_Introduction
-  - file: Database_01_StarShipSQL
-  - file: Database_02_IntroToSQL
-  - file: Database_03_Joins_Sets_SQL
-  - file: Database_04_AdvancedSelect
-  - file: Database_05_Design
-  - file: Database_06_WritingData
-  - file: Database_07_Views
-  - file: Database_08_IndexesTransactions
-  - file: Database_09_PokemonAndPostgres
-  - file: Database_10_DatabaseSecurity
-  - file: Database_11_DesignDeployTest
-  - file: Database_12_DataIntegration
-  - file: Database_13_FinalProject
+  - file: database_ch00_introduction
+  - file: database_ch01_foundations_starfleet
+  - file: database_ch02_select_scifi
+  - file: database_ch03_joins_imdb
+  - file: database_ch04_advanced_mario
+  - file: database_ch05_design_spy
+  - file: database_ch06_dml_rollingstone
+  - file: database_ch07_views_music
+  - file: database_ch08_indexes_gotham
+  - file: database_ch09_postgres_pokemon
+  - file: database_ch10_security_toad
+  - file: database_ch11_architecture_springfield
+  - file: database_ch12_integration_emerald
+  - file: database_ch13_final_project
   - file: labs/Database_Ex_Normalization
