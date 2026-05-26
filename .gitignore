@@ -1,0 +1,17 @@
+# Python virtual environments & caches
+.venv
+.venv/
+__pycache__
+__pycache__/
+*.pyc
+
+# Local runtime databases (SQLite and Kùzu)
+starfleet.db
+starfleet_graph_db
+starfleet_graph_db/
+starfleet_graph_db.wal
+
+# Local test databases
+starfleet_graph_test_db
+starfleet_graph_test_db/
+starfleet_test.db
