@@ -3,7 +3,14 @@ param(
     [string[]]$RemainingArgs
 )
 
-$repoRoot = Split-Path -LiteralPath $PSCommandPath -Parent
+$repoRoot = $null
+if ($PSCommandPath) {
+    $repoRoot = Split-Path -LiteralPath $PSCommandPath -Parent
+} elseif ($PSScriptRoot) {
+    $repoRoot = $PSScriptRoot
+} else {
+    $repoRoot = (Get-Location).Path
+}
 $noClobber = $false
 $urls = @()
 

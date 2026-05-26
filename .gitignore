@@ -5,6 +5,11 @@ __pycache__
 __pycache__/
 *.pyc
 
+# Jupyter Book build folder and caches
+_build/
+.ipynb_checkpoints/
+.jupyter_cache/
+
 # Local runtime databases (SQLite and Kùzu)
 starfleet.db
 starfleet_graph_db
