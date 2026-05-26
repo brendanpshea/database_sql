@@ -108,8 +108,8 @@ tr:nth-child(even) {
 
 /* Highlighted Terms */
 strong {
-  color: #1A202C;
-  font-weight: 600;
+  color: #1A202C !important;
+  font-weight: 700 !important;
 }
 
 /* Code Blocks Styling */
